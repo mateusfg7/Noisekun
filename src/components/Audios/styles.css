@@ -1,0 +1,19 @@
+div.audios {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+button.sound-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 200px;
+  height: 200px;
+
+  border: 1px solid white;
+}
+
+button.sound-button.selected {
+  background: white;
+}
