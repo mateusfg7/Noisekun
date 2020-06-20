@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-color: rgb(231, 231, 231);
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+button.audio-button {
+  padding: 10px;
+  border: 1px solid white;
+}
+
+button.selected {
+  color: black;
+  background: white;
+}
