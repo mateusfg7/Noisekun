@@ -18,12 +18,6 @@ button {
   border: none;
 }
 
-button.audio-button {
-  padding: 10px;
-  border: 1px solid white;
-}
-
-button.selected {
-  color: black;
-  background: white;
+button:hover {
+  cursor: pointer;
 }

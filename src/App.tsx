@@ -2,12 +2,12 @@ import React from "react";
 
 import "./styles/global.css";
 
-import OceanWavesBeach from "./components/Audios/sounds/OceanWavesBeach";
+import Audios from "./components/Audios";
 
 function App() {
   return (
     <div className='App'>
-      <OceanWavesBeach />
+      <Audios />
     </div>
   );
 }
