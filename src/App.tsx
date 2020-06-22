@@ -1,5 +1,6 @@
 import React from "react";
 
+import "./styles/effects.css";
 import "./styles/global.css";
 
 import Audios from "./components/Audios";
