@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const VolumeControler: React.FunctionComponent<IVolumeControler> = ({
   audioObject,
@@ -9,16 +9,20 @@ const VolumeControler: React.FunctionComponent<IVolumeControler> = ({
     }
   };
 
+  const [rangeValue, setRangeValue] = useState(1000);
+
   return (
     <input
       type='range'
       name='audio-decrement'
       className='audio-controller'
       min='1'
-      max='100'
+      max='1000'
+      value={rangeValue}
       onChange={(event) => {
-        const value = Number(event.target.value) / 100;
-        changeVolume(audioObject, value);
+        setRangeValue(Number(event.target.value));
+        const decimalValue = Number(event.target.value) / 1000;
+        changeVolume(audioObject, decimalValue);
       }}
     />
   );
