@@ -1,0 +1,4 @@
+div#storm-button {
+  background: url("/icons/storm.svg") no-repeat center;
+  background-size: 100%;
+}
