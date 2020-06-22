@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import changeStateOfAudio from "../../../../functions/changeStateOfAudio";
 
+import VolumeController from "../../../../Controllers/VolumeController";
+
 export default function OcenaWaves() {
   const [oceanWavesState, setOceanWavesState] = useState(false);
 
@@ -26,6 +28,9 @@ export default function OcenaWaves() {
       >
         Ocean Waves
       </button>
+      <VolumeController
+        audioObject={document.getElementsByTagName("audio")[0]}
+      />
     </div>
   );
 }
