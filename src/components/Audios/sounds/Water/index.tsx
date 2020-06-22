@@ -12,7 +12,7 @@ export default function Water() {
   return (
     <div className='sound-component'>
       <audio loop>
-        <source src='sounds/water.mp3' type='audio/mp3' />
+        <source src='/Noisekun/sounds/water.mp3' type='audio/mp3' />
       </audio>
       <div
         className='sound-button'

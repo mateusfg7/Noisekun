@@ -12,7 +12,7 @@ export default function Rain() {
   return (
     <div className='sound-component'>
       <audio loop>
-        <source src='sounds/rain.mp3' type='audio/mp3' />
+        <source src='/Noisekun/sounds/rain.mp3' type='audio/mp3' />
       </audio>
       <div
         className='sound-button'
