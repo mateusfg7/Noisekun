@@ -1,19 +1,79 @@
 div.audios {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+
+  gap: 30px;
 }
 
-button.sound-button {
+div.sound-component {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  width: 200px;
-  height: 200px;
-
-  border: 1px solid white;
+  width: 100px;
+  height: 100px;
 }
 
-button.sound-button.selected {
+div.sound-button {
+  width: 100px;
+  height: 100px;
+
+  opacity: 0.5;
+
+  transition: 0.1s;
+}
+div.sound-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+div.sound-button.selected {
+  opacity: 1;
+}
+
+input[type="range"] {
+  opacity: 0;
+
+  appearance: none;
+
+  width: 100%;
+  height: 2px;
+
   background: white;
+}
+
+/* MARKER */
+/* Chrome/Safari/Opera */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 13px;
+  width: 13px;
+
+  background: white;
+
+  border: none;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  height: 13px;
+  width: 13px;
+
+  background: white;
+
+  border: none;
+}
+
+/* IE */
+input[type="range"]::-ms-thumb {
+  height: 13px;
+  width: 13px;
+
+  background: white;
+
+  border: none;
+}
+
+input[type="range"].selected {
+  opacity: 1;
 }

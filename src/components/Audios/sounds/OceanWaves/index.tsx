@@ -4,30 +4,34 @@ import changeStateOfAudio from "../../../../functions/changeStateOfAudio";
 
 import VolumeController from "../../../../Controllers/VolumeController";
 
+import "./style.css";
+
 export default function OcenaWaves() {
   const [oceanWavesState, setOceanWavesState] = useState(false);
 
   return (
-    <div>
+    <div className='sound-component'>
       <audio loop>
         <source src='sounds/ocean_waves.mp3' type='audio/mp3' />
       </audio>
-      <button
+      <div
         className='sound-button'
         id='ocean-waves-button'
         onClick={() => {
           const audio = document.getElementsByTagName("audio")[0];
           const button = document.getElementById("ocean-waves-button");
+          const audioController = document.getElementsByClassName(
+            "audio-controller"
+          )[0];
           changeStateOfAudio(
             audio,
             oceanWavesState,
             setOceanWavesState,
-            button
+            button,
+            audioController
           );
         }}
-      >
-        Ocean Waves
-      </button>
+      />
       <VolumeController
         audioObject={document.getElementsByTagName("audio")[0]}
       />
