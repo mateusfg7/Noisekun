@@ -1,9 +1,5 @@
 import React from "react";
 
-interface IVolumeControler {
-  audioObject: HTMLAudioElement;
-}
-
 const VolumeControler: React.FunctionComponent<IVolumeControler> = ({
   audioObject,
 }) => {
