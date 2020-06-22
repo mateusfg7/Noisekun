@@ -10,7 +10,7 @@ body {
   align-items: center;
   height: 100vh;
 
-  background-color: rgb(115, 168, 79);
+  animation: background-change 300s 0s infinite;
 }
 
 button {
