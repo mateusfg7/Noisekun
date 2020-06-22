@@ -77,3 +77,14 @@ input[type="range"]::-ms-thumb {
 input[type="range"].selected {
   opacity: 1;
 }
+
+@media (max-width: 400px) {
+  div.audios {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 300px) {
+  div.audios {
+    grid-template-columns: 1fr;
+  }
+}
