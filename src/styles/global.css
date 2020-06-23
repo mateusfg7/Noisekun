@@ -1,16 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap");
+
 * {
   padding: 0;
   margin: 0;
 }
 
 body {
+  font-family: "MuseoModerno", cursive;
+  color: white;
+
+  animation: background-change 300s 0s infinite;
+}
+
+div.main-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 
-  animation: background-change 300s 0s infinite;
+  height: 85vh;
+  /* border: 1px solid red; */
 }
 
 button {
