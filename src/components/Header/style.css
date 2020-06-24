@@ -6,7 +6,7 @@ header.header {
   width: 100vw;
   height: 15vh;
 
-  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.089);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.089);
 }
 
 header.header h1 a {
