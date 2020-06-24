@@ -32,4 +32,5 @@ Made with ReactJS and Typescript.
         </td>
     </tr>
 </table>
+
 > _Inspired by [Noisli](https://www.noisli.com/)_
