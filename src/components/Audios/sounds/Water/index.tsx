@@ -12,7 +12,10 @@ export default function Water() {
   return (
     <div className='sound-component'>
       <audio loop>
-        <source src='/Noisekun/sounds/water.mp3' type='audio/mp3' />
+        <source
+          src='https://noisekun-server.herokuapp.com/water'
+          type='audio/mp3'
+        />
       </audio>
       <div
         className='sound-button'

@@ -6,7 +6,9 @@ _Listen combinations of sounds for **relaxing** or getting more **productive** o
 
 [![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=for-the-badge&color=%2342fc3c)](https://www.codefactor.io/repository/github/mateusfg7/noisekun)![Bugs](https://img.shields.io/github/issues/mateusfg7/Noisekun/bug?color=%23fc3f3c&style=for-the-badge)![CleanCode](https://img.shields.io/github/issues/mateusfg7/Noisekun/clean%20code?color=%233cbffc&style=for-the-badge)
 
-Made with ReactJS and Typescript.
+[Front-end](https://github.com/mateusfg7/Noisekun) made with ReactJS and Typescript.
+
+[Back-end](https://github.com/mateusfg7/Noisekun-backend) made with Deno and Typescript.
 
 ---
 

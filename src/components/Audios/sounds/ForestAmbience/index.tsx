@@ -12,7 +12,10 @@ export default function ForestAmbience() {
   return (
     <div className='sound-component'>
       <audio loop>
-        <source src='/Noisekun/sounds/forest_ambience.mp3' type='audio/mp3' />
+        <source
+          src='https://noisekun-server.herokuapp.com/forest_ambience'
+          type='audio/mp3'
+        />
       </audio>
       <div
         className='sound-button'
