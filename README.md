@@ -10,16 +10,16 @@ _Listen combinations of sounds for **relaxing** or getting more **productive** o
 
 [Back-end](https://github.com/mateusfg7/Noisekun-backend) made with Deno and Typescript.
 
-**To add your own back-end, create a dotenv file `.env` on root of project and add this line:**
+To add your own back-end, change the host in `defaultVariables.ts`, on line 4:
 
-```dotenv
-REACT_APP_DEFAULT_HOST=[YOUR HOST]
+```javascript
+const HOST = "https://noisekun-server.herokuapp.com";
 ```
 
 _e.g:_
 
-```dotenv
-REACT_APP_DEFAULT_HOST=http://0.0.0.0:8000
+```javascript
+const HOST = "http://0.0.0.0:8000";
 ```
 
 > default back-end host: https://noisekun-server.herokuapp.com
