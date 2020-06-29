@@ -13,7 +13,7 @@ export default function Storm() {
   return (
     <div className='sound-component'>
       <audio loop>
-        <source src={`'${HOST}/storm'`} type='audio/mp3' />
+        <source src={`${HOST}/storm`} type='audio/mp3' />
       </audio>
       <div
         className='sound-button'

@@ -13,7 +13,7 @@ export default function Water() {
   return (
     <div className='sound-component'>
       <audio loop>
-        <source src={`'${HOST}/water'`} type='audio/mp3' />
+        <source src={`${HOST}/water`} type='audio/mp3' />
       </audio>
       <div
         className='sound-button'
