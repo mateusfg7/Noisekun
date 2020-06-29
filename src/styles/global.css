@@ -3,6 +3,18 @@
 * {
   padding: 0;
   margin: 0;
+  outline: none;
+}
+*:focus,
+*:active {
+  outline: none;
+}
+*::-moz-focus-outer {
+  border: 0;
+}
+
+input:focus {
+  outline: none;
 }
 
 body {

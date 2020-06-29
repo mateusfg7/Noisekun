@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./style.css";
+
 const VolumeControler: React.FunctionComponent<IVolumeControler> = ({
   audioObject,
 }) => {
