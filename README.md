@@ -4,7 +4,7 @@ _Listen combinations of sounds for **relaxing** or getting more **productive** o
 
 [![fail](docs/page.gif)](https://mateusfg7.github.io/Noisekun/)
 
-[![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=for-the-badge&color=%2342fc3c)](https://www.codefactor.io/repository/github/mateusfg7/noisekun)![Bugs](https://img.shields.io/github/issues/mateusfg7/Noisekun/bug?color=%23fc3f3c&style=for-the-badge)![CleanCode](https://img.shields.io/github/issues/mateusfg7/Noisekun/clean%20code?color=%233cbffc&style=for-the-badge)
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=for-the-badge&color=%2342fc3c)](https://www.codefactor.io/repository/github/mateusfg7/noisekun)![Bugs](https://img.shields.io/github/issues/mateusfg7/Noisekun/bug?color=%23fc3f3c&style=for-the-badge)![Enhancement](https://img.shields.io/github/issues/mateusfg7/Noisekun/enhancement?color=%233c5ffc&style=for-the-badge)![CleanCode](https://img.shields.io/github/issues/mateusfg7/Noisekun/clean%20code?color=%233cbffc&style=for-the-badge)
 
 [Front-end](https://github.com/mateusfg7/Noisekun) made with ReactJS and Typescript.
 
