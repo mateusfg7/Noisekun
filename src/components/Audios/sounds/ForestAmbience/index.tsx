@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { HOST } from "../../../../services/defaultVariables";
 import changeStateOfAudio from "../../../../functions/changeStateOfAudio";
 
 import VolumeController from "../../../../Controllers/VolumeController";
@@ -8,14 +9,10 @@ import "./style.css";
 
 export default function ForestAmbience() {
   const [forestAmbienceState, setForestAmbienceState] = useState(false);
-
   return (
     <div className='sound-component'>
       <audio loop>
-        <source
-          src='https://noisekun-server.herokuapp.com/forest_ambience'
-          type='audio/mp3'
-        />
+        <source src={`${HOST}/forest_ambience`} type='audio/mp3' />
       </audio>
       <div
         className='sound-button'

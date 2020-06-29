@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import { HOST } from "../../../../services/defaultVariables";
 import changeStateOfAudio from "../../../../functions/changeStateOfAudio";
 
 import VolumeController from "../../../../Controllers/VolumeController";
@@ -12,10 +13,7 @@ export default function Water() {
   return (
     <div className='sound-component'>
       <audio loop>
-        <source
-          src='https://noisekun-server.herokuapp.com/water'
-          type='audio/mp3'
-        />
+        <source src={`'${HOST}/water'`} type='audio/mp3' />
       </audio>
       <div
         className='sound-button'
