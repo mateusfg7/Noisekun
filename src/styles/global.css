@@ -30,7 +30,8 @@ div.main-section {
   justify-content: center;
   align-items: center;
 
-  height: 85vh;
+  min-height: 85vh;
+  height: 100%;
   /* border: 1px solid red; */
 }
 
