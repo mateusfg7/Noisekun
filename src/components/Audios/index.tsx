@@ -9,6 +9,7 @@ import ForestAmbience from "./sounds/ForestAmbience";
 import Rain from "./sounds/Rain";
 import Storm from "./sounds/Storm";
 import Coffee from "./sounds/Coffee";
+import Wind from "./sounds/Wind";
 
 export default function Audios() {
   return (
@@ -20,6 +21,7 @@ export default function Audios() {
       <Rain />
       <Storm />
       <Coffee />
+      <Wind />
     </div>
   );
 }
