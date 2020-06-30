@@ -1,6 +1,6 @@
 div.audios {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   gap: 30px;
 }
@@ -31,6 +31,11 @@ div.sound-button.selected {
   opacity: 1;
 }
 
+@media (max-width: 550px) {
+  div.audios {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 @media (max-width: 400px) {
   div.audios {
     grid-template-columns: 1fr 1fr;
