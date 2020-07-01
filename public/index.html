@@ -11,10 +11,41 @@
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap");
+
+      div#load-modal {
+        position: absolute;
+        z-index: 1;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100vw;
+        height: 100vh;
+
+        background-color: #52bad5;
+
+        font-family: "MuseoModerno", Arial, Helvetica, sans-serif;
+        color: white;
+      }
+
+      div#load-modal p {
+        font-size: 40px;
+        letter-spacing: 10px;
+      }
+    </style>
+
     <title>Noisekun</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <div id="load-modal">
+        <p>LOADING...</p>
+      </div>
+    </div>
   </body>
 </html>
