@@ -2,26 +2,62 @@ import React from "react";
 
 import "./styles.css";
 
-import OceanWaves from "./sounds/OceanWaves";
-import SmallWaves from "./sounds/SmallWaves";
-import Water from "./sounds/Water";
-import ForestAmbience from "./sounds/ForestAmbience";
-import Rain from "./sounds/Rain";
-import Storm from "./sounds/Storm";
-import Coffee from "./sounds/Coffee";
-import Wind from "./sounds/Wind";
-
-export default function Audios() {
+export default function Audios({
+  Sound,
+  VolumeController,
+  changeStateOfAudio,
+  env,
+}: IAudios) {
   return (
     <div className='audios'>
-      <OceanWaves />
-      <SmallWaves />
-      <Water />
-      <ForestAmbience />
-      <Rain />
-      <Storm />
-      <Coffee />
-      <Wind />
+      <Sound
+        name='ocean_waves'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
+      <Sound
+        name='small_waves'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
+      <Sound
+        name='water'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
+      <Sound
+        name='forest_ambience'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
+      <Sound
+        name='rain'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
+      <Sound
+        name='storm'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
+      <Sound
+        name='coffee'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
+      <Sound
+        name='wind'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
     </div>
   );
 }
