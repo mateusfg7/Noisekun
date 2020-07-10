@@ -82,6 +82,12 @@ export default function Audios({
         VolumeController={VolumeController}
         env={env}
       />
+      <Sound
+        name='train'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
     </div>
   );
 }
