@@ -1,0 +1,29 @@
+div.sound-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100px;
+  height: 100px;
+}
+
+div.sound-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100px;
+  height: 100px;
+
+  opacity: 0.5;
+
+  transition: 0.1s;
+}
+div.sound-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+div.sound-button.selected {
+  opacity: 1;
+}
