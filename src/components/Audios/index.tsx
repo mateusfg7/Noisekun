@@ -94,6 +94,12 @@ export default function Audios({
         VolumeController={VolumeController}
         env={env}
       />
+      <Sound
+        name='underwater'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
     </div>
   );
 }
