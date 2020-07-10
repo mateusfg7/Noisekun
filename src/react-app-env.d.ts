@@ -1,6 +1,28 @@
 /// <reference types="react-scripts" />
 
-// VolumeController
-interface IVolumeControler {
-  audioObject: HTMLAudioElement;
+// Environments Variables
+interface IEnv {
+  HOST: string;
+}
+
+// Audios Component
+interface IAudios {
+  Sound: React.FC<ISound>;
+  VolumeController: React.FC<IVolumeController>;
+  changeStateOfAudio: Function;
+  env: IEnv;
+}
+
+// Sound Comonent
+interface ISound {
+  name: string;
+  changeStateOfAudio: Function;
+  VolumeController: Function;
+  env: IEnv;
+}
+
+// Volume Controller
+interface IVolumeController {
+  audioObject: HTMLAudioElement | null;
+  id: string;
 }
