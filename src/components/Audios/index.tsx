@@ -65,6 +65,12 @@ export default function Audios({
         env={env}
       />
       <Sound
+        name='night'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
+      <Sound
         name='coffee'
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
