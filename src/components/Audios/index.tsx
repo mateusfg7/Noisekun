@@ -88,6 +88,12 @@ export default function Audios({
         VolumeController={VolumeController}
         env={env}
       />
+      <Sound
+        name='air_plane'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
     </div>
   );
 }
