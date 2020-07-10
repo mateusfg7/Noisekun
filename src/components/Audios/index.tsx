@@ -11,30 +11,6 @@ export default function Audios({
   return (
     <div className='audios'>
       <Sound
-        name='ocean_waves'
-        changeStateOfAudio={changeStateOfAudio}
-        VolumeController={VolumeController}
-        env={env}
-      />
-      <Sound
-        name='small_waves'
-        changeStateOfAudio={changeStateOfAudio}
-        VolumeController={VolumeController}
-        env={env}
-      />
-      <Sound
-        name='water'
-        changeStateOfAudio={changeStateOfAudio}
-        VolumeController={VolumeController}
-        env={env}
-      />
-      <Sound
-        name='forest_ambience'
-        changeStateOfAudio={changeStateOfAudio}
-        VolumeController={VolumeController}
-        env={env}
-      />
-      <Sound
         name='rain'
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
@@ -47,13 +23,37 @@ export default function Audios({
         env={env}
       />
       <Sound
-        name='coffee'
+        name='wind'
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='wind'
+        name='water'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
+      <Sound
+        name='ocean_waves'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
+      <Sound
+        name='small_waves'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
+      <Sound
+        name='forest_ambience'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
+      <Sound
+        name='coffee'
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
