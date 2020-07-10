@@ -76,6 +76,12 @@ export default function Audios({
         VolumeController={VolumeController}
         env={env}
       />
+      <Sound
+        name='fan'
+        changeStateOfAudio={changeStateOfAudio}
+        VolumeController={VolumeController}
+        env={env}
+      />
     </div>
   );
 }
