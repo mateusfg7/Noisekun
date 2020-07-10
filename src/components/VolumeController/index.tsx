@@ -2,10 +2,11 @@ import React, { useState } from "react";
 
 import "./style.css";
 
-const VolumeControler: React.FunctionComponent<IVolumeControler> = ({
-  audioObject,
-}) => {
-  const changeVolume = (audio: HTMLAudioElement, value: number): void => {
+const VolumeControler: React.FC<IVolumeController> = ({ audioObject, id }) => {
+  const changeVolume = (
+    audio: HTMLAudioElement | null,
+    value: number
+  ): void => {
     if (audio) {
       audio.volume = value;
     }
@@ -18,6 +19,7 @@ const VolumeControler: React.FunctionComponent<IVolumeControler> = ({
       type='range'
       name='audio-decrement'
       className='audio-controller'
+      id={id}
       min='1'
       max='1000'
       value={rangeValue}
