@@ -19,12 +19,12 @@ export default function Sound({
 
       <div
         className='sound-button'
-        id={`${name}_button`}
+        id={`${name}-button`}
         onClick={() => {
           const audio = document.querySelector<HTMLAudioElement>(`#${name}`);
-          const button = document.getElementById(`${name}_button`);
+          const button = document.getElementById(`${name}-button`);
           const audioController = document.getElementById(
-            `${name}_audio_controller`
+            `${name}-audio-controller`
           );
           changeStateOfAudio(audio, state, setState, button, audioController);
         }}
@@ -34,7 +34,7 @@ export default function Sound({
 
       <VolumeController
         audioObject={document.querySelector<HTMLAudioElement>(`#${name}`)}
-        id={`${name}_audio_controller`}
+        id={`${name}-audio-controller`}
       />
     </div>
   );
