@@ -35,19 +35,19 @@ export default function Audios({
         env={env}
       />
       <Sound
-        name='ocean_waves'
+        name='ocean-waves'
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='small_waves'
+        name='small-waves'
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='forest_ambience'
+        name='forest-ambience'
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
@@ -89,7 +89,7 @@ export default function Audios({
         env={env}
       />
       <Sound
-        name='air_plane'
+        name='air-plane'
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
