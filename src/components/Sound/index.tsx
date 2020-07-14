@@ -13,7 +13,8 @@ export default function Sound({
   return (
     <div className='sound-component'>
       <audio loop id={name}>
-        <source src={`${env.HOST}/${name}`} type='audio/mp3' />
+        <source src={`${env.HOST}/webm/${name}`} type='audio/webm' />
+        <source src={`${env.HOST}/mp3/${name}`} type='audio/mp3' />
       </audio>
 
       <div
