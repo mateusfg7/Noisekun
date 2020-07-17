@@ -1,0 +1,30 @@
+div#configurations {
+  margin-top: 50px;
+}
+
+div#configurations input#url {
+  border: none;
+  border-radius: 10px;
+
+  padding: 15px;
+  margin-right: 20px;
+
+  background: rgba(255, 255, 255, 0.5);
+
+  text-align: center;
+  color: rgba(0, 0, 0, 0.753);
+}
+
+div#configurations button {
+  border-radius: 10px;
+
+  padding: 15px;
+
+  background: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.753);
+  transition: 0.1s;
+}
+
+div#configurations button:hover {
+  background-color: white;
+}
