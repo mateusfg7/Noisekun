@@ -21,6 +21,9 @@ body {
   font-family: "MuseoModerno", cursive;
   color: white;
 
+  background: fixed no-repeat center;
+  background-size: cover;
+  backdrop-filter: blur(1px);
   animation: background-change 300s 0s infinite;
 }
 
