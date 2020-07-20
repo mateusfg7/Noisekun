@@ -6,6 +6,7 @@ header.header {
   width: 100vw;
   height: 15vh;
 
+  backdrop-filter: blur(2px);
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.089);
 }
 
