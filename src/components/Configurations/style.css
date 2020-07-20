@@ -1,17 +1,40 @@
 div#configurations {
+  display: flex;
+  flex-direction: column;
+
+  padding: 5px;
   margin-top: 50px;
 }
 
-div#configurations input#url {
+div#configurations h4 {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+div#configurations div.fieldset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div#configurations div.fieldset span.fieldset-title {
   border: none;
-  border-radius: 10px;
+  border-radius: 10px 0 0 10px;
+
+  padding: 10px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  color: rgba(0, 0, 0, 0.575);
+}
+
+div#configurations div.fieldset input#url {
+  border: none;
+  border-radius: 0 10px 10px 0;
 
   padding: 15px;
-  margin-right: 20px;
 
   background: rgba(255, 255, 255, 0.5);
 
-  text-align: center;
   color: rgba(0, 0, 0, 0.753);
 }
 
@@ -19,6 +42,7 @@ div#configurations button {
   border-radius: 10px;
 
   padding: 15px;
+  margin-top: 5px;
 
   background: rgba(255, 255, 255, 0.5);
   color: rgba(0, 0, 0, 0.753);
@@ -26,5 +50,8 @@ div#configurations button {
 }
 
 div#configurations button:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+div#configurations button:active {
   background-color: white;
 }
