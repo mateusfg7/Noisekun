@@ -21,6 +21,9 @@ body {
   font-family: "MuseoModerno", cursive;
   color: white;
 
+  background: fixed no-repeat center;
+  background-size: cover;
+  backdrop-filter: brightness(0.7);
   animation: background-change 300s 0s infinite;
 }
 
@@ -32,7 +35,6 @@ div.main-section {
 
   min-height: 85vh;
   height: 100%;
-  /* border: 1px solid red; */
 }
 
 button {

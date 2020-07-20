@@ -8,6 +8,7 @@ import "./styles/global.css";
 import Header from "./components/Header";
 import Audios from "./components/Audios";
 import Sound from "./components/Sound";
+import Configurations from "./components/Configurations";
 import VolumeController from "./components/VolumeController";
 
 import changeStateOfAudio from "./functions/changeStateOfAudio";
@@ -23,6 +24,7 @@ function App() {
           changeStateOfAudio={changeStateOfAudio}
           env={environment}
         />
+        <Configurations />
       </div>
     </div>
   );
