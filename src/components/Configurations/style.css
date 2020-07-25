@@ -16,26 +16,25 @@ div#configurations div.fieldset {
   align-items: center;
 }
 
-div#configurations div.fieldset span.fieldset-title {
-  border: none;
-  border-radius: 10px 0 0 10px;
-
-  padding: 10px;
-
-  background: rgba(255, 255, 255, 0.7);
-
-  color: rgba(0, 0, 0, 0.575);
+div#configurations div.fieldset div.fieldset-content {
+  padding: 15px;
+  color: #39353b;
 }
 
-div#configurations div.fieldset input#url {
-  border: none;
+div#configurations div.fieldset div.fieldset-content-title {
+  border-radius: 10px 0 0 10px;
+
+  background: rgba(255, 255, 255, 0.7);
+}
+
+div#configurations div.fieldset div.fieldset-content-input {
   border-radius: 0 10px 10px 0;
 
-  padding: 15px;
-
   background: rgba(255, 255, 255, 0.5);
-
-  color: rgba(0, 0, 0, 0.753);
+}
+div#configurations div.fieldset input#url {
+  border: none;
+  background: none;
 }
 
 div#configurations button {

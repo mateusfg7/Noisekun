@@ -21,16 +21,20 @@ export default function Configurations() {
     <div id='configurations'>
       <h4>Background</h4>
       <div className='fieldset'>
-        <span className='fieldset-title'>url</span>
-        <input
-          type='text'
-          id='url'
-          name='url'
-          placeholder='png, jpeg, gif...'
-          onChange={(event) => {
-            setUrl(event.target.value);
-          }}
-        />
+        <div className='fieldset-content fieldset-content-title'>
+          <span>url</span>
+        </div>
+        <div className='fieldset-content fieldset-content-input'>
+          <input
+            type='text'
+            id='url'
+            name='url'
+            placeholder='png, jpeg, gif...'
+            onChange={(event) => {
+              setUrl(event.target.value);
+            }}
+          />
+        </div>
       </div>
       <button onClick={() => saveConfigs()}>SAVE</button>
     </div>
