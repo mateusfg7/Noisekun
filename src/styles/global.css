@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap");
 
 * {
   padding: 0;
@@ -18,7 +18,8 @@ input:focus {
 }
 
 body {
-  font-family: "MuseoModerno", cursive;
+  font-family: "Nunito", sans-serif;
+  font-weight: 300;
   color: white;
 
   background: fixed no-repeat center;

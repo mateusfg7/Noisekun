@@ -11,5 +11,6 @@ header.header {
 
 header.header h1 a {
   text-decoration: none;
+  font-weight: 700;
   color: rgba(255, 255, 255, 0.7);
 }
