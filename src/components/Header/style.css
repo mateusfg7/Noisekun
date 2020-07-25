@@ -3,7 +3,6 @@ header.header {
   justify-content: center;
   align-items: center;
 
-  width: 100vw;
   height: 15vh;
 
   backdrop-filter: blur(2px);
