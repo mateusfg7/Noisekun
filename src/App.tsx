@@ -17,15 +17,17 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <div className='main-section'>
+      <section className='main-section audio-section'>
         <Audios
           Sound={Sound}
           VolumeController={VolumeController}
           changeStateOfAudio={changeStateOfAudio}
           env={environment}
         />
+      </section>
+      <section className='main-section'>
         <Configurations />
-      </div>
+      </section>
     </div>
   );
 }

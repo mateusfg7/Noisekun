@@ -27,12 +27,14 @@ body {
   animation: background-change 300s 0s infinite;
 }
 
-div.main-section {
+section.main-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
+section.audio-section {
   min-height: 85vh;
   height: 100%;
 }
