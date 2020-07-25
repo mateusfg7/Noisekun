@@ -1,40 +1,44 @@
-div#configurations {
-  display: flex;
-  flex-direction: column;
-
-  padding: 5px;
-  margin-top: 50px;
+:root {
+  --transition: 1s;
 }
 
-div#configurations h4 {
-  color: rgba(255, 255, 255, 0.7);
+div#configurations {
+  position: fixed;
+  top: 0;
+  right: -300px;
+
+  height: 100%;
+
+  padding: 15px;
+
+  transition: var(--transition);
 }
 
 div#configurations div.fieldset {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* margin: 5px; */
 }
 
 div#configurations div.fieldset div.fieldset-content {
   padding: 15px;
+  text-align: center;
   color: #39353b;
 }
 
 div#configurations div.fieldset div.fieldset-content-title {
-  border-radius: 10px 0 0 10px;
-
+  border-radius: 10px 10px 0 0;
+  backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.7);
 }
 
 div#configurations div.fieldset div.fieldset-content-input {
-  border-radius: 0 10px 10px 0;
-
+  border-radius: 0 0 10px 10px;
+  backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.5);
 }
 div#configurations div.fieldset input#url {
   border: none;
   background: none;
+  text-align: center;
 }
 
 div#configurations button {
@@ -43,6 +47,9 @@ div#configurations button {
   padding: 15px;
   margin-top: 5px;
 
+  width: 100%;
+
+  backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.5);
   color: rgba(0, 0, 0, 0.753);
   transition: 0.1s;
@@ -50,7 +57,36 @@ div#configurations button {
 
 div#configurations button:hover {
   background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
 }
 div#configurations button:active {
   background-color: white;
+}
+
+#configButton {
+  display: none;
+}
+
+#configLabel {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+#configLabel:hover {
+  cursor: pointer;
+}
+
+#configLabel img {
+  width: 80px;
+  height: 80px;
+
+  transition: var(--transition);
+}
+
+#configButton:checked ~ #configLabel img {
+  transform: translateX(-200px) rotateZ(-150deg);
+}
+
+#configButton:checked ~ #configurations {
+  transform: translateX(-300px);
 }
