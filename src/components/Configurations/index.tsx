@@ -15,10 +15,16 @@ export default function Configurations() {
       localStorage.setItem("background_url", backgroundUrl);
     }
   }
+  function resetConfigs() {
+    setBackgroundUrl("");
+  }
 
   useEffect(() => {
     saveConfigs();
   }, []);
+  useEffect(() => {
+    saveConfigs();
+  }, [backgroundUrl]);
 
   return (
     <>
@@ -27,7 +33,7 @@ export default function Configurations() {
         <img src='/Noisekun/icons/config.svg' alt='Configurations' />
       </label>
       <div id='configurations'>
-        <BackgroundConfig setUrl={setBackgroundUrl} />
+        <BackgroundConfig url={backgroundUrl} setUrl={setBackgroundUrl} />
 
         <button onClick={() => saveConfigs()}>SAVE</button>
       </div>
