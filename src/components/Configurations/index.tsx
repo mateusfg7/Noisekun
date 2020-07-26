@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+
 import BackgroundConfig from "./configs/background";
 
 import "./style.css";
@@ -30,12 +33,12 @@ export default function Configurations() {
     <>
       <input type='checkbox' id='configButton' />
       <label htmlFor='configButton' id='configLabel'>
-        <img src='/Noisekun/icons/config.svg' alt='Configurations' />
+        <FontAwesomeIcon icon={faChevronLeft} />
       </label>
       <div id='configurations'>
         <BackgroundConfig url={backgroundUrl} setUrl={setBackgroundUrl} />
 
-        <button onClick={() => saveConfigs()}>SAVE</button>
+        <button onClick={() => resetConfigs()}>reset</button>
       </div>
     </>
   );
