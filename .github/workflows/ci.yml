@@ -21,3 +21,9 @@ jobs:
 
       - name: Test
         run: yarn test --coverage
+
+      - name: Check Linting
+        run: yarn lint
+
+      - name: Check commit message
+        run: yarn commitlint-travis
