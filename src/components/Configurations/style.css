@@ -53,7 +53,7 @@ div#configurations button {
 }
 
 div#configurations button:hover {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 200, 200, 0.5);
   backdrop-filter: blur(10px);
 }
 div#configurations button:active {
@@ -65,23 +65,32 @@ div#configurations button:active {
 }
 
 #configLabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   position: fixed;
   top: 2vh;
   right: 2vw;
-}
-#configLabel:hover {
-  cursor: pointer;
-}
 
-#configLabel img {
   width: 80px;
   height: 80px;
 
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 30px;
+
   transition: var(--transition);
+
+  /* border: 1px solid red; */
+}
+#configLabel:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
 }
 
-#configButton:checked ~ #configLabel img {
-  transform: translateX(-14vw) rotateZ(-150deg);
+#configButton:checked ~ #configLabel {
+  transform: translateX(-14vw) rotateY(-180deg);
+  color: rgba(255, 255, 255, 1);
 }
 
 #configButton:checked ~ #configurations {
