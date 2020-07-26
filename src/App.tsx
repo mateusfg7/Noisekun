@@ -25,9 +25,8 @@ function App() {
           env={environment}
         />
       </section>
-      <section className='main-section'>
-        <Configurations />
-      </section>
+      <Configurations />
+      {/* <section className='main-section'></section> */}
     </div>
   );
 }

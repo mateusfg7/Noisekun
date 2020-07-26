@@ -26,3 +26,8 @@ interface IVolumeController {
   audioObject: HTMLAudioElement | null;
   id: string;
 }
+
+interface IBackgroundConfig {
+  setUrl: React.Dispatch<React.SetStateAction<string>>;
+  url: string;
+}

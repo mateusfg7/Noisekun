@@ -1,40 +1,41 @@
+:root {
+  --transition: 1s;
+}
+
 div#configurations {
-  display: flex;
-  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: -300px;
 
-  padding: 5px;
-  margin-top: 50px;
-}
+  height: 100%;
+  min-width: 14vw;
 
-div#configurations h4 {
-  color: rgba(255, 255, 255, 0.7);
-}
+  padding: 15px;
 
-div#configurations div.fieldset {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transition: var(--transition);
 }
 
 div#configurations div.fieldset div.fieldset-content {
   padding: 15px;
+  text-align: center;
   color: #39353b;
 }
 
 div#configurations div.fieldset div.fieldset-content-title {
-  border-radius: 10px 0 0 10px;
-
+  border-radius: 10px 10px 0 0;
+  backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.7);
 }
 
 div#configurations div.fieldset div.fieldset-content-input {
-  border-radius: 0 10px 10px 0;
-
+  border-radius: 0 0 10px 10px;
+  backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.5);
 }
 div#configurations div.fieldset input#url {
   border: none;
   background: none;
+  text-align: center;
 }
 
 div#configurations button {
@@ -43,14 +44,53 @@ div#configurations button {
   padding: 15px;
   margin-top: 5px;
 
+  width: 100%;
+
+  backdrop-filter: blur(5px);
   background: rgba(255, 255, 255, 0.5);
   color: rgba(0, 0, 0, 0.753);
   transition: 0.1s;
 }
 
 div#configurations button:hover {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 200, 200, 0.5);
+  backdrop-filter: blur(10px);
 }
 div#configurations button:active {
   background-color: white;
+}
+
+#configButton {
+  display: none;
+}
+
+#configLabel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  top: 2vh;
+  right: 2vw;
+
+  width: 80px;
+  height: 80px;
+
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 30px;
+
+  transition: var(--transition);
+}
+#configLabel:hover {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#configButton:checked ~ #configLabel {
+  transform: translateX(-14vw) rotateY(-180deg);
+  color: rgba(255, 255, 255, 1);
+}
+
+#configButton:checked ~ #configurations {
+  transform: translateX(-300px);
 }
