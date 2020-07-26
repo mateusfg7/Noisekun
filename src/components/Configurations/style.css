@@ -8,14 +8,11 @@ div#configurations {
   right: -300px;
 
   height: 100%;
+  width: 14vw;
 
   padding: 15px;
 
   transition: var(--transition);
-}
-
-div#configurations div.fieldset {
-  /* margin: 5px; */
 }
 
 div#configurations div.fieldset div.fieldset-content {
@@ -69,8 +66,8 @@ div#configurations button:active {
 
 #configLabel {
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 2vh;
+  right: 2vw;
 }
 #configLabel:hover {
   cursor: pointer;
@@ -84,7 +81,7 @@ div#configurations button:active {
 }
 
 #configButton:checked ~ #configLabel img {
-  transform: translateX(-200px) rotateZ(-150deg);
+  transform: translateX(-14vw) rotateZ(-150deg);
 }
 
 #configButton:checked ~ #configurations {
