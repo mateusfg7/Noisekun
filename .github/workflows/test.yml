@@ -1,0 +1,23 @@
+name: Test
+
+on:
+	pull_resquest:
+		branches:
+		- master
+
+
+jobs:
+	build:
+		runs_on: ubuntu-latest
+
+		steps:
+		- uses: actions/checkout@v2
+
+		- name: Install Node.js
+			uses: actions/setup-node@v1
+			with:
+				node-version: 12.x
+		- run: yarn
+		- run: yarn test
+			env:
+				CI: true
