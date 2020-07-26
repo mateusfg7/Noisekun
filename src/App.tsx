@@ -17,7 +17,6 @@ function App() {
   return (
     <div className='App'>
       <Header />
-      <Configurations />
       <section className='main-section audio-section'>
         <Audios
           Sound={Sound}
@@ -26,6 +25,7 @@ function App() {
           env={environment}
         />
       </section>
+      <Configurations />
       {/* <section className='main-section'></section> */}
     </div>
   );

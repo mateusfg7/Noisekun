@@ -5,6 +5,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import BackgroundConfig from "./configs/background";
 
 import "./style.css";
+import "./mobile-style.css";
 
 export default function Configurations() {
   const [backgroundUrl, setBackgroundUrl] = useState(
