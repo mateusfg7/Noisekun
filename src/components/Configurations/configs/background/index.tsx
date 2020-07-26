@@ -2,7 +2,7 @@ import React from "react";
 
 // import { Container } from './styles';
 
-const BackgroundConfig: React.FC<IBackgroundConfig> = ({ setUrl }) => {
+const BackgroundConfig: React.FC<IBackgroundConfig> = ({ setUrl, url }) => {
   return (
     <>
       <div className='fieldset'>
@@ -15,6 +15,7 @@ const BackgroundConfig: React.FC<IBackgroundConfig> = ({ setUrl }) => {
             id='url'
             name='url'
             placeholder='png, jpeg, gif...'
+            value={url}
             onChange={(event) => {
               setUrl(event.target.value);
             }}
