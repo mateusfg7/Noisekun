@@ -1,13 +1,13 @@
 name: Test
 
 on:
-  pull_resquest:
+  pull-request:
     branches:
       - master
 
 jobs:
   build:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
