@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import "./style.css";
+import './style.css';
 
 export default function Sound({
   name,
@@ -11,14 +11,14 @@ export default function Sound({
   const [state, setState] = useState(false);
 
   return (
-    <div className='sound-component'>
+    <div className="sound-component">
       <audio loop preload="true" id={name}>
-        <source src={`${env.HOST}/webm/${name}`} type='audio/webm' />
-        <source src={`${env.HOST}/mp3/${name}`} type='audio/mp3' />
+        <source src={`${env.HOST}/webm/${name}`} type="audio/webm" />
+        <source src={`${env.HOST}/mp3/${name}`} type="audio/mp3" />
       </audio>
 
       <div
-        className='sound-button'
+        className="sound-button"
         id={`${name}-button`}
         onClick={() => {
           const audio = document.querySelector<HTMLAudioElement>(`#${name}`);
