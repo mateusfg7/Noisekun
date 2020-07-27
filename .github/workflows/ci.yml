@@ -6,8 +6,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Checkout repository
@@ -28,6 +26,3 @@ jobs:
 
       - name: Check Linting
         run: yarn lint
-
-      - name: Check commit message
-        uses: wagoid/commitlint-github-action@v1
