@@ -1,6 +1,7 @@
-import dotenv from "dotenv";
+import dotenv from 'dotenv';
+
 dotenv.config();
 
-const HOST = "https://noisekun-server.herokuapp.com";
+const HOST = 'https://noisekun-server.herokuapp.com';
 
 export { HOST };
