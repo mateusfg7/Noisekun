@@ -28,6 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "lint": "eslint src --ext ts,tsx",
     "eject": "react-scripts eject",
     "predeploy": "yarn run build --profile",
     "deploy": "gh-pages -d build"
