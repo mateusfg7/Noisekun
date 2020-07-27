@@ -1,23 +1,23 @@
-import React from "react";
+import React from 'react';
 
-import * as environment from "./services/defaultVariables";
+import * as environment from './services/defaultVariables';
 
-import "./styles/effects.css";
-import "./styles/global.css";
+import './styles/effects.css';
+import './styles/global.css';
 
-import Header from "./components/Header";
-import Audios from "./components/Audios";
-import Sound from "./components/Sound";
-import Configurations from "./components/Configurations";
-import VolumeController from "./components/VolumeController";
+import Header from './components/Header';
+import Audios from './components/Audios';
+import Sound from './components/Sound';
+import Configurations from './components/Configurations';
+import VolumeController from './components/VolumeController';
 
-import changeStateOfAudio from "./functions/changeStateOfAudio";
+import changeStateOfAudio from './functions/changeStateOfAudio';
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       <Header />
-      <section className='main-section audio-section'>
+      <section className="main-section audio-section">
         <Audios
           Sound={Sound}
           VolumeController={VolumeController}

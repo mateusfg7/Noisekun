@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "./styles.css";
+import './styles.css';
 
 export default function Audios({
   Sound,
@@ -9,93 +9,93 @@ export default function Audios({
   env,
 }: IAudios) {
   return (
-    <div className='audios'>
+    <div className="audios">
       <Sound
-        name='rain'
+        name="rain"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='storm'
+        name="storm"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='wind'
+        name="wind"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='water'
+        name="water"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='ocean-waves'
+        name="ocean-waves"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='small-waves'
+        name="small-waves"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='forest-ambience'
+        name="forest-ambience"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='leafs'
+        name="leafs"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='fire'
+        name="fire"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='night'
+        name="night"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='coffee'
+        name="coffee"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='fan'
+        name="fan"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='train'
+        name="train"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='air-plane'
+        name="air-plane"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}
       />
       <Sound
-        name='underwater'
+        name="underwater"
         changeStateOfAudio={changeStateOfAudio}
         VolumeController={VolumeController}
         env={env}

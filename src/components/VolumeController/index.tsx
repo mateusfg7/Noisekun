@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import "./style.css";
+import './style.css';
 
 const VolumeControler: React.FC<IVolumeController> = ({ audioObject, id }) => {
   const changeVolume = (
@@ -16,12 +16,12 @@ const VolumeControler: React.FC<IVolumeController> = ({ audioObject, id }) => {
 
   return (
     <input
-      type='range'
-      name='audio-decrement'
-      className='audio-controller'
+      type="range"
+      name="audio-decrement"
+      className="audio-controller"
       id={id}
-      min='1'
-      max='1000'
+      min="1"
+      max="1000"
       value={rangeValue}
       onChange={(event) => {
         setRangeValue(Number(event.target.value));

@@ -10,16 +10,14 @@ export default function changeStateOfAudio(
       audio.play();
       setStateOfAudio(true);
     }
-  } else {
-    if (audio) {
-      audio.pause();
-      setStateOfAudio(false);
-    }
+  } else if (audio) {
+    audio.pause();
+    setStateOfAudio(false);
   }
   if (button) {
-    button.classList.toggle("selected");
+    button.classList.toggle('selected');
   }
   if (audioCotroller) {
-    audioCotroller.classList.toggle("selected");
+    audioCotroller.classList.toggle('selected');
   }
 }
