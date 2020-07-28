@@ -9,15 +9,15 @@ interface IEnv {
 interface IAudios {
   Sound: React.FC<ISound>;
   VolumeController: React.FC<IVolumeController>;
-  changeStateOfAudio: Function;
+  changeStateOfAudio: CallableFunction;
   env: IEnv;
 }
 
 // Sound Comonent
 interface ISound {
   name: string;
-  changeStateOfAudio: Function;
-  VolumeController: Function;
+  changeStateOfAudio: CallableFunction;
+  VolumeController: CallableFunction;
   env: IEnv;
 }
 

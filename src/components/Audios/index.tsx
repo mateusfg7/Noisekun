@@ -7,7 +7,7 @@ export default function Audios({
   VolumeController,
   changeStateOfAudio,
   env,
-}: IAudios) {
+}: IAudios): JSX.Element {
   return (
     <div className="audios">
       <Sound

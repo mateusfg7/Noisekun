@@ -13,7 +13,7 @@ import VolumeController from './components/VolumeController';
 
 import changeStateOfAudio from './functions/changeStateOfAudio';
 
-function App() {
+function App(): JSX.Element {
   return (
     <div className="App">
       <Header />
@@ -26,7 +26,6 @@ function App() {
         />
       </section>
       <Configurations />
-      {/* <section className='main-section'></section> */}
     </div>
   );
 }

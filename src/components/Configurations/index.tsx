@@ -7,7 +7,7 @@ import BackgroundConfig from './configs/background';
 import './style.css';
 import './mobile-style.css';
 
-export default function Configurations() {
+export default function Configurations(): JSX.Element {
   const [backgroundUrl, setBackgroundUrl] = useState(
     localStorage.getItem('background_url') ?? ''
   );
@@ -39,7 +39,9 @@ export default function Configurations() {
       <div id="configurations">
         <BackgroundConfig url={backgroundUrl} setUrl={setBackgroundUrl} />
 
-        <button onClick={() => resetConfigs()}>reset</button>
+        <button onClick={() => resetConfigs()} type="button">
+          reset
+        </button>
       </div>
     </>
   );

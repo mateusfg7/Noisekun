@@ -7,7 +7,7 @@ export default function Sound({
   changeStateOfAudio,
   VolumeController,
   env,
-}: ISound) {
+}: ISound): JSX.Element {
   const [state, setState] = useState(false);
 
   return (

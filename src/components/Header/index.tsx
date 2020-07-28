@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.css';
 
-export default function Header() {
+export default function Header(): JSX.Element {
   return (
     <header className="header">
       <h1>

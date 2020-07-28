@@ -4,4 +4,4 @@ dotenv.config();
 
 const HOST = 'https://noisekun-server.herokuapp.com';
 
-export { HOST };
+export default { HOST };

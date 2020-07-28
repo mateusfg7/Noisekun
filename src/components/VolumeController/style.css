@@ -1,4 +1,4 @@
-input[type="range"].audio-controller {
+input[type='range'].audio-controller {
   opacity: 0;
 
   appearance: none;
@@ -13,7 +13,7 @@ input[type="range"].audio-controller {
 
 /* MARKER */
 /* Chrome/Safari/Opera */
-input[type="range"].audio-controller::-webkit-slider-thumb {
+input[type='range'].audio-controller::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 13px;
   width: 13px;
@@ -25,7 +25,7 @@ input[type="range"].audio-controller::-webkit-slider-thumb {
 }
 
 /* Firefox */
-input[type="range"].audio-controller::-moz-range-thumb {
+input[type='range'].audio-controller::-moz-range-thumb {
   height: 13px;
   width: 13px;
 
@@ -36,7 +36,7 @@ input[type="range"].audio-controller::-moz-range-thumb {
 }
 
 /* IE */
-input[type="range"].audio-controller::-ms-thumb {
+input[type='range'].audio-controller::-ms-thumb {
   height: 13px;
   width: 13px;
 
@@ -46,6 +46,6 @@ input[type="range"].audio-controller::-ms-thumb {
   border-radius: 100%;
 }
 
-input[type="range"].audio-controller.selected {
+input[type='range'].audio-controller.selected {
   opacity: 1;
 }
