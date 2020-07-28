@@ -23,6 +23,3 @@ jobs:
 
       - name: Check tests
         run: yarn test --coverage
-
-      - name: Check Linting
-        run: yarn lint
