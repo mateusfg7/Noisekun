@@ -1,10 +1,14 @@
-# Noisekun :headphones:
+<div align="center">
 
-_Listen combinations of sounds for **relaxing** or getting more **productive** on your task!_
+# ![Noisekun :headphones:](.github/docs/favicon.png)
 
-[![fail](.github/docs/page.gif)](https://mateusfg7.github.io/Noisekun/)
+### _Listen combinations of ambient sounds for **relaxing** or getting more **productive** on your task!_
 
-[![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=for-the-badge&color=%2342fc3c)](https://www.codefactor.io/repository/github/mateusfg7/noisekun)![Bugs](https://img.shields.io/github/issues/mateusfg7/Noisekun/bug?color=%23fc3f3c&style=for-the-badge)![Enhancement](https://img.shields.io/github/issues/mateusfg7/Noisekun/enhancement?color=%233c5ffc&style=for-the-badge)![CleanCode](https://img.shields.io/github/issues/mateusfg7/Noisekun/clean%20code?color=%233cbffc&style=for-the-badge)
+[![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=for-the-badge&color=%2342fc3c)](https://www.codefactor.io/repository/github/mateusfg7/noisekun)![Bugs](https://img.shields.io/github/issues/mateusfg7/Noisekun/bug?color=%23fc3f3c&style=for-the-badge)![Enhancement](https://img.shields.io/github/issues/mateusfg7/Noisekun/enhancement?color=%233c5ffc&style=for-the-badge)
+
+</div>
+
+---
 
 [Front-end](https://github.com/mateusfg7/Noisekun) made with ReactJS and Typescript.
 
@@ -13,16 +17,24 @@ _Listen combinations of sounds for **relaxing** or getting more **productive** o
 To add your own back-end, change the host in `defaultVariables.ts`, on line 4:
 
 ```javascript
-const HOST = "https://noisekun-server.herokuapp.com";
+const HOST = 'https://noisekun-server.herokuapp.com';
 ```
 
 _e.g:_
 
 ```javascript
-const HOST = "http://0.0.0.0:8000";
+const HOST = 'http://0.0.0.0:8000';
 ```
 
 > default back-end host: https://noisekun-server.herokuapp.com
+
+---
+
+## Screenshots
+
+| [![fail](.github/docs/screenshot1.png)](https://mateusfg7.github.io/Noisekun/) | [![fail](.github/docs/screenshot2.png)](https://mateusfg7.github.io/Noisekun/) |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| [![fail](.github/docs/screenshot3.png)](https://mateusfg7.github.io/Noisekun/) | [![fail](.github/docs/screenshot4.png)](https://mateusfg7.github.io/Noisekun/) |
 
 ---
 
