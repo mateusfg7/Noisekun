@@ -9,10 +9,12 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: wagoid/commitlint-github-action@v1
+      - name: Check Commit Lint
+        uses: wagoid/commitlint-github-action@v1
 
   build:
     runs-on: ubuntu-latest
