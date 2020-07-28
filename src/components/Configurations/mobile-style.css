@@ -20,6 +20,7 @@
 @media (max-width: 750px) {
   div#configurations {
     position: relative;
+    right: 0;
 
     max-width: 250px;
 
