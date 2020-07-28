@@ -13,20 +13,8 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-
-      - name: Set up Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-
-      - name: Install dependencies
-        run: yarn
-
       - name: Check Commit Lint
         uses: wagoid/commitlint-github-action@v1
-
-      - name: Check Code Lint
-        uses: yarn lint
 
   build:
     runs-on: ubuntu-latest
