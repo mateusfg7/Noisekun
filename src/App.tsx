@@ -1,6 +1,6 @@
 import React from 'react';
 
-import * as environment from './services/defaultVariables';
+import environment from './services/defaultVariables';
 
 import './styles/effects.css';
 import './styles/global.css';
