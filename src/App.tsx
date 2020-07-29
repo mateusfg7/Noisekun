@@ -10,6 +10,7 @@ import Audios from './components/Audios';
 import Sound from './components/Sound';
 import Configurations from './components/Configurations';
 import VolumeController from './components/VolumeController';
+import Footer from './components/Footer';
 
 import changeStateOfAudio from './functions/changeStateOfAudio';
 
@@ -26,6 +27,7 @@ function App(): JSX.Element {
         />
       </section>
       <Configurations />
+      <Footer />
     </div>
   );
 }
