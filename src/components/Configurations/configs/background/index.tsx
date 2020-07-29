@@ -14,7 +14,7 @@ const BackgroundConfig: React.FC<IBackgroundConfig> = ({ setUrl, url }) => {
             type="text"
             id="url"
             name="url"
-            placeholder="png, jpeg, gif..."
+            placeholder="wallpaper url"
             value={url}
             onChange={(event) => {
               setUrl(event.target.value);
