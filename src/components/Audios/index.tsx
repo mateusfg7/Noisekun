@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './styles.css';
+import { AudiosBlock } from './styles';
 
 export default function Audios({
   Sound,
@@ -9,7 +9,7 @@ export default function Audios({
   env,
 }: IAudios): JSX.Element {
   return (
-    <div className="audios">
+    <AudiosBlock>
       <Sound
         name="rain"
         changeStateOfAudio={changeStateOfAudio}
@@ -100,6 +100,6 @@ export default function Audios({
         VolumeController={VolumeController}
         env={env}
       />
-    </div>
+    </AudiosBlock>
   );
 }
