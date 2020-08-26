@@ -1,13 +1,13 @@
 import React from 'react';
 
-import './style.css';
+import { LocalHeader } from './styles';
 
 export default function Header(): JSX.Element {
   return (
-    <header className="header">
+    <LocalHeader>
       <h1>
         <a href="/Noisekun">Noisekun</a>
       </h1>
-    </header>
+    </LocalHeader>
   );
 }
