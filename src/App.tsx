@@ -3,7 +3,7 @@ import React from 'react';
 import environment from './services/defaultVariables';
 
 import './styles/effects.css';
-import './styles/global.css';
+import GlobalStyle from './styles/global';
 
 import Header from './components/Header';
 import Audios from './components/Audios';
@@ -17,6 +17,8 @@ import changeStateOfAudio from './functions/changeStateOfAudio';
 function App(): JSX.Element {
   return (
     <div className="App">
+      <GlobalStyle />
+
       <Header />
       <section className="main-section audio-section">
         <Audios
