@@ -2,7 +2,6 @@ import React from 'react';
 
 import environment from './services/defaultVariables';
 
-import './styles/effects.css';
 import GlobalStyle from './styles/global';
 
 import Header from './components/Header';
