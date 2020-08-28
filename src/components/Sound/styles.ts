@@ -1,4 +1,6 @@
-div.sound-component {
+import styled from 'styled-components';
+
+export const SoundComponent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,9 +8,9 @@ div.sound-component {
 
   width: 100px;
   height: 100px;
-}
+`;
 
-div.sound-button {
+export const SoundButton = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,11 +21,13 @@ div.sound-button {
   opacity: 0.5;
 
   transition: 0.1s;
-}
-div.sound-button:hover {
-  cursor: pointer;
-  opacity: 0.8;
-}
-div.sound-button.selected {
-  opacity: 1;
-}
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  &.selected {
+    opacity: 1;
+  }
+`;
