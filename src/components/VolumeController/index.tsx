@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import './style.css';
+import { VolumeControllerInput } from './styles';
 
 const VolumeControler: React.FC<IVolumeController> = ({ audioObject, id }) => {
   const changeVolume = (
@@ -15,10 +15,9 @@ const VolumeControler: React.FC<IVolumeController> = ({ audioObject, id }) => {
   const [rangeValue, setRangeValue] = useState(1000);
 
   return (
-    <input
+    <VolumeControllerInput
       type="range"
       name="audio-decrement"
-      className="audio-controller"
       id={id}
       min="1"
       max="1000"
