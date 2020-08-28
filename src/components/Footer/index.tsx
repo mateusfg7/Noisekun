@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './style.css';
+import { FooterSection } from './styles';
 
 export default function Footer(): JSX.Element {
   return (
-    <footer className="footer">
+    <FooterSection>
       <div>
         <p>
           by{' '}
@@ -22,6 +22,6 @@ export default function Footer(): JSX.Element {
           </a>
         </p>
       </div>
-    </footer>
+    </FooterSection>
   );
 }

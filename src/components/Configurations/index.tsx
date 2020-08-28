@@ -4,8 +4,7 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import BackgroundConfig from './configs/background';
 
-import './style.css';
-import './mobile-style.css';
+import { ConfigButton, ConfigLabel, ConfigurationsList } from './styles';
 
 export default function Configurations(): JSX.Element {
   const [backgroundUrl, setBackgroundUrl] = useState(
@@ -32,17 +31,17 @@ export default function Configurations(): JSX.Element {
 
   return (
     <>
-      <input type="checkbox" id="configButton" />
-      <label htmlFor="configButton" id="configLabel">
+      <ConfigButton type="checkbox" id="config-button" />
+      <ConfigLabel htmlFor="config-button">
         <FontAwesomeIcon icon={faChevronLeft} />
-      </label>
-      <div id="configurations">
+      </ConfigLabel>
+      <ConfigurationsList className="configurations-list">
         <BackgroundConfig url={backgroundUrl} setUrl={setBackgroundUrl} />
 
         <button onClick={() => resetConfigs()} type="button">
           reset
         </button>
-      </div>
+      </ConfigurationsList>
     </>
   );
 }
