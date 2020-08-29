@@ -1,8 +1,11 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 
 import environment from './services/defaultVariables';
 
 import GlobalStyle from './styles/global';
+
+import default_theme from './styles/themes/default';
 
 import Header from './components/Header';
 import Audios from './components/Audios';
@@ -15,21 +18,23 @@ import changeStateOfAudio from './functions/changeStateOfAudio';
 
 function App(): JSX.Element {
   return (
-    <div className="App">
-      <GlobalStyle />
+    <ThemeProvider theme={default_theme}>
+      <div className="App">
+        <GlobalStyle />
 
-      <Header />
-      <section className="main-section audio-section">
-        <Audios
-          Sound={Sound}
-          VolumeController={VolumeController}
-          changeStateOfAudio={changeStateOfAudio}
-          env={environment}
-        />
-      </section>
-      <Configurations />
-      <Footer />
-    </div>
+        <Header />
+        <section className="main-section audio-section">
+          <Audios
+            Sound={Sound}
+            VolumeController={VolumeController}
+            changeStateOfAudio={changeStateOfAudio}
+            env={environment}
+          />
+        </section>
+        <Configurations />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 
