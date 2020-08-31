@@ -20,19 +20,19 @@ export const ConfigLabel = styled.label`
   width: 80px;
   height: 80px;
 
-  color: rgba(255, 255, 255, 0.5);
+  color: ${(props) => props.theme.colors.config.arrow_button.color};
   font-size: 30px;
 
   transition: 1s;
 
   &:hover {
     cursor: pointer;
-    color: rgba(255, 255, 255, 0.7);
+    color: ${(props) => props.theme.colors.config.arrow_button.hover};
   }
 
   ${ConfigButton}:checked ~ & {
     transform: translateX(-14vw) rotateY(-180deg);
-    color: rgba(255, 255, 255, 1);
+    color: ${(props) => props.theme.colors.config.arrow_button.checked};
   }
 
   @media (max-width: 1100px) {
@@ -41,7 +41,7 @@ export const ConfigLabel = styled.label`
     ${ConfigButton}:checked ~ & {
       transform: rotateY(-180deg);
       left: 0;
-      color: rgba(255, 255, 255, 1);
+      color: ${(props) => props.theme.colors.config.arrow_button.checked};
     }
   }
   @media (max-width: 750px) {
@@ -65,19 +65,21 @@ export const ConfigurationsList = styled.div`
     div.fieldset-content {
       padding: 15px;
       text-align: center;
-      color: #39353b;
+      color: ${(props) => props.theme.colors.config.fieldset.color};
     }
 
     div.fieldset-content-title {
       border-radius: 10px 10px 0 0;
       backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.7);
+      background: ${(props) =>
+        props.theme.colors.config.fieldset.title_background};
     }
 
     div.fieldset-content-input {
       border-radius: 0 0 10px 10px;
       backdrop-filter: blur(5px);
-      background: rgba(255, 255, 255, 0.5);
+      background: ${(props) =>
+        props.theme.colors.config.fieldset.input_background};
     }
 
     input#url {
@@ -96,17 +98,18 @@ export const ConfigurationsList = styled.div`
     width: 100%;
 
     backdrop-filter: blur(5px);
-    background: rgba(255, 255, 255, 0.5);
-    color: rgba(0, 0, 0, 0.753);
+    background: ${(props) => props.theme.colors.config.reset_button.background};
+    color: ${(props) => props.theme.colors.config.reset_button.color};
     transition: 0.1s;
   }
 
   button:hover {
-    background-color: rgba(255, 200, 200, 0.5);
+    background: ${(props) => props.theme.colors.config.reset_button.hover};
     backdrop-filter: blur(10px);
   }
   button:active {
-    background-color: white;
+    background-color: ${(props) =>
+      props.theme.colors.config.reset_button.active.desktop};
   }
 
   ${ConfigButton}:checked ~ & {
@@ -144,7 +147,8 @@ export const ConfigurationsList = styled.div`
         border-radius: 0 0 10px 10px;
 
         backdrop-filter: blur(5px);
-        background: rgba(255, 255, 255, 0.5);
+        background: ${(props) =>
+          props.theme.colors.config.fieldset.input_background};
       }
     }
 
@@ -155,12 +159,13 @@ export const ConfigurationsList = styled.div`
 
       height: 50px;
 
-      background: rgba(255, 200, 200, 0.5);
-      color: rgba(0, 0, 0, 0.753);
+      background: ${(props) => props.theme.colors.config.reset_button.hover};
+      color: ${(props) => props.theme.colors.config.reset_button.color};
     }
 
     button:active {
-      background-color: rgba(255, 200, 200, 0.8);
+      background-color: ${(props) =>
+        props.theme.colors.config.reset_button.active.mobile};
       backdrop-filter: blur(10px);
     }
   }
