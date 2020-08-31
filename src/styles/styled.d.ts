@@ -34,6 +34,15 @@ declare module 'styled-components' {
           };
         };
       };
+      sound: {
+        color: string;
+        hover: string;
+        selected: string;
+      };
+      volume_controller: {
+        background: string;
+        thumb: string;
+      };
     };
   }
 }
