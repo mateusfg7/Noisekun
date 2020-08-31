@@ -31,5 +31,14 @@ export default {
         },
       },
     },
+    sound: {
+      color: 'rgba(255, 255, 255, 0.5)',
+      hover: 'rgba(255, 255, 255, 0.8)',
+      selected: 'rgba(255, 255, 255, 1)',
+    },
+    volume_controller: {
+      background: 'rgba(255,255,255,1)',
+      thumb: 'rgba(255,255,255,1)',
+    },
   },
 };
