@@ -8,6 +8,24 @@ export default function Sound({
   VolumeController,
   env,
 }: ISound): JSX.Element {
+  const icons: { [index: string]: string } = {
+    rain: 'icofont-rainy',
+    storm: 'icofont-rainy-thunder',
+    wind: 'icofont-wind',
+    water: 'icofont-water-drop',
+    'ocean-waves': 'icofont-wind-waves',
+    'small-waves': 'icofont-wave',
+    'forest-ambience': 'icofont-tree-alt',
+    leafs: 'icofont-leaf',
+    fire: 'icofont-fire-burn',
+    night: 'icofont-night',
+    coffee: 'icofont-coffee-mug',
+    fan: 'icofont-headphone',
+    train: 'icofont-train-line',
+    'air-plane': 'icofont-airplane',
+    underwater: 'icofont-swimmer',
+  };
+
   const [state, setState] = useState(false);
 
   return (
@@ -28,7 +46,7 @@ export default function Sound({
           changeStateOfAudio(audio, state, setState, button, audioController);
         }}
       >
-        <img src={`/Noisekun/icons/${name}.svg`} alt={name} />
+        <i className={`${icons[name]} icons`} />
       </SoundButton>
 
       <VolumeController

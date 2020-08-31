@@ -18,16 +18,20 @@ export const SoundButton = styled.div`
   width: 100px;
   height: 100px;
 
-  opacity: 0.5;
+  color: rgba(255, 255, 255, 0.5);
 
   transition: 0.1s;
 
   &:hover {
     cursor: pointer;
-    opacity: 0.8;
+    color: rgba(255, 255, 255, 0.8);
   }
 
   &.selected {
-    opacity: 1;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .icons {
+    font-size: 80px;
   }
 `;
