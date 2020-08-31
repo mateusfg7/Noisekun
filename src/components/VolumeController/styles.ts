@@ -8,7 +8,7 @@ export const VolumeControllerInput = styled.input`
   width: 100%;
   height: 2px;
 
-  background: white;
+  background: ${(props) => props.theme.colors.volume_controller.background};
 
   cursor: pointer;
 
@@ -19,7 +19,7 @@ export const VolumeControllerInput = styled.input`
     height: 13px;
     width: 13px;
 
-    background: white;
+    background: ${(props) => props.theme.colors.volume_controller.thumb};
 
     border: none;
     border-radius: 100%;
@@ -30,7 +30,7 @@ export const VolumeControllerInput = styled.input`
     height: 13px;
     width: 13px;
 
-    background: white;
+    background: ${(props) => props.theme.colors.volume_controller.thumb};
 
     border: none;
     border-radius: 100%;
@@ -41,7 +41,7 @@ export const VolumeControllerInput = styled.input`
     height: 13px;
     width: 13px;
 
-    background: white;
+    background: ${(props) => props.theme.colors.volume_controller.thumb};
 
     border: none;
     border-radius: 100%;
