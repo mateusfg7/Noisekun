@@ -6,6 +6,7 @@ import environment from './services/defaultVariables';
 import GlobalStyle from './styles/global';
 
 import default_theme from './styles/themes/default';
+import dark_theme from './styles/themes/dark';
 
 import Header from './components/Header';
 import Audios from './components/Audios';
