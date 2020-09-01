@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 
 import { VolumeControllerInput } from './styles';
 
-const VolumeControler: React.FC<IVolumeController> = ({ audioObject, id }) => {
+const VolumeControler: React.FC<IVolumeController> = ({
+  audioObject,
+  id,
+  state,
+}) => {
   const changeVolume = (
     audio: HTMLAudioElement | null,
     value: number
@@ -16,6 +20,7 @@ const VolumeControler: React.FC<IVolumeController> = ({ audioObject, id }) => {
 
   return (
     <VolumeControllerInput
+      className={state ? 'selected' : ''}
       type="range"
       name="audio-decrement"
       id={id}
