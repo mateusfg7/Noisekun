@@ -1,5 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import usePersistedState from './utils/usePersistedState';
 
 import environment from './services/defaultVariables';
 
@@ -18,6 +19,8 @@ import Footer from './components/Footer';
 import changeStateOfAudio from './functions/changeStateOfAudio';
 
 function App(): JSX.Element {
+  const [theme, setTheme] = usePersistedState('theme', default_theme);
+
   return (
     <ThemeProvider theme={default_theme}>
       <div className="App">
