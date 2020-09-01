@@ -25,6 +25,7 @@ interface ISound {
 interface IVolumeController {
   audioObject: HTMLAudioElement | null;
   id: string;
+  state: boolean;
 }
 
 // Configurations component
