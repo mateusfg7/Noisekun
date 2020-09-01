@@ -7,7 +7,7 @@ export const LocalHeader = styled.header`
 
   height: 15vh;
 
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(10px);
   background: ${(props) => props.theme.colors.header.background};
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.089);
 
