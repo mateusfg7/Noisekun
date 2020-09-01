@@ -27,6 +27,11 @@ interface IVolumeController {
   id: string;
 }
 
+// Configurations component
+interface IConfigurations {
+  toggleTheme(): void;
+}
+
 // Background Config
 interface IBackgroundConfig {
   setUrl: React.Dispatch<React.SetStateAction<string>>;
@@ -34,10 +39,6 @@ interface IBackgroundConfig {
 }
 
 // Theme Config
-interface IToogleThemeConfig {
-  toogleTheme: (newTheme: DefaultTheme) => void;
-  themeList: {
-    default: DefaultTheme;
-    dark: DefaultTheme;
-  };
+interface IThemeConfig {
+  toggleTheme(): void;
 }
