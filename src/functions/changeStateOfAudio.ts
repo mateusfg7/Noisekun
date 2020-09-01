@@ -1,9 +1,7 @@
 export default function changeStateOfAudio(
   audio: HTMLAudioElement | null,
   stateOfAudio: boolean,
-  setStateOfAudio: React.Dispatch<React.SetStateAction<boolean>>,
-  button: HTMLElement | null,
-  audioCotroller: Element | null
+  setStateOfAudio: React.Dispatch<React.SetStateAction<boolean>>
 ): void {
   if (!stateOfAudio) {
     if (audio) {
@@ -13,11 +11,5 @@ export default function changeStateOfAudio(
   } else if (audio) {
     audio.pause();
     setStateOfAudio(false);
-  }
-  if (button) {
-    button.classList.toggle('selected');
-  }
-  if (audioCotroller) {
-    audioCotroller.classList.toggle('selected');
   }
 }
