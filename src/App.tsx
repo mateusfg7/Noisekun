@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, DefaultTheme } from 'styled-components';
 import usePersistedState from './utils/usePersistedState';
 
 import environment from './services/defaultVariables';
@@ -21,12 +21,12 @@ import changeStateOfAudio from './functions/changeStateOfAudio';
 function App(): JSX.Element {
   const [theme, setTheme] = usePersistedState('theme', default_theme);
 
-  const toggleTheme = () => {
-    setTheme(theme.title === 'defaut' ? dark_theme : default_theme);
+  const toggleTheme = (newTheme: DefaultTheme) => {
+    setTheme(newTheme);
   };
 
   return (
-    <ThemeProvider theme={default_theme}>
+    <ThemeProvider theme={theme}>
       <div className="App">
         <GlobalStyle />
 
