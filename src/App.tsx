@@ -6,8 +6,8 @@ import environment from './services/defaultVariables';
 
 import GlobalStyle from './styles/global';
 
-import default_theme from './styles/themes/default';
-import dark_theme from './styles/themes/dark';
+import light from './styles/themes/light';
+import dark from './styles/themes/dark';
 
 import Header from './components/Header';
 import Audios from './components/Audios';
@@ -19,14 +19,10 @@ import Footer from './components/Footer';
 import changeStateOfAudio from './functions/changeStateOfAudio';
 
 function App(): JSX.Element {
-  const [theme, setTheme] = usePersistedState('theme', default_theme);
+  const [theme, setTheme] = usePersistedState('theme', light);
 
-  const toggleTheme = (newTheme: DefaultTheme) => {
-    setTheme(newTheme);
-  };
-  const themes = {
-    default: default_theme,
-    dark: dark_theme,
+  const toggleTheme = () => {
+    setTheme(theme.title === 'light' ? dark : light);
   };
 
   return (
@@ -43,7 +39,7 @@ function App(): JSX.Element {
             env={environment}
           />
         </section>
-        <Configurations />
+        <Configurations toggleTheme={toggleTheme} />
         <Footer />
       </div>
     </ThemeProvider>
