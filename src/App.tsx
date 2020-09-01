@@ -21,6 +21,10 @@ import changeStateOfAudio from './functions/changeStateOfAudio';
 function App(): JSX.Element {
   const [theme, setTheme] = usePersistedState('theme', default_theme);
 
+  const toggleTheme = () => {
+    setTheme(theme.title === 'defaut' ? dark_theme : default_theme);
+  };
+
   return (
     <ThemeProvider theme={default_theme}>
       <div className="App">
