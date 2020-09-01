@@ -4,7 +4,7 @@ export default {
   colors: {
     header: {
       text: 'rgba(255, 255, 255, 0.7)',
-      background: 'none',
+      background: 'rgba(255, 255, 255, 0.1)',
     },
     footer: {
       text: 'rgba(255,255,255,1)',
