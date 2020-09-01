@@ -86,7 +86,12 @@ export const ConfigurationsList = styled.div`
       border: none;
       background: none;
       text-align: center;
+      color: ${(props) => props.theme.colors.config.fieldset.color};
     }
+  }
+
+  div.fieldset + div.fieldset {
+    margin-top: 5px;
   }
 
   button {
