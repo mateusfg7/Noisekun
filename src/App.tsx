@@ -24,6 +24,10 @@ function App(): JSX.Element {
   const toggleTheme = (newTheme: DefaultTheme) => {
     setTheme(newTheme);
   };
+  const themes = {
+    default: default_theme,
+    dark: dark_theme,
+  };
 
   return (
     <ThemeProvider theme={theme}>
