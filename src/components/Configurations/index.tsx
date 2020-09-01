@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import BackgroundConfig from './configs/background';
+import ToogleThemeConfig from './configs/theme';
 
 import { ConfigButton, ConfigLabel, ConfigurationsList } from './styles';
 
-export default function Configurations(): JSX.Element {
+const Configurations: React.FC<IConfigurations> = ({ toggleTheme }) => {
   const [backgroundUrl, setBackgroundUrl] = useState(
     localStorage.getItem('background_url') ?? ''
   );
@@ -37,6 +38,7 @@ export default function Configurations(): JSX.Element {
       </ConfigLabel>
       <ConfigurationsList className="configurations-list">
         <BackgroundConfig url={backgroundUrl} setUrl={setBackgroundUrl} />
+        <ToogleThemeConfig toggleTheme={toggleTheme} />
 
         <button onClick={() => resetConfigs()} type="button">
           reset
@@ -44,4 +46,6 @@ export default function Configurations(): JSX.Element {
       </ConfigurationsList>
     </>
   );
-}
+};
+
+export default Configurations;
