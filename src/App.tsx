@@ -1,8 +1,13 @@
 import React from 'react';
+import { ThemeProvider, DefaultTheme } from 'styled-components';
+import usePersistedState from './utils/usePersistedState';
 
 import environment from './services/defaultVariables';
 
 import GlobalStyle from './styles/global';
+
+import light from './styles/themes/light';
+import dark from './styles/themes/dark';
 
 import Header from './components/Header';
 import Audios from './components/Audios';
@@ -14,22 +19,30 @@ import Footer from './components/Footer';
 import changeStateOfAudio from './functions/changeStateOfAudio';
 
 function App(): JSX.Element {
-  return (
-    <div className="App">
-      <GlobalStyle />
+  const [theme, setTheme] = usePersistedState('theme', light);
 
-      <Header />
-      <section className="main-section audio-section">
-        <Audios
-          Sound={Sound}
-          VolumeController={VolumeController}
-          changeStateOfAudio={changeStateOfAudio}
-          env={environment}
-        />
-      </section>
-      <Configurations />
-      <Footer />
-    </div>
+  const toggleTheme = () => {
+    setTheme(theme.title === 'light' ? dark : light);
+  };
+
+  return (
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <GlobalStyle />
+
+        <Header />
+        <section className="main-section audio-section">
+          <Audios
+            Sound={Sound}
+            VolumeController={VolumeController}
+            changeStateOfAudio={changeStateOfAudio}
+            env={environment}
+          />
+        </section>
+        <Configurations toggleTheme={toggleTheme} />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

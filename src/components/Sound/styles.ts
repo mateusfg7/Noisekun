@@ -18,16 +18,20 @@ export const SoundButton = styled.div`
   width: 100px;
   height: 100px;
 
-  opacity: 0.5;
+  color: ${(props) => props.theme.colors.sound.color};
 
   transition: 0.1s;
 
   &:hover {
     cursor: pointer;
-    opacity: 0.8;
+    color: ${(props) => props.theme.colors.sound.hover};
   }
 
   &.selected {
-    opacity: 1;
+    color: ${(props) => props.theme.colors.sound.selected};
+  }
+
+  .icons {
+    font-size: 80px;
   }
 `;

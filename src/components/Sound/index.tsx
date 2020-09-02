@@ -8,6 +8,24 @@ export default function Sound({
   VolumeController,
   env,
 }: ISound): JSX.Element {
+  const icons: { [index: string]: string } = {
+    rain: 'icofont-rainy',
+    storm: 'icofont-rainy-thunder',
+    wind: 'icofont-wind',
+    water: 'icofont-water-drop',
+    'ocean-waves': 'icofont-wind-waves',
+    'small-waves': 'icofont-wave',
+    'forest-ambience': 'icofont-tree-alt',
+    leafs: 'icofont-leaf',
+    fire: 'icofont-fire-burn',
+    night: 'icofont-night',
+    coffee: 'icofont-coffee-mug',
+    fan: 'icofont-headphone',
+    train: 'icofont-train-line',
+    'air-plane': 'icofont-airplane',
+    underwater: 'icofont-swimmer',
+  };
+
   const [state, setState] = useState(false);
 
   return (
@@ -19,21 +37,19 @@ export default function Sound({
 
       <SoundButton
         id={`${name}-button`}
+        className={state ? 'selected' : ''}
         onClick={() => {
           const audio = document.querySelector<HTMLAudioElement>(`#${name}`);
-          const button = document.getElementById(`${name}-button`);
-          const audioController = document.getElementById(
-            `${name}-audio-controller`
-          );
-          changeStateOfAudio(audio, state, setState, button, audioController);
+          changeStateOfAudio(audio, state, setState);
         }}
       >
-        <img src={`/Noisekun/icons/${name}.svg`} alt={name} />
+        <i className={`${icons[name]} icons`} />
       </SoundButton>
 
       <VolumeController
         audioObject={document.querySelector<HTMLAudioElement>(`#${name}`)}
         id={`${name}-audio-controller`}
+        state={state}
       />
     </SoundComponent>
   );

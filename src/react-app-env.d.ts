@@ -25,9 +25,21 @@ interface ISound {
 interface IVolumeController {
   audioObject: HTMLAudioElement | null;
   id: string;
+  state: boolean;
 }
 
+// Configurations component
+interface IConfigurations {
+  toggleTheme(): void;
+}
+
+// Background Config
 interface IBackgroundConfig {
   setUrl: React.Dispatch<React.SetStateAction<string>>;
   url: string;
+}
+
+// Theme Config
+interface IThemeConfig {
+  toggleTheme(): void;
 }
