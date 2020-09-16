@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: echo "npm build"
-      - run: echo "npm test"
+      - run: exit 1
 
   deploy:
     docker:
@@ -22,7 +22,4 @@ workflows:
       - build
       - deploy:
           requires:
-            - build # only run deploy-via-git job if the build job has completed
-          # filters:
-          #   branches:
-          #     only: master # only run deploy-via-git job on master branch
+            - build
