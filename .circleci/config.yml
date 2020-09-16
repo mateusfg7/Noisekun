@@ -8,27 +8,23 @@ jobs:
       - checkout
       - run: echo "npm install"
 
-  hello:
+  test:
     docker:
-      - image: circleci/node:12.18.3
+      - image: circleci/node:12.8.3
     steps:
       - checkout
-      - run: echo "hello word"
+      - run: echo "npm test"
 
-  exit:
+  deploy:
     docker:
-      - image: circleci/node:12.18.3
+      - image: circleci/node:12.8.3
     steps:
       - checkout
-      - run: exit 1
-
+      - run: echo "npm deploy"
 
 workflows:
-  build_and_hello:
+  build_test_deploy:
     jobs:
       - build
-      - exit
-      - hello
-  just_hello:
-    jobs:
-      - hello
+      - test
+      - deploy
