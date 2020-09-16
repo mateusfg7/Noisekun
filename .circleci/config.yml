@@ -20,6 +20,9 @@ workflows:
   build_test_deploy:
     jobs:
       - build
-      - deploy
-        requires:
-          - build
+      - deploy:
+          requires:
+            - build # only run deploy-via-git job if the build job has completed
+          filters:
+            branches:
+              only: master # only run deploy-via-git job on master branch
