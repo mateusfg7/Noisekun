@@ -6,8 +6,9 @@ jobs:
       - image: circleci/node:12.18.3
     steps:
       - checkout
-      - run: yarn install
+      - run: echo "yarn install"
       - run: echo "EMPTY TESTS"
+      - run: exit 1
 
   deploy:
     docker:
@@ -15,7 +16,7 @@ jobs:
     steps:
       - checkout
       - run: yarn install
-      - run: echo "yarn deploy"
+      - run: yarn deploy
 
 workflows:
   build_test_deploy:
