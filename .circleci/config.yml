@@ -6,10 +6,12 @@ jobs:
       - image: circleci/node:12.18.3
     steps:
       - checkout
-      - run: echo "npm build"
       - run:
-        name: Run tests
-        command: echo "npm test"
+        name: Run build
+        command: echo "npm build"
+      # - run:
+      #   name: Run tests
+      #   command: echo "npm test"
 
   deploy:
     docker:
