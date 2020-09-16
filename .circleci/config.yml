@@ -4,5 +4,5 @@ jobs:
   docker:
    - image: circleci/node:4.8.2 # the primary container, where your job's commands
   steps:
-   - checkout # check out the code in the project directory
-   - run: echo "hello word" # run the `echo` command
+   - run: npm install
+   - run: echo "hello word"
