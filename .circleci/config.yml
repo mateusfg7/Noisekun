@@ -6,8 +6,13 @@ jobs:
       - image: circleci/node:12.18.3
     steps:
       - checkout
-      - run: echo "yarn install"
-      - run: echo "EMPTY TESTS"
+      - run:
+          name: Install dependencies
+          command: echo "yarn install"
+
+      - run:
+          name: Run tests
+          command: echo "EMPTY TESTS"
 
   deploy:
     docker:
@@ -16,9 +21,21 @@ jobs:
       CI: false
     steps:
       - checkout
-      - run: bash .circleci/git-config.sh
-      - run: yarn install
-      - run: yarn deploy
+      - run:
+          name: Configure git
+          command: bash .circleci/git-config.sh
+
+      - run:
+          name: Install dependencies
+          command: yarn install
+
+      - add_ssh_keys:
+          fingerprints:
+            - '38:90:63:d3:d8:94:d6:09:ed:7c:d0:9e:95:80:8a:2d'
+
+      - run:
+          name: Deploy app
+          command: yarn deploy
 
 workflows:
   test_deploy:
