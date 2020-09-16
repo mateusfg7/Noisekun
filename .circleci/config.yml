@@ -18,7 +18,7 @@ jobs:
       - image: circleci/node:12.18.3
     steps:
       - checkout
-      - run: echo "npm test"
+      - run: exit 1
       - run: echo "npm deploy"
 
 workflows:
