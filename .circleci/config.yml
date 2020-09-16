@@ -7,12 +7,9 @@ jobs:
   
   steps:
    - checkout
-   - run:
-    name: Install Node
-    command: echo "npm install"
-   - run:
-    name: Exit for test
-    command: exit
+   - run: |
+    echo "npm install"
+    exit
 
  hello:
   docker:
