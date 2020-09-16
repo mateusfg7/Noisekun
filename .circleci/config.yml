@@ -8,23 +8,7 @@ jobs:
       - checkout
       - run: echo "npm install"
 
-  test:
-    docker:
-      - image: circleci/node:12.8.3
-    steps:
-      - checkout
-      - run: echo "npm test"
-
-  deploy:
-    docker:
-      - image: circleci/node:12.8.3
-    steps:
-      - checkout
-      - run: echo "npm deploy"
-
 workflows:
   build_test_deploy:
     jobs:
       - build
-      - test
-      - deploy
