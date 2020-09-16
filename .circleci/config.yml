@@ -6,7 +6,7 @@ jobs:
       - image: circleci/node:12.18.3
     steps:
       - checkout
-      - run: echo "npm build"
+      - run: npm install
       - run: exit 1
 
   deploy:
@@ -14,6 +14,7 @@ jobs:
       - image: circleci/node:12.18.3
     steps:
       - checkout
+      - run: echo "npm install"
       - run: echo "npm deploy"
 
 workflows:
