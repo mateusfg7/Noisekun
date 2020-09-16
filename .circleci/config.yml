@@ -6,7 +6,7 @@ jobs:
       - image: circleci/node:12.18.3
     steps:
       - checkout
-      - run: npm install
+      - run: yarn install
       - run: exit 1
 
   deploy:
