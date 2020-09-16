@@ -8,27 +8,25 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: echo $YARN_INSTALL
+          command: echo "yarn install"
 
       - run:
           name: Run tests
-          command: echo $EMPTY_TEST
+          command: echo "EMPTY_TEST"
 
   deploy:
     docker:
       - image: circleci/node:12.18.3
     environment:
-      CI: false
+      CI: false # CI as true will consider warning as an error and will stop the deployment
     steps:
       - checkout
 
-      # - add_ssh_keys:
-      #     fingerprints:
-      #       - '38:90:63:d3:d8:94:d6:09:ed:7c:d0:9e:95:80:8a:2d'
-
       - run:
           name: Configure git
-          command: bash .circleci/git-config.sh
+          command: |
+            git config --global user.email "mateusfelipefg77@gmail.com"
+            git config --global user.name "Mateus Felipe"
 
       - run:
           name: Install dependencies
