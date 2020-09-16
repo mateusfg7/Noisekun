@@ -8,11 +8,11 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: echo "yarn install"
+          command: echo $YARN_INSTALL
 
       - run:
           name: Run tests
-          command: echo "EMPTY TESTS"
+          command: echo $EMPTY_TEST
 
   deploy:
     docker:
