@@ -7,24 +7,16 @@ jobs:
     steps:
       - checkout
       - run: echo "npm build"
-  # test:
-  #   docker:
-  #     - image: circleci/node:12.18.3
-  #   steps:
-  #     - checkout
-  #     - run: exit 1
+      - run:
+        name: Run tests
+        command: echo "npm test"
+
   deploy:
     docker:
       - image: circleci/node:12.18.3
     steps:
       - checkout
-      - run:
-        name: testa
-        command: echo "npm test"
-
       - run: echo "npm deploy"
-        name: compila
-        command: echo "npm deploy"
 
 workflows:
   build_test_deploy:
