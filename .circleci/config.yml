@@ -16,7 +16,7 @@ jobs:
       CI: false
     steps:
       - checkout
-      - run: bash git-config.sh
+      - run: bash .circleci/git-config.sh
       - run: yarn install
       - run: yarn deploy
 
