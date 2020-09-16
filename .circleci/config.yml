@@ -19,11 +19,11 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Test
+        name: testa
         command: echo "npm test"
 
       - run: echo "npm deploy"
-        name: Deploy
+        name: compila
         command: echo "npm deploy"
 
 workflows:
