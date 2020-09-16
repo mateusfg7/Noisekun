@@ -20,7 +20,7 @@ jobs:
       - image: circleci/node:12.18.3
     steps:
       - checkout
-      - run: exit
+      - run: exit 1
 
 
 workflows:
