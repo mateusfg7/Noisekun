@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/node:12.18.3
     steps:
@@ -19,9 +19,9 @@ jobs:
       - run: yarn deploy
 
 workflows:
-  build_test_deploy:
+  test_deploy:
     jobs:
-      - build
+      - test
       - deploy:
           requires:
-            - build
+            - test
