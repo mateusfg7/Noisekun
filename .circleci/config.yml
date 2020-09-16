@@ -1,28 +1,34 @@
 version: 2.1
 
 jobs:
- build:
-  docker:
-   - image: circleci/node:12.18.3
-  
-  steps:
-   - checkout
-   - run: |
-    echo "npm install"
-    exit
+  build:
+    docker:
+      - image: circleci/node:12.18.3
+    steps:
+      - checkout
+      - run: echo "npm install"
 
- hello:
-  docker:
-   - image: circleci/node:12.18.3
-  steps:
-  - checkout
-  - run: echo "hello word"
+  hello:
+    docker:
+      - image: circleci/node:12.18.3
+    steps:
+      - checkout
+      - run: echo "hello word"
+
+  exit:
+    docker:
+      - image: circleci/node:12.18.3
+    steps:
+      - checkout
+      - run: exit
+
 
 workflows:
- build_and_hello:
-  jobs:
-   - build
-   - hello
- just_hello:
-  jobs:
-   - hello
+  build_and_hello:
+    jobs:
+      - build
+      - exit
+      - hello
+  just_hello:
+    jobs:
+      - hello
