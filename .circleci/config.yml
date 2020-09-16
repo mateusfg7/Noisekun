@@ -1,11 +1,19 @@
 version: 2.1
+
 jobs:
  build:
   docker:
    - image: circleci/node:12.18.3
+  
   steps:
    - checkout
-   - run: npm install
+   - run:
+    name: Install Node
+    command: echo "npm install"
+   - run:
+    name: Exit for test
+    command: exit
+
  hello:
   docker:
    - image: circleci/node:12.18.3
@@ -17,4 +25,7 @@ workflows:
  build_and_hello:
   jobs:
    - build
+   - hello
+ just_hello:
+  jobs:
    - hello
