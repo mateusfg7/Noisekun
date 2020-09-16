@@ -7,15 +7,15 @@ jobs:
     steps:
       - checkout
       - run: yarn install
-      - run: exit 1
+      - run: echo "EMPTY TESTS"
 
   deploy:
     docker:
       - image: circleci/node:12.18.3
     steps:
       - checkout
-      - run: echo "npm install"
-      - run: echo "npm deploy"
+      - run: yarn install
+      - run: echo "yarn deploy"
 
 workflows:
   build_test_deploy:
