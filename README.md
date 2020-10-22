@@ -41,22 +41,20 @@ const HOST = 'http://0.0.0.0:8000';
 <table align="center">
     <tr align="center">
         <td>
-            <h3>Donate :heart: </h3>
+            <h3>Doe :heart:</h3>
         </td>
     </tr>
     <tr>
         <td>
-            <b title="BTC">Bitcoin</b>: <em title="BTC">13sGVSdDeVH8HVVKUDFNfrm8Q5sV7Q429o</em>
+            <b title="BTC">Bitcoin</b>: <em title="BTC">bc1qzdr4z8sxhumv68s2l97rj0pjum2tnr745uh8us</em>
             <br/>
-            <b title="BCH">Bitcoin Cash</b>: <em title="BCH">qpvknzw9jy47lav2pt6g03whcsy0pwjdmvegzl2hx5</em>
+            <b title="BCH">Bitcoin Cash</b>: <em title="BCH">qr4glglnc66desgumtjattkxmps999twg50wyd7ymy</em>
             <br/>
-            <b title="ETH">Ethereum</b>: <em title="ETH">0x0A6B9Eeb640A17bA0a0a96D986C66D0c75A39832</em>
+            <b title="ETH">Ethereum</b>: <em title="ETH">0x4a576AC4b87e3F22700dd3462e02d863Ce2B8817</em>
             <br/>
-            <b title="LTC">Litecoin</b>: <em title="LTC">LYmLvCS4tAucT9EkG9zTf8AmF1qv9GFgsy</em>
+            <b title="LTC">Litecoin</b>: <em title="LTC">ltc1qnrdjc633fx03r98gazjqjeqdz0svs45l9mypfr</em>
             <br/>
-            <b title="DASH">Dash</b>: <em title="DASH">XmYbqDTF966ytQB4fiDrCpsi1Bfj4owyLt</em>
-            <br/>
-            <b title="MKR">Maker</b>: <em title="MKR">0x0A6B9Eeb640A17bA0a0a96D986C66D0c75A39832</em>
+            <b title="DASH">Dash</b>: <em title="DASH">Xp9JFeALHdLr9FNbkE6Na3xMqRRTs75YWx</em>
         </td>
     </tr>
 </table>
