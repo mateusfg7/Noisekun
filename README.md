@@ -4,7 +4,7 @@
 
 ### _Listen combinations of ambient sounds for **relaxing** or getting more **productive** on your task!_
 
-![](https://img.shields.io/github/deployments/mateusfg7/Noisekun/noisekun?label=heroku&style=flat-square) ![](https://img.shields.io/github/deployments/mateusfg7/Noisekun/github-pages?label=github%20pages&style=flat-square) [![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=flat-square)](https://www.codefactor.io/repository/github/mateusfg7/noisekun) ![](https://img.shields.io/github/status/contexts/pulls/mateusfg7/Noisekun/1?style=flat-square)
+![](https://img.shields.io/github/deployments/mateusfg7/Noisekun/noisekun?label=heroku&style=flat-square) ![](https://img.shields.io/github/deployments/mateusfg7/Noisekun/github-pages?label=github%20pages&style=flat-square) [![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=flat-square)](https://www.codefactor.io/repository/github/mateusfg7/noisekun) ![](https://img.shields.io/circleci/build/github/mateusfg7/Noisekun/master?style=flat-square)
 
 ![Bugs](https://img.shields.io/github/issues/mateusfg7/Noisekun/bug?color=%23fc3f3c&style=for-the-badge)![feat](https://img.shields.io/github/issues/mateusfg7/Noisekun/feat?color=%233c5ffc&style=for-the-badge)![dependencies](https://img.shields.io/github/issues-pr/mateusfg7/Noisekun/dependencies?color=%2342fc3c&label=dependencies%20updates&style=for-the-badge)
 
