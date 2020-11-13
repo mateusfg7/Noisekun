@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeProvider, DefaultTheme } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import usePersistedState from './utils/usePersistedState';
 
 import environment from './services/defaultVariables';
