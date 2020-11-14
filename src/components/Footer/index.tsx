@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FooterSection } from './styles';
+import FooterSection from './styles';
 
 export default function Footer(): JSX.Element {
   return (

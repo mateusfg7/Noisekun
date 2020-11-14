@@ -11,17 +11,17 @@ export default {
       background: 'rgba(0, 0, 0, 0.1)',
     },
     config: {
-      arrow_button: {
+      arrowButton: {
         color: 'rgba(0, 0, 0, 0.5)',
         hover: 'rgba(0, 0, 0, 0.7)',
         checked: 'rgba(0, 0, 0, 1)',
       },
       fieldset: {
         color: 'rgba(255, 255, 255,1)',
-        title_background: 'rgba(0, 0, 0, 0.7)',
-        input_background: 'rgba(0, 0, 0, 0.5)',
+        titleBackground: 'rgba(0, 0, 0, 0.7)',
+        inputBackground: 'rgba(0, 0, 0, 0.5)',
       },
-      reset_button: {
+      resetButton: {
         color: 'rgba(255, 255, 255, 0.753)',
         background: 'rgba(0, 0, 0, 0.5)',
         hover: 'rgba(255, 55, 55, 0.5)',
@@ -36,7 +36,7 @@ export default {
       hover: 'rgba(0, 0, 0, 0.8)',
       selected: 'rgba(0, 0, 0, 1)',
     },
-    volume_controller: {
+    volumeController: {
       background: 'rgba(0,0,0,1)',
       thumb: 'rgba(0,0,0,1)',
     },
