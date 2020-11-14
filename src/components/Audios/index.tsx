@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AudiosBlock } from './styles';
+import AudiosBlock from './styles';
 
 export default function Audios({
   Sound,
