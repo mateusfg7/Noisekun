@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import background_change from './effects';
+import backgroundChange from './effects';
 
 export default createGlobalStyle`
 
@@ -29,7 +29,7 @@ export default createGlobalStyle`
 
     background: fixed no-repeat center;
     background-size: cover;
-    animation: ${background_change} 300s 0s infinite;
+    animation: ${backgroundChange} 300s 0s infinite;
 
     input:focus {
     outline: none;
