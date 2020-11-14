@@ -20,19 +20,19 @@ export const ConfigLabel = styled.label`
   width: 80px;
   height: 80px;
 
-  color: ${(props) => props.theme.colors.config.arrow_button.color};
+  color: ${(props) => props.theme.colors.config.arrowButton.color};
   font-size: 30px;
 
   transition: 1s;
 
   &:hover {
     cursor: pointer;
-    color: ${(props) => props.theme.colors.config.arrow_button.hover};
+    color: ${(props) => props.theme.colors.config.arrowButton.hover};
   }
 
   ${ConfigButton}:checked ~ & {
     transform: translateX(-14vw) rotateY(-180deg);
-    color: ${(props) => props.theme.colors.config.arrow_button.checked};
+    color: ${(props) => props.theme.colors.config.arrowButton.checked};
   }
 
   @media (max-width: 1100px) {
@@ -41,7 +41,7 @@ export const ConfigLabel = styled.label`
     ${ConfigButton}:checked ~ & {
       transform: rotateY(-180deg);
       left: 0;
-      color: ${(props) => props.theme.colors.config.arrow_button.checked};
+      color: ${(props) => props.theme.colors.config.arrowButton.checked};
     }
   }
   @media (max-width: 750px) {
@@ -72,14 +72,14 @@ export const ConfigurationsList = styled.div`
       border-radius: 10px 10px 0 0;
       backdrop-filter: blur(10px);
       background: ${(props) =>
-        props.theme.colors.config.fieldset.title_background};
+        props.theme.colors.config.fieldset.titleBackground};
     }
 
     div.fieldset-content-input {
       border-radius: 0 0 10px 10px;
       backdrop-filter: blur(5px);
       background: ${(props) =>
-        props.theme.colors.config.fieldset.input_background};
+        props.theme.colors.config.fieldset.inputBackground};
     }
 
     input#url {
@@ -103,18 +103,18 @@ export const ConfigurationsList = styled.div`
     width: 100%;
 
     backdrop-filter: blur(5px);
-    background: ${(props) => props.theme.colors.config.reset_button.background};
-    color: ${(props) => props.theme.colors.config.reset_button.color};
+    background: ${(props) => props.theme.colors.config.resetButton.background};
+    color: ${(props) => props.theme.colors.config.resetButton.color};
     transition: 0.1s;
   }
 
   button:hover {
-    background: ${(props) => props.theme.colors.config.reset_button.hover};
+    background: ${(props) => props.theme.colors.config.resetButton.hover};
     backdrop-filter: blur(10px);
   }
   button:active {
     background-color: ${(props) =>
-      props.theme.colors.config.reset_button.active.desktop};
+      props.theme.colors.config.resetButton.active.desktop};
   }
 
   ${ConfigButton}:checked ~ & {
@@ -153,7 +153,7 @@ export const ConfigurationsList = styled.div`
 
         backdrop-filter: blur(5px);
         background: ${(props) =>
-          props.theme.colors.config.fieldset.input_background};
+          props.theme.colors.config.fieldset.inputBackground};
       }
     }
 
@@ -164,13 +164,13 @@ export const ConfigurationsList = styled.div`
 
       height: 50px;
 
-      background: ${(props) => props.theme.colors.config.reset_button.hover};
-      color: ${(props) => props.theme.colors.config.reset_button.color};
+      background: ${(props) => props.theme.colors.config.resetButton.hover};
+      color: ${(props) => props.theme.colors.config.resetButton.color};
     }
 
     button:active {
       background-color: ${(props) =>
-        props.theme.colors.config.reset_button.active.mobile};
+        props.theme.colors.config.resetButton.active.mobile};
       backdrop-filter: blur(10px);
     }
   }
