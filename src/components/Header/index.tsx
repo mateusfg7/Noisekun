@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { LocalHeader } from './styles';
+import LocalHeader from './styles';
 
 export default function Header(): JSX.Element {
   return (

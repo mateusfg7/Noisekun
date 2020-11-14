@@ -14,17 +14,17 @@ declare module 'styled-components' {
         background: string;
       };
       config: {
-        arrow_button: {
+        arrowButton: {
           color: string;
           hover: string;
           checked: string;
         };
         fieldset: {
           color: string;
-          title_background: string;
-          input_background: string;
+          titleBackground: string;
+          inputBackground: string;
         };
-        reset_button: {
+        resetButton: {
           color: string;
           background: string;
           hover: string;
@@ -39,7 +39,7 @@ declare module 'styled-components' {
         hover: string;
         selected: string;
       };
-      volume_controller: {
+      volumeController: {
         background: string;
         thumb: string;
       };

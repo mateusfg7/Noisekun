@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const FooterSection = styled.footer`
+const FooterSection = styled.footer`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -31,3 +31,5 @@ export const FooterSection = styled.footer`
     }
   }
 `;
+
+export default FooterSection;
