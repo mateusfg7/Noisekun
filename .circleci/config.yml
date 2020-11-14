@@ -1,6 +1,19 @@
 version: 2.1
 
 jobs:
+  lint:
+    docker:
+      - image: circleci/node:12.18.3
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: yarn install
+      
+      - run:
+          name: Check linter
+          command: yarn lint
+
   test:
     docker:
       - image: circleci/node:12.18.3
@@ -37,9 +50,12 @@ jobs:
           command: yarn deploy
 
 workflows:
-  test_deploy:
+  lint_test_deploy:
     jobs:
-      - test
+      - lint
+      - test:
+          requires:
+            - lint
       - deploy:
           requires:
             - test
