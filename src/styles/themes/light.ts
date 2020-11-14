@@ -18,8 +18,8 @@ export default {
       },
       fieldset: {
         color: 'rgba(56, 56, 56,1)',
-        title_background: 'rgba(255, 255, 255, 0.7)',
-        input_background: 'rgba(255, 255, 255, 0.5)',
+        titleBackground: 'rgba(255, 255, 255, 0.7)',
+        inputBackground: 'rgba(255, 255, 255, 0.5)',
       },
       resetButton: {
         color: 'rgba(0, 0, 0, 0.753)',
