@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { VolumeControllerInput } from './styles';
+import VolumeControllerInput from './styles';
 
 const VolumeControler: React.FC<IVolumeController> = ({
   audioObject,

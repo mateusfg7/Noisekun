@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { background_change } from './effects';
+import background_change from './effects';
 
 export default createGlobalStyle`
 

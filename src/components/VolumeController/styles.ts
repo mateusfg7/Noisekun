@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const VolumeControllerInput = styled.input`
+const VolumeControllerInput = styled.input`
   opacity: 0;
 
   appearance: none;
@@ -51,3 +51,5 @@ export const VolumeControllerInput = styled.input`
     opacity: 1;
   }
 `;
+
+export default VolumeControllerInput;

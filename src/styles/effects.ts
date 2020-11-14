@@ -1,6 +1,6 @@
 import { keyframes } from 'styled-components';
 
-export const background_change = keyframes`
+const background_change = keyframes`
 
   0% {
     background-color: #52bad5;
@@ -66,3 +66,5 @@ export const background_change = keyframes`
     background-color: #52bad5;
   }
 `;
+
+export default background_change;
