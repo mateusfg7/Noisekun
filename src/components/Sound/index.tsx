@@ -6,7 +6,6 @@ export default function Sound({
   name,
   changeStateOfAudio,
   VolumeController,
-  env,
 }: ISound): JSX.Element {
   const icons: { [index: string]: string } = {
     rain: 'icofont-rainy',
@@ -31,8 +30,14 @@ export default function Sound({
   return (
     <SoundComponent>
       <audio loop preload="true" id={name}>
-        <source src={`${env.HOST}/webm/${name}`} type="audio/webm" />
-        <source src={`${env.HOST}/mp3/${name}`} type="audio/mp3" />
+        <source
+          src={`${process.env.REACT_APP_HOST}/webm/${name}`}
+          type="audio/webm"
+        />
+        <source
+          src={`${process.env.REACT_APP_HOST}/mp3/${name}`}
+          type="audio/mp3"
+        />
       </audio>
 
       <SoundButton

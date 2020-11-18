@@ -2,8 +2,6 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import usePersistedState from './utils/usePersistedState';
 
-import environment from './services/defaultVariables';
-
 import GlobalStyle from './styles/global';
 
 import light from './styles/themes/light';
@@ -47,7 +45,6 @@ function App(): JSX.Element {
             Sound={Sound}
             VolumeController={VolumeController}
             changeStateOfAudio={changeStateOfAudio}
-            env={environment}
           />
         </section>
         <Configurations toggleTheme={toggleTheme} />
