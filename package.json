@@ -24,7 +24,7 @@
     "react-scripts": "4.0.0",
     "react-switch": "^5.0.1",
     "styled-components": "^5.2.1",
-    "typescript": "~4.0.5"
+    "typescript": "4.4.4"
   },
   "scripts": {
     "start": "react-scripts start",
