@@ -1,34 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
 
-## Getting Started
+# ![Noisekun :headphones:](.github/docs/favicon.png)
 
-First, run the development server:
+### _Listen combinations of ambient sounds for **relaxing** or getting more **productive** on your task!_
 
-```bash
-npm run dev
-# or
-yarn dev
+![](https://img.shields.io/github/deployments/mateusfg7/Noisekun/noisekun?label=heroku&style=flat-square) ![](https://img.shields.io/github/deployments/mateusfg7/Noisekun/github-pages?label=github%20pages&style=flat-square) [![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=flat-square)](https://www.codefactor.io/repository/github/mateusfg7/noisekun) ![](https://img.shields.io/circleci/build/github/mateusfg7/Noisekun/master?style=flat-square)
+
+![Bugs](https://img.shields.io/github/issues/mateusfg7/Noisekun/bug?color=%23fc3f3c&style=for-the-badge)![feat](https://img.shields.io/github/issues/mateusfg7/Noisekun/feat?color=%233c5ffc&style=for-the-badge)![dependencies](https://img.shields.io/github/issues-pr/mateusfg7/Noisekun/dependencies?color=%2342fc3c&label=dependencies%20updates&style=for-the-badge)
+
+</div>
+
+---
+
+[Front-end](https://github.com/mateusfg7/Noisekun) made with ReactJS and Typescript.
+
+[Back-end](https://github.com/mateusfg7/Noisekun-backend) made with Deno and Typescript.
+
+To add your own back-end, change the host in `defaultVariables.ts`, on line 4:
+
+```javascript
+const HOST = 'https://noisekun-server.herokuapp.com';
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+_e.g:_
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```javascript
+const HOST = 'http://0.0.0.0:8000';
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+> default back-end host: https://noisekun-server.herokuapp.com
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+---
 
-## Learn More
+## Screenshots
 
-To learn more about Next.js, take a look at the following resources:
+| [![fail](.github/docs/screenshot1.png)](https://mateusfg7.github.io/Noisekun/) | [![fail](.github/docs/screenshot2.png)](https://mateusfg7.github.io/Noisekun/) |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| [![fail](.github/docs/screenshot3.png)](https://mateusfg7.github.io/Noisekun/) | [![fail](.github/docs/screenshot4.png)](https://mateusfg7.github.io/Noisekun/) |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<table align="center">
+    <tr align="center">
+        <td>
+            <h3>Doe :heart:</h3>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <b title="BTC">Bitcoin</b>: <em title="BTC">bc1qzdr4z8sxhumv68s2l97rj0pjum2tnr745uh8us</em>
+            <br/>
+            <b title="BCH">Bitcoin Cash</b>: <em title="BCH">qr4glglnc66desgumtjattkxmps999twg50wyd7ymy</em>
+            <br/>
+            <b title="ETH">Ethereum</b>: <em title="ETH">0x4a576AC4b87e3F22700dd3462e02d863Ce2B8817</em>
+            <br/>
+            <b title="LTC">Litecoin</b>: <em title="LTC">ltc1qnrdjc633fx03r98gazjqjeqdz0svs45l9mypfr</em>
+            <br/>
+            <b title="DASH">Dash</b>: <em title="DASH">Xp9JFeALHdLr9FNbkE6Na3xMqRRTs75YWx</em>
+        </td>
+    </tr>
+</table>
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> _Inspired by [Noisli](https://www.noisli.com/)_
