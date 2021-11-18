@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   lint:
     docker:
-      - image: circleci/node:17.0.1
+      - image: circleci/node:17.1.0
     steps:
       - checkout
       - run:
@@ -16,7 +16,7 @@ jobs:
 
   test:
     docker:
-      - image: circleci/node:17.0.1
+      - image: circleci/node:17.1.0
     steps:
       - checkout
       - run:
@@ -29,7 +29,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/node:17.0.1
+      - image: circleci/node:17.1.0
     environment:
       CI: false # CI as true will consider warning as an error and will stop the deployment
     steps:
