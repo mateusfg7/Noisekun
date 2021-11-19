@@ -1,18 +1,18 @@
-import React from 'react';
+import React from 'react'
 
-import environment from '../services/defaultVariables';
+import environment from '../services/defaultVariables'
 
-import GlobalStyle from '../styles/global';
+import GlobalStyle from '../styles/global'
 
-import Header from '../components/Header';
-import Audios from '../components/Audios';
-import Sound from '../components/Sound';
-import VolumeController from '../components/VolumeController';
-import Footer from '../components/Footer';
+import Header from '../components/Header'
+import Audios from '../components/Audios'
+import Sound from '../components/Sound'
+import VolumeController from '../components/VolumeController'
+import Footer from '../components/Footer'
 
-import changeStateOfAudio from '../functions/changeStateOfAudio';
+import changeStateOfAudio from '../functions/changeStateOfAudio'
 
-function Home(): JSX.Element {
+function Home (): JSX.Element {
   return (
       <div className="App">
         <GlobalStyle />
@@ -28,7 +28,7 @@ function Home(): JSX.Element {
         </section>
         <Footer />
       </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

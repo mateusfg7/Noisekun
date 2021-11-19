@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const FooterSection = styled.footer`
   display: flex;
@@ -30,6 +30,6 @@ const FooterSection = styled.footer`
       text-decoration: underline;
     }
   }
-`;
+`
 
-export default FooterSection;
+export default FooterSection

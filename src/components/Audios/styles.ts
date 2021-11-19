@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const AudiosBlock = styled.div`
   display: grid;
@@ -20,6 +20,6 @@ const AudiosBlock = styled.div`
   @media (max-width: 300px) {
     grid-template-columns: 1fr;
   }
-`;
+`
 
-export default AudiosBlock;
+export default AudiosBlock

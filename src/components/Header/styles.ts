@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const LocalHeader = styled.header`
   display: flex;
@@ -18,6 +18,6 @@ const LocalHeader = styled.header`
       color: rgba(255, 255, 255, 0.7);
     }
   }
-`;
+`
 
-export default LocalHeader;
+export default LocalHeader

@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 
-import AudiosBlock from './styles';
+import AudiosBlock from './styles'
 
-export default function Audios({
+export default function Audios ({
   Sound,
   VolumeController,
   changeStateOfAudio,
-  env,
+  env
 }: IAudios): JSX.Element {
   return (
     <AudiosBlock>
@@ -101,5 +101,5 @@ export default function Audios({
         env={env}
       />
     </AudiosBlock>
-  );
+  )
 }

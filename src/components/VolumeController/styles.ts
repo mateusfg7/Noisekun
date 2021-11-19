@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const VolumeControllerInput = styled.input`
   opacity: 0;
@@ -50,6 +50,6 @@ const VolumeControllerInput = styled.input`
   &.selected {
     opacity: 1;
   }
-`;
+`
 
-export default VolumeControllerInput;
+export default VolumeControllerInput

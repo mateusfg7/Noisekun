@@ -1,12 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from 'react'
 
-import { SoundComponent, SoundButton } from './styles';
+import { SoundComponent, SoundButton } from './styles'
 
-export default function Sound({
+export default function Sound ({
   name,
   changeStateOfAudio,
   VolumeController,
-  env,
+  env
 }: ISound): JSX.Element {
   const icons: { [index: string]: string } = {
     rain: 'icofont-rainy',
@@ -23,10 +23,10 @@ export default function Sound({
     fan: 'icofont-headphone',
     train: 'icofont-train-line',
     'air-plane': 'icofont-airplane',
-    underwater: 'icofont-swimmer',
-  };
+    underwater: 'icofont-swimmer'
+  }
 
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(false)
   const audioRef = useRef<HTMLAudioElement>()
 
   return (
@@ -40,8 +40,8 @@ export default function Sound({
         id={`${name}-button`}
         className={state ? 'selected' : ''}
         onClick={() => {
-          const audio = audioRef.current;
-          changeStateOfAudio(audio, state, setState);
+          const audio = audioRef.current
+          changeStateOfAudio(audio, state, setState)
         }}
       >
         <i className={`${icons[name]} icons`} />
@@ -53,5 +53,5 @@ export default function Sound({
         state={state}
       />
     </SoundComponent>
-  );
+  )
 }

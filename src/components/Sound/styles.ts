@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const SoundComponent = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const SoundComponent = styled.div`
 
   width: 100px;
   height: 100px;
-`;
+`
 
 export const SoundButton = styled.div`
   display: flex;
@@ -34,4 +34,4 @@ export const SoundButton = styled.div`
   .icons {
     font-size: 80px;
   }
-`;
+`
