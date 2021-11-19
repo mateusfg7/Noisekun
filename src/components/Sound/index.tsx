@@ -6,14 +6,12 @@ export interface ISound {
   name: string;
   changeStateOfAudio: CallableFunction;
   VolumeController: CallableFunction;
-  env: string;
 }
 
 export const Sound: React.FC<ISound> = ({
   name,
   changeStateOfAudio,
-  VolumeController,
-  env
+  VolumeController
 }) => {
   const icons: { [index: string]: string } = {
     rain: 'icofont-rainy',
@@ -39,8 +37,7 @@ export const Sound: React.FC<ISound> = ({
   return (
     <SoundComponent>
       <audio loop preload="true" ref={audioRef}>
-        <source src={`${env}/webm/${name}`} type="audio/webm" />
-        <source src={`${env}/mp3/${name}`} type="audio/mp3" />
+        <source src={`${process.env.CDN_AUDIO_SERVER}/${name}.mp3`} type="audio/mp3" />
       </audio>
 
       <SoundButton

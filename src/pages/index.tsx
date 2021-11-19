@@ -1,8 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
 
-import { HOST } from '../services/defaultVariables'
-
 import GlobalStyle from '../styles/global'
 
 import { Header } from '../components/Header'
@@ -30,7 +28,6 @@ const Home: React.FC = () => {
             Sound={Sound}
             VolumeController={VolumeController}
             changeStateOfAudio={changeStateOfAudio}
-            env={HOST}
           />
         </section>
         <Footer />
