@@ -1,19 +1,19 @@
 import React from 'react'
 import Head from 'next/head'
 
-import environment from '../services/defaultVariables'
+import { HOST } from '../services/defaultVariables'
 
 import GlobalStyle from '../styles/global'
 
-import Header from '../components/Header'
-import Audios from '../components/Audios'
-import Sound from '../components/Sound'
-import VolumeController from '../components/VolumeController'
-import Footer from '../components/Footer'
+import { Header } from '../components/Header'
+import { Audios } from '../components/Audios'
+import { Sound } from '../components/Sound'
+import { VolumeController } from '../components/VolumeController'
+import { Footer } from '../components/Footer'
 
 import changeStateOfAudio from '../functions/changeStateOfAudio'
 
-function Home (): JSX.Element {
+const Home: React.FC = () => {
   return (
       <div className="App">
         <GlobalStyle />
@@ -30,7 +30,7 @@ function Home (): JSX.Element {
             Sound={Sound}
             VolumeController={VolumeController}
             changeStateOfAudio={changeStateOfAudio}
-            env={environment}
+            env={HOST}
           />
         </section>
         <Footer />

@@ -2,7 +2,7 @@ import React from 'react'
 
 import FooterSection from './styles'
 
-export default function Footer (): JSX.Element {
+export const Footer: React.FC = () => {
   return (
     <FooterSection>
       <div>

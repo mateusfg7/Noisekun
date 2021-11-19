@@ -2,7 +2,7 @@ import React from 'react'
 
 import LocalHeader from './styles'
 
-export default function Header (): JSX.Element {
+export const Header: React.FC = () => {
   return (
     <LocalHeader>
       <h1>

@@ -2,12 +2,19 @@ import React, { useRef, useState } from 'react'
 
 import { SoundComponent, SoundButton } from './styles'
 
-export default function Sound ({
+export interface ISound {
+  name: string;
+  changeStateOfAudio: CallableFunction;
+  VolumeController: CallableFunction;
+  env: string;
+}
+
+export const Sound: React.FC<ISound> = ({
   name,
   changeStateOfAudio,
   VolumeController,
   env
-}: ISound): JSX.Element {
+}) => {
   const icons: { [index: string]: string } = {
     rain: 'icofont-rainy',
     storm: 'icofont-rainy-thunder',
@@ -32,8 +39,8 @@ export default function Sound ({
   return (
     <SoundComponent>
       <audio loop preload="true" ref={audioRef}>
-        <source src={`${env.HOST}/webm/${name}`} type="audio/webm" />
-        <source src={`${env.HOST}/mp3/${name}`} type="audio/mp3" />
+        <source src={`${env}/webm/${name}`} type="audio/webm" />
+        <source src={`${env}/mp3/${name}`} type="audio/mp3" />
       </audio>
 
       <SoundButton

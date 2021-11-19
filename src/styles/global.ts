@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import backgroundChange from './effects';
+import { createGlobalStyle } from 'styled-components'
+import backgroundChange from './effects'
 
 export default createGlobalStyle`
 
@@ -56,4 +56,4 @@ export default createGlobalStyle`
       cursor: pointer;
     }
   }
-`;
+`

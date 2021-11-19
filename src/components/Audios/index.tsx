@@ -1,13 +1,23 @@
 import React from 'react'
 
+import { ISound } from '../Sound'
+import { IVolumeController } from '../VolumeController'
+
 import AudiosBlock from './styles'
 
-export default function Audios ({
+export interface IAudios {
+  Sound: React.FC<ISound>;
+  VolumeController: React.FC<IVolumeController>;
+  changeStateOfAudio: CallableFunction;
+  env: string;
+}
+
+export const Audios: React.FC<IAudios> = ({
   Sound,
   VolumeController,
   changeStateOfAudio,
   env
-}: IAudios): JSX.Element {
+}) => {
   return (
     <AudiosBlock>
       <Sound

@@ -2,7 +2,13 @@ import React, { useState } from 'react'
 
 import VolumeControllerInput from './styles'
 
-const VolumeControler: React.FC<IVolumeController> = ({
+export interface IVolumeController {
+  audioObject: HTMLAudioElement | null;
+  id: string;
+  state: boolean;
+}
+
+export const VolumeController: React.FC<IVolumeController> = ({
   audioObject,
   id,
   state
@@ -35,5 +41,3 @@ const VolumeControler: React.FC<IVolumeController> = ({
     />
   )
 }
-
-export default VolumeControler
