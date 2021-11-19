@@ -6,9 +6,9 @@ import { IVolumeController } from '../VolumeController'
 import AudiosBlock from './styles'
 
 export interface IAudios {
-  Sound: React.FC<ISound>;
-  VolumeController: React.FC<IVolumeController>;
-  changeStateOfAudio: CallableFunction;
+  Sound: React.FC<ISound>
+  VolumeController: React.FC<IVolumeController>
+  changeStateOfAudio: CallableFunction
 }
 
 export const Audios: React.FC<IAudios> = ({

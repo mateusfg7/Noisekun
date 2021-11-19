@@ -3,9 +3,9 @@ import React, { useState } from 'react'
 import VolumeControllerInput from './styles'
 
 export interface IVolumeController {
-  audioObject: HTMLAudioElement | null;
-  id: string;
-  state: boolean;
+  audioObject: HTMLAudioElement | null
+  id: string
+  state: boolean
 }
 
 export const VolumeController: React.FC<IVolumeController> = ({
@@ -33,7 +33,7 @@ export const VolumeController: React.FC<IVolumeController> = ({
       min="1"
       max="1000"
       value={rangeValue}
-      onChange={(event) => {
+      onChange={event => {
         setRangeValue(Number(event.target.value))
         const decimalValue = Number(event.target.value) / 1000
         changeVolume(audioObject, decimalValue)

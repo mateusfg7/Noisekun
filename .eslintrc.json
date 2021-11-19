@@ -7,6 +7,8 @@
   "extends": [
     "plugin:react/recommended",
     "plugin:@next/next/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
     "standard"
   ],
   "parser": "@typescript-eslint/parser",
@@ -19,10 +21,14 @@
   },
   "plugins": [
     "react",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "prettier"
   ],
   "rules": {
+    "prettier/prettier": "error",
     "no-use-before-define": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "space-before-function-paren": "off"
   }
 }

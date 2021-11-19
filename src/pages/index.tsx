@@ -13,25 +13,23 @@ import changeStateOfAudio from '../functions/changeStateOfAudio'
 
 const Home: React.FC = () => {
   return (
-      <div className="App">
-        <GlobalStyle />
+    <div className="App">
+      <GlobalStyle />
 
-        <Head>
-          <title>
-            Noisekun
-          </title>
-        </Head>
+      <Head>
+        <title>Noisekun</title>
+      </Head>
 
-        <Header />
-        <section className="main-section audio-section">
-          <Audios
-            Sound={Sound}
-            VolumeController={VolumeController}
-            changeStateOfAudio={changeStateOfAudio}
-          />
-        </section>
-        <Footer />
-      </div>
+      <Header />
+      <section className="main-section audio-section">
+        <Audios
+          Sound={Sound}
+          VolumeController={VolumeController}
+          changeStateOfAudio={changeStateOfAudio}
+        />
+      </section>
+      <Footer />
+    </div>
   )
 }
 

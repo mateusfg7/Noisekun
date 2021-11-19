@@ -3,9 +3,9 @@ import React, { useRef, useState } from 'react'
 import { SoundComponent, SoundButton } from './styles'
 
 export interface ISound {
-  name: string;
-  changeStateOfAudio: CallableFunction;
-  VolumeController: CallableFunction;
+  name: string
+  changeStateOfAudio: CallableFunction
+  VolumeController: CallableFunction
 }
 
 export const Sound: React.FC<ISound> = ({
@@ -37,7 +37,10 @@ export const Sound: React.FC<ISound> = ({
   return (
     <SoundComponent>
       <audio loop preload="true" ref={audioRef}>
-        <source src={`${process.env.CDN_AUDIO_SERVER}/${name}.mp3`} type="audio/mp3" />
+        <source
+          src={`${process.env.CDN_AUDIO_SERVER}/${name}.mp3`}
+          type="audio/mp3"
+        />
       </audio>
 
       <SoundButton

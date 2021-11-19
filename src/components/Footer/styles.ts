@@ -14,7 +14,7 @@ const FooterSection = styled.footer`
   p {
     a {
       text-decoration: none;
-      color: rgba(255,255,255,1);
+      color: rgba(255, 255, 255, 1);
     }
   }
 

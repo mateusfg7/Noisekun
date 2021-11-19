@@ -1,19 +1,24 @@
 /* eslint-disable @next/next/no-css-tags */
 
-import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document'
+import Document, {
+  DocumentContext,
+  Head,
+  Html,
+  Main,
+  NextScript
+} from 'next/document'
 import React from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
-  static async getInitialProps (ctx: DocumentContext) {
+  static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
 
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />)
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
         })
 
       const initialProps = await Document.getInitialProps(ctx)
@@ -31,7 +36,7 @@ export default class MyDocument extends Document {
     }
   }
 
-  render (): React.ReactElement {
+  render(): React.ReactElement {
     return (
       <Html lang="pt">
         <Head>
@@ -39,7 +44,6 @@ export default class MyDocument extends Document {
 
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
           <link rel="stylesheet" href="/icofont/icofont.min.css" />
-
         </Head>
         <body>
           <Main />

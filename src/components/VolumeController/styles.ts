@@ -8,7 +8,7 @@ const VolumeControllerInput = styled.input`
   width: 100%;
   height: 2px;
 
-  background: rgba(255,255,255,1);
+  background: rgba(255, 255, 255, 1);
 
   cursor: pointer;
 
@@ -19,7 +19,7 @@ const VolumeControllerInput = styled.input`
     height: 13px;
     width: 13px;
 
-    background: rgba(255,255,255,1);
+    background: rgba(255, 255, 255, 1);
 
     border: none;
     border-radius: 100%;
@@ -30,7 +30,7 @@ const VolumeControllerInput = styled.input`
     height: 13px;
     width: 13px;
 
-    background: rgba(255,255,255,1);
+    background: rgba(255, 255, 255, 1);
 
     border: none;
     border-radius: 100%;
@@ -41,7 +41,7 @@ const VolumeControllerInput = styled.input`
     height: 13px;
     width: 13px;
 
-    background: rgba(255,255,255,1);
+    background: rgba(255, 255, 255, 1);
 
     border: none;
     border-radius: 100%;
