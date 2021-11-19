@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 
 import environment from '../services/defaultVariables'
 
@@ -16,6 +17,12 @@ function Home (): JSX.Element {
   return (
       <div className="App">
         <GlobalStyle />
+
+        <Head>
+          <title>
+            Noisekun
+          </title>
+        </Head>
 
         <Header />
         <section className="main-section audio-section">

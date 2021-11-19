@@ -37,8 +37,6 @@ export default class MyDocument extends Document {
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
           <link rel="stylesheet" href="/icofont/icofont.min.css" />
 
-          <title>Noisekun</title>
-
         </Head>
         <body>
           <Main />
