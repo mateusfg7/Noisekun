@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import { SoundComponent, SoundButton } from './styles';
 
@@ -27,10 +27,11 @@ export default function Sound({
   };
 
   const [state, setState] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>()
 
   return (
     <SoundComponent>
-      <audio loop preload="true" id={name}>
+      <audio loop preload="true" ref={audioRef}>
         <source src={`${env.HOST}/webm/${name}`} type="audio/webm" />
         <source src={`${env.HOST}/mp3/${name}`} type="audio/mp3" />
       </audio>
@@ -39,7 +40,7 @@ export default function Sound({
         id={`${name}-button`}
         className={state ? 'selected' : ''}
         onClick={() => {
-          const audio = document.querySelector<HTMLAudioElement>(`#${name}`);
+          const audio = audioRef;
           changeStateOfAudio(audio, state, setState);
         }}
       >
@@ -47,7 +48,7 @@ export default function Sound({
       </SoundButton>
 
       <VolumeController
-        audioObject={document.querySelector<HTMLAudioElement>(`#${name}`)}
+        audioObject={audioRef}
         id={`${name}-audio-controller`}
         state={state}
       />
