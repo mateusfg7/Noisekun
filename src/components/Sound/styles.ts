@@ -18,17 +18,17 @@ export const SoundButton = styled.div`
   width: 100px;
   height: 100px;
 
-  color: ${(props) => props.theme.colors.sound.color};
+  color: rgba(255, 255, 255, 0.5);
 
   transition: 0.1s;
 
   &:hover {
     cursor: pointer;
-    color: ${(props) => props.theme.colors.sound.hover};
+    color: rgba(255, 255, 255, 0.8);
   }
 
   &.selected {
-    color: ${(props) => props.theme.colors.sound.selected};
+    color: rgba(255, 255, 255, 1);
   }
 
   .icons {

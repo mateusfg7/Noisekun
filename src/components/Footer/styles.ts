@@ -8,13 +8,13 @@ const FooterSection = styled.footer`
 
   padding: 15px;
 
-  background: ${(props) => props.theme.colors.footer.background};
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(4px);
 
   p {
     a {
       text-decoration: none;
-      color: ${(props) => props.theme.colors.footer.text};
+      color: rgba(255,255,255,1);
     }
   }
 
