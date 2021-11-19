@@ -40,7 +40,7 @@ export default function Sound({
         id={`${name}-button`}
         className={state ? 'selected' : ''}
         onClick={() => {
-          const audio = audioRef;
+          const audio = audioRef.current;
           changeStateOfAudio(audio, state, setState);
         }}
       >
@@ -48,7 +48,7 @@ export default function Sound({
       </SoundButton>
 
       <VolumeController
-        audioObject={audioRef}
+        audioObject={audioRef.current}
         id={`${name}-audio-controller`}
         state={state}
       />
