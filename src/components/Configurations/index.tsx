@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import BackgroundConfig from './configs/background';
-import ToogleThemeConfig from './configs/theme';
+import ToggleThemeConfig from './configs/theme';
 
 import { ConfigButton, ConfigLabel, ConfigurationsList } from './styles';
 
@@ -38,7 +38,7 @@ const Configurations: React.FC<IConfigurations> = ({ toggleTheme }) => {
       </ConfigLabel>
       <ConfigurationsList className="configurations-list">
         <BackgroundConfig url={backgroundUrl} setUrl={setBackgroundUrl} />
-        <ToogleThemeConfig toggleTheme={toggleTheme} />
+        <ToggleThemeConfig toggleTheme={toggleTheme} />
 
         <button onClick={() => resetConfigs()} type="button">
           reset

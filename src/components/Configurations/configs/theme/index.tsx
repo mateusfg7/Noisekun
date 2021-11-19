@@ -6,7 +6,7 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 // import { Container } from './styles';
 
-const ToogleThemeConfig: React.FC<IThemeConfig> = ({ toggleTheme }) => {
+const ToggleThemeConfig: React.FC<IThemeConfig> = ({ toggleTheme }) => {
   const { title } = useContext(ThemeContext);
 
   return (
@@ -65,4 +65,4 @@ const ToogleThemeConfig: React.FC<IThemeConfig> = ({ toggleTheme }) => {
   );
 };
 
-export default ToogleThemeConfig;
+export default ToggleThemeConfig;
