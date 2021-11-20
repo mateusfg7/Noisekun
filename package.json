@@ -18,6 +18,8 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
     "@next/eslint-plugin-next": "^12.0.4",
     "@types/react": "^17.0.34",
     "@types/styled-components": "^5.1.15",
