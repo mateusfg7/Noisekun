@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const VolumeControllerInput = styled.input`
   opacity: 0;
@@ -8,7 +8,7 @@ const VolumeControllerInput = styled.input`
   width: 100%;
   height: 2px;
 
-  background: ${(props) => props.theme.colors.volumeController.background};
+  background: rgba(255, 255, 255, 1);
 
   cursor: pointer;
 
@@ -19,7 +19,7 @@ const VolumeControllerInput = styled.input`
     height: 13px;
     width: 13px;
 
-    background: ${(props) => props.theme.colors.volumeController.thumb};
+    background: rgba(255, 255, 255, 1);
 
     border: none;
     border-radius: 100%;
@@ -30,7 +30,7 @@ const VolumeControllerInput = styled.input`
     height: 13px;
     width: 13px;
 
-    background: ${(props) => props.theme.colors.volumeController.thumb};
+    background: rgba(255, 255, 255, 1);
 
     border: none;
     border-radius: 100%;
@@ -41,7 +41,7 @@ const VolumeControllerInput = styled.input`
     height: 13px;
     width: 13px;
 
-    background: ${(props) => props.theme.colors.volumeController.thumb};
+    background: rgba(255, 255, 255, 1);
 
     border: none;
     border-radius: 100%;
@@ -50,6 +50,6 @@ const VolumeControllerInput = styled.input`
   &.selected {
     opacity: 1;
   }
-`;
+`
 
-export default VolumeControllerInput;
+export default VolumeControllerInput

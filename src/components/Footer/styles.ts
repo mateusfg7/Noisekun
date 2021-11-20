@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const FooterSection = styled.footer`
   display: flex;
@@ -8,13 +8,13 @@ const FooterSection = styled.footer`
 
   padding: 15px;
 
-  background: ${(props) => props.theme.colors.footer.background};
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(4px);
 
   p {
     a {
       text-decoration: none;
-      color: ${(props) => props.theme.colors.footer.text};
+      color: rgba(255, 255, 255, 1);
     }
   }
 
@@ -30,6 +30,6 @@ const FooterSection = styled.footer`
       text-decoration: underline;
     }
   }
-`;
+`
 
-export default FooterSection;
+export default FooterSection

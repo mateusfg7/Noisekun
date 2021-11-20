@@ -1,8 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-import FooterSection from './styles';
+import FooterSection from './styles'
 
-export default function Footer(): JSX.Element {
+export const Footer: React.FC = () => {
   return (
     <FooterSection>
       <div>
@@ -23,5 +23,5 @@ export default function Footer(): JSX.Element {
         </p>
       </div>
     </FooterSection>
-  );
+  )
 }

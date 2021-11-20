@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react'
 
-import { SoundComponent, SoundButton } from './styles';
+import { SoundComponent, SoundButton } from './styles'
 
-export default function Sound({
+export interface ISound {
+  name: string
+  changeStateOfAudio: CallableFunction
+  VolumeController: CallableFunction
+}
+
+export const Sound: React.FC<ISound> = ({
   name,
   changeStateOfAudio,
-  VolumeController,
-  env,
-}: ISound): JSX.Element {
+  VolumeController
+}) => {
   const icons: { [index: string]: string } = {
     rain: 'icofont-rainy',
     storm: 'icofont-rainy-thunder',
@@ -23,34 +28,37 @@ export default function Sound({
     fan: 'icofont-headphone',
     train: 'icofont-train-line',
     'air-plane': 'icofont-airplane',
-    underwater: 'icofont-swimmer',
-  };
+    underwater: 'icofont-swimmer'
+  }
 
-  const [state, setState] = useState(false);
+  const [state, setState] = useState(false)
+  const audioRef = useRef<HTMLAudioElement>()
 
   return (
     <SoundComponent>
-      <audio loop preload="true" id={name}>
-        <source src={`${env.HOST}/webm/${name}`} type="audio/webm" />
-        <source src={`${env.HOST}/mp3/${name}`} type="audio/mp3" />
+      <audio loop preload="true" ref={audioRef}>
+        <source
+          src={`${process.env.CDN_AUDIO_SERVER}/${name}.mp3`}
+          type="audio/mp3"
+        />
       </audio>
 
       <SoundButton
         id={`${name}-button`}
         className={state ? 'selected' : ''}
         onClick={() => {
-          const audio = document.querySelector<HTMLAudioElement>(`#${name}`);
-          changeStateOfAudio(audio, state, setState);
+          const audio = audioRef.current
+          changeStateOfAudio(audio, state, setState)
         }}
       >
         <i className={`${icons[name]} icons`} />
       </SoundButton>
 
       <VolumeController
-        audioObject={document.querySelector<HTMLAudioElement>(`#${name}`)}
+        audioObject={audioRef.current}
         id={`${name}-audio-controller`}
         state={state}
       />
     </SoundComponent>
-  );
+  )
 }

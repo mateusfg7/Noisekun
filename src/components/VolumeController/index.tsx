@@ -1,22 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-import VolumeControllerInput from './styles';
+import VolumeControllerInput from './styles'
 
-const VolumeControler: React.FC<IVolumeController> = ({
+export interface IVolumeController {
+  audioObject: HTMLAudioElement | null
+  id: string
+  state: boolean
+}
+
+export const VolumeController: React.FC<IVolumeController> = ({
   audioObject,
   id,
-  state,
+  state
 }) => {
   const changeVolume = (
     audio: HTMLAudioElement | null,
     value: number
   ): void => {
     if (audio) {
-      audio.volume = value;
+      audio.volume = value
     }
-  };
+  }
 
-  const [rangeValue, setRangeValue] = useState(1000);
+  const [rangeValue, setRangeValue] = useState(1000)
 
   return (
     <VolumeControllerInput
@@ -27,13 +33,11 @@ const VolumeControler: React.FC<IVolumeController> = ({
       min="1"
       max="1000"
       value={rangeValue}
-      onChange={(event) => {
-        setRangeValue(Number(event.target.value));
-        const decimalValue = Number(event.target.value) / 1000;
-        changeVolume(audioObject, decimalValue);
+      onChange={event => {
+        setRangeValue(Number(event.target.value))
+        const decimalValue = Number(event.target.value) / 1000
+        changeVolume(audioObject, decimalValue)
       }}
     />
-  );
-};
-
-export default VolumeControler;
+  )
+}

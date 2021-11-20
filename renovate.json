@@ -1,5 +1,56 @@
 {
-  "extends": [
-    "config:base"
+  "extends": ["config:base"],
+  "commitBodyTable": true,
+  "branchPrefix": "deps/",
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["major", "minor"],
+      "stabilityDays": 3
+    },
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin"],
+      "automerge": true
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "addLabels": ["d:major"]
+    },
+    {
+      "matchUpdateTypes": ["minor"],
+      "addLabels": ["d:minor"]
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "addLabels": ["d:patch"]
+    },
+    {
+      "matchUpdateTypes": ["pin"],
+      "addLabels": ["d:pin"]
+    },
+    {
+      "matchUpdateTypes": ["rollback"],
+      "addLabels": ["d:rollback"]
+    },
+    {
+      "matchPackagePatterns": ["eslint"],
+      "addLabels": ["lint"]
+    },
+    {
+      "matchPackagePatterns": ["styled-components"],
+      "addLabels": ["styled-components"]
+    },
+    {
+      "matchPackagePatterns": ["typescript", "types"],
+      "addLabels": ["typescript"]
+    },
+    {
+      "matchPackagePatterns": ["react"],
+      "addLabels": ["react"]
+    },
+    {
+      "matchPackagePatterns": ["next"],
+      "addLabels": ["next.js"]
+    }
   ]
 }
