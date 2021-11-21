@@ -1,0 +1,4 @@
+{
+  "src/**/*.ts": "yarn lint --fix",
+  "src/**/*.tsx": "yarn lint --fix"
+}
