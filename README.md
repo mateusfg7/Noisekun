@@ -7,6 +7,14 @@ _Listen combinations of ambient sounds for **relaxing** or getting more **produc
 </div>
 
 <br/>
+
+<div align="right">
+
+_Inspired on [Noisli](https://www.noisli.com/)_
+
+</div>
+
+<br/>
 <br/>
 
 # Setup Project
@@ -109,7 +117,3 @@ npm run build && npm run start
 - [SCUBA BREATHING SOUND EFFECT IN HIGH QUALITY](https://www.youtube.com/watch?v=iwnFU28litc)
 - [Weather - Rain Drops 3 - SFX Producer ( No Copyright Sound Effects )](https://www.youtube.com/watch?v=yLhG21A_9QE)
 - [ambience - Amb Park - SFX Producer ( No Copyright Sound Effect )](https://www.youtube.com/watch?v=yN_5eOQvA3s)
-
-<br/>
-
-_Inspired on [Noisli](https://www.noisli.com/)_
