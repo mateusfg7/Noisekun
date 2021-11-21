@@ -84,7 +84,7 @@ npm run build && npm run start
 
 <div align="center">
 
-[![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=flat-square)](https://www.codefactor.io/repository/github/mateusfg7/noisekun)
+![](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fnoisekun.vercel.app) [![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=flat-square)](https://www.codefactor.io/repository/github/mateusfg7/noisekun)
 
 </div>
 
