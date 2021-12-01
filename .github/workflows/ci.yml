@@ -15,7 +15,7 @@ jobs:
           node-version: 'lts/*'
 
       - name: Install Dependencies
-        run: npm install
+        run: yarn install
 
       - name: Run ESLint
-        run: npm run lint
+        run: yarn lint
