@@ -1,19 +1,15 @@
 import React from 'react'
 
 import { Sound } from '../Sound'
-import { IVolumeController } from '../VolumeController'
+import { VolumeController } from '../VolumeController'
 
 import AudiosBlock from './styles'
 
 export interface IAudios {
-  VolumeController: React.FC<IVolumeController>
   changeStateOfAudio: CallableFunction
 }
 
-export const Audios: React.FC<IAudios> = ({
-  VolumeController,
-  changeStateOfAudio
-}) => {
+export const Audios: React.FC<IAudios> = ({ changeStateOfAudio }) => {
   return (
     <AudiosBlock>
       <Sound
