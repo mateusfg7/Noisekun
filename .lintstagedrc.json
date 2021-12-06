@@ -1,4 +1,4 @@
 {
-  "src/**/*.ts": "yarn lint --fix",
-  "src/**/*.tsx": "yarn lint --fix"
+  "src/**/*.ts": "eslint --fix",
+  "src/**/*.tsx": "eslint --fix"
 }
