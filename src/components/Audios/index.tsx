@@ -3,6 +3,7 @@ import React from 'react'
 import { Sound } from '../Sound'
 
 import AudiosBlock from './styles'
+
 export const Audios: React.FC = () => {
   return (
     <AudiosBlock>
