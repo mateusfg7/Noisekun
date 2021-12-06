@@ -7,8 +7,6 @@ import { Header } from '../components/Header'
 import { Audios } from '../components/Audios'
 import { Footer } from '../components/Footer'
 
-import changeStateOfAudio from '../functions/changeStateOfAudio'
-
 const Home: React.FC = () => {
   return (
     <div className="App">
@@ -20,7 +18,7 @@ const Home: React.FC = () => {
 
       <Header />
       <section className="main-section audio-section">
-        <Audios changeStateOfAudio={changeStateOfAudio} />
+        <Audios />
       </section>
       <Footer />
     </div>
