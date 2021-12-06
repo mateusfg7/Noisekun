@@ -30,7 +30,7 @@ export const Sound: React.FC<ISound> = ({ name }) => {
   const [soundIsActive, setSoundIsActive] = useState(false)
   const soundHTMLRef = useRef<HTMLAudioElement>()
 
-  function changeStateOfSound() {
+  function toggleSoundState() {
     const soundHTMLElement = soundHTMLRef.current
 
     if (!soundIsActive) {
@@ -56,7 +56,7 @@ export const Sound: React.FC<ISound> = ({ name }) => {
       <SoundButton
         id={`${name}-button`}
         className={soundIsActive ? 'selected' : ''}
-        onClick={() => changeStateOfSound()}
+        onClick={() => toggleSoundState()}
       >
         <i className={`${icons[name]} icons`} />
       </SoundButton>
