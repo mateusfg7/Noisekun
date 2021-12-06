@@ -30,10 +30,10 @@ const backgroundChange = keyframes`
     background-color: #e2b618;
   }
   45% {
-    background-color: #d35400;
+    background-color: #73a84f;
   }
   50% {
-    background-color: #ba1616;
+    background-color: #5ce5b4;
   }
   55% {
     background-color: #52bad5;
