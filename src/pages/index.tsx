@@ -5,7 +5,6 @@ import GlobalStyle from '../styles/global'
 
 import { Header } from '../components/Header'
 import { Audios } from '../components/Audios'
-import { Sound } from '../components/Sound'
 import { VolumeController } from '../components/VolumeController'
 import { Footer } from '../components/Footer'
 
@@ -23,7 +22,6 @@ const Home: React.FC = () => {
       <Header />
       <section className="main-section audio-section">
         <Audios
-          Sound={Sound}
           VolumeController={VolumeController}
           changeStateOfAudio={changeStateOfAudio}
         />
