@@ -1,18 +1,16 @@
 import React, { useRef, useState } from 'react'
 
+import { VolumeController } from '../VolumeController'
+
+import changeStateOfAudio from '../../functions/changeStateOfAudio'
+
 import { SoundComponent, SoundButton } from './styles'
 
 export interface ISound {
   name: string
-  changeStateOfAudio: CallableFunction
-  VolumeController: CallableFunction
 }
 
-export const Sound: React.FC<ISound> = ({
-  name,
-  changeStateOfAudio,
-  VolumeController
-}) => {
+export const Sound: React.FC<ISound> = ({ name }) => {
   const icons: { [index: string]: string } = {
     rain: 'icofont-rainy',
     storm: 'icofont-rainy-thunder',
