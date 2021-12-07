@@ -5,6 +5,8 @@ const AudiosBlock = styled.div`
   grid-template-columns: repeat(5, 1fr);
   gap: 30px;
 
+  margin: 25px auto;
+
   @media (max-width: 650px) {
     grid-template-columns: repeat(4, 1fr);
   }
