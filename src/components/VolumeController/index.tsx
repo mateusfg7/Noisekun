@@ -33,6 +33,7 @@ export const VolumeController: React.FC<IVolumeController> = ({
       min="1"
       max="1000"
       value={rangeValue}
+      percentValue={(rangeValue * 100) / 1000}
       onChange={event => {
         setRangeValue(Number(event.target.value))
         const decimalValue = Number(event.target.value) / 1000
