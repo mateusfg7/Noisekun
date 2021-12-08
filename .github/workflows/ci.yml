@@ -20,4 +20,4 @@ jobs:
         run: yarn install
 
       - name: Run ESLint
-        run: eslint src/*
+        run: yarn lint src/*
