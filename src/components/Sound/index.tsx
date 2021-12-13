@@ -9,22 +9,22 @@ export interface ISound {
 }
 
 export const Sound: React.FC<ISound> = ({ name }) => {
-  const icons: { [index: string]: string } = {
-    rain: 'icofont-rainy',
-    storm: 'icofont-rainy-thunder',
-    wind: 'icofont-wind',
-    water: 'icofont-water-drop',
-    'ocean-waves': 'icofont-wind-waves',
-    'small-waves': 'icofont-wave',
-    'forest-ambience': 'icofont-tree-alt',
-    leafs: 'icofont-leaf',
-    fire: 'icofont-fire-burn',
-    night: 'icofont-night',
-    coffee: 'icofont-coffee-mug',
-    fan: 'icofont-headphone',
-    train: 'icofont-train-line',
-    'air-plane': 'icofont-airplane',
-    underwater: 'icofont-swimmer'
+  const rename: { [index: string]: string } = {
+    rain: 'rain',
+    storm: 'storm',
+    wind: 'wind',
+    drops: 'water',
+    waves: 'ocean-waves',
+    water: 'small-waves',
+    'birds-tree': 'forest-ambience',
+    leafs: 'leafs',
+    fire: 'fire',
+    night: 'night',
+    coffee: 'coffee',
+    'noise-block': 'fan',
+    train: 'train',
+    'air-plane': 'air-plane',
+    underwater: 'underwater'
   }
 
   const [soundIsActive, setSoundIsActive] = useState(false)
@@ -48,7 +48,7 @@ export const Sound: React.FC<ISound> = ({ name }) => {
     <SoundComponent>
       <audio loop preload="true" ref={soundHTMLRef}>
         <source
-          src={`${process.env.CDN_AUDIO_SERVER}/${name}.mp3`}
+          src={`${process.env.CDN_AUDIO_SERVER}/${rename[name]}.mp3`}
           type="audio/mp3"
         />
       </audio>
@@ -58,7 +58,7 @@ export const Sound: React.FC<ISound> = ({ name }) => {
         className={soundIsActive ? 'selected' : ''}
         onClick={() => toggleSoundState()}
       >
-        <i className={`${icons[name]} icons`} />
+        <img src={`/icons/${name}.svg`} className="icons" />
       </SoundButton>
 
       <VolumeController
