@@ -43,7 +43,6 @@ export default class MyDocument extends Document {
           <meta charSet="utf-8" />
 
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
-          <link rel="stylesheet" href="/icofont/icofont.min.css" />
         </Head>
         <body>
           <Main />
