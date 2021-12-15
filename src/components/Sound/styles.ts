@@ -19,6 +19,7 @@ export const SoundButton = styled.div`
   height: 100px;
 
   color: rgba(255, 255, 255, 0.5);
+  border-radius: 10%;
 
   transition: 0.3s;
 
@@ -29,7 +30,6 @@ export const SoundButton = styled.div`
       opacity: 0.8;
     }
 
-    border-radius: 10%;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.09);
   }
