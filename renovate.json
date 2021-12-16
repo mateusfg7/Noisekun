@@ -1,5 +1,6 @@
 {
   "extends": ["config:base"],
+  "baseBranches": ["dev"],
   "commitBodyTable": true,
   "branchPrefix": "deps/",
   "labels": ["dependencies"],
