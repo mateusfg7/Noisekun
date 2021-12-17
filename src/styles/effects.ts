@@ -3,67 +3,67 @@ import { keyframes } from 'styled-components'
 const backgroundChange = keyframes`
 
   0% {
-    background-color: #52bad5;
+    background-color: #30A7C5;
   }
   5% {
-    background-color: #2980b9;
+    background-color: #2980B9;
   }
   10% {
-    background-color: #5ce5b4;
+    background-color: #006B8F;
   }
   15% {
-    background-color: #73a84f;
+    background-color: #167C80;
   }
   20% {
-    background-color: #9b59b6;
+    background-color: #1DAF7C;
   }
   25% {
-    background-color: #cb92e2;
+    background-color: #9516DF;
   }
   30% {
-    background-color: #1c128b;
+    background-color: #DB162F;
   }
   35% {
-    background-color: #d8e33d;
+    background-color: #30A7C5;
   }
   40% {
-    background-color: #e2b618;
+    background-color: #2980B9;
   }
   45% {
-    background-color: #73a84f;
+    background-color: #006B8F;
   }
   50% {
-    background-color: #5ce5b4;
+    background-color: #167C80;
   }
   55% {
-    background-color: #52bad5;
+    background-color: #1DAF7C;
   }
   60% {
-    background-color: #2980b9;
+    background-color: #9516DF;
   }
   65% {
-    background-color: #5ce5b4;
+    background-color: #DB162F;
   }
   70% {
-    background-color: #73a84f;
+    background-color: #30A7C5;
   }
   75% {
-    background-color: #9b59b6;
+    background-color: #2980B9;
   }
   80% {
-    background-color: #cb92e2;
+    background-color: #006B8F;
   }
   85% {
-    background-color: #1c128b;
+    background-color: #167C80;
   }
   90% {
-    background-color: #e3b63d;
+    background-color: #1DAF7C;
   }
   95% {
-    background-color: #d8e33d;
+    background-color: #9516DF;
   }
   100% {
-    background-color: #52bad5;
+    background-color: #DB162F;
   }
 `
 
