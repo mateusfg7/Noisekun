@@ -18,39 +18,43 @@ const VolumeControllerInput = styled.input<Props>`
 
   cursor: pointer;
 
+  --thumb-height: 15px;
+  --thumb-width: 15px;
+  --thumb-color: rgba(255, 255, 255, 1);
+  --thumb-border: none;
+  --thumb-border-radius: 100%;
+
   /* MARKER */
   /* Chrome/Safari/Opera */
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height: 15px;
-    width: 15px;
+    height: var(--thumb-height);
+    width: var(--thumb-width);
 
-    background: rgba(255, 255, 255, 1);
+    background: var(--thumb-color);
 
-    border: none;
-    border-radius: 100%;
+    border: var(--thumb-border);
+    border-radius: var(--thumb-border-radius);
   }
-
   /* Firefox */
   &::-moz-range-thumb {
-    height: 13px;
-    width: 13px;
+    height: var(--thumb-height);
+    width: var(--thumb-width);
 
-    background: rgba(255, 255, 255, 1);
+    background: var(--thumb-color);
 
-    border: none;
-    border-radius: 100%;
+    border: var(--thumb-border);
+    border-radius: var(--thumb-border-radius);
   }
-
   /* IE */
   &::-ms-thumb {
-    height: 13px;
-    width: 13px;
+    height: var(--thumb-height);
+    width: var(--thumb-width);
 
-    background: rgba(255, 255, 255, 1);
+    background: var(--thumb-color);
 
-    border: none;
-    border-radius: 100%;
+    border: var(--thumb-border);
+    border-radius: var(--thumb-border-radius);
   }
 
   &.selected {
