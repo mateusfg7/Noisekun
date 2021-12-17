@@ -18,11 +18,12 @@ const VolumeControllerInput = styled.input<Props>`
 
   cursor: pointer;
 
-  --thumb-height: 15px;
-  --thumb-width: 15px;
+  --thumb-height: 10px;
+  --thumb-width: 10px;
   --thumb-color: rgba(255, 255, 255, 1);
   --thumb-border: none;
   --thumb-border-radius: 100%;
+  --transition: all 0.1s;
 
   /* MARKER */
   /* Chrome/Safari/Opera */
@@ -35,6 +36,8 @@ const VolumeControllerInput = styled.input<Props>`
 
     border: var(--thumb-border);
     border-radius: var(--thumb-border-radius);
+
+    transition: var(--transition);
   }
   /* Firefox */
   &::-moz-range-thumb {
@@ -45,6 +48,8 @@ const VolumeControllerInput = styled.input<Props>`
 
     border: var(--thumb-border);
     border-radius: var(--thumb-border-radius);
+
+    transition: var(--transition);
   }
   /* IE */
   &::-ms-thumb {
@@ -55,10 +60,36 @@ const VolumeControllerInput = styled.input<Props>`
 
     border: var(--thumb-border);
     border-radius: var(--thumb-border-radius);
+
+    transition: var(--transition);
   }
 
   &.selected {
     opacity: 1;
+  }
+
+  @media (min-width: 800px) {
+    &:hover {
+      --thumb-hover-height: 15px;
+      --thumb-hover-width: 15px;
+
+      /* MARKER */
+      /* Chrome/Safari/Opera */
+      &::-webkit-slider-thumb {
+        height: var(--thumb-hover-height);
+        width: var(--thumb-hover-width);
+      }
+      /* Firefox */
+      &::-moz-range-thumb {
+        height: var(--thumb-hover-height);
+        width: var(--thumb-hover-width);
+      }
+      /* IE */
+      &::-ms-thumb {
+        height: var(--thumb-hover-height);
+        width: var(--thumb-hover-width);
+      }
+    }
   }
 
   @media (max-width: 700px) {
