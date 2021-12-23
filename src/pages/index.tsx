@@ -4,8 +4,12 @@ import Head from 'next/head'
 import GlobalStyle from '../styles/global'
 
 import { Header } from '../components/Header'
-import { Audios } from '../components/Audios'
+import { Sound } from '../components/Sound'
 import { Footer } from '../components/Footer'
+
+import { AudiosBlock } from '../styles/pages/index'
+
+import soundList from '../sounds.json'
 
 const Home: React.FC = () => {
   return (
@@ -18,7 +22,16 @@ const Home: React.FC = () => {
 
       <Header />
       <section className="main-section audio-section">
-        <Audios />
+        <AudiosBlock>
+          {soundList.map(sound => (
+            <Sound
+              key={sound.name}
+              name={sound.name}
+              iconFile={sound.iconFile}
+              audioFile={sound.audioFile}
+            />
+          ))}
+        </AudiosBlock>
       </section>
       <Footer />
     </div>

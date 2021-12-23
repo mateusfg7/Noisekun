@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const AudiosBlock = styled.div`
+export const AudiosBlock = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 30px;
@@ -23,5 +23,3 @@ const AudiosBlock = styled.div`
     grid-template-columns: 1fr;
   }
 `
-
-export default AudiosBlock
