@@ -18,43 +18,78 @@ const VolumeControllerInput = styled.input<Props>`
 
   cursor: pointer;
 
+  --thumb-height: 10px;
+  --thumb-width: 10px;
+  --thumb-color: rgba(255, 255, 255, 1);
+  --thumb-border: none;
+  --thumb-border-radius: 100%;
+  --transition: all 0.1s;
+
   /* MARKER */
   /* Chrome/Safari/Opera */
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    height: 15px;
-    width: 15px;
+    height: var(--thumb-height);
+    width: var(--thumb-width);
 
-    background: rgba(255, 255, 255, 1);
+    background: var(--thumb-color);
 
-    border: none;
-    border-radius: 100%;
+    border: var(--thumb-border);
+    border-radius: var(--thumb-border-radius);
+
+    transition: var(--transition);
   }
-
   /* Firefox */
   &::-moz-range-thumb {
-    height: 13px;
-    width: 13px;
+    height: var(--thumb-height);
+    width: var(--thumb-width);
 
-    background: rgba(255, 255, 255, 1);
+    background: var(--thumb-color);
 
-    border: none;
-    border-radius: 100%;
+    border: var(--thumb-border);
+    border-radius: var(--thumb-border-radius);
+
+    transition: var(--transition);
   }
-
   /* IE */
   &::-ms-thumb {
-    height: 13px;
-    width: 13px;
+    height: var(--thumb-height);
+    width: var(--thumb-width);
 
-    background: rgba(255, 255, 255, 1);
+    background: var(--thumb-color);
 
-    border: none;
-    border-radius: 100%;
+    border: var(--thumb-border);
+    border-radius: var(--thumb-border-radius);
+
+    transition: var(--transition);
   }
 
   &.selected {
     opacity: 1;
+  }
+
+  @media (min-width: 800px) {
+    &:hover {
+      --thumb-hover-height: 15px;
+      --thumb-hover-width: 15px;
+
+      /* MARKER */
+      /* Chrome/Safari/Opera */
+      &::-webkit-slider-thumb {
+        height: var(--thumb-hover-height);
+        width: var(--thumb-hover-width);
+      }
+      /* Firefox */
+      &::-moz-range-thumb {
+        height: var(--thumb-hover-height);
+        width: var(--thumb-hover-width);
+      }
+      /* IE */
+      &::-ms-thumb {
+        height: var(--thumb-hover-height);
+        width: var(--thumb-hover-width);
+      }
+    }
   }
 
   @media (max-width: 700px) {
