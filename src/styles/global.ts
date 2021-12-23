@@ -3,8 +3,6 @@ import backgroundChange from './effects'
 
 export default createGlobalStyle`
 
-  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&display=swap');
-
   * {
     padding: 0;
     margin: 0;
