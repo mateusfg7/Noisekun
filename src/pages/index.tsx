@@ -7,7 +7,7 @@ import { Header } from '../components/Header'
 import { Sound } from '../components/Sound'
 import { Footer } from '../components/Footer'
 
-import { AudiosBlock } from '../styles/pages/index'
+import { SoundGridLayout } from '../styles/pages/index'
 
 import soundList from '../sounds.json'
 
@@ -22,7 +22,7 @@ const Home: React.FC = () => {
 
       <Header />
       <section className="main-section audio-section">
-        <AudiosBlock>
+        <SoundGridLayout>
           {soundList.map(sound => (
             <Sound
               key={sound.name}
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
               audioFile={sound.audioFile}
             />
           ))}
-        </AudiosBlock>
+        </SoundGridLayout>
       </section>
       <Footer />
     </div>
