@@ -18,6 +18,22 @@ export default createGlobalStyle`
     border: 0;
   }
 
+  ::-webkit-scrollbar {
+    background: none;
+    width: 7px;
+  }
+  ::-webkit-scrollbar:hover {
+    width: 15px;
+    cursor: grab;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:active {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
 
 
   body {
