@@ -12,9 +12,9 @@ const LocalHeader = styled.header`
   box-shadow: 0px 1px 30px rgba(0, 0, 0, 0.05);
 
   h1 {
+    font-weight: 500;
     a {
       text-decoration: none;
-      font-weight: 700;
       color: rgba(255, 255, 255, 0.7);
     }
   }
