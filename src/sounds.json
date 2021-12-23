@@ -1,0 +1,130 @@
+[
+  {
+    "name": "rain",
+    "iconFile": "rain.svg",
+    "audioFile": {
+      "name": "rain.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "storm",
+    "iconFile": "storm.svg",
+    "audioFile": {
+      "name": "storm.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "wind",
+    "iconFile": "wind.svg",
+    "audioFile": {
+      "name": "wind.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "drops",
+    "iconFile": "drops.svg",
+    "audioFile": {
+      "name": "water.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "waves",
+    "iconFile": "waves.svg",
+    "audioFile": {
+      "name": "ocean-waves.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "water",
+    "iconFile": "water.svg",
+    "audioFile": {
+      "name": "small-waves.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "birds-tree",
+    "iconFile": "birds-tree.svg",
+    "audioFile": {
+      "name": "forest-ambience.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "leafs",
+    "iconFile": "leafs.svg",
+    "audioFile": {
+      "name": "leafs.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "fire",
+    "iconFile": "fire.svg",
+    "audioFile": {
+      "name": "fire.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "night",
+    "iconFile": "night.svg",
+    "audioFile": {
+      "name": "night.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "wind",
+    "iconFile": "wind.svg",
+    "audioFile": {
+      "name": "wind.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "coffee",
+    "iconFile": "coffee.svg",
+    "audioFile": {
+      "name": "coffee.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "noise-block",
+    "iconFile": "noise-block.svg",
+    "audioFile": {
+      "name": "fan.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "train",
+    "iconFile": "train.svg",
+    "audioFile": {
+      "name": "train.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "air-plane",
+    "iconFile": "air-plane.svg",
+    "audioFile": {
+      "name": "air-plane.mp3",
+      "type": "audio/mp3"
+    }
+  },
+  {
+    "name": "underwater",
+    "iconFile": "underwater.svg",
+    "audioFile": {
+      "name": "underwater.mp3",
+      "type": "audio/mp3"
+    }
+  }
+]

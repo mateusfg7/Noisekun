@@ -6,27 +6,14 @@ import { SoundComponent, SoundButton } from './styles'
 
 export interface ISound {
   name: string
+  iconFile: string
+  audioFile: {
+    name: string
+    type: string
+  }
 }
 
-export const Sound: React.FC<ISound> = ({ name }) => {
-  const rename: { [index: string]: string } = {
-    rain: 'rain',
-    storm: 'storm',
-    wind: 'wind',
-    drops: 'water',
-    waves: 'ocean-waves',
-    water: 'small-waves',
-    'birds-tree': 'forest-ambience',
-    leafs: 'leafs',
-    fire: 'fire',
-    night: 'night',
-    coffee: 'coffee',
-    'noise-block': 'fan',
-    train: 'train',
-    'air-plane': 'air-plane',
-    underwater: 'underwater'
-  }
-
+export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
   const [soundIsActive, setSoundIsActive] = useState(false)
   const soundHTMLRef = useRef<HTMLAudioElement>()
 
@@ -48,8 +35,8 @@ export const Sound: React.FC<ISound> = ({ name }) => {
     <SoundComponent>
       <audio loop preload="true" ref={soundHTMLRef}>
         <source
-          src={`${process.env.CDN_AUDIO_SERVER}/${rename[name]}.mp3`}
-          type="audio/mp3"
+          src={`${process.env.CDN_AUDIO_SERVER}/${audioFile.name}`}
+          type={`${audioFile.type}`}
         />
       </audio>
 
@@ -58,7 +45,7 @@ export const Sound: React.FC<ISound> = ({ name }) => {
         className={soundIsActive ? 'selected' : ''}
         onClick={() => toggleSoundState()}
       >
-        <img src={`/icons/${name}.svg`} className="icons" />
+        <img src={`/icons/${iconFile}`} className="icons" />
       </SoundButton>
 
       <VolumeController
