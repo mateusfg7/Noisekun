@@ -80,14 +80,6 @@
     }
   },
   {
-    "name": "wind",
-    "iconFile": "wind.svg",
-    "audioFile": {
-      "name": "wind.mp3",
-      "type": "audio/mp3"
-    }
-  },
-  {
     "name": "coffee",
     "iconFile": "coffee.svg",
     "audioFile": {
