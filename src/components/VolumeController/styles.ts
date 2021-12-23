@@ -10,7 +10,7 @@ const VolumeControllerInput = styled.input<Props>`
   appearance: none;
 
   width: 100%;
-  height: 4px;
+  height: 3px;
 
   background: rgba(255, 255, 255, 1);
 
