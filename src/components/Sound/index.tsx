@@ -45,7 +45,7 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
         className={soundIsActive ? 'selected' : ''}
         onClick={() => toggleSoundState()}
       >
-        <img src={`/icons/${iconFile}`} className="icons" />
+        <img src={`/assets/${iconFile}`} className="icons" />
       </SoundButton>
 
       <VolumeController
