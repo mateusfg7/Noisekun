@@ -1,0 +1,36 @@
+{
+  "name": "Noisekun",
+  "description": "Listen combinations of ambient sounds for relaxing** or getting more productive on your task!",
+  "theme_color": "#fff",
+  "background_color": "#30A7C5",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "icons/icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-100x100.png",
+      "sizes": "100x100",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-800x800.png",
+      "sizes": "800x800",
+      "type": "image/png"
+    }
+  ],
+  "splash_pages": null
+}
