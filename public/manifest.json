@@ -3,6 +3,7 @@
   "description": "Listen combinations of ambient sounds for relaxing** or getting more productive on your task!",
   "theme_color": "#fff",
   "background_color": "#30A7C5",
+  "display": "standalone",
   "scope": "/",
   "start_url": "/",
   "icons": [
@@ -31,6 +32,5 @@
       "sizes": "800x800",
       "type": "image/png"
     }
-  ],
-  "splash_pages": null
+  ]
 }
