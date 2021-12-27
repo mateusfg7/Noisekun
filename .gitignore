@@ -14,8 +14,9 @@
 
 # production
 /build
-public/sw*
-public/workbox-*
+**/public/sw*
+**/public/workbox-*
+**/public/fallback*
 
 
 # misc
