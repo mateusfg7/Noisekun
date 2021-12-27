@@ -40,9 +40,26 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt">
         <Head>
-          <meta charSet="utf-8" />
-
+          <link
+            href="/icons/icon-32x32.png"
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+          />
+          <link
+            href="/icons/icon-100x100.png"
+            rel="icon"
+            type="image/png"
+            sizes="100x100"
+          />
+          <link
+            href="/icons/icon-192x192.png"
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+          />
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+          <link rel="manifest" href="/manifest.json" />
 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />

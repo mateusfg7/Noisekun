@@ -14,6 +14,10 @@
 
 # production
 /build
+**/public/sw*
+**/public/workbox-*
+**/public/fallback*
+
 
 # misc
 .DS_Store
