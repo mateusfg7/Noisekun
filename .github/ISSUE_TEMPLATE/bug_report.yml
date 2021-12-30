@@ -1,0 +1,31 @@
+name: "Bug Report"
+description: "Something is not working as expected"
+labels: ["bug"]
+body:
+  - type: textarea
+    attributes:
+      label: "Describe the bug"
+      description: "A clear and concise description of what the bug is and how to reproduce it"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Environment"
+      description: "Environment that the bug appears"
+      value: |
+        **Browser:** Firefox
+        **OS:** Ubuntu 20.04
+        **Node Version:** v16.13.0
+        etc...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Screenshot"
+      description: "Some screenshots of the error if applicable"
+  - type: textarea
+    attributes:
+      label: "Output"
+      description: "Some terminal/console error output if applicable (the text will auto-render to bash code-block)"
+      render: bash
+

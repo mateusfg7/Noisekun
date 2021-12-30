@@ -1,0 +1,15 @@
+name: "Feat Request"
+description: "What new functionality do you want to see?"
+labels: ["feat"]
+body:
+  - type: textarea
+    attributes:
+      label: "Describe new feat"
+      description: "What, how and why do you want this new feature?"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Referencies"
+      description: "Some references to use as base of this feature, like screenshots, icons, links..."
+
