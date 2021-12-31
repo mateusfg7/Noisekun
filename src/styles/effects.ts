@@ -18,7 +18,7 @@ const backgroundChange = keyframes`
     background-color: #1DAF7C;
   }
   25% {
-    background-color: #9516DF;
+    background-color: #4940AA;
   }
   30% {
     background-color: #DB162F;
@@ -39,7 +39,7 @@ const backgroundChange = keyframes`
     background-color: #1DAF7C;
   }
   60% {
-    background-color: #9516DF;
+    background-color: #4940AA;
   }
   65% {
     background-color: #DB162F;
