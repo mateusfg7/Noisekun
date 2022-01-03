@@ -27,7 +27,7 @@
     "name": "drops",
     "iconFile": "drops.svg",
     "audioFile": {
-      "name": "water.mp3",
+      "name": "drops.mp3",
       "type": "audio/mp3"
     }
   },
@@ -35,7 +35,7 @@
     "name": "waves",
     "iconFile": "waves.svg",
     "audioFile": {
-      "name": "ocean-waves.mp3",
+      "name": "waves.mp3",
       "type": "audio/mp3"
     }
   },
@@ -43,7 +43,7 @@
     "name": "water",
     "iconFile": "water.svg",
     "audioFile": {
-      "name": "small-waves.mp3",
+      "name": "water.mp3",
       "type": "audio/mp3"
     }
   },
@@ -51,7 +51,7 @@
     "name": "birds-tree",
     "iconFile": "birds-tree.svg",
     "audioFile": {
-      "name": "forest-ambience.mp3",
+      "name": "birds-tree.mp3",
       "type": "audio/mp3"
     }
   },
@@ -91,7 +91,7 @@
     "name": "noise-block",
     "iconFile": "noise-block.svg",
     "audioFile": {
-      "name": "fan.mp3",
+      "name": "noise-block.mp3",
       "type": "audio/mp3"
     }
   },
