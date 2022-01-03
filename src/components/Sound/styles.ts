@@ -56,9 +56,10 @@ export const SoundButton = styled.div`
   }
 
   @media (max-width: 800px) {
+    box-shadow: none;
+
     &:hover {
       background: none;
-      box-shadow: none;
     }
 
     &.selected {
