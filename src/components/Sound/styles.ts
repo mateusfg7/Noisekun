@@ -22,17 +22,6 @@ export const SoundButton = styled.div`
   border-radius: 10%;
 
   transition: 0.3s;
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
-
-  &:hover {
-    cursor: pointer;
-    color: rgba(255, 255, 255, 0.8);
-    img {
-      opacity: 0.8;
-    }
-
-    background: rgba(255, 255, 255, 0.1);
-  }
 
   &.selected {
     color: rgba(255, 255, 255, 1);
@@ -41,7 +30,6 @@ export const SoundButton = styled.div`
     }
 
     border-radius: 10% 10% 0 0;
-    background: rgba(255, 255, 255, 0.1);
   }
 
   .icons {
@@ -55,15 +43,21 @@ export const SoundButton = styled.div`
     opacity: 0.7;
   }
 
-  @media (max-width: 800px) {
-    box-shadow: none;
+  @media (min-width: 800px) {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
 
     &:hover {
-      background: none;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.8);
+      img {
+        opacity: 0.8;
+      }
+
+      background: rgba(255, 255, 255, 0.1);
     }
 
     &.selected {
-      background: none;
+      background: rgba(255, 255, 255, 0.1);
     }
   }
 `
