@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const SoundGridLayout = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: 30px;
+  gap: 50px;
 
   margin: 25px auto;
 
@@ -21,5 +21,6 @@ export const SoundGridLayout = styled.div`
 
   @media (min-width: 700px) {
     grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
   }
 `
