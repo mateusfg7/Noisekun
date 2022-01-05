@@ -23,4 +23,8 @@ export const SoundGridLayout = styled.div`
     grid-template-columns: repeat(5, 1fr);
     gap: 30px;
   }
+
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 `
