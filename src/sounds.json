@@ -118,5 +118,13 @@
       "name": "underwater.mp3",
       "type": "audio/mp3"
     }
+  },
+  {
+    "name": "washingmachine",
+    "iconFile": "washingmachine.svg",
+    "audioFile": {
+      "name": "washingmachine.mp3",
+      "type": "audio/mp3"
+    }
   }
 ]
