@@ -15,7 +15,8 @@ const VolumeControllerInput = styled.input<Props>`
   background: rgba(255, 255, 255, 0.3);
 
   background-image: linear-gradient(#fff, #fff);
-  background-size: ${props => props.percentValue + 3}%;
+  /* background-size: ${props => props.percentValue + 3}%; */
+  background-size: ${props => props.percentValue}%;
   background-repeat: no-repeat;
 
   border-radius: 13px;
@@ -82,10 +83,6 @@ const VolumeControllerInput = styled.input<Props>`
   @media (min-width: 700px) {
     height: 3px;
 
-    background: rgba(255, 255, 255, 1);
-
-    background-image: none;
-
     --thumb-opacity: 1;
     --thumb-height: 15px;
     --thumb-width: 15px;
@@ -111,6 +108,7 @@ const VolumeControllerInput = styled.input<Props>`
       width: var(--thumb-width);
     }
   }
+
   @media (min-width: 800px) {
     --thumb-height: 10px;
     --thumb-width: 10px;
