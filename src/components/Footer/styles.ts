@@ -8,7 +8,6 @@ const FooterSection = styled.footer`
 
   padding: 15px;
 
-  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(4px);
 
   p {
