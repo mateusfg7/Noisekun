@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 
 import { VolumeController } from '../VolumeController'
-
 import { SoundComponent, SoundButton } from './styles'
 
 export interface ISound {
@@ -20,15 +19,10 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
   function toggleSoundState() {
     const soundHTMLElement = soundHTMLRef.current
 
-    if (!soundIsActive) {
-      if (soundHTMLElement) {
-        soundHTMLElement.play()
-        setSoundIsActive(true)
-      }
-    } else if (soundHTMLElement) {
-      soundHTMLElement.pause()
-      setSoundIsActive(false)
-    }
+    if (!soundIsActive) soundHTMLElement.play()
+    else soundHTMLElement.pause()
+
+    setSoundIsActive(!soundIsActive)
   }
 
   return (
