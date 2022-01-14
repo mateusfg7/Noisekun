@@ -32,12 +32,8 @@ export const SoundButton = styled.div`
     border-radius: 10% 10% 0 0;
   }
 
-  .icons {
-    font-size: 80px;
-  }
-
   img {
-    width: 80px;
+    border: 1px solid red;
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
       brightness(102%) contrast(102%);
     opacity: 0.7;

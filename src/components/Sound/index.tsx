@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import Image from 'next/image'
 
 import { VolumeController } from '../VolumeController'
 import { SoundComponent, SoundButton } from './styles'
@@ -39,7 +40,7 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
         className={soundIsActive ? 'selected' : ''}
         onClick={() => toggleSoundState()}
       >
-        <img src={`/assets/${iconFile}`} className="icons" />
+        <Image src={`/assets/${iconFile}`} width={80} height={80} />
       </SoundButton>
 
       <VolumeController
