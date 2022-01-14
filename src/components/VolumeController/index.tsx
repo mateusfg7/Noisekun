@@ -4,13 +4,11 @@ import VolumeControllerInput from './styles'
 
 export interface IVolumeController {
   audioObject: HTMLAudioElement | null
-  id: string
   state: boolean
 }
 
 export const VolumeController: React.FC<IVolumeController> = ({
   audioObject,
-  id,
   state
 }) => {
   const changeVolume = (
@@ -29,7 +27,6 @@ export const VolumeController: React.FC<IVolumeController> = ({
       className={state ? 'selected' : ''}
       type="range"
       name="audio-decrement"
-      id={id}
       min="1"
       max="1000"
       value={rangeValue}

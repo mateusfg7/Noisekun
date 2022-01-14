@@ -50,7 +50,6 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
 
       <VolumeController
         audioObject={soundHTMLRef.current}
-        id={`${name}-audio-controller`}
         state={soundIsActive}
       />
     </SoundComponent>
