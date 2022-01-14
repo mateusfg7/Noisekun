@@ -49,8 +49,8 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
       </SoundButton>
 
       <VolumeController
-        audioObject={soundHTMLRef.current}
         state={soundIsActive}
+        audioElement={soundHTMLRef.current}
       />
     </SoundComponent>
   )

@@ -3,38 +3,32 @@ import React, { useState } from 'react'
 import VolumeControllerInput from './styles'
 
 export interface IVolumeController {
-  audioObject: HTMLAudioElement | null
   state: boolean
+  audioElement: HTMLAudioElement
 }
 
 export const VolumeController: React.FC<IVolumeController> = ({
-  audioObject,
-  state
+  state,
+  audioElement
 }) => {
-  const changeVolume = (
-    audio: HTMLAudioElement | null,
-    value: number
-  ): void => {
-    if (audio) {
-      audio.volume = value
-    }
-  }
-
   const [rangeValue, setRangeValue] = useState(1000)
+
+  function handleVolume(volume: number) {
+    audioElement.volume = volume
+  }
 
   return (
     <VolumeControllerInput
       className={state ? 'selected' : ''}
       type="range"
       name="audio-decrement"
-      min="1"
+      min="20"
       max="1000"
       value={rangeValue}
       percentValue={(rangeValue * 100) / 1000}
       onChange={event => {
         setRangeValue(Number(event.target.value))
-        const decimalValue = Number(event.target.value) / 1000
-        changeVolume(audioObject, decimalValue)
+        handleVolume(Number(event.target.value) / 1000)
       }}
     />
   )
