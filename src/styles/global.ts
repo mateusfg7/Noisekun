@@ -43,7 +43,7 @@ export default createGlobalStyle`
 
     background: fixed no-repeat center;
     background-size: cover;
-    animation: ${backgroundChange} 300s 0s infinite;
+    animation: ${backgroundChange} calc(7*60s) 0s infinite;
 
     input:focus {
     outline: none;

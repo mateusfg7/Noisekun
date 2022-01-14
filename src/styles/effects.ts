@@ -63,7 +63,7 @@ const backgroundChange = keyframes`
     background-color: #9516DF;
   }
   100% {
-    background-color: #DB162F;
+    background-color: #30A7C5;
   }
 `
 
