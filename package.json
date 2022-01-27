@@ -24,7 +24,7 @@
     "@commitlint/config-conventional": "16.0.0",
     "@next/eslint-plugin-next": "12.0.7",
     "@types/react": "17.0.38",
-    "@types/styled-components": "5.1.19",
+    "@types/styled-components": "5.1.21",
     "@typescript-eslint/eslint-plugin": "5.10.1",
     "@typescript-eslint/parser": "5.10.1",
     "commitizen": "4.2.4",
