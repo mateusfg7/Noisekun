@@ -112,7 +112,9 @@ npm run build && npm run start
   <img src="public/assets/rain.svg" alt="Rain" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/weather-icons/icon-cloud-rain-icon-6709" target="_blank">rain</a>
+  
+  <a src="https://freeicons.io/weather-icons/icon-cloud-rain-icon-6709">rain</a>
+  
   </td>
   </tr>
   <tr>
@@ -120,7 +122,9 @@ npm run build && npm run start
   <img src="public/assets/storm.svg" alt="Storm" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/weather-icons/icon-cloud-lightning-icon-6715" target="_blank">storm</a>
+  
+  <a src="https://freeicons.io/weather-icons/icon-cloud-lightning-icon-6715">storm</a>
+  
   </td>
   </tr>
   <tr>
@@ -128,7 +132,9 @@ npm run build && npm run start
   <img src="public/assets/wind.svg" alt="Wind" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/weather-icons/icon-wind-icon-6748" target="_blank">wind</a>
+  
+  <a src="https://freeicons.io/weather-icons/icon-wind-icon-6748">wind</a>
+  
   </td>
   </tr>
   <tr>
@@ -136,7 +142,9 @@ npm run build && npm run start
   <img src="public/assets/drops.svg" alt="Drops" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/weather-icons/icon-raindrops-icon-6741" target="_blank">drops</a>
+  
+  <a src="https://freeicons.io/weather-icons/icon-raindrops-icon-6741">drops</a>
+  
   </td>
   </tr>
   <tr>
@@ -144,7 +152,9 @@ npm run build && npm run start
   <img src="public/assets/waves.svg" alt="Waves" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/test/travel-beach-swimming-icon-1279" target="_blank">waves</a>
+  
+  <a src="https://freeicons.io/test/travel-beach-swimming-icon-1279">waves</a>
+  
   </td>
   </tr>
   <tr>
@@ -152,7 +162,9 @@ npm run build && npm run start
   <img src="public/assets/water.svg" alt="Water" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/hotel-and-spa/sea-icon-786" target="_blank">water</a>
+  
+  <a src="https://freeicons.io/hotel-and-spa/sea-icon-786">water</a>
+  
   </td>
   </tr>
   <tr>
@@ -160,7 +172,9 @@ npm run build && npm run start
   <img src="public/assets/birds-tree.svg" alt="Birds" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/travel-and-holiday/travel-trees-icon-1302" target="_blank">birds-tree</a>
+  
+  <a src="https://freeicons.io/travel-and-holiday/travel-trees-icon-1302">birds-tree</a>
+  
   </td>
   </tr>
   <tr>
@@ -168,7 +182,9 @@ npm run build && npm run start
   <img src="public/assets/leafs.svg" alt="Leafs" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/beauty-and-salon/leaf-icon-1202" target="_blank">leafs</a>
+  
+  <a src="https://freeicons.io/beauty-and-salon/leaf-icon-1202">leafs</a>
+  
   </td>
   </tr>
   <tr>
@@ -176,7 +192,9 @@ npm run build && npm run start
   <img src="public/assets/fire.svg" alt="Fire" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/travel-and-holiday/travel-fire-icon-1289" target="_blank">fire</a>
+  
+  <a src="https://freeicons.io/travel-and-holiday/travel-fire-icon-1289">fire</a>
+  
   </td>
   </tr>
   <tr>
@@ -184,7 +202,9 @@ npm run build && npm run start
   <img src="public/assets/night.svg" alt="Night" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/weather-icons-2/weather-moon-icon-13639#" target="_blank">night</a> (edited)
+  
+  <a src="https://freeicons.io/weather-icons-2/weather-moon-icon-13639#">night</a> (edited)
+  
   </td>
   </tr>
   <tr>
@@ -192,7 +212,9 @@ npm run build && npm run start
   <img src="public/assets/coffee.svg" alt="Coffee" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/cafe-and-coffee-shop-icons/cafe-cup-icon-2984" target="_blank">coffee</a>
+  
+  <a src="https://freeicons.io/cafe-and-coffee-shop-icons/cafe-cup-icon-2984">coffee</a>
+  
   </td>
   </tr>
   <tr>
@@ -200,7 +222,9 @@ npm run build && npm run start
   <img src="public/assets/noise-block.svg" alt="Noise" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/computer-devices/headset-headphone-earphone-icon-133586" target="_blank">noise-block</a>
+  
+  <a src="https://freeicons.io/computer-devices/headset-headphone-earphone-icon-133586">noise-block</a>
+  
   </td>
   </tr>
   <tr>
@@ -208,7 +232,9 @@ npm run build && npm run start
   <img src="public/assets/train.svg" alt="Train" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/travel-and-holiday/travel-tarin-icon-1301" target="_blank">train</a>
+  
+  <a src="https://freeicons.io/travel-and-holiday/travel-tarin-icon-1301">train</a>
+  
   </td>
   </tr>
   <tr>
@@ -216,7 +242,9 @@ npm run build && npm run start
   <img src="public/assets/air-plane.svg" alt="Airplane" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/travel-and-holiday/travel-plane-flight-icon-1296" target="_blank">air-plane</a>
+  
+  <a src="https://freeicons.io/travel-and-holiday/travel-plane-flight-icon-1296">air-plane</a>
+  
   </td>
   </tr>
   <tr>
@@ -224,7 +252,9 @@ npm run build && npm run start
   <img src="public/assets/underwater.svg" alt="Underwater" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/sports-icons-2/icon-diving-goggles-icon-6578" target="_blank">underwater</a>
+  
+  <a src="https://freeicons.io/sports-icons-2/icon-diving-goggles-icon-6578">underwater</a>
+  
   </td>
   </tr>
   <tr>
@@ -232,7 +262,9 @@ npm run build && npm run start
   <img src="public/assets/washingmachine.svg" alt="Washingmachine" width="50" />
   </td>
   <td>
-  <a src="https://freeicons.io/cleaning/cleaning-washing-machine-washingmachine-icon-42075#" target="_blank">washingmachine</a> (edited)
+
+  <a src="https://freeicons.io/cleaning/cleaning-washing-machine-washingmachine-icon-42075#">washingmachine</a> (edited)
+  
   </td>
   </tr>
 </table>
