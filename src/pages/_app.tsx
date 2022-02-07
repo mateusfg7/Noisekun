@@ -24,8 +24,8 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         <script
           async
           defer
-          data-website-id={process.env.UMAMI_DATA_WEBSITE_ID}
-          src={process.env.UMAMI_INSTANCE_SRC}
+          data-website-id="cd21c714-5753-4e56-ad9a-8a5dee7bcc9d"
+          src="https://mateusfg7-umami-instance.herokuapp.com/umami.js"
         />
       </Head>
       <Component {...pageProps} />
