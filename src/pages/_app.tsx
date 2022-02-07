@@ -20,6 +20,13 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         />
         <meta name="author" content="Mateus Felipe Gonçalves" />
         <meta name="theme-color" content="#30A7C5" />
+
+        <script
+          async
+          defer
+          data-website-id={process.env.UMAMI_DATA_WEBSITE_ID}
+          src={process.env.UMAMI_INSTANCE_SRC}
+        />
       </Head>
       <Component {...pageProps} />
     </>
