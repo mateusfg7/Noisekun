@@ -36,15 +36,26 @@ Create file `.env.local` on root of the project, and add the following variables
 _see `.env.example`_
 ```
 CDN_AUDIO_SERVER=https://cdn.example.com
-UMAMI_DATA_WEBSITE_ID=219c6d62-b980-45db-b379-eb261ea83a25
-UMAMI_INSTANCE_SRC=https://your-umami-instance.com/umami.js
-
 ```
 > The cdn needs to have the audio files on the root of the server
 > 
 > e.g.: _https://cdn.example.com/coffee.mp3_
 >
 > To change this pattern, modify the file `src/components/Sound/index.tsx`
+
+### Setup Umami analytics
+
+Umami script is configured on [`src/pages/_app.tsx`](src/pages/_app.tsx):
+```html
+<script
+  async
+  defer
+  data-website-id="cd21c714-5753-4e56-ad9a-8a5dee7bcc9d"
+  src="https://mateusfg7-umami-instance.herokuapp.com/umami.js"
+/>
+```
+
+Edit this code to add your own Umami script, or remove it to disable Umami analytics.
 
 > See [umami.is](https://umami.is/) for more information about how to setup your instance
 
