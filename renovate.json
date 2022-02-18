@@ -3,6 +3,7 @@
   "commitBodyTable": true,
   "branchPrefix": "deps/",
   "labels": ["dependencies"],
+  "stabilityDays": 3,
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin"],
