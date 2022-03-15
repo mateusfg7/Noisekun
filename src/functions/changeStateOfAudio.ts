@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function changeStateOfAudio (
+export default function changeStateOfAudio(
   audio: HTMLAudioElement | null,
   stateOfAudio: boolean,
   setStateOfAudio: React.Dispatch<React.SetStateAction<boolean>>
