@@ -19,5 +19,5 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Run ESLint
-        run: yarn lint src
+      - name: Run Lint
+        run: yarn lint
