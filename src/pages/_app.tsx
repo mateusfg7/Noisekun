@@ -26,6 +26,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           defer
           data-website-id="cd21c714-5753-4e56-ad9a-8a5dee7bcc9d"
           src="https://mateusfg7-umami-instance.herokuapp.com/umami.js"
+          data-domains="noisekun.vercel.app"
         />
       </Head>
       <Component {...pageProps} />
