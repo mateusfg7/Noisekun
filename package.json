@@ -21,7 +21,7 @@
     "styled-components": "5.3.3"
   },
   "devDependencies": {
-    "@commitlint/cli": "16.2.1",
+    "@commitlint/cli": "16.2.3",
     "@commitlint/config-conventional": "16.2.1",
     "@next/eslint-plugin-next": "12.1.0",
     "@types/react": "17.0.40",
