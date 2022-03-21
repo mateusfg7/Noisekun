@@ -8,14 +8,17 @@ export const Footer: React.FC = () => {
       <div>
         <p>
           by{' '}
-          <a href="https://github.com/mateusfg7" className="author">
+          <a
+            href="https://github.com/mateusfg7"
+            className="author umami--click--author-credit"
+          >
             mateusfg7{' '}
           </a>{' '}
         </p>
         <p>
           <a
             href="https://github.com/mateusfg7/Noisekun/blob/master/LICENSE"
-            className="copy"
+            className="copy umami--click--license"
           >
             {' '}
             &copy; MIT License
