@@ -1,4 +1,0 @@
-{
-  "src/**/*.ts": "eslint --fix",
-  "src/**/*.tsx": "eslint --fix"
-}
