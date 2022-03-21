@@ -28,30 +28,6 @@
     {
       "matchUpdateTypes": ["rollback"],
       "addLabels": ["d:rollback"]
-    },
-    {
-      "matchPackagePatterns": ["eslint"],
-      "addLabels": ["lint"]
-    },
-    {
-      "matchPackagePatterns": ["styled-components"],
-      "addLabels": ["styled-components"]
-    },
-    {
-      "matchPackagePatterns": ["typescript", "types"],
-      "addLabels": ["typescript"]
-    },
-    {
-      "matchPackagePatterns": ["react"],
-      "addLabels": ["react"]
-    },
-    {
-      "matchPackagePatterns": ["next"],
-      "addLabels": ["next.js"]
-    },
-    {
-      "matchPackagePatterns": ["prettier"],
-      "addLabels": ["prettier"]
     }
   ]
 }
