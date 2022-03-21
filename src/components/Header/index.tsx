@@ -6,7 +6,9 @@ export const Header: React.FC = () => {
   return (
     <LocalHeader>
       <h1>
-        <a href="/Noisekun">Noisekun</a>
+        <a href="/Noisekun" className="umami--click--title">
+          Noisekun
+        </a>
       </h1>
     </LocalHeader>
   )
