@@ -4,6 +4,8 @@
 
 _Listen combinations of ambient sounds for **relaxing** or getting more **productive** on your task!_
 
+![](.github/assets/docs/mocks/iphone-man-office-edited.png)
+
 </div>
 
 <br/>
@@ -109,6 +111,8 @@ npm run build && npm run start
 <div align="center">
 
 ![](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fnoisekun.vercel.app) [![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=flat-square)](https://www.codefactor.io/repository/github/mateusfg7/noisekun) ![](https://img.shields.io/github/last-commit/mateusfg7/noisekun?style=flat-square)
+
+![](.github/assets/docs/mocks/window.png)
 
 </div>
 
