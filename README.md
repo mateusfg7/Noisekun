@@ -1,6 +1,6 @@
 <div align="center">
 
-# ![Noisekun :headphones:](.github/docs/favicon.png)
+# ![Noisekun :headphones:](.github/assets/docs/favicon.png)
 
 _Listen combinations of ambient sounds for **relaxing** or getting more **productive** on your task!_
 
