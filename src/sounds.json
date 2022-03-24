@@ -126,5 +126,13 @@
       "name": "washingmachine.mp3",
       "type": "audio/mp3"
     }
+  },
+  {
+    "name": "waterfall",
+    "iconFile": "waterfall.svg",
+    "audioFile": {
+      "name": "waterfall.mp3",
+      "type": "audio/mp3"
+    }
   }
 ]
