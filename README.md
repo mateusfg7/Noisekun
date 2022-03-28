@@ -136,7 +136,7 @@ npm run build && npm run start
 - [Ambience - Ocean Waves 2 - SFX Producer ( No Copyright Ambient Sounds )](https://www.youtube.com/watch?v=SL9NdTMsIUk)
 - [Sound Effect - Rain - Rain Light 2 - SFX Producer ( No Copyright )](https://www.youtube.com/watch?v=3oMcTXhXOpc)
 - [Ambience - Stream Water - SFX Producer ( No Copyright Sound Effects )](https://www.youtube.com/watch?v=cN5sGvQ_m_c)
-- [Thunder - Thunderstorm Light 2 - SFX Producer ( No Copyright Sound Effects )](https://www.youtube.com/watch?v=Xu9SAuPlaKs)
+- ["Thunder-H2-without-windstoper.mp3" by Borys_Kozielski](https://freesound.org/people/Borys_Kozielski/sounds/316831/)
 - [Subway Train Interior (Version 2) (Metro Tube Underground Inside Ambience Background Noise...](https://www.youtube.com/watch?v=3oxBCtkev9g)
 - [SCUBA BREATHING SOUND EFFECT IN HIGH QUALITY](https://www.youtube.com/watch?v=iwnFU28litc)
 - [Weather - Rain Drops 3 - SFX Producer ( No Copyright Sound Effects )](https://www.youtube.com/watch?v=yLhG21A_9QE)
