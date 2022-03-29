@@ -126,20 +126,24 @@ npm run build && npm run start
 [rain](https://freeicons.io/weather-icons/icon-cloud-rain-icon-6709) - [storm](https://freeicons.io/weather-icons/icon-cloud-lightning-icon-6715) - [wind](https://freeicons.io/weather-icons/icon-wind-icon-6748) - [drops](https://freeicons.io/weather-icons/icon-raindrops-icon-6741) - [waves](https://freeicons.io/test/travel-beach-swimming-icon-1279) - [water](https://freeicons.io/hotel-and-spa/sea-icon-786) - [birds-tree](https://freeicons.io/travel-and-holiday/travel-trees-icon-1302) - [leafs](https://freeicons.io/beauty-and-salon/leaf-icon-1202) - [fire](https://freeicons.io/travel-and-holiday/travel-fire-icon-1289) - [night](https://freeicons.io/weather-icons-2/weather-moon-icon-13639#) (edited) - [coffee](https://freeicons.io/cafe-and-coffee-shop-icons/cafe-cup-icon-2984) - [noise-block](https://freeicons.io/computer-devices/headset-headphone-earphone-icon-133586) - [train](https://freeicons.io/travel-and-holiday/travel-tarin-icon-1301) - [air-plane](https://freeicons.io/travel-and-holiday/travel-plane-flight-icon-1296) - [underwater](https://freeicons.io/sports-icons-2/icon-diving-goggles-icon-6578) - [washingmachine](https://freeicons.io/cleaning/cleaning-washing-machine-washingmachine-icon-42075#) (edited) - [waterfall](https://www.svgrepo.com/svg/215029/waterfall) (edited)
 
 ## Sounds
-- [Ambience - Airplane Interior Ambience - SFX Producer ( No Copyright Ambience Sound )](https://www.youtube.com/watch?v=yJrNMM7xvug)
-- [ambience - Restaurant Crowd 2 - SFX Producer ( No Copyright Sound Effect )](https://www.youtube.com/watch?v=2ewwVYoMU5I)
-- [Office - Elevator Fan Loop - SFX Producer ( No Copyright Sound Effects )](https://www.youtube.com/watch?v=Yy8Fujlzn0o)
-- [Fire - Fire Wood Large 2 - SFX Producer ( No Copyright Sound Effects )](https://www.youtube.com/watch?v=aJ21cKAR7-M)
-- [Sound Effect - Surround SFX - Birds Forest 1 - SFX Producer ( No Copyright Sound Effects )](https://www.youtube.com/watch?v=J6OGbkl4Vrs)
-- ["Wind blowing in a field in Texas, USA" by felix.blume](https://freesound.org/people/felix.blume/sounds/217506/)
-- [Ambience - Subdivision Night - SFX Producer ( No Copyright Sound Effects )](https://www.youtube.com/watch?v=nd1qc_bhMOs)
-- [Ambience - Ocean Waves 2 - SFX Producer ( No Copyright Ambient Sounds )](https://www.youtube.com/watch?v=SL9NdTMsIUk)
-- [Sound Effect - Rain - Rain Light 2 - SFX Producer ( No Copyright )](https://www.youtube.com/watch?v=3oMcTXhXOpc)
-- [Ambience - Stream Water - SFX Producer ( No Copyright Sound Effects )](https://www.youtube.com/watch?v=cN5sGvQ_m_c)
-- ["Thunder-H2-without-windstoper.mp3" by Borys_Kozielski](https://freesound.org/people/Borys_Kozielski/sounds/316831/)
-- [Subway Train Interior (Version 2) (Metro Tube Underground Inside Ambience Background Noise...](https://www.youtube.com/watch?v=3oxBCtkev9g)
-- ["Underwater Ambience.wav" by Tim_Verberne](https://freesound.org/people/Tim_Verberne/sounds/482167/)
-- [Weather - Rain Drops 3 - SFX Producer ( No Copyright Sound Effects )](https://www.youtube.com/watch?v=yLhG21A_9QE)
-- [ambience - Amb Park - SFX Producer ( No Copyright Sound Effect )](https://www.youtube.com/watch?v=yN_5eOQvA3s)
-- [WASHING MACHINE UNDERWATER AMBIENCE 2 SOUND](https://quicksounds.com/sound/12411/washing-machine-underwater-ambience-2)
-- ["Waterfall" by straget](https://freesound.org/people/straget/sounds/489073/)
+
+Sound | Author | License | Edition
+--- | --- | --- | ---
+[Airplane](https://www.youtube.com/watch?v=yJrNMM7xvug) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
+[Coffee Shop](https://www.youtube.com/watch?v=2ewwVYoMU5I) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
+[Noise Block](https://www.youtube.com/watch?v=Yy8Fujlzn0o) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
+[Fire Wood](ttps://www.youtube.com/watch?v=aJ21cKAR7-M) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
+[Birds](https://www.youtube.com/watch?v=J6OGbkl4Vrs) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
+[Wind](https://freesound.org/people/felix.blume/sounds/217506/) | [Felix Blume](https://freesound.org/people/felix.blume/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
+[Night](https://www.youtube.com/watch?v=nd1qc_bhMOs) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
+[Waves](https://www.youtube.com/watch?v=SL9NdTMsIUk) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
+[Rain](https://www.youtube.com/watch?v=3oMcTXhXOpc) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
+[Stream Water](https://www.youtube.com/watch?v=cN5sGvQ_m_c) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
+[Thunder Storm](https://freesound.org/people/Borys_Kozielski/sounds/316831/) | [Borys Kozielski](https://freesound.org/people/Borys_Kozielski/) | CC0
+[Train](ttps://www.youtube.com/watch?v=3oxBCtkev9g) | [Finnolia Sound Effects - Tema](https://www.youtube.com/channel/UCp35ayORGJACphg45-IVGOQ) | |
+[Underwater](https://freesound.org/people/Tim_Verberne/sounds/482167/) | [Tim Verberne](https://freesound.org/people/Tim_Verberne/) | CC0
+[Drops](https://www.youtube.com/watch?v=yLhG21A_9QE) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
+[Leafs](https://www.youtube.com/watch?v=Kz0x59DlJks) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
+[Washing Machine](https://quicksounds.com/sound/12411/washing-machine-underwater-ambience-2) | [QuickSounds.com](https://quicksounds.com/) | [Standard License](https://quicksounds.com/page/license-agreement) | [Mateus Felipe](https://github.com/mateusfg7)
+[Waterfall](https://freesound.org/people/straget/sounds/489073/) | [Straget](https://freesound.org/people/straget/) | CC BY
+
