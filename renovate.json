@@ -4,6 +4,8 @@
   "branchPrefix": "deps/",
   "labels": ["dependencies"],
   "stabilityDays": 3,
+  "prCreation": "not-pending",
+  "semanticCommits": true,
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin"],
