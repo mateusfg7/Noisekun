@@ -56,10 +56,10 @@
     }
   },
   {
-    "name": "leafs",
-    "iconFile": "leafs.svg",
+    "name": "leaves",
+    "iconFile": "leaves.svg",
     "audioFile": {
-      "name": "leafs.mp3",
+      "name": "leaves.mp3",
       "type": "audio/mp3"
     }
   },
