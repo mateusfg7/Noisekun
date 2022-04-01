@@ -136,7 +136,6 @@ Sound | Author | License | Edition
 [Fire Wood](https://www.youtube.com/watch?v=aJ21cKAR7-M) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Leaves](https://freesound.org/people/Stek59/sounds/457318/) | [Stek59](https://freesound.org/people/Stek59/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
 [Night](https://www.youtube.com/watch?v=nd1qc_bhMOs) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
-[Noise Block](https://www.youtube.com/watch?v=Yy8Fujlzn0o) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Rain](https://www.youtube.com/watch?v=3oMcTXhXOpc) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Stream Water](https://www.youtube.com/watch?v=cN5sGvQ_m_c) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Thunder Storm](https://freesound.org/people/Borys_Kozielski/sounds/316831/) | [Borys Kozielski](https://freesound.org/people/Borys_Kozielski/) | CC0
