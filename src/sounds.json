@@ -88,14 +88,6 @@
     }
   },
   {
-    "name": "noise-block",
-    "iconFile": "noise-block.svg",
-    "audioFile": {
-      "name": "noise-block.mp3",
-      "type": "audio/mp3"
-    }
-  },
-  {
     "name": "train",
     "iconFile": "train.svg",
     "audioFile": {
