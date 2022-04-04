@@ -40,10 +40,10 @@
     }
   },
   {
-    "name": "water",
-    "iconFile": "water.svg",
+    "name": "stream-water",
+    "iconFile": "stream-water.svg",
     "audioFile": {
-      "name": "water.mp3",
+      "name": "stream-water.mp3",
       "type": "audio/mp3"
     }
   },
