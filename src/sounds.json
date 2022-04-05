@@ -113,9 +113,9 @@
   },
   {
     "name": "washingmachine",
-    "iconFile": "washingmachine.svg",
+    "iconFile": "washing-machine.svg",
     "audioFile": {
-      "name": "washingmachine.mp3",
+      "name": "washing-machine.mp3",
       "type": "audio/mp3"
     }
   },
