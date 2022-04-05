@@ -3,128 +3,128 @@
     "name": "rain",
     "iconFile": "rain.svg",
     "audioFile": {
-      "name": "rain.mp3",
-      "type": "audio/mp3"
+      "name": "rain.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "storm",
     "iconFile": "storm.svg",
     "audioFile": {
-      "name": "storm.mp3",
-      "type": "audio/mp3"
+      "name": "storm.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "wind",
     "iconFile": "wind.svg",
     "audioFile": {
-      "name": "wind.mp3",
-      "type": "audio/mp3"
+      "name": "wind.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "drops",
     "iconFile": "drops.svg",
     "audioFile": {
-      "name": "drops.mp3",
-      "type": "audio/mp3"
+      "name": "drops.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "waves",
     "iconFile": "waves.svg",
     "audioFile": {
-      "name": "waves.mp3",
-      "type": "audio/mp3"
+      "name": "waves.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "stream-water",
     "iconFile": "stream-water.svg",
     "audioFile": {
-      "name": "stream-water.mp3",
-      "type": "audio/mp3"
+      "name": "stream-water.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "birds-tree",
     "iconFile": "birds-tree.svg",
     "audioFile": {
-      "name": "birds-tree.mp3",
-      "type": "audio/mp3"
+      "name": "birds-tree.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "leaves",
     "iconFile": "leaves.svg",
     "audioFile": {
-      "name": "leaves.mp3",
-      "type": "audio/mp3"
+      "name": "leaves.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "fire",
     "iconFile": "fire.svg",
     "audioFile": {
-      "name": "fire.mp3",
-      "type": "audio/mp3"
+      "name": "fire.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "night",
     "iconFile": "night.svg",
     "audioFile": {
-      "name": "night.mp3",
-      "type": "audio/mp3"
+      "name": "night.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "coffee",
     "iconFile": "coffee.svg",
     "audioFile": {
-      "name": "coffee.mp3",
-      "type": "audio/mp3"
+      "name": "coffee.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "train",
     "iconFile": "train.svg",
     "audioFile": {
-      "name": "train.mp3",
-      "type": "audio/mp3"
+      "name": "train.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "air-plane",
     "iconFile": "air-plane.svg",
     "audioFile": {
-      "name": "air-plane.mp3",
-      "type": "audio/mp3"
+      "name": "air-plane.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "underwater",
     "iconFile": "underwater.svg",
     "audioFile": {
-      "name": "underwater.mp3",
-      "type": "audio/mp3"
+      "name": "underwater.ogg",
+      "type": "audio/ogg"
     }
   },
   {
-    "name": "washingmachine",
+    "name": "washing-machine",
     "iconFile": "washing-machine.svg",
     "audioFile": {
-      "name": "washing-machine.mp3",
-      "type": "audio/mp3"
+      "name": "washing-machine.ogg",
+      "type": "audio/ogg"
     }
   },
   {
     "name": "waterfall",
     "iconFile": "waterfall.svg",
     "audioFile": {
-      "name": "waterfall.mp3",
-      "type": "audio/mp3"
+      "name": "waterfall.ogg",
+      "type": "audio/ogg"
     }
   }
 ]
