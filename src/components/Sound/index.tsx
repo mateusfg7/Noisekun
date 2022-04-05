@@ -29,10 +29,7 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
   return (
     <SoundComponent title={`${name}`}>
       <audio loop preload="true" ref={soundHTMLRef}>
-        <source
-          src={`/sounds/${audioFile.name}`}
-          type={`${audioFile.type}`}
-        />
+        <source src={`/sounds/${audioFile.name}`} type={`${audioFile.type}`} />
       </audio>
 
       <SoundButton
