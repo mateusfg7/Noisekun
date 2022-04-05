@@ -32,19 +32,6 @@ _npm_
 npm install
 ```
 
-### Setup environment variables
-Create file `.env.local` on root of the project, and add the following variables
-
-_see `.env.example`_
-```
-CDN_AUDIO_SERVER=https://cdn.example.com
-```
-> The cdn needs to have the audio files on the root of the server
-> 
-> e.g.: _https://cdn.example.com/coffee.mp3_
->
-> To change this pattern, modify the file `src/components/Sound/index.tsx`
-
 ### Setup Umami analytics
 
 Umami script is configured on [`src/pages/_app.tsx`](src/pages/_app.tsx):
