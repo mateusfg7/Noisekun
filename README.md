@@ -139,7 +139,7 @@ Sound | Author | License | Edition
 [Rain](https://www.youtube.com/watch?v=3oMcTXhXOpc) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Stream Water](https://www.youtube.com/watch?v=cN5sGvQ_m_c) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Thunder Storm](https://freesound.org/people/Borys_Kozielski/sounds/316831/) | [Borys Kozielski](https://freesound.org/people/Borys_Kozielski/) | CC0
-[Train](https://www.youtube.com/watch?v=3oxBCtkev9g) | [Finnolia Sound Effects - Tema](https://www.youtube.com/channel/UCp35ayORGJACphg45-IVGOQ) | |
+[Train](https://trains.ambient-mixer.com/rainy-train) | [vahid](https://user.ambient-mixer.com/details/sylvanhomestead) | CC Sampling + |
 [Underwater](https://freesound.org/people/Tim_Verberne/sounds/482167/) | [Tim Verberne](https://freesound.org/people/Tim_Verberne/) | CC0
 [Washing Machine](https://quicksounds.com/sound/12411/washing-machine-underwater-ambience-2) | [QuickSounds.com](https://quicksounds.com/) | [Standard License](https://quicksounds.com/page/license-agreement) | [Mateus Felipe](https://github.com/mateusfg7)
 [Waterfall](https://freesound.org/people/straget/sounds/489073/) | [Straget](https://freesound.org/people/straget/) | CC BY
