@@ -142,7 +142,7 @@ Sound | Author | License | Edition
 [Train](https://trains.ambient-mixer.com/rainy-train) | [vahid](https://user.ambient-mixer.com/details/sylvanhomestead) | CC Sampling + |
 [Underwater](https://freesound.org/people/Tim_Verberne/sounds/482167/) | [Tim Verberne](https://freesound.org/people/Tim_Verberne/) | CC0
 [Washing Machine](https://quicksounds.com/sound/12411/washing-machine-underwater-ambience-2) | [QuickSounds.com](https://quicksounds.com/) | [Standard License](https://quicksounds.com/page/license-agreement) | [Mateus Felipe](https://github.com/mateusfg7)
-[Waterfall](https://freesound.org/people/straget/sounds/489073/) | [Straget](https://freesound.org/people/straget/) | CC BY
+[Waterfall](https://freesound.org/people/straget/sounds/489073/) | [Straget](https://freesound.org/people/straget/) | CC BY | [Mateus Felipe](https://github.com/mateusfg7)
 [Waves](https://www.youtube.com/watch?v=SL9NdTMsIUk) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Wind](https://freesound.org/people/felix.blume/sounds/217506/) | [Felix Blume](https://freesound.org/people/felix.blume/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
 
