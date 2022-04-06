@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import Image from 'next/image'
+// import { Image } from '../Image'
 
 import { VolumeController } from '../VolumeController'
 import { SoundComponent, SoundButton } from './styles'
@@ -27,9 +28,9 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
   }
 
   return (
-    <SoundComponent title={`${name}`}>
+    <SoundComponent title={name}>
       <audio loop preload="true" ref={soundHTMLRef}>
-        <source src={`/sounds/${audioFile.name}`} type={`${audioFile.type}`} />
+        <source src={`/sounds/${audioFile.name}`} type={audioFile.type} />
       </audio>
 
       <SoundButton
@@ -39,7 +40,14 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
         } umami--click--${name}-sound`}
         onClick={() => toggleSoundState()}
       >
-        <Image src={`/assets/${iconFile}`} width={80} height={80} />
+        <Image
+          src={`/assets/${iconFile}`}
+          width={80}
+          height={80}
+          placeholder="blur"
+          blurDataURL={name}
+          unoptimized
+        />
       </SoundButton>
 
       <VolumeController
