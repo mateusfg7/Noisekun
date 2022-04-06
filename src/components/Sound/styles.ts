@@ -39,20 +39,25 @@ export const SoundButton = styled.div`
     opacity: 0.7;
   }
 
+  cursor: pointer;
+
+  @media (min-width: 700px) {
+    &.selected {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
   @media (min-width: 800px) {
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
-
     &:hover {
-      cursor: pointer;
-      color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04);
       img {
-        opacity: 0.8;
+        opacity: 1;
       }
-
       background: rgba(255, 255, 255, 0.1);
     }
 
     &.selected {
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
       background: rgba(255, 255, 255, 0.1);
     }
   }
