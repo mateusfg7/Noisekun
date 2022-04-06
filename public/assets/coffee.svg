@@ -1,12 +1,8 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 100.353 100.353" style="enable-background:new 0 0 100.353 100.353;" xml:space="preserve">
-<path d="M74.172,26.279v-8.17c0-0.829-0.671-1.5-1.5-1.5H15.565c-0.829,0-1.5,0.671-1.5,1.5v31.29
-	c0,15.052,4.647,28.732,12.431,36.595c0.282,0.285,0.666,0.445,1.066,0.445h33.11c0.4,0,0.784-0.16,1.066-0.445
-	c5.31-5.364,9.157-13.436,11.069-22.8C80.948,63.12,87.55,56.48,87.55,48.32v-7.24C87.55,33.383,81.674,27.033,74.172,26.279z
-	 M17.065,19.609h54.107v29.79c0,8.793-1.738,17.246-4.78,24.113H21.843c-3.041-6.868-4.779-15.32-4.779-24.113L17.065,19.609
-	L17.065,19.609z M60.035,83.439H28.198c-1.826-1.937-3.461-4.282-4.886-6.927h41.612C63.497,79.156,61.862,81.502,60.035,83.439z
-	 M84.55,48.32c0,6.322-4.966,11.491-11.199,11.846c0.538-3.463,0.821-7.073,0.821-10.767v-20.09
-	c5.842,0.741,10.377,5.732,10.377,11.772L84.55,48.32L84.55,48.32z"/>
+<svg width="101" height="101" viewBox="0 0 101 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13 92.714H72.9998" stroke="black" stroke-width="3.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M16 35.5714V55.2539C16 70.4919 28 83.1903 42.9999 83.1903C57.9999 83.1903 69.9998 70.4919 69.9998 55.2539V35.5714H16Z" stroke="black" stroke-width="3.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M79 67.3173C73.9 67.3173 70 63.1903 70 57.7935V48.2698C70 43.1904 73.9 38.746 79 38.746C83.8 38.746 87.9999 42.8729 87.9999 48.2698V57.7935C87.9999 63.1903 84.1 67.3173 79 67.3173Z" stroke="black" stroke-width="3.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M42.9998 7C39.3998 12.7143 39.3998 20.3333 42.9998 26.0476" stroke="black" stroke-width="3.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M30.9998 7C27.3998 12.7143 27.3998 20.3333 30.9998 26.0476" stroke="black" stroke-width="3.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M54.9993 7C51.3993 12.7143 51.3993 20.3333 54.9993 26.0476" stroke="black" stroke-width="3.7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
