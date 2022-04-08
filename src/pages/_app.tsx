@@ -19,7 +19,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           content="noise, sound, ambience, relaxing, productive, noisli, noisekun"
         />
         <meta name="author" content="Mateus Felipe Gonçalves" />
-        <meta name="theme-color" content="#30A7C5" />
+        <meta name="theme-color" content="#04A2DC" />
 
         <script
           async
