@@ -2,7 +2,7 @@
   "name": "Noisekun",
   "description": "Listen combinations of ambient sounds for relaxing** or getting more productive on your task!",
   "theme_color": "#fff",
-  "background_color": "#30A7C5",
+  "background_color": "#0485B4",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
