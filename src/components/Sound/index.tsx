@@ -39,7 +39,7 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
         } umami--click--${name}-sound`}
         onClick={() => toggleSoundState()}
       >
-        <Image src={`/assets/${iconFile}`} width={80} height={80} />
+        <Image src={`/assets/${iconFile}`} alt={name} width={80} height={80} />
       </SoundButton>
 
       <VolumeController
