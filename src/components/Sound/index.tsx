@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react'
 import Image from 'next/image'
-// import { Image } from '../Image'
 
 import { VolumeController } from '../VolumeController'
 import { SoundComponent, SoundButton } from './styles'
@@ -40,14 +39,7 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
         } umami--click--${name}-sound`}
         onClick={() => toggleSoundState()}
       >
-        <Image
-          src={`/assets/${iconFile}`}
-          width={80}
-          height={80}
-          placeholder="blur"
-          blurDataURL={name}
-          unoptimized
-        />
+        <Image src={`/assets/${iconFile}`} width={80} height={80} />
       </SoundButton>
 
       <VolumeController
