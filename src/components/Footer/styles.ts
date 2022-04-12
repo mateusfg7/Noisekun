@@ -11,22 +11,27 @@ const FooterSection = styled.footer`
   backdrop-filter: blur(4px);
 
   p {
+    font-size: 1.25rem;
+    padding: 5px;
+
     a {
       text-decoration: none;
       color: rgba(255, 255, 255, 1);
+
+      &.author {
+        font-weight: bold;
+      }
+      &.copy:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
     }
   }
 
-  p {
-    a.author {
-      font-weight: bold;
-    }
-  }
-
-  p {
-    a.copy:hover {
-      cursor: pointer;
-      text-decoration: underline;
+  @media (min-width: 769px) {
+    p {
+      font-size: 1rem;
+      padding: 2px;
     }
   }
 `
