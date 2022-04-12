@@ -11,7 +11,8 @@ const LocalHeader = styled.header`
   background: rgba(255, 255, 255, 0.1);
 
   h1 {
-    font-weight: 500;
+    font-weight: 600;
+
     a {
       text-decoration: none;
       color: rgba(255, 255, 255, 0.89);
