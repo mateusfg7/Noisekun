@@ -14,7 +14,7 @@
     "@fortawesome/free-solid-svg-icons": "6.1.1",
     "@fortawesome/react-fontawesome": "0.1.18",
     "next": "12.1.5",
-    "next-pwa": "5.5.0",
+    "next-pwa": "5.5.2",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-switch": "6.0.0",
