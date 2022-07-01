@@ -12,7 +12,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "6.1.1",
     "@fortawesome/free-solid-svg-icons": "6.1.1",
-    "@fortawesome/react-fontawesome": "0.1.18",
+    "@fortawesome/react-fontawesome": "0.2.0",
     "next": "12.2.0",
     "next-pwa": "5.5.4",
     "react": "18.2.0",
