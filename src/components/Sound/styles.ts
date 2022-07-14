@@ -21,7 +21,7 @@ export const SoundButton = styled.div`
   color: rgba(255, 255, 255, 0.5);
   border-radius: 10%;
 
-  transition: 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 
   img {
     border: 1px solid red;
