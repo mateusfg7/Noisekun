@@ -38,7 +38,7 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
   }, [])
 
   async function toggleSoundState() {
-    if (howlSoundInstance) {
+    if (howlSoundInstance && !soundIsLoading) {
       if (soundIsActive) {
         howlSoundInstance.fade(currentSoundVolume, 0, FADE_TIME_MS)
         await sleep(FADE_TIME_MS)
