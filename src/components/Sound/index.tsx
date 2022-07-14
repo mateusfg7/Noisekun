@@ -23,6 +23,7 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
   const [soundIsActive, setSoundIsActive] = useState(false)
   const [howlSoundInstance, setHowlSoundInstance] = useState<Howl | null>(null)
   const [soundIsLoading, setSoundIsLoading] = useState(true)
+  const [currentSoundVolume, setCurrentSoundVolume] = useState(1)
 
   useEffect(() => {
     setHowlSoundInstance(
@@ -39,15 +40,22 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
   async function toggleSoundState() {
     if (howlSoundInstance) {
       if (soundIsActive) {
-        howlSoundInstance.fade(1, 0, FADE_TIME_MS)
+        howlSoundInstance.fade(currentSoundVolume, 0, FADE_TIME_MS)
         await sleep(FADE_TIME_MS)
         howlSoundInstance.pause()
       } else {
-        howlSoundInstance.fade(0, 1, FADE_TIME_MS)
+        howlSoundInstance.fade(0, currentSoundVolume, FADE_TIME_MS)
         howlSoundInstance.play()
       }
 
       setSoundIsActive(!soundIsActive)
+    }
+  }
+
+  function handleSoundVolume(volume: number) {
+    if (howlSoundInstance) {
+      howlSoundInstance.volume(volume)
+      setCurrentSoundVolume(volume)
     }
   }
 
@@ -62,10 +70,10 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
       >
         <Image src={`/assets/${iconFile}`} alt={name} width={80} height={80} />
       </SoundButton>
-      {/* <VolumeController
+      <VolumeController
         state={soundIsActive}
-        audioElement={soundHTMLRef.current}
-      /> */}
+        handleSoundVolume={handleSoundVolume}
+      />
     </SoundComponent>
   )
 }

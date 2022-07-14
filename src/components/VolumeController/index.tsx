@@ -4,18 +4,14 @@ import VolumeControllerInput from './styles'
 
 export interface IVolumeController {
   state: boolean
-  audioElement: HTMLAudioElement
+  handleSoundVolume: (volume: number) => void
 }
 
 export const VolumeController: React.FC<IVolumeController> = ({
   state,
-  audioElement
+  handleSoundVolume
 }) => {
   const [rangeValue, setRangeValue] = useState(1000)
-
-  function handleVolume(volume: number) {
-    audioElement.volume = volume
-  }
 
   return (
     <VolumeControllerInput
@@ -28,7 +24,7 @@ export const VolumeController: React.FC<IVolumeController> = ({
       percentValue={(rangeValue * 100) / 1000}
       onChange={event => {
         setRangeValue(Number(event.target.value))
-        handleVolume(Number(event.target.value) / 1000)
+        handleSoundVolume(Number(event.target.value) / 1000)
       }}
     />
   )
