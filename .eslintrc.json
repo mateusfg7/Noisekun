@@ -26,6 +26,7 @@
   ],
   "rules": {
     "prettier/prettier": "error",
+    "no-unused-vars": "warn",
     "no-use-before-define": "off",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",

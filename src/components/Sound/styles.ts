@@ -23,6 +23,15 @@ export const SoundButton = styled.div`
 
   transition: 0.3s;
 
+  img {
+    border: 1px solid red;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
+      brightness(102%) contrast(102%);
+    opacity: 0.7;
+  }
+
+  cursor: pointer;
+
   &.selected {
     color: rgba(255, 255, 255, 1);
     img {
@@ -32,14 +41,13 @@ export const SoundButton = styled.div`
     border-radius: 10% 10% 0 0;
   }
 
-  img {
-    border: 1px solid red;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
-      brightness(102%) contrast(102%);
-    opacity: 0.7;
-  }
+  &.disabled {
+    cursor: not-allowed;
 
-  cursor: pointer;
+    img {
+      opacity: 0.2;
+    }
+  }
 
   @media (min-width: 700px) {
     &.selected {
@@ -59,6 +67,14 @@ export const SoundButton = styled.div`
     &.selected {
       box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
       background: rgba(255, 255, 255, 0.1);
+    }
+
+    &.disabled:hover {
+      box-shadow: none;
+      img {
+        opacity: 0.2;
+      }
+      background: none;
     }
   }
 `
