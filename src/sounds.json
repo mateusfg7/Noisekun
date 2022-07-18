@@ -126,5 +126,13 @@
       "name": "waterfall.ogg",
       "type": "audio/ogg"
     }
+  },
+  {
+    "name": "brown-noise",
+    "iconFile": "brown-noise.svg",
+    "audioFile": {
+      "name": "brown-noise.ogg",
+      "type": "audio/ogg"
+    }
   }
 ]
