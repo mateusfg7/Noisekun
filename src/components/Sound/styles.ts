@@ -1,4 +1,13 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const shimmer = keyframes`
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -135% 0%;
+  }
+`
 
 export const SoundComponent = styled.div`
   display: flex;
@@ -44,6 +53,15 @@ export const SoundButton = styled.div`
   &.disabled {
     cursor: not-allowed;
 
+    background-image: linear-gradient(
+      -90deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(255, 255, 255, 0.04) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    background-size: 400% 400%;
+
+    animation: ${shimmer} 1s ease-in-out infinite;
     img {
       opacity: 0.2;
     }
@@ -69,12 +87,22 @@ export const SoundButton = styled.div`
       background: rgba(255, 255, 255, 0.1);
     }
 
+    &.disabled {
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04);
+    }
     &.disabled:hover {
-      box-shadow: none;
       img {
         opacity: 0.2;
       }
       background: none;
+      background-image: linear-gradient(
+        -90deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(255, 255, 255, 0.04) 50%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      background-size: 400% 400%;
+      animation: ${shimmer} 1s ease-in-out infinite;
     }
   }
 `
