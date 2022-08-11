@@ -1,9 +1,13 @@
 {
   "name": "Noisekun",
+  "short_name": "Noisekun",
   "description": "Listen combinations of ambient sounds for relaxing** or getting more productive on your task!",
-  "theme_color": "#fff",
+  "theme_color": "#0485B4",
   "background_color": "#0485B4",
-  "display": "standalone",
+  "categories": ["sound", "noise", "ambience", "relaxing", "study"],
+  "display": "minimal-ui",
+  "display_override": ["minimal-ui", "standalone"],
+  "orientation": "any",
   "scope": "/",
   "start_url": "/",
   "icons": [
@@ -31,6 +35,40 @@
       "src": "icons/icon-800x800.png",
       "sizes": "800x800",
       "type": "image/png"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshot/screenshot-1280x720.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "plataform": "wide",
+      "label": "Sounds on Desktop"
+    },
+    {
+      "src": "screenshot/screenshot2-1280x720.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "plataform": "wide",
+      "label": "Activated sounds on Desktop"
+    },
+    {
+      "src": "screenshot/screenshot-412x915.png",
+      "sizes": "412x915",
+      "type": "image/png",
+      "plataform": "narrow",
+      "label": "Sounds on Mobile"
+    },
+    {
+      "src": "screenshot/screenshot2-412x915.png",
+      "sizes": "412x915",
+      "type": "image/png",
+      "plataform": "narrow",
+      "label": "Activated sounds on Mobile"
     }
   ]
 }
