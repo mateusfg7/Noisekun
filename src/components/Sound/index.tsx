@@ -22,7 +22,6 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
 
   const [soundIsActive, setSoundIsActive] = useState(false)
   const [howlSoundInstance, setHowlSoundInstance] = useState<Howl | null>(null)
-  const [soundIsLoading, setSoundIsLoading] = useState(true)
   const [currentSoundVolume, setCurrentSoundVolume] = useState(1)
 
   useEffect(() => {
@@ -30,15 +29,13 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
       new Howl({
         src: `./sounds/${audioFile.name}`,
         loop: true,
-        onload: () => {
-          setSoundIsLoading(false)
-        }
+        html5: true
       })
     )
   }, [])
 
   async function toggleSoundState() {
-    if (howlSoundInstance && !soundIsLoading) {
+    if (howlSoundInstance) {
       if (soundIsActive) {
         howlSoundInstance.fade(currentSoundVolume, 0, FADE_TIME_MS)
         await sleep(FADE_TIME_MS)
@@ -63,8 +60,8 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
     <SoundComponent title={name}>
       <SoundButton
         id={`${name}-button`}
-        className={`${soundIsActive ? 'selected' : ''} ${
-          soundIsLoading && 'disabled'
+        className={`${
+          soundIsActive ? 'selected' : ''
         } umami--click--${name}-sound`}
         onClick={() => toggleSoundState()}
       >
