@@ -43,10 +43,11 @@ export default createGlobalStyle`
 
     background: fixed no-repeat center;
     background-size: cover;
-    animation: ${backgroundChange} calc(5*60s) 0s infinite;
+    background-color: #0485B4;
+    animation: ${backgroundChange} calc(5*60s) 20s infinite;
 
     input:focus {
-    outline: none;
+      outline: none;
     }
 
     section.main-section {
