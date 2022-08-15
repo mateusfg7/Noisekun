@@ -29,7 +29,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           property="og:description"
           content="Listen combinations of ambient sounds for relaxing or getting more productive on your task!"
         />
-        <meta property="og:image" content="/images/banner.png" />
+        <meta property="og:image" content="https://noisekun.vercel.app/images/banner.png" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
@@ -39,7 +39,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
           property="twitter:description"
           content="Listen combinations of ambient sounds for relaxing or getting more productive on your task!"
         />
-        <meta property="twitter:image" content="/images/banner.png" />
+        <meta property="twitter:image" content="https://noisekun.vercel.app/images/banner.png" />
 
         <script
           async
