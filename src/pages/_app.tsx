@@ -21,18 +21,24 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="author" content="Mateus Felipe Gonçalves" />
         <meta name="theme-color" content="#04A2DC" />
 
-        {/*Open Graph / Facebook*/}
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://noisekun.vercel.app/" />
         <meta property="og:title" content="Noisekun" />
-        <meta property="og:description" content="Listen combinations of ambient sounds for relaxing or getting more productive on your task!" />
+        <meta
+          property="og:description"
+          content="Listen combinations of ambient sounds for relaxing or getting more productive on your task!"
+        />
         <meta property="og:image" content="/images/banner.png" />
 
-        {/*Twitter*/}
+        {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://noisekun.vercel.app/" />
         <meta property="twitter:title" content="Noisekun" />
-        <meta property="twitter:description" content="Listen combinations of ambient sounds for relaxing or getting more productive on your task!" />
+        <meta
+          property="twitter:description"
+          content="Listen combinations of ambient sounds for relaxing or getting more productive on your task!"
+        />
         <meta property="twitter:image" content="/images/banner.png" />
 
         <script
