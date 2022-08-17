@@ -7,7 +7,7 @@
   "semanticCommits": true,
   "packageRules": [
     {
-      "matchUpdateTypes": ["minor", "patch", "pin"],
+      "matchUpdateTypes": ["pin"],
       "automerge": true
     },
     {
