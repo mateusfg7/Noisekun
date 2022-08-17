@@ -1,7 +1,7 @@
 /* eslint-disable multiline-ternary */
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { Howl, Howler } from 'howler'
+import { Howl } from 'howler'
 
 import { VolumeController } from '../VolumeController'
 import { SoundComponent, SoundButton } from './styles'
