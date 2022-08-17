@@ -34,8 +34,6 @@ export const SoundButton = styled.div`
 
   img {
     border: 1px solid red;
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
-      brightness(102%) contrast(102%);
     opacity: 0.7;
   }
 
