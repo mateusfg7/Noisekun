@@ -1,30 +1,28 @@
 import React from 'react'
 
-import FooterSection from './styles'
-
 export const Footer: React.FC = () => {
   return (
-    <FooterSection>
+    <footer className="flex flex-wrap justify-center items-center p-3.5">
       <div>
-        <p>
+        <p className="text-lg md:text-base p-1 md:p-[0.125rem]">
           by{' '}
           <a
             href="https://github.com/mateusfg7"
-            className="author umami--click--author-credit"
+            className="font-bold umami--click--author-credit"
           >
             mateusfg7{' '}
           </a>{' '}
         </p>
-        <p>
+        <p className="text-lg md:text-base p-1 md:p-[0.125rem]">
           <a
             href="https://github.com/mateusfg7/Noisekun/blob/master/LICENSE"
-            className="copy umami--click--license"
+            className="cursor-pointer hover:underline umami--click--license"
           >
             {' '}
             &copy; MIT License
           </a>
         </p>
       </div>
-    </FooterSection>
+    </footer>
   )
 }
