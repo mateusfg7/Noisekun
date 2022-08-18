@@ -4,8 +4,6 @@ import Head from 'next/head'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 
-import { Message } from '../styles/pages/offline'
-
 const Home: React.FC = () => {
   return (
     <div className="App">
@@ -14,8 +12,8 @@ const Home: React.FC = () => {
       </Head>
 
       <Header />
-      <section className="main-section audio-section">
-        <Message>You are offline!</Message>
+      <section className="flex justify-center items-center min-h-[85vh] p-14">
+        <h1 className="font-normal text-white/90 text-5xl">You are offline!</h1>
       </section>
       <Footer />
     </div>
