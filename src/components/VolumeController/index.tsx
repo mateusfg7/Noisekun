@@ -12,7 +12,11 @@ export const VolumeController: React.FC<IVolumeController> = ({
   const [rangeValue, setRangeValue] = useState(1000)
 
   return (
-    <div className={`w-full h-max relative group ${state ? 'opacity-1' : 'opacity-0'}`}>
+    <div
+      className={`w-full h-max relative group ${
+        state ? 'opacity-1' : 'opacity-0'
+      }`}
+    >
       <input
         className="slider-input"
         type="range"

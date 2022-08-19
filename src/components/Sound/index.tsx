@@ -56,13 +56,27 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
   }
 
   return (
-    <div title={name} className="flex flex-col justify-center items-center w-24 h-24">
+    <div
+      title={name}
+      className="flex flex-col justify-center items-center w-24 h-24"
+    >
       <div
         id={`${name}-button`}
-        className={`umami--click--${name}-sound flex justify-center items-center w-24 h-24 rounded-[10%] cursor-pointer transition-colors duration-300 text-white/50 md:hover:shadow-sound md:hover:bg-white/10 ${soundIsActive && 'text-white rounded-b-none md:shadow-sound md:bg-white/10'}`}
+        className={`umami--click--${name}-sound flex justify-center items-center w-24 h-24 rounded-[10%] cursor-pointer transition-colors duration-300 text-white/50 md:hover:shadow-sound md:hover:bg-white/10 ${
+          soundIsActive &&
+          'text-white rounded-b-none md:shadow-sound md:bg-white/10'
+        }`}
         onClick={() => toggleSoundState()}
       >
-        <Image src={`/assets/${iconFile}`} alt={name} width={80} height={80} className={`opacity-70 md:hover:opacity-100 ${soundIsActive && 'opacity-100'}`}/>
+        <Image
+          src={`/assets/${iconFile}`}
+          alt={name}
+          width={80}
+          height={80}
+          className={`opacity-70 md:hover:opacity-100 ${
+            soundIsActive && 'opacity-100'
+          }`}
+        />
       </div>
       <VolumeController
         state={soundIsActive}
