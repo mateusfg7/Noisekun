@@ -21,8 +21,7 @@
       font-light
       text-white
       bg-[#0485b4]
-  
-    /* animation: background-change calc(5 * 60s) 20s infinite; */
+      animate-background-change
   }
 }
 
