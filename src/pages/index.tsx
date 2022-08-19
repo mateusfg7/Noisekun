@@ -1,28 +1,22 @@
 import React from 'react'
 import Head from 'next/head'
 
-import GlobalStyle from '../styles/global'
-
 import { Header } from '../components/Header'
 import { Sound } from '../components/Sound'
 import { Footer } from '../components/Footer'
-
-import { SoundGridLayout } from '../styles/pages/index'
 
 import soundList from '../sounds.json'
 
 const Home: React.FC = () => {
   return (
     <div className="App">
-      <GlobalStyle />
-
       <Head>
         <title>Noisekun</title>
       </Head>
 
       <Header />
-      <section className="main-section audio-section">
-        <SoundGridLayout>
+      <section className="flex justify-center items-center min-h-[85vh] p-14">
+        <div className="grid gap-12 grid-cols-1 xs:grid-cols-2 2xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-6">
           {soundList.map(sound => (
             <Sound
               key={sound.name}
@@ -31,7 +25,7 @@ const Home: React.FC = () => {
               audioFile={sound.audioFile}
             />
           ))}
-        </SoundGridLayout>
+        </div>
       </section>
       <Footer />
     </div>
