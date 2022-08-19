@@ -48,5 +48,14 @@
       transition-all duration-100
   }
 
-  .slider-input::-moz-range-thumb {}
+  .slider-input::-moz-range-thumb {
+    @apply
+      opacity-0 sm:opacity-100
+      appearance-none
+      h-4 md:h-2 md:group-hover:h-4 w-4 md:w-2 md:group-hover:w-4
+      bg-white
+      border-none rounded-full
+      active:ring-4 ring-white/10
+      transition-all duration-100
+  }
 }
