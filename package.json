@@ -18,8 +18,7 @@
     "next-pwa": "5.5.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-switch": "7.0.0",
-    "styled-components": "5.3.5"
+    "react-switch": "7.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "17.0.3",
@@ -27,7 +26,6 @@
     "@next/eslint-plugin-next": "12.2.5",
     "@types/howler": "2.2.7",
     "@types/react": "18.0.17",
-    "@types/styled-components": "5.1.26",
     "@typescript-eslint/eslint-plugin": "5.33.0",
     "@typescript-eslint/parser": "5.33.0",
     "autoprefixer": "^10.4.8",
