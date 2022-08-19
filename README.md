@@ -4,7 +4,7 @@
 
 _Listen combinations of ambient sounds for **relaxing** or getting more **productive** on your task!_
 
-![](.github/assets/docs/mocks/iphone-man-office-edited.png)
+<img src=".github/assets/docs/desktop_screenshot.png" height="300px"> <img src=".github/assets/docs/mobile_screenshot.png" height="300px">
 
 </div>
 
@@ -18,18 +18,25 @@ _Inspired on [Noisli](https://www.noisli.com/)_
 
 <br/>
 <br/>
+<br/>
+
+<div align="center">
+
+![](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fnoisekun.vercel.app) [![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=flat-square)](https://www.codefactor.io/repository/github/mateusfg7/noisekun) ![](https://img.shields.io/github/last-commit/mateusfg7/noisekun?style=flat-square) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
+
+</div>
+
+<br/>
+<br/>
 
 # Setup Project
 
+> _this project is using **yarn** for manage packages, but you can use **npm** instead._
+
 ### Install dependencies
 
-_yarn_
 ```
 yarn install
-```
-_npm_
-```
-npm install
 ```
 
 ### Setup Umami analytics
@@ -50,63 +57,20 @@ Edit this code to add your own Umami script, or remove it to disable Umami analy
 
 ## Init Dev Environment
 
-### Setup husky
-
-Prepare husky for use git-hooks, to automate commits
-
-_yarn_
-```
-yarn prepare
-```
-_npm_
-```
-npm run prepare
-```
-
-
-### Start dev server
-
-_yarn_
 ```
 yarn dev
 ```
 
-_npm_
-```
-npm run Dev
-```
-
 ## Init production environment
 
-_yarn_
 ```
 yarn build && yarn start
 ```
 
-_npm_
-```
-npm run build && npm run start
-```
-
-
-
-
-
 <br/>
 <br/>
-
-<div align="center">
-
-![](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fnoisekun.vercel.app) [![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=flat-square)](https://www.codefactor.io/repository/github/mateusfg7/noisekun) ![](https://img.shields.io/github/last-commit/mateusfg7/noisekun?style=flat-square) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
-
-
-![](.github/assets/docs/mocks/window.png)
-
-</div>
-
 <br/>
-
----
+<br/>
 
 # Credits
 
