@@ -41,7 +41,7 @@
     @apply
       opacity-0 sm:opacity-100
       appearance-none
-      h-4 md:h-2 md:group-hover:h-4 w-4 md:w-2 md:group-hover:w-4
+      h-4 md:h-2 md:group-hover:h-3 w-4 md:w-2 md:group-hover:w-3
       bg-white
       border-none rounded-full
       active:ring-4 ring-white/10
@@ -52,7 +52,7 @@
     @apply
       opacity-0 sm:opacity-100
       appearance-none
-      h-4 md:h-2 md:group-hover:h-4 w-4 md:w-2 md:group-hover:w-4
+      h-4 md:h-2 md:group-hover:h-3 w-4 md:w-2 md:group-hover:w-3
       bg-white
       border-none rounded-full
       active:ring-4 ring-white/10
