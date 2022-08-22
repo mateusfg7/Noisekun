@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Howl } from 'howler'
 
+import { useGlobalVolumeStore } from '../../stores/GlobalVolumeStore'
+
 import { VolumeController } from '../VolumeController'
 
 export interface ISound {
@@ -19,9 +21,39 @@ const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
   const FADE_TIME_MS = 500
 
+  const globalVolume = useGlobalVolumeStore(state => state.globalVolume)
+
   const [soundIsActive, setSoundIsActive] = useState(false)
   const [howlSoundInstance, setHowlSoundInstance] = useState<Howl | null>(null)
-  const [currentSoundVolume, setCurrentSoundVolume] = useState(1)
+  const [localSoundVolume, setLocalSoundVolume] = useState(1)
+  const [currentSoundVolume, setCurrentSoundVolume] = useState(
+    localSoundVolume * globalVolume
+  )
+
+  async function toggleSoundState() {
+    if (howlSoundInstance) {
+      if (soundIsActive) {
+        howlSoundInstance.fade(localSoundVolume, 0, FADE_TIME_MS)
+        await sleep(FADE_TIME_MS)
+        howlSoundInstance.pause()
+      } else {
+        howlSoundInstance.fade(0, localSoundVolume, FADE_TIME_MS)
+        howlSoundInstance.play()
+      }
+
+      setSoundIsActive(!soundIsActive)
+    }
+  }
+
+  function handleSoundVolume(volume: number) {
+    const calculatedVolume = volume * globalVolume
+
+    if (howlSoundInstance) {
+      setCurrentSoundVolume(calculatedVolume)
+      setLocalSoundVolume(volume)
+      localStorage.setItem(`${name}-volume`, String(localSoundVolume))
+    }
+  }
 
   useEffect(() => {
     setHowlSoundInstance(
@@ -31,29 +63,25 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
         html5: true
       })
     )
+
+    if (typeof window !== 'undefined') {
+      const storageValue = localStorage.getItem(`${name}-volume`)
+      if (storageValue) setLocalSoundVolume(JSON.parse(storageValue))
+      else localStorage.setItem(`${name}-volume`, String(localSoundVolume))
+    }
+
+    setCurrentSoundVolume(localSoundVolume * globalVolume)
   }, [])
 
-  async function toggleSoundState() {
-    if (howlSoundInstance) {
-      if (soundIsActive) {
-        howlSoundInstance.fade(currentSoundVolume, 0, FADE_TIME_MS)
-        await sleep(FADE_TIME_MS)
-        howlSoundInstance.pause()
-      } else {
-        howlSoundInstance.fade(0, currentSoundVolume, FADE_TIME_MS)
-        howlSoundInstance.play()
-      }
+  useEffect(() => {
+    setCurrentSoundVolume(localSoundVolume * globalVolume)
+  }, [globalVolume])
 
-      setSoundIsActive(!soundIsActive)
-    }
-  }
-
-  function handleSoundVolume(volume: number) {
+  useEffect(() => {
     if (howlSoundInstance) {
-      howlSoundInstance.volume(volume)
-      setCurrentSoundVolume(volume)
+      howlSoundInstance.volume(currentSoundVolume)
     }
-  }
+  }, [currentSoundVolume])
 
   return (
     <div
@@ -80,6 +108,7 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
       </div>
       <VolumeController
         state={soundIsActive}
+        soundNameOnLocalStorage={name}
         handleSoundVolume={handleSoundVolume}
       />
     </div>
