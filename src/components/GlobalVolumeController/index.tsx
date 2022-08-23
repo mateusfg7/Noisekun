@@ -14,7 +14,7 @@ export const GlobalVolumeController: React.FC = () => {
   }
 
   return (
-    <div className="w-full h-max relative group">
+    <div className="w-full h-max relative group flex items-center">
       <input
         className="slider-input"
         type="range"

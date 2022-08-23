@@ -29,7 +29,7 @@ export const VolumeController: React.FC<IVolumeController> = ({
       }`}
     >
       <input
-        className="slider-input"
+        className="slider-input absolute top-0 left-0"
         type="range"
         name="audio-decrement"
         min="20"
