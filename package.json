@@ -10,15 +10,14 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "6.1.2",
-    "@fortawesome/free-solid-svg-icons": "6.1.2",
-    "@fortawesome/react-fontawesome": "0.2.0",
     "howler": "2.2.3",
     "next": "12.2.5",
     "next-pwa": "5.5.4",
+    "phosphor-react": "^1.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-switch": "7.0.0"
+    "react-switch": "7.0.0",
+    "zustand": "^4.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "17.0.3",
