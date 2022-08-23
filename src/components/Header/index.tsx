@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Link from 'next/link'
 import {
   SpeakerSimpleHigh,
   SpeakerSimpleLow,
@@ -17,9 +18,9 @@ export const Header: React.FC = () => {
   return (
     <header className="relative flex justify-between md:justify-center items-center gap-5 px-6 h-[15vh] bg-[rgba(255, 255, 255, 0.1)] md:shadow-header">
       <h1 className="font-semibold text-2xl">
-        <a href="/" className="umami--click--title text-white/90">
-          Noisekun
-        </a>
+        <Link href="/">
+          <a className="umami--click--title text-white/90">Noisekun</a>
+        </Link>
       </h1>
       <div
         className="md:absolute md:right-10 flex gap-3 items-center opacity-90 hover:opacity-100"
