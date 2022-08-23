@@ -27,7 +27,7 @@ export const Header: React.FC = () => {
         onMouseEnter={() => setIsShowing(true)}
         onMouseLeave={() => setIsShowing(false)}
       >
-        <div className={!isShowing && 'hidden'}>
+        <div className={`${!isShowing && 'hidden'} w-28`}>
           <GlobalVolumeController />
         </div>
         <div className="cursor-pointer">
