@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import {
-  SpeakerSimpleHigh,
-  SpeakerSimpleLow,
-  SpeakerSimpleNone
-} from 'phosphor-react'
+
+import { FiVolume2, FiVolume1, FiVolume } from 'react-icons/fi'
 
 import { useGlobalVolumeStore } from '../../stores/GlobalVolumeStore'
 
@@ -31,11 +28,9 @@ export const Header: React.FC = () => {
           <GlobalVolumeController />
         </div>
         <div className="cursor-pointer">
-          {globalVolume >= 0.5 && <SpeakerSimpleHigh size={25} />}
-          {globalVolume >= 0.1 && globalVolume < 0.5 && (
-            <SpeakerSimpleLow size={25} />
-          )}
-          {globalVolume < 0.1 && <SpeakerSimpleNone size={25} />}
+          {globalVolume >= 0.5 && <FiVolume2 size={25} />}
+          {globalVolume >= 0.1 && globalVolume < 0.5 && <FiVolume1 size={25} />}
+          {globalVolume < 0.1 && <FiVolume size={25} />}
         </div>
       </div>
     </header>
