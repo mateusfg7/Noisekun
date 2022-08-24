@@ -25,13 +25,14 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
 
   const [soundIsActive, setSoundIsActive] = useState(false)
   const [howlSoundInstance, setHowlSoundInstance] = useState<Howl | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
   const [localSoundVolume, setLocalSoundVolume] = useState(1)
   const [currentSoundVolume, setCurrentSoundVolume] = useState(
     localSoundVolume * globalVolume
   )
 
   async function toggleSoundState() {
-    if (howlSoundInstance) {
+    if (howlSoundInstance && !isLoading) {
       if (soundIsActive) {
         howlSoundInstance.fade(localSoundVolume, 0, FADE_TIME_MS)
         await sleep(FADE_TIME_MS)
@@ -60,7 +61,7 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
       new Howl({
         src: `./sounds/${audioFile.name}`,
         loop: true,
-        html5: true
+        onload: () => setIsLoading(false)
       })
     )
 
@@ -86,11 +87,18 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
   return (
     <div
       title={name}
-      className="flex flex-col justify-center items-center w-24 h-24"
+      className={`flex flex-col justify-center items-center w-24 h-24 ${
+        isLoading && 'animate-none'
+      }`}
     >
       <div
         id={`${name}-button`}
-        className={`umami--click--${name}-sound flex justify-center items-center w-24 h-24 rounded-[10%] cursor-pointer transition-colors duration-300 text-white/50 md:hover:shadow-sound md:hover:bg-white/10 ${
+        className={`umami--click--${name}-sound flex justify-center items-center w-24 h-24 rounded-[10%] text-white/50 ${
+          isLoading && 'motion-safe:animate-pulse'
+        } ${
+          !isLoading &&
+          'cursor-pointer transition-colors duration-300 md:hover:shadow-sound md:hover:bg-white/10'
+        } ${
           soundIsActive &&
           'text-white rounded-b-none md:shadow-sound md:bg-white/10'
         }`}
@@ -101,9 +109,9 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
           alt={name}
           width={80}
           height={80}
-          className={`opacity-70 md:hover:opacity-100 ${
-            soundIsActive && 'opacity-100'
-          }`}
+          className={`opacity-40 ${
+            !isLoading && 'opacity-70 md:hover:opacity-100'
+          } ${soundIsActive && 'opacity-100'}`}
         />
       </div>
       <VolumeController
