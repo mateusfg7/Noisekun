@@ -17,8 +17,7 @@
     @apply font-['Nunito']
       font-light
       text-white
-      bg-[#0485b4]
-      animate-background-change;
+      bg-[#0485b4];
   }
 }
 

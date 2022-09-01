@@ -9,7 +9,7 @@ import soundList from '../sounds.json'
 
 const Home: React.FC = () => {
   return (
-    <div className="App">
+    <div className="App animate-background-change">
       <Head>
         <title>Noisekun</title>
       </Head>
