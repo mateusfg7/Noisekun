@@ -60,7 +60,7 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
         }`}
         onClick={() => toggleSoundState()}
       >
-        <audio ref={soundRef}>
+        <audio ref={soundRef} loop>
           <source src={`/sounds/${audioFile.name}`} type={audioFile.type} />
         </audio>
         <Image
