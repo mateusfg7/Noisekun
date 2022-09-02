@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 
 import { Header } from '../components/Header'
@@ -6,10 +6,31 @@ import { Sound } from '../components/Sound'
 import { Footer } from '../components/Footer'
 
 import soundList from '../sounds.json'
+import { useBackgroundStore } from '../stores/BackgroundStore'
 
 const Home: React.FC = () => {
+  const background = useBackgroundStore(set => set.background)
+
   return (
-    <div className="App animate-background-change">
+    <div
+      className={`
+    ${background === 'animated' && 'animate-background-change'}
+    ${background === 'dark' && 'bg-gray-900'}
+    ${
+      background === 'lofi-rain' &&
+      'bg-lofi-rain bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
+    }
+    ${
+      background === 'train-rain' &&
+      'bg-train-rain bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
+    }
+    ${
+      background === 'tree' &&
+      'bg-tree bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
+    }
+    
+    `}
+    >
       <Head>
         <title>Noisekun</title>
       </Head>
