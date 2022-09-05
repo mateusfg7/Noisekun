@@ -1,12 +1,12 @@
 import create from 'zustand'
 
 type Background =
-  | 'animated'
+  | 'transition'
   | 'dark'
-  | 'lofi-rain'
-  | 'train-rain'
-  | 'tree'
-  | 'disabled'
+  | 'room-and-rain'
+  | 'train-and-rain'
+  | 'waterfall'
+  | 'static'
 
 interface BackgroundStore {
   background: Background
@@ -14,6 +14,6 @@ interface BackgroundStore {
 }
 
 export const useBackgroundStore = create<BackgroundStore>(set => ({
-  background: 'disabled',
+  background: 'transition',
   setBackground: newBackground => set(() => ({ background: newBackground }))
 }))

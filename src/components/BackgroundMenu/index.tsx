@@ -30,13 +30,13 @@ export const BackgroundMenu = () => {
               {({ active }) => (
                 <button
                   className={`border-2 ${
-                    background === 'animated' && 'border-white'
+                    background === 'static' && 'border-white'
                   } ${
                     active ? 'border-white' : 'border-transparent'
-                  } font-bold text-xl p-10 md:p-6 rounded-2xl cursor-pointer animate-background-change-sm`}
-                  onClick={() => setBackground('animated')}
+                  } font-bold text-xl p-10 md:p-6 rounded-2xl cursor-pointer bg-main`}
+                  onClick={() => setBackground('static')}
                 >
-                  Animated
+                  Static
                 </button>
               )}
             </Menu.Item>
@@ -58,13 +58,27 @@ export const BackgroundMenu = () => {
               {({ active }) => (
                 <button
                   className={`border-2 ${
-                    background === 'lofi-rain' && 'border-white'
+                    background === 'transition' && 'border-white'
+                  } ${
+                    active ? 'border-white' : 'border-transparent'
+                  } font-bold text-xl p-10 md:p-6 rounded-2xl cursor-pointer animate-background-change-sm`}
+                  onClick={() => setBackground('transition')}
+                >
+                  Transition
+                </button>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ active }) => (
+                <button
+                  className={`border-2 ${
+                    background === 'room-and-rain' && 'border-white'
                   } ${
                     active ? 'border-white' : 'border-transparent'
                   } font-bold text-xl p-10 md:p-6 rounded-2xl cursor-pointer bg-lofi-rain bg-center bg-cover`}
-                  onClick={() => setBackground('lofi-rain')}
+                  onClick={() => setBackground('room-and-rain')}
                 >
-                  LoFi Rain
+                  Room and Rain
                 </button>
               )}
             </Menu.Item>
@@ -72,13 +86,13 @@ export const BackgroundMenu = () => {
               {({ active }) => (
                 <button
                   className={`border-2 ${
-                    background === 'train-rain' && 'border-white'
+                    background === 'train-and-rain' && 'border-white'
                   } ${
                     active ? 'border-white' : 'border-transparent'
                   } font-bold text-xl p-10 md:p-6 rounded-2xl cursor-pointer bg-train-rain bg-center bg-cover`}
-                  onClick={() => setBackground('train-rain')}
+                  onClick={() => setBackground('train-and-rain')}
                 >
-                  Train Rain
+                  Train and Rain
                 </button>
               )}
             </Menu.Item>
@@ -86,13 +100,13 @@ export const BackgroundMenu = () => {
               {({ active }) => (
                 <button
                   className={`border-2 ${
-                    background === 'tree' && 'border-white'
+                    background === 'waterfall' && 'border-white'
                   } ${
                     active ? 'border-white' : 'border-transparent'
                   } font-bold text-xl p-10 md:p-6 rounded-2xl cursor-pointer bg-tree bg-center bg-cover`}
-                  onClick={() => setBackground('tree')}
+                  onClick={() => setBackground('waterfall')}
                 >
-                  Tree
+                  Waterfall
                 </button>
               )}
             </Menu.Item>

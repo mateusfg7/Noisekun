@@ -14,20 +14,21 @@ const Home: React.FC = () => {
   return (
     <div
       className={`
-    ${background === 'animated' && 'animate-background-change'}
+    ${background === 'transition' && 'animate-background-change'}
     ${background === 'dark' && 'bg-gray-900'}
     ${
-      background === 'lofi-rain' &&
+      background === 'room-and-rain' &&
       'bg-lofi-rain bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
     }
     ${
-      background === 'train-rain' &&
+      background === 'train-and-rain' &&
       'bg-train-rain bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
     }
     ${
-      background === 'tree' &&
+      background === 'waterfall' &&
       'bg-tree bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
     }
+    ${background === 'static' && 'bg-main'}
     
     `}
     >
