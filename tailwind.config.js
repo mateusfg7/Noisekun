@@ -11,6 +11,9 @@ module.exports = {
       ...defaultTheme.screens
     },
     extend: {
+      colors: {
+        main: '#0485B4'
+      },
       boxShadow: {
         header: '0px 1px 30px rgba(0, 0, 0, 0.09)',
         sound: '0px 0px 30px rgba(0, 0, 0, 0.04)'
