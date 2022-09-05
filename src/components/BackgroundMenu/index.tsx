@@ -1,12 +1,27 @@
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { FiMonitor } from 'react-icons/fi'
 
-import { useBackgroundStore } from '../../stores/BackgroundStore'
+import { Background, useBackgroundStore } from '../../stores/BackgroundStore'
 
 export const BackgroundMenu = () => {
   const setBackground = useBackgroundStore(set => set.setBackground)
   const background = useBackgroundStore(set => set.background)
+
+  function handleBackground(newBackground: Background) {
+    setBackground(newBackground)
+    localStorage.setItem('background', newBackground)
+  }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const backgroundOnStorage = localStorage.getItem(
+        'background'
+      ) as Background
+      if (backgroundOnStorage) setBackground(backgroundOnStorage)
+      else localStorage.setItem('background', background)
+    }
+  }, [])
 
   return (
     <Menu as="div" className="z-50">
@@ -33,7 +48,7 @@ export const BackgroundMenu = () => {
                 } ${background === 'static' && !active && 'border-white/50'} ${
                   active && 'border-white'
                 }  font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-main`}
-                onClick={() => setBackground('static')}
+                onClick={() => handleBackground('static')}
               >
                 Static
               </button>
@@ -47,7 +62,7 @@ export const BackgroundMenu = () => {
                 } ${background === 'dark' && !active && 'border-white/50'} ${
                   active && 'border-white'
                 } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-gray-900`}
-                onClick={() => setBackground('dark')}
+                onClick={() => handleBackground('dark')}
               >
                 Dark
               </button>
@@ -63,7 +78,7 @@ export const BackgroundMenu = () => {
                 } ${
                   active && 'border-white'
                 } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer animate-background-change-sm`}
-                onClick={() => setBackground('transition')}
+                onClick={() => handleBackground('transition')}
               >
                 Transition
               </button>
@@ -81,7 +96,7 @@ export const BackgroundMenu = () => {
                 } ${
                   active && 'border-white'
                 } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-lofi-rain bg-center bg-cover`}
-                onClick={() => setBackground('room-and-rain')}
+                onClick={() => handleBackground('room-and-rain')}
               >
                 Room and Rain
               </button>
@@ -101,7 +116,7 @@ export const BackgroundMenu = () => {
                 } ${
                   active && 'border-white'
                 } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-train-rain bg-center bg-cover`}
-                onClick={() => setBackground('train-and-rain')}
+                onClick={() => handleBackground('train-and-rain')}
               >
                 Train and Rain
               </button>
@@ -117,7 +132,7 @@ export const BackgroundMenu = () => {
                 } ${
                   active && 'border-white'
                 } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-tree bg-center bg-cover`}
-                onClick={() => setBackground('waterfall')}
+                onClick={() => handleBackground('waterfall')}
               >
                 Waterfall
               </button>

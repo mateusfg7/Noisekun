@@ -1,6 +1,6 @@
 import create from 'zustand'
 
-type Background =
+export type Background =
   | 'transition'
   | 'dark'
   | 'room-and-rain'
