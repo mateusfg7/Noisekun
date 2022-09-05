@@ -25,7 +25,7 @@ module.exports = {
       },
       animation: {
         'background-change': 'background-change 300s 0s infinite',
-        'background-change-sm': 'background-change 100s 0s infinite'
+        'background-change-sm': 'background-change 50s 0s infinite'
       },
       keyframes: {
         'background-change': {
