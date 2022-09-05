@@ -20,8 +20,11 @@ module.exports = {
       },
       backgroundImage: {
         'lofi-rain': 'url("/bg/lofi-rain.gif")',
+        'lofi-rain-thumb': 'url("/bg/lofi-rain-thumb.png")',
         'train-rain': 'url("/bg/train-rain.gif")',
-        tree: 'url("/bg/tree.gif")'
+        'train-rain-thumb': 'url("/bg/train-rain-thumb.png")',
+        tree: 'url("/bg/tree.gif")',
+        'tree-thumb': 'url("/bg/tree-thumb.png")'
       },
       animation: {
         'background-change': 'background-change 300s 0s infinite',

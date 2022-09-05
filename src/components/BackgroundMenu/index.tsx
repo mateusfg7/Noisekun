@@ -95,7 +95,7 @@ export const BackgroundMenu = () => {
                   background === 'room-and-rain' && !active && 'border-white/50'
                 } ${
                   active && 'border-white'
-                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-lofi-rain bg-center bg-cover`}
+                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-lofi-rain-thumb bg-center bg-cover`}
                 onClick={() => handleBackground('room-and-rain')}
               >
                 Room and Rain
@@ -115,7 +115,7 @@ export const BackgroundMenu = () => {
                   'border-white/50'
                 } ${
                   active && 'border-white'
-                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-train-rain bg-center bg-cover`}
+                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-train-rain-thumb bg-center bg-cover`}
                 onClick={() => handleBackground('train-and-rain')}
               >
                 Train and Rain
@@ -131,7 +131,7 @@ export const BackgroundMenu = () => {
                   background === 'waterfall' && !active && 'border-white/50'
                 } ${
                   active && 'border-white'
-                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-tree bg-center bg-cover`}
+                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-tree-thumb bg-center bg-cover`}
                 onClick={() => handleBackground('waterfall')}
               >
                 Waterfall
