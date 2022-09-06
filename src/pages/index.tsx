@@ -6,10 +6,36 @@ import { Sound } from '../components/Sound'
 import { Footer } from '../components/Footer'
 
 import soundList from '../sounds.json'
+import { useBackgroundStore } from '../stores/BackgroundStore'
 
 const Home: React.FC = () => {
+  const background = useBackgroundStore(set => set.background)
+
   return (
-    <div className="App">
+    <div
+      className={`
+    ${background === 'transition' && 'animate-background-change'}
+    ${background === 'dark' && 'bg-gray-900'}
+    ${
+      background === 'room-and-rain' &&
+      'bg-lofi-rain bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
+    }
+    ${
+      background === 'train-and-rain' &&
+      'bg-train-rain bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
+    }
+    ${
+      background === 'waterfall' &&
+      'bg-tree bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
+    }
+    ${background === 'static' && 'bg-main'}
+    ${
+      background === 'camping-fire' &&
+      'bg-camping-fire bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
+    }
+    
+    `}
+    >
       <Head>
         <title>Noisekun</title>
       </Head>

@@ -6,17 +6,31 @@ module.exports = {
   content: ['./src/**/*.{html,ts,tsx}'],
   theme: {
     screens: {
-      'xs': '350px',
+      xs: '350px',
       '2xs': '500px',
-      ...defaultTheme.screens,
+      ...defaultTheme.screens
     },
     extend: {
+      colors: {
+        main: '#0485B4'
+      },
       boxShadow: {
-        'header': '0px 1px 30px rgba(0, 0, 0, 0.05)',
-        'sound': '0px 0px 30px rgba(0, 0, 0, 0.04)'
+        header: '0px 1px 30px rgba(0, 0, 0, 0.09)',
+        sound: '0px 0px 30px rgba(0, 0, 0, 0.04)'
+      },
+      backgroundImage: {
+        'lofi-rain': 'url("/bg/lofi-rain.gif")',
+        'lofi-rain-thumb': 'url("/bg/lofi-rain-thumb.png")',
+        'train-rain': 'url("/bg/train-rain.gif")',
+        'train-rain-thumb': 'url("/bg/train-rain-thumb.png")',
+        tree: 'url("/bg/tree.gif")',
+        'tree-thumb': 'url("/bg/tree-thumb.png")',
+        'camping-fire': 'url("/bg/camping-fire.gif")',
+        'camping-fire-thumb': 'url("/bg/camping-fire-thumb.png")'
       },
       animation: {
-        'background-change': 'background-change 300s 0s infinite'
+        'background-change': 'background-change 300s 0s infinite',
+        'background-change-sm': 'background-change 50s 0s infinite'
       },
       keyframes: {
         'background-change': {
