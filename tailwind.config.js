@@ -24,7 +24,9 @@ module.exports = {
         'train-rain': 'url("/bg/train-rain.gif")',
         'train-rain-thumb': 'url("/bg/train-rain-thumb.png")',
         tree: 'url("/bg/tree.gif")',
-        'tree-thumb': 'url("/bg/tree-thumb.png")'
+        'tree-thumb': 'url("/bg/tree-thumb.png")',
+        'camping-fire': 'url("/bg/camping-fire.gif")',
+        'camping-fire-thumb': 'url("/bg/camping-fire-thumb.png")'
       },
       animation: {
         'background-change': 'background-change 300s 0s infinite',

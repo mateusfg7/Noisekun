@@ -39,7 +39,7 @@ export const BackgroundMenu = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="max-h-[85vh] flex flex-col gap-2 overflow-y-auto snap snap-y snap-mandatory scroll-pt-2 last:border-red-600 absolute left-4 right-4 md:left-auto md:right-0 mt-2 p-2 origin-top-right rounded-2xl bg-white/20 backdrop-blur-md shadow-2xl focus:outline-none">
+        <Menu.Items className="max-h-[85vh] flex flex-col gap-2 overflow-y-auto snap snap-y snap-mandatory scroll-pt-2 last:border-red-600 absolute left-4 right-4 md:left-auto md:right-0 mt-2 p-2 origin-top-right rounded-2xl bg-white/50 backdrop-blur-md shadow-2xl focus:outline-none">
           <Menu.Item as="div" className="snap-start md:w-52">
             {({ active }) => (
               <button
@@ -135,6 +135,22 @@ export const BackgroundMenu = () => {
                 onClick={() => handleBackground('waterfall')}
               >
                 Waterfall
+              </button>
+            )}
+          </Menu.Item>
+          <Menu.Item as="div" className="snap-start md:w-52">
+            {({ active }) => (
+              <button
+                className={`border-2 ${
+                  background !== 'waterfall' && !active && 'border-transparent'
+                } ${
+                  background === 'waterfall' && !active && 'border-white/50'
+                } ${
+                  active && 'border-white'
+                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-camping-fire-thumb bg-center bg-cover`}
+                onClick={() => handleBackground('camping-fire')}
+              >
+                Camping Fire
               </button>
             )}
           </Menu.Item>

@@ -29,6 +29,10 @@ const Home: React.FC = () => {
       'bg-tree bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
     }
     ${background === 'static' && 'bg-main'}
+    ${
+      background === 'camping-fire' &&
+      'bg-camping-fire bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
+    }
     
     `}
     >

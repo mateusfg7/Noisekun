@@ -7,6 +7,7 @@ export type Background =
   | 'train-and-rain'
   | 'waterfall'
   | 'static'
+  | 'camping-fire'
 
 interface BackgroundStore {
   background: Background
