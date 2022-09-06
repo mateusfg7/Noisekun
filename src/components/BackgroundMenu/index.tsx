@@ -1,6 +1,6 @@
 import { Fragment, useEffect } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import { FiMonitor } from 'react-icons/fi'
+import { MdOutlineWallpaper } from 'react-icons/md'
 
 import { Background, useBackgroundStore } from '../../stores/BackgroundStore'
 
@@ -26,8 +26,8 @@ export const BackgroundMenu = () => {
   return (
     <Menu as="div" className="z-50">
       <div className="flex group">
-        <Menu.Button className="opacity-90 group-hover:opacity-100">
-          <FiMonitor size={22} />
+        <Menu.Button className="flex opacity-90 group-hover:opacity-100">
+          <MdOutlineWallpaper size={22} />
         </Menu.Button>
       </div>
       <Transition
