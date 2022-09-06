@@ -39,15 +39,21 @@ export const BackgroundMenu = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="max-h-[85vh] flex flex-col gap-2 overflow-y-auto snap snap-y snap-mandatory scroll-pt-2 last:border-red-600 absolute left-4 right-4 md:left-auto md:right-0 mt-2 p-2 origin-top-right rounded-2xl bg-white/50 backdrop-blur-md shadow-2xl focus:outline-none">
+        <Menu.Items className="max-h-[85vh] flex flex-col gap-2 overflow-y-auto snap snap-y snap-mandatory scroll-pt-2 absolute left-4 right-4 md:left-auto md:right-0 mt-2 p-2 origin-top-right rounded-2xl bg-white/50 backdrop-blur-md shadow-2xl focus:outline-none">
           <Menu.Item as="div" className="snap-start md:w-52">
             {({ active }) => (
               <button
                 className={`border-2 ${
-                  background !== 'static' && !active && 'border-transparent'
-                } ${background === 'static' && !active && 'border-white/50'} ${
-                  active && 'border-white'
-                }  font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-main`}
+                  background !== 'static' &&
+                  !active &&
+                  'border-transparent text-white/80'
+                } ${
+                  background === 'static' &&
+                  !active &&
+                  'border-white text-white'
+                } ${
+                  active && 'brightness-95 border-white/80 text-white/80'
+                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-main`}
                 onClick={() => handleBackground('static')}
               >
                 Static
@@ -58,9 +64,13 @@ export const BackgroundMenu = () => {
             {({ active }) => (
               <button
                 className={`border-2 ${
-                  background !== 'dark' && !active && 'border-transparent'
-                } ${background === 'dark' && !active && 'border-white/50'} ${
-                  active && 'border-white'
+                  background !== 'dark' &&
+                  !active &&
+                  'border-transparent text-white/80'
+                } ${
+                  background === 'dark' && !active && 'border-white text-white'
+                } ${
+                  active && 'brightness-95 border-white/80 text-white/80'
                 } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-gray-900`}
                 onClick={() => handleBackground('dark')}
               >
@@ -72,11 +82,15 @@ export const BackgroundMenu = () => {
             {({ active }) => (
               <button
                 className={`border-2 ${
-                  background !== 'transition' && !active && 'border-transparent'
+                  background !== 'transition' &&
+                  !active &&
+                  'border-transparent text-white/80'
                 } ${
-                  background === 'transition' && !active && 'border-white/50'
+                  background === 'transition' &&
+                  !active &&
+                  'border-white text-white'
                 } ${
-                  active && 'border-white'
+                  active && 'brightness-95 border-white/80 text-white/80'
                 } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer animate-background-change-sm`}
                 onClick={() => handleBackground('transition')}
               >
@@ -90,11 +104,13 @@ export const BackgroundMenu = () => {
                 className={`border-2 ${
                   background !== 'room-and-rain' &&
                   !active &&
-                  'border-transparent'
+                  'border-transparent text-white/80'
                 } ${
-                  background === 'room-and-rain' && !active && 'border-white/50'
+                  background === 'room-and-rain' &&
+                  !active &&
+                  'border-white text-white'
                 } ${
-                  active && 'border-white'
+                  active && 'brightness-95 border-white/80 text-white/80'
                 } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-lofi-rain-thumb bg-center bg-cover`}
                 onClick={() => handleBackground('room-and-rain')}
               >
@@ -108,13 +124,13 @@ export const BackgroundMenu = () => {
                 className={`border-2 ${
                   background !== 'train-and-rain' &&
                   !active &&
-                  'border-transparent'
+                  'border-transparent text-white/80'
                 } ${
                   background === 'train-and-rain' &&
                   !active &&
-                  'border-white/50'
+                  'border-white text-white'
                 } ${
-                  active && 'border-white'
+                  active && 'brightness-95 border-white/80 text-white/80'
                 } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-train-rain-thumb bg-center bg-cover`}
                 onClick={() => handleBackground('train-and-rain')}
               >
@@ -126,11 +142,15 @@ export const BackgroundMenu = () => {
             {({ active }) => (
               <button
                 className={`border-2 ${
-                  background !== 'waterfall' && !active && 'border-transparent'
+                  background !== 'waterfall' &&
+                  !active &&
+                  'border-transparent text-white/80'
                 } ${
-                  background === 'waterfall' && !active && 'border-white/50'
+                  background === 'waterfall' &&
+                  !active &&
+                  'border-white text-white'
                 } ${
-                  active && 'border-white'
+                  active && 'brightness-95 border-white/80 text-white/80'
                 } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-tree-thumb bg-center bg-cover`}
                 onClick={() => handleBackground('waterfall')}
               >
@@ -142,11 +162,15 @@ export const BackgroundMenu = () => {
             {({ active }) => (
               <button
                 className={`border-2 ${
-                  background !== 'waterfall' && !active && 'border-transparent'
+                  background !== 'camping-fire' &&
+                  !active &&
+                  'border-transparent text-white/80'
                 } ${
-                  background === 'waterfall' && !active && 'border-white/50'
+                  background === 'camping-fire' &&
+                  !active &&
+                  'border-white text-white'
                 } ${
-                  active && 'border-white'
+                  active && 'brightness-95 border-white/80 text-white/80'
                 } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-camping-fire-thumb bg-center bg-cover`}
                 onClick={() => handleBackground('camping-fire')}
               >
