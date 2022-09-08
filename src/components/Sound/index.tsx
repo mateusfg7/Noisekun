@@ -6,6 +6,8 @@ import { useGlobalVolumeStore } from '../../stores/GlobalVolumeStore'
 
 import { VolumeController } from '../VolumeController'
 
+import { Container, Icon } from './styles'
+
 export interface ISound {
   name: string
   iconFile: string
@@ -23,14 +25,14 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
 
   const soundRef = useRef<HTMLAudioElement>()
 
-  async function toggleSoundState() {
+  function toggleSoundState() {
     if (soundIsActive) soundRef.current.pause()
     else soundRef.current.play()
 
     setSoundIsActive(!soundIsActive)
   }
 
-  async function handleLocalSoundVolume(volume: number) {
+  function handleLocalSoundVolume(volume: number) {
     setLocalSoundVolume(volume)
     localStorage.setItem(`${name}-volume`, String(localSoundVolume))
   }
@@ -48,36 +50,22 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
   }, [globalVolume, localSoundVolume])
 
   return (
-    <div
-      title={name}
-      className="flex flex-col justify-center items-center w-24 h-24"
-    >
-      <div
-        id={`${name}-button`}
-        className={`umami--click--${name}-sound flex justify-center items-center w-24 h-24 rounded-[10%] text-white/50 cursor-pointer transition-colors duration-300 md:hover:shadow-sound md:hover:bg-white/10 ${
-          soundIsActive &&
-          'text-white rounded-b-none md:shadow-sound md:bg-white/10'
-        }`}
+    <Container title={name}>
+      <audio ref={soundRef} loop>
+        <source src={`/sounds/${audioFile.name}`} type={audioFile.type} />
+      </audio>
+      <Icon
+        active={soundIsActive}
+        className={`umami--click--${name}-sound`}
         onClick={() => toggleSoundState()}
       >
-        <audio ref={soundRef} loop>
-          <source src={`/sounds/${audioFile.name}`} type={audioFile.type} />
-        </audio>
-        <Image
-          src={`/assets/${iconFile}`}
-          alt={name}
-          width={80}
-          height={80}
-          className={`opacity-70 md:hover:opacity-100 ${
-            soundIsActive && 'opacity-100'
-          }`}
-        />
-      </div>
+        <Image src={`/assets/${iconFile}`} alt={name} width={80} height={80} />
+      </Icon>
       <VolumeController
         state={soundIsActive}
         soundNameOnLocalStorage={name}
         handleSoundVolume={handleLocalSoundVolume}
       />
-    </div>
+    </Container>
   )
 }
