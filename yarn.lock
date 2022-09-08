@@ -5213,10 +5213,10 @@ tailwind-merge@^1.2.0:
   resolved "https://registry.yarnpkg.com/tailwind-merge/-/tailwind-merge-1.6.0.tgz#dd652005544aa0b04628e69688b7108265f0d441"
   integrity sha512-lfpys05uZMcVGIbgrrM/HlQGYKiPIcUhs76H1VrXo0gerpYkoLk4zjQTppdyAcBcmpzlzXJw7X0JniUKOr2hkg==
 
-tailwind-styled-components@^2.1.8:
-  version "2.1.8"
-  resolved "https://registry.yarnpkg.com/tailwind-styled-components/-/tailwind-styled-components-2.1.8.tgz#fa87bc34773ac35320c2e9436110f7af9a28c841"
-  integrity sha512-8RfMqGGOpgrd1j6MU5kWe4mzqjR2ikPfPS2xee9By2ynKQH5UFO5upLK6yw3Vc0pJ2ACEduJWoxUItDG8FZSvw==
+tailwind-styled-components@2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/tailwind-styled-components/-/tailwind-styled-components-2.1.6.tgz#bffeea787b85a73c7d57964be2a23928e1966216"
+  integrity sha512-qqZXvwMYrZoLS75eyxeU+XgrwBmrcJA7568Jj+RWsah0EswKzLc0vkaHtLQFYiHbWy8lDwKVMRFsUWQ4GBpHzA==
   dependencies:
     tailwind-merge "^1.2.0"
 
