@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+
+import { Container } from './styles'
+
 import { useGlobalVolumeStore } from '../../stores/GlobalVolumeStore'
 
 export const GlobalVolumeController: React.FC = () => {
@@ -14,7 +17,7 @@ export const GlobalVolumeController: React.FC = () => {
   }
 
   return (
-    <div className="w-full h-max relative group flex items-center">
+    <Container>
       <input
         className="slider-input"
         type="range"
@@ -29,6 +32,6 @@ export const GlobalVolumeController: React.FC = () => {
         }}
         onChange={event => handleVolume(Number(event.target.value))}
       />
-    </div>
+    </Container>
   )
 }
