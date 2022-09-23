@@ -8,41 +8,20 @@ import { Footer } from '../components/Footer'
 import soundList from '../sounds.json'
 import { useBackgroundStore } from '../stores/BackgroundStore'
 
+import { Container, SoundContainer, SoundGrid } from '../styles/pages/index'
+
 const Home: React.FC = () => {
   const background = useBackgroundStore(set => set.background)
 
   return (
-    <div
-      className={`
-    ${background === 'transition' && 'animate-background-change'}
-    ${background === 'dark' && 'bg-gray-900'}
-    ${
-      background === 'room-and-rain' &&
-      'bg-lofi-rain bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
-    }
-    ${
-      background === 'train-and-rain' &&
-      'bg-train-rain bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
-    }
-    ${
-      background === 'waterfall' &&
-      'bg-tree bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
-    }
-    ${background === 'static' && 'bg-main'}
-    ${
-      background === 'camping-fire' &&
-      'bg-camping-fire bg-fixed bg-no-repeat bg-cover bg-center backdrop-brightness-50'
-    }
-    
-    `}
-    >
+    <Container $background={background}>
       <Head>
         <title>Noisekun</title>
       </Head>
 
       <Header />
-      <section className="flex justify-center items-center min-h-[85vh] p-14">
-        <div className="grid gap-12 grid-cols-1 xs:grid-cols-2 2xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 xl:grid-cols-6">
+      <SoundContainer>
+        <SoundGrid>
           {soundList.map(sound => (
             <Sound
               key={sound.name}
@@ -51,10 +30,10 @@ const Home: React.FC = () => {
               audioFile={sound.audioFile}
             />
           ))}
-        </div>
-      </section>
+        </SoundGrid>
+      </SoundContainer>
       <Footer />
-    </div>
+    </Container>
   )
 }
 

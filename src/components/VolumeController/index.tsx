@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react'
 
+import { Container } from './styles'
+
 export interface IVolumeController {
-  state: boolean
+  isActive: boolean
+  soundName: string
   soundNameOnLocalStorage: string
   handleSoundVolume: (volume: number) => void
 }
 
 export const VolumeController: React.FC<IVolumeController> = ({
-  state,
+  isActive,
+  soundName,
   soundNameOnLocalStorage,
   handleSoundVolume
 }) => {
@@ -23,15 +27,12 @@ export const VolumeController: React.FC<IVolumeController> = ({
   }, [])
 
   return (
-    <div
-      className={`w-full h-max relative group ${
-        state ? 'opacity-1' : 'opacity-0'
-      }`}
-    >
+    <Container isActive={isActive}>
       <input
         className="slider-input absolute top-0 left-0"
         type="range"
-        name="audio-decrement"
+        name={`${soundName}-volume-controller`}
+        title={`${soundName} Volume Controller`}
         min="20"
         max="1000"
         value={rangeValue}
@@ -45,6 +46,6 @@ export const VolumeController: React.FC<IVolumeController> = ({
           handleSoundVolume(Number(event.target.value) / 1000)
         }}
       />
-    </div>
+    </Container>
   )
 }

@@ -4,6 +4,15 @@ import { MdOutlineWallpaper } from 'react-icons/md'
 
 import { Background, useBackgroundStore } from '../../stores/BackgroundStore'
 
+import {
+  Container,
+  MenuButtonContainer,
+  MenuButton,
+  MenuItems,
+  MenuItemContainer,
+  ItemButton
+} from './styles'
+
 export const BackgroundMenu = () => {
   const setBackground = useBackgroundStore(set => set.setBackground)
   const background = useBackgroundStore(set => set.background)
@@ -24,162 +33,131 @@ export const BackgroundMenu = () => {
   }, [])
 
   return (
-    <Menu as="div" className="z-50">
-      <div className="flex group">
-        <Menu.Button className="flex opacity-90 group-hover:opacity-100">
-          <MdOutlineWallpaper size={22} />
-        </Menu.Button>
-      </div>
-      <Transition
-        as={Fragment}
-        enter="transition ease-out duration-100"
-        enterFrom="transform opacity-0 scale-95"
-        enterTo="transform opacity-100 scale-100"
-        leave="transition ease-in duration-75"
-        leaveFrom="transform opacity-100 scale-100"
-        leaveTo="transform opacity-0 scale-95"
-      >
-        <Menu.Items className="max-h-[85vh] flex flex-col gap-2 overflow-y-auto snap snap-y snap-mandatory scroll-pt-2 absolute left-4 right-4 md:left-auto md:right-0 mt-2 p-2 origin-top-right rounded-2xl bg-white/50 backdrop-blur-md shadow-2xl focus:outline-none">
-          <Menu.Item as="div" className="snap-start md:w-52">
-            {({ active }) => (
-              <button
-                className={`border-2 ${
-                  background !== 'static' &&
-                  !active &&
-                  'border-transparent text-white/80'
-                } ${
-                  background === 'static' &&
-                  !active &&
-                  'border-white text-white'
-                } ${
-                  active && 'brightness-95 border-white/80 text-white/80'
-                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-main`}
-                onClick={() => handleBackground('static')}
-              >
-                Static
-              </button>
-            )}
-          </Menu.Item>
-          <Menu.Item as="div" className="snap-start md:w-52">
-            {({ active }) => (
-              <button
-                className={`border-2 ${
-                  background !== 'dark' &&
-                  !active &&
-                  'border-transparent text-white/80'
-                } ${
-                  background === 'dark' && !active && 'border-white text-white'
-                } ${
-                  active && 'brightness-95 border-white/80 text-white/80'
-                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-gray-900`}
-                onClick={() => handleBackground('dark')}
-              >
-                Dark
-              </button>
-            )}
-          </Menu.Item>
-          <Menu.Item as="div" className="snap-start md:w-52">
-            {({ active }) => (
-              <button
-                className={`border-2 ${
-                  background !== 'transition' &&
-                  !active &&
-                  'border-transparent text-white/80'
-                } ${
-                  background === 'transition' &&
-                  !active &&
-                  'border-white text-white'
-                } ${
-                  active && 'brightness-95 border-white/80 text-white/80'
-                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer animate-background-change-sm`}
-                onClick={() => handleBackground('transition')}
-              >
-                Transition
-              </button>
-            )}
-          </Menu.Item>
-          <Menu.Item as="div" className="snap-start md:w-52">
-            {({ active }) => (
-              <button
-                className={`border-2 ${
-                  background !== 'room-and-rain' &&
-                  !active &&
-                  'border-transparent text-white/80'
-                } ${
-                  background === 'room-and-rain' &&
-                  !active &&
-                  'border-white text-white'
-                } ${
-                  active && 'brightness-95 border-white/80 text-white/80'
-                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-lofi-rain-thumb bg-center bg-cover`}
-                onClick={() => handleBackground('room-and-rain')}
-              >
-                Room and Rain
-              </button>
-            )}
-          </Menu.Item>
-          <Menu.Item as="div" className="snap-start md:w-52">
-            {({ active }) => (
-              <button
-                className={`border-2 ${
-                  background !== 'train-and-rain' &&
-                  !active &&
-                  'border-transparent text-white/80'
-                } ${
-                  background === 'train-and-rain' &&
-                  !active &&
-                  'border-white text-white'
-                } ${
-                  active && 'brightness-95 border-white/80 text-white/80'
-                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-train-rain-thumb bg-center bg-cover`}
-                onClick={() => handleBackground('train-and-rain')}
-              >
-                Train and Rain
-              </button>
-            )}
-          </Menu.Item>
-          <Menu.Item as="div" className="snap-start md:w-52">
-            {({ active }) => (
-              <button
-                className={`border-2 ${
-                  background !== 'waterfall' &&
-                  !active &&
-                  'border-transparent text-white/80'
-                } ${
-                  background === 'waterfall' &&
-                  !active &&
-                  'border-white text-white'
-                } ${
-                  active && 'brightness-95 border-white/80 text-white/80'
-                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-tree-thumb bg-center bg-cover`}
-                onClick={() => handleBackground('waterfall')}
-              >
-                Waterfall
-              </button>
-            )}
-          </Menu.Item>
-          <Menu.Item as="div" className="snap-start md:w-52">
-            {({ active }) => (
-              <button
-                className={`border-2 ${
-                  background !== 'camping-fire' &&
-                  !active &&
-                  'border-transparent text-white/80'
-                } ${
-                  background === 'camping-fire' &&
-                  !active &&
-                  'border-white text-white'
-                } ${
-                  active && 'brightness-95 border-white/80 text-white/80'
-                } font-bold text-xl p-10 md:p-6 w-full rounded-2xl cursor-pointer bg-camping-fire-thumb bg-center bg-cover`}
-                onClick={() => handleBackground('camping-fire')}
-              >
-                Camping Fire
-              </button>
-            )}
-          </Menu.Item>
-        </Menu.Items>
-      </Transition>
-    </Menu>
+    <Container>
+      <Menu>
+        <MenuButtonContainer>
+          <MenuButton $as={Menu.Button}>
+            <MdOutlineWallpaper size={22} />
+          </MenuButton>
+        </MenuButtonContainer>
+        <Transition
+          as={Fragment}
+          enter="transition ease-out duration-100"
+          enterFrom="transform opacity-0 scale-95"
+          enterTo="transform opacity-100 scale-100"
+          leave="transition ease-in duration-75"
+          leaveFrom="transform opacity-100 scale-100"
+          leaveTo="transform opacity-0 scale-95"
+        >
+          <MenuItems $as={Menu.Items}>
+            <MenuItemContainer>
+              <Menu.Item>
+                {({ active }) => (
+                  <ItemButton
+                    active={active}
+                    currentBackground={background}
+                    expectedBackground="static"
+                    className="bg-main"
+                    onClick={() => handleBackground('static')}
+                  >
+                    Static
+                  </ItemButton>
+                )}
+              </Menu.Item>
+            </MenuItemContainer>
+            <MenuItemContainer>
+              <Menu.Item>
+                {({ active }) => (
+                  <ItemButton
+                    active={active}
+                    currentBackground={background}
+                    expectedBackground="dark"
+                    className="bg-gray-900"
+                    onClick={() => handleBackground('dark')}
+                  >
+                    Dark
+                  </ItemButton>
+                )}
+              </Menu.Item>
+            </MenuItemContainer>
+            <MenuItemContainer>
+              <Menu.Item>
+                {({ active }) => (
+                  <ItemButton
+                    active={active}
+                    currentBackground={background}
+                    expectedBackground="transition"
+                    className="animate-background-change-sm"
+                    onClick={() => handleBackground('transition')}
+                  >
+                    Transition
+                  </ItemButton>
+                )}
+              </Menu.Item>
+            </MenuItemContainer>
+            <MenuItemContainer>
+              <Menu.Item>
+                {({ active }) => (
+                  <ItemButton
+                    active={active}
+                    currentBackground={background}
+                    expectedBackground="room-and-rain"
+                    className="bg-lofi-rain-thumb"
+                    onClick={() => handleBackground('room-and-rain')}
+                  >
+                    Room and Rain
+                  </ItemButton>
+                )}
+              </Menu.Item>
+            </MenuItemContainer>
+            <MenuItemContainer>
+              <Menu.Item>
+                {({ active }) => (
+                  <ItemButton
+                    active={active}
+                    currentBackground={background}
+                    expectedBackground="train-and-rain"
+                    className="bg-train-rain-thumb"
+                    onClick={() => handleBackground('train-and-rain')}
+                  >
+                    Train and Rain
+                  </ItemButton>
+                )}
+              </Menu.Item>
+            </MenuItemContainer>
+            <MenuItemContainer>
+              <Menu.Item>
+                {({ active }) => (
+                  <ItemButton
+                    active={active}
+                    currentBackground={background}
+                    expectedBackground="waterfall"
+                    className="bg-tree-thumb"
+                    onClick={() => handleBackground('waterfall')}
+                  >
+                    Waterfall
+                  </ItemButton>
+                )}
+              </Menu.Item>
+            </MenuItemContainer>
+            <MenuItemContainer>
+              <Menu.Item>
+                {({ active }) => (
+                  <ItemButton
+                    active={active}
+                    currentBackground={background}
+                    expectedBackground="camping-fire"
+                    className="bg-camping-fire-thumb"
+                    onClick={() => handleBackground('camping-fire')}
+                  >
+                    Camping Fire
+                  </ItemButton>
+                )}
+              </Menu.Item>
+            </MenuItemContainer>
+          </MenuItems>
+        </Transition>
+      </Menu>
+    </Container>
   )
 }

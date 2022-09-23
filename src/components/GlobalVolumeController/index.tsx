@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
+import { FiVolume2, FiVolume1, FiVolume } from 'react-icons/fi'
+
 import { useGlobalVolumeStore } from '../../stores/GlobalVolumeStore'
+
+import { Container, SliderContainer } from './styles'
 
 export const GlobalVolumeController: React.FC = () => {
   const MAX_VALUE = 1000
 
   const [rangeValue, setRangeValue] = useState(MAX_VALUE)
+  const [isShowing, setIsShowing] = useState(false)
 
   const setGlobalVolume = useGlobalVolumeStore(state => state.setGlobalVolume)
+  const globalVolume = useGlobalVolumeStore(state => state.globalVolume)
 
   function handleVolume(value: number) {
     setGlobalVolume(value / MAX_VALUE)
@@ -14,21 +20,32 @@ export const GlobalVolumeController: React.FC = () => {
   }
 
   return (
-    <div className="w-full h-max relative group flex items-center">
-      <input
-        className="slider-input"
-        type="range"
-        name="audio-decrement"
-        min="0"
-        max={MAX_VALUE}
-        value={rangeValue}
-        style={{
-          backgroundImage: 'linear-gradient(#fff, #fff)',
-          backgroundSize: `${(rangeValue * 100) / MAX_VALUE}%`,
-          backgroundRepeat: 'no-repeat'
-        }}
-        onChange={event => handleVolume(Number(event.target.value))}
-      />
-    </div>
+    <Container
+      onMouseEnter={() => setIsShowing(true)}
+      onMouseLeave={() => setIsShowing(false)}
+    >
+      <SliderContainer isShowing={isShowing}>
+        <input
+          className="slider-input"
+          type="range"
+          name="global-volume-controller"
+          title="Global Volume Controller"
+          min="0"
+          max={MAX_VALUE}
+          value={rangeValue}
+          style={{
+            backgroundImage: 'linear-gradient(#fff, #fff)',
+            backgroundSize: `${(rangeValue * 100) / MAX_VALUE}%`,
+            backgroundRepeat: 'no-repeat'
+          }}
+          onChange={event => handleVolume(Number(event.target.value))}
+        />
+      </SliderContainer>
+      <button onClick={() => setIsShowing(!isShowing)}>
+        {globalVolume >= 0.5 && <FiVolume2 size={25} />}
+        {globalVolume >= 0.1 && globalVolume < 0.5 && <FiVolume1 size={25} />}
+        {globalVolume < 0.1 && <FiVolume size={25} />}
+      </button>
+    </Container>
   )
 }

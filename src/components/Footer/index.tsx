@@ -1,28 +1,29 @@
 import React from 'react'
 
+import { Container, Paragraph, AuthorLink, LicenseLink } from './styles'
+
 export const Footer: React.FC = () => {
   return (
-    <footer className="flex flex-wrap justify-center items-center p-3.5">
+    <Container>
       <div>
-        <p className="text-lg md:text-base p-1 md:p-[0.125rem]">
+        <Paragraph>
           by{' '}
-          <a
+          <AuthorLink
             href="https://github.com/mateusfg7"
-            className="font-bold umami--click--author-credit"
+            className="umami--click--author-credit"
           >
-            mateusfg7{' '}
-          </a>{' '}
-        </p>
-        <p className="text-lg md:text-base p-1 md:p-[0.125rem]">
-          <a
+            mateusfg7
+          </AuthorLink>
+        </Paragraph>
+        <Paragraph>
+          <LicenseLink
             href="https://github.com/mateusfg7/Noisekun/blob/master/LICENSE"
-            className="cursor-pointer hover:underline umami--click--license"
+            className="umami--click--license"
           >
-            {' '}
             &copy; MIT License
-          </a>
-        </p>
+          </LicenseLink>
+        </Paragraph>
       </div>
-    </footer>
+    </Container>
   )
 }
