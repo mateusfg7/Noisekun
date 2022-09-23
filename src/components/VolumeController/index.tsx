@@ -4,12 +4,14 @@ import { Container } from './styles'
 
 export interface IVolumeController {
   isActive: boolean
+  soundName: string
   soundNameOnLocalStorage: string
   handleSoundVolume: (volume: number) => void
 }
 
 export const VolumeController: React.FC<IVolumeController> = ({
   isActive,
+  soundName,
   soundNameOnLocalStorage,
   handleSoundVolume
 }) => {
@@ -29,7 +31,8 @@ export const VolumeController: React.FC<IVolumeController> = ({
       <input
         className="slider-input absolute top-0 left-0"
         type="range"
-        name="audio-decrement"
+        name={`${soundName}-volume-controller`}
+        title={`${soundName} Volume Controller`}
         min="20"
         max="1000"
         value={rangeValue}

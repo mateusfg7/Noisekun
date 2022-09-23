@@ -63,6 +63,7 @@ export const Sound: React.FC<ISound> = ({ name, iconFile, audioFile }) => {
       </Icon>
       <VolumeController
         isActive={soundIsActive}
+        soundName={name}
         soundNameOnLocalStorage={name}
         handleSoundVolume={handleLocalSoundVolume}
       />

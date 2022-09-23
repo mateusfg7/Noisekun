@@ -28,7 +28,8 @@ export const GlobalVolumeController: React.FC = () => {
         <input
           className="slider-input"
           type="range"
-          name="audio-decrement"
+          name="global-volume-controller"
+          title="Global Volume Controller"
           min="0"
           max={MAX_VALUE}
           value={rangeValue}
