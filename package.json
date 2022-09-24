@@ -31,7 +31,7 @@
     "autoprefixer": "10.4.8",
     "commitizen": "4.2.5",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "8.23.0",
+    "eslint": "8.24.0",
     "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "8.5.0",
     "eslint-config-standard": "17.0.0",
