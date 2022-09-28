@@ -3,16 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  ::-webkit-scrollbar {
-    @apply bg-none
-      w-3;
-  }
-  ::-webkit-scrollbar-thumb {
-    @apply bg-white/30 active:bg-white/50
-      cursor-grab
-      rounded-xl;
-  }
-
   body {
     @apply font-['Nunito']
       font-light
