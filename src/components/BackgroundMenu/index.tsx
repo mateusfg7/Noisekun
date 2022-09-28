@@ -15,7 +15,7 @@ import {
 
 export const BackgroundMenu = () => {
   const setBackground = useBackgroundStore(set => set.setBackground)
-  const background = useBackgroundStore(set => set.background)
+  const currentBackground = useBackgroundStore(set => set.background)
 
   function handleBackground(newBackground: Background) {
     setBackground(newBackground)
@@ -28,9 +28,52 @@ export const BackgroundMenu = () => {
         'background'
       ) as Background
       if (backgroundOnStorage) setBackground(backgroundOnStorage)
-      else localStorage.setItem('background', background)
+      else localStorage.setItem('background', currentBackground)
     }
   }, [])
+
+  interface BackgroundAttrs {
+    title: string
+    id: Background
+    backgroundClass: string
+  }
+  const backgroundList: BackgroundAttrs[] = [
+    {
+      title: 'Static',
+      id: 'static',
+      backgroundClass: 'bg-main'
+    },
+    {
+      title: 'Dark',
+      id: 'dark',
+      backgroundClass: 'bg-gray-900'
+    },
+    {
+      title: 'Transition',
+      id: 'transition',
+      backgroundClass: 'animate-background-change-sm'
+    },
+    {
+      title: 'Rain on Window',
+      id: 'room-and-rain',
+      backgroundClass: 'bg-lofi-rain-thumb'
+    },
+    {
+      title: 'Train and Rain',
+      id: 'train-and-rain',
+      backgroundClass: 'bg-train-rain-thumb'
+    },
+    {
+      title: 'Waterfall',
+      id: 'waterfall',
+      backgroundClass: 'bg-tree-thumb'
+    },
+    {
+      title: 'Camping Fire',
+      id: 'camping-fire',
+      backgroundClass: 'bg-camping-fire-thumb'
+    }
+  ]
 
   return (
     <Container>
@@ -50,111 +93,23 @@ export const BackgroundMenu = () => {
           leaveTo="transform opacity-0 scale-95"
         >
           <MenuItems $as={Menu.Items}>
-            <MenuItemContainer>
-              <Menu.Item>
-                {({ active }) => (
-                  <ItemButton
-                    active={active}
-                    currentBackground={background}
-                    expectedBackground="static"
-                    className="bg-main"
-                    onClick={() => handleBackground('static')}
-                  >
-                    Static
-                  </ItemButton>
-                )}
-              </Menu.Item>
-            </MenuItemContainer>
-            <MenuItemContainer>
-              <Menu.Item>
-                {({ active }) => (
-                  <ItemButton
-                    active={active}
-                    currentBackground={background}
-                    expectedBackground="dark"
-                    className="bg-gray-900"
-                    onClick={() => handleBackground('dark')}
-                  >
-                    Dark
-                  </ItemButton>
-                )}
-              </Menu.Item>
-            </MenuItemContainer>
-            <MenuItemContainer>
-              <Menu.Item>
-                {({ active }) => (
-                  <ItemButton
-                    active={active}
-                    currentBackground={background}
-                    expectedBackground="transition"
-                    className="animate-background-change-sm"
-                    onClick={() => handleBackground('transition')}
-                  >
-                    Transition
-                  </ItemButton>
-                )}
-              </Menu.Item>
-            </MenuItemContainer>
-            <MenuItemContainer>
-              <Menu.Item>
-                {({ active }) => (
-                  <ItemButton
-                    active={active}
-                    currentBackground={background}
-                    expectedBackground="room-and-rain"
-                    className="bg-lofi-rain-thumb"
-                    onClick={() => handleBackground('room-and-rain')}
-                  >
-                    Room and Rain
-                  </ItemButton>
-                )}
-              </Menu.Item>
-            </MenuItemContainer>
-            <MenuItemContainer>
-              <Menu.Item>
-                {({ active }) => (
-                  <ItemButton
-                    active={active}
-                    currentBackground={background}
-                    expectedBackground="train-and-rain"
-                    className="bg-train-rain-thumb"
-                    onClick={() => handleBackground('train-and-rain')}
-                  >
-                    Train and Rain
-                  </ItemButton>
-                )}
-              </Menu.Item>
-            </MenuItemContainer>
-            <MenuItemContainer>
-              <Menu.Item>
-                {({ active }) => (
-                  <ItemButton
-                    active={active}
-                    currentBackground={background}
-                    expectedBackground="waterfall"
-                    className="bg-tree-thumb"
-                    onClick={() => handleBackground('waterfall')}
-                  >
-                    Waterfall
-                  </ItemButton>
-                )}
-              </Menu.Item>
-            </MenuItemContainer>
-            <MenuItemContainer>
-              <Menu.Item>
-                {({ active }) => (
-                  <ItemButton
-                    active={active}
-                    currentBackground={background}
-                    expectedBackground="camping-fire"
-                    className="bg-camping-fire-thumb"
-                    onClick={() => handleBackground('camping-fire')}
-                  >
-                    Camping Fire
-                  </ItemButton>
-                )}
-              </Menu.Item>
-            </MenuItemContainer>
+            {backgroundList.map(background => (
+              <MenuItemContainer key={background.id}>
+                <Menu.Item>
+                  {({ active }) => (
+                    <ItemButton
+                      active={active}
+                      currentBackground={currentBackground}
+                      expectedBackground={background.id}
+                      className={`${background.backgroundClass} umami--click--${background.id}-background`}
+                      onClick={() => handleBackground(background.id)}
+                    >
+                      {background.title}
+                    </ItemButton>
+                  )}
+                </Menu.Item>
+              </MenuItemContainer>
+            ))}
           </MenuItems>
         </Transition>
       </Menu>
