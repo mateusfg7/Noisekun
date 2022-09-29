@@ -11,17 +11,17 @@ export const MenuButton = tw.button`
 
 export const MenuItems = tw.div`
   max-h-[85vh]
-  flex flex-col gap-2
-  overflow-y-auto snap snap-y snap-mandatory scroll-pt-2 scrollbar-hide
+  flex flex-col gap-4
+  overflow-y-auto snap snap-y snap-mandatory scroll-pt-4 scrollbar-hide
   absolute left-4 right-4 md:left-auto md:right-0
-  mt-2 p-2 origin-top-right
+  mt-2 p-4 origin-top-right
   rounded-2xl
-  bg-white/50 backdrop-blur-md
+  bg-white/40 backdrop-blur-md
   shadow-2xl
   focus:outline-none
 `
 
-export const MenuItemContainer = tw.div`snap-start md:w-52`
+export const MenuItemContainer = tw.div`snap-start min-w-max`
 
 interface ItemButtonProps {
   active: boolean
@@ -41,7 +41,8 @@ export const ItemButton = tw.button<ItemButtonProps>`
   border-2 rounded-2xl 
   cursor-pointer
   font-bold text-xl
-  p-10 md:p-6
+  p-10 md:p-7
   w-full
   bg-center bg-cover
+  shadow-xl shadow-black/30
 `
