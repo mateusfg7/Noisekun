@@ -12,7 +12,7 @@ export const MenuButton = tw.button`
 export const MenuItems = tw.div`
   max-h-[85vh]
   flex flex-col gap-2
-  overflow-y-auto snap snap-y snap-mandatory scroll-pt-2
+  overflow-y-auto snap snap-y snap-mandatory scroll-pt-2 scrollbar-hide
   absolute left-4 right-4 md:left-auto md:right-0
   mt-2 p-2 origin-top-right
   rounded-2xl
