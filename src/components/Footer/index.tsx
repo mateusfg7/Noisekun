@@ -1,29 +1,53 @@
 import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { FiAward, FiGithub } from 'react-icons/fi'
 
-import { Container, Paragraph, AuthorLink, LicenseLink } from './styles'
+import { Container, Info, Section } from './styles'
 
 export const Footer: React.FC = () => {
   return (
     <Container>
-      <div>
-        <Paragraph>
-          by{' '}
-          <AuthorLink
-            href="https://github.com/mateusfg7"
-            className="umami--click--author-credit"
-          >
-            mateusfg7
-          </AuthorLink>
-        </Paragraph>
-        <Paragraph>
-          <LicenseLink
-            href="https://github.com/mateusfg7/Noisekun/blob/master/LICENSE"
-            className="umami--click--license"
-          >
-            &copy; MIT License
-          </LicenseLink>
-        </Paragraph>
+      <div className="w-14 rounded-2xl overflow-hidden shadow-lg">
+        <Link href="/">
+          <Image
+            src="/icons/icon-192x192.png"
+            width={192}
+            height={192}
+            layout="responsive"
+            className="cursor-pointer umami--click--footer-logo"
+          />
+        </Link>
       </div>
+      <Section>
+        <Info
+          href="https://github.com/mateusfg7/Noisekun/blob/master/LICENSE"
+          className="cursor-pointer umami--click--license"
+        >
+          <div>&copy; MIT License</div>
+        </Info>
+        <Info
+          href="https://github.com/mateusfg7"
+          className="umami--click--author-credit"
+        >
+          by <span className="font-bold">mateusfg7</span>
+        </Info>
+      </Section>
+      <Section>
+        <Info
+          href="https://github.com/mateusfg7/Noisekun"
+          className="umami--click--repository"
+        >
+          <FiGithub /> Repository
+        </Info>
+
+        <Info
+          className="umami--click--credits"
+          href="https://github.com/mateusfg7/Noisekun/#credits"
+        >
+          <FiAward /> Credits
+        </Info>
+      </Section>
     </Container>
   )
 }

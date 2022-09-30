@@ -1,18 +1,19 @@
 import tw from 'tailwind-styled-components'
 
 export const Container = tw.footer`
-  flex flex-wrap
-  justify-center items-center
-  p-3.5
+  flex flex-wrap flex-col sm:flex-row
+  items-center justify-center
+  mt-28 p-14 gap-10 md:gap-14
+  bg-white/5 backdrop-blur-sm
 `
 
-export const Paragraph = tw.p`
-  text-lg md:text-base
-  p-1 md:p-[0.125rem]
+export const Info = tw.a`
+  flex items-center gap-2
+  text-xl sm:text-lg
+  underline-offset-4 hover:underline
+  w-full
 `
-export const AuthorLink = tw.a`font-bold`
-
-export const LicenseLink = tw.a`
-  cursor-pointer
-  hover:underline 
+export const Section = tw.section`
+  flex flex-col
+  gap-2 sm:gap-0
 `
