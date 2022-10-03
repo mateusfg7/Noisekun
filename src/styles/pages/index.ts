@@ -21,9 +21,8 @@ export const Container = tw.div<ContainerProps>`
   ${p => backgroundClasses[p.$background]}
 `
 
-// export const Main = tw.div``
 export const Main = tw.div`
-  h-[85vh] overflow-scroll
+  h-[90vh] md:h-[85vh] overflow-scroll
 `
 
 export const SoundContainer = tw.div`

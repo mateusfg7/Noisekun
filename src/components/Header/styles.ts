@@ -5,8 +5,8 @@ export const Container = tw.header`
   justify-between md:justify-center
   items-center
   px-6
-  h-[15vh]
-  md:shadow-header
+  h-[10vh] md:h-[15vh]
+  shadow-header
 `
 
 export const HeaderTitle = tw.h1`font-semibold text-2xl text-white/90`
