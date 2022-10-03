@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiAward, FiGithub } from 'react-icons/fi'
+import { AiOutlineCopyrightCircle } from 'react-icons/ai'
 
 import { Container, Info, Section } from './styles'
 
@@ -25,7 +26,7 @@ export const Footer: React.FC = () => {
           className="cursor-pointer umami--click--license"
           target="_blank"
         >
-          <div>&copy; MIT License</div>
+          <AiOutlineCopyrightCircle /> MIT License
         </Info>
         <Info
           href="https://github.com/mateusfg7"
