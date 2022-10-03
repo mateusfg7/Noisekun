@@ -23,12 +23,14 @@ export const Footer: React.FC = () => {
         <Info
           href="https://github.com/mateusfg7/Noisekun/blob/master/LICENSE"
           className="cursor-pointer umami--click--license"
+          target="_blank"
         >
           <div>&copy; MIT License</div>
         </Info>
         <Info
           href="https://github.com/mateusfg7"
           className="umami--click--author-credit"
+          target="_blank"
         >
           by <span className="font-bold">mateusfg7</span>
         </Info>
@@ -37,6 +39,7 @@ export const Footer: React.FC = () => {
         <Info
           href="https://github.com/mateusfg7/Noisekun"
           className="umami--click--repository"
+          target="_blank"
         >
           <FiGithub /> Repository
         </Info>
@@ -44,6 +47,7 @@ export const Footer: React.FC = () => {
         <Info
           className="umami--click--credits"
           href="https://github.com/mateusfg7/Noisekun/#credits"
+          target="_blank"
         >
           <FiAward /> Credits
         </Info>
