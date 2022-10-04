@@ -29,7 +29,7 @@ _Inspired on [Noisli](https://www.noisli.com/)_
 <br/>
 <br/>
 
-# Setup Project
+## Setup Project
 
 > _this project is using **yarn** for manage packages, but you can use **npm** instead._
 
@@ -98,4 +98,4 @@ Sound | Author | License | Edition
 [Waves](https://www.youtube.com/watch?v=SL9NdTMsIUk) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Wind](https://freesound.org/people/felix.blume/sounds/217506/) | [Felix Blume](https://freesound.org/people/felix.blume/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
 [Brown Noise](https://freesound.org/people/georgedyer/sounds/171552/) | [George Dyer](https://freesound.org/people/georgedyer/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
-
+[Brown Noise 2](https://www.youtube.com/watch?v=RqzGzwTY-6w) | [Jason Lewis](https://www.youtube.com/c/MindAmend)
