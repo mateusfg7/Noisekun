@@ -35,6 +35,6 @@ export const SoundGrid = tw.div`
   grid gap-12
   grid-cols-1 xs:grid-cols-2
   2xs:grid-cols-3 sm:grid-cols-4
-  md:grid-cols-5 xl:grid-cols-6
+  lg:grid-cols-5 2xl:grid-cols-6
   
 `
