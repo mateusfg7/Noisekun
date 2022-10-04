@@ -134,5 +134,13 @@
       "name": "brown-noise.ogg",
       "type": "audio/ogg"
     }
+  },
+  {
+    "name": "brown-noise2",
+    "iconFile": "brown-noise2.svg",
+    "audioFile": {
+      "name": "brown-noise2.ogg",
+      "type": "audio/ogg"
+    }
   }
 ]
