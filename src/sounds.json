@@ -16,18 +16,18 @@
     }
   },
   {
-    "name": "wind",
-    "iconFile": "wind.svg",
-    "audioFile": {
-      "name": "wind.ogg",
-      "type": "audio/ogg"
-    }
-  },
-  {
     "name": "drops",
     "iconFile": "drops.svg",
     "audioFile": {
       "name": "drops.ogg",
+      "type": "audio/ogg"
+    }
+  },
+  {
+    "name": "wind",
+    "iconFile": "wind.svg",
+    "audioFile": {
+      "name": "wind.ogg",
       "type": "audio/ogg"
     }
   },
@@ -40,10 +40,26 @@
     }
   },
   {
+    "name": "underwater",
+    "iconFile": "underwater.svg",
+    "audioFile": {
+      "name": "underwater.ogg",
+      "type": "audio/ogg"
+    }
+  },
+  {
     "name": "stream-water",
     "iconFile": "stream-water.svg",
     "audioFile": {
       "name": "stream-water.ogg",
+      "type": "audio/ogg"
+    }
+  },
+  {
+    "name": "waterfall",
+    "iconFile": "waterfall.svg",
+    "audioFile": {
+      "name": "waterfall.ogg",
       "type": "audio/ogg"
     }
   },
@@ -104,26 +120,10 @@
     }
   },
   {
-    "name": "underwater",
-    "iconFile": "underwater.svg",
-    "audioFile": {
-      "name": "underwater.ogg",
-      "type": "audio/ogg"
-    }
-  },
-  {
     "name": "washing-machine",
     "iconFile": "washing-machine.svg",
     "audioFile": {
       "name": "washing-machine.ogg",
-      "type": "audio/ogg"
-    }
-  },
-  {
-    "name": "waterfall",
-    "iconFile": "waterfall.svg",
-    "audioFile": {
-      "name": "waterfall.ogg",
       "type": "audio/ogg"
     }
   },
