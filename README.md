@@ -99,3 +99,4 @@ Sound | Author | License | Edition
 [Wind](https://freesound.org/people/felix.blume/sounds/217506/) | [Felix Blume](https://freesound.org/people/felix.blume/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
 [Brown Noise](https://freesound.org/people/georgedyer/sounds/171552/) | [George Dyer](https://freesound.org/people/georgedyer/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
 [Brown Noise 2](https://www.youtube.com/watch?v=RqzGzwTY-6w) | [Jason Lewis](https://www.youtube.com/c/MindAmend)
+[Brown Noise 3](https://www.youtube.com/watch?v=P48QELwruQs) | [Jason Lewis](https://www.youtube.com/c/MindAmend)
