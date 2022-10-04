@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
           className="umami--click--repository"
           target="_blank"
         >
-          <FiGithub /> Repository
+          <FiGithub /> Source
         </Info>
 
         <Info
