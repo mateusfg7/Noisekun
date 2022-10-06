@@ -16,6 +16,7 @@ export const Footer: React.FC = () => {
             width={192}
             height={192}
             layout="responsive"
+            alt="Noisekun"
             className="cursor-pointer umami--click--footer-logo"
           />
         </Link>
