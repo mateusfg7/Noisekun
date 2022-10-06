@@ -25,11 +25,14 @@ export const GlobalVolumeController: React.FC = () => {
       onMouseLeave={() => setIsShowing(false)}
     >
       <SliderContainer isShowing={isShowing}>
+        <span className="sr-only">
+          Global volume in {Number(globalVolume * 100).toFixed(1)}%
+        </span>
         <input
           className="slider-input"
           type="range"
           name="global-volume-controller"
-          title="Global Volume Controller"
+          title={`Global volume in ${Number(globalVolume * 100).toFixed(1)}%`}
           min="0"
           max={MAX_VALUE}
           value={rangeValue}
@@ -41,7 +44,10 @@ export const GlobalVolumeController: React.FC = () => {
           onChange={event => handleVolume(Number(event.target.value))}
         />
       </SliderContainer>
-      <button onClick={() => setIsShowing(!isShowing)}>
+      <button
+        title="Toggle Global Volume Controller"
+        onClick={() => setIsShowing(!isShowing)}
+      >
         {globalVolume >= 0.5 && <FiVolume2 size={25} />}
         {globalVolume >= 0.1 && globalVolume < 0.5 && <FiVolume1 size={25} />}
         {globalVolume < 0.1 && <FiVolume size={25} />}
