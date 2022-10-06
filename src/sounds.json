@@ -1,6 +1,7 @@
 [
   {
-    "name": "rain",
+    "id": "rain",
+    "title": "Rain",
     "iconFile": "rain.svg",
     "audioFile": {
       "name": "rain.ogg",
@@ -8,7 +9,8 @@
     }
   },
   {
-    "name": "storm",
+    "id": "storm",
+    "title": "Storm",
     "iconFile": "storm.svg",
     "audioFile": {
       "name": "storm.ogg",
@@ -16,7 +18,8 @@
     }
   },
   {
-    "name": "drops",
+    "id": "drops",
+    "title": "Drops",
     "iconFile": "drops.svg",
     "audioFile": {
       "name": "drops.ogg",
@@ -24,7 +27,8 @@
     }
   },
   {
-    "name": "wind",
+    "id": "wind",
+    "title": "Wind",
     "iconFile": "wind.svg",
     "audioFile": {
       "name": "wind.ogg",
@@ -32,7 +36,8 @@
     }
   },
   {
-    "name": "waves",
+    "id": "waves",
+    "title": "Waves",
     "iconFile": "waves.svg",
     "audioFile": {
       "name": "waves.ogg",
@@ -40,7 +45,8 @@
     }
   },
   {
-    "name": "underwater",
+    "id": "underwater",
+    "title": "Underwater",
     "iconFile": "underwater.svg",
     "audioFile": {
       "name": "underwater.ogg",
@@ -48,7 +54,8 @@
     }
   },
   {
-    "name": "stream-water",
+    "id": "stream-water",
+    "title": "Stream Water",
     "iconFile": "stream-water.svg",
     "audioFile": {
       "name": "stream-water.ogg",
@@ -56,7 +63,8 @@
     }
   },
   {
-    "name": "waterfall",
+    "id": "waterfall",
+    "title": "Waterfall",
     "iconFile": "waterfall.svg",
     "audioFile": {
       "name": "waterfall.ogg",
@@ -64,7 +72,8 @@
     }
   },
   {
-    "name": "birds-tree",
+    "id": "birds-tree",
+    "title": "Birds on Tree",
     "iconFile": "birds-tree.svg",
     "audioFile": {
       "name": "birds-tree.ogg",
@@ -72,7 +81,8 @@
     }
   },
   {
-    "name": "leaves",
+    "id": "leaves",
+    "title": "Leaves",
     "iconFile": "leaves.svg",
     "audioFile": {
       "name": "leaves.ogg",
@@ -80,7 +90,8 @@
     }
   },
   {
-    "name": "fire",
+    "id": "fire",
+    "title": "",
     "iconFile": "fire.svg",
     "audioFile": {
       "name": "fire.ogg",
@@ -88,7 +99,8 @@
     }
   },
   {
-    "name": "night",
+    "id": "night",
+    "title": "",
     "iconFile": "night.svg",
     "audioFile": {
       "name": "night.ogg",
@@ -96,7 +108,8 @@
     }
   },
   {
-    "name": "coffee",
+    "id": "coffee",
+    "title": "",
     "iconFile": "coffee.svg",
     "audioFile": {
       "name": "coffee.ogg",
@@ -104,7 +117,8 @@
     }
   },
   {
-    "name": "train",
+    "id": "train",
+    "title": "",
     "iconFile": "train.svg",
     "audioFile": {
       "name": "train.ogg",
@@ -112,7 +126,8 @@
     }
   },
   {
-    "name": "air-plane",
+    "id": "air-plane",
+    "title": "",
     "iconFile": "air-plane.svg",
     "audioFile": {
       "name": "air-plane.ogg",
@@ -120,7 +135,8 @@
     }
   },
   {
-    "name": "washing-machine",
+    "id": "washing-machine",
+    "title": "",
     "iconFile": "washing-machine.svg",
     "audioFile": {
       "name": "washing-machine.ogg",
@@ -128,7 +144,8 @@
     }
   },
   {
-    "name": "brown-noise",
+    "id": "brown-noise",
+    "title": "Brown Noise",
     "iconFile": "brown-noise.svg",
     "audioFile": {
       "name": "brown-noise.ogg",
@@ -136,7 +153,8 @@
     }
   },
   {
-    "name": "brown-noise2",
+    "id": "brown-noise2",
+    "title": "Brown Noise 2",
     "iconFile": "brown-noise2.svg",
     "audioFile": {
       "name": "brown-noise2.ogg",
@@ -144,7 +162,8 @@
     }
   },
   {
-    "name": "brown-noise3",
+    "id": "brown-noise3",
+    "title": "Brown Noise 3",
     "iconFile": "brown-noise3.svg",
     "audioFile": {
       "name": "brown-noise3.ogg",
