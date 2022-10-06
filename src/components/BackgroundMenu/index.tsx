@@ -79,7 +79,7 @@ export const BackgroundMenu = () => {
     <Container>
       <Menu>
         <MenuButtonContainer>
-          <MenuButton $as={Menu.Button}>
+          <MenuButton $as={Menu.Button} title="Toggle Background Menu">
             <MdOutlineWallpaper size={22} />
           </MenuButton>
         </MenuButtonContainer>
