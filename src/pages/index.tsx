@@ -29,12 +29,7 @@ const Home: React.FC = () => {
         <SoundContainer>
           <SoundGrid>
             {soundList.map(sound => (
-              <Sound
-                key={sound.name}
-                name={sound.name}
-                iconFile={sound.iconFile}
-                audioFile={sound.audioFile}
-              />
+              <Sound key={sound.id} soundData={sound} />
             ))}
           </SoundGrid>
         </SoundContainer>
