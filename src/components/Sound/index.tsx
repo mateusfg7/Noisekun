@@ -58,7 +58,7 @@ export const Sound: React.FC<SoundProps> = ({ soundData }) => {
 
   return (
     <Container title={soundData.title}>
-      <audio ref={soundRef} loop>
+      <audio ref={soundRef} preload="auto" loop>
         <source
           src={`/sounds/${soundData.audioFile.name}`}
           type={soundData.audioFile.type}
