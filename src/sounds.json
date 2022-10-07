@@ -91,7 +91,7 @@
   },
   {
     "id": "fire",
-    "title": "",
+    "title": "Bonfire",
     "iconFile": "fire.svg",
     "audioFile": {
       "name": "fire.ogg",
@@ -100,7 +100,7 @@
   },
   {
     "id": "night",
-    "title": "",
+    "title": "Night",
     "iconFile": "night.svg",
     "audioFile": {
       "name": "night.ogg",
@@ -109,7 +109,7 @@
   },
   {
     "id": "coffee",
-    "title": "",
+    "title": "Coffee shop",
     "iconFile": "coffee.svg",
     "audioFile": {
       "name": "coffee.ogg",
@@ -118,7 +118,7 @@
   },
   {
     "id": "train",
-    "title": "",
+    "title": "Train",
     "iconFile": "train.svg",
     "audioFile": {
       "name": "train.ogg",
@@ -127,7 +127,7 @@
   },
   {
     "id": "air-plane",
-    "title": "",
+    "title": "Airplane",
     "iconFile": "air-plane.svg",
     "audioFile": {
       "name": "air-plane.ogg",
@@ -136,7 +136,7 @@
   },
   {
     "id": "washing-machine",
-    "title": "",
+    "title": "Washing machine",
     "iconFile": "washing-machine.svg",
     "audioFile": {
       "name": "washing-machine.ogg",
