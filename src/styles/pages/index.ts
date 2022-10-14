@@ -22,7 +22,7 @@ export const Container = tw.div<ContainerProps>`
 `
 
 export const Main = tw.div`
-  h-[90vh] md:h-[85vh] overflow-scroll
+  h-[90vh] md:h-[85vh] overflow-y-scroll
 `
 
 export const SoundContainer = tw.div`
