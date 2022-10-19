@@ -40,7 +40,7 @@
     "eslint-plugin-n": "15.3.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-promise": "6.0.1",
+    "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-react": "7.31.8",
     "husky": "8.0.1",
     "postcss": "8.4.17",
