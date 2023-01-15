@@ -22,8 +22,8 @@
     "zustand": "4.3.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.3.0",
-    "@commitlint/config-conventional": "17.3.0",
+    "@commitlint/cli": "17.4.2",
+    "@commitlint/config-conventional": "17.4.2",
     "@next/eslint-plugin-next": "13.1.1",
     "@types/howler": "2.2.7",
     "@types/react": "18.0.26",
