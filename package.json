@@ -42,7 +42,7 @@
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-promise": "6.1.1",
     "eslint-plugin-react": "7.32.1",
-    "husky": "8.0.2",
+    "husky": "8.0.3",
     "postcss": "8.4.20",
     "prettier": "2.8.1",
     "tailwind-styled-components": "2.1.6",
