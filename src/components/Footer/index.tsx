@@ -17,37 +17,28 @@ export const Footer: React.FC = () => {
             height={192}
             layout="responsive"
             alt="Noisekun"
-            className="cursor-pointer umami--click--footer-logo"
+            className="cursor-pointer"
           />
         </Link>
       </div>
       <Section>
         <Info
           href="https://github.com/mateusfg7/Noisekun/blob/master/LICENSE"
-          className="cursor-pointer umami--click--license"
+          className="cursor-pointer"
           target="_blank"
         >
           <AiOutlineCopyrightCircle /> MIT License
         </Info>
-        <Info
-          href="https://github.com/mateusfg7"
-          className="umami--click--author-credit"
-          target="_blank"
-        >
+        <Info href="https://github.com/mateusfg7" target="_blank">
           by <span className="font-bold">mateusfg7</span>
         </Info>
       </Section>
       <Section>
-        <Info
-          href="https://github.com/mateusfg7/Noisekun"
-          className="umami--click--repository"
-          target="_blank"
-        >
+        <Info href="https://github.com/mateusfg7/Noisekun" target="_blank">
           <FiGithub /> Source
         </Info>
 
         <Info
-          className="umami--click--credits"
           href="https://github.com/mateusfg7/Noisekun/#credits"
           target="_blank"
         >

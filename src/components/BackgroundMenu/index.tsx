@@ -101,7 +101,7 @@ export const BackgroundMenu = () => {
                       active={active}
                       currentBackground={currentBackground}
                       expectedBackground={background.id}
-                      className={`${background.backgroundClass} umami--click--${background.id}-background`}
+                      className={`${background.backgroundClass}`}
                       onClick={() => handleBackground(background.id)}
                     >
                       {background.title}

@@ -10,9 +10,7 @@ export const Header: React.FC = () => {
   return (
     <Container>
       <HeaderTitle>
-        <Link href="/">
-          <a className="umami--click--title">Noisekun</a>
-        </Link>
+        <Link href="/">Noisekun</Link>
       </HeaderTitle>
       <SettingsContainer>
         <GlobalVolumeController />
