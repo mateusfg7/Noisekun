@@ -99,6 +99,15 @@
     }
   },
   {
+    "id": "cave",
+    "title": "Cave Sounds",
+    "iconFile": "cave.svg",
+    "audioFile": {
+      "name": "cave-drops.ogg",
+      "type": "audio/ogg"
+    }
+  },
+  {
     "id": "night",
     "title": "Night",
     "iconFile": "night.svg",
