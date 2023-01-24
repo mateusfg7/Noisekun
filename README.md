@@ -39,22 +39,6 @@ _Inspired on [Noisli](https://www.noisli.com/)_
 yarn install
 ```
 
-### Setup Umami analytics
-
-Umami script is configured on [`src/pages/_app.tsx`](src/pages/_app.tsx):
-```html
-<script
-  async
-  defer
-  data-website-id="cd21c714-5753-4e56-ad9a-8a5dee7bcc9d"
-  src="https://mateusfg7-umami-instance.herokuapp.com/umami.js"
-/>
-```
-
-Edit this code to add your own Umami script, or remove it to disable Umami analytics.
-
-> See [umami.is](https://umami.is/) for more information about how to setup your instance
-
 ## Init Dev Environment
 
 ```
