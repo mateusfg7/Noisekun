@@ -15,7 +15,6 @@ export const Footer: React.FC = () => {
             src="/icons/icon-192x192.png"
             width={192}
             height={192}
-            layout="responsive"
             alt="Noisekun"
             className="cursor-pointer"
           />
