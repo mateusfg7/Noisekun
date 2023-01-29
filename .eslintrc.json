@@ -8,6 +8,7 @@
     "plugin:react/recommended",
     "plugin:@next/next/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
     "prettier",
     "standard"
   ],

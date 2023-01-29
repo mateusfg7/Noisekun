@@ -9,6 +9,6 @@ describe('Home', () => {
     const heading = screen.getByRole('heading', {
       name: /Noisekun/i
     })
-    expect(heading).toBeInDocument
+    expect(heading).toBeInTheDocument()
   })
 })
