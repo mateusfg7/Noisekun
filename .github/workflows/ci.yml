@@ -19,5 +19,8 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
+      - name: Run E2E tests
+        run: yarn test:ci
+
       - name: Run Lint
         run: yarn lint
