@@ -6,10 +6,10 @@ export const Container = tw.div`
 `
 
 interface SliderContainerProps {
-  isShowing: boolean
+  $isShowing: boolean
 }
 export const SliderContainer = tw.div<SliderContainerProps>`
-  ${p => (p.isShowing ? 'flex' : 'hidden')}
+  ${p => (p.$isShowing ? 'flex' : 'hidden')}
   items-center
   w-28 h-max
   relative

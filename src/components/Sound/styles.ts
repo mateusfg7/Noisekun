@@ -7,7 +7,7 @@ export const Container = tw.div`
 `
 
 interface IconProps {
-  active: boolean
+  $active: boolean
 }
 export const Icon = tw.div<IconProps>`
   flex justify-center items-center
@@ -19,7 +19,7 @@ export const Icon = tw.div<IconProps>`
   md:hover:shadow-sound
   md:hover:bg-white/10
   ${p =>
-    p.active
+    p.$active
       ? 'text-white rounded-b-none opacity-100 md:shadow-sound md:bg-white/10'
       : 'opacity-70 md:hover:opacity-100'}
 `
