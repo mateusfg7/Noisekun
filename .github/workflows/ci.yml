@@ -4,7 +4,7 @@ on: [pull_request, push]
 
 jobs:
   lint:
-    name: Check Code Lint
+    name: Check Code E2E Tests and Lint
     runs-on: ubuntu-latest
 
     steps:
