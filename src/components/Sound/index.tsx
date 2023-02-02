@@ -64,7 +64,7 @@ export const Sound: React.FC<SoundProps> = ({ soundData }) => {
           type={soundData.audioFile.type}
         />
       </audio>
-      <Icon active={soundIsActive} onClick={() => toggleSoundState()}>
+      <Icon $active={soundIsActive} onClick={() => toggleSoundState()}>
         <Image
           src={`/assets/${soundData.iconFile}`}
           alt={soundData.title}

@@ -8,6 +8,7 @@
     "plugin:react/recommended",
     "plugin:@next/next/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
     "prettier",
     "standard"
   ],
@@ -19,11 +20,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "prettier"
-  ],
+  "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
     "prettier/prettier": "error",
     "no-unused-vars": "warn",

@@ -24,7 +24,7 @@ export const GlobalVolumeController: React.FC = () => {
       onMouseEnter={() => setIsShowing(true)}
       onMouseLeave={() => setIsShowing(false)}
     >
-      <SliderContainer isShowing={isShowing}>
+      <SliderContainer $isShowing={isShowing}>
         <span className="sr-only">
           Global volume in {Number(globalVolume * 100).toFixed(1)}%
         </span>

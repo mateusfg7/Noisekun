@@ -27,7 +27,7 @@ export const VolumeController: React.FC<IVolumeController> = ({
   }, [])
 
   return (
-    <Container isActive={isActive}>
+    <Container $isActive={isActive}>
       <span className="sr-only">{soundName} volume controller</span>
       <input
         className="slider-input absolute top-0 left-0"
