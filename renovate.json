@@ -7,10 +7,6 @@
   "semanticCommits": true,
   "packageRules": [
     {
-      "matchUpdateTypes": ["pin"],
-      "automerge": true
-    },
-    {
       "matchUpdateTypes": ["major"],
       "addLabels": ["d:major"]
     },
@@ -20,15 +16,18 @@
     },
     {
       "matchUpdateTypes": ["patch"],
-      "addLabels": ["d:patch"]
+      "addLabels": ["d:patch"],
+      "automerge": true
     },
     {
       "matchUpdateTypes": ["pin"],
-      "addLabels": ["d:pin"]
+      "addLabels": ["d:pin"],
+      "automerge": true
     },
     {
       "matchUpdateTypes": ["rollback"],
-      "addLabels": ["d:rollback"]
+      "addLabels": ["d:rollback"],
+      "automerge": true
     }
   ]
 }
