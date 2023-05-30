@@ -21,7 +21,7 @@
     "react-icons": "4.8.0",
     "react-switch": "7.0.0",
     "tailwind-scrollbar-hide": "1.1.7",
-    "zustand": "4.3.7"
+    "zustand": "4.3.8"
   },
   "devDependencies": {
     "@commitlint/cli": "17.4.2",
