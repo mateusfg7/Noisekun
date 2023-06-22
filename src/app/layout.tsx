@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 
-import '@/styles/main.css'
+import './global.css'
 
 export const metadata: Metadata = {
   title: 'Noisekun',
