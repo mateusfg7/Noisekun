@@ -1,4 +1,3 @@
-/* eslint-disable multiline-ternary */
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
