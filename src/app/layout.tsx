@@ -49,13 +49,13 @@ export const metadata: Metadata = {
   manifest: '/manifest.json'
 }
 
-export default function RootLayout({ children }: { children: ReactNode }) {
-  const nunito = Nunito({
-    subsets: ['latin'],
-    weight: ['300', '600'],
-    variable: '--font-nunito'
-  })
+const nunito = Nunito({
+  subsets: ['latin'],
+  weight: ['300', '600'],
+  variable: '--font-nunito'
+})
 
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <body className={nunito.variable}>{children}</body>
