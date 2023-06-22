@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-['Nunito']
+    @apply font-sans
       font-light
       text-white
       bg-[#0485b4];
