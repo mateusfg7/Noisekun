@@ -13,7 +13,7 @@ jobs:
     name: Generate pagespeed metrics
     uses: mateusfg7/mfg-b/.github/workflows/pagespeed-metrics.yml@main
     needs: check-changed-files
-    if: inputs.metrics == 'true'
+    if: inputs.metrics
     secrets: inherit
     with:
       target: https://noisekun.vercel.app
