@@ -2,9 +2,9 @@
 
 import React from 'react'
 
-import { Header } from '@/components/Header'
-import { Sound } from '@/components/Sound'
-import { Footer } from '@/components/Footer'
+import { Header } from '@/components/header'
+import { Sound } from '@/components/sound'
+import { Footer } from '@/components/footer'
 
 import { useBackgroundStore } from '@/stores/BackgroundStore'
 import soundList from '@/sounds.json'

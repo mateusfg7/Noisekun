@@ -1,14 +1,30 @@
-import React from 'react'
+import React, { AnchorHTMLAttributes, ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiAward, FiGithub } from 'react-icons/fi'
 import { AiOutlineCopyrightCircle } from 'react-icons/ai'
 
-import { Container, Info, Section } from './styles'
+export function Footer() {
+  const Info = ({
+    children,
+    className,
+    ...props
+  }: AnchorHTMLAttributes<HTMLAnchorElement>) => (
+    <a
+      className={`flex items-center gap-2 text-xl sm:text-lg underline-offset-4 hover:underline w-full ${className}`}
+      target="_blank"
+      {...props}
+    >
+      {children}
+    </a>
+  )
 
-export const Footer: React.FC = () => {
+  const Section = ({ children }: { children: ReactNode }) => (
+    <section className="flex flex-col gap-2 sm:gap-0">{children}</section>
+  )
+
   return (
-    <Container>
+    <footer className="flex flex-wrap flex-col sm:flex-row items-center justify-center mt-28 p-14 gap-10 md:gap-14 bg-white/5 backdrop-blur-sm">
       <div className="w-14 rounded-2xl overflow-hidden shadow-lg">
         <Link href="/">
           <Image
@@ -24,26 +40,22 @@ export const Footer: React.FC = () => {
         <Info
           href="https://github.com/mateusfg7/Noisekun/blob/master/LICENSE"
           className="cursor-pointer"
-          target="_blank"
         >
           <AiOutlineCopyrightCircle /> MIT License
         </Info>
-        <Info href="https://github.com/mateusfg7" target="_blank">
+        <Info href="https://github.com/mateusfg7">
           by <span className="font-bold">mateusfg7</span>
         </Info>
       </Section>
       <Section>
-        <Info href="https://github.com/mateusfg7/Noisekun" target="_blank">
+        <Info href="https://github.com/mateusfg7/Noisekun">
           <FiGithub /> Source
         </Info>
 
-        <Info
-          href="https://github.com/mateusfg7/Noisekun/#credits"
-          target="_blank"
-        >
+        <Info href="https://github.com/mateusfg7/Noisekun/#credits">
           <FiAward /> Credits
         </Info>
       </Section>
-    </Container>
+    </footer>
   )
 }

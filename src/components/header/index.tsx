@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { GlobalVolumeController } from '../GlobalVolumeController'
-import { BackgroundMenu } from '../BackgroundMenu'
+import { GlobalVolumeController } from '@/components/global-volume-controller'
+import { BackgroundMenu } from '@/components/background-menu'
 
 import { Container, HeaderTitle, SettingsContainer } from './styles'
 
