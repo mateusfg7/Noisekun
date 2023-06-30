@@ -1,19 +1,13 @@
-name: "Manual common run jobs"
+name: "Generate metrics"
 
 on:
   workflow_dispatch:
-    inputs:
-      metrics:
-        type: boolean
-        default: false
-        description: Run "Metrics Generator"
 
 jobs:
   call-metrics-generator:
     name: Generate pagespeed metrics
     uses: mateusfg7/mfg-b/.github/workflows/pagespeed-metrics.yml@main
     needs: check-changed-files
-    if: inputs.metrics == true
     secrets: inherit
     with:
       target: https://noisekun.vercel.app
