@@ -31,24 +31,22 @@ _Inspired on [Noisli](https://www.noisli.com/)_
 
 ## Setup Project
 
-> _this project is using **yarn** for manage packages, but you can use **npm** instead._
-
 ### Install dependencies
 
 ```
-yarn install
+pnpm install
 ```
 
 ## Init Dev Environment
 
 ```
-yarn dev
+pnpm dev
 ```
 
 ## Init production environment
 
 ```
-yarn build && yarn start
+pnpm build && pnpm start
 ```
 
 <br/>
