@@ -30,9 +30,18 @@ jobs:
             package.json
             tsconfig.json
 
-  call-release:
-    name: Call release.yml
-    uses: mateusfg7/mfg-b/.github/workflows/release.yml@main
-    secrets: inherit
+  call-metrics-generator:
+    name: Generate pagespeed metrics
+    uses: mateusfg7/mfg-b/.github/workflows/pagespeed-metrics.yml@main
     needs: check-changed-files
     if: needs.check-changed-files.outputs.isCodeRelatedFilesChanged == 'true'
+    secrets: inherit
+    with:
+      target: https://noisekun.vercel.app
+      pwa: true
+  
+  call-release:
+    name: Create a new release
+    uses: mateusfg7/mfg-b/.github/workflows/release.yml@main
+    secrets: inherit
+    
