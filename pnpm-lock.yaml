@@ -126,6 +126,12 @@ devDependencies:
   prettier:
     specifier: 2.8.8
     version: 2.8.8
+  semver:
+    specifier: ^7.5.3
+    version: 7.5.3
+  simple-git:
+    specifier: ^3.19.1
+    version: 3.19.1
   tailwind-styled-components:
     specifier: 2.2.0
     version: 2.2.0(react-dom@18.2.0)(react@18.2.0)
@@ -2113,6 +2119,18 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
+  /@kwsites/file-exists@1.1.1:
+    resolution: {integrity: sha512-m9/5YGR18lIwxSFDwfE3oA7bWuq9kdau6ugN4H2rJeyhFQZcG9AgSHkQtSD15a8WvTgfz9aikZMrKPHvbpqFiw==}
+    dependencies:
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@kwsites/promise-deferred@1.1.1:
+    resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
+    dev: true
+
   /@next/env@13.4.7:
     resolution: {integrity: sha512-ZlbiFulnwiFsW9UV1ku1OvX/oyIPLtMk9p/nnvDSwI0s7vSoZdRtxXNsaO+ZXrLv/pMbXVGq4lL8TbY9iuGmVw==}
     dev: false
@@ -2585,7 +2603,7 @@ packages:
       grapheme-splitter: 1.0.4
       ignore: 5.2.4
       natural-compare-lite: 1.4.0
-      semver: 7.5.2
+      semver: 7.5.3
       tsutils: 3.21.0(typescript@5.1.3)
       typescript: 5.1.3
     transitivePeerDependencies:
@@ -2672,7 +2690,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.2
+      semver: 7.5.3
       tsutils: 3.21.0(typescript@5.1.3)
       typescript: 5.1.3
     transitivePeerDependencies:
@@ -2693,7 +2711,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.5.2
+      semver: 7.5.3
       tsutils: 3.21.0(typescript@5.1.3)
       typescript: 5.1.3
     transitivePeerDependencies:
@@ -2714,7 +2732,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.59.11(typescript@5.1.3)
       eslint: 8.42.0
       eslint-scope: 5.1.1
-      semver: 7.5.2
+      semver: 7.5.3
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -2734,7 +2752,7 @@ packages:
       '@typescript-eslint/typescript-estree': 5.60.0(typescript@5.1.3)
       eslint: 8.42.0
       eslint-scope: 5.1.1
-      semver: 7.5.2
+      semver: 7.5.3
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -3225,7 +3243,7 @@ packages:
   /builtins@5.0.1:
     resolution: {integrity: sha512-qwVpFEHNfhYJIzNRBvd2C1kyo6jz3ZSMPyyuR47OPdiKWlbYnZNyDWuyR175qDnAJLiCo5fBBqPb3RiXgWlkOQ==}
     dependencies:
-      semver: 7.5.2
+      semver: 7.5.3
     dev: true
 
   /bundle-name@3.0.0:
@@ -4303,7 +4321,7 @@ packages:
       is-core-module: 2.12.1
       minimatch: 3.1.2
       resolve: 1.22.2
-      semver: 7.5.2
+      semver: 7.5.3
     dev: true
 
   /eslint-plugin-node@11.1.0(eslint@8.42.0):
@@ -5851,7 +5869,7 @@ packages:
       jest-util: 29.5.0
       natural-compare: 1.4.0
       pretty-format: 29.5.0
-      semver: 7.5.2
+      semver: 7.5.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6475,7 +6493,7 @@ packages:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.12.1
-      semver: 7.5.2
+      semver: 7.5.3
       validate-npm-package-license: 3.0.4
     dev: true
 
@@ -7301,6 +7319,14 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
+  /semver@7.5.3:
+    resolution: {integrity: sha512-QBlUtyVk/5EeHbi7X0fw6liDZc7BBmEaSYn01fMU1OUYbf6GPsbTtd8WmnqbI20SeycoHSeiybkE/q1Q+qlThQ==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
   /serialize-javascript@4.0.0:
     resolution: {integrity: sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==}
     dependencies:
@@ -7334,6 +7360,16 @@ packages:
 
   /signal-exit@3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
+    dev: true
+
+  /simple-git@3.19.1:
+    resolution: {integrity: sha512-Ck+rcjVaE1HotraRAS8u/+xgTvToTuoMkT9/l9lvuP5jftwnYUp6DwuJzsKErHgfyRk8IB8pqGHWEbM3tLgV1w==}
+    dependencies:
+      '@kwsites/file-exists': 1.1.1
+      '@kwsites/promise-deferred': 1.1.1
+      debug: 4.3.4
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /sisteransi@1.0.5:
