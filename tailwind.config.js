@@ -11,6 +11,9 @@ module.exports = {
       ...defaultTheme.screens
     },
     extend: {
+      fontFamily: {
+        sans: 'var(--font-nunito)'
+      },
       colors: {
         main: '#0485B4'
       },

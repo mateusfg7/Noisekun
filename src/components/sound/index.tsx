@@ -1,11 +1,9 @@
-/* eslint-disable multiline-ternary */
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
-import { useGlobalVolumeStore } from '../../stores/GlobalVolumeStore'
+import { useGlobalVolumeStore } from '@/stores/GlobalVolumeStore'
 
-import { VolumeController } from '../VolumeController'
-
+import { VolumeController } from './volume-controller'
 import { Container, Icon } from './styles'
 
 export interface ISound {

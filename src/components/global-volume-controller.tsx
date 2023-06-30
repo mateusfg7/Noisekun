@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { FiVolume2, FiVolume1, FiVolume } from 'react-icons/fi'
 
-import { useGlobalVolumeStore } from '../../stores/GlobalVolumeStore'
+import { useGlobalVolumeStore } from '@/stores/GlobalVolumeStore'
 
-import { Container, SliderContainer } from './styles'
-
-export const GlobalVolumeController: React.FC = () => {
+export function GlobalVolumeController() {
   const MAX_VALUE = 1000
 
   const [rangeValue, setRangeValue] = useState(MAX_VALUE)
@@ -20,11 +18,16 @@ export const GlobalVolumeController: React.FC = () => {
   }
 
   return (
-    <Container
+    <div
       onMouseEnter={() => setIsShowing(true)}
       onMouseLeave={() => setIsShowing(false)}
+      className="flex gap-3 items-center opacity-90 hover:opacity-100"
     >
-      <SliderContainer $isShowing={isShowing}>
+      <div
+        className={`items-center w-28 h-max relative group ${
+          isShowing ? 'flex' : 'hidden'
+        }`}
+      >
         <span className="sr-only">
           Global volume in {Number(globalVolume * 100).toFixed(1)}%
         </span>
@@ -43,7 +46,7 @@ export const GlobalVolumeController: React.FC = () => {
           }}
           onChange={event => handleVolume(Number(event.target.value))}
         />
-      </SliderContainer>
+      </div>
       <button
         title="Toggle Global Volume Controller"
         onClick={() => setIsShowing(!isShowing)}
@@ -52,6 +55,6 @@ export const GlobalVolumeController: React.FC = () => {
         {globalVolume >= 0.1 && globalVolume < 0.5 && <FiVolume1 size={25} />}
         {globalVolume < 0.1 && <FiVolume size={25} />}
       </button>
-    </Container>
+    </div>
   )
 }

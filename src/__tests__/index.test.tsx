@@ -1,6 +1,6 @@
-import { render, screen } from '@testing-library/react'
-import Home from '../pages'
 import '@testing-library/jest-dom'
+import { render, screen } from '@testing-library/react'
+import Home from '@/app/page'
 
 describe('Home', () => {
   it('Renders the page heading', () => {
@@ -10,6 +10,6 @@ describe('Home', () => {
       name: /Noisekun/i
     })
 
-    expect(heading).toBeInTheDocument()
+    expect(heading).not.toBeNull()
   })
 })
