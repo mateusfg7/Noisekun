@@ -1,3 +1,11 @@
+## [0.3.0](https://github.com/mateusfg7/Noisekun/compare/0.2.0...0.3.0) (2023-08-04)
+
+
+### Features
+
+* **analytics:** add umami script ([0df46a7](https://github.com/mateusfg7/Noisekun/commit/0df46a7879796b21c5190066974c596a1da11a75))
+* **assets:** add Google Cloud Storage bucket url instead local path ([2d8180f](https://github.com/mateusfg7/Noisekun/commit/2d8180f6f62c6d27d04b2c30679528d48840921d))
+
 ## [0.2.0](https://github.com/mateusfg7/Noisekun/compare/b14b514364f551d14baa5c40b1eafad37723ef7a...0.2.0) (2023-08-04)
 
 
