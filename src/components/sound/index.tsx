@@ -9,9 +9,9 @@ import { Container, Icon } from './styles'
 export interface ISound {
   id: string
   title: string
-  iconFile: string
-  audioFile: {
-    name: string
+  icon: string
+  file: {
+    url: string
     type: string
   }
 }
@@ -57,14 +57,11 @@ export const Sound: React.FC<SoundProps> = ({ soundData }) => {
   return (
     <Container title={soundData.title}>
       <audio ref={soundRef} preload="auto" loop>
-        <source
-          src={`https://storage.googleapis.com/ambience-sounds/${soundData.audioFile.name}`}
-          type={soundData.audioFile.type}
-        />
+        <source src={soundData.file.url} type={soundData.file.type} />
       </audio>
       <Icon $active={soundIsActive} onClick={() => toggleSoundState()}>
         <Image
-          src={`/assets/${soundData.iconFile}`}
+          src={`/assets/${soundData.icon}`}
           alt={soundData.title}
           width={80}
           height={80}

@@ -2,180 +2,180 @@
   {
     "id": "rain",
     "title": "Rain",
-    "iconFile": "rain.svg",
-    "audioFile": {
-      "name": "rain.ogg",
+    "icon": "rain.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/rain.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "storm",
     "title": "Storm",
-    "iconFile": "storm.svg",
-    "audioFile": {
-      "name": "storm.ogg",
+    "icon": "storm.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/storm.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "drops",
     "title": "Drops",
-    "iconFile": "drops.svg",
-    "audioFile": {
-      "name": "drops.ogg",
+    "icon": "drops.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/drops.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "wind",
     "title": "Wind",
-    "iconFile": "wind.svg",
-    "audioFile": {
-      "name": "wind.ogg",
+    "icon": "wind.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/wind.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "waves",
     "title": "Waves",
-    "iconFile": "waves.svg",
-    "audioFile": {
-      "name": "waves.ogg",
+    "icon": "waves.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/waves.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "underwater",
     "title": "Underwater",
-    "iconFile": "underwater.svg",
-    "audioFile": {
-      "name": "underwater.ogg",
+    "icon": "underwater.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/underwater.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "stream-water",
     "title": "Stream Water",
-    "iconFile": "stream-water.svg",
-    "audioFile": {
-      "name": "stream-water.ogg",
+    "icon": "stream-water.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/stream-water.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "waterfall",
     "title": "Waterfall",
-    "iconFile": "waterfall.svg",
-    "audioFile": {
-      "name": "waterfall.ogg",
+    "icon": "waterfall.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/waterfall.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "birds-tree",
     "title": "Birds on Tree",
-    "iconFile": "birds-tree.svg",
-    "audioFile": {
-      "name": "birds-tree.ogg",
+    "icon": "birds-tree.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/birds-tree.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "leaves",
     "title": "Leaves",
-    "iconFile": "leaves.svg",
-    "audioFile": {
-      "name": "leaves.ogg",
+    "icon": "leaves.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/leaves.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "fire",
     "title": "Bonfire",
-    "iconFile": "fire.svg",
-    "audioFile": {
-      "name": "fire.ogg",
+    "icon": "fire.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/fire.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "cave",
     "title": "Cave Sounds",
-    "iconFile": "cave.svg",
-    "audioFile": {
-      "name": "cave-drops.ogg",
+    "icon": "cave.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/cave-drops.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "night",
     "title": "Night",
-    "iconFile": "night.svg",
-    "audioFile": {
-      "name": "night.ogg",
+    "icon": "night.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/night.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "coffee",
     "title": "Coffee shop",
-    "iconFile": "coffee.svg",
-    "audioFile": {
-      "name": "coffee.ogg",
+    "icon": "coffee.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/coffee.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "train",
     "title": "Train",
-    "iconFile": "train.svg",
-    "audioFile": {
-      "name": "train.ogg",
+    "icon": "train.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/train.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "air-plane",
     "title": "Airplane",
-    "iconFile": "air-plane.svg",
-    "audioFile": {
-      "name": "air-plane.ogg",
+    "icon": "air-plane.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/air-plane.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "washing-machine",
     "title": "Washing machine",
-    "iconFile": "washing-machine.svg",
-    "audioFile": {
-      "name": "washing-machine.ogg",
+    "icon": "washing-machine.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/washing-machine.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "brown-noise",
     "title": "Brown Noise",
-    "iconFile": "brown-noise.svg",
-    "audioFile": {
-      "name": "brown-noise.ogg",
+    "icon": "brown-noise.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/brown-noise.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "brown-noise2",
     "title": "Brown Noise 2",
-    "iconFile": "brown-noise2.svg",
-    "audioFile": {
-      "name": "brown-noise2.ogg",
+    "icon": "brown-noise2.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/brown-noise2.ogg",
       "type": "audio/ogg"
     }
   },
   {
     "id": "brown-noise3",
     "title": "Brown Noise 3",
-    "iconFile": "brown-noise3.svg",
-    "audioFile": {
-      "name": "brown-noise3.ogg",
+    "icon": "brown-noise3.svg",
+    "file": {
+      "url": "https://storage.googleapis.com/ambience-sounds/brown-noise3.ogg",
       "type": "audio/ogg"
     }
   }
