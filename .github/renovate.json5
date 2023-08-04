@@ -3,7 +3,6 @@
   extends: ['config:base'],
   commitBodyTable: true,
   branchPrefix: 'deps/',
-  baseBranches: ['dev'],
   labels: ['dependencies'],
   stabilityDays: 3,
   packageRules: [
