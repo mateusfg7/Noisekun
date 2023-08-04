@@ -12,7 +12,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix",
     "test": "jest --watch",
     "test:ci": "jest --ci",
     "bump-tag": "tsx tools/bump-tag-version.ts",
