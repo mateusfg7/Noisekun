@@ -14,7 +14,3 @@ jobs:
   call-lint:
     name: Call lint.yml
     uses: mateusfg7/noisekun/.github/workflows/lint.yml@main
-
-  call-sync-dev:
-    name: Call sync-dev-branch.yml
-    uses: mateusfg7/noisekun/.github/workflows/sync-dev-branch.yml@main
