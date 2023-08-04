@@ -1,0 +1,23 @@
+name: 'Sync dev branch'
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  rebase-to-dev:
+    name: Rebase to dev
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          ref: 'dev'
+      - name: Setup git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Fetch Main
+        run: git fetch origin main:main
+      - name: Rebase to Main
+        run: git rebase main && git push

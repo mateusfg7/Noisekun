@@ -1,20 +1,22 @@
-name: "[CI] Push Main"
+name: "[CI] Push Dev"
 
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
+  call-sync-main:
+    name: Call sync-main-branch.yml
+    uses: mateusfg7/noisekun/.github/workflows/sync-main-branch.yml@main
+    if: startsWith(github.event.head_commit.message, 'chore(release)')
+
   call-release:
     name: Call release.yml
     uses: mateusfg7/noisekun/.github/workflows/release.yml@main
     secrets: inherit
+    needs: call-sync-main
 
   call-lint:
     name: Call lint.yml
     uses: mateusfg7/noisekun/.github/workflows/lint.yml@main
-
-  call-sync-dev:
-    name: Call sync-dev-branch.yml
-    uses: mateusfg7/noisekun/.github/workflows/sync-dev-branch.yml@main
