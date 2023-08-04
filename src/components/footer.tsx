@@ -22,7 +22,7 @@ export function Footer() {
   )
 
   return (
-    <footer className="mt-28 flex flex-col flex-wrap items-center justify-center gap-10 bg-white/5 p-14 backdrop-blur-sm sm:flex-row md:gap-14">
+    <footer className="mt-28 flex flex-col flex-wrap items-center justify-center gap-10 p-5 sm:flex-row md:gap-14">
       <div className="w-14 overflow-hidden rounded-2xl shadow-lg">
         <Link href="/">
           <Image
