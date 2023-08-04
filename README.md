@@ -22,7 +22,7 @@ _Inspired on [Noisli](https://www.noisli.com/)_
 
 <div align="center">
 
-![](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fnoisekun.vercel.app) [![CodeFactor](https://img.shields.io/codefactor/grade/github/mateusfg7/Noisekun?style=flat-square)](https://www.codefactor.io/repository/github/mateusfg7/noisekun) ![](https://img.shields.io/github/last-commit/mateusfg7/noisekun?style=flat-square) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
+![](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fnoisekun.vercel.app)![](https://img.shields.io/github/last-commit/mateusfg7/noisekun?style=flat-square)
 
 ![](.github/assets/pagespeed-metrics.svg)
 
