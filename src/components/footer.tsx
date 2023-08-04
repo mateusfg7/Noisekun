@@ -1,23 +1,21 @@
-import React, { AnchorHTMLAttributes, ReactNode } from 'react'
+import React, { ComponentProps, ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { tv } from 'tailwind-variants'
 import { FiAward, FiGithub } from 'react-icons/fi'
 import { AiOutlineCopyrightCircle } from 'react-icons/ai'
 
 export function Footer() {
-  const Info = ({
-    children,
-    className,
-    ...props
-  }: AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a
-      className={`flex items-center gap-2 text-xl sm:text-lg underline-offset-4 hover:underline w-full ${className}`}
-      target="_blank"
-      {...props}
-    >
-      {children}
-    </a>
-  )
+  const Info = ({ children, className, ...props }: ComponentProps<'a'>) => {
+    const style = tv({
+      base: /*tw:*/ 'flex items-center gap-2 text-xl sm:text-lg underline-offset-4 hover:underline w-full'
+    })
+    return (
+      <a className={style(className)} target="_blank" {...props}>
+        {children}
+      </a>
+    )
+  }
 
   const Section = ({ children }: { children: ReactNode }) => (
     <section className="flex flex-col gap-2 sm:gap-0">{children}</section>

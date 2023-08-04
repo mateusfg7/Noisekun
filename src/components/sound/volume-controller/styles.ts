@@ -1,10 +1,8 @@
-import tw from 'tailwind-styled-components'
+import { tv } from 'tailwind-variants'
 
-interface ContainerProps {
-  $isActive: boolean
-}
-export const Container = tw.div<ContainerProps>`
-  w-full h-max
-  relative group
-  ${props => (props.$isActive ? 'opacity-1' : 'opacity-0')}
-`
+export const container = tv({
+  base: /*tw:*/ 'w-full h-max relative group opacity-0',
+  variants: {
+    active: { true: /*tw:*/ 'opacity-1' }
+  }
+})

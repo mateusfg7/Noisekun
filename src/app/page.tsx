@@ -8,24 +8,13 @@ import { Footer } from '@/components/footer'
 
 import { useBackgroundStore } from '@/stores/BackgroundStore'
 import soundList from '@/sounds.json'
+import { container } from './styles'
 
 export default function Home() {
   const background = useBackgroundStore(set => set.background)
 
-  const backgroundClasses = {
-    transition: 'animate-background-change',
-    dark: 'bg-gray-900',
-    'room-and-rain': 'bg-lofi-rain',
-    'train-and-rain': 'bg-train-rain',
-    waterfall: 'bg-tree',
-    static: 'bg-main',
-    'camping-fire': 'bg-camping-fire '
-  }
-
   return (
-    <div
-      className={`bg-fixed bg-no-repeat bg-cover bg-center ${backgroundClasses[background]}`}
-    >
+    <div className={container({ background })}>
       <Header />
       <div className="h-[90vh] md:h-[85vh] overflow-y-scroll">
         <div className="flex justify-center items-center min-h-[85vh] p-14">

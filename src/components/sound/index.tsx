@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useGlobalVolumeStore } from '@/stores/GlobalVolumeStore'
 
 import { VolumeController } from './volume-controller'
-import { Container, Icon } from './styles'
+import { icon } from './styles'
 
 export interface ISound {
   id: string
@@ -55,24 +55,30 @@ export const Sound: React.FC<SoundProps> = ({ soundData }) => {
   }, [globalVolume, localSoundVolume])
 
   return (
-    <Container title={soundData.title}>
+    <div
+      title={soundData.title}
+      className="flex flex-col justify-center items-center w-24 h-24"
+    >
       <audio ref={soundRef} preload="auto" loop>
         <source src={soundData.file.url} type={soundData.file.type} />
       </audio>
-      <Icon $active={soundIsActive} onClick={() => toggleSoundState()}>
+      <div
+        className={icon({ active: soundIsActive })}
+        onClick={() => toggleSoundState()}
+      >
         <Image
           src={`/assets/${soundData.icon}`}
           alt={soundData.title}
           width={80}
           height={80}
         />
-      </Icon>
+      </div>
       <VolumeController
         isActive={soundIsActive}
         soundName={soundData.title}
         soundNameOnLocalStorage={soundData.id}
         handleSoundVolume={handleLocalSoundVolume}
       />
-    </Container>
+    </div>
   )
 }

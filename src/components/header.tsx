@@ -4,18 +4,16 @@ import Link from 'next/link'
 import { GlobalVolumeController } from '@/components/global-volume-controller'
 import { BackgroundMenu } from '@/components/background-menu'
 
-import { Container, HeaderTitle, SettingsContainer } from './styles'
-
 export const Header: React.FC = () => {
   return (
-    <Container>
-      <HeaderTitle>
+    <header className="relative flex gap-5 justify-between md:justify-center items-center px-6 h-[10vh] md:h-[15vh] shadow-header">
+      <h1 className="font-semibold text-2xl text-white/90">
         <Link href="/">Noisekun</Link>
-      </HeaderTitle>
-      <SettingsContainer>
+      </h1>
+      <div className="md:absolute md:right-10 flex gap-3 items-center">
         <GlobalVolumeController />
         <BackgroundMenu />
-      </SettingsContainer>
-    </Container>
+      </div>
+    </header>
   )
 }

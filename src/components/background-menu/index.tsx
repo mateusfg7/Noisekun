@@ -3,6 +3,7 @@ import { Menu, Transition } from '@headlessui/react'
 import { MdOutlineWallpaper } from 'react-icons/md'
 
 import { Background, useBackgroundStore } from '@/stores/BackgroundStore'
+import { button } from './styles'
 
 export function BackgroundMenu() {
   const setBackground = useBackgroundStore(set => set.setBackground)
@@ -26,43 +27,35 @@ export function BackgroundMenu() {
   interface BackgroundAttrs {
     title: string
     id: Background
-    backgroundClass: string
   }
   const backgroundList: BackgroundAttrs[] = [
     {
       title: 'Static',
-      id: 'static',
-      backgroundClass: 'bg-main'
+      id: 'static'
     },
     {
       title: 'Dark',
-      id: 'dark',
-      backgroundClass: 'bg-gray-900'
+      id: 'dark'
     },
     {
       title: 'Transition',
-      id: 'transition',
-      backgroundClass: 'animate-background-change-sm'
+      id: 'transition'
     },
     {
       title: 'Rain on Window',
-      id: 'room-and-rain',
-      backgroundClass: 'bg-lofi-rain-thumb'
+      id: 'room-and-rain'
     },
     {
       title: 'Train and Rain',
-      id: 'train-and-rain',
-      backgroundClass: 'bg-train-rain-thumb'
+      id: 'train-and-rain'
     },
     {
       title: 'Waterfall',
-      id: 'waterfall',
-      backgroundClass: 'bg-tree-thumb'
+      id: 'waterfall'
     },
     {
       title: 'Camping Fire',
-      id: 'camping-fire',
-      backgroundClass: 'bg-camping-fire-thumb'
+      id: 'camping-fire'
     }
   ]
 
@@ -95,18 +88,13 @@ export function BackgroundMenu() {
                 <div key={background.id} className="snap-start min-w-max">
                   <Menu.Item>
                     {({ active }) => {
-                      const isSelected =
-                        currentBackground !== background.id && !active
-                      const isNotSelected =
-                        currentBackground === background.id && !active
                       return (
                         <button
-                          className={`border-2 rounded-2xl cursor-pointer font-bold text-xl p-10 md:p-7 w-full bg-center bg-cover shadow-xl shadow-black/30 ${
-                            isSelected && 'border-transparent text-white/80'
-                          } ${isNotSelected && 'border-white text-white'} ${
-                            active &&
-                            'brightness-95 border-white/80 text-white/80'
-                          } ${background.backgroundClass}`}
+                          className={button({
+                            active,
+                            selected: currentBackground === background.id,
+                            background: background.id
+                          })}
                           onClick={() => handleBackground(background.id)}
                         >
                           {background.title}
