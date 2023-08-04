@@ -57,7 +57,7 @@ export const Sound: React.FC<SoundProps> = ({ soundData }) => {
   return (
     <div
       title={soundData.title}
-      className="flex flex-col justify-center items-center w-24 h-24"
+      className="flex h-24 w-24 flex-col items-center justify-center"
     >
       <audio ref={soundRef} preload="auto" loop>
         <source src={soundData.file.url} type={soundData.file.type} />

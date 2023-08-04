@@ -30,7 +30,7 @@ export const VolumeController: React.FC<IVolumeController> = ({
     <div className={container({ active: isActive })}>
       <span className="sr-only">{soundName} volume controller</span>
       <input
-        className="slider-input absolute top-0 left-0"
+        className="slider-input absolute left-0 top-0"
         type="range"
         name={`${soundName}-volume-controller`}
         title={`${soundName} volume in ${Number(rangeValue / 10).toFixed(1)}%`}

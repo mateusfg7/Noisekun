@@ -21,11 +21,11 @@ export function GlobalVolumeController() {
     <div
       onMouseEnter={() => setIsShowing(true)}
       onMouseLeave={() => setIsShowing(false)}
-      className="flex gap-3 items-center opacity-90 hover:opacity-100"
+      className="flex items-center gap-3 opacity-90 hover:opacity-100"
     >
       <div
         data-isShowing={isShowing}
-        className="items-center w-28 h-max relative group hidden data-[isShowing='true']:flex"
+        className="group relative hidden h-max w-28 items-center data-[isShowing='true']:flex"
       >
         <span className="sr-only">
           Global volume in {Number(globalVolume * 100).toFixed(1)}%

@@ -62,7 +62,7 @@ export function BackgroundMenu() {
   return (
     <div className="z-50">
       <Menu>
-        <div className="flex group">
+        <div className="group flex">
           <Menu.Button
             title="Toggle Background Menu"
             className="flex opacity-90 group-hover:opacity-100"
@@ -81,11 +81,11 @@ export function BackgroundMenu() {
         >
           <Menu.Items
             as="div"
-            className="max-h-[85vh] flex flex-col gap-4 overflow-y-auto snap snap-y snap-mandatory scroll-pt-4 scrollbar-hide absolute left-4 right-4 md:left-auto md:right-0 mt-2 p-4 origin-top-right rounded-2xl bg-white/40 backdrop-blur-md shadow-2xl focus:outline-none"
+            className="snap absolute left-4 right-4 mt-2 flex max-h-[85vh] origin-top-right snap-y snap-mandatory scroll-pt-4 flex-col gap-4 overflow-y-auto rounded-2xl bg-white/40 p-4 shadow-2xl backdrop-blur-md scrollbar-hide focus:outline-none md:left-auto md:right-0"
           >
             {backgroundList.map(background => {
               return (
-                <div key={background.id} className="snap-start min-w-max">
+                <div key={background.id} className="min-w-max snap-start">
                   <Menu.Item>
                     {({ active }) => {
                       return (

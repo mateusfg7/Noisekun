@@ -22,8 +22,8 @@ export function Footer() {
   )
 
   return (
-    <footer className="flex flex-wrap flex-col sm:flex-row items-center justify-center mt-28 p-14 gap-10 md:gap-14 bg-white/5 backdrop-blur-sm">
-      <div className="w-14 rounded-2xl overflow-hidden shadow-lg">
+    <footer className="mt-28 flex flex-col flex-wrap items-center justify-center gap-10 bg-white/5 p-14 backdrop-blur-sm sm:flex-row md:gap-14">
+      <div className="w-14 overflow-hidden rounded-2xl shadow-lg">
         <Link href="/">
           <Image
             src="/icons/icon-192x192.png"
