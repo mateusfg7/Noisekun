@@ -58,7 +58,7 @@ export const Sound: React.FC<SoundProps> = ({ soundData }) => {
     <Container title={soundData.title}>
       <audio ref={soundRef} preload="auto" loop>
         <source
-          src={`/sounds/${soundData.audioFile.name}`}
+          src={`https://storage.googleapis.com/ambience-sounds/${soundData.audioFile.name}`}
           type={soundData.audioFile.type}
         />
       </audio>
