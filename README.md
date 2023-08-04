@@ -51,6 +51,11 @@ pnpm dev
 pnpm build && pnpm start
 ```
 
+## Assets
+The audio files are stored on Google Cloud Storage, but you can access them at `.github/assets/sounds`
+
+The icons is on `public/assets`
+
 <br/>
 <br/>
 <br/>
