@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { Container } from './styles'
+import { container } from './styles'
 
 export interface IVolumeController {
   isActive: boolean
@@ -27,7 +27,7 @@ export const VolumeController: React.FC<IVolumeController> = ({
   }, [])
 
   return (
-    <Container $isActive={isActive}>
+    <div className={container({ active: isActive })}>
       <span className="sr-only">{soundName} volume controller</span>
       <input
         className="slider-input absolute top-0 left-0"
@@ -47,6 +47,6 @@ export const VolumeController: React.FC<IVolumeController> = ({
           handleSoundVolume(Number(event.target.value) / 1000)
         }}
       />
-    </Container>
+    </div>
   )
 }
