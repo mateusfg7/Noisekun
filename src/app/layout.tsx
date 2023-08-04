@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { Nunito } from 'next/font/google'
 
 import './global.css'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: 'Noisekun',
@@ -58,6 +59,13 @@ const nunito = Nunito({
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          async
+          src="https://analytics.umami.is/script.js"
+          data-website-id={process.env.UMAMI_WEBSITE_ID}
+        />
+      </head>
       <body className={nunito.variable}>{children}</body>
     </html>
   )
