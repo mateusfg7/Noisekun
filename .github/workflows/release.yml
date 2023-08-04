@@ -91,7 +91,20 @@ jobs:
           body: ${{ needs.changelog.outputs.changelog }}
           tag_name: ${{ steps.get_tag.outputs.tag }}
 
-  call-sync-dev:
-    name: Call sync-dev-branch.yml
-    uses: mateusfg7/noisekun/.github/workflows/sync-dev-branch.yml@main
+  rebase-to-prod:
+    name: Rebase to Prod
     needs: changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          ref: 'prod'
+      - name: Setup git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Fetch Main
+        run: git fetch origin main:main
+      - name: Rebase Main -> Prod
+        run: git rebase main && git push
