@@ -1,8 +1,10 @@
-## 0.1.0 (2023-06-30)
+## [0.2.0](https://github.com/mateusfg7/Noisekun/compare/b14b514364f551d14baa5c40b1eafad37723ef7a...0.2.0) (2023-08-04)
 
 
 ### ⚠ BREAKING CHANGES
 
+* **pwa:** Temporarily removes PWA support as the https://github.com/shadowwalker/next-pwa
+project is no longer being actively maintained.
 * Disable analytics feature by Umami service
 * **howler:** Fade in/out is now disabled
 * the ci workflow is not used
@@ -302,6 +304,11 @@
 * **readme:** revert changes made on readme ([3004307](https://github.com/mateusfg7/Noisekun/commit/30043071878e9425b1bf7d84f4674ce8b42832ba))
 * revert the npm packages updates ([146ad5a](https://github.com/mateusfg7/Noisekun/commit/146ad5a05cf518b4a8f282fc96aca33dcb8cc7ba))
 * undo previous commit ([91a13eb](https://github.com/mateusfg7/Noisekun/commit/91a13eb3eb622955bf759b5560a820ee6911aa9e))
+
+
+### Miscellaneous Chores
+
+* **pwa:** remove next-pwa config ([7f8e8bd](https://github.com/mateusfg7/Noisekun/commit/7f8e8bd9e1295574a0e31647ad2b9748fcd1694f))
 
 
 ### Code Refactoring
