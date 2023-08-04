@@ -1,0 +1,22 @@
+name: Generate Pagespeed Metrics
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-metrics:
+    name: Generate metrics
+    runs-on: ubuntu-latest
+    steps:
+      - name: Succinct report
+        uses: lowlighter/metrics@latest
+        with:
+          filename: .github/assets/pagespeed-metrics.svg
+          token: NOT_NEEDED
+          committer_message: "docs(pagespeed-metrics): update metrics [skip ci]"
+          optimize: svg, css
+          experimental_features: --optimize-svg
+
+          plugin_pagespeed: yes
+          plugin_pagespeed_detailed: yes
+          plugin_pagespeed_url: https://noisekun.mateusf.com
