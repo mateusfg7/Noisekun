@@ -5,7 +5,7 @@ import { useGlobalVolumeStore } from '@/stores/GlobalVolumeStore'
 import { VolumeController } from './volume-controller'
 import { icon, iconContainer } from './styles'
 import { Sound } from '@/sounds'
-import { useThemeStore } from '@/stores/BackgroundStore'
+import { useThemeStore } from '@/stores/theme-store'
 
 interface SoundButtonProps {
   sound: Sound

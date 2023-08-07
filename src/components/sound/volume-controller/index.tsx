@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import { container, input } from './styles'
-import { useThemeStore } from '@/stores/BackgroundStore'
+import { useThemeStore } from '@/stores/theme-store'
 
 export interface IVolumeController {
   isActive: boolean

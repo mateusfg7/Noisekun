@@ -5,7 +5,7 @@ import React from 'react'
 import { Header } from '@/components/header'
 import { SoundButton } from '@/components/sound'
 import { Footer } from '@/components/footer'
-import { useThemeStore } from '@/stores/BackgroundStore'
+import { useThemeStore } from '@/stores/theme-store'
 import { sounds } from '@/sounds'
 
 import { container } from './styles'

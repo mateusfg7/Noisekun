@@ -5,7 +5,7 @@ import { tv } from 'tailwind-variants'
 import { FiAward, FiGithub } from 'react-icons/fi'
 import { AiOutlineCopyrightCircle } from 'react-icons/ai'
 import { container } from './styles'
-import { useThemeStore } from '@/stores/BackgroundStore'
+import { useThemeStore } from '@/stores/theme-store'
 
 export function Footer() {
   const Info = ({ children, className, ...props }: ComponentProps<'a'>) => {

@@ -2,7 +2,7 @@ import { Fragment, useEffect } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { PiPaintBrushBroadBold } from 'react-icons/pi'
 
-import { Theme, useThemeStore } from '@/stores/BackgroundStore'
+import { Theme, useThemeStore } from '@/stores/theme-store'
 import { themeButton, triggerButton } from './styles'
 
 export function ThemeMenu() {
