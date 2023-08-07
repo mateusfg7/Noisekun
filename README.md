@@ -33,28 +33,35 @@ _Inspired on [Noisli](https://www.noisli.com/)_
 
 ## Setup Project
 
-### Install dependencies
+### Audio files
 
+The audio file links is hard coded on [`sounds.tsx`](src/sounds.tsx), update the urls with our links.
+
+The audio files are stored on Google Cloud Storage, but you can access them at `.github/assets/sounds`
+
+The icons is on [`src/components/sound-icons/`](src/components/sound-icons/)
+
+
+
+### Init server
+> _This project is using [pnpm](https://pnpm.io) as package manager._
+
+**Install dependencies**
 ```
 pnpm install
 ```
 
-## Init Dev Environment
-
+**Init development environment**
 ```
 pnpm dev
 ```
+_or..._
 
-## Init production environment
+**Init production environment**
 
 ```
 pnpm build && pnpm start
 ```
-
-## Assets
-The audio files are stored on Google Cloud Storage, but you can access them at `.github/assets/sounds`
-
-The icons is on `public/assets`
 
 <br/>
 <br/>
