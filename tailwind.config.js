@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   content: ['./src/**/*.{html,ts,tsx}'],
@@ -15,25 +16,29 @@ module.exports = {
         sans: 'var(--font-nunito)'
       },
       colors: {
-        main: '#0485B4'
+        main: '#0485B4',
+        'dark-background': colors.gray[950],
+        'dark-foreground': colors.gray[100],
+        'light-background': colors.gray[100],
+        'light-foreground': colors.gray[950],
+        'blue-room': colors.blue[200],
+        train: colors.green[200],
+        waterfall: colors.lime[200],
+        'camping-fire': colors.orange[200]
       },
       boxShadow: {
         header: '0px 1px 30px rgba(0, 0, 0, 0.09)',
         sound: '0px 0px 30px rgba(0, 0, 0, 0.09)'
       },
       backgroundImage: {
-        'lofi-rain': 'url("/bg/lofi-rain.gif")',
-        'lofi-rain-thumb': 'url("/bg/lofi-rain-thumb.png")',
-        'train-rain': 'url("/bg/train-rain.gif")',
-        'train-rain-thumb': 'url("/bg/train-rain-thumb.png")',
-        tree: 'url("/bg/tree.gif")',
-        'tree-thumb': 'url("/bg/tree-thumb.png")',
-        'camping-fire': 'url("/bg/camping-fire.gif")',
-        'camping-fire-thumb': 'url("/bg/camping-fire-thumb.png")'
+        'blue-room-gif': 'url("/bg/lofi-rain.gif")',
+        'train-gif': 'url("/bg/train-rain.gif")',
+        'waterfall-gif': 'url("/bg/tree.gif")',
+        'camping-fire-gif': 'url("/bg/camping-fire.gif")'
       },
       animation: {
         'background-change': 'background-change 300s 0s infinite',
-        'background-change-sm': 'background-change 50s 0s infinite'
+        'background-change-sm': 'background-change 20s 0s infinite'
       },
       keyframes: {
         'background-change': {
