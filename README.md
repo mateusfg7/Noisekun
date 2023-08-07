@@ -94,3 +94,19 @@ Sound | Author | License | Edition
 [Brown Noise](https://freesound.org/people/georgedyer/sounds/171552/) | [George Dyer](https://freesound.org/people/georgedyer/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
 [Brown Noise 2](https://www.youtube.com/watch?v=RqzGzwTY-6w) | [Jason Lewis](https://www.youtube.com/c/MindAmend)
 [Brown Noise 3](https://www.youtube.com/watch?v=P48QELwruQs) | [Jason Lewis](https://www.youtube.com/c/MindAmend)
+
+# Alternatives
+
+Didn't like Noisekun? Check some alternatives!
+
+- [**A Soft Murmur**](https://asoftmurmur.com/) (Web)
+- [**Blanket**](https://github.com/rafaelmardojai/blanket) (Linux)
+- [**Elpy**](https://vanejung.com/elpy/) (Mac|Windows)
+- [**Noiseless**](https://helton.github.io/noiseless/) (Web)
+- [**Relax**](http://brunobord.github.io/relax/) (Web)
+- [**Noice**](https://trynoice.com/) (Android|Web*)
+- [**Deepfocus**](https://deepfocus.io/) (Web)
+- [**Monkemode**](https://monkmode.xyz/) (Web)
+
+> _Know a cool alternative? Make a Pull Request and [increase the list](https://github.com/mateusfg7/Noisekun/edit/main/README.md)!_
+
