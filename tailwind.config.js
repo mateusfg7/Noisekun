@@ -31,9 +31,9 @@ module.exports = {
         sound: '0px 0px 30px rgba(0, 0, 0, 0.09)'
       },
       backgroundImage: {
-        'blue-room-gif': 'url("/bg/lofi-rain.gif")',
-        'train-gif': 'url("/bg/train-rain.gif")',
-        'waterfall-gif': 'url("/bg/tree.gif")',
+        'blue-room-gif': 'url("/bg/blue-room.gif")',
+        'train-gif': 'url("/bg/train.gif")',
+        'waterfall-gif': 'url("/bg/waterfall.gif")',
         'camping-fire-gif': 'url("/bg/camping-fire.gif")'
       },
       animation: {
