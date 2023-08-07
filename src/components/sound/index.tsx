@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import { useGlobalVolumeStore } from '@/stores/GlobalVolumeStore'
+import { useGlobalVolumeStore } from '@/stores/global-volume-store'
 
 import { VolumeController } from './volume-controller'
 import { icon, iconContainer } from './styles'
