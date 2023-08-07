@@ -1,6 +1,6 @@
 import { Fragment, useEffect } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import { PiPaintBrushBroad, PiPaintBrushBroadBold } from 'react-icons/pi'
+import { PiPaintBrushBroadBold } from 'react-icons/pi'
 
 import { Theme, useThemeStore } from '@/stores/BackgroundStore'
 import { themeButton, triggerButton } from './styles'
@@ -16,7 +16,7 @@ export function ThemeMenu() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const themeOnStorage = localStorage.getItem('the,e') as Theme
+      const themeOnStorage = localStorage.getItem('theme') as Theme
       if (themeOnStorage) setTheme(themeOnStorage)
       else localStorage.setItem('theme', currentTheme)
     }
