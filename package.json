@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@headlessui/react": "1.7.16",
+    "@newhighsco/next-plugin-svgr": "^3.0.104",
     "howler": "2.2.3",
     "next": "13.4.12",
     "react": "18.2.0",
