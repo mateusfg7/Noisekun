@@ -1,30 +1,23 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Image from 'next/image'
 
 import { useGlobalVolumeStore } from '@/stores/GlobalVolumeStore'
 
 import { VolumeController } from './volume-controller'
-import { icon } from './styles'
+import { icon, iconContainer } from './styles'
+import { Sound } from '@/sounds'
+import { useThemeStore } from '@/stores/BackgroundStore'
 
-export interface ISound {
-  id: string
-  title: string
-  icon: string
-  file: {
-    url: string
-    type: string
-  }
+interface SoundButtonProps {
+  sound: Sound
 }
 
-interface SoundProps {
-  soundData: ISound
-}
-
-export const Sound: React.FC<SoundProps> = ({ soundData }) => {
+export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   const globalVolume = useGlobalVolumeStore(state => state.globalVolume)
 
   const [soundIsActive, setSoundIsActive] = useState(false)
   const [localSoundVolume, setLocalSoundVolume] = useState(1)
+
+  const theme = useThemeStore(set => set.theme)
 
   const soundRef = useRef<HTMLAudioElement>()
 
@@ -37,15 +30,15 @@ export const Sound: React.FC<SoundProps> = ({ soundData }) => {
 
   function handleLocalSoundVolume(volume: number) {
     setLocalSoundVolume(volume)
-    localStorage.setItem(`${soundData.id}-volume`, String(localSoundVolume))
+    localStorage.setItem(`${sound.id}-volume`, String(localSoundVolume))
   }
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const storageValue = localStorage.getItem(`${soundData.id}-volume`)
+      const storageValue = localStorage.getItem(`${sound.id}-volume`)
       if (storageValue) setLocalSoundVolume(JSON.parse(storageValue))
       else {
-        localStorage.setItem(`${soundData.id}-volume`, String(localSoundVolume))
+        localStorage.setItem(`${sound.id}-volume`, String(localSoundVolume))
       }
     }
   }, [])
@@ -54,29 +47,26 @@ export const Sound: React.FC<SoundProps> = ({ soundData }) => {
     soundRef.current.volume = localSoundVolume * globalVolume
   }, [globalVolume, localSoundVolume])
 
+  const Icon = sound.icon
+
   return (
     <div
-      title={soundData.title}
+      title={sound.title}
       className="flex h-24 w-24 flex-col items-center justify-center"
     >
       <audio ref={soundRef} preload="auto" loop>
-        <source src={soundData.file.url} type={soundData.file.type} />
+        <source src={sound.file.url} type={sound.file.type} />
       </audio>
       <div
-        className={icon({ active: soundIsActive })}
+        className={iconContainer({ active: soundIsActive, theme })}
         onClick={() => toggleSoundState()}
       >
-        <Image
-          src={`/assets/${soundData.icon}`}
-          alt={soundData.title}
-          width={80}
-          height={80}
-        />
+        <Icon className={icon()} />
       </div>
       <VolumeController
         isActive={soundIsActive}
-        soundName={soundData.title}
-        soundNameOnLocalStorage={soundData.id}
+        soundName={sound.title}
+        soundNameOnLocalStorage={sound.id}
         handleSoundVolume={handleLocalSoundVolume}
       />
     </div>

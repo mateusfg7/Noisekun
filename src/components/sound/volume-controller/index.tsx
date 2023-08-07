@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import { container } from './styles'
+import { container, input } from './styles'
+import { useThemeStore } from '@/stores/BackgroundStore'
 
 export interface IVolumeController {
   isActive: boolean
@@ -26,11 +27,13 @@ export const VolumeController: React.FC<IVolumeController> = ({
     }
   }, [])
 
+  const theme = useThemeStore(set => set.theme)
+
   return (
     <div className={container({ active: isActive })}>
       <span className="sr-only">{soundName} volume controller</span>
       <input
-        className="slider-input absolute left-0 top-0"
+        className={input({ theme })}
         type="range"
         name={`${soundName}-volume-controller`}
         title={`${soundName} volume in ${Number(rangeValue / 10).toFixed(1)}%`}
@@ -38,9 +41,7 @@ export const VolumeController: React.FC<IVolumeController> = ({
         max="1000"
         value={rangeValue}
         style={{
-          backgroundImage: 'linear-gradient(#fff, #fff)',
-          backgroundSize: `${(rangeValue * 100) / 1000}%`,
-          backgroundRepeat: 'no-repeat'
+          backgroundSize: `${(rangeValue * 100) / 1000}%`
         }}
         onChange={event => {
           setRangeValue(Number(event.target.value))

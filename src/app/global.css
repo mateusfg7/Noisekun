@@ -4,39 +4,38 @@
 
 @layer base {
   body {
-    @apply font-sans
+    @apply bg-[#0485b4]
+      font-sans
       font-light
-      text-white
-      bg-[#0485b4];
+      text-white;
   }
 }
 
 @layer components {
   .slider-input {
-    @apply appearance-none
-      w-full h-4 sm:h-1
+    @apply h-4
+      w-full appearance-none rounded-xl
       group-hover:cursor-pointer
-      bg-white/30
-      rounded-xl;
+      sm:h-1;
   }
 
   .slider-input::-webkit-slider-thumb {
-    @apply opacity-0 sm:opacity-100
+    @apply h-4 w-4
       appearance-none
-      h-4 md:h-2 md:group-hover:h-3 w-4 md:w-2 md:group-hover:w-3
-      bg-white
-      border-none rounded-full
-      active:ring-4 ring-white/10
-      transition-all duration-100;
+      rounded-full border-none opacity-0 ring-white/10 transition-all
+      duration-100
+      active:ring-4 sm:opacity-100
+      md:h-2 md:w-2
+      md:group-hover:h-3 md:group-hover:w-3;
   }
 
   .slider-input::-moz-range-thumb {
-    @apply opacity-0 sm:opacity-100
+    @apply h-4 w-4
       appearance-none
-      h-4 md:h-2 md:group-hover:h-3 w-4 md:w-2 md:group-hover:w-3
-      bg-white
-      border-none rounded-full
-      active:ring-4 ring-white/10
-      transition-all duration-100;
+      rounded-full border-none opacity-0 ring-white/10 transition-all
+      duration-100
+      active:ring-4 sm:opacity-100
+      md:h-2 md:w-2
+      md:group-hover:h-3 md:group-hover:w-3;
   }
 }

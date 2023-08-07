@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { tv } from 'tailwind-variants'
 import { FiAward, FiGithub } from 'react-icons/fi'
 import { AiOutlineCopyrightCircle } from 'react-icons/ai'
+import { container } from './styles'
+import { useThemeStore } from '@/stores/BackgroundStore'
 
 export function Footer() {
   const Info = ({ children, className, ...props }: ComponentProps<'a'>) => {
@@ -21,8 +23,10 @@ export function Footer() {
     <section className="flex flex-col gap-2 sm:gap-0">{children}</section>
   )
 
+  const theme = useThemeStore(set => set.theme)
+
   return (
-    <footer className="flex flex-col flex-wrap items-center justify-center gap-10 p-5 sm:flex-row md:gap-14">
+    <footer className={container({ theme })}>
       <div className="w-14 overflow-hidden rounded-2xl shadow-lg">
         <Link href="/">
           <Image

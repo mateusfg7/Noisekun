@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import { FiVolume2, FiVolume1, FiVolume } from 'react-icons/fi'
 
 import { useGlobalVolumeStore } from '@/stores/GlobalVolumeStore'
+import { useThemeStore } from '@/stores/BackgroundStore'
+import { volumeControllerInput } from '@/shared/styles/volume-controller-input'
+import { soundButton } from './styles'
 
 export function GlobalVolumeController() {
   const MAX_VALUE = 1000
@@ -17,6 +20,8 @@ export function GlobalVolumeController() {
     setRangeValue(value)
   }
 
+  const theme = useThemeStore(set => set.theme)
+
   return (
     <div
       onMouseEnter={() => setIsShowing(true)}
@@ -31,7 +36,7 @@ export function GlobalVolumeController() {
           Global volume in {Number(globalVolume * 100).toFixed(1)}%
         </span>
         <input
-          className="slider-input"
+          className={volumeControllerInput({ theme })}
           type="range"
           name="global-volume-controller"
           title={`Global volume in ${Number(globalVolume * 100).toFixed(1)}%`}
@@ -39,15 +44,14 @@ export function GlobalVolumeController() {
           max={MAX_VALUE}
           value={rangeValue}
           style={{
-            backgroundImage: 'linear-gradient(#fff, #fff)',
-            backgroundSize: `${(rangeValue * 100) / MAX_VALUE}%`,
-            backgroundRepeat: 'no-repeat'
+            backgroundSize: `${(rangeValue * 100) / MAX_VALUE}%`
           }}
           onChange={event => handleVolume(Number(event.target.value))}
         />
       </div>
       <button
         title="Toggle Global Volume Controller"
+        className={soundButton({ theme })}
         onClick={() => setIsShowing(!isShowing)}
       >
         {globalVolume >= 0.5 && <FiVolume2 size={25} />}

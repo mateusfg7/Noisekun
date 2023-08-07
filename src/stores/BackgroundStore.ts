@@ -1,20 +1,20 @@
 import { create } from 'zustand'
 
-export type Background =
+export type Theme =
   | 'transition'
   | 'dark'
-  | 'room-and-rain'
-  | 'train-and-rain'
+  | 'light'
+  | 'blue-room'
+  | 'train'
   | 'waterfall'
-  | 'static'
   | 'camping-fire'
 
-interface BackgroundStore {
-  background: Background
-  setBackground: (newBackground: Background) => void
+interface ThemeStore {
+  theme: Theme
+  setTheme: (newTheme: Theme) => void
 }
 
-export const useBackgroundStore = create<BackgroundStore>(set => ({
-  background: 'transition',
-  setBackground: newBackground => set(() => ({ background: newBackground }))
+export const useThemeStore = create<ThemeStore>(set => ({
+  theme: 'transition',
+  setTheme: newTheme => set(() => ({ theme: newTheme }))
 }))
