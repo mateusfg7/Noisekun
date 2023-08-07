@@ -1,3 +1,14 @@
+## [0.4.0](https://github.com/mateusfg7/Noisekun/compare/0.3.0...0.4.0) (2023-08-07)
+
+
+### Features
+
+* **tailwind:** add new theme color alias ([9d679c1](https://github.com/mateusfg7/Noisekun/commit/9d679c1aac6e0034b247d94781a1344baa7fb579))
+* **types:** add svg type ([7c7af8c](https://github.com/mateusfg7/Noisekun/commit/7c7af8cf6455ac4ad9ce44cb702a4d072df98187))
+* **ui:** implement themes and refactor some components ([c851eb1](https://github.com/mateusfg7/Noisekun/commit/c851eb1e9154dbe8cf19efd2a38bc83adfb4cf3b))
+* **ui:** improvements on footer style ([e68cffe](https://github.com/mateusfg7/Noisekun/commit/e68cffea2af6444ba957f2f8a81babdc7502dc0d))
+* **ui:** update layout sizes ([a029e22](https://github.com/mateusfg7/Noisekun/commit/a029e2247cc7b0c4c7e0e12d28f855ee9d14c0b0))
+
 ## [0.3.0](https://github.com/mateusfg7/Noisekun/compare/0.2.0...0.3.0) (2023-08-04)
 
 
