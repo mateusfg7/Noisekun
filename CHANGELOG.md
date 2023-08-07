@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/mateusfg7/Noisekun/compare/0.4.0...0.4.1) (2023-08-07)
+
+
+### Bug Fixes
+
+* **ui:** make theme persistent ([600556b](https://github.com/mateusfg7/Noisekun/commit/600556b74d55c018b0312ee9d457655ce97f15f9))
+
 ## [0.4.0](https://github.com/mateusfg7/Noisekun/compare/0.3.0...0.4.0) (2023-08-07)
 
 
