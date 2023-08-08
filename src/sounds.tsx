@@ -10,6 +10,7 @@ import {
   Fire,
   Leaves,
   Night,
+  PinkNoise,
   Rain,
   Storm,
   StreamWater,
@@ -209,6 +210,15 @@ export const sounds = [
     icon: WhiteNoise,
     file: {
       url: 'https://storage.googleapis.com/ambience-sounds/white-noise.ogg',
+      type: 'audio/ogg'
+    }
+  },
+  {
+    id: 'pink-noise',
+    title: 'Pink Noise',
+    icon: PinkNoise,
+    file: {
+      url: 'https://storage.googleapis.com/ambience-sounds/pink-noise.ogg',
       type: 'audio/ogg'
     }
   }
