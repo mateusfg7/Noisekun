@@ -18,6 +18,7 @@ import {
   WashingMachine,
   Waterfall,
   Waves,
+  WhiteNoise,
   Wind
 } from '@/components/sound-icons'
 
@@ -199,6 +200,15 @@ export const sounds = [
     icon: BrownNoise3,
     file: {
       url: 'https://storage.googleapis.com/ambience-sounds/brown-noise3.ogg',
+      type: 'audio/ogg'
+    }
+  },
+  {
+    id: 'white-noise',
+    title: 'White Noise',
+    icon: WhiteNoise,
+    file: {
+      url: 'https://storage.googleapis.com/ambience-sounds/white-noise.ogg',
       type: 'audio/ogg'
     }
   }
