@@ -2,8 +2,6 @@ import {
   AirPlane,
   BirdsTree,
   BrownNoise,
-  BrownNoise2,
-  BrownNoise3,
   Cave,
   Coffee,
   Drops,
@@ -183,24 +181,6 @@ export const sounds = [
     icon: BrownNoise,
     file: {
       url: 'https://storage.googleapis.com/ambience-sounds/brown-noise.ogg',
-      type: 'audio/ogg'
-    }
-  },
-  {
-    id: 'brown-noise2',
-    title: 'Brown Noise 2',
-    icon: BrownNoise2,
-    file: {
-      url: 'https://storage.googleapis.com/ambience-sounds/brown-noise2.ogg',
-      type: 'audio/ogg'
-    }
-  },
-  {
-    id: 'brown-noise3',
-    title: 'Brown Noise 3',
-    icon: BrownNoise3,
-    file: {
-      url: 'https://storage.googleapis.com/ambience-sounds/brown-noise3.ogg',
       type: 'audio/ogg'
     }
   },

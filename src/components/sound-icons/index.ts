@@ -1,8 +1,6 @@
 export { ReactComponent as AirPlane } from './air-plane.svg'
 export { ReactComponent as BirdsTree } from './birds-tree.svg'
 export { ReactComponent as BrownNoise } from './brown-noise.svg'
-export { ReactComponent as BrownNoise2 } from './brown-noise2.svg'
-export { ReactComponent as BrownNoise3 } from './brown-noise3.svg'
 export { ReactComponent as WhiteNoise } from './white-noise.svg'
 export { ReactComponent as PinkNoise } from './pink-noise.svg'
 export { ReactComponent as Cave } from './cave.svg'
