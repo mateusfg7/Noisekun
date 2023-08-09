@@ -1,3 +1,13 @@
+## [0.5.0](https://github.com/mateusfg7/Noisekun/compare/0.4.1...0.5.0) (2023-08-09)
+
+
+### Features
+
+* **sound:** add "Pink Noise" ([cf02709](https://github.com/mateusfg7/Noisekun/commit/cf027096fac311f016d88f62b7ca76cf5f88964f))
+* **sound:** add "White Noise" ([c117af8](https://github.com/mateusfg7/Noisekun/commit/c117af8239d922040701a0e0302571bb7ef3aacb))
+* **sound:** add fade effect on play/pause sound ([019b9ee](https://github.com/mateusfg7/Noisekun/commit/019b9eecd2d9e1330c25525e4261df858f0e4bc7)), closes [#L1295](https://github.com/mateusfg7/Noisekun/issues/L1295) [#L1356C13-L1356C13](https://github.com/mateusfg7/Noisekun/issues/L1356C13-L1356C13) [#249](https://github.com/mateusfg7/Noisekun/issues/249)
+* **ui:** add toggle-muted function to global volume button ([e38df19](https://github.com/mateusfg7/Noisekun/commit/e38df196420ad830ca2050b2b0d7e3870238003b)), closes [#506](https://github.com/mateusfg7/Noisekun/issues/506)
+
 ## [0.4.1](https://github.com/mateusfg7/Noisekun/compare/0.4.0...0.4.1) (2023-08-07)
 
 
