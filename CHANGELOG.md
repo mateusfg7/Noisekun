@@ -1,3 +1,19 @@
+## [0.6.0](https://github.com/mateusfg7/Noisekun/compare/0.5.0...0.6.0) (2023-08-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* **sound:** remove copyright protected sounds
+
+### Features
+
+* **sound:** decrease `drops.ogg` duration ([26ad35c](https://github.com/mateusfg7/Noisekun/commit/26ad35c993d61358e5197c0db4c5ec5231ec02a6))
+
+
+### Reverts
+
+* **sound:** remove copyright protected sounds ([950dc01](https://github.com/mateusfg7/Noisekun/commit/950dc01836cb8f5563cef9ad5ad8334b95e70b07)), closes [#521](https://github.com/mateusfg7/Noisekun/issues/521)
+
 ## [0.5.0](https://github.com/mateusfg7/Noisekun/compare/0.4.1...0.5.0) (2023-08-09)
 
 
