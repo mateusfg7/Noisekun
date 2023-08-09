@@ -2,10 +2,11 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import { useGlobalVolumeStore } from '@/stores/global-volume-store'
 
-import { VolumeController } from './volume-controller'
-import { icon, iconContainer } from './styles'
-import { Sound } from '@/sounds'
+import type { Sound } from '@/sounds'
 import { useThemeStore } from '@/stores/theme-store'
+import { VolumeController } from './volume-controller'
+import { fadeSound } from './fade-sound'
+import { icon, iconContainer } from './styles'
 
 interface SoundButtonProps {
   sound: Sound
@@ -15,17 +16,47 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   const globalVolume = useGlobalVolumeStore(state => state.globalVolume)
 
   const [soundIsActive, setSoundIsActive] = useState(false)
+  const [isUpdatingSoundState, setIsUpdatingSoundState] = useState(false)
+
   const [localSoundVolume, setLocalSoundVolume] = useState(1)
 
   const theme = useThemeStore(set => set.theme)
 
   const soundRef = useRef<HTMLAudioElement>()
 
-  function toggleSoundState() {
-    if (soundIsActive) soundRef.current.pause()
-    else soundRef.current.play()
+  async function toggleSoundState() {
+    if (!isUpdatingSoundState) return
 
-    setSoundIsActive(!soundIsActive)
+    const currSoundVolume = localSoundVolume * globalVolume
+    if (soundIsActive) {
+      fadeSound({
+        soundRef,
+        from: currSoundVolume,
+        to: 0,
+        totalFadeTimeMs: 200,
+        beforeFade() {
+          setSoundIsActive(false)
+        },
+        afterFade() {
+          soundRef.current.pause()
+          setIsUpdatingSoundState(false)
+        }
+      })
+    } else {
+      fadeSound({
+        soundRef,
+        from: 0,
+        to: currSoundVolume,
+        totalFadeTimeMs: 200,
+        beforeFade() {
+          setSoundIsActive(true)
+          soundRef.current.play()
+        },
+        afterFade() {
+          setIsUpdatingSoundState(false)
+        }
+      })
+    }
   }
 
   function handleLocalSoundVolume(volume: number) {
@@ -44,8 +75,15 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   }, [])
 
   useEffect(() => {
-    soundRef.current.volume = localSoundVolume * globalVolume
+    if (!isUpdatingSoundState) {
+      soundRef.current.volume = localSoundVolume * globalVolume
+    }
   }, [globalVolume, localSoundVolume])
+
+  useEffect(() => {
+    if (!isUpdatingSoundState) return
+    toggleSoundState()
+  }, [isUpdatingSoundState])
 
   const Icon = sound.icon
 
@@ -59,7 +97,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       </audio>
       <div
         className={iconContainer({ active: soundIsActive, theme })}
-        onClick={() => toggleSoundState()}
+        onClick={() => setIsUpdatingSoundState(true)}
       >
         <Icon className={icon()} />
       </div>
