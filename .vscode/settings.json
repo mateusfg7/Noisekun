@@ -1,0 +1,24 @@
+{
+  "tailwindCSS.experimental.classRegex": [
+    "\\/\\*\\s?tw:\\s?\\*\\/\\s?'(.*)'", // /*tw:*/ '...'
+  ],
+  "cSpell.words": [
+    "commitlint",
+    "Deepfocus",
+    "Elpy",
+    "headlessui",
+    "lofi",
+    "lowlighter",
+    "mateusfg",
+    "Monkemode",
+    "Noice",
+    "noisekun",
+    "nunito",
+    "Pagespeed",
+    "Pomodoro",
+    "Svgr",
+    "tailwindcss",
+    "UMAMI",
+    "zustand"
+  ]
+}
