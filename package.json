@@ -28,7 +28,7 @@
     "react-switch": "7.0.0",
     "tailwind-scrollbar-hide": "1.1.7",
     "tailwind-variants": "^0.1.13",
-    "zustand": "4.4.0"
+    "zustand": "4.4.1"
   },
   "devDependencies": {
     "@commitlint/cli": "17.6.7",
