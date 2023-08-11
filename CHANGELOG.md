@@ -1,3 +1,17 @@
+## [0.7.0](https://github.com/mateusfg7/Noisekun/compare/0.6.0...0.7.0) (2023-08-11)
+
+
+### Features
+
+* **ui:** add version number information on footer ([73e7ca8](https://github.com/mateusfg7/Noisekun/commit/73e7ca8cf771099fee22e259ed6c3f2df4a4c55e))
+* **ui:** create pomodoro timer ([d5cdfdf](https://github.com/mateusfg7/Noisekun/commit/d5cdfdf7b5d1298a4d93a233a5ec0e13c5fd1036))
+* **ui:** reduce z-index of theme-menu ([0328085](https://github.com/mateusfg7/Noisekun/commit/0328085c856e44f7b0a8a24cc4db5d990244e9f9))
+
+
+### Bug Fixes
+
+* **deps:** update dependency zustand to v4.4.1 ([206396e](https://github.com/mateusfg7/Noisekun/commit/206396ed35c2f6d78f07e625e58e03c269485cd2))
+
 ## [0.6.0](https://github.com/mateusfg7/Noisekun/compare/0.5.0...0.6.0) (2023-08-09)
 
 
