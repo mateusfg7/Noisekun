@@ -93,8 +93,6 @@ Sound                                                                     | Auth
 [Waves](https://www.youtube.com/watch?v=SL9NdTMsIUk) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Wind](https://freesound.org/people/felix.blume/sounds/217506/) | [Felix Blume](https://freesound.org/people/felix.blume/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
 [Brown Noise](https://freesound.org/people/georgedyer/sounds/171552/) | [George Dyer](https://freesound.org/people/georgedyer/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
-[Brown Noise 2](https://www.youtube.com/watch?v=RqzGzwTY-6w) | [Jason Lewis](https://www.youtube.com/c/MindAmend)
-[Brown Noise 3](https://www.youtube.com/watch?v=P48QELwruQs) | [Jason Lewis](https://www.youtube.com/c/MindAmend)
 [White noise](https://commons.wikimedia.org/w/index.php?title=File%3AWhite-noise-sound-20sec-mono-44100Hz.ogg) | [Jorge Stolfi](https://commons.wikimedia.org/wiki/User:Jorge_Stolfi) | CC BY-SA
 [Pink Noise](https://es.wikipedia.org/wiki/Archivo:Pink_noise.ogg) | [Omegatron](https://commons.wikimedia.org/wiki/User:Omegatron) | CC BY-SA
 
