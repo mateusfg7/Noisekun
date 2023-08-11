@@ -10,12 +10,6 @@ _Listen combinations of ambient sounds for **relaxing** or getting more **produc
 
 <br/>
 
-<div align="right">
-
-_Inspired on [Noisli](https://www.noisli.com/)_
-
-</div>
-
 <br/>
 <br/>
 <br/>
@@ -100,6 +94,7 @@ Sound                                                                     | Auth
 
 Didn't like Noisekun? Check some alternatives!
 
+- [**Noisli**](https://www.noisli.com/) (Web|Iphone|Android|Chrome) *_the inspiration for this project_
 - [**A Soft Murmur**](https://asoftmurmur.com/) (Web)
 - [**Blanket**](https://github.com/rafaelmardojai/blanket) (Linux)
 - [**Elpy**](https://vanejung.com/elpy/) (Mac|Windows)
