@@ -72,8 +72,9 @@ pnpm build && pnpm start
 
 ## Sounds
 
-Sound | Author | License | Edition
---- | --- | --- | ---
+Sound                                                                     | Author                                                   | License | Edition
+--------------------------------------------------------------------------|----------------------------------------------------------|---------|----------------------------------------------
+[Pomodoro Alarm](https://freesound.org/people/ZyryTSounds/sounds/219244/) | [ZyryTSounds](https://freesound.org/people/ZyryTSounds/) | CC0     | [Mateus Felipe](https://github.com/mateusfg7)
 [Airplane](https://www.youtube.com/watch?v=yJrNMM7xvug) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Birds](https://www.youtube.com/watch?v=J6OGbkl4Vrs) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Coffee Shop](https://www.youtube.com/watch?v=2ewwVYoMU5I) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
@@ -92,8 +93,6 @@ Sound | Author | License | Edition
 [Waves](https://www.youtube.com/watch?v=SL9NdTMsIUk) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Wind](https://freesound.org/people/felix.blume/sounds/217506/) | [Felix Blume](https://freesound.org/people/felix.blume/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
 [Brown Noise](https://freesound.org/people/georgedyer/sounds/171552/) | [George Dyer](https://freesound.org/people/georgedyer/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
-[Brown Noise 2](https://www.youtube.com/watch?v=RqzGzwTY-6w) | [Jason Lewis](https://www.youtube.com/c/MindAmend)
-[Brown Noise 3](https://www.youtube.com/watch?v=P48QELwruQs) | [Jason Lewis](https://www.youtube.com/c/MindAmend)
 [White noise](https://commons.wikimedia.org/w/index.php?title=File%3AWhite-noise-sound-20sec-mono-44100Hz.ogg) | [Jorge Stolfi](https://commons.wikimedia.org/wiki/User:Jorge_Stolfi) | CC BY-SA
 [Pink Noise](https://es.wikipedia.org/wiki/Archivo:Pink_noise.ogg) | [Omegatron](https://commons.wikimedia.org/wiki/User:Omegatron) | CC BY-SA
 
