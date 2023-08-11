@@ -58,7 +58,7 @@ export function ThemeMenu() {
   ]
 
   return (
-    <div className="z-50">
+    <div className="z-40">
       <Menu>
         <div className="group flex">
           <Menu.Button
