@@ -4,6 +4,7 @@ import { useGlobalVolumeStore } from '@/stores/global-volume-store'
 
 import type { Sound } from '@/sounds'
 import { useThemeStore } from '@/stores/theme-store'
+import { PomodoroStatus, usePomodoroStore } from '@/stores/pomodoro-store'
 import { VolumeController } from './volume-controller'
 import { fadeSound } from './fade-sound'
 import { icon, iconContainer } from './styles'
@@ -14,6 +15,7 @@ interface SoundButtonProps {
 
 export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   const globalVolume = useGlobalVolumeStore(state => state.globalVolume)
+  const pomodoroStatus = usePomodoroStore(state => state.pomodoroStatus)
 
   const [soundIsActive, setSoundIsActive] = useState(false)
   const [isUpdatingSoundState, setIsUpdatingSoundState] = useState(false)
@@ -63,6 +65,35 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     setLocalSoundVolume(volume)
     localStorage.setItem(`${sound.id}-volume`, String(localSoundVolume))
   }
+
+  useEffect(() => {
+    if (!soundIsActive) return
+
+    switch (pomodoroStatus) {
+      case PomodoroStatus.ticking:
+      case PomodoroStatus.idle:
+        if (soundRef.current.volume === 0) {
+          fadeSound({
+            soundRef,
+            from: 0,
+            to: localSoundVolume * globalVolume,
+            totalFadeTimeMs: 200
+          })
+        }
+        break
+
+      case PomodoroStatus.stopped:
+        if (soundRef.current.volume > 0) {
+          fadeSound({
+            soundRef,
+            from: soundRef.current.volume,
+            to: 0,
+            totalFadeTimeMs: 200
+          })
+        }
+        break
+    }
+  }, [pomodoroStatus])
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

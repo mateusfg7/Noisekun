@@ -72,8 +72,9 @@ pnpm build && pnpm start
 
 ## Sounds
 
-Sound | Author | License | Edition
---- | --- | --- | ---
+Sound                                                                     | Author                                                   | License | Edition
+--------------------------------------------------------------------------|----------------------------------------------------------|---------|----------------------------------------------
+[Pomodoro Alarm](https://freesound.org/people/ZyryTSounds/sounds/219244/) | [ZyryTSounds](https://freesound.org/people/ZyryTSounds/) | CC0     | [Mateus Felipe](https://github.com/mateusfg7)
 [Airplane](https://www.youtube.com/watch?v=yJrNMM7xvug) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Birds](https://www.youtube.com/watch?v=J6OGbkl4Vrs) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
 [Coffee Shop](https://www.youtube.com/watch?v=2ewwVYoMU5I) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
