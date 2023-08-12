@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants'
 
 export const iconContainer = tv({
-  base: /*tw:*/ 'flex justify-center items-center w-24 h-24 rounded-[10%] cursor-pointer transition duration-300 opacity-70 md:hover:opacity-100 md:hover:shadow-sound',
+  base: /*tw:*/ 'flex justify-center items-center w-24 h-24 rounded-xl cursor-pointer transition duration-300 opacity-70 md:hover:opacity-100 md:hover:shadow-sound',
   variants: {
     active: {
       true: /*tw:*/ 'rounded-b-none opacity-100 md:shadow-sound '
