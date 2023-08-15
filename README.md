@@ -36,7 +36,7 @@ _Listen combinations of ambient sounds for **relaxing** or getting more **produc
 
 Check the [**issue list**](https://github.com/mateusfg7/Noisekun/issues?q=is%3Aissue+is%3Aopen+label%3Afeat) for more planned features!
 
-# 🔧 Setup Project-
+# 🔧 Setup Project
 
 ## Audio files
 
