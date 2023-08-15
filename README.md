@@ -25,16 +25,27 @@ _Listen combinations of ambient sounds for **relaxing** or getting more **produc
 <br/>
 <br/>
 
-## Setup Project
+# ✨ Features
 
-### Audio files
+- 20 Ambience sounds
+- Control volume for each sound individually
+- Control global sound
+- Enhance look with 7 themes
+- Pomodoro timer
+- Browser persistent config (pomodoro time, volume and theme)
+
+Check the [**issue list**](https://github.com/mateusfg7/Noisekun/issues?q=is%3Aissue+is%3Aopen+label%3Afeat) for more planned features!
+
+# 🔧 Setup Project-
+
+## Audio files
 
 The audio URLs is hard coded on [`sounds.tsx`](src/sounds.tsx), update file with your URLs.
 The audio files are stored on Google Cloud Storage, but you can access them at `.github/assets/sounds`.
 The icons is on [`src/components/sound-icons/`](src/components/sound-icons/).
 
 
-### Init server
+## Init server
 > _This project is using [pnpm](https://pnpm.io) as package manager._
 
 **Install dependencies**
@@ -59,7 +70,7 @@ pnpm build && pnpm start
 <br/>
 <br/>
 
-# Credits
+# ©️ Credits
 
 ## Icons
 [rain](https://freeicons.io/weather-4/weather-forecast-rain-wind-strong-cloud-icon-44765) - [storm](https://freeicons.io/weather-4/weather-forecast-storn-lightning-bolt-cloud-storm-icon-44770) - [wind](https://freeicons.io/weather-4/weather-forecast-blow-wind-windy-icon-44746) - [drops](https://freeicons.io/weather-icons/icon-raindrops-icon-6741) - [waves](https://freeicons.io/test/travel-beach-swimming-icon-1279) - [birds-tree](https://freeicons.io/travel-and-holiday/travel-trees-icon-1302) - [leafs](https://freeicons.io/beauty-and-salon/leaf-icon-1202) - [fire](https://freeicons.io/travel-and-holiday/travel-fire-icon-1289) - [cave](https://www.flaticon.com/free-icon/cave_2206606) - [night](https://freeicons.io/weather-4/weather-moon-night-stars-icon-44777) - [coffee](https://freeicons.io/restaurant/restaurant-breakfast-hot-drink-coffee-icon-43370) - [noise-block](https://freeicons.io/computer-devices/headset-headphone-earphone-icon-133586) - [train](https://freeicons.io/vehicles-and-transport-2/vehicles-and-transport-train-sign-rail-tram-travel-icon-44648) - [air-plane](https://freeicons.io/travel-and-holiday/travel-plane-flight-icon-1296) - [underwater](https://freeicons.io/sports-icons-2/icon-diving-goggles-icon-6578) - [washingmachine](https://freeicons.io/cleaning/cleaning-washing-machine-washingmachine-icon-42075#) - [waterfall](https://www.svgrepo.com/svg/215029/waterfall) - [brown-noise](https://freeicons.io/music-2/music-sound-waveform-wave-icon-43351)
