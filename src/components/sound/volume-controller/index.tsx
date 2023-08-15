@@ -1,31 +1,33 @@
 import React, { useEffect, useState } from 'react'
 
-import { container, input } from './styles'
 import { useThemeStore } from '@/stores/theme-store'
+import { useSoundsStateStore } from '@/stores/sounds-state-store'
+
+import { container, input } from './styles'
 
 export interface IVolumeController {
   isActive: boolean
   soundName: string
-  soundNameOnLocalStorage: string
+  soundId: string
   handleSoundVolume: (volume: number) => void
 }
 
 export const VolumeController: React.FC<IVolumeController> = ({
   isActive,
   soundName,
-  soundNameOnLocalStorage,
+  soundId,
   handleSoundVolume
 }) => {
   const [rangeValue, setRangeValue] = useState(1000)
 
+  const getSound = useSoundsStateStore(state => state.getSound)
+  const sounds = useSoundsStateStore(state => state.sounds)
+
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storageValue = localStorage.getItem(
-        `${soundNameOnLocalStorage}-volume`
-      )
-      if (storageValue) setRangeValue(JSON.parse(storageValue) * 1000)
-    }
-  }, [])
+    const soundState = getSound(soundId)
+
+    if (soundState) setRangeValue(soundState.volume * 1000)
+  }, [sounds])
 
   const theme = useThemeStore(set => set.theme)
 
@@ -35,7 +37,7 @@ export const VolumeController: React.FC<IVolumeController> = ({
       <input
         className={input({ theme })}
         type="range"
-        name={`${soundName}-volume-controller`}
+        name={`${soundId}-volume-controller`}
         title={`${soundName} volume in ${Number(rangeValue / 10).toFixed(1)}%`}
         min="20"
         max="1000"
