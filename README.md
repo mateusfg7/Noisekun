@@ -53,13 +53,13 @@ The icons is on [`src/components/sound-icons/`](src/components/sound-icons/).
 pnpm install
 ```
 
-**Init development environment**
+**Init development server**
 ```
 pnpm dev
 ```
 _or..._
 
-**Init production environment**
+**Init production server**
 
 ```
 pnpm build && pnpm start
