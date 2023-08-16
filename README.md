@@ -27,7 +27,7 @@ _Listen combinations of ambient sounds for **relaxing** or getting more **produc
 
 # ✨ Features
 
-- 21 Ambience sounds
+- 22 Ambience sounds
 - Control volume for each sound individually
 - Control global sound
 - Enhance look with 7 themes
@@ -73,7 +73,7 @@ pnpm build && pnpm start
 # ©️ Credits
 
 ## Icons
-[rain](https://freeicons.io/weather-4/weather-forecast-rain-wind-strong-cloud-icon-44765) - [storm](https://freeicons.io/weather-4/weather-forecast-storn-lightning-bolt-cloud-storm-icon-44770) - [wind](https://freeicons.io/weather-4/weather-forecast-blow-wind-windy-icon-44746) - [drops](https://freeicons.io/weather-icons/icon-raindrops-icon-6741) - [waves](https://freeicons.io/test/travel-beach-swimming-icon-1279) - [birds-tree](https://freeicons.io/travel-and-holiday/travel-trees-icon-1302) - [leafs](https://freeicons.io/beauty-and-salon/leaf-icon-1202) - [fire](https://freeicons.io/travel-and-holiday/travel-fire-icon-1289) - [cave](https://www.flaticon.com/free-icon/cave_2206606) - [night](https://freeicons.io/weather-4/weather-moon-night-stars-icon-44777) - [coffee](https://freeicons.io/restaurant/restaurant-breakfast-hot-drink-coffee-icon-43370) - [noise-block](https://freeicons.io/computer-devices/headset-headphone-earphone-icon-133586) - [train](https://freeicons.io/vehicles-and-transport-2/vehicles-and-transport-train-sign-rail-tram-travel-icon-44648) - [air-plane](https://freeicons.io/travel-and-holiday/travel-plane-flight-icon-1296) - [underwater](https://freeicons.io/sports-icons-2/icon-diving-goggles-icon-6578) - [washingmachine](https://freeicons.io/cleaning/cleaning-washing-machine-washingmachine-icon-42075#) - [waterfall](https://www.svgrepo.com/svg/215029/waterfall) - [playground](https://freeicons.io/water-park-icon-set-35898/slider-playground-fair-water-park-winter-amusement-icon-1439949) - [noise](https://freeicons.io/music-2/music-sound-waveform-wave-icon-43351)
+[rain](https://freeicons.io/weather-4/weather-forecast-rain-wind-strong-cloud-icon-44765) - [storm](https://freeicons.io/weather-4/weather-forecast-storn-lightning-bolt-cloud-storm-icon-44770) - [wind](https://freeicons.io/weather-4/weather-forecast-blow-wind-windy-icon-44746) - [drops](https://freeicons.io/weather-icons/icon-raindrops-icon-6741) - [waves](https://freeicons.io/test/travel-beach-swimming-icon-1279) - [birds-tree](https://freeicons.io/travel-and-holiday/travel-trees-icon-1302) - [leafs](https://freeicons.io/beauty-and-salon/leaf-icon-1202) - [fire](https://freeicons.io/travel-and-holiday/travel-fire-icon-1289) - [cave](https://www.flaticon.com/free-icon/cave_2206606) - [night](https://freeicons.io/weather-4/weather-moon-night-stars-icon-44777) - [coffee](https://freeicons.io/restaurant/restaurant-breakfast-hot-drink-coffee-icon-43370) - [noise-block](https://freeicons.io/computer-devices/headset-headphone-earphone-icon-133586) - [train](https://freeicons.io/vehicles-and-transport-2/vehicles-and-transport-train-sign-rail-tram-travel-icon-44648) - [air-plane](https://freeicons.io/travel-and-holiday/travel-plane-flight-icon-1296) - [underwater](https://freeicons.io/sports-icons-2/icon-diving-goggles-icon-6578) - [washingmachine](https://freeicons.io/cleaning/cleaning-washing-machine-washingmachine-icon-42075#) - [waterfall](https://www.svgrepo.com/svg/215029/waterfall) - [playground](https://freeicons.io/water-park-icon-set-35898/slider-playground-fair-water-park-winter-amusement-icon-1439949) - [boat](https://freeicons.io/sports-icons-2/icon-sailing-boat-icon-6574) - [noise](https://freeicons.io/music-2/music-sound-waveform-wave-icon-43351)
 
 ## Sounds
 
@@ -100,7 +100,8 @@ Sound                                                                     | Auth
 [Brown Noise](https://freesound.org/people/georgedyer/sounds/171552/) | [George Dyer](https://freesound.org/people/georgedyer/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
 [White noise](https://commons.wikimedia.org/w/index.php?title=File%3AWhite-noise-sound-20sec-mono-44100Hz.ogg) | [Jorge Stolfi](https://commons.wikimedia.org/wiki/User:Jorge_Stolfi) | CC BY-SA
 [Pink Noise](https://es.wikipedia.org/wiki/Archivo:Pink_noise.ogg) | [Omegatron](https://commons.wikimedia.org/wiki/User:Omegatron) | CC BY-SA
-[Playground](https://www.youtube.com/watch?v=YxGv6o1g-LM) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0
+[Playground](https://www.youtube.com/watch?v=YxGv6o1g-LM) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
+[Boat](https://freesound.org/people/Falcet/sounds/439365/) | [Falcet](https://freesound.org/people/Falcet/) | CC0 | [Porrumentzio](https://github.com/Porrumentzio)
 
 # Alternatives
 

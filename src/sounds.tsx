@@ -1,6 +1,7 @@
 import {
   AirPlane,
   BirdsTree,
+  Boat,
   BrownNoise,
   Cave,
   Coffee,
@@ -182,6 +183,15 @@ export const sounds = [
     icon: Playground,
     file: {
       url: 'https://storage.googleapis.com/ambience-sounds/playground.ogg',
+      type: 'audio/ogg'
+    }
+  },
+  {
+    id: 'boat',
+    title: 'Boat',
+    icon: Boat,
+    file: {
+      url: 'https://storage.googleapis.com/ambience-sounds/boat.ogg',
       type: 'audio/ogg'
     }
   },
