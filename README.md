@@ -27,7 +27,7 @@ _Listen combinations of ambient sounds for **relaxing** or getting more **produc
 
 # ✨ Features
 
-- 22 Ambience sounds
+- 23 Ambience sounds
 - Control volume for each sound individually
 - Control global sound
 - Enhance look with 7 themes
@@ -102,6 +102,7 @@ Sound                                                                     | Auth
 [Pink Noise](https://es.wikipedia.org/wiki/Archivo:Pink_noise.ogg) | [Omegatron](https://commons.wikimedia.org/wiki/User:Omegatron) | CC BY-SA
 [Playground](https://www.youtube.com/watch?v=YxGv6o1g-LM) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0 | [Mateus Felipe](https://github.com/mateusfg7)
 [Boat](https://freesound.org/people/Falcet/sounds/439365/) | [Falcet](https://freesound.org/people/Falcet/) | CC0 | [Porrumentzio](https://github.com/Porrumentzio)
+[Rain on Tent](https://freesound.org/people/Garuda1982/sounds/523397/) | [Garuda1982](https://freesound.org/people/Garuda1982/) | CC BY 4.0 | [Mateus Felipe](https://github.com/mateusfg7)
 
 # Alternatives
 

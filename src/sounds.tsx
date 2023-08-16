@@ -12,6 +12,7 @@ import {
   PinkNoise,
   Playground,
   Rain,
+  RainOnTent,
   Storm,
   StreamWater,
   Train,
@@ -192,6 +193,15 @@ export const sounds = [
     icon: Boat,
     file: {
       url: 'https://storage.googleapis.com/ambience-sounds/boat.ogg',
+      type: 'audio/ogg'
+    }
+  },
+  {
+    id: 'rain-on-tent',
+    title: 'Rain on Tent',
+    icon: RainOnTent,
+    file: {
+      url: 'https://storage.googleapis.com/ambience-sounds/rain-on-tent.ogg',
       type: 'audio/ogg'
     }
   },
