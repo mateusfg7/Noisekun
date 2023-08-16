@@ -17,6 +17,7 @@
     "bump-tag": "tsx tools/bump-tag-version.ts",
     "prepare": "husky install"
   },
+  "packageManager": "pnpm@8.6.10",
   "dependencies": {
     "@headlessui/react": "1.7.16",
     "@newhighsco/next-plugin-svgr": "^3.0.104",
