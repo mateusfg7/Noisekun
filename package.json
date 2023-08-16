@@ -21,12 +21,10 @@
   "dependencies": {
     "@headlessui/react": "1.7.16",
     "@newhighsco/next-plugin-svgr": "^3.0.104",
-    "howler": "2.2.3",
     "next": "13.4.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "4.10.1",
-    "react-switch": "7.0.0",
     "tailwind-scrollbar-hide": "1.1.7",
     "tailwind-variants": "^0.1.13",
     "zustand": "4.4.1"
@@ -37,7 +35,6 @@
     "@tailwindcss/forms": "^0.5.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
-    "@types/howler": "2.2.7",
     "@types/jest": "^29.5.3",
     "@types/node": "^20.4.7",
     "@types/react": "18.2.20",
