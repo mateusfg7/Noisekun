@@ -9,6 +9,7 @@ import {
   Leaves,
   Night,
   PinkNoise,
+  Playground,
   Rain,
   Storm,
   StreamWater,
@@ -172,6 +173,15 @@ export const sounds = [
     icon: WashingMachine,
     file: {
       url: 'https://storage.googleapis.com/ambience-sounds/washing-machine.ogg',
+      type: 'audio/ogg'
+    }
+  },
+  {
+    id: 'playground',
+    title: 'Playground',
+    icon: Playground,
+    file: {
+      url: 'https://storage.googleapis.com/ambience-sounds/playground.ogg',
       type: 'audio/ogg'
     }
   },
