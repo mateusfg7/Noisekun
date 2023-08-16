@@ -27,7 +27,7 @@ _Listen combinations of ambient sounds for **relaxing** or getting more **produc
 
 # ✨ Features
 
-- 20 Ambience sounds
+- 21 Ambience sounds
 - Control volume for each sound individually
 - Control global sound
 - Enhance look with 7 themes
