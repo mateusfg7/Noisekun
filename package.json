@@ -19,6 +19,7 @@
   },
   "packageManager": "pnpm@8.6.10",
   "dependencies": {
+    "@ducanh2912/next-pwa": "^9.4.0",
     "@headlessui/react": "1.7.16",
     "@newhighsco/next-plugin-svgr": "^3.0.104",
     "next": "13.4.13",
@@ -56,6 +57,7 @@
     "simple-git": "^3.19.1",
     "tailwindcss": "3.3.3",
     "tsx": "^3.12.7",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "webpack": "^5.88.2"
   }
 }
