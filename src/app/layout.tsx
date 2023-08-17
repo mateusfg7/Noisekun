@@ -5,10 +5,18 @@ import { Nunito } from 'next/font/google'
 import './global.css'
 import Script from 'next/script'
 
+const APP_NAME = 'Noisekun'
+const APP_DESCRIPTION =
+  'Listen combinations of ambient sounds for relaxing or getting more productive on your task!'
+const APP_URL = 'https://noisekun.mateusf.com'
+
 export const metadata: Metadata = {
-  title: 'Noisekun',
-  description:
-    'Listen combinations of ambient sounds for relaxing or getting more productive on your task!',
+  title: APP_NAME,
+  applicationName: APP_NAME,
+  description: APP_DESCRIPTION,
+  manifest: '/manifest.json',
+  themeColor: '#04A2DC',
+
   keywords: [
     'noise',
     'sound',
@@ -30,24 +38,29 @@ export const metadata: Metadata = {
     width: 'device-width',
     viewportFit: 'cover'
   },
-  themeColor: '#04A2DC',
+  formatDetection: {
+    telephone: false
+  },
+
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: APP_NAME
+  },
   openGraph: {
     type: 'website',
-    url: 'https://noisekun.vercel.app/',
-    title: 'Noisekun',
-    description:
-      'Listen combinations of ambient sounds for relaxing or getting more productive on your task!',
-    images: 'https://noisekun.vercel.app/images/banner.png'
+    title: APP_NAME,
+    description: APP_DESCRIPTION,
+    url: APP_URL,
+    images: `${APP_URL}/images/banner.png`
   },
   twitter: {
     card: 'summary_large_image',
-    site: 'https://noisekun.vercel.app/',
-    title: 'Noisekun',
-    description:
-      'Listen combinations of ambient sounds for relaxing or getting more productive on your task!',
-    images: 'https://noisekun.vercel.app/images/banner.png'
-  },
-  manifest: '/manifest.json'
+    site: APP_URL,
+    title: APP_NAME,
+    description: APP_DESCRIPTION,
+    images: `${APP_URL}/images/banner.png`
+  }
 }
 
 const nunito = Nunito({
