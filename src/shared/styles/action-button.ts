@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants'
 
-export const button = tv({
+export const actionButton = tv({
   base: /*tw:*/ 'rounded-xl text-white bg-white/5 px-2 py-1 leading-none tracking-wider duration-300  hover:bg-white/20 active:bg-white/10 disabled:bg-white/5 disabled:opacity-70',
   variants: {
     theme: {

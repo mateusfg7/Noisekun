@@ -1,6 +1,6 @@
 import { useSoundsStateStore } from '@/stores/sounds-state-store'
 import { useThemeStore } from '@/stores/theme-store'
-import { button } from './styles'
+import { actionButton } from '@/shared/styles/action-button'
 
 export function ClearButton() {
   const bulkSoundUpdate = useSoundsStateStore(state => state.bulkUpdate)
@@ -9,7 +9,6 @@ export function ClearButton() {
   const theme = useThemeStore(state => state.theme)
 
   function clear() {
-    console.log('Clicou')
     const disabledSoundList = soundStates.map(sound => ({
       ...sound,
       active: false
@@ -26,7 +25,7 @@ export function ClearButton() {
     <button
       disabled={isDisabled()}
       onClick={clear}
-      className={button({ theme })}
+      className={actionButton({ theme })}
       title="Clear all active sounds"
     >
       clear
