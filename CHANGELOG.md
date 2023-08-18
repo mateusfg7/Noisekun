@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/mateusfg7/Noisekun/compare/1.0.0...1.0.1) (2023-08-18)
+
+
+### Features
+
+* **analytics:** add umami event tracker on buttons and links ([fb63cad](https://github.com/mateusfg7/Noisekun/commit/fb63cad3f685e40e44d0edb4a5396635146b0a00))
+
 ## [1.0.0](https://github.com/mateusfg7/Noisekun/compare/0.7.0...1.0.0) (2023-08-18)
 
 
