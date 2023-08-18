@@ -1,3 +1,25 @@
+## [1.0.0](https://github.com/mateusfg7/Noisekun/compare/0.7.0...1.0.0) (2023-08-18)
+
+
+### Features
+
+* **pwa:** add PWA support ([6b549fe](https://github.com/mateusfg7/Noisekun/commit/6b549feb3ad82dc8991e045c1ebbb20c636dce95)), closes [#516](https://github.com/mateusfg7/Noisekun/issues/516)
+* **sound:** add "Boat" ([d2186ac](https://github.com/mateusfg7/Noisekun/commit/d2186ac396783f21b2fe5f828ea40a8631992238)), closes [#293](https://github.com/mateusfg7/Noisekun/issues/293)
+* **sound:** add "Playground" ([d24c00a](https://github.com/mateusfg7/Noisekun/commit/d24c00a05b8958e1a5a49e330984ce69a63fbf77)), closes [#174](https://github.com/mateusfg7/Noisekun/issues/174)
+* **sound:** add "Rain on Tent" ([19ad037](https://github.com/mateusfg7/Noisekun/commit/19ad037401e73a7d31dc32c2be9b5cf9924aefe3)), closes [#523](https://github.com/mateusfg7/Noisekun/issues/523)
+* **stores:** create combo-store ([c232241](https://github.com/mateusfg7/Noisekun/commit/c232241d62b4f0b894067a93d5b01bbaf86a8f67))
+* **stores:** create sounds-state-store ([a81febc](https://github.com/mateusfg7/Noisekun/commit/a81febc45a07a9fc457c03f7745b84f7fc2afd87))
+* **tailwind:** add `minWidth` size ([b977386](https://github.com/mateusfg7/Noisekun/commit/b977386095246aa2f479a435a373f52212bf4aeb))
+* **ui:** add clear-button to remove active sounds ([8acb72b](https://github.com/mateusfg7/Noisekun/commit/8acb72b64c36fe92de557151f9482797f13e1430)), closes [#537](https://github.com/mateusfg7/Noisekun/issues/537)
+* **ui:** create "combo-list" component ([557aa8e](https://github.com/mateusfg7/Noisekun/commit/557aa8e227e08b14769b8d30f73a81306d7c1be6))
+* **ui:** create "save-combo" button ([5c69eac](https://github.com/mateusfg7/Noisekun/commit/5c69eac83cfba1ce062a2d26454436e31b6cee5e))
+* **ui:** update border-radius of sound icons ([f77a0fe](https://github.com/mateusfg7/Noisekun/commit/f77a0fed5ae42dad9254bdd85cd4f24f43351eb1))
+
+
+### Bug Fixes
+
+* **ui:** remove hard coded white color for some sound svg ([82ed65d](https://github.com/mateusfg7/Noisekun/commit/82ed65d276b915f8d46ba07dfde49c2d014c128c))
+
 ## [0.7.0](https://github.com/mateusfg7/Noisekun/compare/0.6.0...0.7.0) (2023-08-11)
 
 
