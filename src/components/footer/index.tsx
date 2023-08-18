@@ -41,13 +41,13 @@ export function Footer() {
           <Info
             href="https://github.com/mateusfg7/Noisekun/blob/master/LICENSE"
             className="cursor-pointer"
-            umami-data-event="License Link"
+            data-umami-event="License Link"
           >
             <AiOutlineCopyrightCircle /> MIT License
           </Info>
           <Info
             href="https://github.com/mateusfg7"
-            umami-data-event="Author Link"
+            data-umami-event="Author Link"
           >
             by <span className="font-bold">mateusfg7</span>
           </Info>
@@ -55,14 +55,14 @@ export function Footer() {
         <section className="flex flex-col gap-2 sm:gap-0">
           <Info
             href="https://github.com/mateusfg7/Noisekun"
-            umami-data-event="Repository Link"
+            data-umami-event="Repository Link"
           >
             <FiGithub /> Source
           </Info>
 
           <Info
             href="https://github.com/mateusfg7/Noisekun/#credits"
-            umami-data-event="Credits Link"
+            data-umami-event="Credits Link"
           >
             <FiAward /> Credits
           </Info>
@@ -71,7 +71,7 @@ export function Footer() {
       <a
         href={`https://github.com/mateusfg7/Noisekun/releases/tag/${packageJson.version}`}
         className={version({ theme })}
-        umami-data-event="Version Link"
+        data-umami-event="Version Link"
       >
         {packageJson.version}
       </a>

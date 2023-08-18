@@ -99,7 +99,7 @@ export function Pomodoro() {
         title="Reset Pomodoro timer"
         onClick={resetTimer}
         className={controlButton({ theme })}
-        umami-data-event="Reset pomodoro timer"
+        data-umami-event="Reset pomodoro timer"
       >
         <FiRotateCw />
       </button>
@@ -117,7 +117,7 @@ export function Pomodoro() {
         title="Toggle Pomodoro timer"
         onClick={handleToggle}
         className={controlButton({ theme })}
-        umami-data-event="Play/pause pomodoro timer"
+        data-umami-event="Play/pause pomodoro timer"
       >
         {isTicking ? <FiPause /> : <FiPlay />}
       </button>

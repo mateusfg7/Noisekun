@@ -53,7 +53,7 @@ export function ComboList() {
       <Menu>
         <Menu.Button
           title="Toggle combo list"
-          umami-data-event="Open combo list"
+          data-umami-event="Open combo list"
           disabled={isEmpty}
           className={triggerButton({ theme })}
         >
@@ -95,7 +95,7 @@ export function ComboList() {
                     <button
                       className={comboButton({ theme, active })}
                       onClick={() => updateCombo(combo.id)}
-                      umami-data-event="Select combo"
+                      data-umami-event="Select combo"
                     >
                       <span className="font-bold">{combo.name}</span>
                     </button>
@@ -109,7 +109,7 @@ export function ComboList() {
                   key={combo.id}
                   className={editButton({ theme })}
                   onClick={() => deleteCombo(combo.id)}
-                  umami-data-event="Delete combo"
+                  data-umami-event="Delete combo"
                 >
                   <span className="font-bold">{combo.name}</span>
                   <FiTrash />

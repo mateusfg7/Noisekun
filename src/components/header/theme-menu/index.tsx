@@ -64,7 +64,7 @@ export function ThemeMenu() {
           <Menu.Button
             title="Toggle theme menu"
             className={triggerButton({ theme: currentTheme })}
-            umami-data-event="Open theme menu"
+            data-umami-event="Open theme menu"
           >
             <PiPaintBrushBroadBold size={22} />
           </Menu.Button>
@@ -96,7 +96,7 @@ export function ThemeMenu() {
                             background: theme.id
                           })}
                           onClick={() => handleTheme(theme.id)}
-                          umami-data-event={`Select ${theme.title} Theme`}
+                          data-umami-event={`Select ${theme.title} Theme`}
                         >
                           {theme.title}
                         </button>
