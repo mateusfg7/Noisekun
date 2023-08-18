@@ -147,12 +147,13 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       <audio ref={soundRef} preload="auto" loop>
         <source src={sound.file.url} type={sound.file.type} />
       </audio>
-      <div
+      <button
+        umami-data-event={sound.title}
         className={iconContainer({ active: localSoundState.active, theme })}
         onClick={() => setIsUpdatingSoundState(true)}
       >
         <Icon className={icon()} />
-      </div>
+      </button>
       <VolumeController
         isActive={localSoundState.active}
         soundName={sound.title}

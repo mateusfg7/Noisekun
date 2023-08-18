@@ -67,6 +67,7 @@ export function GlobalVolumeController() {
         title="Enable/disable sound"
         className={soundButton({ theme })}
         onClick={toggleMuted}
+        umami-data-event="Mute/Unmute global volume"
       >
         {globalVolume >= 0.5 && <FiVolume2 size={25} />}
         {globalVolume >= 0.25 && globalVolume < 0.5 && <FiVolume1 size={25} />}

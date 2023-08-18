@@ -52,6 +52,7 @@ export function ConfigModal({
           type="button"
           onClick={openModal}
           className={display({ theme })}
+          umami-data-event="Open pomodoro config"
         >
           <div
             title="Pomodoro timer"
@@ -119,12 +120,14 @@ export function ConfigModal({
                   <div className="flex justify-end gap-1">
                     <button
                       onClick={handleReset}
+                      umami-data-event="Reset pomodoro config"
                       className="rounded-lg px-5 py-3 text-lg leading-none text-red-800 transition-colors hover:bg-red-800 hover:text-red-100"
                     >
                       Reset
                     </button>
                     <button
                       onClick={handleSave}
+                      umami-data-event="Save pomodoro config"
                       className="rounded-lg bg-green-100 px-5 py-3 text-lg leading-none text-green-950 transition-colors hover:bg-green-900 hover:text-green-100"
                     >
                       Save

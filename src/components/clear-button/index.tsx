@@ -27,6 +27,7 @@ export function ClearButton() {
       onClick={clear}
       className={actionButton({ theme })}
       title="Clear all active sounds"
+      umami-data-event="Clear Button"
     >
       clear
     </button>
