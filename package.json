@@ -52,7 +52,7 @@
     "jest": "^29.6.2",
     "jest-environment-jsdom": "^29.6.2",
     "postcss": "8.4.27",
-    "prettier": "3.0.1",
+    "prettier": "3.0.2",
     "prettier-plugin-tailwindcss": "^0.5.0",
     "semver": "^7.5.4",
     "simple-git": "^3.19.1",
