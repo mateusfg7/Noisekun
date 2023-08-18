@@ -38,7 +38,8 @@ module.exports = {
       },
       animation: {
         'background-change': 'background-change 300s 0s infinite',
-        'background-change-sm': 'background-change 20s 0s infinite'
+        'background-change-sm': 'background-change 20s 0s infinite',
+        'show-input': 'show-input .1s 0s'
       },
       keyframes: {
         'background-change': {
@@ -102,8 +103,23 @@ module.exports = {
           '100%': {
             background: '#0485B4'
           }
+        },
+        'show-input': {
+          '0%': {
+            opacity: '0',
+            transform:
+              'translate(50%, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))'
+          },
+          '100%': {
+            opacity: '0.3',
+            transform:
+              'translate(0, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))'
+          }
         }
       }
+    },
+    minWidth: {
+      40: '10rem'
     }
   },
   plugins: [
