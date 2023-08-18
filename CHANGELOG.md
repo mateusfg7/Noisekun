@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/mateusfg7/Noisekun/compare/1.0.1...1.0.2) (2023-08-18)
+
+
+### Bug Fixes
+
+* **analytics:** rename all "umami-data-event" to "data-umami-event" ([db009d5](https://github.com/mateusfg7/Noisekun/commit/db009d5be2da5f55e47d4480a86a183f94afdad2))
+
 ## [1.0.1](https://github.com/mateusfg7/Noisekun/compare/1.0.0...1.0.1) (2023-08-18)
 
 
