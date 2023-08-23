@@ -1,11 +1,8 @@
 import { tv } from 'tailwind-variants'
 
-export const iconContainer = tv({
+export const soundButton = tv({
   base: /*tw:*/ 'flex justify-center items-center w-24 h-24 rounded-xl cursor-pointer transition duration-300 opacity-70 md:hover:opacity-100 md:hover:shadow-sound',
   variants: {
-    active: {
-      true: /*tw:*/ 'rounded-b-none opacity-100 md:shadow-sound '
-    },
     theme: {
       transition: /*tw:*/ 'text-white/90 md:hover:bg-white/10',
       dark: /*tw:*/ 'text-dark-foreground/90 md:hover:bg-dark-foreground/10',
@@ -14,6 +11,12 @@ export const iconContainer = tv({
       train: /*tw:*/ 'text-train/90 md:hover:bg-train/10',
       waterfall: /*tw:*/ 'text-waterfall/90 md:hover:bg-waterfall/10',
       'camping-fire': /*tw:*/ 'text-camping-fire/90 md:hover:bg-camping-fire/10'
+    },
+    active: {
+      true: /*tw:*/ 'rounded-b-none opacity-100 md:shadow-sound'
+    },
+    loading: {
+      true: /*tw:*/ 'animate-pulse cursor-wait md:hover:opacity-70 md:hover:bg-transparent md:hover:shadow-none'
     }
   },
   compoundVariants: [

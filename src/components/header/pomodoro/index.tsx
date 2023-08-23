@@ -97,8 +97,9 @@ export function Pomodoro() {
 
       <button
         title="Reset Pomodoro timer"
+        disabled={isLoadingStorage}
         onClick={resetTimer}
-        className={controlButton({ theme })}
+        className={controlButton({ theme, isLoading: isLoadingStorage })}
         data-umami-event="Reset pomodoro timer"
       >
         <FiRotateCw />
@@ -106,6 +107,7 @@ export function Pomodoro() {
 
       <ConfigModal
         minutes={getMinutes(defaultTimeInSec)}
+        isLoading={isLoadingStorage}
         setMinutes={setMinutes}
         displayMinutes={isLoadingStorage ? '-' : getMinutes(remainingTime)}
         displaySeconds={
@@ -116,7 +118,8 @@ export function Pomodoro() {
       <button
         title="Toggle Pomodoro timer"
         onClick={handleToggle}
-        className={controlButton({ theme })}
+        disabled={isLoadingStorage}
+        className={controlButton({ theme, isLoading: isLoadingStorage })}
         data-umami-event="Play/pause pomodoro timer"
       >
         {isTicking ? <FiPause /> : <FiPlay />}

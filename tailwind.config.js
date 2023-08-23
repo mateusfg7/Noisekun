@@ -39,7 +39,8 @@ module.exports = {
       animation: {
         'background-change': 'background-change 300s 0s infinite',
         'background-change-sm': 'background-change 20s 0s infinite',
-        'show-input': 'show-input .1s 0s'
+        'show-input': 'show-input .1s 0s',
+        loading: 'loading 1.5s 0s infinite'
       },
       keyframes: {
         'background-change': {
@@ -114,6 +115,17 @@ module.exports = {
             opacity: '0.3',
             transform:
               'translate(0, var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))'
+          }
+        },
+        loading: {
+          '0%': {
+            opacity: '0.4'
+          },
+          '50%': {
+            opacity: '0.6'
+          },
+          '100%': {
+            opacity: '0.4'
           }
         }
       }

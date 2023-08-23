@@ -19,13 +19,21 @@ export const controlButton = tv({
   base: /*tw:*/ 'flex h-8 w-8 items-center justify-center rounded-xl text-base transition-colors',
   variants: {
     theme: {
-      transition: /*tw:*/ 'bg-white/10 hover:bg-white/30',
-      dark: /*tw:*/ 'bg-dark-foreground/10 hover:bg-dark-foreground/30',
-      light: /*tw:*/ 'bg-light-foreground/5 hover:bg-light-foreground/10',
-      'blue-room': /*tw:*/ 'bg-blue-room/10 hover:bg-blue-room/30',
-      train: /*tw:*/ 'bg-train/10 hover:bg-train/30',
-      waterfall: /*tw:*/ 'bg-waterfall/10 hover:bg-waterfall/30',
-      'camping-fire': /*tw:*/ 'bg-camping-fire/10 hover:bg-camping-fire/30'
+      transition:
+        /*tw:*/ 'bg-white/10 hover:bg-white/30 disabled:hover:bg-white/10',
+      dark: /*tw:*/ 'bg-dark-foreground/10 hover:bg-dark-foreground/30 disabled:hover:bg-dark-foreground/10',
+      light:
+        /*tw:*/ 'bg-light-foreground/5 hover:bg-light-foreground/10 disabled:hover:bg-light-foreground/5',
+      'blue-room':
+        /*tw:*/ 'bg-blue-room/10 hover:bg-blue-room/30 disabled:hover:bg-blue-room/10',
+      train: /*tw:*/ 'bg-train/10 hover:bg-train/30 disabled:hover:bg-train/10',
+      waterfall:
+        /*tw:*/ 'bg-waterfall/10 hover:bg-waterfall/30 disabled:hover:bg-waterfall/10',
+      'camping-fire':
+        /*tw:*/ 'bg-camping-fire/10 hover:bg-camping-fire/30 disabled:hover:bg-camping-fire/10'
+    },
+    isLoading: {
+      true: /*tw:*/ 'animate-pulse cursor-wait'
     }
   }
 })
@@ -34,13 +42,21 @@ export const display = tv({
   base: /*tw:*/ 'rounded-xl transition-colors',
   variants: {
     theme: {
-      transition: /*tw:*/ 'bg-white/10 hover:bg-white/30',
-      dark: /*tw:*/ 'bg-dark-foreground/10 hover:bg-dark-foreground/30',
-      light: /*tw:*/ 'bg-light-foreground/5 hover:bg-light-foreground/10',
-      'blue-room': /*tw:*/ 'bg-blue-room/10 hover:bg-blue-room/30',
-      train: /*tw:*/ 'bg-train/10 hover:bg-train/30',
-      waterfall: /*tw:*/ 'bg-waterfall/10 hover:bg-waterfall/30',
-      'camping-fire': /*tw:*/ 'bg-camping-fire/10 hover:bg-camping-fire/30'
+      transition:
+        /*tw:*/ 'bg-white/10 hover:bg-white/30 disabled:hover:bg-white/10',
+      dark: /*tw:*/ 'bg-dark-foreground/10 hover:bg-dark-foreground/30 disabled:hover:bg-dark-foreground/10',
+      light:
+        /*tw:*/ 'bg-light-foreground/5 hover:bg-light-foreground/10 disabled:hover:bg-light-foreground/10',
+      'blue-room':
+        /*tw:*/ 'bg-blue-room/10 hover:bg-blue-room/30 disabled:hover:bg-blue-room/10',
+      train: /*tw:*/ 'bg-train/10 hover:bg-train/30 disabled:hover:bg-train/10',
+      waterfall:
+        /*tw:*/ 'bg-waterfall/10 hover:bg-waterfall/30 disabled:hover:bg-waterfall/10',
+      'camping-fire':
+        /*tw:*/ 'bg-camping-fire/10 hover:bg-camping-fire/30 disabled:hover:bg-camping-fire/10'
+    },
+    isLoading: {
+      true: /*tw:*/ 'animate-pulse cursor-wait'
     }
   }
 })

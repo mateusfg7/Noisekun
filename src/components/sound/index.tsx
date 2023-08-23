@@ -9,7 +9,7 @@ import { SoundState, useSoundsStateStore } from '@/stores/sounds-state-store'
 
 import { VolumeController } from './volume-controller'
 import { fadeSound } from './fade-sound'
-import { icon, iconContainer } from './styles'
+import { icon, soundButton } from './styles'
 
 interface SoundButtonProps {
   sound: Sound
@@ -29,6 +29,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     volume: 1
   })
   const [isUpdatingSoundState, setIsUpdatingSoundState] = useState(false)
+  const [isAvailable, setIsAvailable] = useState(false)
 
   const soundRef = useRef<HTMLAudioElement>()
 
@@ -144,12 +145,22 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       title={sound.title}
       className="flex h-24 w-24 flex-col items-center justify-center"
     >
-      <audio ref={soundRef} preload="auto" loop>
+      <audio
+        ref={soundRef}
+        preload="auto"
+        onLoadedData={() => setIsAvailable(true)}
+        loop
+      >
         <source src={sound.file.url} type={sound.file.type} />
       </audio>
       <button
         data-umami-event={sound.title}
-        className={iconContainer({ active: localSoundState.active, theme })}
+        disabled={!isAvailable}
+        className={soundButton({
+          active: localSoundState.active,
+          theme,
+          loading: !isAvailable
+        })}
         onClick={() => setIsUpdatingSoundState(true)}
       >
         <Icon className={icon()} />

@@ -9,11 +9,13 @@ interface Props {
   displayMinutes: string
   displaySeconds: string
   minutes: string
+  isLoading: boolean
   setMinutes: (minutes: number) => void
 }
 
 export function ConfigModal({
   minutes,
+  isLoading,
   setMinutes,
   displayMinutes,
   displaySeconds
@@ -51,7 +53,8 @@ export function ConfigModal({
         <button
           type="button"
           onClick={openModal}
-          className={display({ theme })}
+          disabled={isLoading}
+          className={display({ theme, isLoading })}
           data-umami-event="Open pomodoro config"
         >
           <div
