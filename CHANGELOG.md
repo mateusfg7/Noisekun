@@ -1,3 +1,15 @@
+## [1.0.3](https://github.com/mateusfg7/Noisekun/compare/1.0.2...1.0.3) (2023-08-25)
+
+
+### Features
+
+* **ui:** add loading animation on sound and pomodoro components ([79382b5](https://github.com/mateusfg7/Noisekun/commit/79382b5b5d572f776514dedbba481c9f64afa308))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @headlessui/react to v1.7.17 ([b420f48](https://github.com/mateusfg7/Noisekun/commit/b420f48e5df7c4287aef11e2f8139704c26fa9f9))
+
 ## [1.0.2](https://github.com/mateusfg7/Noisekun/compare/1.0.1...1.0.2) (2023-08-18)
 
 
