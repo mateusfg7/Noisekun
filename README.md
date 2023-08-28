@@ -109,6 +109,9 @@ Sound                                                                     | Auth
 
 Didn't like Noisekun? Check some alternatives!
 
+> _Know a cool alternative? Make a Pull Request and [increase the list](https://github.com/mateusfg7/Noisekun/edit/main/README.md)!_
+
+## Ambience
 - [**Noisli**](https://www.noisli.com/) (Web|Iphone|Android|Chrome) *_the inspiration for this project_
 - [**A Soft Murmur**](https://asoftmurmur.com/) (Web)
 - [**Blanket**](https://github.com/rafaelmardojai/blanket) (Linux)
@@ -118,6 +121,13 @@ Didn't like Noisekun? Check some alternatives!
 - [**Noice**](https://trynoice.com/) (Android|Web*)
 - [**Deepfocus**](https://deepfocus.io/) (Web)
 - [**Monkemode**](https://monkmode.xyz/) (Web)
+- [**Lofi.co**](https://lofi.co) (Web)
+- [**I Miss My Bar**](http://imissmybar.com/) (web)
+- [**I Miss My Library**](https://www.imissmylibrary.com/) (Web)
+- [**I Miss My Cafe**](https://imissmycafe.com/) (Web)
+- [**Noises**](https://noises.online/) (Web)
 
-> _Know a cool alternative? Make a Pull Request and [increase the list](https://github.com/mateusfg7/Noisekun/edit/main/README.md)!_
+## Other related tools
+
+- [**Flocus**](https://flocus.com/minimalist-pomodoro-timer/) _pomodoro_ (Web)
 
