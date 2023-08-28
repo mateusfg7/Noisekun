@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/mateusfg7/Noisekun/compare/1.0.3...1.0.4) (2023-08-28)
+
+
+### Features
+
+* **sound:** get sounds from Noisekun CDN instead GCS ([9acac5f](https://github.com/mateusfg7/Noisekun/commit/9acac5ffe41c1e74b759cf5417543968bce73dd7))
+
 ## [1.0.3](https://github.com/mateusfg7/Noisekun/compare/1.0.2...1.0.3) (2023-08-25)
 
 
