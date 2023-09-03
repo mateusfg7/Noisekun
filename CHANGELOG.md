@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/mateusfg7/Noisekun/compare/1.0.4...1.0.5) (2023-09-03)
+
+
+### Bug Fixes
+
+* **ui:** remove shadown when sound is loading ([40dd618](https://github.com/mateusfg7/Noisekun/commit/40dd618f5a3ad366188354955bfd59b68873ffc4))
+
 ## [1.0.4](https://github.com/mateusfg7/Noisekun/compare/1.0.3...1.0.4) (2023-08-28)
 
 
