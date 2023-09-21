@@ -39,7 +39,7 @@
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.3",
     "@types/node": "^20.4.7",
-    "@types/react": "18.2.20",
+    "@types/react": "18.2.22",
     "@types/semver": "^7.5.0",
     "autoprefixer": "10.4.15",
     "cz-conventional-changelog": "3.3.0",
