@@ -42,7 +42,7 @@
     "@types/node": "^20.4.7",
     "@types/react": "18.2.23",
     "@types/semver": "^7.5.0",
-    "autoprefixer": "10.4.15",
+    "autoprefixer": "10.4.16",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
