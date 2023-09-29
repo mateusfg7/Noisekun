@@ -43,8 +43,8 @@ export function GlobalVolumeController() {
       className="flex items-center gap-3 opacity-90 hover:opacity-100"
     >
       <div
-        data-isShowing={isShowing}
-        className="group relative hidden h-max w-28 items-center data-[isShowing='true']:flex"
+        data-is-showing={isShowing}
+        className="group relative hidden h-max w-28 items-center data-[is-showing='true']:flex"
       >
         <span className="sr-only">
           Global volume in {Number(globalVolume * 100).toFixed(1)}%
