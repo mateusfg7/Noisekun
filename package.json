@@ -17,7 +17,7 @@
     "bump-tag": "tsx tools/bump-tag-version.ts",
     "prepare": "husky install"
   },
-  "packageManager": "pnpm@8.7.6",
+  "packageManager": "pnpm@8.8.0",
   "dependencies": {
     "@ducanh2912/next-pwa": "^9.4.0",
     "@faker-js/faker": "^8.0.2",
