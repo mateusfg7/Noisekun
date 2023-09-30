@@ -1,10 +1,10 @@
 import { tv } from 'tailwind-variants'
 
 export const input = tv({
-  base: /*tw:*/ 'form-input rounded-xl text-white bg-white/5 px-2 py-0 border-none focus:ring-0 leading-none tracking-wider duration-300 w-32 text-center animate-show-input placeholder:text-sm opacity-30 hover:opacity-100 focus:opacity-100',
+  base: /*tw:*/ 'form-input rounded-xl px-2 py-0 border-none focus:ring-0 leading-none tracking-wider duration-300 w-32 text-center animate-show-input placeholder:text-sm',
   variants: {
     theme: {
-      transition: /*tw:*/ '',
+      transition: /*tw:*/ 'text-white placeholder:text-white/60 bg-white/5',
       dark: /*tw:*/ 'text-dark-foreground placeholder:text-dark-foreground/60 bg-dark-foreground/5',
       light:
         /*tw:*/ 'text-light-foreground placeholder:text-light-foreground/60 bg-light-foreground/5',
