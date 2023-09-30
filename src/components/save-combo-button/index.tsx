@@ -16,10 +16,17 @@ export function SaveComboButton() {
 
   const [comboName, setComboName] = useState('')
   const [showSuccess, setShowSuccess] = useState(false)
+  const [showInput, setShowInput] = useState(false)
 
   function save() {
-    if (!comboName) return
     if (!sounds.some(sound => sound.active)) return
+
+    if (!showInput) {
+      setShowInput(true)
+      return
+    }
+
+    if (!comboName) return
 
     const activeSounds = sounds.filter(sound => sound.active)
 
@@ -30,6 +37,7 @@ export function SaveComboButton() {
     })
 
     setComboName('')
+    setShowInput(false)
     setShowSuccess(true)
 
     setTimeout(() => setShowSuccess(false), 2000)
@@ -39,7 +47,7 @@ export function SaveComboButton() {
 
   return (
     <div className="flex gap-1">
-      {sounds.some(sound => sound.active) && (
+      {showInput && (
         <input
           disabled={disabled}
           type="text"
