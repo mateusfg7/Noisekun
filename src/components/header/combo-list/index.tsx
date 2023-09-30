@@ -1,5 +1,5 @@
-import { Fragment, useState } from 'react'
-import { Menu, Transition, Switch } from '@headlessui/react'
+import { Fragment, useEffect, useState } from 'react'
+import { Menu, Transition } from '@headlessui/react'
 import { PiPlaylistBold } from 'react-icons/pi'
 import { FiTrash } from 'react-icons/fi'
 
@@ -23,6 +23,7 @@ export function ComboList() {
   const deleteCombo = useComboStore(state => state.deleteCombo)
 
   const [editMode, setEditMode] = useState(false)
+  const [isEmpty, setIsEmpty] = useState(true)
 
   function updateCombo(id: string) {
     const combo = combos.filter(combo => combo.id === id)
@@ -46,7 +47,13 @@ export function ComboList() {
     bulkUpdate([...disabledSounds, ...comboSounds])
   }
 
-  const isEmpty = combos.length === 0
+  useEffect(() => {
+    setIsEmpty(combos.length === 0)
+  }, [])
+
+  useEffect(() => {
+    setIsEmpty(combos.length === 0)
+  }, [combos])
 
   return (
     <div className="z-40">
