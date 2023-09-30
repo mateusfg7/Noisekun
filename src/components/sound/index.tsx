@@ -35,7 +35,6 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
 
     if (soundState.active) soundRef.current.play()
     else soundRef.current.pause()
-    
 
     setLocalSoundState(soundState)
   }
@@ -78,7 +77,8 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       case PomodoroStatus.ticking:
       case PomodoroStatus.idle:
         if (soundRef.current.volume === 0) {
-          soundRef.current.volume = getSoundState(sound.id).volume * globalVolume
+          soundRef.current.volume =
+            getSoundState(sound.id).volume * globalVolume
         }
         break
 
@@ -110,7 +110,9 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
           active: localSoundState.active,
           theme
         })}
-        onClick={() => setSoundState({ ...localSoundState, active: !localSoundState.active })}
+        onClick={() =>
+          setSoundState({ ...localSoundState, active: !localSoundState.active })
+        }
       >
         <Icon className={icon()} />
       </button>
