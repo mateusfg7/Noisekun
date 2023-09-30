@@ -8,7 +8,6 @@ import { PomodoroStatus, usePomodoroStore } from '@/stores/pomodoro-store'
 import { SoundState, useSoundsStateStore } from '@/stores/sounds-state-store'
 
 import { VolumeController } from './volume-controller'
-import { fadeSound } from './fade-sound'
 import { icon, soundButton } from './styles'
 
 interface SoundButtonProps {
@@ -28,40 +27,16 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     id: sound.id,
     volume: 1
   })
-  const [isUpdatingSoundState, setIsUpdatingSoundState] = useState(false)
 
   const soundRef = useRef<HTMLAudioElement>()
 
-  async function toggleSoundState() {
+  async function togglePlayPause() {
     const soundState = getSoundState(sound.id)
 
-    const currSoundVolume = soundState.volume * globalVolume
+    if (soundState.active) soundRef.current.play()
+    else soundRef.current.pause()
+    
 
-    if (soundState.active) {
-      // Play sound
-      fadeSound({
-        soundRef,
-        from: 0,
-        to: currSoundVolume,
-        totalFadeTimeMs: 200,
-        beforeFade() {
-          soundRef.current.play()
-        }
-      })
-    } else {
-      // Pause sound
-      fadeSound({
-        soundRef,
-        from: currSoundVolume,
-        to: 0,
-        totalFadeTimeMs: 200,
-        afterFade() {
-          soundRef.current.pause()
-        }
-      })
-    }
-
-    setIsUpdatingSoundState(false)
     setLocalSoundState(soundState)
   }
 
@@ -93,7 +68,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     if (!soundState || !localSoundState) return
 
     if (soundState.volume !== localSoundState.volume) updateSoundVolume()
-    if (soundState.active !== localSoundState.active) toggleSoundState()
+    if (soundState.active !== localSoundState.active) togglePlayPause()
   }, [soundsStore])
 
   useEffect(() => {
@@ -103,39 +78,21 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       case PomodoroStatus.ticking:
       case PomodoroStatus.idle:
         if (soundRef.current.volume === 0) {
-          fadeSound({
-            soundRef,
-            from: 0,
-            to: getSoundState(sound.id).volume * globalVolume,
-            totalFadeTimeMs: 200
-          })
+          soundRef.current.volume = getSoundState(sound.id).volume * globalVolume
         }
         break
 
       case PomodoroStatus.stopped:
         if (soundRef.current.volume > 0) {
-          fadeSound({
-            soundRef,
-            from: soundRef.current.volume,
-            to: 0,
-            totalFadeTimeMs: 200
-          })
+          soundRef.current.volume = 0
         }
         break
     }
   }, [pomodoroStatus])
 
   useEffect(() => {
-    if (!isUpdatingSoundState) {
-      soundRef.current.volume = getSoundState(sound.id).volume * globalVolume
-    }
+    soundRef.current.volume = getSoundState(sound.id).volume * globalVolume
   }, [globalVolume])
-
-  useEffect(() => {
-    if (!isUpdatingSoundState) return
-
-    setSoundState({ ...localSoundState, active: !localSoundState.active })
-  }, [isUpdatingSoundState])
 
   const Icon = sound.icon
 
@@ -153,7 +110,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
           active: localSoundState.active,
           theme
         })}
-        onClick={() => setIsUpdatingSoundState(true)}
+        onClick={() => setSoundState({ ...localSoundState, active: !localSoundState.active })}
       >
         <Icon className={icon()} />
       </button>
