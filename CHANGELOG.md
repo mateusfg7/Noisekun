@@ -1,3 +1,24 @@
+## [1.2.0](https://github.com/mateusfg7/Noisekun/compare/1.0.5...1.2.0) (2023-09-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **sound:** Fade In/Out volume
+
+### Features
+
+* **ui:** define combo input to show just when click on save button ([9f37c01](https://github.com/mateusfg7/Noisekun/commit/9f37c01f075a74bb916c682b0a6f0f1325bd2f75))
+
+
+### Bug Fixes
+
+* **deps:** update dependency react-icons to v4.11.0 ([e8d5617](https://github.com/mateusfg7/Noisekun/commit/e8d56170460b821855ffb70ca80bf033a9d9e467))
+* **sound:** remove sound fade in/out effect ([85c0af1](https://github.com/mateusfg7/Noisekun/commit/85c0af175033c8f9bcf341c929c06598f4c4f837)), closes [#249](https://github.com/mateusfg7/Noisekun/issues/249)
+* **ui:** add placeholder text color to combo input when on transition theme ([819fd39](https://github.com/mateusfg7/Noisekun/commit/819fd3963e15e7269ca83de85f770827cb53c5fe))
+* **ui:** define if combo list trigger button is disabled on client side ([b0fb23c](https://github.com/mateusfg7/Noisekun/commit/b0fb23c5e340d660d920dc21dd4cba5db980aece))
+* **ui:** remove infinite sound loading animation ([350bcbe](https://github.com/mateusfg7/Noisekun/commit/350bcbedd1b7afbfe45d0dfb61620b608e57f190))
+* **ui:** rename property `data-isShowing` to `data-is-showing` on global volume controller ([c4dada4](https://github.com/mateusfg7/Noisekun/commit/c4dada40c1599a68ee96245d44e578258d534958))
+
 ## [1.0.5](https://github.com/mateusfg7/Noisekun/compare/1.0.4...1.0.5) (2023-09-03)
 
 
