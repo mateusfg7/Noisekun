@@ -17,6 +17,7 @@ import {
 
 export function ComboList() {
   const theme = useThemeStore(set => set.theme)
+  const setTheme = useThemeStore(set => set.setTheme)
   const sounds = useSoundsStateStore(state => state.sounds)
   const bulkUpdate = useSoundsStateStore(state => state.bulkUpdate)
   const combos = useComboStore(state => state.combos)
@@ -39,12 +40,13 @@ export function ComboList() {
       .map(sound => ({ ...sound, active: false }))
 
     console.log(
-      `enabledSounds: ${comboSounds.map(
-        sound => `${sound.id}:${sound.volume}`
-      )}`
+      `
+      theme: ${combo[0].theme}
+      enabledSounds: ${comboSounds.map(sound => `${sound.id}:${sound.volume}`)}`
     )
 
     bulkUpdate([...disabledSounds, ...comboSounds])
+    setTheme(combo[0].theme)
   }
 
   useEffect(() => {

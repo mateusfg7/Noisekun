@@ -1,10 +1,12 @@
 import { create } from 'zustand'
 import { SoundState } from './sounds-state-store'
 import { persist } from 'zustand/middleware'
+import { Theme } from './theme-store'
 
 interface Combo {
   id: string
   name: string
+  theme: Theme
   sounds: SoundState[]
 }
 
@@ -27,6 +29,6 @@ export const useComboStore = create<Props>()(
         set({ combos })
       }
     }),
-    { name: 'combo-store', version: 1 }
+    { name: 'combo-store', version: 2 }
   )
 )

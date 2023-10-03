@@ -33,7 +33,8 @@ export function SaveComboButton() {
     saveCombo({
       id: faker.string.alphanumeric({ casing: 'lower', length: 6 }),
       name: comboName,
-      sounds: activeSounds
+      sounds: activeSounds,
+      theme
     })
 
     setComboName('')
