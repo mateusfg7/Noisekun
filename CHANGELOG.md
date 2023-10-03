@@ -1,3 +1,11 @@
+## [1.3.0](https://github.com/mateusfg7/Noisekun/compare/1.2.1...1.3.0) (2023-10-03)
+
+
+### Features
+
+* **a11y:** replace `<span>` with `<label>` on volume controller component ([7bafcbc](https://github.com/mateusfg7/Noisekun/commit/7bafcbc6e82e8d22b9f6dac9fc721b21ed7f2a2d)), closes [#388](https://github.com/mateusfg7/Noisekun/issues/388)
+* **ui:** save theme information on combo data ([3dcfcc6](https://github.com/mateusfg7/Noisekun/commit/3dcfcc63982ab4c04b0149412a2bd8e7deaf43c2))
+
 ## [1.2.1](https://github.com/mateusfg7/Noisekun/compare/1.2.0...1.2.1) (2023-10-03)
 
 
