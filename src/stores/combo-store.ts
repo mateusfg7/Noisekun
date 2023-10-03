@@ -27,6 +27,6 @@ export const useComboStore = create<Props>()(
         set({ combos })
       }
     }),
-    { name: 'combo-store' }
+    { name: 'combo-store', version: 1 }
   )
 )
