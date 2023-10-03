@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/mateusfg7/Noisekun/compare/1.2.0...1.2.1) (2023-10-03)
+
+
+### Features
+
+* **stores:** add version field on combo-store ([85983f2](https://github.com/mateusfg7/Noisekun/commit/85983f2aa181cd3b3f468d6261184223ff4d78db))
+
 ## [1.2.0](https://github.com/mateusfg7/Noisekun/compare/1.0.5...1.2.0) (2023-09-30)
 
 
