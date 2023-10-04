@@ -1,3 +1,15 @@
+## [1.3.2](https://github.com/mateusfg7/Noisekun/compare/1.3.0...1.3.2) (2023-10-04)
+
+
+### Features
+
+* **ui:** customize ui styles on webkit based browsers ([1f99d63](https://github.com/mateusfg7/Noisekun/commit/1f99d6370134d0dbf9da6d8ba2285040c6fc56f4))
+
+
+### Bug Fixes
+
+* **stores:** add correct version number on combo-store ([6463349](https://github.com/mateusfg7/Noisekun/commit/64633490119f7f365ba2d4eb3c4be76f45885a70))
+
 ## [1.3.0](https://github.com/mateusfg7/Noisekun/compare/1.2.1...1.3.0) (2023-10-03)
 
 
