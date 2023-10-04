@@ -38,4 +38,33 @@
       md:h-2 md:w-2
       md:group-hover:h-3 md:group-hover:w-3;
   }
+
+  .styled-scrollbar {
+    /* WEBKIT */
+
+    /* width */
+    &::-webkit-scrollbar {
+      @apply w-2 bg-transparent;
+    }
+
+    /* Track */
+    /*&::-webkit-scrollbar-track {
+      @apply bg-transparent;
+    }*/
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      @apply cursor-pointer rounded-full bg-neutral-800/40;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      @apply cursor-grab bg-neutral-800/70;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:active {
+      @apply bg-neutral-800/90;
+    }
+  }
 }

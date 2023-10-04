@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div className={container({ background })}>
       <Header />
-      <div className="h-[90vh] space-y-24 overflow-y-scroll pt-16 md:h-[87vh]">
+      <div className="styled-scrollbar h-[90vh] space-y-24 overflow-y-scroll pt-16 md:h-[87vh]">
         <div className="m-auto flex w-fit flex-col items-center gap-3">
           <div className="hidden w-full items-center justify-end gap-2 px-4 xs:flex">
             <SaveComboButton />
