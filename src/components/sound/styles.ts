@@ -1,19 +1,30 @@
 import { tv } from 'tailwind-variants'
 
 export const soundButton = tv({
-  base: /*tw:*/ 'flex justify-center items-center w-24 h-24 rounded-xl cursor-pointer transition duration-300 opacity-70 md:hover:opacity-100 md:hover:shadow-sound',
+  base: /*tw:*/ 'flex justify-center items-center w-24 h-24 rounded-xl transition duration-300 ',
   variants: {
     theme: {
-      transition: /*tw:*/ 'text-white/90 md:hover:bg-white/10',
-      dark: /*tw:*/ 'text-dark-foreground/90 md:hover:bg-dark-foreground/10',
-      light: /*tw:*/ 'text-light-foreground/90 md:hover:bg-light-foreground/10',
-      'blue-room': /*tw:*/ 'text-blue-room/90 md:hover:bg-blue-room/10',
-      train: /*tw:*/ 'text-train/90 md:hover:bg-train/10',
-      waterfall: /*tw:*/ 'text-waterfall/90 md:hover:bg-waterfall/10',
-      'camping-fire': /*tw:*/ 'text-camping-fire/90 md:hover:bg-camping-fire/10'
+      transition:
+        /*tw:*/ 'text-white/90 md:hover:bg-white/10 disabled:hover:bg-transparent',
+      dark: /*tw:*/ 'text-dark-foreground/90 md:hover:bg-dark-foreground/10 disabled:hover:bg-transparent',
+      light:
+        /*tw:*/ 'text-light-foreground/90 md:hover:bg-light-foreground/10 disabled:hover:bg-transparent',
+      'blue-room':
+        /*tw:*/ 'text-blue-room/90 md:hover:bg-blue-room/10 disabled:hover:bg-transparent',
+      train:
+        /*tw:*/ 'text-train/90 md:hover:bg-train/10 disabled:hover:bg-transparent',
+      waterfall:
+        /*tw:*/ 'text-waterfall/90 md:hover:bg-waterfall/10 disabled:hover:bg-transparent',
+      'camping-fire':
+        /*tw:*/ 'text-camping-fire/90 md:hover:bg-camping-fire/10 disabled:hover:bg-transparent'
     },
     active: {
       true: /*tw:*/ 'rounded-b-none opacity-100 md:shadow-sound'
+    },
+    isLoading: {
+      true: /*tw:*/ 'animate-loading cursor-wait',
+      false:
+        /*tw:*/ 'cursor-pointer opacity-70 md:hover:opacity-100 md:hover:shadow-sound'
     }
   },
   compoundVariants: [

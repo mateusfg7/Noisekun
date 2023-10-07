@@ -27,6 +27,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     id: sound.id,
     volume: 1
   })
+  const [loading, setIsLoading] = useState(true)
 
   const soundRef = useRef<HTMLAudioElement>()
 
@@ -59,6 +60,8 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
 
     setSoundState(initialState)
     setLocalSoundState(initialState)
+
+    soundRef.current.load()
   }, [])
 
   useEffect(() => {
@@ -101,18 +104,25 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       title={sound.title}
       className="flex h-24 w-24 flex-col items-center justify-center"
     >
-      <audio ref={soundRef} preload="auto" loop>
+      <audio
+        ref={soundRef}
+        onCanPlay={() => setIsLoading(false)}
+        preload="auto"
+        loop
+      >
         <source src={sound.file.url} type={sound.file.type} />
       </audio>
       <button
         data-umami-event={sound.title}
         className={soundButton({
           active: localSoundState.active,
+          isLoading: loading,
           theme
         })}
         onClick={() =>
           setSoundState({ ...localSoundState, active: !localSoundState.active })
         }
+        disabled={loading}
       >
         <Icon className={icon()} />
       </button>

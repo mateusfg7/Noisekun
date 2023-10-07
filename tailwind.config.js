@@ -119,13 +119,13 @@ module.exports = {
         },
         loading: {
           '0%': {
-            opacity: '0.4'
+            opacity: '0.3'
           },
           '50%': {
-            opacity: '0.6'
+            opacity: '0.5'
           },
           '100%': {
-            opacity: '0.4'
+            opacity: '0.3'
           }
         }
       }
