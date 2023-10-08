@@ -20,7 +20,6 @@
   "packageManager": "pnpm@8.8.0",
   "dependencies": {
     "@ducanh2912/next-pwa": "^9.4.0",
-    "@faker-js/faker": "^8.0.2",
     "@headlessui/react": "1.7.17",
     "@newhighsco/next-plugin-svgr": "^3.0.104",
     "next": "13.5.3",
