@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { faker } from '@faker-js/faker'
 
 import { useComboStore } from '@/stores/combo-store'
 import { useSoundsStateStore } from '@/stores/sounds-state-store'
@@ -8,6 +7,7 @@ import { useThemeStore } from '@/stores/theme-store'
 import { actionButton } from '@/shared/styles/action-button'
 import { input } from './styles'
 import { FiCheck } from 'react-icons/fi'
+import { randomString } from '@/libs/utils'
 
 export function SaveComboButton() {
   const sounds = useSoundsStateStore(state => state.sounds)
@@ -31,7 +31,7 @@ export function SaveComboButton() {
     const activeSounds = sounds.filter(sound => sound.active)
 
     saveCombo({
-      id: faker.string.alphanumeric({ casing: 'lower', length: 6 }),
+      id: randomString(6),
       name: comboName,
       sounds: activeSounds,
       theme
