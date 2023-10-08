@@ -11,6 +11,7 @@ const APP_DESCRIPTION =
 const APP_URL = 'https://noisekun.mateusf.com'
 
 export const metadata: Metadata = {
+  metadataBase: new URL(APP_URL),
   title: APP_NAME,
   applicationName: APP_NAME,
   description: APP_DESCRIPTION,
@@ -51,15 +52,15 @@ export const metadata: Metadata = {
     type: 'website',
     title: APP_NAME,
     description: APP_DESCRIPTION,
-    url: APP_URL,
-    images: `${APP_URL}/images/banner.png`
+    url: '/',
+    images: '/images/banner.png'
   },
   twitter: {
     card: 'summary_large_image',
-    site: APP_URL,
+    site: '/',
     title: APP_NAME,
     description: APP_DESCRIPTION,
-    images: `${APP_URL}/images/banner.png`
+    images: '/images/banner.png'
   }
 }
 
