@@ -123,6 +123,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
           setSoundState({ ...localSoundState, active: !localSoundState.active })
         }
         disabled={loading}
+        aria-label={sound.title}
       >
         <Icon className={icon()} />
       </button>
