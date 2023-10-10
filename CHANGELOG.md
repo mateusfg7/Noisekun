@@ -1,3 +1,12 @@
+## [1.3.3](https://github.com/mateusfg7/Noisekun/compare/1.3.2...1.3.3) (2023-10-09)
+
+
+### Features
+
+* replace @faker-js/faker alphanumeric by math random ([9d5fd9b](https://github.com/mateusfg7/Noisekun/commit/9d5fd9b3e4ffe4c8947466206e6933a4f47261c8))
+* **seo:** add `metadata.metadataBase` with base url ([5074c2c](https://github.com/mateusfg7/Noisekun/commit/5074c2cd8595b612af48dc17bd2dd505d06d925a))
+* **ui:** add sound loading animation ([08df8f6](https://github.com/mateusfg7/Noisekun/commit/08df8f65665922f2725b2fab64b83b8700f518ea))
+
 ## [1.3.2](https://github.com/mateusfg7/Noisekun/compare/1.3.0...1.3.2) (2023-10-04)
 
 
