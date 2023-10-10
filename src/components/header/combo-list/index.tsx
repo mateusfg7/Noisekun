@@ -23,7 +23,7 @@ export function ComboList() {
   const combos = useComboStore(state => state.combos)
   const deleteCombo = useComboStore(state => state.deleteCombo)
 
-  const [editMode, setEditMode] = useState(false)
+  const [deleteMode, setDeleteMode] = useState(false)
   const [isEmpty, setIsEmpty] = useState(true)
 
   function updateCombo(id: string) {
@@ -83,21 +83,21 @@ export function ComboList() {
           >
             <div className={toggleEditContainer({ theme })}>
               <button
-                onClick={() => setEditMode(false)}
-                className={toggleEditButton({ theme, active: !editMode })}
+                onClick={() => setDeleteMode(false)}
+                className={toggleEditButton({ theme, active: !deleteMode })}
               >
                 Select
               </button>
               <button
-                data-is-active={editMode}
-                onClick={() => setEditMode(true)}
-                className={toggleEditButton({ theme, active: editMode })}
+                data-is-active={deleteMode}
+                onClick={() => setDeleteMode(true)}
+                className={toggleEditButton({ theme, active: deleteMode })}
               >
-                Edit
+                Delete
               </button>
             </div>
 
-            {!editMode &&
+            {!deleteMode &&
               combos.map(combo => (
                 <Menu.Item key={combo.id}>
                   {({ active }) => (
@@ -112,7 +112,7 @@ export function ComboList() {
                 </Menu.Item>
               ))}
 
-            {editMode &&
+            {deleteMode &&
               combos.map(combo => (
                 <button
                   key={combo.id}
