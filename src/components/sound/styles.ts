@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants'
 
 export const soundButton = tv({
-  base: /*tw:*/ 'flex justify-center items-center w-24 h-24 rounded-xl transition duration-300 ',
+  base: /*tw:*/ 'flex justify-center items-center w-24 h-24 rounded-xl transition duration-300 opacity-70',
   variants: {
     theme: {
       transition:
@@ -23,8 +23,7 @@ export const soundButton = tv({
     },
     isLoading: {
       true: /*tw:*/ 'animate-loading cursor-wait',
-      false:
-        /*tw:*/ 'cursor-pointer opacity-70 md:hover:opacity-100 md:hover:shadow-sound'
+      false: /*tw:*/ 'cursor-pointer md:hover:opacity-100 md:hover:shadow-sound'
     }
   },
   compoundVariants: [
