@@ -1,3 +1,18 @@
+## [1.3.4](https://github.com/mateusfg7/Noisekun/compare/1.3.3...1.3.4) (2023-10-10)
+
+
+### Features
+
+* **a11y:** add `aria-label` on sound buttons ([d5c8cea](https://github.com/mateusfg7/Noisekun/commit/d5c8cea25b978ee595cf192d6f300a67d3f629ab))
+* **ui:** add red effect when removing combo ([8a33629](https://github.com/mateusfg7/Noisekun/commit/8a33629da90ba548c3b3b9c3403eac064c58fe95))
+* **ui:** rename "Edit" to "Delete" on combo options ([bba0698](https://github.com/mateusfg7/Noisekun/commit/bba0698de18ff38929f6eb2f1035e82f3618bc54))
+
+
+### Bug Fixes
+
+* **deps:** update dependency zustand to v4.4.3 ([c867beb](https://github.com/mateusfg7/Noisekun/commit/c867beb212ec3307f79de806253effd8073d27f9))
+* **ui:** small effect fixes ([fcfbf1e](https://github.com/mateusfg7/Noisekun/commit/fcfbf1ea8fead628fcefe5251c3d43561d7759a7))
+
 ## [1.3.3](https://github.com/mateusfg7/Noisekun/compare/1.3.2...1.3.3) (2023-10-09)
 
 
