@@ -121,7 +121,7 @@ export function ComboList() {
                   data-umami-event="Delete combo"
                 >
                   <span className="font-bold">{combo.name}</span>
-                  <FiTrash />
+                  <FiTrash className="group-hover:text-red-600" />
                 </button>
               ))}
           </Menu.Items>

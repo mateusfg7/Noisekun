@@ -67,16 +67,16 @@ export const comboButton = tv({
 
 export const editButton = tv({
   extend: comboButton,
-  base: /*tw:*/ 'flex items-center gap-1 justify-between',
+  base: /*tw:*/ 'flex items-center gap-1 justify-between bg-gradient-to-r group',
   variants: {
     theme: {
-      transition: /*tw:*/ 'hover:bg-white/20',
-      dark: /*tw:*/ 'hover:bg-dark-foreground/20',
-      light: /*tw:*/ 'hover:bg-light-foreground/20',
-      'blue-room': /*tw:*/ 'hover:bg-blue-room/20',
-      train: /*tw:*/ 'hover:bg-train/20',
-      waterfall: /*tw:*/ 'hover:bg-waterfall/20',
-      'camping-fire': /*tw:*/ 'hover:bg-camping-fire/20'
+      transition: /*tw:*/ 'hover:from-white/20 hover:to-red-600/20',
+      dark: /*tw:*/ 'hover:from-dark-foreground/20 hover:to-red-600/20',
+      light: /*tw:*/ 'hover:from-light-foreground/20 hover:to-red-600/20',
+      'blue-room': /*tw:*/ 'hover:from-blue-room/20 hover:to-red-600/20',
+      train: /*tw:*/ 'hover:from-train/20 hover:to-red-600/20',
+      waterfall: /*tw:*/ 'hover:from-waterfall/20 hover:to-red-600/20',
+      'camping-fire': /*tw:*/ 'hover:from-camping-fire/20 hover:to-red-600/20'
     },
     active: {
       true: /*tw:*/ 'bg-white/20'
