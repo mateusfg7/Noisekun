@@ -25,9 +25,9 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   const [localSoundState, setLocalSoundState] = useState<SoundState>({
     active: false,
     id: sound.id,
-    volume: 1
+    volume: 1,
+    loaded: false
   })
-  const [loading, setIsLoading] = useState(true)
 
   const soundRef = useRef<HTMLAudioElement>()
 
@@ -47,16 +47,29 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     setLocalSoundState(soundState)
   }
 
+  function toggleLoadedState() {
+    const soundState = getSoundState(sound.id)
+
+    setLocalSoundState(soundState)
+  }
+
   useEffect(() => {
     const soundState = getSoundState(sound.id)
 
     let initialState = {
       id: sound.id,
       active: false,
-      volume: 1
+      volume: 1,
+      loaded: false
     }
 
-    if (soundState) initialState = { ...soundState, active: false }
+    if (soundState) {
+      initialState = {
+        ...soundState,
+        active: false,
+        loaded: false
+      }
+    }
 
     setSoundState(initialState)
     setLocalSoundState(initialState)
@@ -71,6 +84,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
 
     if (soundState.volume !== localSoundState.volume) updateSoundVolume()
     if (soundState.active !== localSoundState.active) togglePlayPause()
+    if (soundState.loaded !== localSoundState.loaded) toggleLoadedState()
   }, [soundsStore])
 
   useEffect(() => {
@@ -106,7 +120,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     >
       <audio
         ref={soundRef}
-        onCanPlay={() => setIsLoading(false)}
+        onCanPlay={() => setSoundState({ ...localSoundState, loaded: true })}
         preload="auto"
         loop
       >
@@ -116,13 +130,13 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
         data-umami-event={sound.title}
         className={soundButton({
           active: localSoundState.active,
-          isLoading: loading,
+          isLoaded: localSoundState.loaded,
           theme
         })}
         onClick={() =>
           setSoundState({ ...localSoundState, active: !localSoundState.active })
         }
-        disabled={loading}
+        disabled={!localSoundState.loaded}
         aria-label={sound.title}
       >
         <Icon className={icon()} />

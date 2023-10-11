@@ -5,6 +5,7 @@ export interface SoundState {
   id: string
   active: boolean
   volume: number
+  loaded: boolean
 }
 
 interface Props {

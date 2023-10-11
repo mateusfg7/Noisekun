@@ -21,9 +21,9 @@ export const soundButton = tv({
     active: {
       true: /*tw:*/ 'rounded-b-none opacity-100 md:shadow-sound'
     },
-    isLoading: {
-      true: /*tw:*/ 'animate-loading cursor-wait',
-      false: /*tw:*/ 'cursor-pointer md:hover:opacity-100 md:hover:shadow-sound'
+    isLoaded: {
+      false: /*tw:*/ 'animate-loading cursor-wait',
+      true: /*tw:*/ 'cursor-pointer md:hover:opacity-100 md:hover:shadow-sound'
     }
   },
   compoundVariants: [
