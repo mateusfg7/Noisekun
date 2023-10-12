@@ -31,26 +31,14 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
 
   const soundRef = useRef<HTMLAudioElement>()
 
-  async function togglePlayPause() {
-    const soundState = getSoundState(sound.id)
-
-    if (soundState.active) soundRef.current.play()
-    else soundRef.current.pause()
-
-    setLocalSoundState(soundState)
-  }
-
-  function updateSoundVolume() {
-    const soundState = getSoundState(sound.id)
-
-    soundRef.current.volume = soundState.volume * globalVolume
-    setLocalSoundState(soundState)
-  }
-
-  function toggleLoadedState() {
-    const soundState = getSoundState(sound.id)
-
-    setLocalSoundState(soundState)
+  const sync = {
+    active: (soundState: SoundState) => {
+      if (soundState.active) soundRef.current.play()
+      else soundRef.current.pause()
+    },
+    volume: (soundState: SoundState) => {
+      soundRef.current.volume = soundState.volume * globalVolume
+    }
   }
 
   useEffect(() => {
@@ -82,9 +70,10 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
 
     if (!soundState || !localSoundState) return
 
-    if (soundState.volume !== localSoundState.volume) updateSoundVolume()
-    if (soundState.active !== localSoundState.active) togglePlayPause()
-    if (soundState.loaded !== localSoundState.loaded) toggleLoadedState()
+    if (soundState.active !== localSoundState.active) sync.active(soundState)
+    if (soundState.volume !== localSoundState.volume) sync.volume(soundState)
+
+    setLocalSoundState(soundState)
   }, [soundsStore])
 
   useEffect(() => {
