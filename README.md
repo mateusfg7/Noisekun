@@ -42,7 +42,7 @@ Check the [**issue list**](https://github.com/mateusfg7/Noisekun/issues?q=is%3Ai
 ## Audio files
 
 The audio URLs is hard coded on [`sounds.tsx`](src/sounds.tsx), update file with your URLs.
-The audio files are stored on Google Cloud Storage, but you can access them at `.github/assets/sounds`.
+The audio files are stored on Noisekun CDN, but you can access them at `.github/assets/sounds`.
 The icons is on [`src/components/sound-icons/`](src/components/sound-icons/).
 
 
