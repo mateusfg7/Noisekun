@@ -9,6 +9,7 @@ import { SoundState, useSoundsStateStore } from '@/stores/sounds-state-store'
 
 import { VolumeController } from './volume-controller'
 import { icon, soundButton } from './styles'
+import useQueryState from '@/shared/query/query-state'
 
 interface SoundButtonProps {
   sound: Sound
@@ -21,6 +22,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   const soundsStore = useSoundsStateStore(state => state.sounds)
   const getSoundState = useSoundsStateStore(state => state.getSound)
   const setSoundState = useSoundsStateStore(state => state.setSound)
+  const [querySounds, setQuerySounds] = useQueryState('sounds')
 
   const [localSoundState, setLocalSoundState] = useState<SoundState>({
     active: false,
@@ -59,9 +61,24 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       }
     }
 
+    if (querySounds.length) {
+      decodeURIComponent(querySounds)
+        .split(';')
+        .forEach(item => {
+          const [id, volume] = item.split(',')
+          if (id === sound.id) {
+            initialState = {
+              id,
+              volume: parseFloat(volume),
+              active: true,
+              loaded: true
+            }
+          }
+        })
+    }
+
     setSoundState(initialState)
     setLocalSoundState(initialState)
-
     soundRef.current.load()
   }, [])
 
@@ -74,7 +91,17 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     if (soundState.volume !== localSoundState.volume) sync.volume(soundState)
 
     setLocalSoundState(soundState)
+    mountQueryParams(soundState)
   }, [soundsStore])
+
+  const mountQueryParams = soundState => {
+    const activeSounds = soundsStore
+      .filter(item => item.active)
+      .map(item => `${item.id},${item.volume}`)
+      .join(';')
+
+    setQuerySounds(activeSounds)
+  }
 
   useEffect(() => {
     if (!getSoundState(sound.id).active) return
@@ -111,6 +138,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
         ref={soundRef}
         onCanPlay={() => setSoundState({ ...localSoundState, loaded: true })}
         preload="auto"
+        autoPlay
         loop
       >
         <source src={sound.file.url} type={sound.file.type} />
@@ -134,9 +162,9 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
         isActive={localSoundState.active}
         soundName={sound.title}
         soundId={sound.id}
-        handleSoundVolume={volume =>
+        handleSoundVolume={volume => {
           setSoundState({ ...localSoundState, volume })
-        }
+        }}
       />
     </div>
   )

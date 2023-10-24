@@ -4,10 +4,12 @@ import { PiPaintBrushBroadBold } from 'react-icons/pi'
 
 import { Theme, useThemeStore } from '@/stores/theme-store'
 import { themeButton, triggerButton } from './styles'
+import useQueryState from '@/shared/query/query-state'
 
 export function ThemeMenu() {
   const setTheme = useThemeStore(set => set.setTheme)
   const currentTheme = useThemeStore(set => set.theme)
+  const [queryTheme, setQueryTheme] = useQueryState('theme')
 
   function handleTheme(newTheme: Theme) {
     setTheme(newTheme)
@@ -17,8 +19,14 @@ export function ThemeMenu() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const themeOnStorage = localStorage.getItem('theme') as Theme
-      if (themeOnStorage) setTheme(themeOnStorage)
-      else localStorage.setItem('theme', currentTheme)
+      if (themeOnStorage) {
+        setTheme(themeOnStorage)
+        setQueryTheme(themeOnStorage)
+      } else if (queryTheme) {
+        setTheme(queryTheme as Theme)
+      } else {
+        localStorage.setItem('theme', currentTheme)
+      }
     }
   }, [])
 
