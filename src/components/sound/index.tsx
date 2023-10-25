@@ -71,7 +71,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
               id,
               volume: parseFloat(volume),
               active: true,
-              loaded: true
+              loaded: false
             }
           }
         })
@@ -138,7 +138,6 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
         ref={soundRef}
         onCanPlay={() => setSoundState({ ...localSoundState, loaded: true })}
         preload="auto"
-        autoPlay
         loop
       >
         <source src={sound.file.url} type={sound.file.type} />
