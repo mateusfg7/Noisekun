@@ -145,7 +145,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       <button
         data-umami-event={sound.title}
         className={soundButton({
-          active: localSoundState.active,
+          active: localSoundState.active && localSoundState.loaded,
           isLoaded: localSoundState.loaded,
           theme
         })}
@@ -158,7 +158,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
         <Icon className={icon()} />
       </button>
       <VolumeController
-        isActive={localSoundState.active}
+        isActive={localSoundState.active && localSoundState.loaded}
         soundName={sound.title}
         soundId={sound.id}
         handleSoundVolume={volume => {
