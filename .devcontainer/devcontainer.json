@@ -1,0 +1,9 @@
+{
+  "name": "Noisekun",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "postCreateCommand": "corepack enable",
+  "postStartCommand": "pnpm install && pnpm dev",
+  "remoteUser": "root"
+}
