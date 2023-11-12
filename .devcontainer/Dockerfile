@@ -6,3 +6,6 @@ ARG NPM_GLOBAL=/usr/local/share/npm-global
 
 # Add NPM global to PATH.
 ENV PATH=${NPM_GLOBAL}/bin:${PATH}
+
+# Persist host git config to container.
+VOLUME ~/.gitconfig:/root/.gitconfig
