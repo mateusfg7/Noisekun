@@ -1,6 +1,8 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
+
+import useQueryState from '@/shared/query/query-state'
 
 import { Header } from '@/components/header'
 import { SoundButton } from '@/components/sound'
@@ -8,12 +10,24 @@ import { ClearButton } from '@/components/clear-button'
 import { Footer } from '@/components/footer'
 import { useThemeStore } from '@/stores/theme-store'
 import { SaveComboButton } from '@/components/save-combo-button'
+import { InteractionModal } from '@/components/interaction-modal'
+
 import { sounds } from '@/sounds'
 
 import { container } from './styles'
+import { useUserInteractionStore } from '@/stores/user-interaction-store'
 
 export default function Home() {
   const background = useThemeStore(set => set.theme)
+  const setUserHasInteracted = useUserInteractionStore(
+    state => state.setUserHasInteracted
+  )
+
+  const [querySounds] = useQueryState('sounds')
+
+  useEffect(() => {
+    if (!querySounds.length) setUserHasInteracted(true)
+  }, [])
 
   return (
     <div className={container({ background })}>
@@ -31,6 +45,7 @@ export default function Home() {
           </div>
         </div>
         <Footer />
+        <InteractionModal />
       </div>
     </div>
   )
