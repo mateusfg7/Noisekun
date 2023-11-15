@@ -2,15 +2,15 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import type { Sound } from '@/sounds'
 
+import useQueryState from '@/shared/query/query-state'
 import { useThemeStore } from '@/stores/theme-store'
 import { useGlobalVolumeStore } from '@/stores/global-volume-store'
 import { PomodoroStatus, usePomodoroStore } from '@/stores/pomodoro-store'
 import { SoundState, useSoundsStateStore } from '@/stores/sounds-state-store'
+import { useUserInteractionStore } from '@/stores/user-interaction-store'
 
 import { VolumeController } from './volume-controller'
 import { icon, soundButton } from './styles'
-import useQueryState from '@/shared/query/query-state'
-import { useUserInteractionStore } from '@/stores/user-interaction-store'
 
 interface SoundButtonProps {
   sound: Sound
@@ -98,10 +98,10 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     }
 
     setLocalSoundState(soundState)
-    mountQueryParams(soundState)
+    mountQueryParams()
   }, [soundsStore, userHasInteracted])
 
-  const mountQueryParams = soundState => {
+  const mountQueryParams = () => {
     const activeSounds = soundsStore
       .filter(item => item.active)
       .map(item => `${item.id},${item.volume}`)

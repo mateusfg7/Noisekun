@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react'
 
 import useQueryState from '@/shared/query/query-state'
-
+import { useUserInteractionStore } from '@/stores/user-interaction-store'
 import { Header } from '@/components/header'
 import { SoundButton } from '@/components/sound'
 import { ClearButton } from '@/components/clear-button'
@@ -15,7 +15,6 @@ import { InteractionModal } from '@/components/interaction-modal'
 import { sounds } from '@/sounds'
 
 import { container } from './styles'
-import { useUserInteractionStore } from '@/stores/user-interaction-store'
 
 export default function Home() {
   const background = useThemeStore(set => set.theme)

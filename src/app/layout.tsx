@@ -1,9 +1,9 @@
 import { ReactNode } from 'react'
 import { Metadata } from 'next'
+import Script from 'next/script'
 import { Nunito } from 'next/font/google'
 
 import './global.css'
-import Script from 'next/script'
 
 const APP_NAME = 'Noisekun'
 const APP_DESCRIPTION =
