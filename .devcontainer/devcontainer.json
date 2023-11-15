@@ -1,9 +1,14 @@
 {
+  // Build
   "name": "Noisekun",
   "build": {
     "dockerfile": "Dockerfile"
   },
+
+  // Prepare the container
   "postCreateCommand": "corepack enable",
   "postStartCommand": "pnpm install && pnpm dev",
+
+  // Use root user
   "remoteUser": "root"
 }
