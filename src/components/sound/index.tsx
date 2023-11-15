@@ -10,6 +10,7 @@ import { SoundState, useSoundsStateStore } from '@/stores/sounds-state-store'
 import { VolumeController } from './volume-controller'
 import { icon, soundButton } from './styles'
 import useQueryState from '@/shared/query/query-state'
+import { useUserInteractionStore } from '@/stores/user-interaction-store'
 
 interface SoundButtonProps {
   sound: Sound
@@ -22,6 +23,10 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   const soundsStore = useSoundsStateStore(state => state.sounds)
   const getSoundState = useSoundsStateStore(state => state.getSound)
   const setSoundState = useSoundsStateStore(state => state.setSound)
+  const userHasInteracted = useUserInteractionStore(
+    state => state.userHasInteracted
+  )
+
   const [querySounds, setQuerySounds] = useQueryState('sounds')
 
   const [localSoundState, setLocalSoundState] = useState<SoundState>({
@@ -87,12 +92,14 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
 
     if (!soundState || !localSoundState) return
 
-    if (soundState.active !== localSoundState.active) sync.active(soundState)
-    if (soundState.volume !== localSoundState.volume) sync.volume(soundState)
+    if (userHasInteracted) {
+      sync.active(soundState)
+      sync.volume(soundState)
+    }
 
     setLocalSoundState(soundState)
     mountQueryParams(soundState)
-  }, [soundsStore])
+  }, [soundsStore, userHasInteracted])
 
   const mountQueryParams = soundState => {
     const activeSounds = soundsStore
@@ -145,7 +152,10 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       <button
         data-umami-event={sound.title}
         className={soundButton({
-          active: localSoundState.active && localSoundState.loaded,
+          active:
+            localSoundState.active &&
+            localSoundState.loaded &&
+            userHasInteracted,
           isLoaded: localSoundState.loaded,
           theme
         })}
@@ -158,7 +168,9 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
         <Icon className={icon()} />
       </button>
       <VolumeController
-        isActive={localSoundState.active && localSoundState.loaded}
+        isActive={
+          localSoundState.active && localSoundState.loaded && userHasInteracted
+        }
         soundName={sound.title}
         soundId={sound.id}
         handleSoundVolume={volume => {
