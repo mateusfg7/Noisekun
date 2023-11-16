@@ -57,7 +57,7 @@
     "semver": "^7.5.4",
     "simple-git": "^3.19.1",
     "tailwindcss": "3.3.5",
-    "tsx": "^3.12.7",
+    "tsx": "^4.0.0",
     "typescript": "5.2.2",
     "webpack": "^5.88.2"
   }
