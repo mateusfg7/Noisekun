@@ -29,7 +29,7 @@
     "sharp": "^0.32.6",
     "tailwind-scrollbar-hide": "1.1.7",
     "tailwind-variants": "^0.1.13",
-    "zustand": "4.4.3"
+    "zustand": "4.4.6"
   },
   "devDependencies": {
     "@commitlint/cli": "18.4.1",
