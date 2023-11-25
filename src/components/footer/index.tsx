@@ -62,7 +62,7 @@ export function Footer() {
           </Info>
 
           <Info
-            href="https://github.com/mateusfg7/Noisekun/#credits"
+            href="https://github.com/mateusfg7/Noisekun/?tab=readme-ov-file#%EF%B8%8F-credits"
             data-umami-event="Credits Link"
           >
             <FiAward /> Credits
