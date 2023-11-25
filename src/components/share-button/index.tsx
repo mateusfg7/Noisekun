@@ -23,7 +23,9 @@ export function ShareButton() {
 
     await navigator.clipboard
       .writeText(
-        `${protocol}://${hostname}${isLocalhost ? ':3000' : ''}/?${searchParams}`
+        `${protocol}://${hostname}${
+          isLocalhost ? ':3000' : ''
+        }/?${searchParams}`
       )
       .then(() => setShowModal(true))
   }
