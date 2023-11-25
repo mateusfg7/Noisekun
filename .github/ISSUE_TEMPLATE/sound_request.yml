@@ -1,0 +1,26 @@
+name: "Sound Request"
+description: "What sound do you want to be available?"
+labels: ["feat", "Sound"]
+body:
+  - type: input
+    validations:
+      required: true
+    attributes:
+      label: "Sound Name"
+      description: "What is the name/id of the sound that you want?"
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: "Sound description"
+      description: "A detailed description of what kind of sound do you want."
+  - type: textarea
+    attributes:
+      label: "Sound Example"
+      description: "Place a list of links that exemplifies your sound"
+  - type: textarea
+    attributes:
+      label: "Icon Example"
+      description: "Place a list of links or an image itself that exemplifies the icon of your sound"
+
+
