@@ -4,11 +4,9 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-
   // Prepare the container
   "postCreateCommand": "corepack enable",
   "postStartCommand": "pnpm install && pnpm dev",
-
   // IDE Customization
   "customizations": {
     "vscode": {
@@ -19,15 +17,11 @@
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "bradlc.vscode-tailwindcss"
-
         // Optional
         // "formulahendry.auto-rename-tag",
         // "streetsidesoftware.code-spell-checker",
         // "GitHub.vscode-pull-request-github"
       ]
     }
-  },
-
-  // Use root user
-  "remoteUser": "root"
+  }
 }
