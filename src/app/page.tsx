@@ -7,6 +7,7 @@ import { useUserInteractionStore } from '@/stores/user-interaction-store'
 import { Header } from '@/components/header'
 import { SoundButton } from '@/components/sound'
 import { ClearButton } from '@/components/clear-button'
+import { ShareButton } from '@/components/share-button'
 import { Footer } from '@/components/footer'
 import { useThemeStore } from '@/stores/theme-store'
 import { SaveComboButton } from '@/components/save-combo-button'
@@ -35,6 +36,7 @@ export default function Home() {
         <div className="m-auto flex w-fit flex-col items-center gap-3">
           <div className="hidden w-full items-center justify-end gap-2 px-4 xs:flex">
             <SaveComboButton />
+            <ShareButton />
             <ClearButton />
           </div>
           <div className="grid h-fit w-fit grid-cols-1 gap-12 xs:grid-cols-2 2xs:grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6">
