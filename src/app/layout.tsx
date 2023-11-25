@@ -8,7 +8,9 @@ import './global.css'
 const APP_NAME = 'Noisekun'
 const APP_DESCRIPTION =
   'Listen combinations of ambient sounds for relaxing or getting more productive on your task!'
-const APP_URL = 'https://noisekun.mateusf.com'
+const APP_URL = process.env.HOSTNAME
+  ? `https://${process.env.HOSTNAME}`
+  : 'http://localhost:3000'
 
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
