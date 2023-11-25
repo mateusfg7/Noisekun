@@ -2,12 +2,6 @@ name: "Sound Request"
 description: "What sound do you want to be available?"
 labels: ["feat", "Sound"]
 body:
-  - type: input
-    validations:
-      required: true
-    attributes:
-      label: "Sound Name"
-      description: "What is the name/id of the sound that you want?"
   - type: textarea
     validations:
       required: true
