@@ -14,7 +14,7 @@ const APP_URL = process.env.HOSTNAME
 
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
-  title: APP_NAME,
+  title: `${APP_NAME} — ${APP_DESCRIPTION}`,
   applicationName: APP_NAME,
   description: APP_DESCRIPTION,
   manifest: '/manifest.json',
