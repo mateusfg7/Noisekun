@@ -13,6 +13,7 @@ export function ThemeMenu() {
 
   function handleTheme(newTheme: Theme) {
     setTheme(newTheme)
+    setQueryTheme(newTheme)
     localStorage.setItem('theme', newTheme)
   }
 
