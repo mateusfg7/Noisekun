@@ -2,10 +2,12 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import type { Sound } from '@/sounds'
 
+import useQueryState from '@/shared/query/query-state'
 import { useThemeStore } from '@/stores/theme-store'
 import { useGlobalVolumeStore } from '@/stores/global-volume-store'
 import { PomodoroStatus, usePomodoroStore } from '@/stores/pomodoro-store'
 import { SoundState, useSoundsStateStore } from '@/stores/sounds-state-store'
+import { useUserInteractionStore } from '@/stores/user-interaction-store'
 
 import { VolumeController } from './volume-controller'
 import { icon, soundButton } from './styles'
@@ -21,6 +23,11 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   const soundsStore = useSoundsStateStore(state => state.sounds)
   const getSoundState = useSoundsStateStore(state => state.getSound)
   const setSoundState = useSoundsStateStore(state => state.setSound)
+  const userHasInteracted = useUserInteractionStore(
+    state => state.userHasInteracted
+  )
+
+  const [querySounds, setQuerySounds] = useQueryState('sounds')
 
   const [localSoundState, setLocalSoundState] = useState<SoundState>({
     active: false,
@@ -59,9 +66,24 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       }
     }
 
+    if (querySounds.length) {
+      decodeURIComponent(querySounds)
+        .split(';')
+        .forEach(item => {
+          const [id, volume] = item.split(',')
+          if (id === sound.id) {
+            initialState = {
+              id,
+              volume: parseFloat(volume),
+              active: true,
+              loaded: false
+            }
+          }
+        })
+    }
+
     setSoundState(initialState)
     setLocalSoundState(initialState)
-
     soundRef.current.load()
   }, [])
 
@@ -70,11 +92,23 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
 
     if (!soundState || !localSoundState) return
 
-    if (soundState.active !== localSoundState.active) sync.active(soundState)
-    if (soundState.volume !== localSoundState.volume) sync.volume(soundState)
+    if (userHasInteracted) {
+      sync.active(soundState)
+      sync.volume(soundState)
+    }
 
     setLocalSoundState(soundState)
-  }, [soundsStore])
+    mountQueryParams()
+  }, [soundsStore, userHasInteracted])
+
+  const mountQueryParams = () => {
+    const activeSounds = soundsStore
+      .filter(item => item.active)
+      .map(item => `${item.id},${item.volume}`)
+      .join(';')
+
+    setQuerySounds(activeSounds)
+  }
 
   useEffect(() => {
     if (!getSoundState(sound.id).active) return
@@ -118,7 +152,10 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       <button
         data-umami-event={sound.title}
         className={soundButton({
-          active: localSoundState.active,
+          active:
+            localSoundState.active &&
+            localSoundState.loaded &&
+            userHasInteracted,
           isLoaded: localSoundState.loaded,
           theme
         })}
@@ -131,12 +168,14 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
         <Icon className={icon()} />
       </button>
       <VolumeController
-        isActive={localSoundState.active}
+        isActive={
+          localSoundState.active && localSoundState.loaded && userHasInteracted
+        }
         soundName={sound.title}
         soundId={sound.id}
-        handleSoundVolume={volume =>
+        handleSoundVolume={volume => {
           setSoundState({ ...localSoundState, volume })
-        }
+        }}
       />
     </div>
   )

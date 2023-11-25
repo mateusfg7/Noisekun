@@ -2,23 +2,32 @@ import { Fragment, useEffect } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { PiPaintBrushBroadBold } from 'react-icons/pi'
 
+import useQueryState from '@/shared/query/query-state'
 import { Theme, useThemeStore } from '@/stores/theme-store'
 import { themeButton, triggerButton } from './styles'
 
 export function ThemeMenu() {
   const setTheme = useThemeStore(set => set.setTheme)
   const currentTheme = useThemeStore(set => set.theme)
+  const [queryTheme, setQueryTheme] = useQueryState('theme')
 
   function handleTheme(newTheme: Theme) {
     setTheme(newTheme)
+    setQueryTheme(newTheme)
     localStorage.setItem('theme', newTheme)
   }
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const themeOnStorage = localStorage.getItem('theme') as Theme
-      if (themeOnStorage) setTheme(themeOnStorage)
-      else localStorage.setItem('theme', currentTheme)
+      if (queryTheme) {
+        setTheme(queryTheme as Theme)
+      } else if (themeOnStorage) {
+        setTheme(themeOnStorage)
+        setQueryTheme(themeOnStorage)
+      } else {
+        localStorage.setItem('theme', currentTheme)
+      }
     }
   }, [])
 

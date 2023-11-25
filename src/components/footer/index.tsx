@@ -1,11 +1,12 @@
-import React, { ComponentProps, ReactNode } from 'react'
+import React, { ComponentProps } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { tv } from 'tailwind-variants'
 import { FiAward, FiGithub } from 'react-icons/fi'
 import { AiOutlineCopyrightCircle } from 'react-icons/ai'
-import { container, version } from './styles'
+
 import { useThemeStore } from '@/stores/theme-store'
+import { container, version } from './styles'
 
 import packageJson from '../../../package.json'
 
