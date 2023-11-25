@@ -19,11 +19,11 @@ export function ThemeMenu() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const themeOnStorage = localStorage.getItem('theme') as Theme
-      if (themeOnStorage) {
+      if (queryTheme) {
+        setTheme(queryTheme as Theme)
+      } else if (themeOnStorage) {
         setTheme(themeOnStorage)
         setQueryTheme(themeOnStorage)
-      } else if (queryTheme) {
-        setTheme(queryTheme as Theme)
       } else {
         localStorage.setItem('theme', currentTheme)
       }
