@@ -33,6 +33,7 @@ _Listen combinations of ambient sounds for **relaxing** or getting more **produc
 - Enhance look with 7 themes
 - Pomodoro timer
 - Save sound combos
+- Share sound combo with theme
 - Browser persistent config (pomodoro timer, volume, theme and combos)
 
 Check the [**issue list**](https://github.com/mateusfg7/Noisekun/issues?q=is%3Aissue+is%3Aopen+label%3Afeat) for more planned features!
