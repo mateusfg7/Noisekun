@@ -3,10 +3,11 @@ import { FiPause, FiPlay, FiRotateCw } from 'react-icons/fi'
 
 import { PomodoroStatus, usePomodoroStore } from '~/stores/pomodoro-store'
 import { useThemeStore } from '~/stores/theme-store'
+
+import { padZero } from '~/utils/pad-zero'
+
 import { ConfigModal } from './config-modal'
 import { container, controlButton } from './styles'
-
-const padZero = (value: number) => value.toString().padStart(2, '0')
 
 export function Pomodoro() {
   const setPomodoroStatus = usePomodoroStore(state => state.setPomodoroStatus)
