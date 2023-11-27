@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { useThemeStore } from '@/stores/theme-store'
+import { useThemeStore } from '~/stores/theme-store'
 import { ThemeMenu } from './theme-menu'
 import { GlobalVolumeController } from './global-volume-controller'
 import { title } from './styles'

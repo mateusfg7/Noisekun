@@ -2,8 +2,8 @@ import { Fragment, useEffect } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { PiPaintBrushBroadBold } from 'react-icons/pi'
 
-import useQueryState from '@/shared/query/query-state'
-import { Theme, useThemeStore } from '@/stores/theme-store'
+import useQueryState from '~/shared/query/query-state'
+import { Theme, useThemeStore } from '~/stores/theme-store'
 import { themeButton, triggerButton } from './styles'
 
 export function ThemeMenu() {

@@ -3,7 +3,7 @@ import { Fragment, useState } from 'react'
 
 import { padZero } from './pad-zero'
 import { display, minuteConfigInput } from './styles'
-import { useThemeStore } from '@/stores/theme-store'
+import { useThemeStore } from '~/stores/theme-store'
 
 interface Props {
   displayMinutes: string

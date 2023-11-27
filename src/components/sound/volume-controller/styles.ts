@@ -1,4 +1,4 @@
-import { volumeControllerInput } from '@/shared/styles/volume-controller-input'
+import { volumeControllerInput } from '~/shared/styles/volume-controller-input'
 import { tv } from 'tailwind-variants'
 
 export const container = tv({

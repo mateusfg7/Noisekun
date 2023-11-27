@@ -3,9 +3,9 @@ import { Menu, Transition } from '@headlessui/react'
 import { PiPlaylistBold } from 'react-icons/pi'
 import { FiTrash } from 'react-icons/fi'
 
-import { useThemeStore } from '@/stores/theme-store'
-import { useComboStore } from '@/stores/combo-store'
-import { useSoundsStateStore } from '@/stores/sounds-state-store'
+import { useThemeStore } from '~/stores/theme-store'
+import { useComboStore } from '~/stores/combo-store'
+import { useSoundsStateStore } from '~/stores/sounds-state-store'
 
 import {
   comboButton,

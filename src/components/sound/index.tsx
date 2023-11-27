@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import type { Sound } from '@/sounds'
+import type { Sound } from '~/sounds'
 
-import useQueryState from '@/shared/query/query-state'
-import { useThemeStore } from '@/stores/theme-store'
-import { useGlobalVolumeStore } from '@/stores/global-volume-store'
-import { PomodoroStatus, usePomodoroStore } from '@/stores/pomodoro-store'
-import { SoundState, useSoundsStateStore } from '@/stores/sounds-state-store'
-import { useUserInteractionStore } from '@/stores/user-interaction-store'
+import useQueryState from '~/shared/query/query-state'
+import { useThemeStore } from '~/stores/theme-store'
+import { useGlobalVolumeStore } from '~/stores/global-volume-store'
+import { PomodoroStatus, usePomodoroStore } from '~/stores/pomodoro-store'
+import { SoundState, useSoundsStateStore } from '~/stores/sounds-state-store'
+import { useUserInteractionStore } from '~/stores/user-interaction-store'
 
 import { VolumeController } from './volume-controller'
 import { icon, soundButton } from './styles'

@@ -5,7 +5,7 @@ import { tv } from 'tailwind-variants'
 import { FiAward, FiGithub } from 'react-icons/fi'
 import { AiOutlineCopyrightCircle } from 'react-icons/ai'
 
-import { useThemeStore } from '@/stores/theme-store'
+import { useThemeStore } from '~/stores/theme-store'
 import { container, version } from './styles'
 
 import packageJson from '../../../package.json'

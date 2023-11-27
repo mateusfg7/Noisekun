@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { FiPause, FiPlay, FiRotateCw } from 'react-icons/fi'
 
-import { PomodoroStatus, usePomodoroStore } from '@/stores/pomodoro-store'
-import { useThemeStore } from '@/stores/theme-store'
+import { PomodoroStatus, usePomodoroStore } from '~/stores/pomodoro-store'
+import { useThemeStore } from '~/stores/theme-store'
 import { ConfigModal } from './config-modal'
 import { container, controlButton } from './styles'
 

@@ -3,8 +3,8 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
-import { useUserInteractionStore } from '@/stores/user-interaction-store'
-import { useSoundsStateStore } from '@/stores/sounds-state-store'
+import { useUserInteractionStore } from '~/stores/user-interaction-store'
+import { useSoundsStateStore } from '~/stores/sounds-state-store'
 
 export function InteractionModal() {
   const bulkSoundUpdate = useSoundsStateStore(state => state.bulkUpdate)

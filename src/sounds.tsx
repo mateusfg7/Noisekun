@@ -22,7 +22,7 @@ import {
   Waves,
   WhiteNoise,
   Wind
-} from '@/components/sound-icons'
+} from '~/components/sound-icons'
 
 export const sounds = [
   {
