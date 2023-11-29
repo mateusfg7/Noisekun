@@ -12,7 +12,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "NODE_NO_WARNINGS=1 jest --watch --coverage",
+    "test": "NODE_NO_WARNINGS=1 jest --all --watch --coverage",
     "test:ci": "jest --ci",
     "bump-tag": "tsx .tools/bump-tag-version.ts",
     "prepare": "husky install"
