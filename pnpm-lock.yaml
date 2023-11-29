@@ -55,6 +55,9 @@ devDependencies:
   '@testing-library/react':
     specifier: ^14.1.2
     version: 14.1.2(react-dom@18.2.0)(react@18.2.0)
+  '@testing-library/user-event':
+    specifier: ^14.5.1
+    version: 14.5.1(@testing-library/dom@9.3.3)
   '@types/jest':
     specifier: ^29.5.10
     version: 29.5.10
@@ -87,7 +90,7 @@ devDependencies:
     version: 27.2.3(eslint@8.54.0)(jest@29.7.0)(typescript@5.3.2)
   eslint-plugin-jest-dom:
     specifier: ^5.1.0
-    version: 5.1.0(eslint@8.54.0)
+    version: 5.1.0(@testing-library/dom@9.3.3)(eslint@8.54.0)
   eslint-plugin-prettier:
     specifier: 5.0.1
     version: 5.0.1(eslint-config-prettier@9.0.0)(eslint@8.54.0)(prettier@3.1.0)
@@ -2718,6 +2721,15 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: true
 
+  /@testing-library/user-event@14.5.1(@testing-library/dom@9.3.3):
+    resolution: {integrity: sha512-UCcUKrUYGj7ClomOo2SpNVvx4/fkd/2BbIHDCle8A0ax+P3bU7yJwDBDrS6ZwdTMARWTGODX1hEsCcO+7beJjg==}
+    engines: {node: '>=12', npm: '>=6'}
+    peerDependencies:
+      '@testing-library/dom': '>=7.21.4'
+    dependencies:
+      '@testing-library/dom': 9.3.3
+    dev: true
+
   /@tootallnate/once@2.0.0:
     resolution: {integrity: sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==}
     engines: {node: '>= 10'}
@@ -4716,7 +4728,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-jest-dom@5.1.0(eslint@8.54.0):
+  /eslint-plugin-jest-dom@5.1.0(@testing-library/dom@9.3.3)(eslint@8.54.0):
     resolution: {integrity: sha512-JIXZp+E/h/aGlP/rQc4tuOejiHlZXg65qw8JAJMIJA5VsdjOkss/SYcRSqBrQuEOytEM8JvngUjcz31d1RrCrA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0, npm: '>=6', yarn: '>=1'}
     peerDependencies:
@@ -4727,6 +4739,7 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.22.6
+      '@testing-library/dom': 9.3.3
       eslint: 8.54.0
       requireindex: 1.2.0
     dev: true
