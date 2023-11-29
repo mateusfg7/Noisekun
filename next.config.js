@@ -1,3 +1,4 @@
+const withNextIntl = require('next-intl/plugin')()
 const withSvgr = require('@newhighsco/next-plugin-svgr')
 const withPWA = require('@ducanh2912/next-pwa').default({
   dest: 'public'
@@ -15,4 +16,4 @@ const configWithSvgr = withSvgr({
   }
 })
 
-module.exports = withPWA(configWithSvgr)
+module.exports = withNextIntl(withPWA(configWithSvgr))

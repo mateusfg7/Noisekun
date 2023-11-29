@@ -9,8 +9,9 @@ import { randomString } from '~/utils/random-string'
 import { actionButton } from '~/shared/styles/action-button'
 
 import { input } from './styles'
+import { TTranslate } from '~/types/Ttranslate'
 
-export function SaveComboButton() {
+export function SaveComboButton({ textTranslate }: TTranslate) {
   const sounds = useSoundsStateStore(state => state.sounds)
   const theme = useThemeStore(state => state.theme)
   const saveCombo = useComboStore(state => state.saveCombo)
@@ -73,7 +74,9 @@ export function SaveComboButton() {
             <FiCheck />
           </span>
         ) : (
-          <span className="inline-flex w-10 justify-center">save</span>
+          <span className="inline-flex w-10 justify-center">
+            {textTranslate}
+          </span>
         )}
       </button>
     </div>
