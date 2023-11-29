@@ -52,7 +52,7 @@ describe('Combo List', () => {
 
     const triggerButton = screen.getByTitle('Toggle combo list')
 
-    expect(triggerButton.getAttribute('disabled')).not.toBeNull()
+    expect(triggerButton).toBeDisabled()
   })
 
   it('trigger button should not be disabled', () => {
@@ -62,7 +62,7 @@ describe('Combo List', () => {
 
     const triggerButton = screen.getByTitle('Toggle combo list')
 
-    expect(triggerButton.getAttribute('disabled')).toBeNull()
+    expect(triggerButton).not.toBeDisabled()
   })
 
   it('modal should be opened', async () => {
