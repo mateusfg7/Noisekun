@@ -3,7 +3,7 @@ import { SoundState } from './sounds-state-store'
 import { persist } from 'zustand/middleware'
 import { Theme } from './theme-store'
 
-interface Combo {
+export interface Combo {
   id: string
   name: string
   theme: Theme

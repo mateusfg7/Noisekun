@@ -58,7 +58,7 @@ export function ComboList() {
   }, [combos])
 
   return (
-    <div className="z-40">
+    <div data-testid="combo-list" className="z-40">
       <Menu>
         <Menu.Button
           title="Toggle combo list"
@@ -79,6 +79,7 @@ export function ComboList() {
         >
           <Menu.Items
             as="div"
+            data-testid="combo-list-modal"
             className="snap absolute left-4 right-4 mt-2 flex max-h-[85vh] origin-top-right snap-y snap-mandatory scroll-pt-4 flex-col gap-1 overflow-y-auto rounded-2xl p-4 shadow-2xl backdrop-blur-md scrollbar-hide focus:outline-none md:left-auto md:right-0"
           >
             <div className={toggleEditContainer({ theme })}>
