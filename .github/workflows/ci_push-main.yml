@@ -6,11 +6,18 @@ on:
       - main
 
 jobs:
-  call-release:
-    name: Call release.yml
-    uses: mateusfg7/noisekun/.github/workflows/release.yml@main
-    secrets: inherit
+  call-test:
+    name: Call test.yml
+    uses: mateusfg7/noisekun/.github/workflows/test.yml@main
 
   call-lint:
     name: Call lint.yml
     uses: mateusfg7/noisekun/.github/workflows/lint.yml@main
+
+  call-release:
+    name: Call release.yml
+    needs: 
+      - call-test
+      - call-lint
+    uses: mateusfg7/noisekun/.github/workflows/release.yml@main
+    secrets: inherit
