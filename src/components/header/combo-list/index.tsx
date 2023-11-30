@@ -14,8 +14,9 @@ import {
   toggleEditContainer,
   triggerButton
 } from './styles'
+import { TTitleTranslate } from '~/types/Ttranslate'
 
-export function ComboList() {
+export function ComboList({ titleTranslate }: TTitleTranslate) {
   const theme = useThemeStore(set => set.theme)
   const setTheme = useThemeStore(set => set.setTheme)
   const sounds = useSoundsStateStore(state => state.sounds)
@@ -61,7 +62,7 @@ export function ComboList() {
     <div className="z-40">
       <Menu>
         <Menu.Button
-          title="Toggle combo list"
+          title={titleTranslate}
           data-umami-event="Open combo list"
           disabled={isEmpty}
           className={triggerButton({ theme })}

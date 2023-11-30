@@ -8,8 +8,12 @@ import { padZero } from '~/utils/pad-zero'
 
 import { ConfigModal } from './config-modal'
 import { container, controlButton } from './styles'
+import { TPomodoroTranslate } from '~/types/Ttranslate'
 
-export function Pomodoro() {
+export function Pomodoro({
+  titleResetTranslate,
+  titleToggleTranslate
+}: TPomodoroTranslate) {
   const setPomodoroStatus = usePomodoroStore(state => state.setPomodoroStatus)
   const theme = useThemeStore(state => state.theme)
 

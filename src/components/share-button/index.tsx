@@ -7,8 +7,9 @@ import { useThemeStore } from '~/stores/theme-store'
 import { actionButton } from '~/shared/styles/action-button'
 
 import { ConfirmationModal } from './confirmation-modal'
+import { TTranslate } from '~/types/Ttranslate'
 
-export function ShareButton() {
+export function ShareButton({ titleTranslate, textTranslate }: TTranslate) {
   const searchParams = useSearchParams()
   const soundStates = useSoundsStateStore(state => state.sounds)
   const theme = useThemeStore(state => state.theme)
@@ -40,10 +41,10 @@ export function ShareButton() {
         disabled={isDisabled()}
         onClick={handleCopyCombo}
         className={actionButton({ theme })}
-        title="Share current combo"
+        title={titleTranslate}
         data-umami-event="Clear Button"
       >
-        share
+        {textTranslate}
       </button>
 
       <ConfirmationModal showModal={showModal} setShowModal={setShowModal} />

@@ -5,8 +5,12 @@ import { useGlobalVolumeStore } from '~/stores/global-volume-store'
 import { useThemeStore } from '~/stores/theme-store'
 import { volumeControllerInput } from '~/shared/styles/volume-controller-input'
 import { soundButton } from './styles'
+import { TGlobalVolumeControllerTranslate } from '~/types/Ttranslate'
 
-export function GlobalVolumeController() {
+export function GlobalVolumeController({
+  titleGlobalVolumeTranslate,
+  titleEnableTranslate
+}: TGlobalVolumeControllerTranslate) {
   const MAX_VALUE = 1000
 
   const [rangeValue, setRangeValue] = useState(MAX_VALUE)
@@ -47,13 +51,15 @@ export function GlobalVolumeController() {
         className="group relative hidden h-max w-28 items-center data-[is-showing='true']:flex"
       >
         <span className="sr-only">
-          Global volume in {Number(globalVolume * 100).toFixed(1)}%
+          {titleGlobalVolumeTranslate} {Number(globalVolume * 100).toFixed(1)}%
         </span>
         <input
           className={volumeControllerInput({ theme })}
           type="range"
           name="global-volume-controller"
-          title={`Global volume in ${Number(globalVolume * 100).toFixed(1)}%`}
+          title={`${titleGlobalVolumeTranslate} ${Number(
+            globalVolume * 100
+          ).toFixed(1)}%`}
           min="0"
           max={MAX_VALUE}
           value={rangeValue}
@@ -64,7 +70,7 @@ export function GlobalVolumeController() {
         />
       </div>
       <button
-        title="Enable/disable sound"
+        title={titleEnableTranslate}
         className={soundButton({ theme })}
         onClick={toggleMuted}
         data-umami-event="Mute/Unmute global volume"

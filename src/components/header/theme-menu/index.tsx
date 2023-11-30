@@ -5,8 +5,9 @@ import { PiPaintBrushBroadBold } from 'react-icons/pi'
 import useQueryState from '~/shared/query/query-state'
 import { Theme, useThemeStore } from '~/stores/theme-store'
 import { themeButton, triggerButton } from './styles'
+import { TTitleTranslate } from '~/types/Ttranslate'
 
-export function ThemeMenu() {
+export function ThemeMenu({ titleTranslate }: TTitleTranslate) {
   const setTheme = useThemeStore(set => set.setTheme)
   const currentTheme = useThemeStore(set => set.theme)
   const [queryTheme, setQueryTheme] = useQueryState('theme')
@@ -71,7 +72,7 @@ export function ThemeMenu() {
       <Menu>
         <div className="group flex">
           <Menu.Button
-            title="Toggle theme menu"
+            title={titleTranslate}
             className={triggerButton({ theme: currentTheme })}
             data-umami-event="Open theme menu"
           >

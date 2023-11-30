@@ -3,6 +3,12 @@ import { Metadata } from 'next'
 import Script from 'next/script'
 import { Nunito } from 'next/font/google'
 
+import { NextIntlClientProvider, useMessages } from 'next-intl'
+import { notFound } from 'next/navigation'
+
+// Can be imported from a shared config
+const locales = ['en', 'pt-br']
+
 import './global.css'
 
 const APP_NAME = 'Noisekun'
@@ -72,7 +78,16 @@ const nunito = Nunito({
   variable: '--font-nunito'
 })
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+  params: { locale }
+}: {
+  children: ReactNode
+  params: any
+}) {
+  if (!locales.includes(locale as any)) notFound()
+  const messages = useMessages()
+
   return (
     <html lang="en">
       <head>
@@ -82,7 +97,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           data-website-id={process.env.UMAMI_WEBSITE_ID}
         />
       </head>
-      <body className={nunito.variable}>{children}</body>
+      <body className={nunito.variable}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   )
 }

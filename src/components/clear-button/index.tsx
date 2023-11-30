@@ -1,8 +1,9 @@
 import { useSoundsStateStore } from '~/stores/sounds-state-store'
 import { useThemeStore } from '~/stores/theme-store'
 import { actionButton } from '~/shared/styles/action-button'
+import { TTranslate } from '~/types/Ttranslate'
 
-export function ClearButton() {
+export function ClearButton({ titleTranslate, textTranslate }: TTranslate) {
   const bulkSoundUpdate = useSoundsStateStore(state => state.bulkUpdate)
   const soundStates = useSoundsStateStore(state => state.sounds)
 
@@ -26,10 +27,10 @@ export function ClearButton() {
       disabled={isDisabled()}
       onClick={clear}
       className={actionButton({ theme })}
-      title="Clear all active sounds"
+      title={titleTranslate}
       data-umami-event="Clear Button"
     >
-      clear
+      {textTranslate}
     </button>
   )
 }

@@ -1,0 +1,19 @@
+{
+    "Index":{
+        "save":"salvar",
+        "share":"compartilhar",
+        "clear":"limpar",
+        "Save_current_combo":"Salvar combinação atual",
+        "Share_current_combo":"Compartilhar combinação atual",
+        "Clear_all_active_sounds":"Limpar todos os sons ativos",
+        "Toggle_combo_list":"Alternar lista de combinações"
+    },
+    "Header":{
+        "Reset_Pomodoro_timer":"Redefinir temporizador Pomodoro",
+        "Toggle_Pomodoro_timer":"Alternar temporizador Pomodoro",
+        "Global_volume_in":"Volume global em",
+        "Enable/disable_sound":"Ativar/desativar som",
+        "Toggle_theme_menu":"Alternar menu de tema",
+        "Toggle_combo_list":"Alternar lista de combinações"
+    }
+}
