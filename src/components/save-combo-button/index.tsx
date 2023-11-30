@@ -11,7 +11,7 @@ import { actionButton } from '~/shared/styles/action-button'
 import { input } from './styles'
 import { TTranslate } from '~/types/Ttranslate'
 
-export function SaveComboButton({ textTranslate }: TTranslate) {
+export function SaveComboButton({ titleTranslate, textTranslate }: TTranslate) {
   const sounds = useSoundsStateStore(state => state.sounds)
   const theme = useThemeStore(state => state.theme)
   const saveCombo = useComboStore(state => state.saveCombo)
@@ -67,7 +67,7 @@ export function SaveComboButton({ textTranslate }: TTranslate) {
           theme,
           className: /*tw:*/ 'flex items-center'
         })}
-        title="Save current combo"
+        title={titleTranslate}
       >
         {showSuccess ? (
           <span className="inline-flex w-10 justify-center">

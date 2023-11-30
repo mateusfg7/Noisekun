@@ -2,6 +2,17 @@
     "Index":{
         "save":"save",
         "share":"share",
-        "clear":"clear"
+        "clear":"clear",
+        "Save_current_combo":"Save current combo",
+        "Share_current_combo":"Share current combo",
+        "Clear_all_active_sounds":"Clear all active sounds"
+    },
+    "Header":{
+        "Reset_Pomodoro_timer":"Reset Pomodoro timer",
+        "Toggle_Pomodoro_timer":"Toggle Pomodoro timer",
+        "Global_volume_in":"Global volume in",
+        "Enable/disable_sound":"Enable/disable sound",
+        "Toggle_theme_menu":"Toggle theme menu",
+        "Toggle_combo_list":"Toggle combo list"
     }
 }
