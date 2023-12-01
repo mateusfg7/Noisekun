@@ -16,7 +16,7 @@ _Listen combinations of ambient sounds for **relaxing** or getting more **produc
 
 <div align="center">
 
-![](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fnoisekun.vercel.app)![](https://img.shields.io/github/last-commit/mateusfg7/noisekun?style=flat-square)
+![](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fnoisekun.com)![](https://img.shields.io/github/last-commit/mateusfg7/noisekun?style=flat-square)
 
 ![](.github/assets/pagespeed-metrics.svg)
 
