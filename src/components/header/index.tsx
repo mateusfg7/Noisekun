@@ -7,6 +7,7 @@ import { GlobalVolumeController } from './global-volume-controller'
 import { title } from './styles'
 import { Pomodoro } from './pomodoro'
 import { ComboList } from './combo-list'
+import { RandomModeButton } from './random-controller'
 
 export const Header: React.FC = () => {
   const theme = useThemeStore(set => set.theme)
@@ -20,6 +21,7 @@ export const Header: React.FC = () => {
         <Pomodoro />
       </div>
       <div className="right-10 flex items-center gap-3">
+        <RandomModeButton />
         <GlobalVolumeController />
         <ThemeMenu />
         <ComboList />
