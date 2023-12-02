@@ -4,6 +4,7 @@ import { PiPaintBrushBroadBold } from 'react-icons/pi'
 
 import useQueryState from '~/shared/query/query-state'
 import { Theme, useThemeStore } from '~/stores/theme-store'
+import { themeList } from './theme-list'
 import { themeButton, triggerButton } from './styles'
 
 export function ThemeMenu() {
@@ -31,41 +32,6 @@ export function ThemeMenu() {
     }
   }, [])
 
-  interface ThemeAttrs {
-    title: string
-    id: Theme
-  }
-  const themeList: ThemeAttrs[] = [
-    {
-      title: 'Light',
-      id: 'light'
-    },
-    {
-      title: 'Dark',
-      id: 'dark'
-    },
-    {
-      title: 'Transition',
-      id: 'transition'
-    },
-    {
-      title: 'Blue Room',
-      id: 'blue-room'
-    },
-    {
-      title: 'Train',
-      id: 'train'
-    },
-    {
-      title: 'Waterfall',
-      id: 'waterfall'
-    },
-    {
-      title: 'Camping Fire',
-      id: 'camping-fire'
-    }
-  ]
-
   return (
     <div className="z-40">
       <Menu>
@@ -89,6 +55,7 @@ export function ThemeMenu() {
         >
           <Menu.Items
             as="div"
+            data-testid="theme-menu-container"
             className="snap absolute left-4 right-4 mt-2 flex max-h-[85vh] origin-top-right snap-y snap-mandatory scroll-pt-4 flex-col gap-4 overflow-y-auto rounded-2xl p-4 shadow-2xl backdrop-blur-md scrollbar-hide focus:outline-none md:left-auto md:right-0"
           >
             {themeList.map(theme => {
