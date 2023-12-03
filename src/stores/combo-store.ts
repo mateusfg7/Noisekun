@@ -3,20 +3,25 @@ import { SoundState } from './sounds-state-store'
 import { persist } from 'zustand/middleware'
 import { Theme } from './theme-store'
 
-export interface Combo {
+export type Combo = {
   id: string
   name: string
   theme: Theme
   sounds: SoundState[]
 }
 
-interface Props {
+type States = {
   combos: Combo[]
+}
+
+type Actions = {
   saveCombo: (combo: Combo) => void
   deleteCombo: (id: string) => void
 }
 
-export const useComboStore = create<Props>()(
+type ComboStoreProps = States & Actions
+
+export const useComboStore = create<ComboStoreProps>()(
   persist(
     (set, get) => ({
       combos: [],
