@@ -1,91 +1,122 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, renderHook, act } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+
 import { Combo, useComboStore } from '~/stores/combo-store'
+import { useSoundsStateStore } from '~/stores/sounds-state-store'
 import { ComboList } from '.'
 
-jest.mock('../../../stores/combo-store')
-
-const mockEmptyComboList = () => {
-  ;(useComboStore as unknown as jest.Mock).mockImplementation(
-    () => [] as Combo[]
-  )
+const exampleCombo: Combo = {
+  id: 'd90d230j',
+  name: 'My Combo',
+  theme: 'dark',
+  sounds: [{ active: true, id: 'rain', loaded: true, volume: 1 }]
 }
 
-const mockPopulatedComboList = () => {
-  ;(useComboStore as unknown as jest.Mock).mockImplementation(
-    () =>
-      [
-        {
-          id: 'd90d230j',
-          name: 'My Combo',
-          theme: 'dark',
-          sounds: [{ active: true, id: 'd9b38dh', loaded: true, volume: 1 }]
-        }
-      ] as Combo[]
-  )
+const populateComboList = () => {
+  const { result } = renderHook(() => useComboStore())
+
+  act(() => {
+    result.current.saveCombo(exampleCombo)
+  })
 }
 
 describe('Combo List', () => {
-  it('should render correctly', () => {
-    mockEmptyComboList()
+  beforeEach(() => {
+    const { result } = renderHook(() => useSoundsStateStore())
 
+    // Reset the state
+    act(() => {
+      result.current.sounds = []
+    })
+  })
+
+  it('should render correctly', () => {
     render(<ComboList />)
 
-    const element = screen.getByTestId('combo-list')
-
-    expect(element).toBeInTheDocument()
+    expect(screen.getByTestId('combo-list')).toBeInTheDocument()
   })
 
   it('should render trigger button', () => {
-    mockEmptyComboList()
-
     render(<ComboList />)
 
-    const triggerButton = screen.getByTitle('Toggle combo list')
-
-    expect(triggerButton).toBeInTheDocument()
+    expect(screen.getByTitle('Toggle combo list')).toBeInTheDocument()
   })
 
   it('trigger button should be disabled', () => {
-    mockEmptyComboList()
-
     render(<ComboList />)
 
-    const triggerButton = screen.getByTitle('Toggle combo list')
-
-    expect(triggerButton).toBeDisabled()
+    expect(screen.getByTitle('Toggle combo list')).toBeDisabled()
   })
 
-  it('trigger button should not be disabled', () => {
-    mockPopulatedComboList()
-
+  it('trigger button should be enabled', () => {
     render(<ComboList />)
+    populateComboList()
 
-    const triggerButton = screen.getByTitle('Toggle combo list')
-
-    expect(triggerButton).not.toBeDisabled()
+    expect(screen.getByTitle('Toggle combo list')).toBeEnabled()
   })
 
-  it('modal should be opened', async () => {
-    mockPopulatedComboList()
+  it('should open modal', async () => {
     render(<ComboList />)
+    populateComboList()
 
-    const triggerButton = screen.getByTitle('Toggle combo list')
+    await userEvent.click(screen.getByTitle('Toggle combo list'))
 
-    fireEvent.click(triggerButton)
-
-    const modal = await screen.findByTestId('combo-list-modal')
-
-    expect(modal).toBeInTheDocument()
+    expect(screen.getByTestId('combo-list-modal')).toBeInTheDocument()
   })
 
   it('combo button should be rendered', async () => {
-    mockPopulatedComboList()
     render(<ComboList />)
+    populateComboList()
 
-    fireEvent.click(screen.getByTitle('Toggle combo list'))
+    await userEvent.click(screen.getByTitle('Toggle combo list'))
 
-    const comboButton = await screen.findByText('My Combo')
+    expect(screen.getByText('My Combo')).toBeInTheDocument()
+  })
 
-    expect(comboButton).toBeInTheDocument()
+  it('should apply combo', async () => {
+    const { result } = renderHook(() => useSoundsStateStore())
+
+    render(<ComboList />)
+    populateComboList()
+
+    await userEvent.click(screen.getByTitle('Toggle combo list'))
+    await userEvent.click(screen.getByText('My Combo'))
+
+    expect(result.current.sounds.length).toBe(1)
+  })
+
+  it('should switch between select/delete mode', async () => {
+    render(<ComboList />)
+    populateComboList()
+
+    await userEvent.click(screen.getByTitle('Toggle combo list'))
+
+    await userEvent.click(screen.getByText('Delete'))
+    expect(
+      screen.getByTestId(`${exampleCombo.id}_delete_button`)
+    ).toBeInTheDocument()
+
+    await userEvent.click(screen.getByText('Select'))
+    expect(screen.getByText('My Combo')).toBeInTheDocument()
+  })
+
+  it('should delete combo', async () => {
+    const { result } = renderHook(() => useComboStore())
+
+    render(<ComboList />)
+    populateComboList()
+
+    await userEvent.click(screen.getByTitle('Toggle combo list'))
+    await userEvent.click(screen.getByText('Delete'))
+
+    const comboDeleteButton = screen.getByTestId(
+      `${exampleCombo.id}_delete_button`
+    )
+
+    expect(result.current.combos.length).toBe(1)
+
+    await userEvent.click(comboDeleteButton)
+
+    expect(result.current.combos.length).toBe(0)
   })
 })

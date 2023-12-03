@@ -120,6 +120,7 @@ export function ComboList() {
                   className={editButton({ theme })}
                   onClick={() => deleteCombo(combo.id)}
                   data-umami-event="Delete combo"
+                  data-testid={`${combo.id}_delete_button`}
                 >
                   <span className="font-bold">{combo.name}</span>
                   <FiTrash className="group-hover:text-red-600" />
