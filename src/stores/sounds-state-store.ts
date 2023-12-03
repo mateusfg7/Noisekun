@@ -1,21 +1,25 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-export interface SoundState {
+export type SoundState = {
   id: string
   active: boolean
   volume: number
   loaded: boolean
 }
 
-interface Props {
+type States = {
   sounds: SoundState[]
+}
+type Actions = {
   getSound: (id: string) => undefined | SoundState
   setSound: (newState: SoundState) => void
   bulkUpdate: (soundsStates: SoundState[]) => void
 }
 
-export const useSoundsStateStore = create<Props>()(
+export type SoundsStateStoreProps = States & Actions
+
+export const useSoundsStateStore = create<SoundsStateStoreProps>()(
   persist(
     (set, get) => ({
       sounds: [] as SoundState[],

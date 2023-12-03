@@ -1,48 +1,73 @@
-import { render, screen } from '@testing-library/react'
-import { ClearButton } from '.'
-import { SoundState, useSoundsStateStore } from '~/stores/sounds-state-store'
+import { act, render, renderHook, screen } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
-jest.mock('../../stores/sounds-state-store')
+import { SoundState, useSoundsStateStore } from '~/stores/sounds-state-store'
+import { ClearButton } from '.'
 
 describe('Clear Button', () => {
   it('should render', async () => {
-    ;(useSoundsStateStore as unknown as jest.Mock).mockImplementation(
-      () => [] as SoundState[]
-    )
-
     render(<ClearButton />)
 
     const button = await screen.findByRole('button', { name: /clear/i })
     expect(button).toBeInTheDocument()
   })
 
-  it('should not be disabled', async () => {
-    ;(useSoundsStateStore as unknown as jest.Mock).mockImplementation(
-      () =>
-        [
-          { active: true, id: 'd4ad48e', loaded: true, volume: 1 }
-        ] as SoundState[]
-    )
+  it('should be enabled', async () => {
+    const {
+      result: { current: bulkUpdate }
+    } = renderHook(() => useSoundsStateStore(store => store.bulkUpdate))
 
     render(<ClearButton />)
 
-    const button = await screen.findByRole('button', { name: /clear/i })
+    act(() => {
+      bulkUpdate([{ active: true, id: 'rain', loaded: true, volume: 1 }])
+    })
 
-    expect(button.getAttribute('disabled')).toBeNull()
+    expect(await screen.findByRole('button', { name: /clear/i })).toBeEnabled()
   })
 
   it('should be disabled', async () => {
-    ;(useSoundsStateStore as unknown as jest.Mock).mockImplementation(
-      () =>
-        [
-          { active: false, id: 'd4ad48e', loaded: true, volume: 1 }
-        ] as SoundState[]
-    )
+    const {
+      result: { current: bulkUpdate }
+    } = renderHook(() => useSoundsStateStore(store => store.bulkUpdate))
 
     render(<ClearButton />)
 
-    const button = await screen.findByRole('button', { name: /clear/i })
+    act(() => {
+      bulkUpdate([{ active: false, id: 'rain', loaded: true, volume: 1 }])
+    })
 
-    expect(button.getAttribute('disabled')).not.toBeNull()
+    expect(await screen.findByRole('button', { name: /clear/i })).toBeDisabled()
+  })
+
+  it('calls `bulkUpdate` when clear button is clicked', async () => {
+    const {
+      result: { current: bulkUpdate }
+    } = renderHook(() => useSoundsStateStore(store => store.bulkUpdate))
+
+    render(<ClearButton />)
+
+    const soundsListExample: SoundState[] = [
+      { active: false, id: 'rain', loaded: true, volume: 1 },
+      { active: true, id: 'waterfall', loaded: true, volume: 1 },
+      { active: false, id: 'plane', loaded: true, volume: 1 },
+      { active: true, id: 'water', loaded: true, volume: 1 },
+      { active: false, id: 'drops', loaded: true, volume: 1 },
+      { active: true, id: 'cafe', loaded: true, volume: 1 },
+      { active: false, id: 'birds', loaded: true, volume: 1 },
+      { active: true, id: 'brown-noise', loaded: true, volume: 1 }
+    ]
+
+    act(() => {
+      bulkUpdate(soundsListExample)
+    })
+
+    const clearButton = await screen.findByRole('button', { name: /clear/i })
+
+    expect(clearButton).toBeEnabled()
+
+    await userEvent.click(clearButton)
+
+    expect(clearButton).toBeDisabled()
   })
 })
