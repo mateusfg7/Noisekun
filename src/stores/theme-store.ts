@@ -9,12 +9,12 @@ export type Theme =
   | 'waterfall'
   | 'camping-fire'
 
-interface ThemeStore {
-  theme: Theme
-  setTheme: (newTheme: Theme) => void
-}
+type States = { theme: Theme }
+type Actions = { setTheme: (newTheme: Theme) => void }
 
-export const useThemeStore = create<ThemeStore>(set => ({
+export type ThemeStoreProps = States & Actions
+
+export const useThemeStore = create<ThemeStoreProps>(set => ({
   theme: 'transition',
   setTheme: newTheme => set(() => ({ theme: newTheme }))
 }))
