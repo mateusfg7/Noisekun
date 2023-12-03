@@ -1,12 +1,17 @@
 import { create } from 'zustand'
 
-interface GlobalVolumeState {
+type States = {
   globalVolume: number
+}
+
+type Actions = {
   setGlobalVolume: (newGlobalVolume: number) => void
   resetStore: () => void
 }
 
-export const useGlobalVolumeStore = create<GlobalVolumeState>(set => ({
+export type GlobalVolumeStoreProps = States & Actions
+
+export const useGlobalVolumeStore = create<GlobalVolumeStoreProps>(set => ({
   globalVolume: 1,
   setGlobalVolume: (newGlobalVolume: number) =>
     set(() => ({ globalVolume: newGlobalVolume })),
