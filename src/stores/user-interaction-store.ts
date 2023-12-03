@@ -1,11 +1,18 @@
 import { create } from 'zustand'
 
-type Props = {
+type States = {
   userHasInteracted: boolean
+}
+
+type Actions = {
   setUserHasInteracted: (value: boolean) => void
 }
 
-export const useUserInteractionStore = create<Props>(set => ({
-  userHasInteracted: false,
-  setUserHasInteracted: value => set({ userHasInteracted: value })
-}))
+export type UserInteractionStoreProps = States & Actions
+
+export const useUserInteractionStore = create<UserInteractionStoreProps>(
+  set => ({
+    userHasInteracted: false,
+    setUserHasInteracted: value => set({ userHasInteracted: value })
+  })
+)
