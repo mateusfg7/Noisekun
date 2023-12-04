@@ -2,11 +2,13 @@ import React from 'react'
 import Link from 'next/link'
 
 import { useThemeStore } from '~/stores/theme-store'
+
 import { ThemeMenu } from './theme-menu'
 import { GlobalVolumeController } from './global-volume-controller'
-import { title } from './styles'
 import { Pomodoro } from './pomodoro'
 import { ComboList } from './combo-list'
+
+import { title } from './styles'
 
 export const Header: React.FC = () => {
   const theme = useThemeStore(set => set.theme)
