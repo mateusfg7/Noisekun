@@ -2,6 +2,38 @@
 
 Thanks for your interest in contributing to Noisekun! Please take a moment to review this document before submitting a pull request.
 
+## Setup Project
+
+### Audio files
+
+The audio URLs is hard coded on [`sounds.tsx`](src/sounds.tsx), update file with your URLs.
+The audio files are stored on Noisekun CDN, but you can access them at `.github/assets/sounds`.
+The icons is on [`src/components/sound-icons/`](src/components/sound-icons/).
+
+### Init server
+
+> _This project is using [pnpm](https://pnpm.io) as package manager._
+
+**Install dependencies**
+
+```
+pnpm install
+```
+
+**Init development server**
+
+```
+pnpm dev
+```
+
+_or..._
+
+**Init production server**
+
+```
+pnpm build && pnpm start
+```
+
 ## Pull requests
 
 **Please ask first before starting work on any significant new features.**
