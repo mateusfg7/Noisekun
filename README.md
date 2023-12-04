@@ -38,37 +38,9 @@ _Listen combinations of ambient sounds for **relaxing** or getting more **produc
 
 Check the [**issue list**](https://github.com/mateusfg7/Noisekun/issues?q=is%3Aissue+is%3Aopen+label%3Afeat) for more planned features!
 
-# 🔧 Setup Project
+# 🔧 Contributing
 
-## Audio files
-
-The audio URLs is hard coded on [`sounds.tsx`](src/sounds.tsx), update file with your URLs.
-The audio files are stored on Noisekun CDN, but you can access them at `.github/assets/sounds`.
-The icons is on [`src/components/sound-icons/`](src/components/sound-icons/).
-
-## Init server
-
-> _This project is using [pnpm](https://pnpm.io) as package manager._
-
-**Install dependencies**
-
-```
-pnpm install
-```
-
-**Init development server**
-
-```
-pnpm dev
-```
-
-_or..._
-
-**Init production server**
-
-```
-pnpm build && pnpm start
-```
+Thanks for your interest in contributing to Noisekun! Please take a moment to review the [CONTRIBUTING.md](https://github.com/mateusfg7/Noisekun/blob/main/CONTRIBUTING.md) guideline **before submitting a pull request**. You will find all information about the project structure, files, how to setup project, and good practices for submit a pull request.
 
 <br/>
 <br/>
