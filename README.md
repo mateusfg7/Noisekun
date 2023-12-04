@@ -46,35 +46,6 @@ The audio URLs is hard coded on [`sounds.tsx`](src/sounds.tsx), update file with
 The audio files are stored on Noisekun CDN, but you can access them at `.github/assets/sounds`.
 The icons is on [`src/components/sound-icons/`](src/components/sound-icons/).
 
-## Remote dev container
-
-**Extensions**
-
-You can enable/disable extensions on [`devcontainer.json`](.devcontainer/devcontainer.json).
-
-```json
-{
-  // IDE Customization
-  "customizations": {
-    "vscode": {
-      // Extensions
-      "extensions": [
-        "ms-vscode-remote.remote-containers",
-        "VisualStudioExptTeam.vscodeintellicode",
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "bradlc.vscode-tailwindcss"
-
-        // Optional
-        // "formulahendry.auto-rename-tag",
-        // "streetsidesoftware.code-spell-checker",
-        // "GitHub.vscode-pull-request-github"
-      ]
-    }
-  }
-}
-```
-
 ## Init server
 
 > _This project is using [pnpm](https://pnpm.io) as package manager._
