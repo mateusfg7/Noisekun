@@ -1,4 +1,4 @@
-import { calculateVolumeSteps } from '@/components/header/random-controller'
+import { calculateVolumeSteps } from '.'
 
 describe('calculateVolumeSteps tests', () => {
   test('calculates volume steps correctly for regular inputs', () => {

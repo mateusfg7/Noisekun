@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FiZap, FiZapOff } from 'react-icons/fi'
 
-import { useThemeStore } from '@/stores/theme-store'
-import { volumeControllerInput as randomControllerInput } from '@/shared/styles/volume-controller-input'
+import { useThemeStore } from '../../../stores/theme-store'
+import { volumeControllerInput as randomControllerInput } from '../../../shared/styles/volume-controller-input'
 import { soundButton } from './styles'
-import { useGlobalRandomModeStore } from '@/stores/random-mode-store'
-import { useSoundsStateStore } from '@/stores/sounds-state-store'
+import { useGlobalRandomModeStore } from '../../../stores/random-mode-store'
+import { useSoundsStateStore } from '../../../stores/sounds-state-store'
 
 // Calculate Target Volumes and out for testing purposes
 export const calculateVolumeSteps = (currentVolume, targetVolume, steps) => {
