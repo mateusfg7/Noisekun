@@ -7,14 +7,28 @@ import { soundButton } from './styles'
 import { useGlobalRandomModeStore } from '@/stores/random-mode-store'
 import { useSoundsStateStore } from '@/stores/sounds-state-store'
 
+// Calculate Target Volumes and out for testing purposes
+export const calculateVolumeSteps = (currentVolume, targetVolume, steps) => {
+  let volumeSteps = []
+  for (let i = 1; i <= steps; i++) {
+    // Exponential interpolation factor (ease-out)
+    const factor = 1 - Math.pow(1 - i / steps, 2)
+    const newVolume = currentVolume + (targetVolume - currentVolume) * factor
+    volumeSteps.push(Math.min(newVolume, 1))
+  }
+  return volumeSteps
+}
+
 export function RandomModeButton() {
+  // How often the randomization takes place (min and max for the slider)
   const MIN_INTERVAL = 10 * 1000 // 10 seconds
   const MAX_INTERVAL = 5 * 60 * 1000 // 5 minutes
-
-  const [updateInterval, setUpdateInterval] = useState(MAX_INTERVAL)
+  const TOTAL_TRANSITION = 5000 // 5 seconds
+  const NUM_STEPS = 5 // Sound moves from 1 state to another in 5 steps
 
   const { randomMode, setRandomMode } = useGlobalRandomModeStore()
   const { sounds, setSound } = useSoundsStateStore()
+  const [updateInterval, setUpdateInterval] = useState(MAX_INTERVAL)
   const [isShowing, setIsShowing] = useState(false)
 
   const theme = useThemeStore(set => set.theme)
@@ -32,34 +46,37 @@ export function RandomModeButton() {
     timeoutsRef.current = []
   }
 
-  function randomizeVolumes() {
-    const steps = 5
-    const transitionDuration = 5000 // Total duration for volume change
-    const stepDuration = transitionDuration / steps
+  // Apply Volumes with Timeouts
+  function applyVolumeChanges(sounds, stepDuration) {
+    clearAllTimeouts() // Clears existing timeouts
 
-    clearAllTimeouts()
-
-    soundsRef.current
-      .filter(sound => sound.active)
-      .forEach(sound => {
-        const currentVolume = sound.volume
+    sounds.forEach(sound => {
+      if (sound.active) {
         const targetVolume = Math.random()
+        const volumeSteps = calculateVolumeSteps(sound.volume, targetVolume, 5)
 
-        for (let i = 1; i <= steps; i++) {
-          const timeoutId = setTimeout(() => {
-            // Exponential interpolation factor (ease-out)
-            const factor = 1 - Math.pow(1 - i / steps, 2)
-            const newVolume =
-              currentVolume + (targetVolume - currentVolume) * factor
-            // Update the sound volume in a new object
-            const updatedSound = { ...sound, volume: Math.min(newVolume, 1) }
-            // Update the global state with the new sounds array
-            setSound(updatedSound)
-          }, i * stepDuration)
+        volumeSteps.forEach((newVolume, index) => {
+          const timeoutId = setTimeout(
+            () => {
+              const updatedSound = { ...sound, volume: newVolume }
+              setSound(updatedSound)
+            },
+            (index + 1) * stepDuration
+          )
 
           timeoutsRef.current.push(timeoutId)
-        }
-      })
+        })
+      }
+    })
+  }
+
+  function randomizeVolumes() {
+    // Total duration for volume change
+    const transitionDuration = TOTAL_TRANSITION
+    const stepDuration = transitionDuration / NUM_STEPS
+
+    const activeSounds = soundsRef.current.filter(sound => sound.active)
+    applyVolumeChanges(activeSounds, stepDuration)
   }
 
   useEffect(() => {
