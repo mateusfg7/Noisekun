@@ -6,3 +6,7 @@ jobs:
   call-lint:
     name: Call lint.yml
     uses: mateusfg7/noisekun/.github/workflows/lint.yml@main
+    
+  call-test:
+    name: Call lint.yml
+    uses: mateusfg7/noisekun/.github/workflows/test.yml@main

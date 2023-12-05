@@ -4,30 +4,25 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-
   // Prepare the container
   "postCreateCommand": "corepack enable",
-  "postStartCommand": "pnpm install && pnpm dev",
-
+  "postStartCommand": "pnpm install",
   // IDE Customization
   "customizations": {
     "vscode": {
-      // Extensions
+      // Extensios
       "extensions": [
-        "ms-vscode-remote.remote-containers",
-        "VisualStudioExptTeam.vscodeintellicode",
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "bradlc.vscode-tailwindcss"
-
-        // Optional
-        // "formulahendry.auto-rename-tag",
-        // "streetsidesoftware.code-spell-checker",
-        // "GitHub.vscode-pull-request-github"
+        "ms-vscode-remote.remote-containers", // Dev Containers
+        "VisualStudioExptTeam.vscodeintellicode", // VSCode INtellicode
+        "dbaeumer.vscode-eslint", // ESLint
+        "esbenp.prettier-vscode", // Prettier (for autoformat)
+        "bradlc.vscode-tailwindcss", // TailwindCSS Autocomplete
+        "streetsidesoftware.code-spell-checker", // Code Spell Checker (gramar)
+        "GitHub.vscode-pull-request-github", // Github Pull Requests and Issues
+        "csstools.postcss", // PostCSS Intellisense and highlight
+        "naumovs.color-highlight", // Color code highlight
+        "editorconfig.editorconfig" // Editor Config
       ]
     }
-  },
-
-  // Use root user
-  "remoteUser": "root"
+  }
 }

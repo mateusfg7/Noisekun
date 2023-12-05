@@ -1,18 +1,20 @@
 import { ReactNode } from 'react'
 import { Metadata } from 'next'
+import Script from 'next/script'
 import { Nunito } from 'next/font/google'
 
 import './global.css'
-import Script from 'next/script'
 
 const APP_NAME = 'Noisekun'
 const APP_DESCRIPTION =
   'Listen combinations of ambient sounds for relaxing or getting more productive on your task!'
-const APP_URL = 'https://noisekun.mateusf.com'
+const APP_URL = process.env.HOSTNAME
+  ? `https://${process.env.HOSTNAME}`
+  : 'http://localhost:3000'
 
 export const metadata: Metadata = {
   metadataBase: new URL(APP_URL),
-  title: APP_NAME,
+  title: `${APP_NAME} — ${APP_DESCRIPTION}`,
   applicationName: APP_NAME,
   description: APP_DESCRIPTION,
   manifest: '/manifest.json',

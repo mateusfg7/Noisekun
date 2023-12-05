@@ -1,13 +1,14 @@
 import { useState } from 'react'
-
-import { useComboStore } from '@/stores/combo-store'
-import { useSoundsStateStore } from '@/stores/sounds-state-store'
-import { useThemeStore } from '@/stores/theme-store'
-
-import { actionButton } from '@/shared/styles/action-button'
-import { input } from './styles'
 import { FiCheck } from 'react-icons/fi'
-import { randomString } from '@/libs/utils'
+
+import { useComboStore } from '~/stores/combo-store'
+import { useSoundsStateStore } from '~/stores/sounds-state-store'
+import { useThemeStore } from '~/stores/theme-store'
+
+import { randomString } from '~/utils/random-string'
+import { actionButton } from '~/shared/styles/action-button'
+
+import { input } from './styles'
 
 export function SaveComboButton() {
   const sounds = useSoundsStateStore(state => state.sounds)

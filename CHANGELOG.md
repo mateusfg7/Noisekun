@@ -1,3 +1,28 @@
+## [1.4.0](https://github.com/mateusfg7/Noisekun/compare/1.3.4...1.4.0) (2023-11-25)
+
+
+### Features
+
+* add `querySounds` verification on page mount before show interaction-modal ([e01418c](https://github.com/mateusfg7/Noisekun/commit/e01418c44c5ca0bf42ce70682669631b22f9fe95))
+* added queryParams ([f3b1abc](https://github.com/mateusfg7/Noisekun/commit/f3b1abc9c9de6de8cbf209290f853fca52273f59))
+* **seo:** improve website title ([cc5ba6a](https://github.com/mateusfg7/Noisekun/commit/cc5ba6a5f006662636349f0633135ee285285ba8)), closes [#601](https://github.com/mateusfg7/Noisekun/issues/601)
+* **sound:** add interaction verification before play sound ([5ee974d](https://github.com/mateusfg7/Noisekun/commit/5ee974decc8383414567124131a7650f287adde3))
+* **stores:** create user-interation-store ([eeba491](https://github.com/mateusfg7/Noisekun/commit/eeba491d8c5846b416b8cd47089cb3fd82b13ac5))
+* **ui:** change load theme source priority ([88aa8ec](https://github.com/mateusfg7/Noisekun/commit/88aa8ecba400373966fa13a9f3cd3480f84c8541))
+* **ui:** create "share-button" component ([94b02b2](https://github.com/mateusfg7/Noisekun/commit/94b02b2c892e97909085d746f01d800cf77b3c66))
+* **ui:** create interaction-modal component ([7b14531](https://github.com/mateusfg7/Noisekun/commit/7b14531182b6701b2d796449c48238138d7aa836))
+
+
+### Bug Fixes
+
+* adjusted some appointments ([a59e85e](https://github.com/mateusfg7/Noisekun/commit/a59e85ea8ded70f3f6aa9844163259c0d78b4836))
+* copy combo url to clipboard ([160989c](https://github.com/mateusfg7/Noisekun/commit/160989cd04c7a49cccad41fe7a8028e950333166))
+* **deps:** update dependency react-icons to v4.12.0 ([e86981a](https://github.com/mateusfg7/Noisekun/commit/e86981ab2d81adbf5ead7cef282052b536696907))
+* **deps:** update dependency zustand to v4.4.6 ([39675bb](https://github.com/mateusfg7/Noisekun/commit/39675bbd704f987085e08306920e657728c6b081))
+* **seo:** get current hostname/domain from env variables ([1980569](https://github.com/mateusfg7/Noisekun/commit/198056974a8389de04fdcbfcd018b3e378264443))
+* **ui:** update `queryTheme` when select a new theme ([5ab9c12](https://github.com/mateusfg7/Noisekun/commit/5ab9c122299678d103bb72a4b9e23d7adb601847))
+* **ui:** use `localSoundState.loaded` as criteria for visual active feedback ([84e9d11](https://github.com/mateusfg7/Noisekun/commit/84e9d11ff7e6c8964263063f96d16e25fe036c12))
+
 ## [1.3.4](https://github.com/mateusfg7/Noisekun/compare/1.3.3...1.3.4) (2023-10-10)
 
 

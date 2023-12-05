@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import { FiVolumeX, FiVolume2, FiVolume1, FiVolume } from 'react-icons/fi'
 
-import { useGlobalVolumeStore } from '@/stores/global-volume-store'
-import { useThemeStore } from '@/stores/theme-store'
-import { volumeControllerInput } from '@/shared/styles/volume-controller-input'
+import { useGlobalVolumeStore } from '~/stores/global-volume-store'
+import { useThemeStore } from '~/stores/theme-store'
+import { volumeControllerInput } from '~/shared/styles/volume-controller-input'
+
 import { soundButton } from './styles'
 
 export function GlobalVolumeController() {

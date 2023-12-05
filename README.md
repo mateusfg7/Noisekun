@@ -16,7 +16,7 @@ _Listen combinations of ambient sounds for **relaxing** or getting more **produc
 
 <div align="center">
 
-![](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fnoisekun.vercel.app)![](https://img.shields.io/github/last-commit/mateusfg7/noisekun?style=flat-square)
+![](https://img.shields.io/website?style=flat-square&url=https%3A%2F%2Fnoisekun.com)![](https://img.shields.io/github/last-commit/mateusfg7/noisekun?style=flat-square)
 
 ![](.github/assets/pagespeed-metrics.svg)
 
@@ -33,70 +33,14 @@ _Listen combinations of ambient sounds for **relaxing** or getting more **produc
 - Enhance look with 7 themes
 - Pomodoro timer
 - Save sound combos
+- Share sound combo with theme
 - Browser persistent config (pomodoro timer, volume, theme and combos)
 
 Check the [**issue list**](https://github.com/mateusfg7/Noisekun/issues?q=is%3Aissue+is%3Aopen+label%3Afeat) for more planned features!
 
-# 🔧 Setup Project
+# 🔧 Contributing
 
-## Audio files
-
-The audio URLs is hard coded on [`sounds.tsx`](src/sounds.tsx), update file with your URLs.
-The audio files are stored on Noisekun CDN, but you can access them at `.github/assets/sounds`.
-The icons is on [`src/components/sound-icons/`](src/components/sound-icons/).
-
-## Remote dev container
-
-**Extensions**
-
-You can enable/disable extensions on [`devcontainer.json`](.devcontainer/devcontainer.json).
-
-```json
-{
-  // IDE Customization
-  "customizations": {
-    "vscode": {
-      // Extensions
-      "extensions": [
-        "ms-vscode-remote.remote-containers",
-        "VisualStudioExptTeam.vscodeintellicode",
-        "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode",
-        "bradlc.vscode-tailwindcss"
-
-        // Optional
-        // "formulahendry.auto-rename-tag",
-        // "streetsidesoftware.code-spell-checker",
-        // "GitHub.vscode-pull-request-github"
-      ]
-    }
-  }
-}
-```
-
-## Init server
-
-> _This project is using [pnpm](https://pnpm.io) as package manager._
-
-**Install dependencies**
-
-```
-pnpm install
-```
-
-**Init development server**
-
-```
-pnpm dev
-```
-
-_or..._
-
-**Init production server**
-
-```
-pnpm build && pnpm start
-```
+Thanks for your interest in contributing to Noisekun! Please take a moment to review the [CONTRIBUTING.md](https://github.com/mateusfg7/Noisekun/blob/main/CONTRIBUTING.md) guideline **before submitting a pull request**. You will find all information about the project structure, files, how to setup project, and good practices for submit a pull request.
 
 <br/>
 <br/>

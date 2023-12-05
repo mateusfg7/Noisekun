@@ -19,4 +19,4 @@ jobs:
 
           plugin_pagespeed: yes
           plugin_pagespeed_detailed: yes
-          plugin_pagespeed_url: https://noisekun.mateusf.com
+          plugin_pagespeed_url: https://noisekun.com

@@ -1,9 +1,9 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 
-import { padZero } from './pad-zero'
 import { display, minuteConfigInput } from './styles'
-import { useThemeStore } from '@/stores/theme-store'
+import { useThemeStore } from '~/stores/theme-store'
+import { padZero } from '~/utils/pad-zero'
 
 interface Props {
   displayMinutes: string

@@ -1,11 +1,12 @@
-import React, { ComponentProps, ReactNode } from 'react'
+import React, { ComponentProps } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { tv } from 'tailwind-variants'
 import { FiAward, FiGithub } from 'react-icons/fi'
 import { AiOutlineCopyrightCircle } from 'react-icons/ai'
+
+import { useThemeStore } from '~/stores/theme-store'
 import { container, version } from './styles'
-import { useThemeStore } from '@/stores/theme-store'
 
 import packageJson from '../../../package.json'
 
@@ -61,7 +62,7 @@ export function Footer() {
           </Info>
 
           <Info
-            href="https://github.com/mateusfg7/Noisekun/#credits"
+            href="https://github.com/mateusfg7/Noisekun/?tab=readme-ov-file#%EF%B8%8F-credits"
             data-umami-event="Credits Link"
           >
             <FiAward /> Credits

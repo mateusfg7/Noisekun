@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import { useThemeStore } from '@/stores/theme-store'
-import { useSoundsStateStore } from '@/stores/sounds-state-store'
+import { useThemeStore } from '~/stores/theme-store'
+import { useSoundsStateStore } from '~/stores/sounds-state-store'
 
 import { container, input } from './styles'
 

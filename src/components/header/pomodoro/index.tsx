@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { FiPause, FiPlay, FiRotateCw } from 'react-icons/fi'
 
-import { PomodoroStatus, usePomodoroStore } from '@/stores/pomodoro-store'
-import { useThemeStore } from '@/stores/theme-store'
+import { PomodoroStatus, usePomodoroStore } from '~/stores/pomodoro-store'
+import { useThemeStore } from '~/stores/theme-store'
+
+import { padZero } from '~/utils/pad-zero'
+
 import { ConfigModal } from './config-modal'
-import { padZero } from './pad-zero'
 import { container, controlButton } from './styles'
 
 export function Pomodoro() {

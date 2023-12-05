@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['next', 'plugin:jest/recommended', 'prettier'],
-  plugins: ['prettier'],
+  plugins: ['prettier', 'testing-library', 'jest-dom'],
   rules: {
     'space-before-function-paren': 'off',
     'react/prop-types': 'off',

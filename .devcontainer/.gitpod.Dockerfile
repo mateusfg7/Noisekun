@@ -1,14 +1,11 @@
-ARG VARIANT=21-bookworm
+FROM gitpod/workspace-node:latest
 
-FROM node:${VARIANT}
- 
-ARG NPM_GLOBAL=/usr/local/share/npm-global
+# Update system
+RUN sudo apt update && sudo apt upgrade -y
 
-# Add NPM global to PATH.
-ENV PATH=${NPM_GLOBAL}/bin:${PATH}
-
-# Persist host git config to container.
-VOLUME ~/.gitconfig:/root/.gitconfig
+# Setup Pnpm
+RUN corepack enable
+RUN npm i -g pnpm@latest
 
 # Setup ZSH with Oh-My-Zsh
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.5/zsh-in-docker.sh)" -- \
@@ -20,4 +17,3 @@ RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/
 
 
 ENV SHELL=/usr/bin/zsh
-
