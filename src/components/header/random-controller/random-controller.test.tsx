@@ -16,7 +16,7 @@ describe('RandomModeButton', () => {
 
     const button = screen.getByRole('button', {
       name: /Enable\/Disable Random Mode/i
-    });
+    })
 
     expect(button).toBeInTheDocument()
   })
