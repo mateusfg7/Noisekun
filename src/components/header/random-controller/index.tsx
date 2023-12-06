@@ -48,40 +48,37 @@ export function RandomModeButton() {
 
   // Apply Volumes with Timeouts
   function applyVolumeChanges(stepDuration) {
-    clearAllTimeouts() // Clears existing timeouts
+    clearAllTimeouts(); // Clears existing timeouts
 
-    soundsRef.current
-      .filter(sound => sound.active)
-      .forEach(sound => {
-        const targetVolume = Math.random()
-        const volumeSteps = calculateVolumeSteps(sound.volume, targetVolume, 5)
+    soundsRef.current.filter(sound => sound.active).forEach(initialSound => {
+        const targetVolume = Math.random();
+        const volumeSteps = calculateVolumeSteps(initialSound.volume, targetVolume, NUM_STEPS);
 
-        volumeSteps.forEach((_, index) => {
-          const timeoutId = setTimeout(
-            () => {
-              // Fetch the most recent value of the sound from ref
-              const currentSound = soundsRef.current.find(
-                s => s.id === sound.id
-              )
-              if (currentSound && currentSound.active) {
-                const updatedVolume = volumeSteps[index]
-                const updatedSound = { ...currentSound, volume: updatedVolume }
-                setSound(updatedSound)
-              }
-            },
-            (index + 1) * stepDuration
-          )
+        const setVolumeStep = (sound, index) => {
+            if (index < volumeSteps.length) {
+                // Fetch the most recent value of the sound
+                const currentSound = soundsRef.current.find(s => s.id === sound.id);
+                if (currentSound && currentSound.active) {
+                    const updatedVolume = volumeSteps[index];
+                    const updatedSound = { ...currentSound, volume: updatedVolume };
+                    setSound(updatedSound);
+                    // add next timeout only if this one is successfull
+                    const timeoutId = setTimeout(() => {
+                        setVolumeStep(currentSound, index + 1);
+                    }, stepDuration);
 
-          timeoutsRef.current.push(timeoutId)
-        })
-      })
-  }
+                    timeoutsRef.current.push(timeoutId);
+                }
+            }
+        };
+
+        setVolumeStep(initialSound, 0);
+    });
+}
 
   function randomizeVolumes() {
     // Total duration for volume change
-    const transitionDuration = TOTAL_TRANSITION
-    const stepDuration = transitionDuration / NUM_STEPS
-
+    const stepDuration = TOTAL_TRANSITION / NUM_STEPS
     applyVolumeChanges(stepDuration)
   }
 
