@@ -48,33 +48,39 @@ export function RandomModeButton() {
 
   // Apply Volumes with Timeouts
   function applyVolumeChanges(stepDuration) {
-    clearAllTimeouts(); // Clears existing timeouts
+    clearAllTimeouts() // Clears existing timeouts
 
-    soundsRef.current.filter(sound => sound.active).forEach(initialSound => {
-        const targetVolume = Math.random();
-        const volumeSteps = calculateVolumeSteps(initialSound.volume, targetVolume, NUM_STEPS);
+    soundsRef.current
+      .filter(sound => sound.active)
+      .forEach(initialSound => {
+        const targetVolume = Math.random()
+        const volumeSteps = calculateVolumeSteps(
+          initialSound.volume,
+          targetVolume,
+          NUM_STEPS
+        )
 
         const setVolumeStep = (sound, index) => {
-            if (index < volumeSteps.length) {
-                // Fetch the most recent value of the sound
-                const currentSound = soundsRef.current.find(s => s.id === sound.id);
-                if (currentSound && currentSound.active) {
-                    const updatedVolume = volumeSteps[index];
-                    const updatedSound = { ...currentSound, volume: updatedVolume };
-                    setSound(updatedSound);
-                    // add next timeout only if this one is successfull
-                    const timeoutId = setTimeout(() => {
-                        setVolumeStep(currentSound, index + 1);
-                    }, stepDuration);
+          if (index < volumeSteps.length) {
+            // Fetch the most recent value of the sound
+            const currentSound = soundsRef.current.find(s => s.id === sound.id)
+            if (currentSound && currentSound.active) {
+              const updatedVolume = volumeSteps[index]
+              const updatedSound = { ...currentSound, volume: updatedVolume }
+              setSound(updatedSound)
+              // add next timeout only if this one is successfull
+              const timeoutId = setTimeout(() => {
+                setVolumeStep(currentSound, index + 1)
+              }, stepDuration)
 
-                    timeoutsRef.current.push(timeoutId);
-                }
+              timeoutsRef.current.push(timeoutId)
             }
-        };
+          }
+        }
 
-        setVolumeStep(initialSound, 0);
-    });
-}
+        setVolumeStep(initialSound, 0)
+      })
+  }
 
   function randomizeVolumes() {
     // Total duration for volume change
