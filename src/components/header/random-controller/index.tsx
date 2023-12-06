@@ -47,27 +47,37 @@ export function RandomModeButton() {
   }
 
   // Apply Volumes with Timeouts
-  function applyVolumeChanges(sounds, stepDuration) {
+  function applyVolumeChanges(stepDuration) {
     clearAllTimeouts() // Clears existing timeouts
 
-    sounds.forEach(sound => {
-      if (sound.active) {
+    soundsRef.current
+      .filter(sound => sound.active)
+      .forEach(sound => {
         const targetVolume = Math.random()
         const volumeSteps = calculateVolumeSteps(sound.volume, targetVolume, 5)
 
-        volumeSteps.forEach((newVolume, index) => {
+        volumeSteps.forEach((_, index) => {
           const timeoutId = setTimeout(
             () => {
-              const updatedSound = { ...sound, volume: newVolume }
-              setSound(updatedSound)
+              // Fetch the most recent value of the sound from ref
+              const currentSound = soundsRef.current.find(
+                s => s.id === sound.id
+              )
+              if (currentSound && currentSound.active) {
+                console.log("rewriting staff")
+                const updatedVolume = volumeSteps[index]
+                const updatedSound = { ...currentSound, volume: updatedVolume }
+                setSound(updatedSound)
+              } else {
+                console.log("does not exist anymore")
+              }
             },
             (index + 1) * stepDuration
           )
 
           timeoutsRef.current.push(timeoutId)
         })
-      }
-    })
+      })
   }
 
   function randomizeVolumes() {
@@ -75,8 +85,7 @@ export function RandomModeButton() {
     const transitionDuration = TOTAL_TRANSITION
     const stepDuration = transitionDuration / NUM_STEPS
 
-    const activeSounds = soundsRef.current.filter(sound => sound.active)
-    applyVolumeChanges(activeSounds, stepDuration)
+    applyVolumeChanges(stepDuration)
   }
 
   useEffect(() => {
