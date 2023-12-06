@@ -64,12 +64,9 @@ export function RandomModeButton() {
                 s => s.id === sound.id
               )
               if (currentSound && currentSound.active) {
-                console.log("rewriting staff")
                 const updatedVolume = volumeSteps[index]
                 const updatedSound = { ...currentSound, volume: updatedVolume }
                 setSound(updatedSound)
-              } else {
-                console.log("does not exist anymore")
               }
             },
             (index + 1) * stepDuration
