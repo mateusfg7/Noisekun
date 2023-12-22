@@ -59,7 +59,7 @@
     "prettier-plugin-tailwindcss": "^0.5.0",
     "semver": "^7.5.4",
     "simple-git": "^3.19.1",
-    "tailwindcss": "3.3.6",
+    "tailwindcss": "3.4.0",
     "ts-node": "^10.9.1",
     "tsx": "^4.0.0",
     "typescript": "5.3.3",
