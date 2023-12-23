@@ -72,7 +72,7 @@ export function GlobalVolumeController() {
       >
         {globalVolume >= 0.5 && <FiVolume2 size={25} />}
         {globalVolume >= 0.25 && globalVolume < 0.5 && <FiVolume1 size={25} />}
-        {globalVolume > 0 && globalVolume <= 0.25 && <FiVolume size={25} />}
+        {globalVolume > 0 && globalVolume < 0.25 && <FiVolume size={25} />}
         {globalVolume === 0 && <FiVolumeX size={25} />}
       </button>
     </div>
