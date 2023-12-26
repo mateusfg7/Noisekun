@@ -15,7 +15,8 @@ export function TriggerButton({ openModal }: Props) {
       type="button"
       onClick={openModal}
       className={triggerButton({ theme })}
-      data-umami-event="Open pomodoro config"
+      data-umami-event="Open config menu"
+      title="Open config menu"
     >
       <FiSettings />
     </button>

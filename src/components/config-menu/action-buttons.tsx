@@ -18,14 +18,14 @@ export const ActionButtons = ({ onCancel, onSave }: ActionButtonProps) => (
   <div className="flex justify-center gap-1">
     <button
       onClick={onCancel}
-      data-umami-event="Reset pomodoro config"
+      data-umami-event="Reset config"
       className={actionButton({ action: 'cancel' })}
     >
       Cancel
     </button>
     <button
       onClick={onSave}
-      data-umami-event="Save pomodoro config"
+      data-umami-event="Save config"
       className={actionButton({ action: 'save' })}
     >
       Save
