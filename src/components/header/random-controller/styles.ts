@@ -1,7 +1,11 @@
 import { tv } from 'tailwind-variants'
 
 export const toggleButton = tv({
+  base: /*tw:*/ ' hover:opacity-80 opacity-50',
   variants: {
+    enabled: {
+      true: /*tw:*/ 'opacity-100'
+    },
     theme: {
       transition: /*tw:*/ 'text-white',
       dark: /*tw:*/ 'text-dark-foreground',

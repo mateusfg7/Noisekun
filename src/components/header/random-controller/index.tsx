@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { FiZap, FiZapOff } from 'react-icons/fi'
+import { FiZap } from 'react-icons/fi'
 
 import { useThemeStore } from '~/stores/theme-store'
 import { useGlobalRandomModeStore } from '~/stores/random-mode-store'
@@ -102,12 +102,12 @@ export function RandomModeButton() {
   return (
     <div className="flex items-center gap-3 opacity-90 hover:opacity-100">
       <button
-        title="Enable/Disable Random Mode"
-        className={toggleButton({ theme })}
+        title={randomMode ? 'Disable random mode' : 'Enable random mode'}
+        className={toggleButton({ theme, enabled: randomMode })}
         onClick={() => setRandomMode(!randomMode)}
         data-umami-event="Enable/Disable Random Mode"
       >
-        {randomMode ? <FiZapOff size={25} /> : <FiZap size={25} />}
+        <FiZap size={22} />
       </button>
     </div>
   )
