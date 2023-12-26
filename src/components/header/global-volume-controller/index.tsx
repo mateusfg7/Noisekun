@@ -45,7 +45,7 @@ export function GlobalVolumeController() {
     >
       <div
         data-is-showing={isShowing}
-        className="group relative hidden h-max w-28 items-center data-[is-showing='true']:flex"
+        className="group relative hidden h-max w-28 items-center data-[is-showing='true']:md:flex"
       >
         <span className="sr-only">
           Global volume in {Number(globalVolume * 100).toFixed(1)}%
