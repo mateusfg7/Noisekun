@@ -49,7 +49,7 @@ export function ConfirmationModal({ showModal, setShowModal }: Props) {
                   <div className="flex justify-end gap-1">
                     <button
                       onClick={closeModal}
-                      data-umami-event="Save pomodoro config"
+                      data-umami-event="Confirm copy combo URL"
                       className="w-full rounded-lg bg-dark-background/10 px-5 py-4 text-lg leading-none text-dark-background transition-colors hover:bg-dark-background hover:text-light-background md:w-fit md:py-3"
                     >
                       Ok, thanks!

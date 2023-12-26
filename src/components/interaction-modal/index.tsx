@@ -70,14 +70,14 @@ export function InteractionModal() {
                   <div className="flex justify-end gap-1">
                     <button
                       onClick={cancel}
-                      data-umami-event="Save pomodoro config"
+                      data-umami-event="Cancel combo"
                       className="rounded-lg px-5 py-3 text-lg leading-none text-red-950 transition-colors hover:bg-red-900 hover:text-red-100"
                     >
                       Cancel
                     </button>
                     <button
                       onClick={closeModal}
-                      data-umami-event="Save pomodoro config"
+                      data-umami-event="Play combo"
                       className="rounded-lg bg-green-100 px-5 py-3 text-lg leading-none text-green-950 transition-colors hover:bg-green-900 hover:text-green-100"
                     >
                       Play
