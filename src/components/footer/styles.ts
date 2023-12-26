@@ -15,6 +15,21 @@ export const container = tv({
   }
 })
 
+export const logo = tv({
+  base: /*tw:*/ 'backdrop-blur-2xl',
+  variants: {
+    theme: {
+      transition: /*tw:*/ 'text-main/50',
+      dark: /*tw:*/ 'text-dark-foreground/50',
+      'blue-room': /*tw:*/ 'text-blue-room/50',
+      train: /*tw:*/ 'text-train/50',
+      waterfall: /*tw:*/ 'text-waterfall/50',
+      light: /*tw:*/ 'text-light-foreground',
+      'camping-fire': /*tw:*/ 'text-camping-fire/50'
+    }
+  }
+})
+
 export const version = tv({
   variants: {
     theme: {

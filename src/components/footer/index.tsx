@@ -6,7 +6,8 @@ import { FiAward, FiGithub } from 'react-icons/fi'
 import { AiOutlineCopyrightCircle } from 'react-icons/ai'
 
 import { useThemeStore } from '~/stores/theme-store'
-import { container, version } from './styles'
+import { ReactComponent as Logo } from './logo.svg'
+import { container, logo, version } from './styles'
 
 import packageJson from '../../../package.json'
 
@@ -29,13 +30,7 @@ export function Footer() {
       <div className="flex flex-col flex-wrap items-center justify-center gap-10 sm:flex-row md:gap-14">
         <div className="w-14 overflow-hidden rounded-2xl shadow-lg">
           <Link href="/">
-            <Image
-              src="/icons/icon-192x192.png"
-              width={192}
-              height={192}
-              alt="Noisekun"
-              className="cursor-pointer"
-            />
+            <Logo className={logo({ theme })} />
           </Link>
         </div>
         <section className="flex flex-col gap-2 sm:gap-0">
