@@ -1,6 +1,6 @@
 import { tv } from 'tailwind-variants'
 
-export const soundButton = tv({
+export const toggleButton = tv({
   variants: {
     theme: {
       transition: /*tw:*/ 'text-white',

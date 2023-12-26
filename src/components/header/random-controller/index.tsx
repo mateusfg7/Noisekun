@@ -5,7 +5,7 @@ import { useThemeStore } from '~/stores/theme-store'
 import { useGlobalRandomModeStore } from '~/stores/random-mode-store'
 import { useSoundsStateStore } from '~/stores/sounds-state-store'
 
-import { soundButton } from './styles'
+import { toggleButton } from './styles'
 
 // Calculate Target Volumes and out for testing purposes
 export const calculateVolumeSteps = (currentVolume, targetVolume, steps) => {
@@ -103,7 +103,7 @@ export function RandomModeButton() {
     <div className="flex items-center gap-3 opacity-90 hover:opacity-100">
       <button
         title="Enable/Disable Random Mode"
-        className={soundButton({ theme })}
+        className={toggleButton({ theme })}
         onClick={() => setRandomMode(!randomMode)}
         data-umami-event="Enable/Disable Random Mode"
       >
