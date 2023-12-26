@@ -3,6 +3,8 @@ import Link from 'next/link'
 
 import { useThemeStore } from '~/stores/theme-store'
 
+import { ConfigMenu } from '~/components/config-menu'
+
 import { ThemeMenu } from './theme-menu'
 import { GlobalVolumeController } from './global-volume-controller'
 import { Pomodoro } from './pomodoro'
@@ -23,10 +25,11 @@ export const Header: React.FC = () => {
         <Pomodoro />
       </div>
       <div className="right-10 flex items-center gap-3">
-        <RandomModeButton />
         <GlobalVolumeController />
+        <RandomModeButton />
         <ThemeMenu />
         <ComboList />
+        <ConfigMenu />
       </div>
     </header>
   )
