@@ -23,7 +23,21 @@ export function ConfigMenu() {
 
   const settingStates = {
     randomModeUpdateInterval: useState(randomModeStore.updateIntervalInMs),
-    randomModeUpdateSteps: useState(randomModeStore.updateSteps)
+    randomModeUpdateSteps: useState(randomModeStore.updateSteps),
+    randomModeTransitionTime: useState(randomModeStore.updateTransitionTimeInMs)
+  }
+
+  const randomModeTransitionTime: Action = {
+    save: () => {
+      randomModeStore.setUpdateTransitionTime(
+        settingStates.randomModeTransitionTime[0]
+      )
+    },
+    reset: () => {
+      settingStates.randomModeTransitionTime[1](
+        randomModeStore.updateTransitionTimeInMs
+      )
+    }
   }
 
   const randomModeUpdateInterval: Action = {
@@ -48,7 +62,11 @@ export function ConfigMenu() {
     ]
   }
 
-  const actionList: Action[] = [randomModeUpdateInterval, randomModeUpdateSteps]
+  const actionList: Action[] = [
+    randomModeUpdateInterval,
+    randomModeUpdateSteps,
+    randomModeTransitionTime
+  ]
 
   function closeModal() {
     setIsOpen(false)
@@ -97,6 +115,10 @@ export function ConfigMenu() {
                         updateSteps={{
                           value: settingStates.randomModeUpdateSteps[0],
                           set: settingStates.randomModeUpdateSteps[1]
+                        }}
+                        updateTransitionTime={{
+                          value: settingStates.randomModeTransitionTime[0],
+                          set: settingStates.randomModeTransitionTime[1]
                         }}
                       />
                     </div>

@@ -2,6 +2,10 @@ import { useThemeStore } from '~/stores/theme-store'
 import { settingRow, input } from './styles'
 
 type Props = {
+  updateTransitionTime: {
+    value: number
+    set: (newValue: number) => void
+  }
   updateInterval: {
     value: number
     set: (newValue: number) => void
@@ -12,18 +16,36 @@ type Props = {
   }
 }
 
-export function RandomVolumeSettings({ updateInterval, updateSteps }: Props) {
+export function RandomVolumeSettings({
+  updateInterval,
+  updateSteps,
+  updateTransitionTime
+}: Props) {
   const theme = useThemeStore(state => state.theme)
-
-  const MIN_INTERVAL = 10 * 1000 // 10 seconds
-  const MAX_INTERVAL = 5 * 60 * 1000 // 5 minutes
 
   function handleUpdateInterval(intervalInSec: number) {
     const intervalInMs = intervalInSec * 1000
 
-    if (intervalInMs < MIN_INTERVAL) updateInterval.set(MIN_INTERVAL)
-    else if (intervalInMs > MAX_INTERVAL) updateInterval.set(MAX_INTERVAL)
-    else updateInterval.set(intervalInMs)
+    const MIN_INTERVAL = 10 * 1000 // 10 seconds
+    const MAX_INTERVAL = 5 * 60 * 1000 // 5 minutes
+
+    updateInterval.set(
+      Math.min(Math.max(intervalInMs, MIN_INTERVAL), MAX_INTERVAL)
+    )
+  }
+
+  function handleTransitionTime(transitionTimeInSec: number) {
+    const transitionTimeInMs = transitionTimeInSec * 1000
+
+    const MAX_TRANSITION_TIME = updateInterval.value - 1000
+    const MIN_TRANSITION_TIME = 1000 // 1 second
+
+    updateTransitionTime.set(
+      Math.min(
+        Math.max(transitionTimeInMs, MIN_TRANSITION_TIME),
+        MAX_TRANSITION_TIME
+      )
+    )
   }
 
   return (
@@ -39,6 +61,18 @@ export function RandomVolumeSettings({ updateInterval, updateSteps }: Props) {
             id="interval"
             value={updateInterval.value / 1000}
             onChange={e => handleUpdateInterval(Number(e.target.value))}
+            className={input({ theme })}
+          />
+        </div>
+        <div className={settingRow({ theme })}>
+          <label htmlFor="interval" className="flex-1 text-left">
+            Transition time <span className="text-sm opacity-50">/s</span>
+          </label>
+          <input
+            type="number"
+            id="interval"
+            value={updateTransitionTime.value / 1000}
+            onChange={e => handleTransitionTime(Number(e.target.value))}
             className={input({ theme })}
           />
         </div>
