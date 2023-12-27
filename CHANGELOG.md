@@ -1,3 +1,42 @@
+## [1.5.0](https://github.com/mateusfg7/Noisekun/compare/1.4.0...1.5.0) (2023-12-27)
+
+
+### Features
+
+* add config menu ([fbf1535](https://github.com/mateusfg7/Noisekun/commit/fbf1535253c978f5df3cd4bb53db0f87adf947ad))
+* added index.tsx files for random controller ([55f8411](https://github.com/mateusfg7/Noisekun/commit/55f8411b5152a4f8aaffe8857c3c5c86d84839b6))
+* added styles.css for random-controller ([3b8f141](https://github.com/mateusfg7/Noisekun/commit/3b8f141c8b192fbf5f9ee68a71309db34a3d7acd))
+* **config-menu:** add "updaet trasition time" config ([45d3994](https://github.com/mateusfg7/Noisekun/commit/45d3994053533a5b10aa7bce194edd75f8f9ccd7))
+* **random-mode:** add `updateTransitionTimeInMs` on random-mode store ([8208c4b](https://github.com/mateusfg7/Noisekun/commit/8208c4b10d5749a3a9c8b6e0bfff977fbe6dfcf7))
+* **ui:** fit footer loco background with theme ([2ab947c](https://github.com/mateusfg7/Noisekun/commit/2ab947c30ed07af08ab6bc413f7d679c9347b634)), closes [#622](https://github.com/mateusfg7/Noisekun/issues/622)
+* **ui:** improve config-menu styles ([c83f4d7](https://github.com/mateusfg7/Noisekun/commit/c83f4d77204200e51a1445019bfef6929804a171))
+* **ui:** small improvements on footer's logo ([c7c8645](https://github.com/mateusfg7/Noisekun/commit/c7c8645b8a3ea0e753ed5ef30dac4d738d1a42f1))
+* **ui:** small improvements on random-mode toggle ([a8e5f8a](https://github.com/mateusfg7/Noisekun/commit/a8e5f8a88246414f93beda0e29fa149dffd95205))
+* **utils:** create `padZero` function ([35ab6ed](https://github.com/mateusfg7/Noisekun/commit/35ab6ed474bae4beefebac0bd630fca455997968))
+* **utils:** create `padZero` function ([246afd7](https://github.com/mateusfg7/Noisekun/commit/246afd76dd20199bbda43cfa323e58b0fa8f5f03))
+
+
+### Bug Fixes
+
+* **a11y:** add title on config-menu trigger button ([a50d7cb](https://github.com/mateusfg7/Noisekun/commit/a50d7cb3e221bdcac84c225d330e98cdd54a2517))
+* add testable code ([0d679a3](https://github.com/mateusfg7/Noisekun/commit/0d679a3cc20944852bff4c31a863ffece9e9dc2d))
+* **deps:** update dependency sharp to ^0.33.0 ([8643d5b](https://github.com/mateusfg7/Noisekun/commit/8643d5bbcc97d3f77bfa983118888e9c39bd447c))
+* **deps:** update dependency zustand to v4.4.7 ([c5bcd25](https://github.com/mateusfg7/Noisekun/commit/c5bcd2534b9ff2a89d83c8f36b3db48eb88f50eb))
+* duplicate volume icon ([bbbec25](https://github.com/mateusfg7/Noisekun/commit/bbbec25d314c9dbb95b1c5cae9fe4e55102529fe))
+* fix sound state issue (unoptimized) ([91d0ab7](https://github.com/mateusfg7/Noisekun/commit/91d0ab766724aa4b3417438db3e9b982a7917259))
+* fixed error ([6d2404d](https://github.com/mateusfg7/Noisekun/commit/6d2404d74d76d35bad1d87f19fdff7e71ae1d3a5))
+* linting issues ([22a62b2](https://github.com/mateusfg7/Noisekun/commit/22a62b25a0e62c1fac2c8b9f30239df92d564c59))
+* prettier ([615fdd3](https://github.com/mateusfg7/Noisekun/commit/615fdd33f863851a360ae2e313795e28036ca406))
+* prettier error ([dc0aefd](https://github.com/mateusfg7/Noisekun/commit/dc0aefd133c6639f6084f846b7a6ea3c63431d75))
+* randomization optimization ([850f813](https://github.com/mateusfg7/Noisekun/commit/850f813561818d37c660c8020a431d4de4c71429))
+* reafactoring to make tests pass ([d02db7f](https://github.com/mateusfg7/Noisekun/commit/d02db7f2ae0781aa1769038f524fac8de711aa74))
+* **sounds:** update sounds CDN URLs ([4228f3c](https://github.com/mateusfg7/Noisekun/commit/4228f3c6be0e43a88a668f19160cc2864b09c9c2))
+* **types:** add missing types on random-controller functions ([42197dc](https://github.com/mateusfg7/Noisekun/commit/42197dced4d81a262c30a31da72b1c3b33cf7a94))
+* **ui:** hide global volume controller on small devices ([4f8f17e](https://github.com/mateusfg7/Noisekun/commit/4f8f17e80fc527950c452b7a1e26e1b3247d4ff9))
+* **ui:** update broken "Credits" link on footer ([0a0ef15](https://github.com/mateusfg7/Noisekun/commit/0a0ef1598d6acb79d0870a5dd9516dd614e4eda6))
+* **umami:** add proper umami event titles ([01f68aa](https://github.com/mateusfg7/Noisekun/commit/01f68aa08cdfbef2873ac3934ac8b971adc00a4a))
+* uncomment extra lines ([ff2c6b0](https://github.com/mateusfg7/Noisekun/commit/ff2c6b04eaed94a141d899bfc175554d4dd75048))
+
 ## [1.4.0](https://github.com/mateusfg7/Noisekun/compare/1.3.4...1.4.0) (2023-11-25)
 
 
