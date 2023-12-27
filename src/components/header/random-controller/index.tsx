@@ -5,19 +5,8 @@ import { useThemeStore } from '~/stores/theme-store'
 import { useGlobalRandomModeStore } from '~/stores/random-mode-store'
 import { useSoundsStateStore } from '~/stores/sounds-state-store'
 
+import { calculateVolumeSteps } from './calculate-volume-steps'
 import { toggleButton } from './styles'
-
-// Calculate Target Volumes and out for testing purposes
-export const calculateVolumeSteps = (currentVolume, targetVolume, steps) => {
-  let volumeSteps = []
-  for (let i = 1; i <= steps; i++) {
-    // Exponential interpolation factor (ease-out)
-    const factor = 1 - Math.pow(1 - i / steps, 2)
-    const newVolume = currentVolume + (targetVolume - currentVolume) * factor
-    volumeSteps.push(Math.min(newVolume, 1))
-  }
-  return volumeSteps
-}
 
 export function RandomModeButton() {
   // How often the randomization takes place (min and max for the slider)
