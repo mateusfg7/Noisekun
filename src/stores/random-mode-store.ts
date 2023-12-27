@@ -3,12 +3,14 @@ import { create } from 'zustand'
 type States = {
   randomMode: boolean
   updateIntervalInMs: number
+  updateTransitionTimeInMs: number
   updateSteps: number
 }
 
 type Actions = {
   setRandomMode: (randomMode: boolean) => void
   setUpdateInterval: (updateIntervalInMs: number) => void
+  setUpdateTransitionTime: (updateTransitionTimeInMs: number) => void
   setUpdateSteps: (updateSteps: number) => void
 }
 
@@ -24,6 +26,10 @@ export const useGlobalRandomModeStore = create<GlobalRandomModeStoreProps>(
       set(() => ({ updateIntervalInMs })),
 
     updateSteps: 5, // Sound moves from 1 state to another in 5 steps
-    setUpdateSteps: updateSteps => set(() => ({ updateSteps }))
+    setUpdateSteps: updateSteps => set(() => ({ updateSteps })),
+
+    updateTransitionTimeInMs: 5000, // 5 seconds
+    setUpdateTransitionTime: updateTransitionTimeInMs =>
+      set(() => ({ updateTransitionTimeInMs }))
   })
 )

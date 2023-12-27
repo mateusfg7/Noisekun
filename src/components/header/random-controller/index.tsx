@@ -9,10 +9,13 @@ import { calculateVolumeSteps } from './calculate-volume-steps'
 import { toggleButton } from './styles'
 
 export function RandomModeButton() {
-  const TOTAL_TRANSITION = 5000 // 5 seconds
-
-  const { randomMode, updateSteps, updateIntervalInMs, setRandomMode } =
-    useGlobalRandomModeStore()
+  const {
+    randomMode,
+    updateSteps,
+    updateIntervalInMs,
+    updateTransitionTimeInMs,
+    setRandomMode
+  } = useGlobalRandomModeStore()
   const { sounds, setSound } = useSoundsStateStore()
 
   const theme = useThemeStore(set => set.theme)
@@ -68,7 +71,7 @@ export function RandomModeButton() {
 
   function randomizeVolumes() {
     // Total duration for volume change
-    const stepDuration = TOTAL_TRANSITION / updateSteps
+    const stepDuration = updateTransitionTimeInMs / updateSteps
     applyVolumeChanges(stepDuration)
   }
 
