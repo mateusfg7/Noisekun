@@ -3,13 +3,12 @@ import { FiZap } from 'react-icons/fi'
 
 import { useThemeStore } from '~/stores/theme-store'
 import { useGlobalRandomModeStore } from '~/stores/random-mode-store'
-import { useSoundsStateStore } from '~/stores/sounds-state-store'
+import { SoundState, useSoundsStateStore } from '~/stores/sounds-state-store'
 
 import { calculateVolumeSteps } from './calculate-volume-steps'
 import { toggleButton } from './styles'
 
 export function RandomModeButton() {
-  // How often the randomization takes place (min and max for the slider)
   const TOTAL_TRANSITION = 5000 // 5 seconds
 
   const { randomMode, updateSteps, updateIntervalInMs, setRandomMode } =
@@ -32,7 +31,7 @@ export function RandomModeButton() {
   }
 
   // Apply Volumes with Timeouts
-  function applyVolumeChanges(stepDuration) {
+  function applyVolumeChanges(stepDuration: number) {
     clearAllTimeouts() // Clears existing timeouts
 
     soundsRef.current
@@ -45,7 +44,7 @@ export function RandomModeButton() {
           updateSteps
         )
 
-        const setVolumeStep = (sound, index) => {
+        const setVolumeStep = (sound: SoundState, index: number) => {
           if (index < volumeSteps.length) {
             // Fetch the most recent value of the sound
             const currentSound = soundsRef.current.find(s => s.id === sound.id)
@@ -53,7 +52,7 @@ export function RandomModeButton() {
               const updatedVolume = volumeSteps[index]
               const updatedSound = { ...currentSound, volume: updatedVolume }
               setSound(updatedSound)
-              // add next timeout only if this one is successfull
+              // add next timeout only if this one is successful
               const timeoutId = setTimeout(() => {
                 setVolumeStep(currentSound, index + 1)
               }, stepDuration)
