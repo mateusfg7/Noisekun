@@ -12,33 +12,6 @@
 }
 
 @layer components {
-  .slider-input {
-    @apply h-4
-      w-full appearance-none rounded-xl
-      group-hover:cursor-pointer
-      sm:h-1;
-  }
-
-  .slider-input::-webkit-slider-thumb {
-    @apply h-4 w-4
-      appearance-none
-      rounded-full border-none opacity-0 ring-white/10 transition-all
-      duration-100
-      active:ring-4 sm:opacity-100
-      md:h-2 md:w-2
-      md:group-hover:h-3 md:group-hover:w-3;
-  }
-
-  .slider-input::-moz-range-thumb {
-    @apply h-4 w-4
-      appearance-none
-      rounded-full border-none opacity-0 ring-white/10 transition-all
-      duration-100
-      active:ring-4 sm:opacity-100
-      md:h-2 md:w-2
-      md:group-hover:h-3 md:group-hover:w-3;
-  }
-
   .styled-scrollbar {
     /* WEBKIT */
 
