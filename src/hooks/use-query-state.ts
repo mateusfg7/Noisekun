@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
-export default function useQueryState(key: string, defaultValue: string = '') {
+export function useQueryState(key: string, defaultValue: string = '') {
   const router = useRouter()
   const searchParams = useSearchParams()
   const pathname = usePathname()

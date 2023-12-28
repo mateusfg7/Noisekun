@@ -2,14 +2,16 @@
 
 import React, { useEffect } from 'react'
 
-import useQueryState from '~/shared/query/query-state'
 import { useUserInteractionStore } from '~/stores/user-interaction-store'
+import { useThemeStore } from '~/stores/theme-store'
+
+import { useQueryState } from '~/hooks/use-query-state'
+
 import { Header } from '~/components/header'
 import { SoundButton } from '~/components/sound'
 import { ClearButton } from '~/components/clear-button'
 import { ShareButton } from '~/components/share-button'
 import { Footer } from '~/components/footer'
-import { useThemeStore } from '~/stores/theme-store'
 import { SaveComboButton } from '~/components/save-combo-button'
 import { InteractionModal } from '~/components/interaction-modal'
 

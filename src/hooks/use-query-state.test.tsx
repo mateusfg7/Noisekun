@@ -1,8 +1,8 @@
 import { renderHook, act } from '@testing-library/react'
 
-import useQueryState from './query-state'
+import { useQueryState } from './use-query-state'
 
-describe('Shared: Query State', () => {
+describe('Hooks: Use Query State', () => {
   const { result } = renderHook(() =>
     useQueryState('test_key', 'default_value')
   )
