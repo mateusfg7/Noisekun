@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import { useThemeStore } from '~/stores/theme-store'
 import { useSoundsStateStore } from '~/stores/sounds-state-store'
-
-import { container, input } from './styles'
+import { VolumeControllerSlider } from '~/components/ui/volume-controller-slider'
 
 export interface IVolumeController {
   isActive: boolean
@@ -23,35 +21,34 @@ export const VolumeController: React.FC<IVolumeController> = ({
   const getSound = useSoundsStateStore(state => state.getSound)
   const sounds = useSoundsStateStore(state => state.sounds)
 
+  function handleVolume(volume: number) {
+    setRangeValue(volume)
+    handleSoundVolume(volume / 1000)
+  }
+
   useEffect(() => {
     const soundState = getSound(soundId)
 
     if (soundState) setRangeValue(soundState.volume * 1000)
   }, [sounds])
 
-  const theme = useThemeStore(set => set.theme)
-
   return (
-    <div className={container({ active: isActive })}>
+    <div
+      data-is-active={isActive}
+      className="opacity-1 group relative h-max w-full data-[is-active='false']:opacity-0"
+    >
       <label htmlFor={`${soundId}-volume-controller`} className="sr-only">
         {soundName} volume controller
       </label>
-      <input
-        className={input({ theme })}
-        type="range"
+      <VolumeControllerSlider
+        handleVolume={handleVolume}
+        minValue={20}
+        maxValue={1000}
+        rangeValue={rangeValue}
         id={`${soundId}-volume-controller`}
         name={`${soundId}-volume-controller`}
         title={`${soundName} volume in ${Number(rangeValue / 10).toFixed(1)}%`}
-        min="20"
-        max="1000"
-        value={rangeValue}
-        style={{
-          backgroundSize: `${(rangeValue * 100) / 1000}%`
-        }}
-        onChange={event => {
-          setRangeValue(Number(event.target.value))
-          handleSoundVolume(Number(event.target.value) / 1000)
-        }}
+        className="absolute left-0 top-0"
       />
     </div>
   )

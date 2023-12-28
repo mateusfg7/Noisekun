@@ -3,7 +3,8 @@ import { FiVolumeX, FiVolume2, FiVolume1, FiVolume } from 'react-icons/fi'
 
 import { useGlobalVolumeStore } from '~/stores/global-volume-store'
 import { useThemeStore } from '~/stores/theme-store'
-import { volumeControllerInput } from '~/shared/styles/volume-controller-input'
+
+import { VolumeControllerSlider } from '~/components/ui/volume-controller-slider'
 
 import { soundButton } from './styles'
 
@@ -50,18 +51,13 @@ export function GlobalVolumeController() {
         <span className="sr-only">
           Global volume in {Number(globalVolume * 100).toFixed(1)}%
         </span>
-        <input
-          className={volumeControllerInput({ theme })}
-          type="range"
+        <VolumeControllerSlider
+          handleVolume={handleVolume}
+          minValue={0}
+          maxValue={MAX_VALUE}
+          rangeValue={rangeValue}
           name="global-volume-controller"
           title={`Global volume in ${Number(globalVolume * 100).toFixed(1)}%`}
-          min="0"
-          max={MAX_VALUE}
-          value={rangeValue}
-          style={{
-            backgroundSize: `${(rangeValue * 100) / MAX_VALUE}%`
-          }}
-          onChange={event => handleVolume(Number(event.target.value))}
         />
       </div>
       <button
