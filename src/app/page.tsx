@@ -8,11 +8,9 @@ import { useThemeStore } from '~/stores/theme-store'
 import { useQueryState } from '~/hooks/use-query-state'
 
 import { Header } from '~/components/header'
+import { ActionButtons } from '~/components/action-buttons'
 import { SoundButton } from '~/components/sound'
-import { ClearButton } from '~/components/clear-button'
-import { ShareButton } from '~/components/share-button'
 import { Footer } from '~/components/footer'
-import { SaveComboButton } from '~/components/save-combo-button'
 import { InteractionModal } from '~/components/interaction-modal'
 
 import { sounds } from '~/data/sounds'
@@ -36,11 +34,7 @@ export default function Home() {
       <Header />
       <div className="styled-scrollbar h-[90vh] space-y-24 overflow-y-scroll pt-16 md:h-[87vh]">
         <div className="m-auto flex w-fit flex-col items-center gap-3">
-          <div className="hidden w-full items-center justify-end gap-2 px-4 xs:flex">
-            <SaveComboButton />
-            <ShareButton />
-            <ClearButton />
-          </div>
+          <ActionButtons />
           <div className="grid h-fit w-fit grid-cols-1 gap-12 xs:grid-cols-2 2xs:grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6">
             {sounds.map(sound => (
               <SoundButton key={sound.id} sound={sound} />

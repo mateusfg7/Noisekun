@@ -6,11 +6,11 @@ import { useSoundsStateStore } from '~/stores/sounds-state-store'
 import { useThemeStore } from '~/stores/theme-store'
 
 import { randomString } from '~/utils/random-string'
-import { actionButton } from '~/styles/action-button'
 
+import { actionButton } from '../styles'
 import { input } from './styles'
 
-export function SaveComboButton() {
+export function SaveCombo() {
   const sounds = useSoundsStateStore(state => state.sounds)
   const theme = useThemeStore(state => state.theme)
   const saveCombo = useComboStore(state => state.saveCombo)

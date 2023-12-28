@@ -4,11 +4,11 @@ import { useSearchParams } from 'next/navigation'
 import { useSoundsStateStore } from '~/stores/sounds-state-store'
 import { useThemeStore } from '~/stores/theme-store'
 
-import { actionButton } from '~/styles/action-button'
+import { actionButton } from '../styles'
 
 import { ConfirmationModal } from './confirmation-modal'
 
-export function ShareButton() {
+export function Share() {
   const searchParams = useSearchParams()
   const soundStates = useSoundsStateStore(state => state.sounds)
   const theme = useThemeStore(state => state.theme)

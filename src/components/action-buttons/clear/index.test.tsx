@@ -2,11 +2,11 @@ import { act, render, renderHook, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 
 import { SoundState, useSoundsStateStore } from '~/stores/sounds-state-store'
-import { ClearButton } from '.'
+import { Clear } from '.'
 
 describe('Clear Button', () => {
   it('should render', async () => {
-    render(<ClearButton />)
+    render(<Clear />)
 
     const button = await screen.findByRole('button', { name: /clear/i })
     expect(button).toBeInTheDocument()
@@ -17,7 +17,7 @@ describe('Clear Button', () => {
       result: { current: bulkUpdate }
     } = renderHook(() => useSoundsStateStore(store => store.bulkUpdate))
 
-    render(<ClearButton />)
+    render(<Clear />)
 
     act(() => {
       bulkUpdate([{ active: true, id: 'rain', loaded: true, volume: 1 }])
@@ -31,7 +31,7 @@ describe('Clear Button', () => {
       result: { current: bulkUpdate }
     } = renderHook(() => useSoundsStateStore(store => store.bulkUpdate))
 
-    render(<ClearButton />)
+    render(<Clear />)
 
     act(() => {
       bulkUpdate([{ active: false, id: 'rain', loaded: true, volume: 1 }])
@@ -45,7 +45,7 @@ describe('Clear Button', () => {
       result: { current: bulkUpdate }
     } = renderHook(() => useSoundsStateStore(store => store.bulkUpdate))
 
-    render(<ClearButton />)
+    render(<Clear />)
 
     const soundsListExample: SoundState[] = [
       { active: false, id: 'rain', loaded: true, volume: 1 },
