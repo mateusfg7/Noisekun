@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import Script from 'next/script'
 import { Nunito } from 'next/font/google'
 
-import './global.css'
+import '../styles/global.css'
 
 const APP_NAME = 'Noisekun'
 const APP_DESCRIPTION =
