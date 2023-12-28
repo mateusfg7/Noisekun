@@ -6,9 +6,9 @@ Thanks for your interest in contributing to Noisekun! Please take a moment to re
 
 ### Audio files
 
-The audio URLs is hard coded on [`sounds.tsx`](src/data/sounds.tsx), update file with your URLs.
+The audio URLs is hard coded on [`src/data/sounds/index`](src/data/sounds/), update file with your URLs.
+The icons is on [`src/data/sounds/icons/`](src/data/sounds/icons/).
 The audio files are stored on Noisekun CDN, but you can access them at `.github/assets/sounds`.
-The icons is on [`src/components/sound-icons/`](src/components/sound-icons/).
 
 ### Init server
 
