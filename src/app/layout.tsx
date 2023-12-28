@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import { Metadata } from 'next'
 import Script from 'next/script'
 import { Nunito } from 'next/font/google'
+import { Toaster } from 'react-hot-toast'
 
 import '../styles/global.css'
 
@@ -82,7 +83,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           data-website-id={process.env.UMAMI_WEBSITE_ID}
         />
       </head>
-      <body className={nunito.variable}>{children}</body>
+      <body className={nunito.variable}>
+        <Toaster position="bottom-right" />
+        {children}
+      </body>
     </html>
   )
 }
