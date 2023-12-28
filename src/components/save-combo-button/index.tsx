@@ -6,7 +6,7 @@ import { useSoundsStateStore } from '~/stores/sounds-state-store'
 import { useThemeStore } from '~/stores/theme-store'
 
 import { randomString } from '~/utils/random-string'
-import { actionButton } from '~/shared/styles/action-button'
+import { actionButton } from '~/styles/action-button'
 
 import { input } from './styles'
 

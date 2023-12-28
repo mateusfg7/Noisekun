@@ -1,6 +1,6 @@
 import { useSoundsStateStore } from '~/stores/sounds-state-store'
 import { useThemeStore } from '~/stores/theme-store'
-import { actionButton } from '~/shared/styles/action-button'
+import { actionButton } from '~/styles/action-button'
 
 export function ClearButton() {
   const bulkSoundUpdate = useSoundsStateStore(state => state.bulkUpdate)
