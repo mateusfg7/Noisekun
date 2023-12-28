@@ -20,7 +20,7 @@ export const input = tv({
 })
 
 export const settingRow = tv({
-  base: /*tw:*/ 'flex items-center justify-between rounded-xl bg-neutral-600/10 p-1 text-lg',
+  base: /*tw:*/ 'flex items-center justify-between rounded-xl bg-neutral-600/10 p-1 text-lg relative',
   variants: {
     theme: {
       transition: /*tw:*/ 'bg-main/0',
@@ -30,6 +30,24 @@ export const settingRow = tv({
       train: /*tw:*/ 'bg-train/0',
       waterfall: /*tw:*/ 'bg-waterfall/0',
       'camping-fire': /*tw:*/ 'bg-camping-fire/0'
+    }
+  }
+})
+
+export const dot = tv({
+  base: /*tw:*/ 'absolute -left-1 top-1 h-[0.4rem] w-[0.4rem] rounded-full opacity-0 transition-opacity duration-300',
+  variants: {
+    theme: {
+      transition: /*tw:*/ 'bg-main',
+      dark: /*tw:*/ 'bg-dark-background',
+      light: /*tw:*/ 'bg-light-background',
+      'blue-room': /*tw:*/ 'bg-blue-room',
+      train: /*tw:*/ 'bg-train',
+      waterfall: /*tw:*/ 'bg-waterfall',
+      'camping-fire': /*tw:*/ 'bg-camping-fire'
+    },
+    active: {
+      true: 'opacity-1'
     }
   }
 })

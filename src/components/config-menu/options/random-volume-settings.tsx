@@ -1,19 +1,16 @@
 import { useThemeStore } from '~/stores/theme-store'
-import { settingRow, input } from './styles'
+import { settingRow, input, dot } from './styles'
+
+type Option = {
+  value: number
+  set: (newValue: number) => void
+  wasChanged: () => boolean
+}
 
 type Props = {
-  updateTransitionTime: {
-    value: number
-    set: (newValue: number) => void
-  }
-  updateInterval: {
-    value: number
-    set: (newValue: number) => void
-  }
-  updateSteps: {
-    value: number
-    set: (newValue: number) => void
-  }
+  updateTransitionTime: Option
+  updateInterval: Option
+  updateSteps: Option
 }
 
 export function RandomVolumeSettings({
@@ -21,38 +18,17 @@ export function RandomVolumeSettings({
   updateSteps,
   updateTransitionTime
 }: Props) {
-  const theme = useThemeStore(state => state.theme)
-
-  function handleUpdateInterval(intervalInSec: number) {
-    const intervalInMs = intervalInSec * 1000
-
-    const MIN_INTERVAL = 10 * 1000 // 10 seconds
-    const MAX_INTERVAL = 5 * 60 * 1000 // 5 minutes
-
-    updateInterval.set(
-      Math.min(Math.max(intervalInMs, MIN_INTERVAL), MAX_INTERVAL)
-    )
-  }
-
-  function handleTransitionTime(transitionTimeInSec: number) {
-    const transitionTimeInMs = transitionTimeInSec * 1000
-
-    const MAX_TRANSITION_TIME = updateInterval.value - 1000
-    const MIN_TRANSITION_TIME = 1000 // 1 second
-
-    updateTransitionTime.set(
-      Math.min(
-        Math.max(transitionTimeInMs, MIN_TRANSITION_TIME),
-        MAX_TRANSITION_TIME
-      )
-    )
-  }
+  const { theme } = useThemeStore()
 
   return (
     <div className="space-y-2">
       <h3 className="p-1 text-left opacity-60">Random volume</h3>
       <div className="space-y-1">
         <div className={settingRow({ theme })}>
+          <span
+            className={dot({ theme, active: updateInterval.wasChanged() })}
+          />
+
           <label htmlFor="interval" className="flex-1 text-left">
             Update interval <span className="text-sm opacity-50">/s</span>
           </label>
@@ -60,11 +36,17 @@ export function RandomVolumeSettings({
             type="number"
             id="interval"
             value={updateInterval.value / 1000}
-            onChange={e => handleUpdateInterval(Number(e.target.value))}
+            onChange={e => updateInterval.set(Number(e.target.value) * 1000)}
             className={input({ theme })}
           />
         </div>
         <div className={settingRow({ theme })}>
+          <span
+            className={dot({
+              theme,
+              active: updateTransitionTime.wasChanged()
+            })}
+          />
           <label htmlFor="interval" className="flex-1 text-left">
             Transition time <span className="text-sm opacity-50">/s</span>
           </label>
@@ -72,11 +54,19 @@ export function RandomVolumeSettings({
             type="number"
             id="interval"
             value={updateTransitionTime.value / 1000}
-            onChange={e => handleTransitionTime(Number(e.target.value))}
+            onChange={e =>
+              updateTransitionTime.set(Number(e.target.value) * 1000)
+            }
             className={input({ theme })}
           />
         </div>
         <div className={settingRow({ theme })}>
+          <span
+            className={dot({
+              theme,
+              active: updateSteps.wasChanged()
+            })}
+          />
           <label htmlFor="steps" className="flex-1 text-left">
             Update steps
           </label>
