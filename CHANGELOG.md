@@ -1,3 +1,13 @@
+## [1.5.1](https://github.com/mateusfg7/Noisekun/compare/1.5.0...1.5.1) (2023-12-28)
+
+
+### Features
+
+* **config-menu:** add error messages and "is changed" marker ([c3694e4](https://github.com/mateusfg7/Noisekun/commit/c3694e4bb026799a28c1b9279ca1422e09a2cc8c))
+* **tailwind:** add `slider-thumb` variant ([ae09fda](https://github.com/mateusfg7/Noisekun/commit/ae09fdac3c13de3afc38dd4d975c64b198a09d09))
+* **toast:** add `Toaster` component on layout ([06e7b6e](https://github.com/mateusfg7/Noisekun/commit/06e7b6ef48f1903c0c2e56444e7be6d56e8cd8b7))
+* **ui:** add volume-controller-slider component ui ([706601b](https://github.com/mateusfg7/Noisekun/commit/706601bee47de01d1c48ede073204b2913486f7b))
+
 ## [1.5.0](https://github.com/mateusfg7/Noisekun/compare/1.4.0...1.5.0) (2023-12-27)
 
 
