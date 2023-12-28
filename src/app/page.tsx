@@ -15,7 +15,7 @@ import { Footer } from '~/components/footer'
 import { SaveComboButton } from '~/components/save-combo-button'
 import { InteractionModal } from '~/components/interaction-modal'
 
-import { sounds } from '~/sounds'
+import { sounds } from '~/data/sounds'
 
 import { container } from './styles'
 

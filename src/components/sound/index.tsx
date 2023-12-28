@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-import type { Sound } from '~/sounds'
+import type { Sound } from '~/data/sounds'
 
 import { useThemeStore } from '~/stores/theme-store'
 import { useGlobalVolumeStore } from '~/stores/global-volume-store'
