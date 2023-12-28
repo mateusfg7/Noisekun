@@ -2,6 +2,7 @@
 
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
+const plugin = require('tailwindcss/plugin')
 
 module.exports = {
   content: ['./src/**/*.{html,ts,tsx}'],
@@ -138,6 +139,13 @@ module.exports = {
     require('tailwind-scrollbar-hide'),
     require('@tailwindcss/forms')({
       strategy: 'class' // only generate classes
+    }),
+    plugin(({ addVariant }) => {
+      addVariant('slider-thumb', [
+        '&::-webkit-slider-thumb',
+        '&::-moz-range-thumb',
+        '&::slider-thumb'
+      ])
     })
   ]
 }
