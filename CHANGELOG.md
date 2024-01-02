@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/mateusfg7/Noisekun/compare/1.5.1...1.5.2) (2024-01-02)
+
+
+### Bug Fixes
+
+* **pomodoro:** sound volume increasing while pomodoro is stopped after a period of time ([6417887](https://github.com/mateusfg7/Noisekun/commit/64178871433ef00f852a478680b8be2013a78e87)), closes [#608](https://github.com/mateusfg7/Noisekun/issues/608)
+
 ## [1.5.1](https://github.com/mateusfg7/Noisekun/compare/1.5.0...1.5.1) (2023-12-28)
 
 
