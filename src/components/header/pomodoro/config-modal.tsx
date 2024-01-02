@@ -5,7 +5,7 @@ import { display, minuteConfigInput } from './styles'
 import { useThemeStore } from '~/stores/theme-store'
 import { padZero } from '~/utils/pad-zero'
 
-interface Props {
+export type ConfigModalProps = {
   displayMinutes: string
   displaySeconds: string
   minutes: string
@@ -19,7 +19,7 @@ export function ConfigModal({
   setMinutes,
   displayMinutes,
   displaySeconds
-}: Props) {
+}: ConfigModalProps) {
   const theme = useThemeStore(state => state.theme)
 
   const [isOpen, setIsOpen] = useState(false)
@@ -49,13 +49,17 @@ export function ConfigModal({
 
   return (
     <>
-      <div className="flex items-center justify-center">
+      <div
+        data-testid="pomodoro-timer"
+        className="flex items-center justify-center"
+      >
         <button
           type="button"
           onClick={openModal}
           disabled={isLoading}
           className={display({ theme, isLoading })}
           data-umami-event="Open pomodoro config"
+          data-testid="pomodoro-timer-button"
         >
           <div
             title="Pomodoro timer"
@@ -93,7 +97,10 @@ export function ConfigModal({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="flex w-fit transform flex-col gap-10 overflow-hidden rounded-2xl bg-white p-6 shadow-xl transition-all">
+                <Dialog.Panel
+                  data-testid="config-modal"
+                  className="flex w-fit transform flex-col gap-10 overflow-hidden rounded-2xl bg-white p-6 shadow-xl transition-all"
+                >
                   <div className="flex flex-col items-start gap-10">
                     <Dialog.Title
                       as="h3"
@@ -107,6 +114,7 @@ export function ConfigModal({
                         <input
                           type="text"
                           id="minutes"
+                          data-testid="minutes-input"
                           value={padZero(localMinutes)}
                           onChange={e => {
                             if (e.target.value === '0' || !e.target.value) {
