@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useDeepCompareEffect } from 'react-use'
 
 import type { Sound } from '~/data/sounds'
 
@@ -88,7 +89,8 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     soundRef.current.load()
   }, [])
 
-  useEffect(() => {
+  // https://github.com/mateusfg7/Noisekun/issues/608#issuecomment-1874096664
+  useDeepCompareEffect(() => {
     const soundState = getSoundState(sound.id)
 
     if (!soundState || !localSoundState) return
