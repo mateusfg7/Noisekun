@@ -29,10 +29,7 @@ export function Pomodoro() {
   }
 
   function setMinutes(minutes: number) {
-    let nextTotalSeconds: number
-
-    if (minutes >= 99) nextTotalSeconds = 99 * 60
-    else nextTotalSeconds = minutes * 60
+    const nextTotalSeconds = minutes >= 99 ? 99 * 60 : minutes * 60
 
     setDefaultTimeInSec(nextTotalSeconds)
     setRemainingTime(nextTotalSeconds)
