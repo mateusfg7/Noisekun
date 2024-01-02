@@ -1,6 +1,5 @@
 import {
   act,
-  cleanup,
   render,
   renderHook,
   screen,
@@ -10,12 +9,6 @@ import { InteractionModal } from '.'
 import userEvent from '@testing-library/user-event'
 import { useUserInteractionStore } from '~/stores/user-interaction-store'
 import { useSoundsStateStore } from '~/stores/sounds-state-store'
-
-// @ts-expect-error
-global.ResizeObserver = class FakeResizeObserver {
-  observe() {}
-  disconnect() {}
-}
 
 describe('Interaction Modal', () => {
   it('should render correctly', async () => {

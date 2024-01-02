@@ -9,3 +9,9 @@ jest.mock('next/navigation', () => ({
   })),
   usePathname: jest.fn()
 }))
+
+// @ts-expect-error
+global.ResizeObserver = class FakeResizeObserver {
+  observe() {}
+  disconnect() {}
+}
