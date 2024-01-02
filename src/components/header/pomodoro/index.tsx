@@ -67,8 +67,11 @@ export function Pomodoro() {
   }
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      if (!isTicking) return
+    const intervalId = setInterval(() => {
+      if (!isTicking) {
+        clearInterval(intervalId)
+        return
+      }
 
       const nextRemaining = remainingTime - 1
       setRemainingTime(nextRemaining)
@@ -76,10 +79,11 @@ export function Pomodoro() {
         setIsTicking(false)
         setPomodoroStatus(PomodoroStatus.stopped)
         if (!alarmIsRinging) toggleAlarm()
+        clearInterval(intervalId)
       }
     }, 1000)
 
-    return () => clearTimeout(timeoutId)
+    return () => clearInterval(intervalId)
   }, [isTicking, remainingTime])
 
   useEffect(() => {
