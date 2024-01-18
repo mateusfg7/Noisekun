@@ -1,3 +1,17 @@
+## [1.5.3](https://github.com/mateusfg7/Noisekun/compare/1.5.2...1.5.3) (2024-01-18)
+
+
+### Features
+
+* **analytics:** update umami script url ([5c70b21](https://github.com/mateusfg7/Noisekun/commit/5c70b21d3040d5cdaeedefaebe935e7adaeb8441))
+
+
+### Bug Fixes
+
+* **deps:** update dependency @headlessui/react to v1.7.18 ([89f1a5b](https://github.com/mateusfg7/Noisekun/commit/89f1a5b2257ea91b141969e7d242e5e62ef01971))
+* **deps:** update dependency react-icons to v5 ([3be9124](https://github.com/mateusfg7/Noisekun/commit/3be9124fd32956b5ca3c48db3aa2b79a8257ff38))
+* **deps:** update dependency react-icons to v5.0.1 ([7cc0b10](https://github.com/mateusfg7/Noisekun/commit/7cc0b10fe8595665e32b13c133b2db2ded465ebf))
+
 ## [1.5.2](https://github.com/mateusfg7/Noisekun/compare/1.5.1...1.5.2) (2024-01-02)
 
 
