@@ -87,8 +87,6 @@ Thanks for your interest in contributing to Noisekun! Please take a moment to re
 
 Didn't like Noisekun? Check some alternatives!
 
-> _Know a cool alternative? Make a Pull Request and [increase the list](https://github.com/mateusfg7/Noisekun/edit/main/README.md)!_
-
 ## Ambience
 
 - [**Noisli**](https://www.noisli.com/) (Web|Iphone|Android|Chrome) \*_the inspiration for this project_
@@ -109,3 +107,5 @@ Didn't like Noisekun? Check some alternatives!
 ## Other related tools
 
 - [**Flocus**](https://flocus.com/minimalist-pomodoro-timer/) _pomodoro_ (Web)
+
+> _Know a cool alternative? Make a Pull Request and [increase the list](https://github.com/mateusfg7/Noisekun/edit/main/README.md)!_
