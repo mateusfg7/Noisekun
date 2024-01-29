@@ -1,10 +1,11 @@
 import { ReactNode } from 'react'
 import { Metadata } from 'next'
-import Script from 'next/script'
 import { Nunito } from 'next/font/google'
+import Script from 'next/script'
 import { Toaster } from 'react-hot-toast'
 
-import '../styles/global.css'
+import { I18nProviderClient } from '~/i18n/client'
+import '~/styles/global.css'
 
 const APP_NAME = 'Noisekun'
 const APP_DESCRIPTION =
@@ -73,7 +74,13 @@ const nunito = Nunito({
   variable: '--font-nunito'
 })
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+  params: { locale }
+}: {
+  children: ReactNode
+  params: { locale: string }
+}) {
   return (
     <html lang="en">
       <head>
@@ -84,8 +91,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className={nunito.variable}>
-        <Toaster position="bottom-right" />
-        {children}
+        <I18nProviderClient locale={locale}>
+          <Toaster position="bottom-right" />
+          {children}
+        </I18nProviderClient>
       </body>
     </html>
   )

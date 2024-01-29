@@ -2,6 +2,7 @@ import { useSoundsStateStore } from '~/stores/sounds-state-store'
 import { useThemeStore } from '~/stores/theme-store'
 
 import { actionButton } from '../styles'
+import { useScopedI18n } from '~/i18n/client'
 
 export function Clear() {
   const bulkSoundUpdate = useSoundsStateStore(state => state.bulkUpdate)
@@ -22,15 +23,17 @@ export function Clear() {
     return !soundStates.some(sound => sound.active)
   }
 
+  const scopedT = useScopedI18n('action-buttons.clear')
+
   return (
     <button
       disabled={isDisabled()}
       onClick={clear}
       className={actionButton({ theme })}
-      title="Clear all active sounds"
+      title={scopedT('button-title')}
       data-umami-event="Clear Button"
     >
-      clear
+      {scopedT('button-text')}
     </button>
   )
 }
