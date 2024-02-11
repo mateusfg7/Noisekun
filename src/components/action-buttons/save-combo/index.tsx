@@ -57,6 +57,7 @@ export function SaveCombo() {
           value={comboName}
           onChange={e => setComboName(e.target.value)}
           className={input({ theme })}
+          data-testid="combo-name-input"
         />
       )}
       <button
