@@ -23,6 +23,7 @@
     "@headlessui/react": "1.7.18",
     "@newhighsco/next-plugin-svgr": "^3.0.104",
     "next": "14.0.4",
+    "next-international": "^1.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.4.1",
