@@ -42,8 +42,8 @@ dependencies:
     specifier: ^0.1.13
     version: 0.1.13(tailwindcss@3.4.1)
   zustand:
-    specifier: 4.4.7
-    version: 4.4.7(@types/react@18.2.47)(react@18.2.0)
+    specifier: 4.5.4
+    version: 4.5.4(@types/react@18.2.47)(react@18.2.0)
 
 devDependencies:
   '@commitlint/cli':
@@ -9442,12 +9442,12 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zustand@4.4.7(@types/react@18.2.47)(react@18.2.0):
-    resolution: {integrity: sha512-QFJWJMdlETcI69paJwhSMJz7PPWjVP8Sjhclxmxmxv/RYI7ZOvR5BHX+ktH0we9gTWQMxcne8q1OY8xxz604gw==}
+  /zustand@4.5.4(@types/react@18.2.47)(react@18.2.0):
+    resolution: {integrity: sha512-/BPMyLKJPtFEvVL0E9E9BTUM63MNyhPGlvxk1XjrfWTUlV+BR8jufjsovHzrtR6YNcBEcL7cMHovL1n9xHawEg==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       '@types/react': '>=16.8'
-      immer: '>=9.0'
+      immer: '>=9.0.6'
       react: '>=16.8'
     peerDependenciesMeta:
       '@types/react':
