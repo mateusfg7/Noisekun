@@ -6,7 +6,7 @@ import { Theme, useThemeStore } from '~/stores/theme-store'
 import { useQueryState } from '~/hooks/use-query-state'
 
 import { themeList } from './theme-list'
-import { themeButton, triggerButton } from './styles'
+import { themeButton } from './styles'
 
 export function ThemeMenu() {
   const setTheme = useThemeStore(set => set.setTheme)
@@ -39,7 +39,7 @@ export function ThemeMenu() {
         <div className="group flex">
           <Menu.Button
             title="Toggle theme menu"
-            className={triggerButton({ theme: currentTheme })}
+            className="flex text-primary-foreground opacity-90 group-hover:opacity-100"
             data-umami-event="Open theme menu"
           >
             <PiPaintBrushBroadBold size={22} />

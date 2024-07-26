@@ -4,10 +4,7 @@ import { tv } from 'tailwind-variants'
 import { FiAward, FiGithub } from 'react-icons/fi'
 import { AiOutlineCopyrightCircle } from 'react-icons/ai'
 
-import { useThemeStore } from '~/stores/theme-store'
-
 import packageJson from '../../../package.json'
-import { container, version } from './styles'
 import { Logo } from './logo'
 
 export function Footer() {
@@ -22,10 +19,8 @@ export function Footer() {
     )
   }
 
-  const theme = useThemeStore(set => set.theme)
-
   return (
-    <footer className={container({ theme })}>
+    <footer className="flex flex-col items-center gap-10 p-11 text-primary-foreground">
       <div className="flex flex-col flex-wrap items-center justify-center gap-10 sm:flex-row md:gap-14">
         <div className="w-14 overflow-hidden rounded-2xl shadow-lg">
           <Link href="/">
@@ -65,7 +60,7 @@ export function Footer() {
       </div>
       <a
         href={`https://github.com/mateusfg7/Noisekun/releases/tag/${packageJson.version}`}
-        className={version({ theme })}
+        className="text-primary-foreground/60 hover:text-primary-foreground active:text-primary-foreground"
         data-umami-event="Version Link"
       >
         {packageJson.version}

@@ -83,7 +83,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           data-website-id={process.env.UMAMI_WEBSITE_ID}
         />
       </head>
-      <body className={nunito.variable}>
+      <body className={`${nunito.variable}`}>
         <Toaster position="bottom-right" />
         {children}
       </body>

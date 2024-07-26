@@ -7,16 +7,7 @@ import { useThemeStore } from '~/stores/theme-store'
 import { useComboStore } from '~/stores/combo-store'
 import { useSoundsStateStore } from '~/stores/sounds-state-store'
 
-import {
-  comboButton,
-  editButton,
-  toggleEditButton,
-  toggleEditContainer,
-  triggerButton
-} from './styles'
-
 export function ComboList() {
-  const theme = useThemeStore(set => set.theme)
   const setTheme = useThemeStore(set => set.setTheme)
   const sounds = useSoundsStateStore(state => state.sounds)
   const bulkUpdateSounds = useSoundsStateStore(state => state.bulkUpdate)
@@ -64,7 +55,7 @@ export function ComboList() {
           title="Toggle combo list"
           data-umami-event="Open combo list"
           disabled={isEmpty}
-          className={triggerButton({ theme })}
+          className="flex text-primary-foreground opacity-90 hover:opacity-100 disabled:opacity-50 disabled:hover:opacity-50"
         >
           <PiPlaylistBold size={24} />
         </Menu.Button>
@@ -82,17 +73,18 @@ export function ComboList() {
             data-testid="combo-list-modal"
             className="snap absolute left-4 right-4 mt-2 flex max-h-[85vh] origin-top-right snap-y snap-mandatory scroll-pt-4 flex-col gap-1 overflow-y-auto rounded-2xl p-4 shadow-2xl backdrop-blur-md scrollbar-hide focus:outline-none md:left-auto md:right-0"
           >
-            <div className={toggleEditContainer({ theme })}>
+            <div className="mb-2 flex min-w-40 items-center justify-around gap-1 rounded-lg bg-primary-foreground/5 text-primary-foreground">
               <button
                 onClick={() => setDeleteMode(false)}
-                className={toggleEditButton({ theme, active: !deleteMode })}
+                data-is-active={!deleteMode}
+                className="flex-1 rounded-lg py-1 hover:bg-primary-foreground/10 data-[is-active='true']:bg-primary-foreground/20"
               >
                 Select
               </button>
               <button
                 data-is-active={deleteMode}
                 onClick={() => setDeleteMode(true)}
-                className={toggleEditButton({ theme, active: deleteMode })}
+                className="flex-1 rounded-lg py-1 hover:bg-primary-foreground/10 data-[is-active='true']:bg-primary-foreground/20"
               >
                 Delete
               </button>
@@ -103,8 +95,9 @@ export function ComboList() {
                 <Menu.Item key={combo.id}>
                   {({ active }) => (
                     <button
-                      className={comboButton({ theme, active })}
+                      className="rounded-xl bg-primary-foreground/5 p-3 leading-none tracking-wider text-primary-foreground duration-300 data-[is-active='true']:bg-primary-foreground/20"
                       onClick={() => updateCombo(combo.id)}
+                      data-is-active={active}
                       data-umami-event="Select combo"
                     >
                       <span className="font-bold">{combo.name}</span>
@@ -117,7 +110,7 @@ export function ComboList() {
               combos.map(combo => (
                 <button
                   key={combo.id}
-                  className={editButton({ theme })}
+                  className="group flex items-center justify-between gap-1 rounded-xl bg-primary-foreground/5 bg-gradient-to-r p-3 leading-none tracking-wider text-primary-foreground duration-300 hover:from-primary-foreground/20 hover:to-red-600/20 data-[is-active='true']:bg-primary-foreground/20"
                   onClick={() => deleteCombo(combo.id)}
                   data-umami-event="Delete combo"
                   data-testid={`${combo.id}_delete_button`}

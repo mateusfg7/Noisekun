@@ -12,7 +12,6 @@ import { useUserInteractionStore } from '~/stores/user-interaction-store'
 import { useQueryState } from '~/hooks/use-query-state'
 
 import { VolumeController } from './volume-controller'
-import { icon, soundButton } from './styles'
 
 interface SoundButtonProps {
   sound: Sound
@@ -154,21 +153,19 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       </audio>
       <button
         data-umami-event={sound.title}
-        className={soundButton({
-          active:
-            localSoundState.active &&
-            localSoundState.loaded &&
-            userHasInteracted,
-          isLoaded: localSoundState.loaded,
-          theme
-        })}
+        data-active={
+          localSoundState.active && localSoundState.loaded && userHasInteracted
+        }
+        // data-loaded={localSoundState.loaded}
+        data-loaded={true}
+        className="flex h-24 w-24 cursor-wait items-center justify-center rounded-xl text-primary-foreground/90 opacity-70 transition duration-300 disabled:hover:bg-transparent data-[loaded='false']:animate-loading data-[loaded='true']:cursor-pointer data-[active='true']:rounded-b-none data-[active='true']:opacity-100 md:hover:bg-primary-foreground/10 data-[active='true']:md:bg-primary-foreground/10 data-[active='true']:md:shadow-sound data-[loaded='true']:md:hover:opacity-100 data-[loaded='true']:md:hover:shadow-sound"
         onClick={() =>
           setSoundState({ ...localSoundState, active: !localSoundState.active })
         }
         disabled={!localSoundState.loaded}
         aria-label={sound.title}
       >
-        <Icon className={icon()} />
+        <Icon className="h-20 w-20" />
       </button>
       <VolumeController
         isActive={

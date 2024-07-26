@@ -1,4 +1,3 @@
-import { useThemeStore } from '~/stores/theme-store'
 import { settingRow, input, dot } from './styles'
 
 type Option = {
@@ -18,16 +17,12 @@ export function RandomVolumeSettings({
   updateSteps,
   updateTransitionTime
 }: Props) {
-  const { theme } = useThemeStore()
-
   return (
     <div className="space-y-2">
       <h3 className="p-1 text-left opacity-60">Random volume</h3>
       <div className="space-y-1">
-        <div className={settingRow({ theme })}>
-          <span
-            className={dot({ theme, active: updateInterval.wasChanged() })}
-          />
+        <div className={settingRow()}>
+          <span className={dot({ active: updateInterval.wasChanged() })} />
 
           <label htmlFor="interval" className="flex-1 text-left">
             Update interval <span className="text-sm opacity-50">/s</span>
@@ -37,13 +32,12 @@ export function RandomVolumeSettings({
             id="interval"
             value={updateInterval.value / 1000}
             onChange={e => updateInterval.set(Number(e.target.value) * 1000)}
-            className={input({ theme })}
+            className={input()}
           />
         </div>
-        <div className={settingRow({ theme })}>
+        <div className={settingRow()}>
           <span
             className={dot({
-              theme,
               active: updateTransitionTime.wasChanged()
             })}
           />
@@ -57,13 +51,12 @@ export function RandomVolumeSettings({
             onChange={e =>
               updateTransitionTime.set(Number(e.target.value) * 1000)
             }
-            className={input({ theme })}
+            className={input()}
           />
         </div>
-        <div className={settingRow({ theme })}>
+        <div className={settingRow()}>
           <span
             className={dot({
-              theme,
               active: updateSteps.wasChanged()
             })}
           />
@@ -75,7 +68,7 @@ export function RandomVolumeSettings({
             id="steps"
             value={updateSteps.value}
             onChange={e => updateSteps.set(Number(e.target.value))}
-            className={input({ theme })}
+            className={input()}
           />
         </div>
       </div>
