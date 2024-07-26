@@ -3,11 +3,76 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --primary: #0485b4;
+    --primary-foreground: #fff;
+    --background-image: url('');
+    --background-color: transparent;
+
+    --transition-theme-foreground: 255 255 255; /* rgb(255, 255, 255) */
+
+    --dark-theme: 3 7 18; /* rgb(3, 7, 18) */
+    --dark-theme-foreground: 243 244 246; /* rgb(243, 244, 246) */
+
+    --light-theme: 243 244 246; /* rgb(243, 244, 246) */
+    --light-theme-foreground: 3 7 18; /* rgb(3, 7, 18) */
+
+    --room-theme-foreground: 191 219 254; /* rgb(191, 219, 254) */
+    --train-theme-foreground: 187 247 208; /* rgb(187, 247, 208) */
+    --waterfall-theme-foreground: 217 249 157; /* rgb(217, 249, 157) */
+    --camping-theme-foreground: 254 215 170; /* rgb(254,215,170) */
+  }
+
+  .transition-theme {
+    --primary: 4 133 180; /* rgb(4, 133, 180) */
+    --primary-foreground: 255 255 255; /* rgb(255,255,255) */
+  }
+
+  .dark-theme {
+    --primary: 3 7 18; /* rgb(3, 7, 18) */
+    --primary-foreground: 243 244 246; /* rgb(243, 244, 246) */
+    --background-color: rgb(3, 7, 18);
+  }
+
+  .light-theme {
+    --primary: 243 244 246; /* rgb(243, 244, 246) */
+    --primary-foreground: 3 7 18; /* rgb(3, 7, 18) */
+    --background-color: rgb(243, 244, 246);
+  }
+
+  .room-theme {
+    --primary: 23 37 84; /* rgb(23, 37, 84) */
+    --primary-foreground: 191 219 254; /* rgb(191, 219, 254) */
+    --background-color: rgba(0, 0, 0, 0.5);
+    --background-image: url('/bg/blue-room.gif');
+  }
+
+  .train-theme {
+    --primary: 5 46 22; /* rgb(5, 46, 22) */
+    --primary-foreground: 187 247 208; /* rgb(187, 247, 208) */
+    --background-color: rgba(0, 0, 0, 0.5);
+    --background-image: url('/bg/train.gif');
+  }
+
+  .waterfall-theme {
+    --primary: 26 46 5; /* rgb(26, 46, 5) */
+    --primary-foreground: 217 249 157; /* rgb(217, 249, 157) */
+    --background-color: rgba(0, 0, 0, 0.5);
+    --background-image: url('/bg/waterfall.gif');
+  }
+
+  .camping-theme {
+    --primary: 67 10 7; /* rgb(67,10,7) */
+    --primary-foreground: 254 215 170; /* rgb(254,215,170) */
+    --background-color: rgba(0, 0, 0, 0.5);
+    --background-image: url('/bg/camping-fire.gif');
+  }
+
   body {
-    @apply bg-[#0485b4]
+    @apply animate-background-change
       font-sans
       font-light
-      text-white;
+      text-primary-foreground;
   }
 }
 
