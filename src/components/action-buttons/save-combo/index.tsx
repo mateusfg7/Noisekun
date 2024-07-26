@@ -55,7 +55,7 @@ export function SaveCombo() {
           placeholder="combo name..."
           value={comboName}
           onChange={e => setComboName(e.target.value)}
-          className="text-primary-foreground placeholder:text-primary-foreground/60 bg-primary-foreground/5 form-input w-32 animate-show-input rounded-xl border-none px-2 py-0 text-center leading-none tracking-wider duration-300 placeholder:text-sm focus:ring-0"
+          className="form-input w-32 animate-show-input rounded-xl border-none bg-primary-foreground/5 px-2 py-0 text-center leading-none tracking-wider text-primary-foreground duration-300 placeholder:text-sm placeholder:text-primary-foreground/60 focus:ring-0"
           data-testid="combo-name-input"
         />
       )}

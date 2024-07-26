@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <div className={currTheme}>
       <div className="bg-background-image bg-cover bg-fixed bg-center bg-no-repeat">
-        <div className="bg-background-color relative">
+        <div className="relative bg-background-color">
           <Header />
           <div className="styled-scrollbar h-[90vh] space-y-24 overflow-y-scroll pt-16 md:h-[87vh]">
             <div className="m-auto flex w-fit flex-col items-center gap-3">
