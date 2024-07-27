@@ -2,11 +2,8 @@ import React, { useState } from 'react'
 import { FiVolumeX, FiVolume2, FiVolume1, FiVolume } from 'react-icons/fi'
 
 import { useGlobalVolumeStore } from '~/stores/global-volume-store'
-import { useThemeStore } from '~/stores/theme-store'
 
 import { VolumeControllerSlider } from '~/components/ui/volume-controller-slider'
-
-import { soundButton } from './styles'
 
 export function GlobalVolumeController() {
   const MAX_VALUE = 1000
@@ -36,8 +33,6 @@ export function GlobalVolumeController() {
     }
   }
 
-  const theme = useThemeStore(set => set.theme)
-
   return (
     <div
       onMouseEnter={() => setIsShowing(true)}
@@ -62,9 +57,9 @@ export function GlobalVolumeController() {
       </div>
       <button
         title="Enable/disable sound"
-        className={soundButton({ theme })}
         onClick={toggleMuted}
         data-umami-event="Mute/Unmute global volume"
+        className="text-primary-foreground"
       >
         {globalVolume >= 0.5 && <FiVolume2 size={25} />}
         {globalVolume >= 0.25 && globalVolume < 0.5 && <FiVolume1 size={25} />}

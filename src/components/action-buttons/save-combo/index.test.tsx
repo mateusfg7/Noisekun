@@ -102,7 +102,7 @@ describe('Save Combo Button', () => {
         { active: true, id: 'rain', loaded: true, volume: 1 },
         { active: true, id: 'plain', loaded: true, volume: 0.5 }
       ],
-      theme: 'transition'
+      theme: 'transition-theme'
     }
 
     expect(input).not.toBeInTheDocument()

@@ -8,30 +8,30 @@ type ThemeAttrs = {
 export const themeList: ThemeAttrs[] = [
   {
     title: 'Light',
-    id: 'light'
+    id: 'light-theme'
   },
   {
     title: 'Dark',
-    id: 'dark'
+    id: 'dark-theme'
   },
   {
     title: 'Transition',
-    id: 'transition'
+    id: 'transition-theme'
   },
   {
-    title: 'Blue Room',
-    id: 'blue-room'
+    title: 'Room',
+    id: 'room-theme'
   },
   {
     title: 'Train',
-    id: 'train'
+    id: 'train-theme'
   },
   {
     title: 'Waterfall',
-    id: 'waterfall'
+    id: 'waterfall-theme'
   },
   {
     title: 'Camping Fire',
-    id: 'camping-fire'
+    id: 'camping-theme'
   }
 ]

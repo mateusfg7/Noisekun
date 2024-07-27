@@ -1,8 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 
-import { display, minuteConfigInput } from './styles'
-import { useThemeStore } from '~/stores/theme-store'
 import { padZero } from '~/utils/pad-zero'
 
 export type ConfigModalProps = {
@@ -20,8 +18,6 @@ export function ConfigModal({
   displayMinutes,
   displaySeconds
 }: ConfigModalProps) {
-  const theme = useThemeStore(state => state.theme)
-
   const [isOpen, setIsOpen] = useState(false)
   const [localMinutes, setLocalMinutes] = useState(+minutes)
 
@@ -57,7 +53,8 @@ export function ConfigModal({
           type="button"
           onClick={openModal}
           disabled={isLoading}
-          className={display({ theme, isLoading })}
+          data-is-loading={isLoading}
+          className="rounded-xl bg-primary-foreground/10 text-primary-foreground transition-colors hover:bg-primary-foreground/30 disabled:hover:bg-primary-foreground/10 data-[is-loading='true']:animate-pulse data-[is-loading='true']:cursor-wait"
           data-umami-event="Open pomodoro config"
           data-testid="pomodoro-timer-button"
         >
@@ -123,7 +120,7 @@ export function ConfigModal({
                             }
                             if (+e.target.value) updateTime(+e.target.value)
                           }}
-                          className={minuteConfigInput({ theme })}
+                          className="form-input w-20 rounded-lg p-3 text-center text-lg"
                         />
                       </div>
                     </div>

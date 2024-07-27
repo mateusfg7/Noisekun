@@ -1,20 +1,5 @@
 import { tv } from 'tailwind-variants'
 
-export const triggerButton = tv({
-  base: /*tw:*/ 'flex opacity-90 group-hover:opacity-100',
-  variants: {
-    theme: {
-      transition: /*tw:*/ 'text-white',
-      dark: /*tw:*/ 'text-dark-foreground',
-      'blue-room': /*tw:*/ 'text-blue-room',
-      train: /*tw:*/ 'text-train',
-      waterfall: /*tw:*/ 'text-waterfall',
-      light: /*tw:*/ 'text-light-foreground',
-      'camping-fire': /*tw:*/ 'text-camping-fire'
-    }
-  }
-})
-
 export const themeButton = tv({
   base: /*tw:*/ 'border-2 rounded-2xl cursor-pointer font-bold text-xl p-10 md:p-7 w-full bg-center bg-cover shadow-xl shadow-black/30 border-transparent',
   variants: {
@@ -25,84 +10,87 @@ export const themeButton = tv({
       true: /*tw:*/ 'brightness-95 border-white/80 text-white/80'
     },
     background: {
-      transition: /*tw:*/ 'animate-background-change-sm',
-      dark: /*tw:*/ 'bg-dark-background',
-      'blue-room': /*tw:*/ 'bg-blue-room-gif',
-      train: /*tw:*/ 'bg-train-gif',
-      waterfall: /*tw:*/ 'bg-waterfall-gif',
-      light: /*tw:*/ 'bg-light-background',
-      'camping-fire': /*tw:*/ 'bg-camping-fire-gif'
+      'transition-theme': /*tw:*/ 'animate-background-change-sm',
+      'dark-theme': /*tw:*/ 'bg-themes-dark',
+      'light-theme': /*tw:*/ 'bg-themes-light',
+      'room-theme': /*tw:*/ 'bg-blue-room-gif',
+      'train-theme': /*tw:*/ 'bg-train-gif',
+      'waterfall-theme': /*tw:*/ 'bg-waterfall-gif',
+      'camping-theme': /*tw:*/ 'bg-camping-fire-gif'
     },
     theme: {
-      transition: /*tw:*/ 'text-white/80',
-      dark: /*tw:*/ 'text-dark-foreground/80',
-      light: /*tw:*/ 'text-light-foreground/80',
-      'blue-room': /*tw:*/ 'text-blue-room/80',
-      train: /*tw:*/ 'text-train/80',
-      waterfall: /*tw:*/ 'text-waterfall/80',
-      'camping-fire': /*tw:*/ 'text-camping-fire/80'
+      'transition-theme': /*tw:*/ 'text-themes-transition/80',
+      'dark-theme': /*tw:*/ 'text-themes-dark-foreground/80',
+      'light-theme': /*tw:*/ 'text-themes-light-foreground/80',
+      'room-theme': /*tw:*/ 'text-themes-room/80',
+      'train-theme': /*tw:*/ 'text-themes-train/80',
+      'waterfall-theme': /*tw:*/ 'text-themes-waterfall/80',
+      'camping-theme': /*tw:*/ 'text-themes-camping/80'
     }
   },
   compoundVariants: [
     {
-      theme: ['dark'],
+      theme: ['dark-theme'],
       active: true,
-      class: /*tw:*/ 'border-dark-foreground/80 text-dark-foreground/80'
+      class:
+        /*tw:*/ 'border-themes-dark-foreground/80 text-themes-dark-foreground/80'
     },
     {
-      theme: ['dark'],
+      theme: ['dark-theme'],
       selected: true,
-      class: /*tw:*/ 'border-dark-foreground text-dark-foreground'
+      class: /*tw:*/ 'border-themes-dark-foreground text-themes-dark-foreground'
     },
     {
-      theme: ['light'],
+      theme: ['light-theme'],
       active: true,
-      class: /*tw:*/ 'border-light-foreground/80 text-light-foreground/80'
+      class:
+        /*tw:*/ 'border-themes-light-foreground/80 text-themes-light-foreground/80'
     },
     {
-      theme: ['light'],
+      theme: ['light-theme'],
       selected: true,
-      class: /*tw:*/ 'border-light-foreground text-light-foreground'
+      class:
+        /*tw:*/ 'border-themes-light-foreground text-themes-light-foreground'
     },
     {
-      theme: ['blue-room'],
+      theme: ['room-theme'],
       active: true,
-      class: /*tw:*/ 'border-blue-room/80 text-blue-room/80'
+      class: /*tw:*/ 'border-themes-room/80 text-themes-room/80'
     },
     {
-      theme: ['blue-room'],
+      theme: ['room-theme'],
       selected: true,
-      class: /*tw:*/ 'border-blue-room text-blue-room'
+      class: /*tw:*/ 'border-themes-room text-themes-room'
     },
     {
-      theme: ['train'],
+      theme: ['train-theme'],
       active: true,
-      class: /*tw:*/ 'border-train/80 text-train/80'
+      class: /*tw:*/ 'border-themes-train/80 text-themes-train/80'
     },
     {
-      theme: ['train'],
+      theme: ['train-theme'],
       selected: true,
-      class: /*tw:*/ 'border-train text-train'
+      class: /*tw:*/ 'border-themes-train text-themes-train'
     },
     {
-      theme: ['waterfall'],
+      theme: ['waterfall-theme'],
       active: true,
-      class: /*tw:*/ 'border-waterfall/80 text-waterfall/80'
+      class: /*tw:*/ 'border-themes-waterfall/80 text-themes-waterfall/80'
     },
     {
-      theme: ['waterfall'],
+      theme: ['waterfall-theme'],
       selected: true,
-      class: /*tw:*/ 'border-waterfall text-waterfall'
+      class: /*tw:*/ 'border-themes-waterfall text-themes-waterfall'
     },
     {
-      theme: ['camping-fire'],
+      theme: ['camping-theme'],
       active: true,
-      class: /*tw:*/ 'border-camping-fire/80 text-camping-fire/80'
+      class: /*tw:*/ 'border-themes-camping/80 text-themes-camping/80'
     },
     {
-      theme: ['camping-fire'],
+      theme: ['camping-theme'],
       selected: true,
-      class: /*tw:*/ 'border-camping-fire text-camping-fire'
+      class: /*tw:*/ 'border-themes-camping text-themes-camping'
     }
   ]
 })

@@ -8,7 +8,6 @@ import { useThemeStore } from '~/stores/theme-store'
 import { randomString } from '~/utils/random-string'
 
 import { actionButton } from '../styles'
-import { input } from './styles'
 
 export function SaveCombo() {
   const sounds = useSoundsStateStore(state => state.sounds)
@@ -56,7 +55,7 @@ export function SaveCombo() {
           placeholder="combo name..."
           value={comboName}
           onChange={e => setComboName(e.target.value)}
-          className={input({ theme })}
+          className="form-input w-32 animate-show-input rounded-xl border-none bg-primary-foreground/5 px-2 py-0 text-center leading-none tracking-wider text-primary-foreground duration-300 placeholder:text-sm placeholder:text-primary-foreground/60 focus:ring-0"
           data-testid="combo-name-input"
         />
       )}
@@ -64,7 +63,6 @@ export function SaveCombo() {
         disabled={disabled}
         onClick={save}
         className={actionButton({
-          theme,
           className: /*tw:*/ 'flex items-center'
         })}
         title="Save current combo"

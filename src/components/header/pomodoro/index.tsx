@@ -2,16 +2,13 @@ import { useEffect, useRef, useState } from 'react'
 import { FiPause, FiPlay, FiRotateCw } from 'react-icons/fi'
 
 import { PomodoroStatus, usePomodoroStore } from '~/stores/pomodoro-store'
-import { useThemeStore } from '~/stores/theme-store'
 
 import { padZero } from '~/utils/pad-zero'
 
 import { ConfigModal } from './config-modal'
-import { container, controlButton } from './styles'
 
 export function Pomodoro() {
   const setPomodoroStatus = usePomodoroStore(state => state.setPomodoroStatus)
-  const theme = useThemeStore(state => state.theme)
 
   const [defaultTimeInSec, setDefaultTimeInSec] = useState(25 * 60)
   const [remainingTime, setRemainingTime] = useState(defaultTimeInSec)
@@ -93,7 +90,7 @@ export function Pomodoro() {
   }, [])
 
   return (
-    <div className={container({ theme })}>
+    <div className="flex items-center gap-1 leading-none">
       <audio ref={alarmRef} preload="auto" loop>
         <source src="/sounds/alarm.ogg" type="audio/ogg" />
       </audio>
@@ -102,7 +99,8 @@ export function Pomodoro() {
         title="Reset Pomodoro timer"
         disabled={isLoadingStorage}
         onClick={resetTimer}
-        className={controlButton({ theme, isLoading: isLoadingStorage })}
+        data-is-loading={isLoadingStorage}
+        className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary-foreground/10 text-base text-primary-foreground transition-colors hover:bg-primary-foreground/30 disabled:hover:bg-primary-foreground/10 data-[is-loading='true']:animate-pulse data-[is-loading='true']:cursor-wait"
         data-umami-event="Reset pomodoro timer"
       >
         <FiRotateCw />
@@ -122,7 +120,8 @@ export function Pomodoro() {
         title="Toggle Pomodoro timer"
         onClick={handleToggle}
         disabled={isLoadingStorage}
-        className={controlButton({ theme, isLoading: isLoadingStorage })}
+        data-is-loading={isLoadingStorage}
+        className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary-foreground/10 text-base text-primary-foreground transition-colors hover:bg-primary-foreground/30 disabled:hover:bg-primary-foreground/10 data-[is-loading='true']:animate-pulse data-[is-loading='true']:cursor-wait"
         data-umami-event="Play/pause pomodoro timer"
       >
         {isTicking ? <FiPause /> : <FiPlay />}

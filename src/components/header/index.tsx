@@ -1,8 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { useThemeStore } from '~/stores/theme-store'
-
 import { ConfigMenu } from '~/components/config-menu'
 
 import { ThemeMenu } from './theme-menu'
@@ -11,14 +9,10 @@ import { Pomodoro } from './pomodoro'
 import { ComboList } from './combo-list'
 import { RandomModeButton } from './random-controller'
 
-import { title } from './styles'
-
 export const Header: React.FC = () => {
-  const theme = useThemeStore(set => set.theme)
-
   return (
     <header className="relative flex h-[10vh] items-center justify-between gap-5 px-6 shadow-header transition-all md:h-[13vh]">
-      <h1 className={title({ theme })}>
+      <h1 className="text-2xl font-semibold text-primary-foreground">
         <Link href="/">Noisekun</Link>
       </h1>
       <div className="absolute left-1/2 hidden -translate-x-1/2 sm:block">

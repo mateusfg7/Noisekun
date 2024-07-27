@@ -1,12 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import { FiZap } from 'react-icons/fi'
 
-import { useThemeStore } from '~/stores/theme-store'
 import { useGlobalRandomModeStore } from '~/stores/random-mode-store'
 import { SoundState, useSoundsStateStore } from '~/stores/sounds-state-store'
 
 import { calculateVolumeSteps } from './calculate-volume-steps'
-import { toggleButton } from './styles'
 
 export function RandomModeButton() {
   const {
@@ -17,8 +15,6 @@ export function RandomModeButton() {
     setRandomMode
   } = useGlobalRandomModeStore()
   const { sounds, setSound } = useSoundsStateStore()
-
-  const theme = useThemeStore(set => set.theme)
 
   const soundsRef = useRef(sounds)
   const intervalIdRef = useRef(null)
@@ -94,7 +90,8 @@ export function RandomModeButton() {
     <div className="flex items-center gap-3 opacity-90 hover:opacity-100">
       <button
         title={randomMode ? 'Disable random mode' : 'Enable random mode'}
-        className={toggleButton({ theme, enabled: randomMode })}
+        data-enabled={randomMode}
+        className="text-primary-foreground opacity-50 hover:opacity-80 data-[enabled='true']:opacity-100"
         onClick={() => setRandomMode(!randomMode)}
         data-umami-event="Enable/Disable Random Mode"
       >

@@ -17,23 +17,35 @@ module.exports = {
         sans: 'var(--font-nunito)'
       },
       colors: {
-        main: '#0485B4',
-        'dark-background': colors.gray[950],
-        'dark-foreground': colors.gray[100],
-        'light-background': colors.gray[100],
-        'light-foreground': colors.gray[950],
-        'blue-room': colors.blue[200],
-        train: colors.green[200],
-        waterfall: colors.lime[200],
-        'camping-fire': colors.orange[200]
+        primary: {
+          DEFAULT: 'rgb(var(--primary) / <alpha-value>)',
+          foreground: 'rgb(var(--primary-foreground) / <alpha-value>)'
+        },
+        'background-color': 'var(--background-color)',
+        themes: {
+          transition: 'rgb(var(--transition-theme-foreground) / <alpha-value>)',
+          dark: {
+            DEFAULT: 'rgb(var(--dark-theme) / <alpha-value>)',
+            foreground: 'rgb(var(--dark-theme-foreground) / <alpha-value>)'
+          },
+          light: {
+            DEFAULT: 'rgb(var(--light-theme) / <alpha-value>)',
+            foreground: 'rgb(var(--light-theme-foreground) / <alpha-value>)'
+          },
+          room: 'rgb(var(--room-theme-foreground) / <alpha-value>)',
+          train: 'rgb(var(--train-theme-foreground) / <alpha-value>)',
+          waterfall: 'rgb(var(--waterfall-theme-foreground) / <alpha-value>)',
+          camping: 'rgb(var(--camping-theme-foreground) / <alpha-value>)'
+        }
       },
       boxShadow: {
         header: '0px 1px 30px rgba(0, 0, 0, 0.09)',
         sound: '0px 0px 30px rgba(0, 0, 0, 0.09)'
       },
       backgroundImage: {
+        'background-image': 'var(--background-image)',
         'blue-room-gif': 'url("/bg/blue-room.gif")',
-        'train-gif': 'url("/bg/train.gif")',
+        'train-gif': 'var(--background-image)',
         'waterfall-gif': 'url("/bg/waterfall.gif")',
         'camping-fire-gif': 'url("/bg/camping-fire.gif")'
       },
