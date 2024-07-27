@@ -9,8 +9,8 @@ dependencies:
     specifier: ^9.4.0
     version: 9.4.0(next@14.0.4)(webpack@5.88.2)
   '@headlessui/react':
-    specifier: 1.7.18
-    version: 1.7.18(react-dom@18.3.1)(react@18.3.1)
+    specifier: 1.7.19
+    version: 1.7.19(react-dom@18.3.1)(react@18.3.1)
   '@newhighsco/next-plugin-svgr':
     specifier: ^3.0.104
     version: 3.0.104(next@14.0.4)(typescript@5.3.3)(webpack@5.88.2)
@@ -2076,8 +2076,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@headlessui/react@1.7.18(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-4i5DOrzwN4qSgNsL4Si61VMkUcWbcSKueUV7sFhpHzQcSShdlHENE5+QBntMSRvHt8NyoFO2AGG8si9lq+w4zQ==}
+  /@headlessui/react@1.7.19(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-Ll+8q3OlMJfJbAKM/+/Y2q6PPYbryqNTXDbryx7SXLIDamkF6iQFbriYHga0dY44PvDhvvBWCx1Xj4U5+G4hOw==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^16 || ^17 || ^18
