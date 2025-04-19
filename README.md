@@ -2,7 +2,7 @@
 
 # ![Noisekun :headphones:](.github/assets/icon.png)
 
-_Listen combinations of ambient sounds for **relaxing** or getting more **productive** on your task!_
+_Listen to combinations of ambient sounds to **relax** or become more **productive** on your task!_
 
 <img src=".github/assets/screenshots.png">
 
@@ -28,20 +28,20 @@ _Listen combinations of ambient sounds for **relaxing** or getting more **produc
 
 # ✨ Features
 
-- 23 Ambience sounds
-- Control volume for each sound individually
+- 23 ambient sounds
+- Control the volume for each sound individually
 - Control global sound
-- Enhance look with 7 themes
+- Enhance the look with 7 themes; the theme changes according to the combination of sounds 
 - Pomodoro timer
 - Save sound combos
 - Share sound combo with theme
-- Browser persistent config (pomodoro timer, volume, theme and combos)
+- Browser persistent config (Pomodoro timer, volume, theme, and combos)
 
 Check the [**issue list**](https://github.com/mateusfg7/Noisekun/issues?q=is%3Aissue+is%3Aopen+label%3Afeat) for more planned features!
 
 # 🔧 Contributing
 
-Thanks for your interest in contributing to Noisekun! Please take a moment to review the [CONTRIBUTING.md](https://github.com/mateusfg7/Noisekun/blob/main/CONTRIBUTING.md) guideline **before submitting a pull request**. You will find all information about the project structure, files, how to setup project, and good practices for submit a pull request.
+Thanks for your interest in contributing to Noisekun! Please take a moment to review the [CONTRIBUTING.md](https://github.com/mateusfg7/Noisekun/blob/main/CONTRIBUTING.md) guideline **before submitting a pull request**. You will find all the information about the project structure, files, how to set up a project, and good practices for submitting a pull request.
 
 <br/>
 <br/>
