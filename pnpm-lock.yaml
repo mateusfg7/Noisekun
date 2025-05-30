@@ -43,7 +43,7 @@ dependencies:
     version: 0.1.13(tailwindcss@3.4.6)
   zustand:
     specifier: 4.5.4
-    version: 4.5.4(@types/react@18.3.3)(react@18.3.1)
+    version: 4.5.4(@types/react@18.3.23)(react@18.3.1)
 
 devDependencies:
   '@commitlint/cli':
@@ -71,8 +71,8 @@ devDependencies:
     specifier: ^20.4.7
     version: 20.4.7
   '@types/react':
-    specifier: 18.3.3
-    version: 18.3.3
+    specifier: 18.3.23
+    version: 18.3.23
   '@types/semver':
     specifier: ^7.5.0
     version: 7.5.0
@@ -3236,11 +3236,11 @@ packages:
   /@types/react-dom@18.2.17:
     resolution: {integrity: sha512-rvrT/M7Df5eykWFxn6MYt5Pem/Dbyc1N8Y0S9Mrkw2WFCRiqUgw9P7ul2NpwsXCSM1DVdENzdG9J5SreqfAIWg==}
     dependencies:
-      '@types/react': 18.3.3
+      '@types/react': 18.3.23
     dev: true
 
-  /@types/react@18.3.3:
-    resolution: {integrity: sha512-hti/R0pS0q1/xx+TsI73XIqk26eBsISZ2R0wUijXIngRK9R/e7Xw/cXVxQK7R5JjW+SV4zGcn5hXjudkN/pLIw==}
+  /@types/react@18.3.23:
+    resolution: {integrity: sha512-/LDXMQh55EzZQ0uVAZmKKhfENivEvWz6E+EYzh+/MCjMhNsotd+ZHhBGIjFDTi6+fz0OhQQQLbTgdQIxxCsC0w==}
     dependencies:
       '@types/prop-types': 15.7.5
       csstype: 3.1.3
@@ -4533,10 +4533,6 @@ packages:
     dependencies:
       cssom: 0.3.8
     dev: true
-
-  /csstype@3.1.2:
-    resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
-    dev: false
 
   /csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
@@ -7455,7 +7451,7 @@ packages:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
       css-tree: 1.1.3
-      csstype: 3.1.2
+      csstype: 3.1.3
       fastest-stable-stringify: 2.0.2
       inline-style-prefixer: 7.0.0
       react: 18.3.1
@@ -9922,7 +9918,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zustand@4.5.4(@types/react@18.3.3)(react@18.3.1):
+  /zustand@4.5.4(@types/react@18.3.23)(react@18.3.1):
     resolution: {integrity: sha512-/BPMyLKJPtFEvVL0E9E9BTUM63MNyhPGlvxk1XjrfWTUlV+BR8jufjsovHzrtR6YNcBEcL7cMHovL1n9xHawEg==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
@@ -9937,7 +9933,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@types/react': 18.3.3
+      '@types/react': 18.3.23
       react: 18.3.1
       use-sync-external-store: 1.2.0(react@18.3.1)
     dev: false
