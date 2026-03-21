@@ -103,9 +103,14 @@ Didn't like Noisekun? Check some alternatives!
 - [**I Miss My Library**](https://www.imissmylibrary.com/) (Web)
 - [**I Miss My Cafe**](https://imissmycafe.com/) (Web)
 - [**Noises**](https://noises.online/) (Web)
+- [**Moodist**](https://moodist.mvze.net/) (Web)
 
 ## Other related tools
 
 - [**Flocus**](https://flocus.com/minimalist-pomodoro-timer/) _pomodoro_ (Web)
+- [**WonderSpace**](https://www.wonderspace.app/) (Web)
+- [**Astrostation**](https://astrostation.me/) (Web)
+- [**StudyFoc.us**](https://studyfoc.us/pomodoro) (Web)
+- [**ZenFocus**](https://www.zenfocus.io/) (Web)
 
 > _Know a cool alternative? Make a Pull Request and [increase the list](https://github.com/mateusfg7/Noisekun/edit/main/README.md)!_
