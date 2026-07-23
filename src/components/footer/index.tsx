@@ -4,7 +4,6 @@ import { tv } from 'tailwind-variants'
 import { FiAward, FiGithub } from 'react-icons/fi'
 import { AiOutlineCopyrightCircle } from 'react-icons/ai'
 
-import packageJson from '../../../package.json'
 import { Logo } from './logo'
 
 export function Footer() {
@@ -58,13 +57,7 @@ export function Footer() {
           </Info>
         </section>
       </div>
-      <a
-        href={`https://github.com/mateusfg7/Noisekun/releases/tag/${packageJson.version}`}
-        className="text-primary-foreground/60 hover:text-primary-foreground active:text-primary-foreground"
-        data-umami-event="Version Link"
-      >
-        {packageJson.version}
-      </a>
+   
     </footer>
   )
 }
