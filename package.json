@@ -13,8 +13,7 @@
     "start": "next start",
     "test": "NODE_NO_WARNINGS=1 jest --all --watch --coverage --config tests/jest.config.ts",
     "test:ci": "jest --ci --config tests/jest.config.ts",
-    "bump-tag": "tsx .tools/bump-tag-version.ts",
-    "prepare": "husky install"
+    "bump-tag": "tsx .tools/bump-tag-version.ts"
   },
   "packageManager": "pnpm@8.15.9",
   "dependencies": {
@@ -33,8 +32,6 @@
     "zustand": "4.5.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "18.6.1",
-    "@commitlint/config-conventional": "18.6.3",
     "@tailwindcss/forms": "^0.5.4",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/react": "^14.1.2",
@@ -44,8 +41,6 @@
     "@types/react": "18.3.23",
     "@types/semver": "^7.5.0",
     "autoprefixer": "10.4.19",
-    "cz-conventional-changelog": "3.3.0",
-    "husky": "9.1.7",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "8.5.3",
