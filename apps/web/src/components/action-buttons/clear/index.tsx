@@ -1,33 +1,33 @@
-import { useSoundsStateStore } from '~/stores/sounds-state-store'
+import { useSoundsStateStore } from "~/stores/sounds-state-store";
 
-import { actionButton } from '../styles'
+import { actionButton } from "../styles";
 
 export function Clear() {
-  const bulkSoundUpdate = useSoundsStateStore(state => state.bulkUpdate)
-  const soundStates = useSoundsStateStore(state => state.sounds)
+  const bulkSoundUpdate = useSoundsStateStore((state) => state.bulkUpdate);
+  const soundStates = useSoundsStateStore((state) => state.sounds);
 
   function clear() {
-    const disabledSoundList = soundStates.map(sound => ({
+    const disabledSoundList = soundStates.map((sound) => ({
       ...sound,
-      active: false
-    }))
+      active: false,
+    }));
 
-    bulkSoundUpdate(disabledSoundList)
+    bulkSoundUpdate(disabledSoundList);
   }
 
   function isDisabled() {
-    return !soundStates.some(sound => sound.active)
+    return !soundStates.some((sound) => sound.active);
   }
 
   return (
     <button
+      className={actionButton()}
+      data-umami-event="Clear Button"
       disabled={isDisabled()}
       onClick={clear}
-      className={actionButton()}
       title="Clear all active sounds"
-      data-umami-event="Clear Button"
     >
       clear
     </button>
-  )
+  );
 }

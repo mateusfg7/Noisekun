@@ -1,182 +1,196 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { useDeepCompareEffect } from 'react-use'
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
+import { useDeepCompareEffect } from "react-use";
 
-import type { Sound } from '~/data/sounds'
+import type { Sound } from "~/data/sounds";
+import { useQueryState } from "~/hooks/use-query-state";
+import { useGlobalVolumeStore } from "~/stores/global-volume-store";
+import { PomodoroStatus, usePomodoroStore } from "~/stores/pomodoro-store";
+import {
+  type SoundState,
+  useSoundsStateStore,
+} from "~/stores/sounds-state-store";
+import { useUserInteractionStore } from "~/stores/user-interaction-store";
 
-import { useThemeStore } from '~/stores/theme-store'
-import { useGlobalVolumeStore } from '~/stores/global-volume-store'
-import { PomodoroStatus, usePomodoroStore } from '~/stores/pomodoro-store'
-import { SoundState, useSoundsStateStore } from '~/stores/sounds-state-store'
-import { useUserInteractionStore } from '~/stores/user-interaction-store'
+import { VolumeController } from "./volume-controller";
 
-import { useQueryState } from '~/hooks/use-query-state'
-
-import { VolumeController } from './volume-controller'
-
-interface SoundButtonProps {
-  sound: Sound
-}
+type SoundButtonProps = {
+  sound: Sound;
+};
 
 export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
-  const globalVolume = useGlobalVolumeStore(state => state.globalVolume)
-  const pomodoroStatus = usePomodoroStore(state => state.pomodoroStatus)
-  const theme = useThemeStore(set => set.theme)
-  const soundsStore = useSoundsStateStore(state => state.sounds)
-  const getSoundState = useSoundsStateStore(state => state.getSound)
-  const setSoundState = useSoundsStateStore(state => state.setSound)
+  const globalVolume = useGlobalVolumeStore((state) => state.globalVolume);
+  const pomodoroStatus = usePomodoroStore((state) => state.pomodoroStatus);
+  const soundsStore = useSoundsStateStore((state) => state.sounds);
+  const getSoundState = useSoundsStateStore((state) => state.getSound);
+  const setSoundState = useSoundsStateStore((state) => state.setSound);
   const userHasInteracted = useUserInteractionStore(
-    state => state.userHasInteracted
-  )
+    (state) => state.userHasInteracted
+  );
 
-  const [querySounds, setQuerySounds] = useQueryState('sounds')
+  const [querySounds, setQuerySounds] = useQueryState("sounds");
 
   const [localSoundState, setLocalSoundState] = useState<SoundState>({
     active: false,
     id: sound.id,
+    loaded: false,
     volume: 1,
-    loaded: false
-  })
+  });
 
-  const soundRef = useRef<HTMLAudioElement>()
+  const soundRef = useRef<HTMLAudioElement>(null);
 
   const sync = {
     active: (soundState: SoundState) => {
-      if (soundState.active) soundRef.current.play()
-      else soundRef.current.pause()
+      if (soundState.active) {
+        soundRef.current?.play();
+      } else {
+        soundRef.current?.pause();
+      }
     },
     volume: (soundState: SoundState) => {
-      soundRef.current.volume = soundState.volume * globalVolume
-    }
-  }
+      if (soundRef.current) {
+        soundRef.current.volume = soundState.volume * globalVolume;
+      }
+    },
+  };
 
   useEffect(() => {
-    const soundState = getSoundState(sound.id)
+    const soundState = getSoundState(sound.id);
 
     let initialState = {
-      id: sound.id,
       active: false,
+      id: sound.id,
+      loaded: false,
       volume: 1,
-      loaded: false
-    }
+    };
 
     if (soundState) {
       initialState = {
         ...soundState,
         active: false,
-        loaded: false
-      }
+        loaded: false,
+      };
     }
 
     if (querySounds.length) {
       decodeURIComponent(querySounds)
-        .split(';')
-        .forEach(item => {
-          const [id, volume] = item.split(',')
+        .split(";")
+        .forEach((item) => {
+          const [id, volume] = item.split(",");
           if (id === sound.id) {
             initialState = {
-              id,
-              volume: parseFloat(volume),
               active: true,
-              loaded: false
-            }
+              id,
+              loaded: false,
+              volume: Number.parseFloat(volume),
+            };
           }
-        })
+        });
     }
 
-    setSoundState(initialState)
-    setLocalSoundState(initialState)
-    soundRef.current.load()
-  }, [])
+    setSoundState(initialState);
+    setLocalSoundState(initialState);
+    soundRef.current?.load();
+  }, []);
 
   // https://github.com/mateusfg7/Noisekun/issues/608#issuecomment-1874096664
   useDeepCompareEffect(() => {
-    const soundState = getSoundState(sound.id)
+    const soundState = getSoundState(sound.id);
 
-    if (!soundState || !localSoundState) return
-
-    if (userHasInteracted) {
-      sync.active(soundState)
-      sync.volume(soundState)
+    if (!(soundState && localSoundState)) {
+      return;
     }
 
-    setLocalSoundState(soundState)
-    mountQueryParams()
-  }, [soundsStore, userHasInteracted])
+    if (userHasInteracted) {
+      sync.active(soundState);
+      sync.volume(soundState);
+    }
+
+    setLocalSoundState(soundState);
+    mountQueryParams();
+  }, [soundsStore, userHasInteracted]);
 
   const mountQueryParams = () => {
     const activeSounds = soundsStore
-      .filter(item => item.active)
-      .map(item => `${item.id},${item.volume}`)
-      .join(';')
+      .filter((item) => item.active)
+      .map((item) => `${item.id},${item.volume}`)
+      .join(";");
 
-    setQuerySounds(activeSounds)
-  }
+    setQuerySounds(activeSounds);
+  };
 
   useEffect(() => {
-    if (!getSoundState(sound.id).active) return
+    const soundState = getSoundState(sound.id);
+
+    if (!(soundState?.active && soundRef.current)) {
+      return;
+    }
 
     switch (pomodoroStatus) {
       case PomodoroStatus.ticking:
       case PomodoroStatus.idle:
         if (soundRef.current.volume === 0) {
-          soundRef.current.volume =
-            getSoundState(sound.id).volume * globalVolume
+          soundRef.current.volume = soundState.volume * globalVolume;
         }
-        break
+        break;
 
       case PomodoroStatus.stopped:
         if (soundRef.current.volume > 0) {
-          soundRef.current.volume = 0
+          soundRef.current.volume = 0;
         }
-        break
+        break;
     }
-  }, [pomodoroStatus])
+  }, [pomodoroStatus]);
 
   useEffect(() => {
-    soundRef.current.volume = getSoundState(sound.id).volume * globalVolume
-  }, [globalVolume])
+    const soundState = getSoundState(sound.id);
 
-  const Icon = sound.icon
+    if (soundState && soundRef.current) {
+      soundRef.current.volume = soundState.volume * globalVolume;
+    }
+  }, [globalVolume]);
+
+  const Icon = sound.icon;
 
   return (
     <div
-      title={sound.title}
       className="flex h-24 w-24 flex-col items-center justify-center"
+      title={sound.title}
     >
       <audio
-        ref={soundRef}
+        loop
         onCanPlay={() => setSoundState({ ...localSoundState, loaded: true })}
         preload="auto"
-        loop
+        ref={soundRef}
       >
         <source src={sound.file.url} type={sound.file.type} />
       </audio>
       <button
-        data-umami-event={sound.title}
+        aria-label={sound.title}
+        className="flex h-24 w-24 cursor-wait items-center justify-center rounded-xl text-primary-foreground/90 opacity-70 transition duration-300 disabled:hover:bg-transparent data-[loaded='false']:animate-loading data-[loaded='true']:cursor-pointer data-[active='true']:rounded-b-none data-[active='true']:opacity-100 data-[active='true']:md:bg-primary-foreground/10 data-[active='true']:md:shadow-sound md:hover:bg-primary-foreground/10 data-[loaded='true']:md:hover:opacity-100 data-[loaded='true']:md:hover:shadow-sound"
         data-active={
           localSoundState.active && localSoundState.loaded && userHasInteracted
         }
         // data-loaded={localSoundState.loaded}
         data-loaded={true}
-        className="flex h-24 w-24 cursor-wait items-center justify-center rounded-xl text-primary-foreground/90 opacity-70 transition duration-300 disabled:hover:bg-transparent data-[loaded='false']:animate-loading data-[loaded='true']:cursor-pointer data-[active='true']:rounded-b-none data-[active='true']:opacity-100 md:hover:bg-primary-foreground/10 data-[active='true']:md:bg-primary-foreground/10 data-[active='true']:md:shadow-sound data-[loaded='true']:md:hover:opacity-100 data-[loaded='true']:md:hover:shadow-sound"
+        data-umami-event={sound.title}
+        disabled={!localSoundState.loaded}
         onClick={() =>
           setSoundState({ ...localSoundState, active: !localSoundState.active })
         }
-        disabled={!localSoundState.loaded}
-        aria-label={sound.title}
       >
         <Icon className="h-20 w-20" />
       </button>
       <VolumeController
+        handleSoundVolume={(volume) => {
+          setSoundState({ ...localSoundState, volume });
+        }}
         isActive={
           localSoundState.active && localSoundState.loaded && userHasInteracted
         }
-        soundName={sound.title}
         soundId={sound.id}
-        handleSoundVolume={volume => {
-          setSoundState({ ...localSoundState, volume })
-        }}
+        soundName={sound.title}
       />
     </div>
-  )
-}
+  );
+};

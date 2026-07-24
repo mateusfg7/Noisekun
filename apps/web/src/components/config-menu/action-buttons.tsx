@@ -1,34 +1,34 @@
-import { tv } from 'tailwind-variants'
+import { tv } from "tailwind-variants";
 
 const actionButton = tv({
-  base: /*tw:*/ 'flex-1 rounded-lg px-5 py-5 text-lg leading-none transition-colors md:py-3',
+  base: /*tw:*/ "flex-1 rounded-lg px-5 py-5 text-lg leading-none transition-colors md:py-3",
   variants: {
     action: {
-      cancel: /*tw:*/ 'text-red-800 hover:bg-red-800 hover:text-red-100',
-      save: /*tw:*/ 'bg-green-100 text-green-950 hover:bg-green-900 hover:text-green-100'
-    }
-  }
-})
+      cancel: /*tw:*/ "text-red-800 hover:bg-red-800 hover:text-red-100",
+      save: /*tw:*/ "bg-green-100 text-green-950 hover:bg-green-900 hover:text-green-100",
+    },
+  },
+});
 
 type ActionButtonProps = {
-  onCancel: () => void
-  onSave: () => void
-}
+  onCancel: () => void;
+  onSave: () => void;
+};
 export const ActionButtons = ({ onCancel, onSave }: ActionButtonProps) => (
   <div className="flex justify-center gap-1">
     <button
-      onClick={onCancel}
+      className={actionButton({ action: "cancel" })}
       data-umami-event="Reset config"
-      className={actionButton({ action: 'cancel' })}
+      onClick={onCancel}
     >
       Cancel
     </button>
     <button
-      onClick={onSave}
+      className={actionButton({ action: "save" })}
       data-umami-event="Save config"
-      className={actionButton({ action: 'save' })}
+      onClick={onSave}
     >
       Save
     </button>
   </div>
-)
+);

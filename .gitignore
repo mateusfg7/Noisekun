@@ -13,6 +13,9 @@ out/
 # turborepo
 .turbo
 
+# typescript
+*.tsbuildinfo
+
 # production
 build/
 **/public/sw*

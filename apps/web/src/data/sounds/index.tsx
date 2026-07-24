@@ -21,217 +21,217 @@ import {
   Waterfall,
   Waves,
   WhiteNoise,
-  Wind
-} from './icons'
+  Wind,
+} from "./icons";
 
 export const sounds = [
   {
-    id: 'rain',
-    title: 'Rain',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/rain.ogg",
+    },
     icon: Rain,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/rain.ogg',
-      type: 'audio/ogg'
-    }
+    id: "rain",
+    title: "Rain",
   },
   {
-    id: 'storm',
-    title: 'Storm',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/storm.ogg",
+    },
     icon: Storm,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/storm.ogg',
-      type: 'audio/ogg'
-    }
+    id: "storm",
+    title: "Storm",
   },
   {
-    id: 'drops',
-    title: 'Drops',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/drops.ogg",
+    },
     icon: Drops,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/drops.ogg',
-      type: 'audio/ogg'
-    }
+    id: "drops",
+    title: "Drops",
   },
   {
-    id: 'wind',
-    title: 'Wind',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/wind.ogg",
+    },
     icon: Wind,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/wind.ogg',
-      type: 'audio/ogg'
-    }
+    id: "wind",
+    title: "Wind",
   },
   {
-    id: 'waves',
-    title: 'Waves',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/waves.ogg",
+    },
     icon: Waves,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/waves.ogg',
-      type: 'audio/ogg'
-    }
+    id: "waves",
+    title: "Waves",
   },
   {
-    id: 'underwater',
-    title: 'Underwater',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/underwater.ogg",
+    },
     icon: Underwater,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/underwater.ogg',
-      type: 'audio/ogg'
-    }
+    id: "underwater",
+    title: "Underwater",
   },
   {
-    id: 'stream-water',
-    title: 'Stream Water',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/stream-water.ogg",
+    },
     icon: StreamWater,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/stream-water.ogg',
-      type: 'audio/ogg'
-    }
+    id: "stream-water",
+    title: "Stream Water",
   },
   {
-    id: 'waterfall',
-    title: 'Waterfall',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/waterfall.ogg",
+    },
     icon: Waterfall,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/waterfall.ogg',
-      type: 'audio/ogg'
-    }
+    id: "waterfall",
+    title: "Waterfall",
   },
   {
-    id: 'birds-tree',
-    title: 'Birds on Tree',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/birds-tree.ogg",
+    },
     icon: BirdsTree,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/birds-tree.ogg',
-      type: 'audio/ogg'
-    }
+    id: "birds-tree",
+    title: "Birds on Tree",
   },
   {
-    id: 'leaves',
-    title: 'Leaves',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/leaves.ogg",
+    },
     icon: Leaves,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/leaves.ogg',
-      type: 'audio/ogg'
-    }
+    id: "leaves",
+    title: "Leaves",
   },
   {
-    id: 'fire',
-    title: 'Bonfire',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/fire.ogg",
+    },
     icon: Fire,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/fire.ogg',
-      type: 'audio/ogg'
-    }
+    id: "fire",
+    title: "Bonfire",
   },
   {
-    id: 'cave',
-    title: 'Cave Sounds',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/cave-drops.ogg",
+    },
     icon: Cave,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/cave-drops.ogg',
-      type: 'audio/ogg'
-    }
+    id: "cave",
+    title: "Cave Sounds",
   },
   {
-    id: 'night',
-    title: 'Night',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/night.ogg",
+    },
     icon: Night,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/night.ogg',
-      type: 'audio/ogg'
-    }
+    id: "night",
+    title: "Night",
   },
   {
-    id: 'coffee',
-    title: 'Coffee shop',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/coffee.ogg",
+    },
     icon: Coffee,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/coffee.ogg',
-      type: 'audio/ogg'
-    }
+    id: "coffee",
+    title: "Coffee shop",
   },
   {
-    id: 'train',
-    title: 'Train',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/train.ogg",
+    },
     icon: Train,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/train.ogg',
-      type: 'audio/ogg'
-    }
+    id: "train",
+    title: "Train",
   },
   {
-    id: 'air-plane',
-    title: 'Airplane',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/air-plane.ogg",
+    },
     icon: AirPlane,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/air-plane.ogg',
-      type: 'audio/ogg'
-    }
+    id: "air-plane",
+    title: "Airplane",
   },
   {
-    id: 'washing-machine',
-    title: 'Washing machine',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/washing-machine.ogg",
+    },
     icon: WashingMachine,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/washing-machine.ogg',
-      type: 'audio/ogg'
-    }
+    id: "washing-machine",
+    title: "Washing machine",
   },
   {
-    id: 'playground',
-    title: 'Playground',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/playground.ogg",
+    },
     icon: Playground,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/playground.ogg',
-      type: 'audio/ogg'
-    }
+    id: "playground",
+    title: "Playground",
   },
   {
-    id: 'boat',
-    title: 'Boat',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/boat.ogg",
+    },
     icon: Boat,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/boat.ogg',
-      type: 'audio/ogg'
-    }
+    id: "boat",
+    title: "Boat",
   },
   {
-    id: 'rain-on-tent',
-    title: 'Rain on Tent',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/rain-on-tent.ogg",
+    },
     icon: RainOnTent,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/rain-on-tent.ogg',
-      type: 'audio/ogg'
-    }
+    id: "rain-on-tent",
+    title: "Rain on Tent",
   },
   {
-    id: 'brown-noise',
-    title: 'Brown Noise',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/brown-noise.ogg",
+    },
     icon: BrownNoise,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/brown-noise.ogg',
-      type: 'audio/ogg'
-    }
+    id: "brown-noise",
+    title: "Brown Noise",
   },
   {
-    id: 'white-noise',
-    title: 'White Noise',
+    file: {
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/white-noise.ogg",
+    },
     icon: WhiteNoise,
-    file: {
-      url: 'https://cdn.noisekun.com/sounds/white-noise.ogg',
-      type: 'audio/ogg'
-    }
+    id: "white-noise",
+    title: "White Noise",
   },
   {
-    id: 'pink-noise',
-    title: 'Pink Noise',
-    icon: PinkNoise,
     file: {
-      url: 'https://cdn.noisekun.com/sounds/pink-noise.ogg',
-      type: 'audio/ogg'
-    }
-  }
-]
+      type: "audio/ogg",
+      url: "https://cdn.noisekun.com/sounds/pink-noise.ogg",
+    },
+    icon: PinkNoise,
+    id: "pink-noise",
+    title: "Pink Noise",
+  },
+];
 
-export type Sound = (typeof sounds)[0]
+export type Sound = (typeof sounds)[0];
