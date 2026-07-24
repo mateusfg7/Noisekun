@@ -22,7 +22,7 @@ importers:
         version: 1.7.19(react-dom@18.3.1)(react@18.3.1)
       '@newhighsco/next-plugin-svgr':
         specifier: 3.0.104
-        version: 3.0.104(next@14.0.4)(typescript@5.3.3)(webpack@5.104.1)
+        version: 3.0.104(next@14.0.4)(typescript@5.9.3)(webpack@5.104.1)
       next:
         specifier: 14.0.4
         version: 14.0.4(@babel/core@7.29.7)(react-dom@18.3.1)(react@18.3.1)
@@ -74,16 +74,16 @@ importers:
         version: 3.4.18(tsx@4.0.0)
       ts-node:
         specifier: 10.9.1
-        version: 10.9.1(@types/node@20.4.7)(typescript@5.3.3)
+        version: 10.9.1(@types/node@20.4.7)(typescript@5.9.3)
       tsx:
         specifier: 4.0.0
         version: 4.0.0
       typescript:
-        specifier: 5.3.3
-        version: 5.3.3
+        specifier: 5.9.3
+        version: 5.9.3
       webpack:
         specifier: 5.104.1
-        version: 5.104.1(postcss@8.5.3)
+        version: 5.104.1(postcss@8.5.20)
 
 packages:
 
@@ -1321,7 +1321,7 @@ packages:
       next: 14.0.4(@babel/core@7.29.7)(react-dom@18.3.1)(react@18.3.1)
       semver: 7.5.4
       terser-webpack-plugin: 5.3.9(webpack@5.104.1)
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
       workbox-build: 7.0.0
       workbox-core: 7.0.0
       workbox-webpack-plugin: 7.0.0(webpack@5.104.1)
@@ -1758,12 +1758,12 @@ packages:
       '@jridgewell/sourcemap-codec': 1.5.5
     dev: true
 
-  /@newhighsco/next-plugin-svgr@3.0.104(next@14.0.4)(typescript@5.3.3)(webpack@5.104.1):
+  /@newhighsco/next-plugin-svgr@3.0.104(next@14.0.4)(typescript@5.9.3)(webpack@5.104.1):
     resolution: {integrity: sha512-ipxzXFhp5/btFdt3D/hTG4qRFAnu7JWO3qwBhliYlrnsnPgPP5ciznT84w8n+jTWZxa/tYKH2tXT8UfiH+1CjQ==}
     peerDependencies:
       next: 13.4.12
     dependencies:
-      '@svgr/webpack': 8.0.1(typescript@5.3.3)
+      '@svgr/webpack': 8.0.1(typescript@5.9.3)
       file-loader: 6.2.0(webpack@5.104.1)
       next: 14.0.4(@babel/core@7.29.7)(react-dom@18.3.1)(react@18.3.1)
       url-loader: 4.1.1(file-loader@6.2.0)(webpack@5.104.1)
@@ -2030,14 +2030,14 @@ packages:
       '@svgr/babel-plugin-transform-svg-component': 8.0.0(@babel/core@7.29.7)
     dev: false
 
-  /@svgr/core@8.0.0(typescript@5.3.3):
+  /@svgr/core@8.0.0(typescript@5.9.3):
     resolution: {integrity: sha512-aJKtc+Pie/rFYsVH/unSkDaZGvEeylNv/s2cP+ta9/rYWxRVvoV/S4Qw65Kmrtah4CBK5PM6ISH9qUH7IJQCng==}
     engines: {node: '>=14'}
     dependencies:
       '@babel/core': 7.29.7
       '@svgr/babel-preset': 8.0.0(@babel/core@7.29.7)
       camelcase: 6.3.0
-      cosmiconfig: 8.3.6(typescript@5.3.3)
+      cosmiconfig: 8.3.6(typescript@5.9.3)
       snake-case: 3.0.4
     transitivePeerDependencies:
       - supports-color
@@ -2060,28 +2060,28 @@ packages:
     dependencies:
       '@babel/core': 7.29.7
       '@svgr/babel-preset': 8.0.0(@babel/core@7.29.7)
-      '@svgr/core': 8.0.0(typescript@5.3.3)
+      '@svgr/core': 8.0.0(typescript@5.9.3)
       '@svgr/hast-util-to-babel-ast': 8.0.0
       svg-parser: 2.0.4
     transitivePeerDependencies:
       - supports-color
     dev: false
 
-  /@svgr/plugin-svgo@8.0.1(@svgr/core@8.0.0)(typescript@5.3.3):
+  /@svgr/plugin-svgo@8.0.1(@svgr/core@8.0.0)(typescript@5.9.3):
     resolution: {integrity: sha512-29OJ1QmJgnohQHDAgAuY2h21xWD6TZiXji+hnx+W635RiXTAlHTbjrZDktfqzkN0bOeQEtNe+xgq73/XeWFfSg==}
     engines: {node: '>=14'}
     peerDependencies:
       '@svgr/core': '*'
     dependencies:
-      '@svgr/core': 8.0.0(typescript@5.3.3)
-      cosmiconfig: 8.3.6(typescript@5.3.3)
+      '@svgr/core': 8.0.0(typescript@5.9.3)
+      cosmiconfig: 8.3.6(typescript@5.9.3)
       deepmerge: 4.3.1
       svgo: 3.3.4
     transitivePeerDependencies:
       - typescript
     dev: false
 
-  /@svgr/webpack@8.0.1(typescript@5.3.3):
+  /@svgr/webpack@8.0.1(typescript@5.9.3):
     resolution: {integrity: sha512-zSoeKcbCmfMXjA11uDuCJb+1LWNb3vy6Qw/VHj0Nfcl3UuqwuoZWknHsBIhCWvi4wU9vPui3aq054qjVyZqY4A==}
     engines: {node: '>=14'}
     dependencies:
@@ -2090,9 +2090,9 @@ packages:
       '@babel/preset-env': 7.29.7(@babel/core@7.29.7)
       '@babel/preset-react': 7.29.7(@babel/core@7.29.7)
       '@babel/preset-typescript': 7.29.7(@babel/core@7.29.7)
-      '@svgr/core': 8.0.0(typescript@5.3.3)
+      '@svgr/core': 8.0.0(typescript@5.9.3)
       '@svgr/plugin-jsx': 8.0.1(@svgr/core@8.0.0)
-      '@svgr/plugin-svgo': 8.0.1(@svgr/core@8.0.0)(typescript@5.3.3)
+      '@svgr/plugin-svgo': 8.0.1(@svgr/core@8.0.0)(typescript@5.9.3)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -2691,7 +2691,7 @@ packages:
       webpack: '>=4.0.0 <6.0.0'
     dependencies:
       del: 4.1.1
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
     dev: false
 
   /client-only@0.0.1:
@@ -2761,7 +2761,7 @@ packages:
       browserslist: 4.28.7
     dev: false
 
-  /cosmiconfig@8.3.6(typescript@5.3.3):
+  /cosmiconfig@8.3.6(typescript@5.9.3):
     resolution: {integrity: sha512-kcZ6+W5QzcJ3P1Mt+83OUv/oHFqZHIx8DuxG6eZ5RGMERoLqp4BuGjhHLYGK+Kf5XVkQvqBSmAy/nGWN3qDgEA==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -2774,7 +2774,7 @@ packages:
       js-yaml: 4.3.0
       parse-json: 5.2.0
       path-type: 4.0.0
-      typescript: 5.3.3
+      typescript: 5.9.3
     dev: false
 
   /create-require@1.1.1:
@@ -3261,7 +3261,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
     dev: false
 
   /filelist@1.0.6:
@@ -5039,10 +5039,10 @@ packages:
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
       terser: 5.49.0
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
     dev: false
 
-  /terser-webpack-plugin@5.6.1(postcss@8.5.3)(webpack@5.104.1):
+  /terser-webpack-plugin@5.6.1(postcss@8.5.20)(webpack@5.104.1):
     resolution: {integrity: sha512-201R5j+sJpK8nFWwKVyNfZot8FaJbLZDq5evriVzbV1wDtSXDjRUDRfJzHpAaxFDMEhsZL1QkeqM61wgsS3KaQ==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -5087,10 +5087,10 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
-      postcss: 8.5.3
+      postcss: 8.5.20
       schema-utils: 4.3.3
       terser: 5.49.0
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
 
   /terser@5.49.0:
     resolution: {integrity: sha512-SNiDnXyHSrxVcIOtVbULzcTmniUiwcV7Nwdyj1twVubeTmbjoa8p69KKDpfkdoOavuM4/GRm1+ykI8qqnavHoA==}
@@ -5142,7 +5142,7 @@ packages:
   /ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
-  /ts-node@10.9.1(@types/node@20.4.7)(typescript@5.3.3):
+  /ts-node@10.9.1(@types/node@20.4.7)(typescript@5.9.3):
     resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
     hasBin: true
     peerDependencies:
@@ -5168,7 +5168,7 @@ packages:
       create-require: 1.1.1
       diff: 4.0.4
       make-error: 1.3.6
-      typescript: 5.3.3
+      typescript: 5.9.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true
@@ -5250,8 +5250,8 @@ packages:
       reflect.getprototypeof: 1.0.10
     dev: false
 
-  /typescript@5.3.3:
-    resolution: {integrity: sha512-pXWcraxM0uxAS+tN0AG/BF2TyqmHO014Z070UsJ+pFvYuRSq8KH8DmWpnbXe0pEPDHXZV3FcAbJkijJ5oNEnWw==}
+  /typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -5335,7 +5335,7 @@ packages:
       loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.3.0
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
     dev: false
 
   /use-sync-external-store@1.6.0(react@18.3.1):
@@ -5378,7 +5378,7 @@ packages:
     resolution: {integrity: sha512-jyuiGJdtvY434z5bUZrjz67v76/ePNvFZTp9Mdz29IlH4+GPsgyGjiv0fKI+M7BdkU6ADjulUcKAd3tUK3WlEw==}
     engines: {node: '>=10.13.0'}
 
-  /webpack@5.104.1(postcss@8.5.3):
+  /webpack@5.104.1(postcss@8.5.20):
     resolution: {integrity: sha512-Qphch25abbMNtekmEGJmeRUhLDbe+QfiWTiqpKYkpCOWY64v9eyl+KRRLmqOFA2AvKPpc9DC6+u2n76tQLBoaA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
@@ -5410,7 +5410,7 @@ packages:
       neo-async: 2.6.2
       schema-utils: 4.3.3
       tapable: 2.3.3
-      terser-webpack-plugin: 5.6.1(postcss@8.5.3)(webpack@5.104.1)
+      terser-webpack-plugin: 5.6.1(postcss@8.5.20)(webpack@5.104.1)
       watchpack: 2.5.2
       webpack-sources: 3.5.1
     transitivePeerDependencies:
@@ -5629,7 +5629,7 @@ packages:
       fast-json-stable-stringify: 2.1.0
       pretty-bytes: 5.6.0
       upath: 1.2.0
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
       webpack-sources: 1.4.3
       workbox-build: 7.0.0
     transitivePeerDependencies:
