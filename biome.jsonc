@@ -9,6 +9,9 @@
   ],
   "linter": {
     "rules": {
+      "correctness": {
+        "useExhaustiveDependencies": "warn"
+      },
       "style": {
         "useConsistentTypeDefinitions": {
           "level": "error",
