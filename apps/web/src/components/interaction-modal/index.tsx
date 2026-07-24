@@ -31,63 +31,61 @@ export function InteractionModal() {
   }
 
   return (
-    <>
-      <Transition appear as={Fragment} show={!userHasInteracted}>
-        <Dialog as="div" className="relative z-40" onClose={closeModal}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-[1px]" />
-          </Transition.Child>
+    <Transition appear as={Fragment} show={!userHasInteracted}>
+      <Dialog as="div" className="relative z-40" onClose={closeModal}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-300"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-200"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-[1px]" />
+        </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center text-zinc-950">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel className="flex w-fit transform flex-col gap-10 overflow-hidden rounded-2xl bg-white p-6 shadow-xl transition-all">
-                  <div className="flex flex-col items-start gap-10">
-                    <Dialog.Title
-                      as="h3"
-                      className="font-bold text-2xl leading-6"
-                    >
-                      New combo detected!
-                    </Dialog.Title>
-                  </div>
-                  <div className="flex justify-end gap-1">
-                    <button
-                      className="rounded-lg px-5 py-3 text-lg text-red-950 leading-none transition-colors hover:bg-red-900 hover:text-red-100"
-                      data-umami-event="Cancel combo"
-                      onClick={cancel}
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      className="rounded-lg bg-green-100 px-5 py-3 text-green-950 text-lg leading-none transition-colors hover:bg-green-900 hover:text-green-100"
-                      data-umami-event="Play combo"
-                      onClick={closeModal}
-                    >
-                      Play
-                    </button>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4 text-center text-zinc-950">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 scale-95"
+              enterTo="opacity-100 scale-100"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 scale-100"
+              leaveTo="opacity-0 scale-95"
+            >
+              <Dialog.Panel className="flex w-fit transform flex-col gap-10 overflow-hidden rounded-2xl bg-white p-6 shadow-xl transition-all">
+                <div className="flex flex-col items-start gap-10">
+                  <Dialog.Title
+                    as="h3"
+                    className="font-bold text-2xl leading-6"
+                  >
+                    New combo detected!
+                  </Dialog.Title>
+                </div>
+                <div className="flex justify-end gap-1">
+                  <button
+                    className="rounded-lg px-5 py-3 text-lg text-red-950 leading-none transition-colors hover:bg-red-900 hover:text-red-100"
+                    data-umami-event="Cancel combo"
+                    onClick={cancel}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    className="rounded-lg bg-green-100 px-5 py-3 text-green-950 text-lg leading-none transition-colors hover:bg-green-900 hover:text-green-100"
+                    data-umami-event="Play combo"
+                    onClick={closeModal}
+                  >
+                    Play
+                  </button>
+                </div>
+              </Dialog.Panel>
+            </Transition.Child>
           </div>
-        </Dialog>
-      </Transition>
-    </>
+        </div>
+      </Dialog>
+    </Transition>
   );
 }
