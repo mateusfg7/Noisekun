@@ -51,8 +51,8 @@ importers:
         specifier: 0.1.13
         version: 0.1.13(tailwindcss@3.4.18)
       zustand:
-        specifier: 4.5.4
-        version: 4.5.4(@types/react@18.3.31)(react@18.3.1)
+        specifier: 4.5.7
+        version: 4.5.7(@types/react@18.3.31)(react@18.3.1)
     devDependencies:
       '@tailwindcss/forms':
         specifier: 0.5.11
@@ -5338,10 +5338,10 @@ packages:
       webpack: 5.104.1(postcss@8.5.3)
     dev: false
 
-  /use-sync-external-store@1.2.0(react@18.3.1):
-    resolution: {integrity: sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==}
+  /use-sync-external-store@1.6.0(react@18.3.1):
+    resolution: {integrity: sha512-Pp6GSwGP/NrPIrxVFAIkOQeyw8lFenOHijQWkUTrDvrF4ALqylP2C/KCkeS9dpUM3KvYRQhna5vt7IL95+ZQ9w==}
     peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     dependencies:
       react: 18.3.1
     dev: false
@@ -5661,8 +5661,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /zustand@4.5.4(@types/react@18.3.31)(react@18.3.1):
-    resolution: {integrity: sha512-/BPMyLKJPtFEvVL0E9E9BTUM63MNyhPGlvxk1XjrfWTUlV+BR8jufjsovHzrtR6YNcBEcL7cMHovL1n9xHawEg==}
+  /zustand@4.5.7(@types/react@18.3.31)(react@18.3.1):
+    resolution: {integrity: sha512-CHOUy7mu3lbD6o6LJLfllpjkzhHXSBlX8B9+qPddUsIfeF5S/UZ5q0kmCsnRqT1UHFQZchNFDDzMbQsuesHWlw==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       '@types/react': '>=16.8'
@@ -5678,5 +5678,5 @@ packages:
     dependencies:
       '@types/react': 18.3.31
       react: 18.3.1
-      use-sync-external-store: 1.2.0(react@18.3.1)
+      use-sync-external-store: 1.6.0(react@18.3.1)
     dev: false
