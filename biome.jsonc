@@ -6,5 +6,17 @@
     "ultracite/biome/next",
     "ultracite/biome/tanstack",
     "ultracite/biome/vitest"
-  ]
+  ],
+  "linter": {
+    "rules": {
+      "style": {
+        "useConsistentTypeDefinitions": {
+          "level": "error",
+          "options": {
+            "style": "type"
+          }
+        }
+      }
+    }
+  }
 }
