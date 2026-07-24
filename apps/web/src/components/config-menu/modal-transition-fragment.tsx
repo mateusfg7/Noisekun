@@ -1,9 +1,9 @@
-import { Fragment, ReactNode } from 'react'
-import { Transition } from '@headlessui/react'
+import { Transition } from "@headlessui/react";
+import { Fragment, type ReactNode } from "react";
 
 type Props = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 export const ModalTransitionFragment = ({ children }: Props) => (
   <Transition.Child
     as={Fragment}
@@ -16,4 +16,4 @@ export const ModalTransitionFragment = ({ children }: Props) => (
   >
     {children}
   </Transition.Child>
-)
+);

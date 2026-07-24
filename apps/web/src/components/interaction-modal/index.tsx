@@ -1,39 +1,38 @@
-'use client'
+"use client";
 
-import { Fragment } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-
-import { useUserInteractionStore } from '~/stores/user-interaction-store'
-import { useSoundsStateStore } from '~/stores/sounds-state-store'
+import { Dialog, Transition } from "@headlessui/react";
+import { Fragment } from "react";
+import { useSoundsStateStore } from "~/stores/sounds-state-store";
+import { useUserInteractionStore } from "~/stores/user-interaction-store";
 
 export function InteractionModal() {
-  const bulkSoundUpdate = useSoundsStateStore(state => state.bulkUpdate)
-  const soundStates = useSoundsStateStore(state => state.sounds)
+  const bulkSoundUpdate = useSoundsStateStore((state) => state.bulkUpdate);
+  const soundStates = useSoundsStateStore((state) => state.sounds);
 
   const userHasInteracted = useUserInteractionStore(
-    state => state.userHasInteracted
-  )
+    (state) => state.userHasInteracted
+  );
   const setUserHasInteracted = useUserInteractionStore(
-    state => state.setUserHasInteracted
-  )
+    (state) => state.setUserHasInteracted
+  );
 
   function closeModal() {
-    setUserHasInteracted(true)
+    setUserHasInteracted(true);
   }
 
   function cancel() {
-    const disabledSoundList = soundStates.map(sound => ({
+    const disabledSoundList = soundStates.map((sound) => ({
       ...sound,
-      active: false
-    }))
+      active: false,
+    }));
 
-    bulkSoundUpdate(disabledSoundList)
-    closeModal()
+    bulkSoundUpdate(disabledSoundList);
+    closeModal();
   }
 
   return (
     <>
-      <Transition appear show={!userHasInteracted} as={Fragment}>
+      <Transition appear as={Fragment} show={!userHasInteracted}>
         <Dialog as="div" className="relative z-40" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
@@ -62,23 +61,23 @@ export function InteractionModal() {
                   <div className="flex flex-col items-start gap-10">
                     <Dialog.Title
                       as="h3"
-                      className="text-2xl font-bold leading-6"
+                      className="font-bold text-2xl leading-6"
                     >
                       New combo detected!
                     </Dialog.Title>
                   </div>
                   <div className="flex justify-end gap-1">
                     <button
-                      onClick={cancel}
+                      className="rounded-lg px-5 py-3 text-lg text-red-950 leading-none transition-colors hover:bg-red-900 hover:text-red-100"
                       data-umami-event="Cancel combo"
-                      className="rounded-lg px-5 py-3 text-lg leading-none text-red-950 transition-colors hover:bg-red-900 hover:text-red-100"
+                      onClick={cancel}
                     >
                       Cancel
                     </button>
                     <button
-                      onClick={closeModal}
+                      className="rounded-lg bg-green-100 px-5 py-3 text-green-950 text-lg leading-none transition-colors hover:bg-green-900 hover:text-green-100"
                       data-umami-event="Play combo"
-                      className="rounded-lg bg-green-100 px-5 py-3 text-lg leading-none text-green-950 transition-colors hover:bg-green-900 hover:text-green-100"
+                      onClick={closeModal}
                     >
                       Play
                     </button>
@@ -90,5 +89,5 @@ export function InteractionModal() {
         </Dialog>
       </Transition>
     </>
-  )
+  );
 }

@@ -1,55 +1,57 @@
-import React, { useEffect, useState } from 'react'
-
-import { useSoundsStateStore } from '~/stores/sounds-state-store'
-import { VolumeControllerSlider } from '~/components/ui/volume-controller-slider'
+import type React from "react";
+import { useEffect, useState } from "react";
+import { VolumeControllerSlider } from "~/components/ui/volume-controller-slider";
+import { useSoundsStateStore } from "~/stores/sounds-state-store";
 
 export interface IVolumeController {
-  isActive: boolean
-  soundName: string
-  soundId: string
-  handleSoundVolume: (volume: number) => void
+  handleSoundVolume: (volume: number) => void;
+  isActive: boolean;
+  soundId: string;
+  soundName: string;
 }
 
 export const VolumeController: React.FC<IVolumeController> = ({
   isActive,
   soundName,
   soundId,
-  handleSoundVolume
+  handleSoundVolume,
 }) => {
-  const [rangeValue, setRangeValue] = useState(1000)
+  const [rangeValue, setRangeValue] = useState(1000);
 
-  const getSound = useSoundsStateStore(state => state.getSound)
-  const sounds = useSoundsStateStore(state => state.sounds)
+  const getSound = useSoundsStateStore((state) => state.getSound);
+  const sounds = useSoundsStateStore((state) => state.sounds);
 
   function handleVolume(volume: number) {
-    setRangeValue(volume)
-    handleSoundVolume(volume / 1000)
+    setRangeValue(volume);
+    handleSoundVolume(volume / 1000);
   }
 
   useEffect(() => {
-    const soundState = getSound(soundId)
+    const soundState = getSound(soundId);
 
-    if (soundState) setRangeValue(soundState.volume * 1000)
-  }, [sounds])
+    if (soundState) {
+      setRangeValue(soundState.volume * 1000);
+    }
+  }, [sounds]);
 
   return (
     <div
+      className="group relative h-max w-full opacity-1 data-[is-active='false']:opacity-0"
       data-is-active={isActive}
-      className="opacity-1 group relative h-max w-full data-[is-active='false']:opacity-0"
     >
-      <label htmlFor={`${soundId}-volume-controller`} className="sr-only">
+      <label className="sr-only" htmlFor={`${soundId}-volume-controller`}>
         {soundName} volume controller
       </label>
       <VolumeControllerSlider
+        className="absolute top-0 left-0"
         handleVolume={handleVolume}
-        minValue={20}
-        maxValue={1000}
-        rangeValue={rangeValue}
         id={`${soundId}-volume-controller`}
+        maxValue={1000}
+        minValue={20}
         name={`${soundId}-volume-controller`}
+        rangeValue={rangeValue}
         title={`${soundName} volume in ${Number(rangeValue / 10).toFixed(1)}%`}
-        className="absolute left-0 top-0"
       />
     </div>
-  )
-}
+  );
+};

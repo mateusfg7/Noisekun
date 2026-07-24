@@ -1,10 +1,13 @@
-import React, { useEffect, useRef } from 'react'
-import { FiZap } from 'react-icons/fi'
+import { useEffect, useRef } from "react";
+import { FiZap } from "react-icons/fi";
 
-import { useGlobalRandomModeStore } from '~/stores/random-mode-store'
-import { SoundState, useSoundsStateStore } from '~/stores/sounds-state-store'
+import { useGlobalRandomModeStore } from "~/stores/random-mode-store";
+import {
+  type SoundState,
+  useSoundsStateStore,
+} from "~/stores/sounds-state-store";
 
-import { calculateVolumeSteps } from './calculate-volume-steps'
+import { calculateVolumeSteps } from "./calculate-volume-steps";
 
 export function RandomModeButton() {
   const {
@@ -12,91 +15,93 @@ export function RandomModeButton() {
     updateSteps,
     updateIntervalInMs,
     updateTransitionTimeInMs,
-    setRandomMode
-  } = useGlobalRandomModeStore()
-  const { sounds, setSound } = useSoundsStateStore()
+    setRandomMode,
+  } = useGlobalRandomModeStore();
+  const { sounds, setSound } = useSoundsStateStore();
 
-  const soundsRef = useRef(sounds)
-  const intervalIdRef = useRef(null)
-  const timeoutsRef = useRef([])
+  const soundsRef = useRef(sounds);
+  const intervalIdRef = useRef(null);
+  const timeoutsRef = useRef([]);
 
   useEffect(() => {
-    soundsRef.current = sounds
-  }, [sounds])
+    soundsRef.current = sounds;
+  }, [sounds]);
 
   function clearAllTimeouts() {
-    timeoutsRef.current.forEach(clearTimeout)
-    timeoutsRef.current = []
+    timeoutsRef.current.forEach(clearTimeout);
+    timeoutsRef.current = [];
   }
 
   // Apply Volumes with Timeouts
   function applyVolumeChanges(stepDuration: number) {
-    clearAllTimeouts() // Clears existing timeouts
+    clearAllTimeouts(); // Clears existing timeouts
 
     soundsRef.current
-      .filter(sound => sound.active)
-      .forEach(initialSound => {
-        const targetVolume = Math.random()
+      .filter((sound) => sound.active)
+      .forEach((initialSound) => {
+        const targetVolume = Math.random();
         const volumeSteps = calculateVolumeSteps(
           initialSound.volume,
           targetVolume,
           updateSteps
-        )
+        );
 
         const setVolumeStep = (sound: SoundState, index: number) => {
           if (index < volumeSteps.length) {
             // Fetch the most recent value of the sound
-            const currentSound = soundsRef.current.find(s => s.id === sound.id)
+            const currentSound = soundsRef.current.find(
+              (s) => s.id === sound.id
+            );
             if (currentSound && currentSound.active) {
-              const updatedVolume = volumeSteps[index]
-              const updatedSound = { ...currentSound, volume: updatedVolume }
-              setSound(updatedSound)
+              const updatedVolume = volumeSteps[index];
+              const updatedSound = { ...currentSound, volume: updatedVolume };
+              setSound(updatedSound);
               // add next timeout only if this one is successful
               const timeoutId = setTimeout(() => {
-                setVolumeStep(currentSound, index + 1)
-              }, stepDuration)
+                setVolumeStep(currentSound, index + 1);
+              }, stepDuration);
 
-              timeoutsRef.current.push(timeoutId)
+              timeoutsRef.current.push(timeoutId);
             }
           }
-        }
+        };
 
-        setVolumeStep(initialSound, 0)
-      })
+        setVolumeStep(initialSound, 0);
+      });
   }
 
   function randomizeVolumes() {
     // Total duration for volume change
-    const stepDuration = updateTransitionTimeInMs / updateSteps
-    applyVolumeChanges(stepDuration)
+    const stepDuration = updateTransitionTimeInMs / updateSteps;
+    applyVolumeChanges(stepDuration);
   }
 
   useEffect(() => {
     if (randomMode) {
-      intervalIdRef.current = setInterval(randomizeVolumes, updateIntervalInMs)
+      intervalIdRef.current = setInterval(randomizeVolumes, updateIntervalInMs);
     } else {
-      clearInterval(intervalIdRef.current)
-      clearAllTimeouts()
-      intervalIdRef.current = null
+      clearInterval(intervalIdRef.current);
+      clearAllTimeouts();
+      intervalIdRef.current = null;
     }
 
     return () => {
-      clearInterval(intervalIdRef.current)
-      clearAllTimeouts()
-    }
-  }, [randomMode, updateIntervalInMs])
+      clearInterval(intervalIdRef.current);
+      clearAllTimeouts();
+    };
+  }, [randomMode, updateIntervalInMs]);
 
   return (
     <div className="flex items-center gap-3 opacity-90 hover:opacity-100">
       <button
-        title={randomMode ? 'Disable random mode' : 'Enable random mode'}
-        data-enabled={randomMode}
         className="text-primary-foreground opacity-50 hover:opacity-80 data-[enabled='true']:opacity-100"
-        onClick={() => setRandomMode(!randomMode)}
+        data-enabled={randomMode}
         data-umami-event="Enable/Disable Random Mode"
+        onClick={() => setRandomMode(!randomMode)}
+        title={randomMode ? "Disable random mode" : "Enable random mode"}
       >
         <FiZap size={22} />
       </button>
     </div>
-  )
+  );
 }

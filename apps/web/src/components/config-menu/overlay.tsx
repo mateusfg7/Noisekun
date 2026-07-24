@@ -1,5 +1,5 @@
-import { Transition } from '@headlessui/react'
-import { Fragment } from 'react'
+import { Transition } from "@headlessui/react";
+import { Fragment } from "react";
 
 export const Overlay = () => (
   <Transition.Child
@@ -13,4 +13,4 @@ export const Overlay = () => (
   >
     <div className="fixed inset-0 bg-black bg-opacity-25" />
   </Transition.Child>
-)
+);
