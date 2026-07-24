@@ -10,7 +10,8 @@
     "build": "turbo run build",
     "start": "turbo run start",
     "check": "ultracite check",
-    "fix": "ultracite fix"
+    "fix": "ultracite fix",
+    "typecheck": "turbo run typecheck"
   },
   "private": true,
   "author": {
