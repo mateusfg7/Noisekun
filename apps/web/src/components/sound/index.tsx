@@ -10,7 +10,6 @@ import {
   type SoundState,
   useSoundsStateStore,
 } from "~/stores/sounds-state-store";
-import { useThemeStore } from "~/stores/theme-store";
 import { useUserInteractionStore } from "~/stores/user-interaction-store";
 
 import { VolumeController } from "./volume-controller";
@@ -22,7 +21,6 @@ type SoundButtonProps = {
 export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   const globalVolume = useGlobalVolumeStore((state) => state.globalVolume);
   const pomodoroStatus = usePomodoroStore((state) => state.pomodoroStatus);
-  const theme = useThemeStore((set) => set.theme);
   const soundsStore = useSoundsStateStore((state) => state.sounds);
   const getSoundState = useSoundsStateStore((state) => state.getSound);
   const setSoundState = useSoundsStateStore((state) => state.setSound);
