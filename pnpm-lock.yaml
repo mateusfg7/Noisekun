@@ -64,8 +64,8 @@ importers:
         specifier: 18.3.31
         version: 18.3.31
       autoprefixer:
-        specifier: 10.4.19
-        version: 10.4.19(postcss@8.5.20)
+        specifier: 10.5.4
+        version: 10.5.4(postcss@8.5.20)
       postcss:
         specifier: 8.5.20
         version: 8.5.20
@@ -83,7 +83,7 @@ importers:
         version: 5.3.3
       webpack:
         specifier: 5.104.1
-        version: 5.104.1(postcss@8.5.3)
+        version: 5.104.1(postcss@8.5.20)
 
 packages:
 
@@ -1321,7 +1321,7 @@ packages:
       next: 14.0.4(@babel/core@7.29.7)(react-dom@18.3.1)(react@18.3.1)
       semver: 7.5.4
       terser-webpack-plugin: 5.3.9(webpack@5.104.1)
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
       workbox-build: 7.0.0
       workbox-core: 7.0.0
       workbox-webpack-plugin: 7.0.0(webpack@5.104.1)
@@ -2486,8 +2486,8 @@ packages:
     engines: {node: '>= 4.0.0'}
     dev: false
 
-  /autoprefixer@10.4.19(postcss@8.5.20):
-    resolution: {integrity: sha512-BaENR2+zBZ8xXhM4pUaKUxlVdxZ0EZhjvbopwnXmxRUfqDmwSpC2lAi/QXvx7NRdPCo1WKEcEF6mV64si1z4Ew==}
+  /autoprefixer@10.5.4(postcss@8.5.20):
+    resolution: {integrity: sha512-MaU0U/za7N3r6brxD4YB/l4NSrFzLPlANv6wEuQVaIPlD3L4W9rFcQPbL/EilY9BHhHvhfcz3gInDLrEtWT4EA==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
@@ -2495,8 +2495,7 @@ packages:
     dependencies:
       browserslist: 4.28.7
       caniuse-lite: 1.0.30001806
-      fraction.js: 4.3.7
-      normalize-range: 0.1.2
+      fraction.js: 5.3.4
       picocolors: 1.1.1
       postcss: 8.5.20
       postcss-value-parser: 4.2.0
@@ -2691,7 +2690,7 @@ packages:
       webpack: '>=4.0.0 <6.0.0'
     dependencies:
       del: 4.1.1
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
     dev: false
 
   /client-only@0.0.1:
@@ -3261,7 +3260,7 @@ packages:
     dependencies:
       loader-utils: 2.0.4
       schema-utils: 3.3.0
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
     dev: false
 
   /filelist@1.0.6:
@@ -3283,8 +3282,8 @@ packages:
       is-callable: 1.2.7
     dev: false
 
-  /fraction.js@4.3.7:
-    resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
+  /fraction.js@5.3.4:
+    resolution: {integrity: sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==}
     dev: true
 
   /fs-extra@9.1.0:
@@ -4077,11 +4076,6 @@ packages:
   /normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
-
-  /normalize-range@0.1.2:
-    resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
-    engines: {node: '>=0.10.0'}
-    dev: true
 
   /nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
@@ -5039,10 +5033,10 @@ packages:
       schema-utils: 3.3.0
       serialize-javascript: 6.0.2
       terser: 5.49.0
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
     dev: false
 
-  /terser-webpack-plugin@5.6.1(postcss@8.5.3)(webpack@5.104.1):
+  /terser-webpack-plugin@5.6.1(postcss@8.5.20)(webpack@5.104.1):
     resolution: {integrity: sha512-201R5j+sJpK8nFWwKVyNfZot8FaJbLZDq5evriVzbV1wDtSXDjRUDRfJzHpAaxFDMEhsZL1QkeqM61wgsS3KaQ==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -5087,10 +5081,10 @@ packages:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       jest-worker: 27.5.1
-      postcss: 8.5.3
+      postcss: 8.5.20
       schema-utils: 4.3.3
       terser: 5.49.0
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
 
   /terser@5.49.0:
     resolution: {integrity: sha512-SNiDnXyHSrxVcIOtVbULzcTmniUiwcV7Nwdyj1twVubeTmbjoa8p69KKDpfkdoOavuM4/GRm1+ykI8qqnavHoA==}
@@ -5335,7 +5329,7 @@ packages:
       loader-utils: 2.0.4
       mime-types: 2.1.35
       schema-utils: 3.3.0
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
     dev: false
 
   /use-sync-external-store@1.6.0(react@18.3.1):
@@ -5378,7 +5372,7 @@ packages:
     resolution: {integrity: sha512-jyuiGJdtvY434z5bUZrjz67v76/ePNvFZTp9Mdz29IlH4+GPsgyGjiv0fKI+M7BdkU6ADjulUcKAd3tUK3WlEw==}
     engines: {node: '>=10.13.0'}
 
-  /webpack@5.104.1(postcss@8.5.3):
+  /webpack@5.104.1(postcss@8.5.20):
     resolution: {integrity: sha512-Qphch25abbMNtekmEGJmeRUhLDbe+QfiWTiqpKYkpCOWY64v9eyl+KRRLmqOFA2AvKPpc9DC6+u2n76tQLBoaA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
@@ -5410,7 +5404,7 @@ packages:
       neo-async: 2.6.2
       schema-utils: 4.3.3
       tapable: 2.3.3
-      terser-webpack-plugin: 5.6.1(postcss@8.5.3)(webpack@5.104.1)
+      terser-webpack-plugin: 5.6.1(postcss@8.5.20)(webpack@5.104.1)
       watchpack: 2.5.2
       webpack-sources: 3.5.1
     transitivePeerDependencies:
@@ -5629,7 +5623,7 @@ packages:
       fast-json-stable-stringify: 2.1.0
       pretty-bytes: 5.6.0
       upath: 1.2.0
-      webpack: 5.104.1(postcss@8.5.3)
+      webpack: 5.104.1(postcss@8.5.20)
       webpack-sources: 1.4.3
       workbox-build: 7.0.0
     transitivePeerDependencies:
