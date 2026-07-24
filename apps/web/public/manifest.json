@@ -4,18 +4,9 @@
   "description": "Listen combinations of ambient sounds for relaxing** or getting more productive on your task!",
   "theme_color": "#0485B4",
   "background_color": "#0485B4",
-  "categories": [
-    "sound",
-    "noise",
-    "ambience",
-    "relaxing",
-    "study"
-  ],
+  "categories": ["sound", "noise", "ambience", "relaxing", "study"],
   "display": "minimal-ui",
-  "display_override": [
-    "minimal-ui",
-    "standalone"
-  ],
+  "display_override": ["minimal-ui", "standalone"],
   "orientation": "any",
   "scope": "/",
   "start_url": "/",
