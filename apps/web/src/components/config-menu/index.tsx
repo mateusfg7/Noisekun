@@ -62,7 +62,7 @@ export function ConfigMenu() {
       return {};
     },
     wasChanged: () =>
-      settingStates.randomModeTransitionTime[0] !=
+      settingStates.randomModeTransitionTime[0] !==
       randomModeStore.updateTransitionTimeInMs,
   };
 
@@ -98,7 +98,7 @@ export function ConfigMenu() {
       return {};
     },
     wasChanged: () =>
-      settingStates.randomModeUpdateInterval[0] !=
+      settingStates.randomModeUpdateInterval[0] !==
       randomModeStore.updateIntervalInMs,
   };
 
@@ -111,7 +111,7 @@ export function ConfigMenu() {
       return {};
     },
     wasChanged: () =>
-      settingStates.randomModeUpdateSteps[0] != randomModeStore.updateSteps,
+      settingStates.randomModeUpdateSteps[0] !== randomModeStore.updateSteps,
   };
 
   const actionList: Action[] = [

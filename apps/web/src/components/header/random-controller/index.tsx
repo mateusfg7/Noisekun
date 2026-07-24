@@ -59,7 +59,7 @@ export function RandomModeButton() {
             const currentSound = soundsRef.current.find(
               (s) => s.id === sound.id
             );
-            if (currentSound && currentSound.active) {
+            if (currentSound?.active) {
               const updatedVolume = volumeSteps[index];
               const updatedSound = { ...currentSound, volume: updatedVolume };
               setSound(updatedSound);
