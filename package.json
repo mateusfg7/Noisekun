@@ -1,18 +1,22 @@
 {
+  "devDependencies": {
+    "@biomejs/biome": "2.5.3",
+    "turbo": "2.10.6",
+    "ultracite": "7.9.4"
+  },
   "name": "noisekun",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "check": "ultracite check",
+    "fix": "ultracite fix"
+  },
   "private": true,
   "author": {
     "name": "Mateus Felipe Gonçalves",
     "email": "contact@mateusf.com",
     "url": "https://github.com/mateusfg7"
   },
-  "scripts": {
-    "dev": "turbo run dev",
-    "build": "turbo run build",
-    "start": "turbo run start"
-  },
-  "packageManager": "pnpm@8.15.9",
-  "devDependencies": {
-    "turbo": "2.10.6"
-  }
+  "packageManager": "pnpm@8.15.9"
 }
