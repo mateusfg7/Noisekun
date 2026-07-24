@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { VolumeControllerSlider } from "~/components/ui/volume-controller-slider";
 import { useSoundsStateStore } from "~/stores/sounds-state-store";
 
-export interface IVolumeController {
+export type IVolumeController = {
   handleSoundVolume: (volume: number) => void;
   isActive: boolean;
   soundId: string;
   soundName: string;
-}
+};
 
 export const VolumeController: React.FC<IVolumeController> = ({
   isActive,

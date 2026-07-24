@@ -15,9 +15,9 @@ import { useUserInteractionStore } from "~/stores/user-interaction-store";
 
 import { VolumeController } from "./volume-controller";
 
-interface SoundButtonProps {
+type SoundButtonProps = {
   sound: Sound;
-}
+};
 
 export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   const globalVolume = useGlobalVolumeStore((state) => state.globalVolume);

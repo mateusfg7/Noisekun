@@ -6,10 +6,10 @@ export enum PomodoroStatus {
   stopped = "stopped",
 }
 
-interface PomodoroStore {
+type PomodoroStore = {
   pomodoroStatus: PomodoroStatus;
   setPomodoroStatus: (newStatus: PomodoroStatus) => void;
-}
+};
 
 export const usePomodoroStore = create<PomodoroStore>((set) => ({
   pomodoroStatus: PomodoroStatus.idle,
