@@ -17,7 +17,7 @@
     "react-hot-toast": "2.4.1",
     "react-icons": "5.0.1",
     "react-use": "17.4.2",
-    "sharp": "0.33.0",
+    "sharp": "0.35.0",
     "tailwind-scrollbar-hide": "1.1.7",
     "tailwind-variants": "0.1.13",
     "zustand": "4.5.7"
