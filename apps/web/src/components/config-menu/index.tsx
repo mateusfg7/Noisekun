@@ -134,7 +134,11 @@ export function ConfigMenu() {
       .filter((err) => err.error);
 
     if (errors.length > 0) {
-      errors.forEach(({ error }) => toast.error(error));
+      errors.forEach(({ error }) => {
+        if (error) {
+          toast.error(error);
+        }
+      });
     } else {
       closeModal();
     }
