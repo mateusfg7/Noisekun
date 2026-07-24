@@ -7,6 +7,9 @@
     "ultracite/biome/tanstack",
     "ultracite/biome/vitest"
   ],
+  "files": {
+    "includes": ["!.github"]
+  },
   "linter": {
     "rules": {
       "correctness": {
