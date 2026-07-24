@@ -4,78 +4,86 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@ducanh2912/next-pwa':
-    specifier: 9.4.0
-    version: 9.4.0(next@14.0.4)(webpack@5.88.2)
-  '@headlessui/react':
-    specifier: 1.7.19
-    version: 1.7.19(react-dom@18.3.1)(react@18.3.1)
-  '@newhighsco/next-plugin-svgr':
-    specifier: 3.0.104
-    version: 3.0.104(next@14.0.4)(typescript@5.3.3)(webpack@5.88.2)
-  next:
-    specifier: 14.0.4
-    version: 14.0.4(@babel/core@7.29.7)(react-dom@18.3.1)(react@18.3.1)
-  react:
-    specifier: 18.3.1
-    version: 18.3.1
-  react-dom:
-    specifier: 18.3.1
-    version: 18.3.1(react@18.3.1)
-  react-hot-toast:
-    specifier: 2.4.1
-    version: 2.4.1(csstype@3.2.3)(react-dom@18.3.1)(react@18.3.1)
-  react-icons:
-    specifier: 5.0.1
-    version: 5.0.1(react@18.3.1)
-  react-use:
-    specifier: 17.4.2
-    version: 17.4.2(react-dom@18.3.1)(react@18.3.1)
-  sharp:
-    specifier: 0.33.0
-    version: 0.33.0
-  tailwind-scrollbar-hide:
-    specifier: 1.1.7
-    version: 1.1.7
-  tailwind-variants:
-    specifier: 0.1.13
-    version: 0.1.13(tailwindcss@3.4.18)
-  zustand:
-    specifier: 4.5.4
-    version: 4.5.4(@types/react@18.3.23)(react@18.3.1)
+importers:
 
-devDependencies:
-  '@tailwindcss/forms':
-    specifier: 0.5.4
-    version: 0.5.4(tailwindcss@3.4.18)
-  '@types/node':
-    specifier: 20.4.7
-    version: 20.4.7
-  '@types/react':
-    specifier: 18.3.23
-    version: 18.3.23
-  autoprefixer:
-    specifier: 10.4.19
-    version: 10.4.19(postcss@8.5.3)
-  postcss:
-    specifier: 8.5.3
-    version: 8.5.3
-  tailwindcss:
-    specifier: 3.4.18
-    version: 3.4.18(tsx@4.0.0)
-  ts-node:
-    specifier: 10.9.1
-    version: 10.9.1(@types/node@20.4.7)(typescript@5.3.3)
-  tsx:
-    specifier: 4.0.0
-    version: 4.0.0
-  typescript:
-    specifier: 5.3.3
-    version: 5.3.3
-  webpack:
-    specifier: 5.88.2
-    version: 5.88.2
+  .:
+    devDependencies:
+      turbo:
+        specifier: 2.10.6
+        version: 2.10.6
+
+  apps/web:
+    dependencies:
+      '@ducanh2912/next-pwa':
+        specifier: 9.4.0
+        version: 9.4.0(next@14.0.4)(webpack@5.88.2)
+      '@headlessui/react':
+        specifier: 1.7.19
+        version: 1.7.19(react-dom@18.3.1)(react@18.3.1)
+      '@newhighsco/next-plugin-svgr':
+        specifier: 3.0.104
+        version: 3.0.104(next@14.0.4)(typescript@5.3.3)(webpack@5.88.2)
+      next:
+        specifier: 14.0.4
+        version: 14.0.4(@babel/core@7.29.7)(react-dom@18.3.1)(react@18.3.1)
+      react:
+        specifier: 18.3.1
+        version: 18.3.1
+      react-dom:
+        specifier: 18.3.1
+        version: 18.3.1(react@18.3.1)
+      react-hot-toast:
+        specifier: 2.4.1
+        version: 2.4.1(csstype@3.2.3)(react-dom@18.3.1)(react@18.3.1)
+      react-icons:
+        specifier: 5.0.1
+        version: 5.0.1(react@18.3.1)
+      react-use:
+        specifier: 17.4.2
+        version: 17.4.2(react-dom@18.3.1)(react@18.3.1)
+      sharp:
+        specifier: 0.33.0
+        version: 0.33.0
+      tailwind-scrollbar-hide:
+        specifier: 1.1.7
+        version: 1.1.7
+      tailwind-variants:
+        specifier: 0.1.13
+        version: 0.1.13(tailwindcss@3.4.18)
+      zustand:
+        specifier: 4.5.4
+        version: 4.5.4(@types/react@18.3.23)(react@18.3.1)
+    devDependencies:
+      '@tailwindcss/forms':
+        specifier: 0.5.4
+        version: 0.5.4(tailwindcss@3.4.18)
+      '@types/node':
+        specifier: 20.4.7
+        version: 20.4.7
+      '@types/react':
+        specifier: 18.3.23
+        version: 18.3.23
+      autoprefixer:
+        specifier: 10.4.19
+        version: 10.4.19(postcss@8.5.3)
+      postcss:
+        specifier: 8.5.3
+        version: 8.5.3
+      tailwindcss:
+        specifier: 3.4.18
+        version: 3.4.18(tsx@4.0.0)
+      ts-node:
+        specifier: 10.9.1
+        version: 10.9.1(@types/node@20.4.7)(typescript@5.3.3)
+      tsx:
+        specifier: 4.0.0
+        version: 4.0.0
+      typescript:
+        specifier: 5.3.3
+        version: 5.3.3
+      webpack:
+        specifier: 5.88.2
+        version: 5.88.2
 
 packages:
 
@@ -2135,6 +2143,54 @@ packages:
   /@tsconfig/node16@1.0.4:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     dev: true
+
+  /@turbo/darwin-64@2.10.6:
+    resolution: {integrity: sha512-S+yIyZkmjYBQbIM7sTqMAwnLeMjSK60Q9grUDPbTWvkRjbsn5k1Rt5sPvTX80M4PnlYQBwLiYsjlu6tHsuIqQQ==}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@turbo/darwin-arm64@2.10.6:
+    resolution: {integrity: sha512-gnS8G78EjvJzDc1+tFES5BYXdlF+292n+h57G9G+5LJYelRh195f4Ed22RCo4EFIbI4Du9S5xfE9YjrqhoZaxQ==}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@turbo/linux-64@2.10.6:
+    resolution: {integrity: sha512-lPv5AVkzvhs4z6Isr2ZE2UYt9Ndym5aWSMEIRh9OROnAdyEG1CFugJwAn/aFuDMmiCoHasyvD5tTDmVVTTrYxw==}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@turbo/linux-arm64@2.10.6:
+    resolution: {integrity: sha512-yeQ24es8pz+FhZxt25HIXj4ml7HpWMrmOL1BtCP4XUz7mBJZdAfC7z7HGF+wPSUZoKmoSZbL4r4QWbRddhPZIQ==}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@turbo/windows-64@2.10.6:
+    resolution: {integrity: sha512-JiFscBN83F43VG3oM+QU2LvgHcf11tgirLJ3c1QDJBtulTCbDwupzIjqB9yBlfiMWAe6g3ssD6gqLP6a4g7FzA==}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@turbo/windows-arm64@2.10.6:
+    resolution: {integrity: sha512-emWVdriXsaSVS5VXJxy4DppQ0UnGD+PUKu40DGjC3E5JXeoszL09B/1xU6B+Y8lJQg38cFoaB1NqGC4ayY5SQQ==}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
 
   /@types/eslint-scope@3.7.7:
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
@@ -5048,6 +5104,18 @@ packages:
       source-map-support: 0.5.21
     optionalDependencies:
       fsevents: 2.3.3
+
+  /turbo@2.10.6:
+    resolution: {integrity: sha512-3VfH7fK7WQ/ZHYjvfWyVnPRpcNaX3ZqXfGDMdc82eGdM0ESATyxFK4R4PM3wNsVFsdkUFZ4pZpkNeG37dxOv+g==}
+    hasBin: true
+    optionalDependencies:
+      '@turbo/darwin-64': 2.10.6
+      '@turbo/darwin-arm64': 2.10.6
+      '@turbo/linux-64': 2.10.6
+      '@turbo/linux-arm64': 2.10.6
+      '@turbo/windows-64': 2.10.6
+      '@turbo/windows-arm64': 2.10.6
+    dev: true
 
   /type-fest@0.16.0:
     resolution: {integrity: sha512-eaBzG6MxNzEn9kiwvtre90cXaNLkmadMWa1zQMs3XORCXNbsH/OewwbxC5ia9dCxIxnTAsSxXJaa/p5y8DlvJg==}
