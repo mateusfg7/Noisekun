@@ -39,18 +39,20 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     volume: 1,
   });
 
-  const soundRef = useRef<HTMLAudioElement>();
+  const soundRef = useRef<HTMLAudioElement>(null);
 
   const sync = {
     active: (soundState: SoundState) => {
       if (soundState.active) {
-        soundRef.current.play();
+        soundRef.current?.play();
       } else {
-        soundRef.current.pause();
+        soundRef.current?.pause();
       }
     },
     volume: (soundState: SoundState) => {
-      soundRef.current.volume = soundState.volume * globalVolume;
+      if (soundRef.current) {
+        soundRef.current.volume = soundState.volume * globalVolume;
+      }
     },
   };
 
@@ -90,7 +92,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
 
     setSoundState(initialState);
     setLocalSoundState(initialState);
-    soundRef.current.load();
+    soundRef.current?.load();
   }, []);
 
   // https://github.com/mateusfg7/Noisekun/issues/608#issuecomment-1874096664
@@ -120,7 +122,9 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   };
 
   useEffect(() => {
-    if (!getSoundState(sound.id).active) {
+    const soundState = getSoundState(sound.id);
+
+    if (!(soundState?.active && soundRef.current)) {
       return;
     }
 
@@ -128,8 +132,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       case PomodoroStatus.ticking:
       case PomodoroStatus.idle:
         if (soundRef.current.volume === 0) {
-          soundRef.current.volume =
-            getSoundState(sound.id).volume * globalVolume;
+          soundRef.current.volume = soundState.volume * globalVolume;
         }
         break;
 
@@ -142,7 +145,11 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   }, [pomodoroStatus]);
 
   useEffect(() => {
-    soundRef.current.volume = getSoundState(sound.id).volume * globalVolume;
+    const soundState = getSoundState(sound.id);
+
+    if (soundState && soundRef.current) {
+      soundRef.current.volume = soundState.volume * globalVolume;
+    }
   }, [globalVolume]);
 
   const Icon = sound.icon;

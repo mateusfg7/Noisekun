@@ -18,13 +18,13 @@ export function Pomodoro() {
   const [alarmIsRinging, setAlarmIsRinging] = useState(false);
   const [isLoadingStorage, setIsLoadingStorage] = useState(true);
 
-  const alarmRef = useRef<HTMLAudioElement>();
+  const alarmRef = useRef<HTMLAudioElement>(null);
 
   const toggleAlarm = () => {
     if (alarmIsRinging) {
-      alarmRef.current.pause();
+      alarmRef.current?.pause();
     } else {
-      alarmRef.current.play();
+      alarmRef.current?.play();
     }
 
     setAlarmIsRinging(!alarmIsRinging);
@@ -95,9 +95,11 @@ export function Pomodoro() {
   }, [isTicking, remainingTime]);
 
   useEffect(() => {
-    const defaultTimerStored = localStorage.getItem("default-timer-minutes");
-    if (+defaultTimerStored) {
-      setMinutes(+defaultTimerStored);
+    const defaultTimerStored = Number(
+      localStorage.getItem("default-timer-minutes")
+    );
+    if (defaultTimerStored) {
+      setMinutes(defaultTimerStored);
     }
 
     setIsLoadingStorage(false);

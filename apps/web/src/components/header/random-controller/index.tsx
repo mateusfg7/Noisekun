@@ -20,8 +20,8 @@ export function RandomModeButton() {
   const { sounds, setSound } = useSoundsStateStore();
 
   const soundsRef = useRef(sounds);
-  const intervalIdRef = useRef(null);
-  const timeoutsRef = useRef([]);
+  const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
 
   useEffect(() => {
     soundsRef.current = sounds;
@@ -30,6 +30,13 @@ export function RandomModeButton() {
   function clearAllTimeouts() {
     timeoutsRef.current.forEach(clearTimeout);
     timeoutsRef.current = [];
+  }
+
+  function clearRandomInterval() {
+    if (intervalIdRef.current) {
+      clearInterval(intervalIdRef.current);
+      intervalIdRef.current = null;
+    }
   }
 
   // Apply Volumes with Timeouts
@@ -80,13 +87,12 @@ export function RandomModeButton() {
     if (randomMode) {
       intervalIdRef.current = setInterval(randomizeVolumes, updateIntervalInMs);
     } else {
-      clearInterval(intervalIdRef.current);
+      clearRandomInterval();
       clearAllTimeouts();
-      intervalIdRef.current = null;
     }
 
     return () => {
-      clearInterval(intervalIdRef.current);
+      clearRandomInterval();
       clearAllTimeouts();
     };
   }, [randomMode, updateIntervalInMs]);
