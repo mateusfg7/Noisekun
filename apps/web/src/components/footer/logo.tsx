@@ -8,6 +8,7 @@ export function Logo() {
       width="800"
       xmlns="http://www.w3.org/2000/svg"
     >
+      <title>Noisekun</title>
       <rect
         className="text-primary-foreground backdrop-blur-2xl"
         fill="currentColor"
