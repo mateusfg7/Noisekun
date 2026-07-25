@@ -36,7 +36,7 @@ export function ConfigMenu() {
       );
     },
     save: () => {
-      const transitionTimeInMs = settingStates.randomModeTransitionTime[0];
+      const [transitionTimeInMs] = settingStates.randomModeTransitionTime;
 
       const MAX_TRANSITION_TIME =
         settingStates.randomModeUpdateInterval[0] - 1000;
@@ -73,7 +73,7 @@ export function ConfigMenu() {
       );
     },
     save: () => {
-      const updateIntervalInMs = settingStates.randomModeUpdateInterval[0];
+      const [updateIntervalInMs] = settingStates.randomModeUpdateInterval;
 
       const MIN_INTERVAL = 5 * 1000; // 5 seconds
       const MAX_INTERVAL = 10 * 60 * 1000; // 10 minutes
@@ -134,18 +134,20 @@ export function ConfigMenu() {
       .filter((err) => err.error);
 
     if (errors.length > 0) {
-      errors.forEach(({ error }) => {
+      for (const { error } of errors) {
         if (error) {
           toast.error(error);
         }
-      });
+      }
     } else {
       closeModal();
     }
   }
 
   function handleCancel() {
-    actionList.forEach((action) => action.reset());
+    for (const action of actionList) {
+      action.reset();
+    }
     closeModal();
   }
 
