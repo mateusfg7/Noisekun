@@ -7,7 +7,6 @@ export function GlobalVolumeController() {
   const MAX_VALUE = 1000;
 
   const [rangeValue, setRangeValue] = useState(MAX_VALUE);
-  const [isShowing, setIsShowing] = useState(false);
 
   const setGlobalVolume = useGlobalVolumeStore(
     (state) => state.setGlobalVolume
@@ -34,15 +33,8 @@ export function GlobalVolumeController() {
   }
 
   return (
-    <div
-      className="flex items-center gap-3 opacity-90 hover:opacity-100"
-      onMouseEnter={() => setIsShowing(true)}
-      onMouseLeave={() => setIsShowing(false)}
-    >
-      <div
-        className="group relative hidden h-max w-28 items-center data-[is-showing='true']:md:flex"
-        data-is-showing={isShowing}
-      >
+    <div className="group/volume flex items-center gap-3 opacity-90 hover:opacity-100">
+      <div className="group relative hidden h-max w-28 items-center group-hover/volume:md:flex group-focus-within/volume:md:flex">
         <span className="sr-only">
           Global volume in {Number(globalVolume * 100).toFixed(1)}%
         </span>
@@ -60,6 +52,7 @@ export function GlobalVolumeController() {
         data-umami-event="Mute/Unmute global volume"
         onClick={toggleMuted}
         title="Enable/disable sound"
+        type="button"
       >
         {globalVolume >= 0.5 && <FiVolume2 size={25} />}
         {globalVolume >= 0.25 && globalVolume < 0.5 && <FiVolume1 size={25} />}
