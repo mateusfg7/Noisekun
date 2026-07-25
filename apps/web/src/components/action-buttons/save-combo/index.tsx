@@ -52,7 +52,7 @@ export function SaveCombo() {
 
   return (
     <div className="flex gap-1">
-      {showInput && (
+      {showInput ? (
         <input
           className="form-input w-32 animate-show-input rounded-xl border-none bg-primary-foreground/5 px-2 py-0 text-center text-primary-foreground leading-none tracking-wider duration-300 placeholder:text-primary-foreground/60 placeholder:text-sm focus:ring-0"
           data-testid="combo-name-input"
@@ -62,7 +62,7 @@ export function SaveCombo() {
           type="text"
           value={comboName}
         />
-      )}
+      ) : null}
       <button
         className={actionButton({
           className: /*tw:*/ "flex items-center",
@@ -70,6 +70,7 @@ export function SaveCombo() {
         disabled={disabled}
         onClick={save}
         title="Save current combo"
+        type="button"
       >
         {showSuccess ? (
           <span className="inline-flex w-10 justify-center">
