@@ -30,7 +30,7 @@ export const useComboStore = create<ComboStoreProps>()(
         set({ combos });
       },
       saveCombo(combo) {
-        const combos = get().combos;
+        const { combos } = get();
         set({ combos: [...combos, combo] });
       },
     }),
