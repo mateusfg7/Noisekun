@@ -43,38 +43,36 @@ export function RandomModeButton() {
   function applyVolumeChanges(stepDuration: number) {
     clearAllTimeouts(); // Clears existing timeouts
 
-    soundsRef.current
-      .filter((sound) => sound.active)
-      .forEach((initialSound) => {
-        const targetVolume = Math.random();
-        const volumeSteps = calculateVolumeSteps(
-          initialSound.volume,
-          targetVolume,
-          updateSteps
-        );
+    const activeSounds = soundsRef.current.filter((sound) => sound.active);
 
-        const setVolumeStep = (sound: SoundState, index: number) => {
-          if (index < volumeSteps.length) {
-            // Fetch the most recent value of the sound
-            const currentSound = soundsRef.current.find(
-              (s) => s.id === sound.id
-            );
-            if (currentSound?.active) {
-              const updatedVolume = volumeSteps[index];
-              const updatedSound = { ...currentSound, volume: updatedVolume };
-              setSound(updatedSound);
-              // add next timeout only if this one is successful
-              const timeoutId = setTimeout(() => {
-                setVolumeStep(currentSound, index + 1);
-              }, stepDuration);
+    for (const initialSound of activeSounds) {
+      const targetVolume = Math.random();
+      const volumeSteps = calculateVolumeSteps(
+        initialSound.volume,
+        targetVolume,
+        updateSteps
+      );
 
-              timeoutsRef.current.push(timeoutId);
-            }
+      const setVolumeStep = (sound: SoundState, index: number) => {
+        if (index < volumeSteps.length) {
+          // Fetch the most recent value of the sound
+          const currentSound = soundsRef.current.find((s) => s.id === sound.id);
+          if (currentSound?.active) {
+            const updatedVolume = volumeSteps[index];
+            const updatedSound = { ...currentSound, volume: updatedVolume };
+            setSound(updatedSound);
+            // add next timeout only if this one is successful
+            const timeoutId = setTimeout(() => {
+              setVolumeStep(currentSound, index + 1);
+            }, stepDuration);
+
+            timeoutsRef.current.push(timeoutId);
           }
-        };
+        }
+      };
 
-        setVolumeStep(initialSound, 0);
-      });
+      setVolumeStep(initialSound, 0);
+    }
   }
 
   function randomizeVolumes() {
@@ -105,6 +103,7 @@ export function RandomModeButton() {
         data-umami-event="Enable/Disable Random Mode"
         onClick={() => setRandomMode(!randomMode)}
         title={randomMode ? "Disable random mode" : "Enable random mode"}
+        type="button"
       >
         <FiZap size={22} />
       </button>
