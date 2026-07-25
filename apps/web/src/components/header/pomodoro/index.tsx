@@ -109,6 +109,7 @@ export function Pomodoro() {
     <div className="flex items-center gap-1 leading-none">
       <audio loop preload="auto" ref={alarmRef}>
         <source src="/sounds/alarm.ogg" type="audio/ogg" />
+        <track kind="captions" />
       </audio>
 
       <button
@@ -118,6 +119,7 @@ export function Pomodoro() {
         disabled={isLoadingStorage}
         onClick={resetTimer}
         title="Reset Pomodoro timer"
+        type="button"
       >
         <FiRotateCw />
       </button>
@@ -139,6 +141,7 @@ export function Pomodoro() {
         disabled={isLoadingStorage}
         onClick={handleToggle}
         title="Toggle Pomodoro timer"
+        type="button"
       >
         {isTicking ? <FiPause /> : <FiPlay />}
       </button>
