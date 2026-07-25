@@ -39,8 +39,8 @@ importers:
         specifier: 18.3.1
         version: 18.3.1(react@18.3.1)
       react-hot-toast:
-        specifier: 2.4.1
-        version: 2.4.1(csstype@3.2.3)(react-dom@18.3.1)(react@18.3.1)
+        specifier: 2.6.0
+        version: 2.6.0(react-dom@18.3.1)(react@18.3.1)
       react-icons:
         specifier: 5.7.0
         version: 5.7.0(react@18.3.1)
@@ -4866,18 +4866,17 @@ packages:
       scheduler: 0.23.2
     dev: false
 
-  /react-hot-toast@2.4.1(csstype@3.2.3)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-j8z+cQbWIM5LY37pR6uZR6D4LfseplqnuAO4co4u8917hBUvXlEqyP1ZzqVLcqoyUesZZv/ImreoCeHVDpE5pQ==}
+  /react-hot-toast@2.6.0(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-bH+2EBMZ4sdyou/DPrfgIouFpcRLCJ+HoCA32UoAYHn6T3Ur5yfcDCeSr5mwldl6pFOsiocmrXMuoCJ1vV8bWg==}
     engines: {node: '>=10'}
     peerDependencies:
       react: '>=16'
       react-dom: '>=16'
     dependencies:
+      csstype: 3.2.3
       goober: 2.1.19(csstype@3.2.3)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-    transitivePeerDependencies:
-      - csstype
     dev: false
 
   /react-icons@5.7.0(react@18.3.1):
