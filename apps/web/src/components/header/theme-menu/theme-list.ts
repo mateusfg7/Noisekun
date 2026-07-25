@@ -1,37 +1,37 @@
-import { Theme } from '~/stores/theme-store'
+import type { Theme } from "~/stores/theme-store";
 
 type ThemeAttrs = {
-  title: string
-  id: Theme
-}
+  title: string;
+  id: Theme;
+};
 
 export const themeList: ThemeAttrs[] = [
   {
-    title: 'Light',
-    id: 'light-theme'
+    id: "light-theme",
+    title: "Light",
   },
   {
-    title: 'Dark',
-    id: 'dark-theme'
+    id: "dark-theme",
+    title: "Dark",
   },
   {
-    title: 'Transition',
-    id: 'transition-theme'
+    id: "transition-theme",
+    title: "Transition",
   },
   {
-    title: 'Room',
-    id: 'room-theme'
+    id: "room-theme",
+    title: "Room",
   },
   {
-    title: 'Train',
-    id: 'train-theme'
+    id: "train-theme",
+    title: "Train",
   },
   {
-    title: 'Waterfall',
-    id: 'waterfall-theme'
+    id: "waterfall-theme",
+    title: "Waterfall",
   },
   {
-    title: 'Camping Fire',
-    id: 'camping-theme'
-  }
-]
+    id: "camping-theme",
+    title: "Camping Fire",
+  },
+];

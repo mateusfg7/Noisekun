@@ -17,6 +17,10 @@
       "cache": false,
       "persistent": true
     },
+    "typecheck": {
+      "cache": false,
+      "persistent": false
+    },
     "start": {
       "dependsOn": ["build"],
       "cache": false,

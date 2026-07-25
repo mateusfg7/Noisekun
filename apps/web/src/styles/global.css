@@ -6,7 +6,7 @@
   :root {
     --primary: #0485b4;
     --primary-foreground: #fff;
-    --background-image: url('');
+    --background-image: url("");
     --background-color: transparent;
 
     --transition-theme-foreground: 255 255 255; /* rgb(255, 255, 255) */
@@ -44,35 +44,32 @@
     --primary: 23 37 84; /* rgb(23, 37, 84) */
     --primary-foreground: 191 219 254; /* rgb(191, 219, 254) */
     --background-color: rgba(0, 0, 0, 0.5);
-    --background-image: url('/bg/blue-room.gif');
+    --background-image: url("/bg/blue-room.gif");
   }
 
   .train-theme {
     --primary: 5 46 22; /* rgb(5, 46, 22) */
     --primary-foreground: 187 247 208; /* rgb(187, 247, 208) */
     --background-color: rgba(0, 0, 0, 0.5);
-    --background-image: url('/bg/train.gif');
+    --background-image: url("/bg/train.gif");
   }
 
   .waterfall-theme {
     --primary: 26 46 5; /* rgb(26, 46, 5) */
     --primary-foreground: 217 249 157; /* rgb(217, 249, 157) */
     --background-color: rgba(0, 0, 0, 0.5);
-    --background-image: url('/bg/waterfall.gif');
+    --background-image: url("/bg/waterfall.gif");
   }
 
   .camping-theme {
     --primary: 67 10 7; /* rgb(67,10,7) */
     --primary-foreground: 254 215 170; /* rgb(254,215,170) */
     --background-color: rgba(0, 0, 0, 0.5);
-    --background-image: url('/bg/camping-fire.gif');
+    --background-image: url("/bg/camping-fire.gif");
   }
 
   body {
-    @apply animate-background-change
-      font-sans
-      font-light
-      text-primary-foreground;
+    @apply animate-background-change font-sans font-light text-primary-foreground;
   }
 }
 

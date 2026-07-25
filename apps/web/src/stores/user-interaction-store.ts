@@ -1,18 +1,18 @@
-import { create } from 'zustand'
+import { create } from "zustand";
 
 type States = {
-  userHasInteracted: boolean
-}
+  userHasInteracted: boolean;
+};
 
 type Actions = {
-  setUserHasInteracted: (value: boolean) => void
-}
+  setUserHasInteracted: (value: boolean) => void;
+};
 
-export type UserInteractionStoreProps = States & Actions
+export type UserInteractionStoreProps = States & Actions;
 
 export const useUserInteractionStore = create<UserInteractionStoreProps>(
-  set => ({
+  (set) => ({
+    setUserHasInteracted: (value) => set({ userHasInteracted: value }),
     userHasInteracted: false,
-    setUserHasInteracted: value => set({ userHasInteracted: value })
   })
-)
+);

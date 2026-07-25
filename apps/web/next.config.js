@@ -1,18 +1,18 @@
-const withSvgr = require('@newhighsco/next-plugin-svgr')
-const withPWA = require('@ducanh2912/next-pwa').default({
-  dest: 'public'
-})
+const withSvgr = require("@newhighsco/next-plugin-svgr");
+const withPWA = require("@ducanh2912/next-pwa").default({
+  dest: "public",
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true
-}
+  reactStrictMode: true,
+};
 
 const configWithSvgr = withSvgr({
   ...nextConfig,
   svgrOptions: {
-    dimensions: false
-  }
-})
+    dimensions: false,
+  },
+});
 
-module.exports = withPWA(configWithSvgr)
+module.exports = withPWA(configWithSvgr);

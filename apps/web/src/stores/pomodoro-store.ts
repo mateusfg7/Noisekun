@@ -1,17 +1,20 @@
-import { create } from 'zustand'
+import { create } from "zustand";
 
-export enum PomodoroStatus {
-  idle = 'idle',
-  ticking = 'ticking',
-  stopped = 'stopped'
-}
+export const PomodoroStatus = {
+  idle: "idle",
+  stopped: "stopped",
+  ticking: "ticking",
+} as const;
 
-interface PomodoroStore {
-  pomodoroStatus: PomodoroStatus
-  setPomodoroStatus: (newStatus: PomodoroStatus) => void
-}
+export type PomodoroStatus =
+  (typeof PomodoroStatus)[keyof typeof PomodoroStatus];
 
-export const usePomodoroStore = create<PomodoroStore>(set => ({
+type PomodoroStore = {
+  pomodoroStatus: PomodoroStatus;
+  setPomodoroStatus: (newStatus: PomodoroStatus) => void;
+};
+
+export const usePomodoroStore = create<PomodoroStore>((set) => ({
   pomodoroStatus: PomodoroStatus.idle,
-  setPomodoroStatus: newStatus => set(() => ({ pomodoroStatus: newStatus }))
-}))
+  setPomodoroStatus: (newStatus) => set(() => ({ pomodoroStatus: newStatus })),
+}));

@@ -1,96 +1,97 @@
-import { tv } from 'tailwind-variants'
+import { tv } from "tailwind-variants";
 
 export const themeButton = tv({
-  base: /*tw:*/ 'border-2 rounded-2xl cursor-pointer font-bold text-xl p-10 md:p-7 w-full bg-center bg-cover shadow-xl shadow-black/30 border-transparent',
-  variants: {
-    selected: {
-      true: /*tw:*/ 'border-white text-white'
-    },
-    active: {
-      true: /*tw:*/ 'brightness-95 border-white/80 text-white/80'
-    },
-    background: {
-      'transition-theme': /*tw:*/ 'animate-background-change-sm',
-      'dark-theme': /*tw:*/ 'bg-themes-dark',
-      'light-theme': /*tw:*/ 'bg-themes-light',
-      'room-theme': /*tw:*/ 'bg-blue-room-gif',
-      'train-theme': /*tw:*/ 'bg-train-gif',
-      'waterfall-theme': /*tw:*/ 'bg-waterfall-gif',
-      'camping-theme': /*tw:*/ 'bg-camping-fire-gif'
-    },
-    theme: {
-      'transition-theme': /*tw:*/ 'text-themes-transition/80',
-      'dark-theme': /*tw:*/ 'text-themes-dark-foreground/80',
-      'light-theme': /*tw:*/ 'text-themes-light-foreground/80',
-      'room-theme': /*tw:*/ 'text-themes-room/80',
-      'train-theme': /*tw:*/ 'text-themes-train/80',
-      'waterfall-theme': /*tw:*/ 'text-themes-waterfall/80',
-      'camping-theme': /*tw:*/ 'text-themes-camping/80'
-    }
-  },
+  base: /*tw:*/ "w-full cursor-pointer rounded-2xl border-2 border-transparent bg-center bg-cover p-10 font-bold text-xl shadow-black/30 shadow-xl md:p-7",
   compoundVariants: [
     {
-      theme: ['dark-theme'],
       active: true,
       class:
-        /*tw:*/ 'border-themes-dark-foreground/80 text-themes-dark-foreground/80'
+        /*tw:*/ "border-themes-dark-foreground/80 text-themes-dark-foreground/80",
+      theme: ["dark-theme"],
     },
     {
-      theme: ['dark-theme'],
+      class:
+        /*tw:*/ "border-themes-dark-foreground text-themes-dark-foreground",
       selected: true,
-      class: /*tw:*/ 'border-themes-dark-foreground text-themes-dark-foreground'
+      theme: ["dark-theme"],
     },
     {
-      theme: ['light-theme'],
       active: true,
       class:
-        /*tw:*/ 'border-themes-light-foreground/80 text-themes-light-foreground/80'
+        /*tw:*/ "border-themes-light-foreground/80 text-themes-light-foreground/80",
+      theme: ["light-theme"],
     },
     {
-      theme: ['light-theme'],
-      selected: true,
       class:
-        /*tw:*/ 'border-themes-light-foreground text-themes-light-foreground'
-    },
-    {
-      theme: ['room-theme'],
-      active: true,
-      class: /*tw:*/ 'border-themes-room/80 text-themes-room/80'
-    },
-    {
-      theme: ['room-theme'],
+        /*tw:*/ "border-themes-light-foreground text-themes-light-foreground",
       selected: true,
-      class: /*tw:*/ 'border-themes-room text-themes-room'
+      theme: ["light-theme"],
     },
     {
-      theme: ['train-theme'],
       active: true,
-      class: /*tw:*/ 'border-themes-train/80 text-themes-train/80'
+      class: /*tw:*/ "border-themes-room/80 text-themes-room/80",
+      theme: ["room-theme"],
     },
     {
-      theme: ['train-theme'],
+      class: /*tw:*/ "border-themes-room text-themes-room",
       selected: true,
-      class: /*tw:*/ 'border-themes-train text-themes-train'
+      theme: ["room-theme"],
     },
     {
-      theme: ['waterfall-theme'],
       active: true,
-      class: /*tw:*/ 'border-themes-waterfall/80 text-themes-waterfall/80'
+      class: /*tw:*/ "border-themes-train/80 text-themes-train/80",
+      theme: ["train-theme"],
     },
     {
-      theme: ['waterfall-theme'],
+      class: /*tw:*/ "border-themes-train text-themes-train",
       selected: true,
-      class: /*tw:*/ 'border-themes-waterfall text-themes-waterfall'
+      theme: ["train-theme"],
     },
     {
-      theme: ['camping-theme'],
       active: true,
-      class: /*tw:*/ 'border-themes-camping/80 text-themes-camping/80'
+      class: /*tw:*/ "border-themes-waterfall/80 text-themes-waterfall/80",
+      theme: ["waterfall-theme"],
     },
     {
-      theme: ['camping-theme'],
+      class: /*tw:*/ "border-themes-waterfall text-themes-waterfall",
       selected: true,
-      class: /*tw:*/ 'border-themes-camping text-themes-camping'
-    }
-  ]
-})
+      theme: ["waterfall-theme"],
+    },
+    {
+      active: true,
+      class: /*tw:*/ "border-themes-camping/80 text-themes-camping/80",
+      theme: ["camping-theme"],
+    },
+    {
+      class: /*tw:*/ "border-themes-camping text-themes-camping",
+      selected: true,
+      theme: ["camping-theme"],
+    },
+  ],
+  variants: {
+    active: {
+      true: /*tw:*/ "border-white/80 text-white/80 brightness-95",
+    },
+    background: {
+      "camping-theme": /*tw:*/ "bg-camping-fire-gif",
+      "dark-theme": /*tw:*/ "bg-themes-dark",
+      "light-theme": /*tw:*/ "bg-themes-light",
+      "room-theme": /*tw:*/ "bg-blue-room-gif",
+      "train-theme": /*tw:*/ "bg-train-gif",
+      "transition-theme": /*tw:*/ "animate-background-change-sm",
+      "waterfall-theme": /*tw:*/ "bg-waterfall-gif",
+    },
+    selected: {
+      true: /*tw:*/ "border-white text-white",
+    },
+    theme: {
+      "camping-theme": /*tw:*/ "text-themes-camping/80",
+      "dark-theme": /*tw:*/ "text-themes-dark-foreground/80",
+      "light-theme": /*tw:*/ "text-themes-light-foreground/80",
+      "room-theme": /*tw:*/ "text-themes-room/80",
+      "train-theme": /*tw:*/ "text-themes-train/80",
+      "transition-theme": /*tw:*/ "text-themes-transition/80",
+      "waterfall-theme": /*tw:*/ "text-themes-waterfall/80",
+    },
+  },
+});

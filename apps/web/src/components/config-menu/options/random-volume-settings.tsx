@@ -1,21 +1,21 @@
-import { settingRow, input, dot } from './styles'
+import { dot, input, settingRow } from "./styles";
 
 type Option = {
-  value: number
-  set: (newValue: number) => void
-  wasChanged: () => boolean
-}
+  value: number;
+  set: (newValue: number) => void;
+  wasChanged: () => boolean;
+};
 
 type Props = {
-  updateTransitionTime: Option
-  updateInterval: Option
-  updateSteps: Option
-}
+  updateTransitionTime: Option;
+  updateInterval: Option;
+  updateSteps: Option;
+};
 
 export function RandomVolumeSettings({
   updateInterval,
   updateSteps,
-  updateTransitionTime
+  updateTransitionTime,
 }: Props) {
   return (
     <div className="space-y-2">
@@ -24,54 +24,54 @@ export function RandomVolumeSettings({
         <div className={settingRow()}>
           <span className={dot({ active: updateInterval.wasChanged() })} />
 
-          <label htmlFor="interval" className="flex-1 text-left">
+          <label className="flex-1 text-left" htmlFor="interval">
             Update interval <span className="text-sm opacity-50">/s</span>
           </label>
           <input
-            type="number"
-            id="interval"
-            value={updateInterval.value / 1000}
-            onChange={e => updateInterval.set(Number(e.target.value) * 1000)}
             className={input()}
+            id="interval"
+            onChange={(e) => updateInterval.set(Number(e.target.value) * 1000)}
+            type="number"
+            value={updateInterval.value / 1000}
           />
         </div>
         <div className={settingRow()}>
           <span
             className={dot({
-              active: updateTransitionTime.wasChanged()
+              active: updateTransitionTime.wasChanged(),
             })}
           />
-          <label htmlFor="interval" className="flex-1 text-left">
+          <label className="flex-1 text-left" htmlFor="interval">
             Transition time <span className="text-sm opacity-50">/s</span>
           </label>
           <input
-            type="number"
+            className={input()}
             id="interval"
-            value={updateTransitionTime.value / 1000}
-            onChange={e =>
+            onChange={(e) =>
               updateTransitionTime.set(Number(e.target.value) * 1000)
             }
-            className={input()}
+            type="number"
+            value={updateTransitionTime.value / 1000}
           />
         </div>
         <div className={settingRow()}>
           <span
             className={dot({
-              active: updateSteps.wasChanged()
+              active: updateSteps.wasChanged(),
             })}
           />
-          <label htmlFor="steps" className="flex-1 text-left">
+          <label className="flex-1 text-left" htmlFor="steps">
             Update steps
           </label>
           <input
-            type="number"
-            id="steps"
-            value={updateSteps.value}
-            onChange={e => updateSteps.set(Number(e.target.value))}
             className={input()}
+            id="steps"
+            onChange={(e) => updateSteps.set(Number(e.target.value))}
+            type="number"
+            value={updateSteps.value}
           />
         </div>
       </div>
     </div>
-  )
+  );
 }
