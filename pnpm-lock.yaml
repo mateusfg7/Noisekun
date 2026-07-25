@@ -21,8 +21,8 @@ importers:
   apps/web:
     dependencies:
       '@ducanh2912/next-pwa':
-        specifier: 9.4.0
-        version: 9.4.0(next@14.0.4)(webpack@5.104.1)
+        specifier: 9.7.2
+        version: 9.7.2(next@14.0.4)(webpack@5.104.1)
       '@headlessui/react':
         specifier: 1.7.19
         version: 1.7.19(react-dom@18.3.1)(react@18.3.1)
@@ -1421,14 +1421,14 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@ducanh2912/next-pwa@9.4.0(next@14.0.4)(webpack@5.104.1):
-    resolution: {integrity: sha512-FFA8UpfKRPHkUk33lyh9Smp9q8/e1s4ezTSVQXLFhj86GmSaCA71oxqe9AIbusa/fDK/EZTmoHUmKpwl/6j7iw==}
+  /@ducanh2912/next-pwa@9.7.2(next@14.0.4)(webpack@5.104.1):
+    resolution: {integrity: sha512-KNdWIr8297L6TRyEeJQUzZqgP+m10GmaV6tacZ6wIcON9J+b6Nz34eLx6B5Q5mQKxqbYHTDayVoMRc2uuA/Ahg==}
     peerDependencies:
       next: '>=11.0.0'
       webpack: '>=5.9.0'
     dependencies:
       clean-webpack-plugin: 4.0.0(webpack@5.104.1)
-      fast-glob: 3.3.0
+      fast-glob: 3.3.1
       next: 14.0.4(@babel/core@7.29.7)(react-dom@18.3.1)(react@18.3.1)
       semver: 7.5.4
       terser-webpack-plugin: 5.3.9(webpack@5.104.1)
@@ -3627,8 +3627,8 @@ packages:
   /fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
 
-  /fast-glob@3.3.0:
-    resolution: {integrity: sha512-ChDuvbOypPuNjO8yIDf36x7BlZX1smcUMTTcyoIjycexOxd6DFsKsg21qVBzEmr3G7fUKIRy2/psii+CIUt7FA==}
+  /fast-glob@3.3.1:
+    resolution: {integrity: sha512-kNFPyjhh5cKjrUltxs+wFx+ZkbRaxxmZ+X0ZU31SOsxCEtP9VPgtq2teZw1DebupL5GmDaNQ6yKMMVcM41iqDg==}
     engines: {node: '>=8.6.0'}
     dependencies:
       '@nodelib/fs.stat': 2.0.5
