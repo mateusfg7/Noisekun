@@ -1,28 +1,26 @@
-import {
-  AirPlane,
-  BirdsTree,
-  Boat,
-  BrownNoise,
-  Cave,
-  Coffee,
-  Drops,
-  Fire,
-  Leaves,
-  Night,
-  PinkNoise,
-  Playground,
-  Rain,
-  RainOnTent,
-  Storm,
-  StreamWater,
-  Train,
-  Underwater,
-  WashingMachine,
-  Waterfall,
-  Waves,
-  WhiteNoise,
-  Wind,
-} from "./icons";
+import { ReactComponent as AirPlane } from "./icons/air-plane.svg";
+import { ReactComponent as BirdsTree } from "./icons/birds-tree.svg";
+import { ReactComponent as Boat } from "./icons/boat.svg";
+import { ReactComponent as BrownNoise } from "./icons/brown-noise.svg";
+import { ReactComponent as Cave } from "./icons/cave.svg";
+import { ReactComponent as Coffee } from "./icons/coffee.svg";
+import { ReactComponent as Drops } from "./icons/drops.svg";
+import { ReactComponent as Fire } from "./icons/fire.svg";
+import { ReactComponent as Leaves } from "./icons/leaves.svg";
+import { ReactComponent as Night } from "./icons/night.svg";
+import { ReactComponent as PinkNoise } from "./icons/pink-noise.svg";
+import { ReactComponent as Playground } from "./icons/playground.svg";
+import { ReactComponent as Rain } from "./icons/rain.svg";
+import { ReactComponent as RainOnTent } from "./icons/rain-on-tent.svg";
+import { ReactComponent as Storm } from "./icons/storm.svg";
+import { ReactComponent as StreamWater } from "./icons/stream-water.svg";
+import { ReactComponent as Train } from "./icons/train.svg";
+import { ReactComponent as Underwater } from "./icons/underwater.svg";
+import { ReactComponent as WashingMachine } from "./icons/washing-machine.svg";
+import { ReactComponent as Waterfall } from "./icons/waterfall.svg";
+import { ReactComponent as Waves } from "./icons/waves.svg";
+import { ReactComponent as WhiteNoise } from "./icons/white-noise.svg";
+import { ReactComponent as Wind } from "./icons/wind.svg";
 
 export const sounds = [
   {
