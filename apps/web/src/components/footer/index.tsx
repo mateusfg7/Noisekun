@@ -6,18 +6,17 @@ import { tv } from "tailwind-variants";
 
 import { Logo } from "./logo";
 
-export function Footer() {
-  const Info = ({ children, className, ...props }: ComponentProps<"a">) => {
-    const style = tv({
-      base: /*tw:*/ "flex w-full items-center gap-2 text-xl underline-offset-4 hover:underline sm:text-lg",
-    });
-    return (
-      <a className={style(className)} target="_blank" {...props}>
-        {children}
-      </a>
-    );
-  };
+const infoStyle = tv({
+  base: /*tw:*/ "flex w-full items-center gap-2 text-xl underline-offset-4 hover:underline sm:text-lg",
+});
 
+const Info = ({ children, className, ...props }: ComponentProps<"a">) => (
+  <a className={infoStyle(className)} target="_blank" {...props}>
+    {children}
+  </a>
+);
+
+export function Footer() {
   return (
     <footer className="flex flex-col items-center gap-10 p-11 text-primary-foreground">
       <div className="flex flex-col flex-wrap items-center justify-center gap-10 sm:flex-row md:gap-14">
