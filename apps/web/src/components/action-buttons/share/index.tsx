@@ -13,11 +13,7 @@ export function Share() {
   const [showModal, setShowModal] = useState(false);
 
   async function handleCopyCombo() {
-    if (!(window && navigator)) {
-      return;
-    }
-
-    const hostname = window.location.hostname;
+    const { hostname } = window.location;
     const isLocalhost = hostname === "localhost";
     const protocol = isLocalhost ? "http" : "https";
 
@@ -42,6 +38,7 @@ export function Share() {
         disabled={isDisabled()}
         onClick={handleCopyCombo}
         title="Share current combo"
+        type="button"
       >
         share
       </button>
