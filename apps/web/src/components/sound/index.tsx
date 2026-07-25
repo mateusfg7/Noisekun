@@ -73,19 +73,17 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     }
 
     if (querySounds.length) {
-      decodeURIComponent(querySounds)
-        .split(";")
-        .forEach((item) => {
-          const [id, volume] = item.split(",");
-          if (id === sound.id) {
-            initialState = {
-              active: true,
-              id,
-              loaded: false,
-              volume: Number.parseFloat(volume),
-            };
-          }
-        });
+      for (const item of decodeURIComponent(querySounds).split(";")) {
+        const [id, volume] = item.split(",");
+        if (id === sound.id) {
+          initialState = {
+            active: true,
+            id,
+            loaded: false,
+            volume: Number.parseFloat(volume),
+          };
+        }
+      }
     }
 
     setSoundState(initialState);
@@ -139,6 +137,9 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
           soundRef.current.volume = 0;
         }
         break;
+
+      default:
+        break;
     }
   }, [pomodoroStatus]);
 
@@ -164,6 +165,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
         ref={soundRef}
       >
         <source src={sound.file.url} type={sound.file.type} />
+        <track kind="captions" />
       </audio>
       <button
         aria-label={sound.title}
@@ -178,6 +180,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
         onClick={() =>
           setSoundState({ ...localSoundState, active: !localSoundState.active })
         }
+        type="button"
       >
         <Icon className="h-20 w-20" />
       </button>
