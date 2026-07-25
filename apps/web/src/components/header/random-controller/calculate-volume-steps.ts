@@ -4,7 +4,7 @@ export function calculateVolumeSteps(
   steps: number
 ) {
   const volumeSteps: number[] = [];
-  for (let i = 1; i <= steps; i++) {
+  for (let i = 1; i <= steps; i += 1) {
     // Exponential interpolation factor (ease-out)
     const factor = 1 - (1 - i / steps) ** 2;
     const newVolume = currentVolume + (targetVolume - currentVolume) * factor;
