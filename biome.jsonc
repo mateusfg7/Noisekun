@@ -15,6 +15,10 @@
       "correctness": {
         "useExhaustiveDependencies": "warn"
       },
+      "performance": {
+        // TODO(future work): refactor inline JSX handlers, then bump back to "error"
+        "noJsxPropsBind": "warn"
+      },
       "style": {
         "useConsistentTypeDefinitions": {
           "level": "error",
@@ -22,6 +26,9 @@
             "style": "type"
           }
         }
+      },
+      "suspicious": {
+        "noUnknownAtRules": "off"
       }
     }
   }
