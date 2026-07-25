@@ -55,14 +55,14 @@ importers:
         version: 1.1.7
       tailwind-variants:
         specifier: 0.1.13
-        version: 0.1.13(tailwindcss@3.4.18)
+        version: 0.1.13(tailwindcss@3.4.19)
       zustand:
         specifier: 4.5.7
         version: 4.5.7(@types/react@18.3.31)(react@18.3.1)
     devDependencies:
       '@tailwindcss/forms':
         specifier: 0.5.11
-        version: 0.5.11(tailwindcss@3.4.18)
+        version: 0.5.11(tailwindcss@3.4.19)
       '@types/node':
         specifier: 20.19.43
         version: 20.19.43
@@ -76,8 +76,8 @@ importers:
         specifier: 8.5.22
         version: 8.5.22
       tailwindcss:
-        specifier: 3.4.18
-        version: 3.4.18(tsx@4.23.1)
+        specifier: 3.4.19
+        version: 3.4.19(tsx@4.23.1)
       ts-node:
         specifier: 10.9.2
         version: 10.9.2(@types/node@20.19.43)(typescript@5.3.3)
@@ -2331,13 +2331,13 @@ packages:
       tslib: 2.8.1
     dev: false
 
-  /@tailwindcss/forms@0.5.11(tailwindcss@3.4.18):
+  /@tailwindcss/forms@0.5.11(tailwindcss@3.4.19):
     resolution: {integrity: sha512-h9wegbZDPurxG22xZSoWtdzc41/OlNEUQERNqI/0fOwa2aVlWGu7C35E/x6LDyD3lgtztFSSjKZyuVM0hxhbgA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1 || >= 4.0.0-alpha.20 || >= 4.0.0-beta.1'
     dependencies:
       mini-svg-data-uri: 1.4.4
-      tailwindcss: 3.4.18(tsx@4.23.1)
+      tailwindcss: 3.4.19(tsx@4.23.1)
     dev: true
 
   /@tanstack/react-virtual@3.14.8(react-dom@18.3.1)(react@18.3.1):
@@ -5561,18 +5561,18 @@ packages:
     resolution: {integrity: sha512-X324n9OtpTmOMqEgDUEA/RgLrNfBF/jwJdctaPZDzB3mppxJk7TLIDmOreEDm1Bq4R9LSPu4Epf8VSdovNU+iA==}
     dev: false
 
-  /tailwind-variants@0.1.13(tailwindcss@3.4.18):
+  /tailwind-variants@0.1.13(tailwindcss@3.4.19):
     resolution: {integrity: sha512-G2M7M74hjq0nAo6QdEfUJgF+0t9DecFUw91GC1P9YTnwMcfB3uChT5U5e2DuNU42xoOz15lzo7r0mPdMzZkylg==}
     engines: {node: '>=16.x', pnpm: '>=7.x'}
     peerDependencies:
       tailwindcss: '*'
     dependencies:
       tailwind-merge: 1.14.0
-      tailwindcss: 3.4.18(tsx@4.23.1)
+      tailwindcss: 3.4.19(tsx@4.23.1)
     dev: false
 
-  /tailwindcss@3.4.18(tsx@4.23.1):
-    resolution: {integrity: sha512-6A2rnmW5xZMdw11LYjhcI5846rt9pbLSabY5XPxo+XWdxwZaFEn47Go4NzFiHu9sNNmr/kXivP1vStfvMaK1GQ==}
+  /tailwindcss@3.4.19(tsx@4.23.1):
+    resolution: {integrity: sha512-3ofp+LL8E+pK/JuPLPggVAIaEuhvIz4qNcf3nA1Xn2o/7fb7s/TYpHhwGDv1ZU3PkBluUVaF8PyCHcm48cKLWQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
