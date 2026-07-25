@@ -70,6 +70,7 @@ export function ThemeMenu() {
                       })}
                       data-umami-event={`Select ${theme.title} Theme`}
                       onClick={() => handleTheme(theme.id)}
+                      type="button"
                     >
                       {theme.title}
                     </button>

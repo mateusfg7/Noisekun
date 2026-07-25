@@ -50,6 +50,7 @@ export function ConfirmationModal({ showModal, setShowModal }: Props) {
                     className="w-full rounded-lg bg-dark-background/10 px-5 py-4 text-dark-background text-lg leading-none transition-colors hover:bg-dark-background hover:text-light-background md:w-fit md:py-3"
                     data-umami-event="Confirm copy combo URL"
                     onClick={closeModal}
+                    type="button"
                   >
                     Ok, thanks!
                   </button>

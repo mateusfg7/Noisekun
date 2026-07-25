@@ -26,6 +26,7 @@ export function Clear() {
       disabled={isDisabled()}
       onClick={clear}
       title="Clear all active sounds"
+      type="button"
     >
       clear
     </button>

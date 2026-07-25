@@ -70,6 +70,7 @@ export function InteractionModal() {
                     className="rounded-lg px-5 py-3 text-lg text-red-950 leading-none transition-colors hover:bg-red-900 hover:text-red-100"
                     data-umami-event="Cancel combo"
                     onClick={cancel}
+                    type="button"
                   >
                     Cancel
                   </button>
@@ -77,6 +78,7 @@ export function InteractionModal() {
                     className="rounded-lg bg-green-100 px-5 py-3 text-green-950 text-lg leading-none transition-colors hover:bg-green-900 hover:text-green-100"
                     data-umami-event="Play combo"
                     onClick={closeModal}
+                    type="button"
                   >
                     Play
                   </button>

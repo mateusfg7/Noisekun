@@ -20,6 +20,7 @@ export const ActionButtons = ({ onCancel, onSave }: ActionButtonProps) => (
       className={actionButton({ action: "cancel" })}
       data-umami-event="Reset config"
       onClick={onCancel}
+      type="button"
     >
       Cancel
     </button>
@@ -27,6 +28,7 @@ export const ActionButtons = ({ onCancel, onSave }: ActionButtonProps) => (
       className={actionButton({ action: "save" })}
       data-umami-event="Save config"
       onClick={onSave}
+      type="button"
     >
       Save
     </button>
