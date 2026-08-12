@@ -28,7 +28,7 @@
     "@types/node": "20.19.43",
     "@types/react": "18.3.31",
     "autoprefixer": "10.5.4",
-    "postcss": "8.5.22",
+    "postcss": "8.5.23",
     "tailwindcss": "3.4.19",
     "ts-node": "10.9.2",
     "tsx": "4.23.1",
