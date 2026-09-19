@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@biomejs/biome": "2.5.5",
+    "@biomejs/biome": "2.5.14",
     "turbo": "2.10.6",
     "ultracite": "7.9.4"
   },
