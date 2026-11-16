@@ -1,7 +1,7 @@
 import type React from "react";
-import { useEffect, useState } from "react";
 
 import { VolumeControllerSlider } from "~/components/ui/volume-controller-slider";
+import { useIsClient } from "~/hooks/use-is-client";
 import { useSoundsStateStore } from "~/stores/sounds-state-store";
 
 export type IVolumeController = {
@@ -17,23 +17,17 @@ export const VolumeController: React.FC<IVolumeController> = ({
   soundId,
   handleSoundVolume,
 }) => {
-  const [rangeValue, setRangeValue] = useState(1000);
-
-  const getSound = useSoundsStateStore((state) => state.getSound);
-  const sounds = useSoundsStateStore((state) => state.sounds);
+  const storedVolume = useSoundsStateStore(
+    (state) => state.sounds.find((sound) => sound.id === soundId)?.volume
+  );
+  // The sounds store is persisted in localStorage; render the default until
+  // hydration so the slider matches the server HTML.
+  const isClient = useIsClient();
+  const rangeValue = ((isClient ? storedVolume : undefined) ?? 1) * 1000;
 
   function handleVolume(volume: number) {
-    setRangeValue(volume);
     handleSoundVolume(volume / 1000);
   }
-
-  useEffect(() => {
-    const soundState = getSound(soundId);
-
-    if (soundState) {
-      setRangeValue(soundState.volume * 1000);
-    }
-  }, [sounds]);
 
   return (
     <div

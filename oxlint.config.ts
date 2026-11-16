@@ -23,22 +23,5 @@ export default defineConfig({
     // Next/Tailwind/PostCSS configs in apps/web are CommonJS.
     "node/global-require": "off",
     "unicorn/prefer-module": "off",
-
-    // Real findings in existing code, downgraded so the migration lands
-    // without behaviour changes. Fix them, then drop the overrides so they
-    // fall back to the preset's "error".
-    "eslint/no-redeclare": "warn",
-    "eslint/no-use-before-define": "warn",
-    "import/no-named-as-default": "warn",
-    "jsx-a11y/control-has-associated-label": "warn",
-    "react/exhaustive-effect-dependencies": "warn",
-    "react/hook-use-state": "warn",
-    "react/immutability": "warn",
-    "react/no-deriving-state-in-effects": "warn",
-    "react/set-state-in-effect": "warn",
-    "react/todo": "warn",
-    "unicorn/consistent-function-scoping": "warn",
-    "unicorn/no-array-for-each": "warn",
-    "unicorn/prefer-number-coercion": "warn",
   },
 });

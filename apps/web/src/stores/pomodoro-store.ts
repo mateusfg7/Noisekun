@@ -6,12 +6,12 @@ export const PomodoroStatus = {
   ticking: "ticking",
 } as const;
 
-export type PomodoroStatus =
+export type PomodoroStatusValue =
   (typeof PomodoroStatus)[keyof typeof PomodoroStatus];
 
 type PomodoroStore = {
-  pomodoroStatus: PomodoroStatus;
-  setPomodoroStatus: (newStatus: PomodoroStatus) => void;
+  pomodoroStatus: PomodoroStatusValue;
+  setPomodoroStatus: (newStatus: PomodoroStatusValue) => void;
 };
 
 export const usePomodoroStore = create<PomodoroStore>((set) => ({

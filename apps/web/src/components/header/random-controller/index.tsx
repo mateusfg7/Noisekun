@@ -25,61 +25,65 @@ export function RandomModeButton() {
     soundsRef.current = sounds;
   }, [sounds]);
 
-  function clearAllTimeouts() {
-    timeoutsRef.current.forEach(clearTimeout);
-    timeoutsRef.current = [];
-  }
-
-  function clearRandomInterval() {
-    if (intervalIdRef.current) {
-      clearInterval(intervalIdRef.current);
-      intervalIdRef.current = null;
-    }
-  }
-
-  // Apply Volumes with Timeouts
-  function applyVolumeChanges(stepDuration: number) {
-    clearAllTimeouts(); // Clears existing timeouts
-
-    const activeSounds = soundsRef.current.filter((sound) => sound.active);
-
-    for (const initialSound of activeSounds) {
-      const targetVolume = Math.random();
-      const volumeSteps = calculateVolumeSteps(
-        initialSound.volume,
-        targetVolume,
-        updateSteps
-      );
-
-      const setVolumeStep = (sound: SoundState, index: number) => {
-        if (index < volumeSteps.length) {
-          // Fetch the most recent value of the sound
-          const currentSound = soundsRef.current.find((s) => s.id === sound.id);
-          if (currentSound?.active) {
-            const updatedVolume = volumeSteps[index];
-            const updatedSound = { ...currentSound, volume: updatedVolume };
-            setSound(updatedSound);
-            // add next timeout only if this one is successful
-            const timeoutId = setTimeout(() => {
-              setVolumeStep(currentSound, index + 1);
-            }, stepDuration);
-
-            timeoutsRef.current.push(timeoutId);
-          }
-        }
-      };
-
-      setVolumeStep(initialSound, 0);
-    }
-  }
-
-  function randomizeVolumes() {
-    // Total duration for volume change
-    const stepDuration = updateTransitionTimeInMs / updateSteps;
-    applyVolumeChanges(stepDuration);
-  }
-
   useEffect(() => {
+    function clearAllTimeouts() {
+      for (const timeoutId of timeoutsRef.current) {
+        clearTimeout(timeoutId);
+      }
+      timeoutsRef.current = [];
+    }
+
+    function clearRandomInterval() {
+      if (intervalIdRef.current) {
+        clearInterval(intervalIdRef.current);
+        intervalIdRef.current = null;
+      }
+    }
+
+    // Apply Volumes with Timeouts
+    function applyVolumeChanges(stepDuration: number) {
+      clearAllTimeouts(); // Clears existing timeouts
+
+      const activeSounds = soundsRef.current.filter((sound) => sound.active);
+
+      for (const initialSound of activeSounds) {
+        const targetVolume = Math.random();
+        const volumeSteps = calculateVolumeSteps(
+          initialSound.volume,
+          targetVolume,
+          updateSteps
+        );
+
+        const setVolumeStep = (sound: SoundState, index: number) => {
+          if (index < volumeSteps.length) {
+            // Fetch the most recent value of the sound
+            const currentSound = soundsRef.current.find(
+              (s) => s.id === sound.id
+            );
+            if (currentSound?.active) {
+              const updatedVolume = volumeSteps[index];
+              const updatedSound = { ...currentSound, volume: updatedVolume };
+              setSound(updatedSound);
+              // add next timeout only if this one is successful
+              const timeoutId = setTimeout(() => {
+                setVolumeStep(currentSound, index + 1);
+              }, stepDuration);
+
+              timeoutsRef.current.push(timeoutId);
+            }
+          }
+        };
+
+        setVolumeStep(initialSound, 0);
+      }
+    }
+
+    function randomizeVolumes() {
+      // Total duration for volume change
+      const stepDuration = updateTransitionTimeInMs / updateSteps;
+      applyVolumeChanges(stepDuration);
+    }
+
     if (randomMode) {
       intervalIdRef.current = setInterval(randomizeVolumes, updateIntervalInMs);
     } else {
@@ -91,7 +95,13 @@ export function RandomModeButton() {
       clearRandomInterval();
       clearAllTimeouts();
     };
-  }, [randomMode, updateIntervalInMs]);
+  }, [
+    randomMode,
+    setSound,
+    updateIntervalInMs,
+    updateSteps,
+    updateTransitionTimeInMs,
+  ]);
 
   return (
     <div className="flex items-center gap-3 opacity-90 hover:opacity-100">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useMount } from "react-use";
 
 import { ActionButtons } from "~/components/action-buttons";
 import { Footer } from "~/components/footer";
@@ -20,11 +20,13 @@ export default function Home() {
 
   const [querySounds] = useQueryState("sounds");
 
-  useEffect(() => {
+  // Only the initial URL matters: a shared link with sounds needs a click
+  // before autoplay is allowed, anything else counts as interacted.
+  useMount(() => {
     if (!querySounds.length) {
       setUserHasInteracted(true);
     }
-  }, []);
+  });
 
   return (
     <div className={currTheme}>

@@ -37,9 +37,6 @@ export function ConfigModal({
     }
     closeModal();
   }
-  function handleReset() {
-    updateTime(25);
-  }
 
   function updateTime(time: number) {
     if (time >= 99) {
@@ -49,6 +46,10 @@ export function ConfigModal({
     }
   }
 
+  function handleReset() {
+    updateTime(25);
+  }
+
   return (
     <>
       <div
@@ -56,6 +57,7 @@ export function ConfigModal({
         data-testid="pomodoro-timer"
       >
         <button
+          aria-label={`Pomodoro timer ${displayMinutes}:${displaySeconds}, open configuration`}
           className="rounded-xl bg-primary-foreground/10 text-primary-foreground transition-colors hover:bg-primary-foreground/30 disabled:hover:bg-primary-foreground/10 data-[is-loading='true']:animate-pulse data-[is-loading='true']:cursor-wait"
           data-is-loading={isLoading}
           data-testid="pomodoro-timer-button"
