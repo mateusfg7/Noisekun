@@ -1,6 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useEffect, useState } from "react";
-import toast from "react-hot-toast";
+import { Fragment, useState } from "react";
+import { toast } from "react-hot-toast";
 
 import { useGlobalRandomModeStore } from "~/stores/random-mode-store";
 
@@ -22,25 +22,22 @@ export function ConfigMenu() {
 
   const randomModeStore = useGlobalRandomModeStore();
 
-  const settingStates = {
-    randomModeTransitionTime: useState(
-      randomModeStore.updateTransitionTimeInMs
-    ),
-    randomModeUpdateInterval: useState(randomModeStore.updateIntervalInMs),
-    randomModeUpdateSteps: useState(randomModeStore.updateSteps),
-  };
+  const [transitionTime, setTransitionTime] = useState(
+    randomModeStore.updateTransitionTimeInMs
+  );
+  const [updateInterval, setUpdateInterval] = useState(
+    randomModeStore.updateIntervalInMs
+  );
+  const [updateSteps, setUpdateSteps] = useState(randomModeStore.updateSteps);
 
   const randomModeTransitionTime: Action = {
     reset: () => {
-      settingStates.randomModeTransitionTime[1](
-        randomModeStore.updateTransitionTimeInMs
-      );
+      setTransitionTime(randomModeStore.updateTransitionTimeInMs);
     },
     save: () => {
-      const [transitionTimeInMs] = settingStates.randomModeTransitionTime;
+      const transitionTimeInMs = transitionTime;
 
-      const MAX_TRANSITION_TIME =
-        settingStates.randomModeUpdateInterval[0] - 1000;
+      const MAX_TRANSITION_TIME = updateInterval - 1000;
       const MIN_TRANSITION_TIME = 1000; // 1 second
 
       if (transitionTimeInMs < MIN_TRANSITION_TIME) {
@@ -63,18 +60,15 @@ export function ConfigMenu() {
       return {};
     },
     wasChanged: () =>
-      settingStates.randomModeTransitionTime[0] !==
-      randomModeStore.updateTransitionTimeInMs,
+      transitionTime !== randomModeStore.updateTransitionTimeInMs,
   };
 
   const randomModeUpdateInterval: Action = {
     reset: () => {
-      settingStates.randomModeUpdateInterval[1](
-        randomModeStore.updateIntervalInMs
-      );
+      setUpdateInterval(randomModeStore.updateIntervalInMs);
     },
     save: () => {
-      const [updateIntervalInMs] = settingStates.randomModeUpdateInterval;
+      const updateIntervalInMs = updateInterval;
 
       const MIN_INTERVAL = 5 * 1000; // 5 seconds
       const MAX_INTERVAL = 10 * 60 * 1000; // 10 minutes
@@ -98,21 +92,18 @@ export function ConfigMenu() {
       randomModeStore.setUpdateInterval(updateIntervalInMs);
       return {};
     },
-    wasChanged: () =>
-      settingStates.randomModeUpdateInterval[0] !==
-      randomModeStore.updateIntervalInMs,
+    wasChanged: () => updateInterval !== randomModeStore.updateIntervalInMs,
   };
 
   const randomModeUpdateSteps: Action = {
     reset: () => {
-      settingStates.randomModeUpdateSteps[1](randomModeStore.updateSteps);
+      setUpdateSteps(randomModeStore.updateSteps);
     },
     save: () => {
-      randomModeStore.setUpdateSteps(settingStates.randomModeUpdateSteps[0]);
+      randomModeStore.setUpdateSteps(updateSteps);
       return {};
     },
-    wasChanged: () =>
-      settingStates.randomModeUpdateSteps[0] !== randomModeStore.updateSteps,
+    wasChanged: () => updateSteps !== randomModeStore.updateSteps,
   };
 
   const actionList: Action[] = [
@@ -152,12 +143,6 @@ export function ConfigMenu() {
     closeModal();
   }
 
-  useEffect(() => {
-    settingStates.randomModeUpdateInterval[1](
-      randomModeStore.updateIntervalInMs
-    );
-  }, [randomModeStore.updateIntervalInMs]);
-
   return (
     <>
       <TriggerButton openModal={openModal} />
@@ -175,18 +160,18 @@ export function ConfigMenu() {
                     <div className="w-full">
                       <RandomVolumeSettings
                         updateInterval={{
-                          set: settingStates.randomModeUpdateInterval[1],
-                          value: settingStates.randomModeUpdateInterval[0],
+                          set: setUpdateInterval,
+                          value: updateInterval,
                           wasChanged: randomModeUpdateInterval.wasChanged,
                         }}
                         updateSteps={{
-                          set: settingStates.randomModeUpdateSteps[1],
-                          value: settingStates.randomModeUpdateSteps[0],
+                          set: setUpdateSteps,
+                          value: updateSteps,
                           wasChanged: randomModeUpdateSteps.wasChanged,
                         }}
                         updateTransitionTime={{
-                          set: settingStates.randomModeTransitionTime[1],
-                          value: settingStates.randomModeTransitionTime[0],
+                          set: setTransitionTime,
+                          value: transitionTime,
                           wasChanged: randomModeTransitionTime.wasChanged,
                         }}
                       />
