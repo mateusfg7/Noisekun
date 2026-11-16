@@ -1,8 +1,9 @@
 import { Menu, Transition } from "@headlessui/react";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import { FiTrash } from "react-icons/fi";
 import { PiPlaylistBold } from "react-icons/pi";
 
+import { useIsClient } from "~/hooks/use-is-client";
 import { useComboStore } from "~/stores/combo-store";
 import { useSoundsStateStore } from "~/stores/sounds-state-store";
 import { useThemeStore } from "~/stores/theme-store";
@@ -15,7 +16,10 @@ export function ComboList() {
   const deleteCombo = useComboStore((state) => state.deleteCombo);
 
   const [deleteMode, setDeleteMode] = useState(false);
-  const [isEmpty, setIsEmpty] = useState(true);
+  // Combos are persisted in localStorage, so the server always renders the
+  // list as empty; keep it that way until hydration finishes.
+  const isClient = useIsClient();
+  const isEmpty = !isClient || combos.length === 0;
 
   function updateCombo(id: string) {
     const matches = combos.filter((item) => item.id === id);
@@ -42,14 +46,6 @@ export function ComboList() {
     bulkUpdateSounds([...disabledSounds, ...comboSounds]);
     setTheme(combo.theme);
   }
-
-  useEffect(() => {
-    setIsEmpty(combos.length === 0);
-  }, []);
-
-  useEffect(() => {
-    setIsEmpty(combos.length === 0);
-  }, [combos]);
 
   return (
     <div className="z-40" data-testid="combo-list">

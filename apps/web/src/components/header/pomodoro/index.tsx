@@ -1,64 +1,81 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { FiPause, FiPlay, FiRotateCw } from "react-icons/fi";
 
+import { useIsClient } from "~/hooks/use-is-client";
 import { PomodoroStatus, usePomodoroStore } from "~/stores/pomodoro-store";
 import { padZero } from "~/utils/pad-zero";
 
 import { ConfigModal } from "./config-modal";
+
+const STORAGE_KEY = "default-timer-minutes";
+const DEFAULT_MINUTES = 25;
+const MAX_MINUTES = 99;
+
+const toTotalSeconds = (minutes: number) => Math.min(minutes, MAX_MINUTES) * 60;
+const getMinutes = (totalSeconds: number) =>
+  padZero(Math.floor(totalSeconds / 60));
+const getRemainderSeconds = (totalSeconds: number) =>
+  padZero(totalSeconds % 60);
 
 export function Pomodoro() {
   const setPomodoroStatus = usePomodoroStore(
     (state) => state.setPomodoroStatus
   );
 
-  const [defaultTimeInSec, setDefaultTimeInSec] = useState(25 * 60);
-  const [remainingTime, setRemainingTime] = useState(defaultTimeInSec);
+  // The saved duration lives in localStorage, which the server can't read:
+  // show a placeholder until hydration, then read it during render.
+  const isClient = useIsClient();
+  const isLoadingStorage = !isClient;
+  const storedMinutes = isClient
+    ? Number(localStorage.getItem(STORAGE_KEY))
+    : 0;
+
+  // `null` means "not set yet": fall back to the stored/default duration.
+  const [customTimeInSec, setCustomTimeInSec] = useState<number | null>(null);
+  const [remainingOverride, setRemainingOverride] = useState<number | null>(
+    null
+  );
   const [isTicking, setIsTicking] = useState(false);
   const [alarmIsRinging, setAlarmIsRinging] = useState(false);
-  const [isLoadingStorage, setIsLoadingStorage] = useState(true);
+
+  const defaultTimeInSec =
+    customTimeInSec ?? toTotalSeconds(storedMinutes || DEFAULT_MINUTES);
+  const remainingTime = remainingOverride ?? defaultTimeInSec;
 
   const alarmRef = useRef<HTMLAudioElement>(null);
 
-  const toggleAlarm = () => {
-    if (alarmIsRinging) {
-      alarmRef.current?.pause();
-    } else {
-      alarmRef.current?.play();
-    }
+  const startAlarm = useCallback(() => {
+    alarmRef.current?.play();
+    setAlarmIsRinging(true);
+  }, []);
 
-    setAlarmIsRinging(!alarmIsRinging);
+  const stopAlarm = () => {
+    alarmRef.current?.pause();
+    setAlarmIsRinging(false);
   };
 
   function setMinutes(minutes: number) {
-    const nextTotalSeconds = minutes >= 99 ? 99 * 60 : minutes * 60;
+    const nextTotalSeconds = toTotalSeconds(minutes);
 
-    setDefaultTimeInSec(nextTotalSeconds);
-    setRemainingTime(nextTotalSeconds);
-    localStorage.setItem(
-      "default-timer-minutes",
-      String(nextTotalSeconds / 60)
-    );
+    setCustomTimeInSec(nextTotalSeconds);
+    setRemainingOverride(null);
+    localStorage.setItem(STORAGE_KEY, String(nextTotalSeconds / 60));
 
     setPomodoroStatus(PomodoroStatus.idle);
   }
 
-  const getMinutes = (totalSeconds: number) =>
-    padZero(Math.floor(totalSeconds / 60));
-  const getRemainderSeconds = (totalSeconds: number) =>
-    padZero(totalSeconds % 60);
-
   const resetTimer = () => {
-    setRemainingTime(defaultTimeInSec);
+    setRemainingOverride(null);
     setPomodoroStatus(PomodoroStatus.idle);
 
     if (alarmIsRinging) {
-      toggleAlarm();
+      stopAlarm();
     }
   };
 
   const handleToggle = () => {
     if (remainingTime === 0) {
-      setRemainingTime(defaultTimeInSec);
+      setRemainingOverride(null);
     }
 
     setIsTicking(!isTicking);
@@ -67,42 +84,28 @@ export function Pomodoro() {
     );
 
     if (alarmIsRinging) {
-      toggleAlarm();
+      stopAlarm();
     }
   };
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (!isTicking) {
-        clearInterval(intervalId);
-        return;
-      }
+    if (!isTicking) {
+      return;
+    }
 
+    const timeoutId = setTimeout(() => {
       const nextRemaining = remainingTime - 1;
-      setRemainingTime(nextRemaining);
+      setRemainingOverride(nextRemaining);
+
       if (nextRemaining === 0) {
         setIsTicking(false);
         setPomodoroStatus(PomodoroStatus.stopped);
-        if (!alarmIsRinging) {
-          toggleAlarm();
-        }
-        clearInterval(intervalId);
+        startAlarm();
       }
     }, 1000);
 
-    return () => clearInterval(intervalId);
-  }, [isTicking, remainingTime]);
-
-  useEffect(() => {
-    const defaultTimerStored = Number(
-      localStorage.getItem("default-timer-minutes")
-    );
-    if (defaultTimerStored) {
-      setMinutes(defaultTimerStored);
-    }
-
-    setIsLoadingStorage(false);
-  }, []);
+    return () => clearTimeout(timeoutId);
+  }, [isTicking, remainingTime, setPomodoroStatus, startAlarm]);
 
   return (
     <div className="flex items-center gap-1 leading-none">
