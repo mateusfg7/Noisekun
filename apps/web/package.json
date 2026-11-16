@@ -1,7 +1,7 @@
 {
   "name": "@noisekun/web",
-  "private": true,
   "version": "1.5.3",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",

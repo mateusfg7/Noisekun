@@ -2,6 +2,7 @@ import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect, useState } from "react";
 import { FiTrash } from "react-icons/fi";
 import { PiPlaylistBold } from "react-icons/pi";
+
 import { useComboStore } from "~/stores/combo-store";
 import { useSoundsStateStore } from "~/stores/sounds-state-store";
 import { useThemeStore } from "~/stores/theme-store";
@@ -26,10 +27,10 @@ export function ComboList() {
     const [combo] = matches;
     const comboSounds = combo.sounds;
 
-    const activeSoundsIds = comboSounds.map((sound) => sound.id);
+    const activeSoundsIds = new Set(comboSounds.map((sound) => sound.id));
 
     const disabledSounds = sounds
-      .filter((sound) => !activeSoundsIds.includes(sound.id))
+      .filter((sound) => !activeSoundsIds.has(sound.id))
       .map((sound) => ({ ...sound, active: false }));
 
     console.log(
@@ -72,7 +73,7 @@ export function ComboList() {
         >
           <Menu.Items
             as="div"
-            className="snap scrollbar-hide absolute right-4 left-4 mt-2 flex max-h-[85vh] origin-top-right snap-y snap-mandatory scroll-pt-4 flex-col gap-1 overflow-y-auto rounded-2xl p-4 shadow-2xl backdrop-blur-md focus:outline-none md:right-0 md:left-auto"
+            className="snap absolute left-4 right-4 mt-2 flex max-h-[85vh] origin-top-right snap-y snap-mandatory scroll-pt-4 flex-col gap-1 overflow-y-auto rounded-2xl p-4 shadow-2xl backdrop-blur-md scrollbar-hide focus:outline-none md:left-auto md:right-0"
             data-testid="combo-list-modal"
           >
             <div className="mb-2 flex min-w-40 items-center justify-around gap-1 rounded-lg bg-primary-foreground/5 text-primary-foreground">
@@ -99,7 +100,7 @@ export function ComboList() {
                 <Menu.Item key={combo.id}>
                   {({ active }) => (
                     <button
-                      className="rounded-xl bg-primary-foreground/5 p-3 text-primary-foreground leading-none tracking-wider duration-300 data-[is-active='true']:bg-primary-foreground/20"
+                      className="rounded-xl bg-primary-foreground/5 p-3 leading-none tracking-wider text-primary-foreground duration-300 data-[is-active='true']:bg-primary-foreground/20"
                       data-is-active={active}
                       data-umami-event="Select combo"
                       onClick={() => updateCombo(combo.id)}
@@ -114,7 +115,7 @@ export function ComboList() {
             {deleteMode
               ? combos.map((combo) => (
                   <button
-                    className="group flex items-center justify-between gap-1 rounded-xl bg-gradient-to-r bg-primary-foreground/5 p-3 text-primary-foreground leading-none tracking-wider duration-300 hover:from-primary-foreground/20 hover:to-red-600/20 data-[is-active='true']:bg-primary-foreground/20"
+                    className="group flex items-center justify-between gap-1 rounded-xl bg-primary-foreground/5 bg-gradient-to-r p-3 leading-none tracking-wider text-primary-foreground duration-300 hover:from-primary-foreground/20 hover:to-red-600/20 data-[is-active='true']:bg-primary-foreground/20"
                     data-testid={`${combo.id}_delete_button`}
                     data-umami-event="Delete combo"
                     key={combo.id}

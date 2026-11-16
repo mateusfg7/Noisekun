@@ -9,7 +9,7 @@ export const settingRow = tv({
 });
 
 export const dot = tv({
-  base: /*tw:*/ "absolute top-1 -left-1 h-[0.4rem] w-[0.4rem] rounded-full bg-primary-foreground opacity-0 transition-opacity duration-300",
+  base: /*tw:*/ "absolute -left-1 top-1 h-[0.4rem] w-[0.4rem] rounded-full bg-primary-foreground opacity-0 transition-opacity duration-300",
   variants: {
     active: {
       true: "opacity-1",

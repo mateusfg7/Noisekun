@@ -107,7 +107,7 @@ export function ConfigModal({
                   <div className="flex flex-col items-start gap-10">
                     <Dialog.Title
                       as="h3"
-                      className="font-bold text-2xl leading-6"
+                      className="text-2xl font-bold leading-6"
                     >
                       Pomodoro Configuration
                     </Dialog.Title>
@@ -135,7 +135,7 @@ export function ConfigModal({
                   </div>
                   <div className="flex justify-end gap-1">
                     <button
-                      className="rounded-lg px-5 py-3 text-lg text-red-800 leading-none transition-colors hover:bg-red-800 hover:text-red-100"
+                      className="rounded-lg px-5 py-3 text-lg leading-none text-red-800 transition-colors hover:bg-red-800 hover:text-red-100"
                       data-umami-event="Reset pomodoro config"
                       onClick={handleReset}
                       type="button"
@@ -143,7 +143,7 @@ export function ConfigModal({
                       Reset
                     </button>
                     <button
-                      className="rounded-lg bg-green-100 px-5 py-3 text-green-950 text-lg leading-none transition-colors hover:bg-green-900 hover:text-green-100"
+                      className="rounded-lg bg-green-100 px-5 py-3 text-lg leading-none text-green-950 transition-colors hover:bg-green-900 hover:text-green-100"
                       data-umami-event="Save pomodoro config"
                       onClick={handleSave}
                       type="button"

@@ -16,20 +16,21 @@ jobs:
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
 
+      # Ultracite 8 requires Node ^22.22.2 or >=24.15.
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: pnpm
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # `--reporter=github` annotates the diff instead of burying the
+      # `--format=github` annotates the diff instead of burying the
       # findings in the log. Passed without `--`, which ultracite reads as
       # the start of a file list rather than as passthrough options.
       - name: Check
-        run: pnpm check --reporter=github
+        run: pnpm check --format=github
 
   typecheck:
     name: Typecheck

@@ -20,7 +20,6 @@ _Listen to combinations of ambient sounds to **relax** or become more **producti
 
 ![](.github/assets/pagespeed-metrics.svg)
 
-
 </div>
 
 <br/>
@@ -31,7 +30,7 @@ _Listen to combinations of ambient sounds to **relax** or become more **producti
 - 23 ambient sounds
 - Control the volume for each sound individually
 - Control global sound
-- Enhance the look with 7 themes; the theme changes according to the combination of sounds 
+- Enhance the look with 7 themes; the theme changes according to the combination of sounds
 - Pomodoro timer
 - Save sound combos
 - Share sound combo with theme
@@ -56,32 +55,32 @@ Thanks for your interest in contributing to Noisekun! Please take a moment to re
 
 ## Sounds
 
-| Sound                                                                                                          | Author                                                                   | License                                                            | Edition                                         |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------ | ----------------------------------------------- |
-| [Pomodoro Alarm](https://freesound.org/people/ZyryTSounds/sounds/219244/)                                      | [ZyryTSounds](https://freesound.org/people/ZyryTSounds/)                 | CC0                                                                | [Mateus Felipe](https://github.com/mateusfg7)   |
-| [Airplane](https://www.youtube.com/watch?v=yJrNMM7xvug)                                                        | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0                                                                |
-| [Birds](https://www.youtube.com/watch?v=J6OGbkl4Vrs)                                                           | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0                                                                |
-| [Coffee Shop](https://www.youtube.com/watch?v=2ewwVYoMU5I)                                                     | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0                                                                |
-| [Drops](https://www.youtube.com/watch?v=yLhG21A_9QE)                                                           | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0                                                                |
-| [Fire Wood](https://www.youtube.com/watch?v=aJ21cKAR7-M)                                                       | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0                                                                |
-| [Cave Drops](https://www.youtube.com/watch?v=23INRDlV-1g)                                                      | [SFX Producer](https://www.youtube.com/@sfxworld)                        | CC0                                                                | [Devan McGeer](https://github.com/McGeerDev)    |
-| [Leaves](https://freesound.org/people/Stek59/sounds/457318/)                                                   | [Stek59](https://freesound.org/people/Stek59/)                           | CC0                                                                | [Mateus Felipe](https://github.com/mateusfg7)   |
-| [Night](https://www.youtube.com/watch?v=nd1qc_bhMOs)                                                           | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0                                                                |
-| [Rain](https://www.youtube.com/watch?v=3oMcTXhXOpc)                                                            | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0                                                                |
-| [Stream Water](https://www.youtube.com/watch?v=cN5sGvQ_m_c)                                                    | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0                                                                |
-| [Thunder Storm](https://freesound.org/people/Borys_Kozielski/sounds/316831/)                                   | [Borys Kozielski](https://freesound.org/people/Borys_Kozielski/)         | CC0                                                                |
-| [Train](https://trains.ambient-mixer.com/rainy-train)                                                          | [vahid](https://user.ambient-mixer.com/details/sylvanhomestead)          | CC Sampling +                                                      |
-| [Underwater](https://freesound.org/people/Tim_Verberne/sounds/482167/)                                         | [Tim Verberne](https://freesound.org/people/Tim_Verberne/)               | CC0                                                                |
-| [Washing Machine](https://quicksounds.com/sound/12411/washing-machine-underwater-ambience-2)                   | [QuickSounds.com](https://quicksounds.com/)                              | [Standard License](https://quicksounds.com/page/license-agreement) | [Mateus Felipe](https://github.com/mateusfg7)   |
-| [Waterfall](https://freesound.org/people/straget/sounds/489073/)                                               | [Straget](https://freesound.org/people/straget/)                         | CC BY                                                              | [Mateus Felipe](https://github.com/mateusfg7)   |
-| [Waves](https://www.youtube.com/watch?v=SL9NdTMsIUk)                                                           | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0                                                                |
-| [Wind](https://freesound.org/people/felix.blume/sounds/217506/)                                                | [Felix Blume](https://freesound.org/people/felix.blume/)                 | CC0                                                                | [Mateus Felipe](https://github.com/mateusfg7)   |
-| [Brown Noise](https://freesound.org/people/georgedyer/sounds/171552/)                                          | [George Dyer](https://freesound.org/people/georgedyer/)                  | CC0                                                                | [Mateus Felipe](https://github.com/mateusfg7)   |
-| [White noise](https://commons.wikimedia.org/w/index.php?title=File%3AWhite-noise-sound-20sec-mono-44100Hz.ogg) | [Jorge Stolfi](https://commons.wikimedia.org/wiki/User:Jorge_Stolfi)     | CC BY-SA                                                           |
-| [Pink Noise](https://es.wikipedia.org/wiki/Archivo:Pink_noise.ogg)                                             | [Omegatron](https://commons.wikimedia.org/wiki/User:Omegatron)           | CC BY-SA                                                           |
-| [Playground](https://www.youtube.com/watch?v=YxGv6o1g-LM)                                                      | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0                                                                | [Mateus Felipe](https://github.com/mateusfg7)   |
-| [Boat](https://freesound.org/people/Falcet/sounds/439365/)                                                     | [Falcet](https://freesound.org/people/Falcet/)                           | CC0                                                                | [Porrumentzio](https://github.com/Porrumentzio) |
-| [Rain on Tent](https://freesound.org/people/Garuda1982/sounds/523397/)                                         | [Garuda1982](https://freesound.org/people/Garuda1982/)                   | CC BY 4.0                                                          | [Mateus Felipe](https://github.com/mateusfg7)   |
+| Sound | Author | License | Edition |
+| --- | --- | --- | --- |
+| [Pomodoro Alarm](https://freesound.org/people/ZyryTSounds/sounds/219244/) | [ZyryTSounds](https://freesound.org/people/ZyryTSounds/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7) |
+| [Airplane](https://www.youtube.com/watch?v=yJrNMM7xvug) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0 |
+| [Birds](https://www.youtube.com/watch?v=J6OGbkl4Vrs) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0 |
+| [Coffee Shop](https://www.youtube.com/watch?v=2ewwVYoMU5I) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0 |
+| [Drops](https://www.youtube.com/watch?v=yLhG21A_9QE) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0 |
+| [Fire Wood](https://www.youtube.com/watch?v=aJ21cKAR7-M) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0 |
+| [Cave Drops](https://www.youtube.com/watch?v=23INRDlV-1g) | [SFX Producer](https://www.youtube.com/@sfxworld) | CC0 | [Devan McGeer](https://github.com/McGeerDev) |
+| [Leaves](https://freesound.org/people/Stek59/sounds/457318/) | [Stek59](https://freesound.org/people/Stek59/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7) |
+| [Night](https://www.youtube.com/watch?v=nd1qc_bhMOs) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0 |
+| [Rain](https://www.youtube.com/watch?v=3oMcTXhXOpc) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0 |
+| [Stream Water](https://www.youtube.com/watch?v=cN5sGvQ_m_c) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0 |
+| [Thunder Storm](https://freesound.org/people/Borys_Kozielski/sounds/316831/) | [Borys Kozielski](https://freesound.org/people/Borys_Kozielski/) | CC0 |
+| [Train](https://trains.ambient-mixer.com/rainy-train) | [vahid](https://user.ambient-mixer.com/details/sylvanhomestead) | CC Sampling + |
+| [Underwater](https://freesound.org/people/Tim_Verberne/sounds/482167/) | [Tim Verberne](https://freesound.org/people/Tim_Verberne/) | CC0 |
+| [Washing Machine](https://quicksounds.com/sound/12411/washing-machine-underwater-ambience-2) | [QuickSounds.com](https://quicksounds.com/) | [Standard License](https://quicksounds.com/page/license-agreement) | [Mateus Felipe](https://github.com/mateusfg7) |
+| [Waterfall](https://freesound.org/people/straget/sounds/489073/) | [Straget](https://freesound.org/people/straget/) | CC BY | [Mateus Felipe](https://github.com/mateusfg7) |
+| [Waves](https://www.youtube.com/watch?v=SL9NdTMsIUk) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0 |
+| [Wind](https://freesound.org/people/felix.blume/sounds/217506/) | [Felix Blume](https://freesound.org/people/felix.blume/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7) |
+| [Brown Noise](https://freesound.org/people/georgedyer/sounds/171552/) | [George Dyer](https://freesound.org/people/georgedyer/) | CC0 | [Mateus Felipe](https://github.com/mateusfg7) |
+| [White noise](https://commons.wikimedia.org/w/index.php?title=File%3AWhite-noise-sound-20sec-mono-44100Hz.ogg) | [Jorge Stolfi](https://commons.wikimedia.org/wiki/User:Jorge_Stolfi) | CC BY-SA |
+| [Pink Noise](https://es.wikipedia.org/wiki/Archivo:Pink_noise.ogg) | [Omegatron](https://commons.wikimedia.org/wiki/User:Omegatron) | CC BY-SA |
+| [Playground](https://www.youtube.com/watch?v=YxGv6o1g-LM) | [SFX Producer](https://www.youtube.com/channel/UCbJpWz8-JnMwVqHZcUE8gaQ) | CC0 | [Mateus Felipe](https://github.com/mateusfg7) |
+| [Boat](https://freesound.org/people/Falcet/sounds/439365/) | [Falcet](https://freesound.org/people/Falcet/) | CC0 | [Porrumentzio](https://github.com/Porrumentzio) |
+| [Rain on Tent](https://freesound.org/people/Garuda1982/sounds/523397/) | [Garuda1982](https://freesound.org/people/Garuda1982/) | CC BY 4.0 | [Mateus Felipe](https://github.com/mateusfg7) |
 
 # Alternatives
 
