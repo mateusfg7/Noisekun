@@ -1,7 +1,7 @@
 import { tv } from "tailwind-variants";
 
 export const themeButton = tv({
-  base: /*tw:*/ "w-full cursor-pointer rounded-2xl border-2 border-transparent bg-center bg-cover p-10 font-bold text-xl shadow-black/30 shadow-xl md:p-7",
+  base: /*tw:*/ "w-full cursor-pointer rounded-2xl border-2 border-transparent bg-cover bg-center p-10 text-xl font-bold shadow-xl shadow-black/30 md:p-7",
   compoundVariants: [
     {
       active: true,

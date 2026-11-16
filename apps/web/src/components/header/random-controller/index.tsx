@@ -2,10 +2,8 @@ import { useEffect, useRef } from "react";
 import { FiZap } from "react-icons/fi";
 
 import { useGlobalRandomModeStore } from "~/stores/random-mode-store";
-import {
-  type SoundState,
-  useSoundsStateStore,
-} from "~/stores/sounds-state-store";
+import { useSoundsStateStore } from "~/stores/sounds-state-store";
+import type { SoundState } from "~/stores/sounds-state-store";
 
 import { calculateVolumeSteps } from "./calculate-volume-steps";
 

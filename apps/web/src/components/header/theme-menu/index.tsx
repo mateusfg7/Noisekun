@@ -1,8 +1,11 @@
 import { Menu, Transition } from "@headlessui/react";
 import { Fragment, useEffect } from "react";
 import { PiPaintBrushBroadBold } from "react-icons/pi";
+
 import { useQueryState } from "~/hooks/use-query-state";
-import { type Theme, useThemeStore } from "~/stores/theme-store";
+import { useThemeStore } from "~/stores/theme-store";
+import type { Theme } from "~/stores/theme-store";
+
 import { themeButton } from "./styles";
 import { themeList } from "./theme-list";
 
@@ -54,7 +57,7 @@ export function ThemeMenu() {
         >
           <Menu.Items
             as="div"
-            className="snap scrollbar-hide absolute right-4 left-4 mt-2 flex max-h-[85vh] origin-top-right snap-y snap-mandatory scroll-pt-4 flex-col gap-4 overflow-y-auto rounded-2xl p-4 shadow-2xl backdrop-blur-md focus:outline-none md:right-0 md:left-auto"
+            className="snap absolute left-4 right-4 mt-2 flex max-h-[85vh] origin-top-right snap-y snap-mandatory scroll-pt-4 flex-col gap-4 overflow-y-auto rounded-2xl p-4 shadow-2xl backdrop-blur-md scrollbar-hide focus:outline-none md:left-auto md:right-0"
             data-testid="theme-menu-container"
           >
             {themeList.map((theme) => (

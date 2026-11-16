@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useSoundsStateStore } from "~/stores/sounds-state-store";
 
 import { actionButton } from "../styles";
-
 import { ConfirmationModal } from "./confirmation-modal";
 
 export function Share() {

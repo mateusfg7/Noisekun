@@ -1,5 +1,6 @@
 import type React from "react";
 import { useEffect, useState } from "react";
+
 import { VolumeControllerSlider } from "~/components/ui/volume-controller-slider";
 import { useSoundsStateStore } from "~/stores/sounds-state-store";
 
@@ -36,14 +37,14 @@ export const VolumeController: React.FC<IVolumeController> = ({
 
   return (
     <div
-      className="group relative h-max w-full opacity-1 data-[is-active='false']:opacity-0"
+      className="opacity-1 group relative h-max w-full data-[is-active='false']:opacity-0"
       data-is-active={isActive}
     >
       <label className="sr-only" htmlFor={`${soundId}-volume-controller`}>
         {soundName} volume controller
       </label>
       <VolumeControllerSlider
-        className="absolute top-0 left-0"
+        className="absolute left-0 top-0"
         handleVolume={handleVolume}
         id={`${soundId}-volume-controller`}
         maxValue={1000}

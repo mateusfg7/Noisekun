@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FiVolume, FiVolume1, FiVolume2, FiVolumeX } from "react-icons/fi";
+
 import { VolumeControllerSlider } from "~/components/ui/volume-controller-slider";
 import { useGlobalVolumeStore } from "~/stores/global-volume-store";
 
@@ -34,7 +35,7 @@ export function GlobalVolumeController() {
 
   return (
     <div className="group/volume flex items-center gap-3 opacity-90 hover:opacity-100">
-      <div className="group relative hidden h-max w-28 items-center group-hover/volume:md:flex group-focus-within/volume:md:flex">
+      <div className="group relative hidden h-max w-28 items-center group-focus-within/volume:md:flex group-hover/volume:md:flex">
         <span className="sr-only">
           Global volume in {Number(globalVolume * 100).toFixed(1)}%
         </span>

@@ -2,6 +2,7 @@
 
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+
 import { useSoundsStateStore } from "~/stores/sounds-state-store";
 import { useUserInteractionStore } from "~/stores/user-interaction-store";
 
@@ -60,14 +61,14 @@ export function InteractionModal() {
                 <div className="flex flex-col items-start gap-10">
                   <Dialog.Title
                     as="h3"
-                    className="font-bold text-2xl leading-6"
+                    className="text-2xl font-bold leading-6"
                   >
                     New combo detected!
                   </Dialog.Title>
                 </div>
                 <div className="flex justify-end gap-1">
                   <button
-                    className="rounded-lg px-5 py-3 text-lg text-red-950 leading-none transition-colors hover:bg-red-900 hover:text-red-100"
+                    className="rounded-lg px-5 py-3 text-lg leading-none text-red-950 transition-colors hover:bg-red-900 hover:text-red-100"
                     data-umami-event="Cancel combo"
                     onClick={cancel}
                     type="button"
@@ -75,7 +76,7 @@ export function InteractionModal() {
                     Cancel
                   </button>
                   <button
-                    className="rounded-lg bg-green-100 px-5 py-3 text-green-950 text-lg leading-none transition-colors hover:bg-green-900 hover:text-green-100"
+                    className="rounded-lg bg-green-100 px-5 py-3 text-lg leading-none text-green-950 transition-colors hover:bg-green-900 hover:text-green-100"
                     data-umami-event="Play combo"
                     onClick={closeModal}
                     type="button"

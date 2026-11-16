@@ -6,10 +6,8 @@ import type { Sound } from "~/data/sounds";
 import { useQueryState } from "~/hooks/use-query-state";
 import { useGlobalVolumeStore } from "~/stores/global-volume-store";
 import { PomodoroStatus, usePomodoroStore } from "~/stores/pomodoro-store";
-import {
-  type SoundState,
-  useSoundsStateStore,
-} from "~/stores/sounds-state-store";
+import { useSoundsStateStore } from "~/stores/sounds-state-store";
+import type { SoundState } from "~/stores/sounds-state-store";
 import { useUserInteractionStore } from "~/stores/user-interaction-store";
 
 import { VolumeController } from "./volume-controller";
@@ -126,20 +124,23 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
 
     switch (pomodoroStatus) {
       case PomodoroStatus.ticking:
-      case PomodoroStatus.idle:
+      case PomodoroStatus.idle: {
         if (soundRef.current.volume === 0) {
           soundRef.current.volume = soundState.volume * globalVolume;
         }
         break;
+      }
 
-      case PomodoroStatus.stopped:
+      case PomodoroStatus.stopped: {
         if (soundRef.current.volume > 0) {
           soundRef.current.volume = 0;
         }
         break;
+      }
 
-      default:
+      default: {
         break;
+      }
     }
   }, [pomodoroStatus]);
 
@@ -169,7 +170,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       </audio>
       <button
         aria-label={sound.title}
-        className="flex h-24 w-24 cursor-wait items-center justify-center rounded-xl text-primary-foreground/90 opacity-70 transition duration-300 disabled:hover:bg-transparent data-[loaded='false']:animate-loading data-[loaded='true']:cursor-pointer data-[active='true']:rounded-b-none data-[active='true']:opacity-100 data-[active='true']:md:bg-primary-foreground/10 data-[active='true']:md:shadow-sound md:hover:bg-primary-foreground/10 data-[loaded='true']:md:hover:opacity-100 data-[loaded='true']:md:hover:shadow-sound"
+        className="flex h-24 w-24 cursor-wait items-center justify-center rounded-xl text-primary-foreground/90 opacity-70 transition duration-300 disabled:hover:bg-transparent data-[loaded='false']:animate-loading data-[loaded='true']:cursor-pointer data-[active='true']:rounded-b-none data-[active='true']:opacity-100 md:hover:bg-primary-foreground/10 data-[active='true']:md:bg-primary-foreground/10 data-[active='true']:md:shadow-sound data-[loaded='true']:md:hover:opacity-100 data-[loaded='true']:md:hover:shadow-sound"
         data-active={
           localSoundState.active && localSoundState.loaded && userHasInteracted
         }

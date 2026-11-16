@@ -1,5 +1,6 @@
 import { Transition } from "@headlessui/react";
-import { Fragment, type ReactNode } from "react";
+import { Fragment } from "react";
+import type { ReactNode } from "react";
 
 type Props = {
   children: ReactNode;
