@@ -1,6 +1,6 @@
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
-import { useDeepCompareEffect } from "react-use";
+import { useDeepCompareEffect, useMount } from "react-use";
 
 import type { Sound } from "~/data/sounds";
 import { useQueryState } from "~/hooks/use-query-state";
@@ -52,7 +52,9 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     },
   };
 
-  useEffect(() => {
+  // Seed this sound's state once on load, from the persisted store and the
+  // shared-link query (`?sounds=id,volume;...`), which wins when present.
+  useMount(() => {
     const soundState = getSoundState(sound.id);
 
     let initialState = {
@@ -78,7 +80,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
             active: true,
             id,
             loaded: false,
-            volume: Number.parseFloat(volume),
+            volume: Number(volume),
           };
         }
       }
@@ -87,7 +89,16 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     setSoundState(initialState);
     setLocalSoundState(initialState);
     soundRef.current?.load();
-  }, []);
+  });
+
+  const mountQueryParams = () => {
+    const activeSounds = soundsStore
+      .filter((item) => item.active)
+      .map((item) => `${item.id},${item.volume}`)
+      .join(";");
+
+    setQuerySounds(activeSounds);
+  };
 
   // https://github.com/mateusfg7/Noisekun/issues/608#issuecomment-1874096664
   useDeepCompareEffect(() => {
@@ -106,51 +117,21 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     mountQueryParams();
   }, [soundsStore, userHasInteracted]);
 
-  const mountQueryParams = () => {
-    const activeSounds = soundsStore
-      .filter((item) => item.active)
-      .map((item) => `${item.id},${item.volume}`)
-      .join(";");
-
-    setQuerySounds(activeSounds);
-  };
-
+  // Mute active sounds while the pomodoro is paused, otherwise apply the
+  // sound's volume scaled by the global volume.
   useEffect(() => {
     const soundState = getSoundState(sound.id);
+    const audio = soundRef.current;
 
-    if (!(soundState?.active && soundRef.current)) {
+    if (!(soundState && audio)) {
       return;
     }
 
-    switch (pomodoroStatus) {
-      case PomodoroStatus.ticking:
-      case PomodoroStatus.idle: {
-        if (soundRef.current.volume === 0) {
-          soundRef.current.volume = soundState.volume * globalVolume;
-        }
-        break;
-      }
+    const isMutedByPomodoro =
+      soundState.active && pomodoroStatus === PomodoroStatus.stopped;
 
-      case PomodoroStatus.stopped: {
-        if (soundRef.current.volume > 0) {
-          soundRef.current.volume = 0;
-        }
-        break;
-      }
-
-      default: {
-        break;
-      }
-    }
-  }, [pomodoroStatus]);
-
-  useEffect(() => {
-    const soundState = getSoundState(sound.id);
-
-    if (soundState && soundRef.current) {
-      soundRef.current.volume = soundState.volume * globalVolume;
-    }
-  }, [globalVolume]);
+    audio.volume = isMutedByPomodoro ? 0 : soundState.volume * globalVolume;
+  }, [getSoundState, globalVolume, pomodoroStatus, sound.id]);
 
   const Icon = sound.icon;
 

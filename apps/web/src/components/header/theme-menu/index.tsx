@@ -1,6 +1,7 @@
 import { Menu, Transition } from "@headlessui/react";
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { PiPaintBrushBroadBold } from "react-icons/pi";
+import { useMount } from "react-use";
 
 import { useQueryState } from "~/hooks/use-query-state";
 import { useThemeStore } from "~/stores/theme-store";
@@ -20,19 +21,20 @@ export function ThemeMenu() {
     localStorage.setItem("theme", newTheme);
   }
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const themeOnStorage = localStorage.getItem("theme") as Theme;
-      if (queryTheme) {
-        setTheme(queryTheme as Theme);
-      } else if (themeOnStorage) {
-        setTheme(themeOnStorage);
-        setQueryTheme(themeOnStorage);
-      } else {
-        localStorage.setItem("theme", currentTheme);
-      }
+  // Restore the theme once on load (URL first, then localStorage). This must
+  // not re-run on theme changes: combos set the theme without touching the
+  // URL, and re-running would revert them to the stale query value.
+  useMount(() => {
+    const themeOnStorage = localStorage.getItem("theme") as Theme;
+    if (queryTheme) {
+      setTheme(queryTheme as Theme);
+    } else if (themeOnStorage) {
+      setTheme(themeOnStorage);
+      setQueryTheme(themeOnStorage);
+    } else {
+      localStorage.setItem("theme", currentTheme);
     }
-  }, []);
+  });
 
   return (
     <div className="z-40">
