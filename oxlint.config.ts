@@ -8,7 +8,12 @@ import vitest from "ultracite/oxlint/vitest";
 export default defineConfig({
   env: core.env,
   extends: [core, react, next, tanstack, vitest],
-  ignorePatterns: [...core.ignorePatterns, ".github/**"],
+  ignorePatterns: [
+    ...core.ignorePatterns,
+    ".github/**",
+    ".claude/**",
+    ".agents/**",
+  ],
   rules: {
     // Carried over from the previous Biome config.
     "react/exhaustive-deps": "warn",
