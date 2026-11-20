@@ -74,6 +74,10 @@
 }
 
 @layer components {
+  .slider-input {
+    background-size: var(--slider-fill) 100%;
+  }
+
   .styled-scrollbar {
     /* WEBKIT */
 

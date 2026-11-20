@@ -1,4 +1,4 @@
-import type { ComponentProps } from "react";
+import type { ComponentProps, CSSProperties } from "react";
 import { tv } from "tailwind-variants";
 
 const input = tv({
@@ -20,6 +20,11 @@ export function VolumeControllerSlider({
   handleVolume,
   ...props
 }: Props & ComponentProps<"input">) {
+  // The filled part of the track is sized by `.slider-input` in global.css.
+  const fillStyle: CSSProperties & { "--slider-fill": string } = {
+    "--slider-fill": `${(rangeValue * 100) / maxValue}%`,
+  };
+
   return (
     <input
       {...props}
@@ -27,9 +32,7 @@ export function VolumeControllerSlider({
       max={maxValue}
       min={minValue}
       onChange={(event) => handleVolume(Number(event.target.value))}
-      style={{
-        backgroundSize: `${(rangeValue * 100) / maxValue}%`,
-      }}
+      style={fillStyle}
       type="range"
       value={rangeValue}
     />
