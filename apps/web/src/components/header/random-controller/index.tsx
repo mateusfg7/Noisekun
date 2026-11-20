@@ -1,7 +1,7 @@
+import { Toggle } from "@noisekun/ui/components/toggle";
+import { ZapIcon } from "lucide-react";
 import { useEffect, useRef } from "react";
-import { FiZap } from "react-icons/fi";
 
-import { headerIconButton } from "~/components/header/styles";
 import { useGlobalRandomModeStore } from "~/stores/random-mode-store";
 import { useSoundsStateStore } from "~/stores/sounds-state-store";
 
@@ -19,8 +19,8 @@ export function RandomModeButton() {
   const { sounds, setSound } = useSoundsStateStore();
 
   const soundsRef = useRef(sounds);
-  const intervalIdRef = useRef<NodeJS.Timeout | null>(null);
-  const timeoutsRef = useRef<NodeJS.Timeout[]>([]);
+  const intervalIdRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const timeoutsRef = useRef<ReturnType<typeof setTimeout>[]>([]);
 
   useEffect(() => {
     soundsRef.current = sounds;
@@ -114,20 +114,14 @@ export function RandomModeButton() {
   ]);
 
   return (
-    <div className="flex items-center">
-      <button
-        className={headerIconButton({
-          className:
-            /*tw:*/ "data-[enabled='false']:text-primary-foreground/50",
-        })}
-        data-enabled={randomMode}
-        data-umami-event="Enable/Disable Random Mode"
-        onClick={() => setRandomMode(!randomMode)}
-        title={randomMode ? "Disable random mode" : "Enable random mode"}
-        type="button"
-      >
-        <FiZap size={18} />
-      </button>
-    </div>
+    <Toggle
+      aria-label={randomMode ? "Disable random mode" : "Enable random mode"}
+      data-umami-event="Enable/Disable Random Mode"
+      onPressedChange={setRandomMode}
+      pressed={randomMode}
+      title={randomMode ? "Disable random mode" : "Enable random mode"}
+    >
+      <ZapIcon />
+    </Toggle>
   );
 }

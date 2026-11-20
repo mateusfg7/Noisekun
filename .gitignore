@@ -15,12 +15,10 @@ out/
 
 # typescript
 *.tsbuildinfo
+next-env.d.ts
 
 # production
 build/
-**/public/sw*
-**/public/workbox-*
-**/public/fallback*
 
 
 # misc

@@ -2,37 +2,35 @@
   "name": "@noisekun/web",
   "version": "1.5.3",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "next typegen && tsc --noEmit"
   },
   "dependencies": {
-    "@ducanh2912/next-pwa": "10.2.9",
-    "@headlessui/react": "1.7.19",
-    "@newhighsco/next-plugin-svgr": "3.0.174",
-    "next": "14.0.4",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-hot-toast": "2.4.1",
-    "react-icons": "5.7.0",
-    "react-use": "17.4.2",
-    "sharp": "0.33.0",
-    "tailwind-scrollbar-hide": "1.1.7",
-    "tailwind-variants": "0.1.13",
-    "zustand": "4.5.7"
+    "@noisekun/ui": "workspace:*",
+    "@serwist/turbopack": "9.5.15",
+    "lucide-react": "1.77.0",
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-use": "17.6.1",
+    "serwist": "9.5.15",
+    "sonner": "2.0.8",
+    "zustand": "5.1.0"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "0.5.11",
-    "@types/node": "20.19.43",
-    "@types/react": "18.3.31",
-    "autoprefixer": "10.5.4",
-    "postcss": "8.5.22",
-    "tailwindcss": "3.4.19",
-    "ts-node": "10.9.2",
-    "tsx": "4.23.1",
-    "typescript": "5.3.3",
-    "webpack": "5.108.4"
+    "@tailwindcss/postcss": "4.3.5",
+    "@types/node": "24.19.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "esbuild": "0.28.2",
+    "tailwindcss": "4.3.5",
+    "typescript": "6.0.3"
+  },
+  "engines": {
+    "node": ">=20.9.0"
   }
 }

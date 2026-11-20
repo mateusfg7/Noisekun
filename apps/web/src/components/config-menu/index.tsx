@@ -1,15 +1,19 @@
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
-import { toast } from "react-hot-toast";
+import { Button } from "@noisekun/ui/components/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@noisekun/ui/components/dialog";
+import { SettingsIcon } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 import { useGlobalRandomModeStore } from "~/stores/random-mode-store";
 
-import { ActionButtons } from "./action-buttons";
-import { ModalTile } from "./modal-title";
-import { ModalTransitionFragment } from "./modal-transition-fragment";
 import { RandomVolumeSettings } from "./options/random-volume-settings";
-import { Overlay } from "./overlay";
-import { TriggerButton } from "./trigger-button";
 
 type Action = {
   save: () => { error?: string };
@@ -121,10 +125,6 @@ export function ConfigMenu() {
     setIsOpen(false);
   }
 
-  function openModal() {
-    setIsOpen(true);
-  }
-
   function handleSave() {
     const errors = actionList.flatMap(({ save }) => save().error ?? []);
 
@@ -146,46 +146,56 @@ export function ConfigMenu() {
   }
 
   return (
-    <>
-      <TriggerButton openModal={openModal} />
-
-      <Transition appear as={Fragment} show={isOpen}>
-        <Dialog as="div" className="relative z-40" onClose={closeModal}>
-          <Overlay />
-
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center text-zinc-950">
-              <ModalTransitionFragment>
-                <Dialog.Panel className="flex w-[98%] transform flex-col gap-10 overflow-hidden rounded-2xl bg-white p-6 shadow-xl transition md:w-80">
-                  <div className="flex flex-col items-start gap-10">
-                    <ModalTile />
-                    <div className="w-full">
-                      <RandomVolumeSettings
-                        updateInterval={{
-                          set: setUpdateInterval,
-                          value: updateInterval,
-                          wasChanged: randomModeUpdateInterval.wasChanged,
-                        }}
-                        updateSteps={{
-                          set: setUpdateSteps,
-                          value: updateSteps,
-                          wasChanged: randomModeUpdateSteps.wasChanged,
-                        }}
-                        updateTransitionTime={{
-                          set: setTransitionTime,
-                          value: transitionTime,
-                          wasChanged: randomModeTransitionTime.wasChanged,
-                        }}
-                      />
-                    </div>
-                  </div>
-                  <ActionButtons onCancel={handleCancel} onSave={handleSave} />
-                </Dialog.Panel>
-              </ModalTransitionFragment>
-            </div>
-          </div>
-        </Dialog>
-      </Transition>
-    </>
+    <Dialog
+      onOpenChange={(open) => (open ? setIsOpen(true) : handleCancel())}
+      open={isOpen}
+    >
+      <DialogTrigger
+        render={
+          <Button
+            data-umami-event="Open config menu"
+            size="icon-pill"
+            title="Open config menu"
+            variant="ghost"
+          />
+        }
+      >
+        <SettingsIcon />
+      </DialogTrigger>
+      <DialogContent showCloseButton={false}>
+        <DialogHeader>
+          <DialogTitle>Settings</DialogTitle>
+        </DialogHeader>
+        <RandomVolumeSettings
+          updateInterval={{
+            set: setUpdateInterval,
+            value: updateInterval,
+            wasChanged: randomModeUpdateInterval.wasChanged(),
+          }}
+          updateSteps={{
+            set: setUpdateSteps,
+            value: updateSteps,
+            wasChanged: randomModeUpdateSteps.wasChanged(),
+          }}
+          updateTransitionTime={{
+            set: setTransitionTime,
+            value: transitionTime,
+            wasChanged: randomModeTransitionTime.wasChanged(),
+          }}
+        />
+        <DialogFooter>
+          <Button
+            data-umami-event="Reset config"
+            onClick={handleCancel}
+            variant="ghost"
+          >
+            Cancel
+          </Button>
+          <Button data-umami-event="Save config" onClick={handleSave}>
+            Save
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }

@@ -2,7 +2,7 @@ import type { ComponentProps } from "react";
 
 const FooterLink = ({ children, ...props }: ComponentProps<"a">) => (
   <a
-    className="underline-offset-4 transition-colors hover:text-primary-foreground hover:underline"
+    className="hover:text-foreground underline-offset-4 transition-colors hover:underline"
     rel="noreferrer"
     target="_blank"
     {...props}
@@ -15,7 +15,7 @@ const Separator = () => <span aria-hidden="true">·</span>;
 
 export function Footer() {
   return (
-    <footer className="mx-auto flex flex-col items-center gap-2 p-4 text-center text-sm text-primary-foreground/70">
+    <footer className="text-foreground/70 mx-auto flex flex-col items-center gap-2 p-4 text-center text-sm">
       <p className="text-balance">
         ambient sounds to focus, relax, and stay in the zone.
       </p>

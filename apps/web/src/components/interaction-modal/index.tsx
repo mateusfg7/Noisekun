@@ -1,11 +1,23 @@
 "use client";
 
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@noisekun/ui/components/alert-dialog";
 
 import { useSoundsStateStore } from "~/stores/sounds-state-store";
 import { useUserInteractionStore } from "~/stores/user-interaction-store";
 
+/**
+ * Browsers block autoplay until the user interacts with the page, so a shared
+ * combo link asks for a click before its sounds start.
+ */
 export function InteractionModal() {
   const bulkSoundUpdate = useSoundsStateStore((state) => state.bulkUpdate);
   const soundStates = useSoundsStateStore((state) => state.sounds);
@@ -18,78 +30,40 @@ export function InteractionModal() {
     (state) => state.setUserHasInteracted
   );
 
-  function closeModal() {
+  function play() {
     setUserHasInteracted(true);
   }
 
   function cancel() {
-    const disabledSoundList = soundStates.map((sound) => ({
-      ...sound,
-      active: false,
-    }));
-
-    bulkSoundUpdate(disabledSoundList);
-    closeModal();
+    bulkSoundUpdate(soundStates.map((sound) => ({ ...sound, active: false })));
+    setUserHasInteracted(true);
   }
 
   return (
-    <Transition appear as={Fragment} show={!userHasInteracted}>
-      <Dialog as="div" className="relative z-40" onClose={closeModal}>
-        <Transition.Child
-          as={Fragment}
-          enter="ease-out duration-300"
-          enterFrom="opacity-0"
-          enterTo="opacity-100"
-          leave="ease-in duration-200"
-          leaveFrom="opacity-100"
-          leaveTo="opacity-0"
-        >
-          <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-xs" />
-        </Transition.Child>
-
-        <div className="fixed inset-0 overflow-y-auto">
-          <div className="flex min-h-full items-center justify-center p-4 text-center text-zinc-950">
-            <Transition.Child
-              as={Fragment}
-              enter="ease-out duration-300"
-              enterFrom="opacity-0 scale-95"
-              enterTo="opacity-100 scale-100"
-              leave="ease-in duration-200"
-              leaveFrom="opacity-100 scale-100"
-              leaveTo="opacity-0 scale-95"
-            >
-              <Dialog.Panel className="flex w-fit transform flex-col gap-10 overflow-hidden rounded-2xl bg-white p-6 shadow-xl transition">
-                <div className="flex flex-col items-start gap-10">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-2xl font-bold leading-6"
-                  >
-                    New combo detected!
-                  </Dialog.Title>
-                </div>
-                <div className="flex justify-end gap-1">
-                  <button
-                    className="rounded-lg px-5 py-3 text-lg leading-none text-red-950 transition-colors hover:bg-red-900 hover:text-red-100"
-                    data-umami-event="Cancel combo"
-                    onClick={cancel}
-                    type="button"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    className="rounded-lg bg-green-100 px-5 py-3 text-lg leading-none text-green-950 transition-colors hover:bg-green-900 hover:text-green-100"
-                    data-umami-event="Play combo"
-                    onClick={closeModal}
-                    type="button"
-                  >
-                    Play
-                  </button>
-                </div>
-              </Dialog.Panel>
-            </Transition.Child>
-          </div>
-        </div>
-      </Dialog>
-    </Transition>
+    <AlertDialog
+      onOpenChange={(open) => {
+        if (!open) {
+          cancel();
+        }
+      }}
+      open={!userHasInteracted}
+    >
+      <AlertDialogContent>
+        <AlertDialogHeader>
+          <AlertDialogTitle>New combo detected!</AlertDialogTitle>
+          <AlertDialogDescription>
+            This link comes with a sound combo. Play it?
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel data-umami-event="Cancel combo">
+            Cancel
+          </AlertDialogCancel>
+          <AlertDialogAction data-umami-event="Play combo" onClick={play}>
+            Play
+          </AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
   );
 }

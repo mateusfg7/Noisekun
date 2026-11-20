@@ -22,7 +22,7 @@ type Playback = {
  * Volume changes from the sliders apply right away.
  */
 export function useFadedPlayback(
-  audioRef: RefObject<HTMLAudioElement>,
+  audioRef: RefObject<HTMLAudioElement | null>,
   { shouldPlay, volume, muted }: Playback
 ) {
   const faderRef = useRef<AudioFader | null>(null);

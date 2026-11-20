@@ -1,15 +1,10 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
+  "ui": "tui",
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**",
-        "public/sw.js",
-        "public/workbox-*.js",
-        "public/fallback*"
-      ],
+      "outputs": [".next/**", "!.next/cache/**", "!.next/dev/**"],
       "env": ["HOSTNAME", "UMAMI_WEBSITE_ID"],
       "inputs": ["$TURBO_DEFAULT$", ".env", ".env.*"]
     },
@@ -18,8 +13,7 @@
       "persistent": true
     },
     "typecheck": {
-      "cache": false,
-      "persistent": false
+      "dependsOn": ["^typecheck"]
     },
     "start": {
       "dependsOn": ["build"],

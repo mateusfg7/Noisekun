@@ -7,7 +7,7 @@ import { Share } from "./share";
 export function ActionButtons() {
   return (
     <div
-      className="hidden w-full items-center justify-end gap-2 max-[500px]:justify-center xs:flex sm:justify-between"
+      className="xs:flex hidden w-full items-center justify-end gap-2 max-[500px]:justify-center sm:justify-between"
       data-testid="action-buttons"
     >
       <div className="hidden sm:block">

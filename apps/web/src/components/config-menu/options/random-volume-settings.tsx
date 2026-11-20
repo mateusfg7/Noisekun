@@ -1,9 +1,17 @@
-import { dot, input, settingRow } from "./styles";
+import {
+  Field,
+  FieldGroup,
+  FieldLabel,
+  FieldLegend,
+  FieldSet,
+} from "@noisekun/ui/components/field";
+import { Input } from "@noisekun/ui/components/input";
+import { cn } from "@noisekun/ui/lib/utils";
 
 type Option = {
   value: number;
   set: (newValue: number) => void;
-  wasChanged: () => boolean;
+  wasChanged: boolean;
 };
 
 type Props = {
@@ -12,66 +20,66 @@ type Props = {
   updateSteps: Option;
 };
 
+type SettingProps = {
+  id: string;
+  label: string;
+  unit?: string;
+  option: Option;
+  /** Displayed value = stored value / scale. */
+  scale?: number;
+};
+
+function Setting({ id, label, unit, option, scale = 1 }: SettingProps) {
+  return (
+    <Field orientation="horizontal">
+      <span
+        aria-hidden="true"
+        className={cn(
+          "bg-foreground size-1.5 shrink-0 rounded-full opacity-0 transition-opacity",
+          option.wasChanged && "opacity-100"
+        )}
+      />
+      <FieldLabel className="flex-1" htmlFor={id}>
+        {label}
+        {unit ? <span className="text-muted-foreground">{unit}</span> : null}
+      </FieldLabel>
+      <Input
+        className="w-20 text-center"
+        id={id}
+        min={0}
+        onChange={(event) => option.set(Number(event.target.value) * scale)}
+        type="number"
+        value={option.value / scale}
+      />
+    </Field>
+  );
+}
+
 export function RandomVolumeSettings({
   updateInterval,
   updateSteps,
   updateTransitionTime,
 }: Props) {
   return (
-    <div className="space-y-2">
-      <h3 className="p-1 text-left opacity-60">Random volume</h3>
-      <div className="space-y-1">
-        <div className={settingRow()}>
-          <span className={dot({ active: updateInterval.wasChanged() })} />
-
-          <label className="flex-1 text-left" htmlFor="interval">
-            Update interval <span className="text-sm opacity-50">/s</span>
-          </label>
-          <input
-            className={input()}
-            id="interval"
-            onChange={(e) => updateInterval.set(Number(e.target.value) * 1000)}
-            type="number"
-            value={updateInterval.value / 1000}
-          />
-        </div>
-        <div className={settingRow()}>
-          <span
-            className={dot({
-              active: updateTransitionTime.wasChanged(),
-            })}
-          />
-          <label className="flex-1 text-left" htmlFor="interval">
-            Transition time <span className="text-sm opacity-50">/s</span>
-          </label>
-          <input
-            className={input()}
-            id="interval"
-            onChange={(e) =>
-              updateTransitionTime.set(Number(e.target.value) * 1000)
-            }
-            type="number"
-            value={updateTransitionTime.value / 1000}
-          />
-        </div>
-        <div className={settingRow()}>
-          <span
-            className={dot({
-              active: updateSteps.wasChanged(),
-            })}
-          />
-          <label className="flex-1 text-left" htmlFor="steps">
-            Update steps
-          </label>
-          <input
-            className={input()}
-            id="steps"
-            onChange={(e) => updateSteps.set(Number(e.target.value))}
-            type="number"
-            value={updateSteps.value}
-          />
-        </div>
-      </div>
-    </div>
+    <FieldSet>
+      <FieldLegend variant="label">Random volume</FieldLegend>
+      <FieldGroup>
+        <Setting
+          id="interval"
+          label="Update interval"
+          option={updateInterval}
+          scale={1000}
+          unit="/s"
+        />
+        <Setting
+          id="transition-time"
+          label="Transition time"
+          option={updateTransitionTime}
+          scale={1000}
+          unit="/s"
+        />
+        <Setting id="steps" label="Update steps" option={updateSteps} />
+      </FieldGroup>
+    </FieldSet>
   );
 }

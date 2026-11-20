@@ -1,12 +1,14 @@
+import { Button } from "@noisekun/ui/components/button";
+import { Input } from "@noisekun/ui/components/input";
+import { CheckIcon } from "lucide-react";
 import { useState } from "react";
-import { FiCheck } from "react-icons/fi";
 
 import { useComboStore } from "~/stores/combo-store";
 import { useSoundsStateStore } from "~/stores/sounds-state-store";
 import { useThemeStore } from "~/stores/theme-store";
 import { randomString } from "~/utils/random-string";
 
-import { actionButton } from "../styles";
+const SUCCESS_FEEDBACK_MS = 2000;
 
 export function SaveCombo() {
   const sounds = useSoundsStateStore((state) => state.sounds);
@@ -17,8 +19,11 @@ export function SaveCombo() {
   const [showSuccess, setShowSuccess] = useState(false);
   const [showInput, setShowInput] = useState(false);
 
+  const activeSounds = sounds.filter((sound) => sound.active);
+  const disabled = showSuccess || activeSounds.length === 0;
+
   function save() {
-    if (!sounds.some((sound) => sound.active)) {
+    if (activeSounds.length === 0) {
       return;
     }
 
@@ -32,8 +37,6 @@ export function SaveCombo() {
       return;
     }
 
-    const activeSounds = sounds.filter((sound) => sound.active);
-
     saveCombo({
       id: randomString(6),
       name: comboName,
@@ -45,41 +48,40 @@ export function SaveCombo() {
     setShowInput(false);
     setShowSuccess(true);
 
-    setTimeout(() => setShowSuccess(false), 2000);
+    setTimeout(() => setShowSuccess(false), SUCCESS_FEEDBACK_MS);
   }
 
-  const disabled = showSuccess || !sounds.some((sound) => sound.active);
-
   return (
-    <div className="flex gap-1">
+    <form
+      className="flex gap-1"
+      onSubmit={(event) => {
+        event.preventDefault();
+        save();
+      }}
+    >
       {showInput ? (
-        <input
-          className="form-input w-32 animate-show-input rounded-full border-none bg-primary-foreground/5 px-2 py-0 text-center text-sm leading-none tracking-wider text-primary-foreground duration-300 placeholder:text-sm placeholder:text-primary-foreground/60 focus:ring-0"
+        <Input
+          aria-label="Combo name"
+          autoFocus
+          className="h-6 w-32"
           data-testid="combo-name-input"
           disabled={disabled}
-          onChange={(e) => setComboName(e.target.value)}
+          onChange={(event) => setComboName(event.target.value)}
           placeholder="combo name..."
-          type="text"
           value={comboName}
         />
       ) : null}
-      <button
-        className={actionButton({
-          className: /*tw:*/ "flex items-center",
-        })}
+      <Button
         disabled={disabled}
-        onClick={save}
+        size="pill"
         title="Save current combo"
-        type="button"
+        type="submit"
+        variant="secondary"
       >
-        {showSuccess ? (
-          <span className="inline-flex w-10 justify-center">
-            <FiCheck />
-          </span>
-        ) : (
-          <span className="inline-flex w-10 justify-center">save</span>
-        )}
-      </button>
-    </div>
+        <span className="inline-flex w-8 justify-center">
+          {showSuccess ? <CheckIcon aria-label="Saved" /> : "save"}
+        </span>
+      </Button>
+    </form>
   );
 }
