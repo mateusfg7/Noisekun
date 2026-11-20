@@ -1,7 +1,20 @@
-import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
+import { Button } from "@noisekun/ui/components/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@noisekun/ui/components/dialog";
+import { Field, FieldLabel } from "@noisekun/ui/components/field";
+import { Input } from "@noisekun/ui/components/input";
+import { useState } from "react";
 
 import { padZero } from "~/utils/pad-zero";
+
+const DEFAULT_MINUTES = 25;
+const MAX_MINUTES = 99;
 
 export type ConfigModalProps = {
   displayMinutes: string;
@@ -19,149 +32,87 @@ export function ConfigModal({
   displaySeconds,
 }: ConfigModalProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [localMinutes, setLocalMinutes] = useState(+minutes);
+  const [localMinutes, setLocalMinutes] = useState(Number(minutes));
 
-  function closeModal() {
-    setIsOpen(false);
-  }
+  function handleOpenChange(open: boolean) {
+    // Start from the current duration every time the dialog opens.
+    if (open) {
+      setLocalMinutes(Number(minutes));
+    }
 
-  function openModal() {
-    setIsOpen(true);
+    setIsOpen(open);
   }
 
   function handleSave() {
-    if (localMinutes < 1) {
-      setMinutes(1);
-    } else {
-      setMinutes(localMinutes);
-    }
-
-    closeModal();
+    setMinutes(Math.max(localMinutes, 1));
+    setIsOpen(false);
   }
 
-  function updateTime(time: number) {
-    if (time >= 99) {
-      setLocalMinutes(99);
-    } else {
-      setLocalMinutes(time);
-    }
-  }
+  function updateTime(value: string) {
+    const time = Number(value);
 
-  function handleReset() {
-    updateTime(25);
+    if (Number.isFinite(time)) {
+      setLocalMinutes(Math.min(Math.max(Math.trunc(time), 0), MAX_MINUTES));
+    }
   }
 
   return (
-    <>
+    <Dialog onOpenChange={handleOpenChange} open={isOpen}>
       <div
         className="flex items-center justify-center"
         data-testid="pomodoro-timer"
       >
-        <button
-          aria-label={`Pomodoro timer ${displayMinutes}:${displaySeconds}, open configuration`}
-          className="rounded-full bg-primary-foreground/5 text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground data-[is-loading='true']:animate-pulse data-[is-loading='true']:cursor-wait"
-          data-is-loading={isLoading}
-          data-testid="pomodoro-timer-button"
-          data-umami-event="Open pomodoro config"
-          disabled={isLoading}
-          onClick={openModal}
-          type="button"
+        <DialogTrigger
+          render={
+            <Button
+              aria-label={`Pomodoro timer ${displayMinutes}:${displaySeconds}, open configuration`}
+              data-testid="pomodoro-timer-button"
+              data-umami-event="Open pomodoro config"
+              disabled={isLoading}
+              size="pill"
+              title="Pomodoro timer"
+              variant="secondary"
+            />
+          }
         >
-          <div
-            className="flex h-6 items-center gap-0.5 px-2.5 text-sm tabular-nums leading-none tracking-wider"
-            title="Pomodoro timer"
-          >
+          <span className="tabular-nums">
             <span className="font-bold">{displayMinutes}</span>
             <span>:</span>
             <span className="font-bold">{displaySeconds}</span>
-          </div>
-        </button>
+          </span>
+        </DialogTrigger>
       </div>
 
-      <Transition appear as={Fragment} show={isOpen}>
-        <Dialog as="div" className="relative z-40" onClose={closeModal}>
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
+      <DialogContent data-testid="config-modal" showCloseButton={false}>
+        <DialogHeader>
+          <DialogTitle>Pomodoro configuration</DialogTitle>
+        </DialogHeader>
+        <Field orientation="horizontal">
+          <FieldLabel className="flex-1" htmlFor="minutes">
+            Minutes
+          </FieldLabel>
+          <Input
+            className="w-20 text-center"
+            data-testid="minutes-input"
+            id="minutes"
+            inputMode="numeric"
+            onChange={(event) => updateTime(event.target.value)}
+            value={padZero(localMinutes)}
+          />
+        </Field>
+        <DialogFooter>
+          <Button
+            data-umami-event="Reset pomodoro config"
+            onClick={() => setLocalMinutes(DEFAULT_MINUTES)}
+            variant="ghost"
           >
-            <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-xs" />
-          </Transition.Child>
-
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center text-zinc-950">
-              <Transition.Child
-                as={Fragment}
-                enter="ease-out duration-300"
-                enterFrom="opacity-0 scale-95"
-                enterTo="opacity-100 scale-100"
-                leave="ease-in duration-200"
-                leaveFrom="opacity-100 scale-100"
-                leaveTo="opacity-0 scale-95"
-              >
-                <Dialog.Panel
-                  className="flex w-fit transform flex-col gap-10 overflow-hidden rounded-2xl bg-white p-6 shadow-xl transition"
-                  data-testid="config-modal"
-                >
-                  <div className="flex flex-col items-start gap-10">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-2xl font-bold leading-6"
-                    >
-                      Pomodoro Configuration
-                    </Dialog.Title>
-                    <div className="w-full text-2xl">
-                      <div className="flex w-full items-center justify-between gap-4">
-                        <label htmlFor="minutes">Minutes:</label>
-                        <input
-                          className="form-input w-20 rounded-lg p-3 text-center text-lg"
-                          data-testid="minutes-input"
-                          id="minutes"
-                          onChange={(e) => {
-                            if (e.target.value === "0" || !e.target.value) {
-                              updateTime(0);
-
-                              return;
-                            }
-
-                            if (+e.target.value) {
-                              updateTime(+e.target.value);
-                            }
-                          }}
-                          type="text"
-                          value={padZero(localMinutes)}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex justify-end gap-1">
-                    <button
-                      className="rounded-lg px-5 py-3 text-lg leading-none text-red-800 transition-colors hover:bg-red-800 hover:text-red-100"
-                      data-umami-event="Reset pomodoro config"
-                      onClick={handleReset}
-                      type="button"
-                    >
-                      Reset
-                    </button>
-                    <button
-                      className="rounded-lg bg-green-100 px-5 py-3 text-lg leading-none text-green-950 transition-colors hover:bg-green-900 hover:text-green-100"
-                      data-umami-event="Save pomodoro config"
-                      onClick={handleSave}
-                      type="button"
-                    >
-                      Save
-                    </button>
-                  </div>
-                </Dialog.Panel>
-              </Transition.Child>
-            </div>
-          </div>
-        </Dialog>
-      </Transition>
-    </>
+            Reset
+          </Button>
+          <Button data-umami-event="Save pomodoro config" onClick={handleSave}>
+            Save
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
   );
 }

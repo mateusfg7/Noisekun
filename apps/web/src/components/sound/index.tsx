@@ -125,7 +125,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       </audio>
       <button
         aria-label={sound.title}
-        className="flex aspect-square w-full cursor-wait items-center justify-center rounded-md text-primary-foreground/70 transition-colors duration-300 data-[loaded='false']:animate-loading data-[loaded='true']:cursor-pointer data-[active='true']:bg-primary-foreground/5 data-[active='true']:text-primary-foreground data-[loaded='true']:md:hover:bg-primary-foreground/10 data-[loaded='true']:md:hover:text-primary-foreground"
+        className="text-foreground/70 data-[loaded='false']:animate-loading data-[active='true']:bg-foreground/5 data-[active='true']:text-foreground data-[loaded='true']:md:hover:bg-foreground/10 data-[loaded='true']:md:hover:text-foreground flex aspect-square w-full cursor-wait items-center justify-center rounded-md transition-colors duration-300 data-[loaded='true']:cursor-pointer"
         data-active={
           localSoundState.active && localSoundState.loaded && userHasInteracted
         }

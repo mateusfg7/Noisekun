@@ -29,6 +29,9 @@ export default defineConfig({
     ".github/**",
     ".claude/**",
     ".agents/**",
+    // shadcn components are vendored from the registry: update them with
+    // `shadcn add --diff` rather than hand-editing them to satisfy lint.
+    "packages/ui/src/components/**",
   ],
   // Re-declared on the root so dependency analyzers see the plugin packages.
   jsPlugins: [...jsPlugins.jsPlugins, ...shadcn.jsPlugins],
@@ -44,15 +47,5 @@ export default defineConfig({
     "eslint/func-style": "off",
     "eslint/no-inline-comments": "off",
     "react/function-component-definition": "off",
-
-    // Next/Tailwind/PostCSS configs in apps/web are CommonJS.
-    "node/global-require": "off",
-    "sonarjs/no-require-or-define": "off",
-    "unicorn/prefer-module": "off",
-
-    // @shadcn/lint only reads Tailwind v4 CSS themes; on this v3 config it
-    // flags plugin and custom classes (form-input, scrollbar-hide, animate-*).
-    // Re-enable after migrating to Tailwind v4.
-    "shadcn/no-unknown-classes": "off",
   },
 });

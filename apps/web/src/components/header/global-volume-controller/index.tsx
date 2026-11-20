@@ -1,9 +1,30 @@
+import { Button } from "@noisekun/ui/components/button";
+import {
+  Volume1Icon,
+  Volume2Icon,
+  VolumeIcon,
+  VolumeXIcon,
+} from "lucide-react";
 import { useRef, useState } from "react";
-import { FiVolume, FiVolume1, FiVolume2, FiVolumeX } from "react-icons/fi";
 
-import { headerIconButton } from "~/components/header/styles";
 import { VolumeControllerSlider } from "~/components/ui/volume-controller-slider";
 import { useGlobalVolumeStore } from "~/stores/global-volume-store";
+
+function VolumeLevelIcon({ volume }: { volume: number }) {
+  if (volume === 0) {
+    return <VolumeXIcon />;
+  }
+
+  if (volume < 0.25) {
+    return <VolumeIcon />;
+  }
+
+  if (volume < 0.5) {
+    return <Volume1Icon />;
+  }
+
+  return <Volume2Icon />;
+}
 
 export function GlobalVolumeController() {
   const MAX_VALUE = 1000;
@@ -38,31 +59,25 @@ export function GlobalVolumeController() {
 
   return (
     <div className="group/volume flex items-center gap-2">
-      <div className="group relative hidden h-max w-28 items-center group-focus-within/volume:md:flex group-hover/volume:md:flex">
-        <span className="sr-only">
-          Global volume in {Number(globalVolume * 100).toFixed(1)}%
-        </span>
+      <div className="group relative hidden h-max w-28 items-center md:group-focus-within/volume:flex md:group-hover/volume:flex">
         <VolumeControllerSlider
           handleVolume={handleVolume}
+          label="Global volume"
           maxValue={MAX_VALUE}
           minValue={0}
-          name="global-volume-controller"
           rangeValue={rangeValue}
           title={`Global volume in ${Number(globalVolume * 100).toFixed(1)}%`}
         />
       </div>
-      <button
-        className={headerIconButton()}
+      <Button
         data-umami-event="Mute/Unmute global volume"
         onClick={toggleMuted}
+        size="icon-pill"
         title="Enable/disable sound"
-        type="button"
+        variant="ghost"
       >
-        {globalVolume >= 0.5 && <FiVolume2 size={18} />}
-        {globalVolume >= 0.25 && globalVolume < 0.5 && <FiVolume1 size={18} />}
-        {globalVolume > 0 && globalVolume < 0.25 && <FiVolume size={18} />}
-        {globalVolume === 0 && <FiVolumeX size={18} />}
-      </button>
+        <VolumeLevelIcon volume={globalVolume} />
+      </Button>
     </div>
   );
 }

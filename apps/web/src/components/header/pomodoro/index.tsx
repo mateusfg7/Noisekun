@@ -1,5 +1,6 @@
+import { Button } from "@noisekun/ui/components/button";
+import { PauseIcon, PlayIcon, RotateCwIcon } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { FiPause, FiPlay, FiRotateCw } from "react-icons/fi";
 
 import { useIsClient } from "~/hooks/use-is-client";
 import { PomodoroStatus, usePomodoroStore } from "~/stores/pomodoro-store";
@@ -121,17 +122,16 @@ export function Pomodoro() {
         <track kind="captions" />
       </audio>
 
-      <button
-        className="flex size-6 items-center justify-center rounded-full bg-primary-foreground/5 text-xs text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground data-[is-loading='true']:animate-pulse data-[is-loading='true']:cursor-wait"
-        data-is-loading={isLoadingStorage}
+      <Button
         data-umami-event="Reset pomodoro timer"
         disabled={isLoadingStorage}
         onClick={resetTimer}
         title="Reset Pomodoro timer"
-        type="button"
+        size="icon-pill-xs"
+        variant="secondary"
       >
-        <FiRotateCw />
-      </button>
+        <RotateCwIcon />
+      </Button>
 
       <ConfigModal
         displayMinutes={isLoadingStorage ? "-" : getMinutes(remainingTime)}
@@ -143,17 +143,16 @@ export function Pomodoro() {
         setMinutes={setMinutes}
       />
 
-      <button
-        className="flex size-6 items-center justify-center rounded-full bg-primary-foreground/5 text-xs text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground data-[is-loading='true']:animate-pulse data-[is-loading='true']:cursor-wait"
-        data-is-loading={isLoadingStorage}
+      <Button
         data-umami-event="Play/pause pomodoro timer"
         disabled={isLoadingStorage}
         onClick={handleToggle}
         title="Toggle Pomodoro timer"
-        type="button"
+        size="icon-pill-xs"
+        variant="secondary"
       >
-        {isTicking ? <FiPause /> : <FiPlay />}
-      </button>
+        {isTicking ? <PauseIcon /> : <PlayIcon />}
+      </Button>
     </div>
   );
 }

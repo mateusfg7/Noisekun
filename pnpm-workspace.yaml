@@ -1,2 +1,13 @@
 packages:
   - "apps/*"
+  - "packages/*"
+
+# pnpm only runs install scripts for the packages listed here.
+allowBuilds:
+  "@swc/core": false
+  "@tailwindcss/oxide": true
+  esbuild: true
+  sharp: true
+
+minimumReleaseAgeExclude:
+  - lucide-react@1.77.0

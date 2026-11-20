@@ -1,0 +1,267 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Every Noisekun theme is dark except the light one. */
+@custom-variant dark (&:is([data-theme]:not([data-theme="light-theme"]) *));
+@source "../../../apps/**/*.{ts,tsx}";
+@source "../**/*.{ts,tsx}";
+
+@theme inline {
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+  --font-sans: var(--font-sans);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/*
+ * Noisekun themes.
+ *
+ * Each theme only sets an ink (text) color, a surface (popover) color and an
+ * optional background image. The shadcn tokens are derived from those two
+ * colors below, so every component follows the active theme. The theme is set
+ * on <html> through `data-theme`, so portalled popups (dialogs, menus, toasts)
+ * inherit it too.
+ */
+
+@theme {
+  --breakpoint-xs: 350px;
+  --breakpoint-2xs: 500px;
+
+  --color-theme-transition: rgb(255 255 255);
+  --color-theme-dark: rgb(3 7 18);
+  --color-theme-dark-ink: rgb(243 244 246);
+  --color-theme-light: rgb(243 244 246);
+  --color-theme-light-ink: rgb(3 7 18);
+  --color-theme-room: rgb(191 219 254);
+  --color-theme-train: rgb(187 247 208);
+  --color-theme-waterfall: rgb(217 249 157);
+  --color-theme-camping: rgb(254 215 170);
+
+  --animate-background-change: background-change 300s infinite;
+  --animate-background-change-sm: background-change 20s infinite;
+  --animate-loading: loading 1.5s infinite;
+
+  @keyframes background-change {
+    0%,
+    100% {
+      background-color: #0485b4;
+    }
+    5.26% {
+      background-color: #0d7ab5;
+    }
+    10.53% {
+      background-color: #16528e;
+    }
+    15.79% {
+      background-color: #004761;
+    }
+    21.05% {
+      background-color: #0a615c;
+    }
+    26.32% {
+      background-color: #147b57;
+    }
+    31.58% {
+      background-color: #226d6c;
+    }
+    36.84% {
+      background-color: #2f5e81;
+    }
+    42.11% {
+      background-color: #4940aa;
+    }
+    47.37%,
+    52.63% {
+      background-color: #5a3080;
+    }
+    57.89% {
+      background-color: #4940aa;
+    }
+    63.16% {
+      background-color: #2f5e81;
+    }
+    68.42% {
+      background-color: #226d6c;
+    }
+    73.68% {
+      background-color: #147b57;
+    }
+    78.95% {
+      background-color: #0a615c;
+    }
+    84.21% {
+      background-color: #004761;
+    }
+    89.47% {
+      background-color: #16528e;
+    }
+    94.74% {
+      background-color: #0d7ab5;
+    }
+  }
+
+  @keyframes loading {
+    0%,
+    100% {
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+}
+
+:root,
+[data-theme="transition-theme"] {
+  --theme-ink: rgb(255 255 255);
+  --theme-surface: rgb(4 133 180);
+  --theme-overlay: transparent;
+  --theme-image: none;
+}
+
+[data-theme="dark-theme"] {
+  --theme-ink: var(--color-theme-dark-ink);
+  --theme-surface: var(--color-theme-dark);
+  --theme-overlay: var(--color-theme-dark);
+}
+
+[data-theme="light-theme"] {
+  --theme-ink: var(--color-theme-light-ink);
+  --theme-surface: var(--color-theme-light);
+  --theme-overlay: var(--color-theme-light);
+}
+
+[data-theme="room-theme"] {
+  --theme-ink: var(--color-theme-room);
+  --theme-surface: rgb(23 37 84);
+  --theme-overlay: rgb(0 0 0 / 50%);
+  --theme-image: url("/bg/blue-room.gif");
+}
+
+[data-theme="train-theme"] {
+  --theme-ink: var(--color-theme-train);
+  --theme-surface: rgb(5 46 22);
+  --theme-overlay: rgb(0 0 0 / 50%);
+  --theme-image: url("/bg/train.gif");
+}
+
+[data-theme="waterfall-theme"] {
+  --theme-ink: var(--color-theme-waterfall);
+  --theme-surface: rgb(26 46 5);
+  --theme-overlay: rgb(0 0 0 / 50%);
+  --theme-image: url("/bg/waterfall.gif");
+}
+
+[data-theme="camping-theme"] {
+  --theme-ink: var(--color-theme-camping);
+  --theme-surface: rgb(67 10 7);
+  --theme-overlay: rgb(0 0 0 / 50%);
+  --theme-image: url("/bg/camping-fire.gif");
+}
+
+:root,
+[data-theme] {
+  --background: var(--theme-surface);
+  --foreground: var(--theme-ink);
+  --card: var(--theme-surface);
+  --card-foreground: var(--theme-ink);
+  --popover: var(--theme-surface);
+  --popover-foreground: var(--theme-ink);
+  --primary: var(--theme-ink);
+  --primary-foreground: var(--theme-surface);
+  --secondary: color-mix(in oklab, var(--theme-ink) 10%, transparent);
+  --secondary-foreground: var(--theme-ink);
+  --muted: color-mix(in oklab, var(--theme-ink) 10%, transparent);
+  --muted-foreground: color-mix(in oklab, var(--theme-ink) 70%, transparent);
+  --accent: color-mix(in oklab, var(--theme-ink) 15%, transparent);
+  --accent-foreground: var(--theme-ink);
+  --border: color-mix(in oklab, var(--theme-ink) 15%, transparent);
+  --input: color-mix(in oklab, var(--theme-ink) 25%, transparent);
+  --ring: color-mix(in oklab, var(--theme-ink) 50%, transparent);
+  --destructive: oklch(0.704 0.191 22.216);
+  --radius: 0.625rem;
+}
+
+[data-theme="light-theme"] {
+  --destructive: oklch(0.577 0.245 27.325);
+}
+
+@layer base {
+  /* The animated color runs underneath every theme; image themes cover it. */
+  body {
+    @apply animate-background-change font-sans font-light;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(var(--theme-overlay), var(--theme-overlay)),
+      var(--theme-image) center / cover no-repeat;
+  }
+}
+
+/* Theme menu previews: still frames instead of the full-size GIFs. */
+@utility bg-preview-room {
+  background-image: url("/bg/blue-room-thumb.png");
+}
+
+@utility bg-preview-train {
+  background-image: url("/bg/train-thumb.png");
+}
+
+@utility bg-preview-waterfall {
+  background-image: url("/bg/waterfall-thumb.png");
+}
+
+@utility bg-preview-camping {
+  background-image: url("/bg/camping-fire-thumb.png");
+}

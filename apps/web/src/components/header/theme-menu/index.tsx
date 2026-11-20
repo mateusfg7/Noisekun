@@ -1,14 +1,19 @@
-import { Menu, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-import { PiPaintBrushBroadBold } from "react-icons/pi";
+import { Button } from "@noisekun/ui/components/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@noisekun/ui/components/dropdown-menu";
+import { cn } from "@noisekun/ui/lib/utils";
+import { PaintbrushIcon } from "lucide-react";
 import { useMount } from "react-use";
 
-import { headerIconButton } from "~/components/header/styles";
 import { useQueryState } from "~/hooks/use-query-state";
 import { useThemeStore } from "~/stores/theme-store";
 import type { Theme } from "~/stores/theme-store";
 
-import { themeButton } from "./styles";
 import { themeList } from "./theme-list";
 
 const isTheme = (value: string | null): value is Theme =>
@@ -42,55 +47,45 @@ export function ThemeMenu() {
   });
 
   return (
-    <div className="z-40">
-      <Menu>
-        <div className="group flex">
-          <Menu.Button
-            className={headerIconButton()}
+    <DropdownMenu>
+      <DropdownMenuTrigger
+        render={
+          <Button
             data-umami-event="Open theme menu"
+            size="icon-pill"
             title="Toggle theme menu"
-          >
-            <PiPaintBrushBroadBold size={18} />
-          </Menu.Button>
-        </div>
-        <Transition
-          as={Fragment}
-          enter="transition ease-out duration-100"
-          enterFrom="transform opacity-0 scale-95"
-          enterTo="transform opacity-100 scale-100"
-          leave="transition ease-in duration-75"
-          leaveFrom="transform opacity-100 scale-100"
-          leaveTo="transform opacity-0 scale-95"
-        >
-          <Menu.Items
-            as="div"
-            className="snap absolute left-4 right-4 mt-2 flex max-h-[85vh] origin-top-right snap-y snap-mandatory scroll-pt-4 flex-col gap-4 overflow-y-auto rounded-2xl p-4 shadow-2xl backdrop-blur-md scrollbar-hide focus:outline-none md:left-auto md:right-0"
-            data-testid="theme-menu-container"
-          >
-            {themeList.map((theme) => (
-              <div className="min-w-max snap-start" key={theme.id}>
-                <Menu.Item>
-                  {({ active }) => (
-                    <button
-                      className={themeButton({
-                        active,
-                        background: theme.id,
-                        selected: currentTheme === theme.id,
-                        theme: theme.id,
-                      })}
-                      data-umami-event={`Select ${theme.title} Theme`}
-                      onClick={() => handleTheme(theme.id)}
-                      type="button"
-                    >
-                      {theme.title}
-                    </button>
-                  )}
-                </Menu.Item>
-              </div>
-            ))}
-          </Menu.Items>
-        </Transition>
-      </Menu>
-    </div>
+            variant="ghost"
+          />
+        }
+      >
+        <PaintbrushIcon />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent
+        align="end"
+        className="w-60"
+        data-testid="theme-menu-container"
+      >
+        <DropdownMenuGroup>
+          {themeList.map((theme) => (
+            <DropdownMenuItem
+              aria-current={currentTheme === theme.id}
+              className="group/theme"
+              data-umami-event={`Select ${theme.title} Theme`}
+              key={theme.id}
+              onClick={() => handleTheme(theme.id)}
+            >
+              <span
+                className={cn(
+                  "flex h-20 w-full items-center justify-center rounded-lg border-2 border-transparent bg-cover bg-center text-lg font-bold shadow-md transition group-focus/theme:brightness-110 group-aria-[current=true]/theme:border-current",
+                  theme.preview
+                )}
+              >
+                {theme.title}
+              </span>
+            </DropdownMenuItem>
+          ))}
+        </DropdownMenuGroup>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }

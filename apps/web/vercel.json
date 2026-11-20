@@ -3,7 +3,7 @@
   "framework": "nextjs",
   "headers": [
     {
-      "source": "/sw.js",
+      "source": "/serwist/sw.js",
       "headers": [
         {
           "key": "Cache-Control",
