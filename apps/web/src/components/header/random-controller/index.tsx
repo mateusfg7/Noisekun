@@ -3,7 +3,6 @@ import { FiZap } from "react-icons/fi";
 
 import { useGlobalRandomModeStore } from "~/stores/random-mode-store";
 import { useSoundsStateStore } from "~/stores/sounds-state-store";
-import type { SoundState } from "~/stores/sounds-state-store";
 
 import { calculateVolumeSteps } from "./calculate-volume-steps";
 
@@ -42,6 +41,33 @@ export function RandomModeButton() {
       }
     }
 
+    function setVolumeStep(
+      soundId: string,
+      volumeSteps: number[],
+      index: number,
+      stepDuration: number
+    ) {
+      if (index >= volumeSteps.length) {
+        return;
+      }
+
+      // Fetch the most recent value of the sound
+      const currentSound = soundsRef.current.find((s) => s.id === soundId);
+
+      if (!currentSound?.active) {
+        return;
+      }
+
+      setSound({ ...currentSound, volume: volumeSteps[index] });
+
+      // add next timeout only if this one is successful
+      const timeoutId = setTimeout(() => {
+        setVolumeStep(soundId, volumeSteps, index + 1, stepDuration);
+      }, stepDuration);
+
+      timeoutsRef.current.push(timeoutId);
+    }
+
     // Apply Volumes with Timeouts
     function applyVolumeChanges(stepDuration: number) {
       clearAllTimeouts(); // Clears existing timeouts
@@ -57,29 +83,7 @@ export function RandomModeButton() {
           updateSteps
         );
 
-        const setVolumeStep = (sound: SoundState, index: number) => {
-          if (index < volumeSteps.length) {
-            // Fetch the most recent value of the sound
-            const currentSound = soundsRef.current.find(
-              (s) => s.id === sound.id
-            );
-
-            if (currentSound?.active) {
-              const updatedVolume = volumeSteps[index];
-              const updatedSound = { ...currentSound, volume: updatedVolume };
-              setSound(updatedSound);
-
-              // add next timeout only if this one is successful
-              const timeoutId = setTimeout(() => {
-                setVolumeStep(currentSound, index + 1);
-              }, stepDuration);
-
-              timeoutsRef.current.push(timeoutId);
-            }
-          }
-        };
-
-        setVolumeStep(initialSound, 0);
+        setVolumeStep(initialSound.id, volumeSteps, 0, stepDuration);
       }
     }
 

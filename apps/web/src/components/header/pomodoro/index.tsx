@@ -96,20 +96,20 @@ export function Pomodoro() {
   };
 
   useEffect(() => {
-    if (!isTicking) {
-      return;
+    let timeoutId: ReturnType<typeof setTimeout> | undefined;
+
+    if (isTicking) {
+      timeoutId = setTimeout(() => {
+        const nextRemaining = remainingTime - 1;
+        setRemainingOverride(nextRemaining);
+
+        if (nextRemaining === 0) {
+          setIsTicking(false);
+          setPomodoroStatus(PomodoroStatus.stopped);
+          startAlarm();
+        }
+      }, 1000);
     }
-
-    const timeoutId = setTimeout(() => {
-      const nextRemaining = remainingTime - 1;
-      setRemainingOverride(nextRemaining);
-
-      if (nextRemaining === 0) {
-        setIsTicking(false);
-        setPomodoroStatus(PomodoroStatus.stopped);
-        startAlarm();
-      }
-    }, 1000);
 
     return () => clearTimeout(timeoutId);
   }, [isTicking, remainingTime, setPomodoroStatus, startAlarm]);

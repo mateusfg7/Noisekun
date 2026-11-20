@@ -10,6 +10,9 @@ import type { Theme } from "~/stores/theme-store";
 import { themeButton } from "./styles";
 import { themeList } from "./theme-list";
 
+const isTheme = (value: string | null): value is Theme =>
+  themeList.some((theme) => theme.id === value);
+
 export function ThemeMenu() {
   const setTheme = useThemeStore((set) => set.setTheme);
   const currentTheme = useThemeStore((set) => set.theme);
@@ -25,11 +28,11 @@ export function ThemeMenu() {
   // not re-run on theme changes: combos set the theme without touching the
   // URL, and re-running would revert them to the stale query value.
   useMount(() => {
-    const themeOnStorage = localStorage.getItem("theme") as Theme;
+    const themeOnStorage = localStorage.getItem("theme");
 
-    if (queryTheme) {
-      setTheme(queryTheme as Theme);
-    } else if (themeOnStorage) {
+    if (isTheme(queryTheme)) {
+      setTheme(queryTheme);
+    } else if (isTheme(themeOnStorage)) {
       setTheme(themeOnStorage);
       setQueryTheme(themeOnStorage);
     } else {

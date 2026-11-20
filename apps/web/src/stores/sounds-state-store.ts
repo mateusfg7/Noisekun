@@ -27,17 +27,13 @@ export const useSoundsStateStore = create<SoundsStateStoreProps>()(
         set({ sounds: newStates });
       },
       getSound(id) {
-        const matches = get().sounds.filter((sound) => sound.id === id);
-
-        if (matches.length > 0) {
-          return matches[0];
-        }
+        return get().sounds.find((sound) => sound.id === id);
       },
       setSound(newState) {
         const sounds = get().sounds.filter((sound) => sound.id !== newState.id);
         set({ sounds: [...sounds, newState] });
       },
-      sounds: [] as SoundState[],
+      sounds: [],
     }),
     { name: "sounds-store" }
   )
