@@ -35,7 +35,7 @@ export default function Home() {
         <div className="relative min-h-dvh bg-background-color">
           <div className="mx-auto flex min-h-dvh w-fit flex-col justify-between gap-16 px-5 pt-2">
             <Header />
-            <main className="flex flex-col gap-3">
+            <main className="flex flex-1 flex-col gap-3">
               <ActionButtons />
               <div className="mx-auto grid w-fit grid-cols-2 gap-6 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
                 {sounds.map((sound) => (
