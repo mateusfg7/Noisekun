@@ -3,6 +3,7 @@ import { FiSettings } from "react-icons/fi";
 type Props = {
   openModal: () => void;
 };
+
 export function TriggerButton({ openModal }: Props) {
   return (
     <button

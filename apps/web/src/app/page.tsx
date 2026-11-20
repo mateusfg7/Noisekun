@@ -14,6 +14,7 @@ import { useUserInteractionStore } from "~/stores/user-interaction-store";
 
 export default function Home() {
   const currTheme = useThemeStore((set) => set.theme);
+
   const setUserHasInteracted = useUserInteractionStore(
     (state) => state.setUserHasInteracted
   );

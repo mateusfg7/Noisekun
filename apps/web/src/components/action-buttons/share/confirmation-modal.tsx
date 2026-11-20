@@ -7,6 +7,7 @@ type Props = {
   showModal: boolean;
   setShowModal: (value: boolean) => void;
 };
+
 export function ConfirmationModal({ showModal, setShowModal }: Props) {
   const closeModal = () => setShowModal(false);
 

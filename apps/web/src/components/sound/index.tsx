@@ -22,6 +22,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   const soundsStore = useSoundsStateStore((state) => state.sounds);
   const getSoundState = useSoundsStateStore((state) => state.getSound);
   const setSoundState = useSoundsStateStore((state) => state.setSound);
+
   const userHasInteracted = useUserInteractionStore(
     (state) => state.userHasInteracted
   );
@@ -75,6 +76,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
     if (querySounds.length) {
       for (const item of decodeURIComponent(querySounds).split(";")) {
         const [id, volume] = item.split(",");
+
         if (id === sound.id) {
           initialState = {
             active: true,

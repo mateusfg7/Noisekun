@@ -13,6 +13,7 @@ export function InteractionModal() {
   const userHasInteracted = useUserInteractionStore(
     (state) => state.userHasInteracted
   );
+
   const setUserHasInteracted = useUserInteractionStore(
     (state) => state.setUserHasInteracted
   );

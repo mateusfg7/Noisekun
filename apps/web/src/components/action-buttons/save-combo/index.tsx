@@ -24,6 +24,7 @@ export function SaveCombo() {
 
     if (!showInput) {
       setShowInput(true);
+
       return;
     }
 

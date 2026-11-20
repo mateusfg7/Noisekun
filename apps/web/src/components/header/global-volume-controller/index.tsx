@@ -12,6 +12,7 @@ export function GlobalVolumeController() {
   const setGlobalVolume = useGlobalVolumeStore(
     (state) => state.setGlobalVolume
   );
+
   const globalVolume = useGlobalVolumeStore((state) => state.globalVolume);
 
   const [currentVolume, setCurrentVolume] = useState(globalVolume);

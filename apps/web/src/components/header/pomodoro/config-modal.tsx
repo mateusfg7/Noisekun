@@ -35,6 +35,7 @@ export function ConfigModal({
     } else {
       setMinutes(localMinutes);
     }
+
     closeModal();
   }
 
@@ -123,8 +124,10 @@ export function ConfigModal({
                           onChange={(e) => {
                             if (e.target.value === "0" || !e.target.value) {
                               updateTime(0);
+
                               return;
                             }
+
                             if (+e.target.value) {
                               updateTime(+e.target.value);
                             }

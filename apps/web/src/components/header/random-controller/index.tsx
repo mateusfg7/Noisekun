@@ -15,6 +15,7 @@ export function RandomModeButton() {
     updateTransitionTimeInMs,
     setRandomMode,
   } = useGlobalRandomModeStore();
+
   const { sounds, setSound } = useSoundsStateStore();
 
   const soundsRef = useRef(sounds);
@@ -30,6 +31,7 @@ export function RandomModeButton() {
       for (const timeoutId of timeoutsRef.current) {
         clearTimeout(timeoutId);
       }
+
       timeoutsRef.current = [];
     }
 
@@ -48,6 +50,7 @@ export function RandomModeButton() {
 
       for (const initialSound of activeSounds) {
         const targetVolume = Math.random();
+
         const volumeSteps = calculateVolumeSteps(
           initialSound.volume,
           targetVolume,
@@ -60,10 +63,12 @@ export function RandomModeButton() {
             const currentSound = soundsRef.current.find(
               (s) => s.id === sound.id
             );
+
             if (currentSound?.active) {
               const updatedVolume = volumeSteps[index];
               const updatedSound = { ...currentSound, volume: updatedVolume };
               setSound(updatedSound);
+
               // add next timeout only if this one is successful
               const timeoutId = setTimeout(() => {
                 setVolumeStep(currentSound, index + 1);

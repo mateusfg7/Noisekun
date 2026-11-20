@@ -5,6 +5,7 @@ import type { ReactNode } from "react";
 type Props = {
   children: ReactNode;
 };
+
 export const ModalTransitionFragment = ({ children }: Props) => (
   <Transition.Child
     as={Fragment}

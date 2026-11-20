@@ -10,6 +10,7 @@ export type Theme =
   | "camping-theme";
 
 type States = { theme: Theme };
+
 type Actions = { setTheme: (newTheme: Theme) => void };
 
 export type ThemeStoreProps = States & Actions;

@@ -25,9 +25,11 @@ export function ConfigMenu() {
   const [transitionTime, setTransitionTime] = useState(
     randomModeStore.updateTransitionTimeInMs
   );
+
   const [updateInterval, setUpdateInterval] = useState(
     randomModeStore.updateIntervalInMs
   );
+
   const [updateSteps, setUpdateSteps] = useState(randomModeStore.updateSteps);
 
   const randomModeTransitionTime: Action = {
@@ -57,6 +59,7 @@ export function ConfigMenu() {
       }
 
       randomModeStore.setUpdateTransitionTime(transitionTimeInMs);
+
       return {};
     },
     wasChanged: () =>
@@ -90,6 +93,7 @@ export function ConfigMenu() {
       }
 
       randomModeStore.setUpdateInterval(updateIntervalInMs);
+
       return {};
     },
     wasChanged: () => updateInterval !== randomModeStore.updateIntervalInMs,
@@ -101,6 +105,7 @@ export function ConfigMenu() {
     },
     save: () => {
       randomModeStore.setUpdateSteps(updateSteps);
+
       return {};
     },
     wasChanged: () => updateSteps !== randomModeStore.updateSteps,
@@ -140,6 +145,7 @@ export function ConfigMenu() {
     for (const action of actionList) {
       action.reset();
     }
+
     closeModal();
   }
 

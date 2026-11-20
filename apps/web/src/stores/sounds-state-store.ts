@@ -11,6 +11,7 @@ export type SoundState = {
 type States = {
   sounds: SoundState[];
 };
+
 type Actions = {
   getSound: (id: string) => undefined | SoundState;
   setSound: (newState: SoundState) => void;

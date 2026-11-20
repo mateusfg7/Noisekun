@@ -14,6 +14,7 @@ type ActionButtonProps = {
   onCancel: () => void;
   onSave: () => void;
 };
+
 export const ActionButtons = ({ onCancel, onSave }: ActionButtonProps) => (
   <div className="flex justify-center gap-1">
     <button

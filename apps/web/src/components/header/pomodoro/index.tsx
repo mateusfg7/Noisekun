@@ -12,8 +12,10 @@ const DEFAULT_MINUTES = 25;
 const MAX_MINUTES = 99;
 
 const toTotalSeconds = (minutes: number) => Math.min(minutes, MAX_MINUTES) * 60;
+
 const getMinutes = (totalSeconds: number) =>
   padZero(Math.floor(totalSeconds / 60));
+
 const getRemainderSeconds = (totalSeconds: number) =>
   padZero(totalSeconds % 60);
 
@@ -26,20 +28,24 @@ export function Pomodoro() {
   // show a placeholder until hydration, then read it during render.
   const isClient = useIsClient();
   const isLoadingStorage = !isClient;
+
   const storedMinutes = isClient
     ? Number(localStorage.getItem(STORAGE_KEY))
     : 0;
 
   // `null` means "not set yet": fall back to the stored/default duration.
   const [customTimeInSec, setCustomTimeInSec] = useState<number | null>(null);
+
   const [remainingOverride, setRemainingOverride] = useState<number | null>(
     null
   );
+
   const [isTicking, setIsTicking] = useState(false);
   const [alarmIsRinging, setAlarmIsRinging] = useState(false);
 
   const defaultTimeInSec =
     customTimeInSec ?? toTotalSeconds(storedMinutes || DEFAULT_MINUTES);
+
   const remainingTime = remainingOverride ?? defaultTimeInSec;
 
   const alarmRef = useRef<HTMLAudioElement>(null);

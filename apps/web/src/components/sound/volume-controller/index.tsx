@@ -20,6 +20,7 @@ export const VolumeController: React.FC<IVolumeController> = ({
   const storedVolume = useSoundsStateStore(
     (state) => state.sounds.find((sound) => sound.id === soundId)?.volume
   );
+
   // The sounds store is persisted in localStorage; render the default until
   // hydration so the slider matches the server HTML.
   const isClient = useIsClient();

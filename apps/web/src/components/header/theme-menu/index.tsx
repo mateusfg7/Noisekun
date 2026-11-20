@@ -26,6 +26,7 @@ export function ThemeMenu() {
   // URL, and re-running would revert them to the stale query value.
   useMount(() => {
     const themeOnStorage = localStorage.getItem("theme") as Theme;
+
     if (queryTheme) {
       setTheme(queryTheme as Theme);
     } else if (themeOnStorage) {

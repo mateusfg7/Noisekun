@@ -11,6 +11,7 @@ type Props = {
   rangeValue: number;
   handleVolume: (volume: number) => void;
 };
+
 export function VolumeControllerSlider({
   className,
   minValue,
