@@ -21,8 +21,11 @@
     "oxfmt": "0.79.0",
     "oxlint": "1.94.0",
     "oxlint-plugin-react-doctor": "0.9.23",
-    "turbo": "2.10.6",
+    "turbo": "2.11.13",
     "ultracite": "8.1.1"
   },
-  "packageManager": "pnpm@8.15.9"
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@12.21.0"
 }

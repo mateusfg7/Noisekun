@@ -1,2 +1,7 @@
 packages:
   - "apps/*"
+
+# pnpm only runs install scripts for the packages listed here.
+allowBuilds:
+  sharp: true
+  esbuild: true
