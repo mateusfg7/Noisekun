@@ -41,7 +41,8 @@ export function Pomodoro() {
   );
 
   const [isTicking, setIsTicking] = useState(false);
-  const [alarmIsRinging, setAlarmIsRinging] = useState(false);
+  // Only read in event handlers, so a ref avoids needless re-renders.
+  const alarmIsRingingRef = useRef(false);
 
   const defaultTimeInSec =
     customTimeInSec ?? toTotalSeconds(storedMinutes || DEFAULT_MINUTES);
@@ -52,12 +53,12 @@ export function Pomodoro() {
 
   const startAlarm = useCallback(() => {
     alarmRef.current?.play();
-    setAlarmIsRinging(true);
+    alarmIsRingingRef.current = true;
   }, []);
 
   const stopAlarm = () => {
     alarmRef.current?.pause();
-    setAlarmIsRinging(false);
+    alarmIsRingingRef.current = false;
   };
 
   function setMinutes(minutes: number) {
@@ -74,7 +75,7 @@ export function Pomodoro() {
     setRemainingOverride(null);
     setPomodoroStatus(PomodoroStatus.idle);
 
-    if (alarmIsRinging) {
+    if (alarmIsRingingRef.current) {
       stopAlarm();
     }
   };
@@ -89,7 +90,7 @@ export function Pomodoro() {
       isTicking ? PomodoroStatus.stopped : PomodoroStatus.ticking
     );
 
-    if (alarmIsRinging) {
+    if (alarmIsRingingRef.current) {
       stopAlarm();
     }
   };

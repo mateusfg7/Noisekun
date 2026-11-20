@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FiVolume, FiVolume1, FiVolume2, FiVolumeX } from "react-icons/fi";
 
 import { VolumeControllerSlider } from "~/components/ui/volume-controller-slider";
@@ -15,8 +15,9 @@ export function GlobalVolumeController() {
 
   const globalVolume = useGlobalVolumeStore((state) => state.globalVolume);
 
-  const [currentVolume, setCurrentVolume] = useState(globalVolume);
-  const [isMuted, setIsMuted] = useState(false);
+  // Only read in the click handler, so refs avoid needless re-renders.
+  const volumeBeforeMuteRef = useRef(globalVolume);
+  const isMutedRef = useRef(false);
 
   function handleVolume(value: number) {
     setGlobalVolume(value / MAX_VALUE);
@@ -24,12 +25,12 @@ export function GlobalVolumeController() {
   }
 
   function toggleMuted() {
-    if (isMuted) {
-      setIsMuted(false);
-      handleVolume(currentVolume);
+    if (isMutedRef.current) {
+      isMutedRef.current = false;
+      handleVolume(volumeBeforeMuteRef.current);
     } else {
-      setIsMuted(true);
-      setCurrentVolume(globalVolume * MAX_VALUE);
+      isMutedRef.current = true;
+      volumeBeforeMuteRef.current = globalVolume * MAX_VALUE;
       handleVolume(0);
     }
   }
