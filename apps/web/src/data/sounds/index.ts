@@ -1,26 +1,26 @@
-import { ReactComponent as AirPlane } from "./icons/air-plane.svg";
-import { ReactComponent as BirdsTree } from "./icons/birds-tree.svg";
-import { ReactComponent as Boat } from "./icons/boat.svg";
-import { ReactComponent as BrownNoise } from "./icons/brown-noise.svg";
-import { ReactComponent as Cave } from "./icons/cave.svg";
-import { ReactComponent as Coffee } from "./icons/coffee.svg";
-import { ReactComponent as Drops } from "./icons/drops.svg";
-import { ReactComponent as Fire } from "./icons/fire.svg";
-import { ReactComponent as Leaves } from "./icons/leaves.svg";
-import { ReactComponent as Night } from "./icons/night.svg";
-import { ReactComponent as PinkNoise } from "./icons/pink-noise.svg";
-import { ReactComponent as Playground } from "./icons/playground.svg";
-import { ReactComponent as RainOnTent } from "./icons/rain-on-tent.svg";
-import { ReactComponent as Rain } from "./icons/rain.svg";
-import { ReactComponent as Storm } from "./icons/storm.svg";
-import { ReactComponent as StreamWater } from "./icons/stream-water.svg";
-import { ReactComponent as Train } from "./icons/train.svg";
-import { ReactComponent as Underwater } from "./icons/underwater.svg";
-import { ReactComponent as WashingMachine } from "./icons/washing-machine.svg";
-import { ReactComponent as Waterfall } from "./icons/waterfall.svg";
-import { ReactComponent as Waves } from "./icons/waves.svg";
-import { ReactComponent as WhiteNoise } from "./icons/white-noise.svg";
-import { ReactComponent as Wind } from "./icons/wind.svg";
+import { AirPlaneIcon } from "./icons/air-plane";
+import { BirdsTreeIcon } from "./icons/birds-tree";
+import { BoatIcon } from "./icons/boat";
+import { BrownNoiseIcon } from "./icons/brown-noise";
+import { CaveIcon } from "./icons/cave";
+import { CoffeeIcon } from "./icons/coffee";
+import { DropsIcon } from "./icons/drops";
+import { FireIcon } from "./icons/fire";
+import { LeavesIcon } from "./icons/leaves";
+import { NightIcon } from "./icons/night";
+import { PinkNoiseIcon } from "./icons/pink-noise";
+import { PlaygroundIcon } from "./icons/playground";
+import { RainIcon } from "./icons/rain";
+import { RainOnTentIcon } from "./icons/rain-on-tent";
+import { StormIcon } from "./icons/storm";
+import { StreamWaterIcon } from "./icons/stream-water";
+import { TrainIcon } from "./icons/train";
+import { UnderwaterIcon } from "./icons/underwater";
+import { WashingMachineIcon } from "./icons/washing-machine";
+import { WaterfallIcon } from "./icons/waterfall";
+import { WavesIcon } from "./icons/waves";
+import { WhiteNoiseIcon } from "./icons/white-noise";
+import { WindIcon } from "./icons/wind";
 
 export const sounds = [
   {
@@ -28,7 +28,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/rain.ogg",
     },
-    icon: Rain,
+    icon: RainIcon,
     id: "rain",
     title: "Rain",
   },
@@ -37,7 +37,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/storm.ogg",
     },
-    icon: Storm,
+    icon: StormIcon,
     id: "storm",
     title: "Storm",
   },
@@ -46,7 +46,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/drops.ogg",
     },
-    icon: Drops,
+    icon: DropsIcon,
     id: "drops",
     title: "Drops",
   },
@@ -55,7 +55,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/wind.ogg",
     },
-    icon: Wind,
+    icon: WindIcon,
     id: "wind",
     title: "Wind",
   },
@@ -64,7 +64,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/waves.ogg",
     },
-    icon: Waves,
+    icon: WavesIcon,
     id: "waves",
     title: "Waves",
   },
@@ -73,7 +73,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/underwater.ogg",
     },
-    icon: Underwater,
+    icon: UnderwaterIcon,
     id: "underwater",
     title: "Underwater",
   },
@@ -82,7 +82,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/stream-water.ogg",
     },
-    icon: StreamWater,
+    icon: StreamWaterIcon,
     id: "stream-water",
     title: "Stream Water",
   },
@@ -91,7 +91,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/waterfall.ogg",
     },
-    icon: Waterfall,
+    icon: WaterfallIcon,
     id: "waterfall",
     title: "Waterfall",
   },
@@ -100,7 +100,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/birds-tree.ogg",
     },
-    icon: BirdsTree,
+    icon: BirdsTreeIcon,
     id: "birds-tree",
     title: "Birds on Tree",
   },
@@ -109,7 +109,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/leaves.ogg",
     },
-    icon: Leaves,
+    icon: LeavesIcon,
     id: "leaves",
     title: "Leaves",
   },
@@ -118,7 +118,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/fire.ogg",
     },
-    icon: Fire,
+    icon: FireIcon,
     id: "fire",
     title: "Bonfire",
   },
@@ -127,7 +127,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/cave-drops.ogg",
     },
-    icon: Cave,
+    icon: CaveIcon,
     id: "cave",
     title: "Cave Sounds",
   },
@@ -136,7 +136,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/night.ogg",
     },
-    icon: Night,
+    icon: NightIcon,
     id: "night",
     title: "Night",
   },
@@ -145,7 +145,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/coffee.ogg",
     },
-    icon: Coffee,
+    icon: CoffeeIcon,
     id: "coffee",
     title: "Coffee shop",
   },
@@ -154,7 +154,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/train.ogg",
     },
-    icon: Train,
+    icon: TrainIcon,
     id: "train",
     title: "Train",
   },
@@ -163,7 +163,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/air-plane.ogg",
     },
-    icon: AirPlane,
+    icon: AirPlaneIcon,
     id: "air-plane",
     title: "Airplane",
   },
@@ -172,7 +172,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/washing-machine.ogg",
     },
-    icon: WashingMachine,
+    icon: WashingMachineIcon,
     id: "washing-machine",
     title: "Washing machine",
   },
@@ -181,7 +181,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/playground.ogg",
     },
-    icon: Playground,
+    icon: PlaygroundIcon,
     id: "playground",
     title: "Playground",
   },
@@ -190,7 +190,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/boat.ogg",
     },
-    icon: Boat,
+    icon: BoatIcon,
     id: "boat",
     title: "Boat",
   },
@@ -199,7 +199,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/rain-on-tent.ogg",
     },
-    icon: RainOnTent,
+    icon: RainOnTentIcon,
     id: "rain-on-tent",
     title: "Rain on Tent",
   },
@@ -208,7 +208,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/brown-noise.ogg",
     },
-    icon: BrownNoise,
+    icon: BrownNoiseIcon,
     id: "brown-noise",
     title: "Brown Noise",
   },
@@ -217,7 +217,7 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/white-noise.ogg",
     },
-    icon: WhiteNoise,
+    icon: WhiteNoiseIcon,
     id: "white-noise",
     title: "White Noise",
   },
@@ -226,10 +226,10 @@ export const sounds = [
       type: "audio/ogg",
       url: "https://cdn.noisekun.com/sounds/pink-noise.ogg",
     },
-    icon: PinkNoise,
+    icon: PinkNoiseIcon,
     id: "pink-noise",
     title: "Pink Noise",
   },
 ];
 
-export type Sound = (typeof sounds)[0];
+export type Sound = (typeof sounds)[number];
