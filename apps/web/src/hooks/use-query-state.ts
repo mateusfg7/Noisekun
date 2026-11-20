@@ -8,7 +8,9 @@ export function useQueryState(key: string, defaultValue = "") {
   const searchParams = useSearchParams();
   const pathname = usePathname();
 
-  const [value, setValue] = useState(searchParams.get(key) ?? defaultValue);
+  const [value, setValue] = useState(
+    () => searchParams.get(key) ?? defaultValue
+  );
 
   // Write to the URL from the setter rather than from an effect: an effect
   // would need `searchParams` as a dependency, and `router.replace` hands back

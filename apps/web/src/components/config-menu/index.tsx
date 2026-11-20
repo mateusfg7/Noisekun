@@ -126,15 +126,11 @@ export function ConfigMenu() {
   }
 
   function handleSave() {
-    const errors = actionList
-      .map((action) => action.save())
-      .filter((err) => err.error);
+    const errors = actionList.flatMap(({ save }) => save().error ?? []);
 
     if (errors.length > 0) {
-      for (const { error } of errors) {
-        if (error) {
-          toast.error(error);
-        }
+      for (const error of errors) {
+        toast.error(error);
       }
     } else {
       closeModal();

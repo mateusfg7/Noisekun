@@ -95,8 +95,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
 
   const mountQueryParams = () => {
     const activeSounds = soundsStore
-      .filter((item) => item.active)
-      .map((item) => `${item.id},${item.volume}`)
+      .flatMap((item) => (item.active ? [`${item.id},${item.volume}`] : []))
       .join(";");
 
     setQuerySounds(activeSounds);

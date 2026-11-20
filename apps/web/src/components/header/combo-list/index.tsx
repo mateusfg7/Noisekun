@@ -33,14 +33,18 @@ export function ComboList() {
 
     const activeSoundsIds = new Set(comboSounds.map((sound) => sound.id));
 
-    const disabledSounds = sounds
-      .filter((sound) => !activeSoundsIds.has(sound.id))
-      .map((sound) => ({ ...sound, active: false }));
+    const disabledSounds = sounds.flatMap((sound) =>
+      activeSoundsIds.has(sound.id) ? [] : [{ ...sound, active: false }]
+    );
+
+    const enabledSounds = comboSounds.map(
+      (sound) => `${sound.id}:${sound.volume}`
+    );
 
     console.log(
       `
       theme: ${combo.theme}
-      enabledSounds: ${comboSounds.map((sound) => `${sound.id}:${sound.volume}`)}`
+      enabledSounds: ${enabledSounds}`
     );
 
     bulkUpdateSounds([...disabledSounds, ...comboSounds]);
