@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { PiPaintBrushBroadBold } from "react-icons/pi";
 import { useMount } from "react-use";
 
+import { headerIconButton } from "~/components/header/styles";
 import { useQueryState } from "~/hooks/use-query-state";
 import { useThemeStore } from "~/stores/theme-store";
 import type { Theme } from "~/stores/theme-store";
@@ -45,11 +46,11 @@ export function ThemeMenu() {
       <Menu>
         <div className="group flex">
           <Menu.Button
-            className="flex text-primary-foreground opacity-90 group-hover:opacity-100"
+            className={headerIconButton()}
             data-umami-event="Open theme menu"
             title="Toggle theme menu"
           >
-            <PiPaintBrushBroadBold size={22} />
+            <PiPaintBrushBroadBold size={18} />
           </Menu.Button>
         </div>
         <Transition

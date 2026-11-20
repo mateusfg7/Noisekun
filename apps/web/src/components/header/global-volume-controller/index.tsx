@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { FiVolume, FiVolume1, FiVolume2, FiVolumeX } from "react-icons/fi";
 
+import { headerIconButton } from "~/components/header/styles";
 import { VolumeControllerSlider } from "~/components/ui/volume-controller-slider";
 import { useGlobalVolumeStore } from "~/stores/global-volume-store";
 
@@ -36,7 +37,7 @@ export function GlobalVolumeController() {
   }
 
   return (
-    <div className="group/volume flex items-center gap-3 opacity-90 hover:opacity-100">
+    <div className="group/volume flex items-center gap-2">
       <div className="group relative hidden h-max w-28 items-center group-focus-within/volume:md:flex group-hover/volume:md:flex">
         <span className="sr-only">
           Global volume in {Number(globalVolume * 100).toFixed(1)}%
@@ -51,16 +52,16 @@ export function GlobalVolumeController() {
         />
       </div>
       <button
-        className="text-primary-foreground"
+        className={headerIconButton()}
         data-umami-event="Mute/Unmute global volume"
         onClick={toggleMuted}
         title="Enable/disable sound"
         type="button"
       >
-        {globalVolume >= 0.5 && <FiVolume2 size={25} />}
-        {globalVolume >= 0.25 && globalVolume < 0.5 && <FiVolume1 size={25} />}
-        {globalVolume > 0 && globalVolume < 0.25 && <FiVolume size={25} />}
-        {globalVolume === 0 && <FiVolumeX size={25} />}
+        {globalVolume >= 0.5 && <FiVolume2 size={18} />}
+        {globalVolume >= 0.25 && globalVolume < 0.5 && <FiVolume1 size={18} />}
+        {globalVolume > 0 && globalVolume < 0.25 && <FiVolume size={18} />}
+        {globalVolume === 0 && <FiVolumeX size={18} />}
       </button>
     </div>
   );

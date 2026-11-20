@@ -1,5 +1,7 @@
 import { FiSettings } from "react-icons/fi";
 
+import { headerIconButton } from "~/components/header/styles";
+
 type Props = {
   openModal: () => void;
 };
@@ -7,13 +9,13 @@ type Props = {
 export function TriggerButton({ openModal }: Props) {
   return (
     <button
-      className="text-xl text-primary-foreground opacity-90 hover:opacity-100"
+      className={headerIconButton()}
       data-umami-event="Open config menu"
       onClick={openModal}
       title="Open config menu"
       type="button"
     >
-      <FiSettings />
+      <FiSettings size={18} />
     </button>
   );
 }

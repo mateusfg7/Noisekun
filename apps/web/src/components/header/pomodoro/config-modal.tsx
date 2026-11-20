@@ -59,7 +59,7 @@ export function ConfigModal({
       >
         <button
           aria-label={`Pomodoro timer ${displayMinutes}:${displaySeconds}, open configuration`}
-          className="rounded-xl bg-primary-foreground/10 text-primary-foreground transition-colors hover:bg-primary-foreground/30 disabled:hover:bg-primary-foreground/10 data-[is-loading='true']:animate-pulse data-[is-loading='true']:cursor-wait"
+          className="rounded-full bg-primary-foreground/5 text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground data-[is-loading='true']:animate-pulse data-[is-loading='true']:cursor-wait"
           data-is-loading={isLoading}
           data-testid="pomodoro-timer-button"
           data-umami-event="Open pomodoro config"
@@ -68,7 +68,7 @@ export function ConfigModal({
           type="button"
         >
           <div
-            className="flex items-center gap-1 p-2 text-xl leading-none"
+            className="flex h-6 items-center gap-0.5 px-2.5 text-sm tabular-nums leading-none tracking-wider"
             title="Pomodoro timer"
           >
             <span className="font-bold">{displayMinutes}</span>

@@ -122,7 +122,7 @@ export function Pomodoro() {
       </audio>
 
       <button
-        className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary-foreground/10 text-base text-primary-foreground transition-colors hover:bg-primary-foreground/30 disabled:hover:bg-primary-foreground/10 data-[is-loading='true']:animate-pulse data-[is-loading='true']:cursor-wait"
+        className="flex size-6 items-center justify-center rounded-full bg-primary-foreground/5 text-xs text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground data-[is-loading='true']:animate-pulse data-[is-loading='true']:cursor-wait"
         data-is-loading={isLoadingStorage}
         data-umami-event="Reset pomodoro timer"
         disabled={isLoadingStorage}
@@ -144,7 +144,7 @@ export function Pomodoro() {
       />
 
       <button
-        className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary-foreground/10 text-base text-primary-foreground transition-colors hover:bg-primary-foreground/30 disabled:hover:bg-primary-foreground/10 data-[is-loading='true']:animate-pulse data-[is-loading='true']:cursor-wait"
+        className="flex size-6 items-center justify-center rounded-full bg-primary-foreground/5 text-xs text-primary-foreground/80 transition-colors hover:bg-primary-foreground/10 hover:text-primary-foreground data-[is-loading='true']:animate-pulse data-[is-loading='true']:cursor-wait"
         data-is-loading={isLoadingStorage}
         data-umami-event="Play/pause pomodoro timer"
         disabled={isLoadingStorage}

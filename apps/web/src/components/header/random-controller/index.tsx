@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { FiZap } from "react-icons/fi";
 
+import { headerIconButton } from "~/components/header/styles";
 import { useGlobalRandomModeStore } from "~/stores/random-mode-store";
 import { useSoundsStateStore } from "~/stores/sounds-state-store";
 
@@ -113,16 +114,19 @@ export function RandomModeButton() {
   ]);
 
   return (
-    <div className="flex items-center gap-3 opacity-90 hover:opacity-100">
+    <div className="flex items-center">
       <button
-        className="text-primary-foreground opacity-50 hover:opacity-80 data-[enabled='true']:opacity-100"
+        className={headerIconButton({
+          className:
+            /*tw:*/ "data-[enabled='false']:text-primary-foreground/50",
+        })}
         data-enabled={randomMode}
         data-umami-event="Enable/Disable Random Mode"
         onClick={() => setRandomMode(!randomMode)}
         title={randomMode ? "Disable random mode" : "Enable random mode"}
         type="button"
       >
-        <FiZap size={22} />
+        <FiZap size={18} />
       </button>
     </div>
   );
