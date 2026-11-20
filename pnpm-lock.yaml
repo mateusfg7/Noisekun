@@ -39,8 +39,8 @@ importers:
         specifier: 1.7.19
         version: 1.7.19(react-dom@18.3.1)(react@18.3.1)
       '@newhighsco/next-plugin-svgr':
-        specifier: 3.0.174
-        version: 3.0.174(next@14.0.4)(typescript@5.3.3)(webpack@5.108.4)
+        specifier: 3.0.176
+        version: 3.0.176(next@14.0.4)(typescript@5.3.3)(webpack@5.108.4)
       next:
         specifier: 14.0.4
         version: 14.0.4(@babel/core@7.29.7)(react-dom@18.3.1)(react@18.3.1)
@@ -1944,10 +1944,10 @@ packages:
     resolution: {integrity: sha512-dXn3FZhPv0US+7dtJsIi2R+c7qWYiReoEh5zUntWCf4oSpMNib8FDhSoed6m3QyZdx5hK7iLFkYk3rNxwt8vTA==}
     dev: true
 
-  /@newhighsco/next-plugin-svgr@3.0.174(next@14.0.4)(typescript@5.3.3)(webpack@5.108.4):
-    resolution: {integrity: sha512-2uMFbDkR496Pu0rY+deUjnzbweYyuB8hgqc4mhWgt6H8X7cERe/VO1vSBPJulvjjFM2nL9oOaxHKurBGJDczLA==}
+  /@newhighsco/next-plugin-svgr@3.0.176(next@14.0.4)(typescript@5.3.3)(webpack@5.108.4):
+    resolution: {integrity: sha512-qMFBz0MOvFRuw6P5YEmkpR/0oVMm/sd+ALgooDLRu9bZ2iDJ75RoK28YNwxtvTGGscxLy90025j+GxExb1/uyA==}
     peerDependencies:
-      next: 16.2.11
+      next: ^16
     dependencies:
       '@svgr/webpack': 8.1.0(typescript@5.3.3)
       file-loader: 6.2.0(webpack@5.108.4)
