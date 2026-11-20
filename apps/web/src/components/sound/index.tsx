@@ -1,8 +1,9 @@
 import type React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useDeepCompareEffect, useMount } from "react-use";
 
 import type { Sound } from "~/data/sounds";
+import { useFadedPlayback } from "~/hooks/use-faded-playback";
 import { useQueryState } from "~/hooks/use-query-state";
 import { useGlobalVolumeStore } from "~/stores/global-volume-store";
 import { PomodoroStatus, usePomodoroStore } from "~/stores/pomodoro-store";
@@ -38,20 +39,16 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
 
   const soundRef = useRef<HTMLAudioElement>(null);
 
-  const sync = {
-    active: (soundState: SoundState) => {
-      if (soundState.active) {
-        soundRef.current?.play();
-      } else {
-        soundRef.current?.pause();
-      }
-    },
-    volume: (soundState: SoundState) => {
-      if (soundRef.current) {
-        soundRef.current.volume = soundState.volume * globalVolume;
-      }
-    },
-  };
+  const storedSound = useSoundsStateStore((state) =>
+    state.sounds.find((item) => item.id === sound.id)
+  );
+
+  useFadedPlayback(soundRef, {
+    // Mute active sounds while the pomodoro is paused.
+    muted: pomodoroStatus === PomodoroStatus.stopped,
+    shouldPlay: userHasInteracted && Boolean(storedSound?.active),
+    volume: (storedSound?.volume ?? 1) * globalVolume,
+  });
 
   // Seed this sound's state once on load, from the persisted store and the
   // shared-link query (`?sounds=id,volume;...`), which wins when present.
@@ -109,30 +106,9 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       return;
     }
 
-    if (userHasInteracted) {
-      sync.active(soundState);
-      sync.volume(soundState);
-    }
-
     setLocalSoundState(soundState);
     mountQueryParams();
   }, [soundsStore, userHasInteracted]);
-
-  // Mute active sounds while the pomodoro is paused, otherwise apply the
-  // sound's volume scaled by the global volume.
-  useEffect(() => {
-    const soundState = getSoundState(sound.id);
-    const audio = soundRef.current;
-
-    if (!(soundState && audio)) {
-      return;
-    }
-
-    const isMutedByPomodoro =
-      soundState.active && pomodoroStatus === PomodoroStatus.stopped;
-
-    audio.volume = isMutedByPomodoro ? 0 : soundState.volume * globalVolume;
-  }, [getSoundState, globalVolume, pomodoroStatus, sound.id]);
 
   const Icon = sound.icon;
 
