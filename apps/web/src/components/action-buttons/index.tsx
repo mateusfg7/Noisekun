@@ -1,3 +1,5 @@
+import { Pomodoro } from "~/components/header/pomodoro";
+
 import { Clear } from "./clear";
 import { SaveCombo } from "./save-combo";
 import { Share } from "./share";
@@ -5,12 +7,17 @@ import { Share } from "./share";
 export function ActionButtons() {
   return (
     <div
-      className="hidden w-full items-center justify-end gap-2 pr-14 max-[500px]:justify-center max-[500px]:pr-0 xs:flex"
+      className="hidden w-full items-center justify-end gap-2 max-[500px]:justify-center xs:flex sm:justify-between"
       data-testid="action-buttons"
     >
-      <SaveCombo />
-      <Share />
-      <Clear />
+      <div className="hidden sm:block">
+        <Pomodoro />
+      </div>
+      <div className="flex items-center gap-2">
+        <SaveCombo />
+        <Share />
+        <Clear />
+      </div>
     </div>
   );
 }

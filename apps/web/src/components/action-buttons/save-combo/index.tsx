@@ -54,7 +54,7 @@ export function SaveCombo() {
     <div className="flex gap-1">
       {showInput ? (
         <input
-          className="form-input w-32 animate-show-input rounded-xl border-none bg-primary-foreground/5 px-2 py-0 text-center leading-none tracking-wider text-primary-foreground duration-300 placeholder:text-sm placeholder:text-primary-foreground/60 focus:ring-0"
+          className="form-input w-32 animate-show-input rounded-full border-none bg-primary-foreground/5 px-2 py-0 text-center text-sm leading-none tracking-wider text-primary-foreground duration-300 placeholder:text-sm placeholder:text-primary-foreground/60 focus:ring-0"
           data-testid="combo-name-input"
           disabled={disabled}
           onChange={(e) => setComboName(e.target.value)}

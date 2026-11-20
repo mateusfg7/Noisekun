@@ -32,14 +32,13 @@ export const VolumeController: React.FC<IVolumeController> = ({
 
   return (
     <div
-      className="opacity-1 group relative h-max w-full data-[is-active='false']:opacity-0"
+      className="group flex w-[90%] items-center opacity-70 transition-opacity duration-300 hover:opacity-100 data-[is-active='false']:pointer-events-none data-[is-active='false']:opacity-0"
       data-is-active={isActive}
     >
       <label className="sr-only" htmlFor={`${soundId}-volume-controller`}>
         {soundName} volume controller
       </label>
       <VolumeControllerSlider
-        className="absolute left-0 top-0"
         handleVolume={handleVolume}
         id={`${soundId}-volume-controller`}
         maxValue={1000}

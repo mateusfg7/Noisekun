@@ -113,10 +113,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
   const Icon = sound.icon;
 
   return (
-    <div
-      className="flex h-24 w-24 flex-col items-center justify-center"
-      title={sound.title}
-    >
+    <div className="flex w-24 flex-col items-center gap-1" title={sound.title}>
       <audio
         loop
         onCanPlay={() => setSoundState({ ...localSoundState, loaded: true })}
@@ -128,7 +125,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       </audio>
       <button
         aria-label={sound.title}
-        className="flex h-24 w-24 cursor-wait items-center justify-center rounded-xl text-primary-foreground/90 opacity-70 transition duration-300 disabled:hover:bg-transparent data-[loaded='false']:animate-loading data-[loaded='true']:cursor-pointer data-[active='true']:rounded-b-none data-[active='true']:opacity-100 md:hover:bg-primary-foreground/10 data-[active='true']:md:bg-primary-foreground/10 data-[active='true']:md:shadow-sound data-[loaded='true']:md:hover:opacity-100 data-[loaded='true']:md:hover:shadow-sound"
+        className="flex aspect-square w-full cursor-wait items-center justify-center rounded-md text-primary-foreground/70 transition-colors duration-300 data-[loaded='false']:animate-loading data-[loaded='true']:cursor-pointer data-[active='true']:bg-primary-foreground/5 data-[active='true']:text-primary-foreground data-[loaded='true']:md:hover:bg-primary-foreground/10 data-[loaded='true']:md:hover:text-primary-foreground"
         data-active={
           localSoundState.active && localSoundState.loaded && userHasInteracted
         }
@@ -141,7 +138,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
         }
         type="button"
       >
-        <Icon className="h-20 w-20" />
+        <Icon className="size-16 shrink-0" />
       </button>
       <VolumeController
         handleSoundVolume={(volume) => {

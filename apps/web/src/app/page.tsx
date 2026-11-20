@@ -32,20 +32,20 @@ export default function Home() {
   return (
     <div className={currTheme}>
       <div className="bg-background-image bg-cover bg-fixed bg-center bg-no-repeat">
-        <div className="relative bg-background-color">
-          <Header />
-          <div className="styled-scrollbar h-[90vh] space-y-24 overflow-y-scroll pt-16 md:h-[87vh]">
-            <div className="m-auto flex w-7/12 flex-col items-center gap-3 lg:max-w-4xl">
+        <div className="relative min-h-dvh bg-background-color">
+          <div className="mx-auto flex min-h-dvh w-fit flex-col justify-between gap-16 px-5 pt-2">
+            <Header />
+            <main className="flex flex-1 flex-col gap-3">
               <ActionButtons />
-              <div className="flex flex-wrap justify-center gap-12">
+              <div className="mx-auto grid w-fit grid-cols-2 gap-6 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
                 {sounds.map((sound) => (
                   <SoundButton key={sound.id} sound={sound} />
                 ))}
               </div>
-            </div>
+            </main>
             <Footer />
-            <InteractionModal />
           </div>
+          <InteractionModal />
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import { Fragment, useState } from "react";
 import { FiTrash } from "react-icons/fi";
 import { PiPlaylistBold } from "react-icons/pi";
 
+import { headerIconButton } from "~/components/header/styles";
 import { useIsClient } from "~/hooks/use-is-client";
 import { useComboStore } from "~/stores/combo-store";
 import { useSoundsStateStore } from "~/stores/sounds-state-store";
@@ -55,12 +56,12 @@ export function ComboList() {
     <div className="z-40" data-testid="combo-list">
       <Menu>
         <Menu.Button
-          className="flex text-primary-foreground opacity-90 hover:opacity-100 disabled:opacity-50 disabled:hover:opacity-50"
+          className={headerIconButton()}
           data-umami-event="Open combo list"
           disabled={isEmpty}
           title="Toggle combo list"
         >
-          <PiPlaylistBold size={24} />
+          <PiPlaylistBold size={20} />
         </Menu.Button>
         <Transition
           as={Fragment}

@@ -5,19 +5,15 @@ import { ConfigMenu } from "~/components/config-menu";
 
 import { ComboList } from "./combo-list";
 import { GlobalVolumeController } from "./global-volume-controller";
-import { Pomodoro } from "./pomodoro";
 import { RandomModeButton } from "./random-controller";
 import { ThemeMenu } from "./theme-menu";
 
 export const Header: React.FC = () => (
-  <header className="relative flex h-[10vh] items-center justify-between gap-5 px-6 shadow-header transition-height md:h-[13vh]">
-    <h1 className="text-2xl font-semibold text-primary-foreground">
+  <header className="sticky top-2 z-40 flex items-center justify-between gap-5 rounded-full border border-primary-foreground/10 bg-primary-foreground/10 py-1.5 pl-5 pr-2 shadow-md shadow-black/5 backdrop-blur-lg">
+    <h1 className="text-xl font-semibold leading-none text-primary-foreground">
       <Link href="/">Noisekun</Link>
     </h1>
-    <div className="absolute left-1/2 hidden -translate-x-1/2 sm:block">
-      <Pomodoro />
-    </div>
-    <div className="right-10 flex items-center gap-3">
+    <div className="flex items-center gap-1">
       <GlobalVolumeController />
       <RandomModeButton />
       <ThemeMenu />
