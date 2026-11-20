@@ -35,9 +35,9 @@ export default function Home() {
         <div className="relative bg-background-color">
           <Header />
           <div className="styled-scrollbar h-[90vh] space-y-24 overflow-y-scroll pt-16 md:h-[87vh]">
-            <div className="m-auto flex w-7/12 flex-col items-center gap-3 lg:max-w-4xl">
+            <div className="mx-auto flex w-fit flex-col gap-3 px-5">
               <ActionButtons />
-              <div className="flex flex-wrap justify-center gap-12">
+              <div className="mx-auto grid w-fit grid-cols-2 gap-6 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
                 {sounds.map((sound) => (
                   <SoundButton key={sound.id} sound={sound} />
                 ))}
