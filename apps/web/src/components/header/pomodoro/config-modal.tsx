@@ -89,7 +89,7 @@ export function ConfigModal({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-[1px]" />
+            <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-xs" />
           </Transition.Child>
 
           <div className="fixed inset-0 overflow-y-auto">
@@ -104,7 +104,7 @@ export function ConfigModal({
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel
-                  className="flex w-fit transform flex-col gap-10 overflow-hidden rounded-2xl bg-white p-6 shadow-xl transition-all"
+                  className="flex w-fit transform flex-col gap-10 overflow-hidden rounded-2xl bg-white p-6 shadow-xl transition"
                   data-testid="config-modal"
                 >
                   <div className="flex flex-col items-start gap-10">

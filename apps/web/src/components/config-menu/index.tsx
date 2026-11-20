@@ -160,7 +160,7 @@ export function ConfigMenu() {
           <div className="fixed inset-0 overflow-y-auto">
             <div className="flex min-h-full items-center justify-center p-4 text-center text-zinc-950">
               <ModalTransitionFragment>
-                <Dialog.Panel className="flex w-[98%] transform flex-col gap-10 overflow-hidden rounded-2xl bg-white p-6 shadow-xl transition-all md:w-80">
+                <Dialog.Panel className="flex w-[98%] transform flex-col gap-10 overflow-hidden rounded-2xl bg-white p-6 shadow-xl transition md:w-80">
                   <div className="flex flex-col items-start gap-10">
                     <ModalTile />
                     <div className="w-full">

@@ -96,7 +96,7 @@ export function ComboList() {
                 <Menu.Item key={combo.id}>
                   {({ active }) => (
                     <button
-                      className="rounded-xl bg-primary-foreground/5 p-3 leading-none tracking-wider text-primary-foreground duration-300 data-[is-active='true']:bg-primary-foreground/20"
+                      className="rounded-xl bg-primary-foreground/5 p-3 leading-none tracking-wider text-primary-foreground transition-colors duration-300 data-[is-active='true']:bg-primary-foreground/20"
                       data-is-active={active}
                       data-umami-event="Select combo"
                       onClick={() => updateCombo(combo.id)}
@@ -111,7 +111,7 @@ export function ComboList() {
             {deleteMode
               ? combos.map((combo) => (
                   <button
-                    className="group flex items-center justify-between gap-1 rounded-xl bg-primary-foreground/5 bg-gradient-to-r p-3 leading-none tracking-wider text-primary-foreground duration-300 hover:from-primary-foreground/20 hover:to-red-600/20 data-[is-active='true']:bg-primary-foreground/20"
+                    className="group flex items-center justify-between gap-1 rounded-xl bg-primary-foreground/5 bg-gradient-to-r p-3 leading-none tracking-wider text-primary-foreground transition-colors duration-300 hover:from-primary-foreground/20 hover:to-red-600/20 data-[is-active='true']:bg-primary-foreground/20"
                     data-testid={`${combo.id}_delete_button`}
                     data-umami-event="Delete combo"
                     key={combo.id}

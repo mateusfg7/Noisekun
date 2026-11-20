@@ -10,7 +10,7 @@ import { RandomModeButton } from "./random-controller";
 import { ThemeMenu } from "./theme-menu";
 
 export const Header: React.FC = () => (
-  <header className="relative flex h-[10vh] items-center justify-between gap-5 px-6 shadow-header transition-all md:h-[13vh]">
+  <header className="relative flex h-[10vh] items-center justify-between gap-5 px-6 shadow-header transition-height md:h-[13vh]">
     <h1 className="text-2xl font-semibold text-primary-foreground">
       <Link href="/">Noisekun</Link>
     </h1>

@@ -20,6 +20,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backdropBlur: {
+        xs: "1px",
+      },
+      transitionProperty: {
+        height: "height",
+      },
       animation: {
         "background-change": "background-change 300s 0s infinite",
         "background-change-sm": "background-change 20s 0s infinite",
