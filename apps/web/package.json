@@ -28,7 +28,7 @@
     "@types/react-dom": "19.3.0",
     "esbuild": "0.28.2",
     "tailwindcss": "4.3.5",
-    "typescript": "6.0.3"
+    "typescript": "7.0.2"
   },
   "engines": {
     "node": ">=20.9.0"
