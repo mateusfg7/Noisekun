@@ -194,8 +194,8 @@ importers:
         specifier: 2.11.13
         version: 2.11.13
       ultracite:
-        specifier: 8.1.1
-        version: 8.1.1(eslint@10.15.0(jiti@2.7.0))(oxfmt@0.79.0)(oxlint@1.94.0)
+        specifier: 8.3.0
+        version: 8.3.0(eslint@10.15.0(jiti@2.7.0))(oxfmt@0.79.0)(oxlint@1.94.0)
 
   apps/web:
     dependencies:
@@ -3062,8 +3062,8 @@ packages:
   ufo@1.6.4:
     resolution: {integrity: sha512-JFNbkD1Svwe0KvGi8GOeLcP4kAWQ609twvCdcHxq1oSL8svv39ZuSvajcD8B+5D0eL4+s1Is2D/O6KN3qcTeRA==}
 
-  ultracite@8.1.1:
-    resolution: {integrity: sha512-L4gRVHVm8AWvKr/TF6Zz2g23awXsEn+2P4X1BXE8Xwm9p2ZggkQBFbroWM7eCkZ59PtAnMp3wmLFXbxVLv8Btw==}
+  ultracite@8.3.0:
+    resolution: {integrity: sha512-b33aiz4Ho7+J2n7TZGKREU0+WUt4FIYUskHFAfjWMpyQi5dczPueTNE5K9oRoC2vc86PbI2L2TGtEMH4xi0bAA==}
     engines: {node: ^22.22.2 || >=24.15.0}
     hasBin: true
     peerDependencies:
@@ -5613,7 +5613,7 @@ snapshots:
 
   ufo@1.6.4: {}
 
-  ultracite@8.1.1(eslint@10.15.0(jiti@2.7.0))(oxfmt@0.79.0)(oxlint@1.94.0):
+  ultracite@8.3.0(eslint@10.15.0(jiti@2.7.0))(oxfmt@0.79.0)(oxlint@1.94.0):
     dependencies:
       '@clack/prompts': 1.9.0
       cli-truncate: 6.2.0
