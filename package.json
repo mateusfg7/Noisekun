@@ -22,7 +22,7 @@
     "oxlint": "1.94.0",
     "oxlint-plugin-react-doctor": "0.9.23",
     "turbo": "2.11.13",
-    "ultracite": "8.1.1"
+    "ultracite": "8.3.1"
   },
   "engines": {
     "node": ">=24"
