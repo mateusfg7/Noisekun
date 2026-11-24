@@ -34,6 +34,9 @@ export const VolumeController: React.FC<IVolumeController> = ({
     <div
       className="group flex w-[90%] items-center opacity-70 transition-opacity duration-300 hover:opacity-100 data-[is-active='false']:pointer-events-none data-[is-active='false']:opacity-0"
       data-is-active={isActive}
+      // Hidden sliders stay in the layout; inert keeps them out of the tab
+      // order and the accessibility tree until the sound is on.
+      inert={!isActive}
     >
       <VolumeControllerSlider
         handleVolume={handleVolume}
