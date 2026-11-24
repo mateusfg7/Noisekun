@@ -112,6 +112,9 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
 
   const Icon = sound.icon;
 
+  const isActive =
+    localSoundState.active && localSoundState.loaded && userHasInteracted;
+
   return (
     <div className="flex w-24 flex-col items-center gap-1" title={sound.title}>
       <audio
@@ -125,10 +128,9 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
       </audio>
       <button
         aria-label={sound.title}
-        className="text-foreground/70 data-[loaded='false']:animate-loading data-[active='true']:bg-foreground/5 data-[active='true']:text-foreground data-[loaded='true']:md:hover:bg-foreground/10 data-[loaded='true']:md:hover:text-foreground flex aspect-square w-full cursor-wait items-center justify-center rounded-md transition-colors duration-300 data-[loaded='true']:cursor-pointer"
-        data-active={
-          localSoundState.active && localSoundState.loaded && userHasInteracted
-        }
+        aria-pressed={isActive}
+        className="text-foreground/70 data-[loaded='false']:animate-loading data-[active='true']:bg-foreground/10 data-[active='true']:text-foreground data-[active='true']:ring-foreground/25 data-[loaded='true']:md:hover:bg-foreground/5 data-[loaded='true']:md:hover:text-foreground focus-visible:ring-foreground flex aspect-square w-full cursor-wait items-center justify-center rounded-md ring-1 ring-transparent transition duration-300 outline-none focus-visible:ring-2 data-[loaded='true']:cursor-pointer"
+        data-active={isActive}
         // data-loaded={localSoundState.loaded}
         data-loaded={true}
         data-umami-event={sound.title}
@@ -144,9 +146,7 @@ export const SoundButton: React.FC<SoundButtonProps> = ({ sound }) => {
         handleSoundVolume={(volume) => {
           setSoundState({ ...localSoundState, volume });
         }}
-        isActive={
-          localSoundState.active && localSoundState.loaded && userHasInteracted
-        }
+        isActive={isActive}
         soundId={sound.id}
         soundName={sound.title}
       />
